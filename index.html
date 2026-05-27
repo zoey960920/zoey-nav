@@ -103,6 +103,68 @@ body{font-family:var(--font);background:var(--bg);color:var(--text-1);min-height
 </head>
 <body>
 
+<!-- ── 密码锁 ── -->
+<div id="pw-gate" style="
+  position:fixed;inset:0;background:#08090a;z-index:9999;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'DM Sans','Noto Sans SC',system-ui,sans-serif;
+">
+  <div style="width:320px;text-align:center">
+    <div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#00b277,#00e5a0);
+      display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;
+      color:#08090a;margin:0 auto 24px">Z</div>
+    <div style="font-size:18px;font-weight:700;color:#f0f0f2;margin-bottom:6px">Zoey's Space</div>
+    <div style="font-size:13px;color:#5c5f69;margin-bottom:28px">输入密码继续</div>
+    <input id="pw-input" type="password" placeholder="密码" autocomplete="off"
+      style="width:100%;padding:12px 16px;border-radius:10px;border:1px solid #1e2024;
+        background:#111214;color:#f0f0f2;font-size:15px;outline:none;
+        text-align:center;letter-spacing:4px;transition:border-color .2s;box-sizing:border-box"
+      onfocus="this.style.borderColor='#00b277'"
+      onblur="this.style.borderColor='#1e2024'"
+    />
+    <div id="pw-err" style="height:20px;margin-top:10px;font-size:12px;color:#f87171;opacity:0;transition:opacity .2s">
+      密码错误，再试一次
+    </div>
+    <button onclick="checkPw()"
+      style="margin-top:8px;width:100%;padding:12px;border-radius:10px;border:none;
+        background:#00b277;color:#08090a;font-size:14px;font-weight:600;cursor:pointer;
+        transition:opacity .2s"
+      onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'"
+    >进入</button>
+  </div>
+</div>
+<script>
+(function(){
+  // 已认证则直接隐藏
+  if(sessionStorage.getItem('zoey_auth')==='1'){
+    document.getElementById('pw-gate').style.display='none';
+  }
+  // 回车提交
+  document.getElementById('pw-input').addEventListener('keydown',function(e){
+    if(e.key==='Enter') checkPw();
+  });
+})();
+function checkPw(){
+  var v=document.getElementById('pw-input').value;
+  var err=document.getElementById('pw-err');
+  if(v==='0920'){
+    sessionStorage.setItem('zoey_auth','1');
+    var gate=document.getElementById('pw-gate');
+    gate.style.transition='opacity .3s';
+    gate.style.opacity='0';
+    setTimeout(function(){gate.style.display='none'},300);
+  } else {
+    err.style.opacity='1';
+    document.getElementById('pw-input').value='';
+    document.getElementById('pw-input').style.borderColor='#f87171';
+    setTimeout(function(){
+      err.style.opacity='0';
+      document.getElementById('pw-input').style.borderColor='#1e2024';
+    },2000);
+  }
+}
+</script>
+
 <div class="header">
   <div class="header-top">
     <div class="logo">
