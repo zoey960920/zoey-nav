@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Zoey — 站点导航</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #08090a;
+  --surface: #111214;
+  --surface-hover: #16191c;
+  --border: #1e2024;
+  --border-hover: #2a2d32;
+  --text-1: #f0f0f2;
+  --text-2: #a0a3ab;
+  --text-3: #5c5f69;
+  --accent: #00b277;
+  --accent-dim: #00b27720;
+
+  --tag-qiantu:   #00b277;  --tag-qiantu-bg:   #00b27718;
+  --tag-claude:   #38bdf8;  --tag-claude-bg:   #38bdf815;
+  --tag-research: #818cf8;  --tag-research-bg: #818cf815;
+  --tag-design:   #a78bfa;  --tag-design-bg:   #a78bfa15;
+  --tag-ai:       #22d3ee;  --tag-ai-bg:       #22d3ee15;
+  --tag-tool:     #f59e0b;  --tag-tool-bg:     #f59e0b15;
+  --tag-inspo:    #fb923c;  --tag-inspo-bg:    #fb923c15;
+  --tag-life:     #f472b6;  --tag-life-bg:     #f472b618;
+  --tag-other:    #6b7280;  --tag-other-bg:    #6b728015;
+
+  --radius: 12px;
+  --font: "DM Sans","Noto Sans SC",system-ui,sans-serif;
+  --mono: "JetBrains Mono",monospace;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text-1);min-height:100vh;-webkit-font-smoothing:antialiased}
+
+.header{padding:52px 32px 0;max-width:1200px;margin:0 auto}
+.header-top{display:flex;align-items:center;gap:16px;margin-bottom:8px}
+.logo{font-size:26px;font-weight:700;letter-spacing:-.5px;display:flex;align-items:center;gap:10px}
+.logo-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);flex-shrink:0;box-shadow:0 0 10px #00b27770}
+.site-count{font-family:var(--mono);font-size:12px;color:var(--text-3);background:var(--surface);padding:3px 10px;border-radius:20px;border:1px solid var(--border)}
+.tagline{font-size:14px;color:var(--text-3);margin-bottom:8px}
+.tagline em{font-style:normal;color:var(--text-2)}
+
+.identity{display:flex;align-items:center;gap:12px;margin-bottom:40px;padding:16px 20px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);max-width:520px}
+.identity-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#00b277,#00e5a0);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;color:#08090a;flex-shrink:0}
+.identity-name{font-size:14px;font-weight:600;color:var(--text-1)}
+.identity-role{font-family:var(--mono);font-size:11px;color:var(--text-3);margin-top:2px}
+.identity-tags{display:flex;gap:6px;margin-left:auto}
+.id-tag{font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:4px;border:1px solid var(--border);color:var(--text-3)}
+
+.tabs{display:flex;gap:6px;padding:0 32px;max-width:1200px;margin:0 auto 28px;flex-wrap:wrap}
+.tab{font-family:var(--font);font-size:13px;font-weight:500;padding:7px 16px;border-radius:100px;border:1px solid var(--border);background:transparent;color:var(--text-3);cursor:pointer;transition:all .2s;user-select:none}
+.tab:hover{border-color:var(--border-hover);color:var(--text-2);background:var(--surface)}
+.tab.active{background:var(--text-1);color:var(--bg);border-color:var(--text-1)}
+.tab .count{font-family:var(--mono);font-size:10px;opacity:.5;margin-left:4px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;padding:0 32px 80px;max-width:1200px;margin:0 auto}
+
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;gap:10px;transition:all .25s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden;animation:fadeUp .4s cubic-bezier(.4,0,.2,1) both}
+.card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--card-accent,var(--text-3));opacity:0;transition:opacity .25s}
+.card:hover{border-color:var(--border-hover);background:var(--surface-hover);transform:translateY(-2px);box-shadow:0 8px 32px #0006}
+.card:hover::before{opacity:1}
+.card.hidden{display:none}
+
+.card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.card-icon{width:30px;height:30px;border-radius:7px;background:var(--accent-dim);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.card-title-wrap{flex:1;display:flex;flex-direction:column;gap:2px;min-width:0}
+.card-title{font-size:13px;font-weight:600;line-height:1.5;color:var(--text-1);word-break:break-word}
+.card-desc{font-size:11px;color:var(--text-2);line-height:1.4}
+.card-visit{flex-shrink:0;font-family:var(--mono);font-size:11px;padding:4px 11px;border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--text-3);text-decoration:none;transition:all .2s;white-space:nowrap;align-self:flex-start}
+.card-visit:hover{background:var(--accent);color:#08090a;border-color:var(--accent)}
+
+.card-url{font-family:var(--mono);font-size:11px;color:var(--text-3);letter-spacing:-.3px;word-break:break-all}
+.card-meta{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:auto}
+.tag{font-size:10px;font-weight:500;padding:2px 8px;border-radius:5px;letter-spacing:.02em}
+.tag-qiantu  {color:var(--tag-qiantu);  background:var(--tag-qiantu-bg)}
+.tag-claude  {color:var(--tag-claude);  background:var(--tag-claude-bg)}
+.tag-research{color:var(--tag-research);background:var(--tag-research-bg)}
+.tag-design  {color:var(--tag-design);  background:var(--tag-design-bg)}
+.tag-ai      {color:var(--tag-ai);      background:var(--tag-ai-bg)}
+.tag-tool    {color:var(--tag-tool);    background:var(--tag-tool-bg)}
+.tag-inspo   {color:var(--tag-inspo);   background:var(--tag-inspo-bg)}
+.tag-life    {color:var(--tag-life);    background:var(--tag-life-bg)}
+.tag-other   {color:var(--tag-other);   background:var(--tag-other-bg)}
+
+.footer{text-align:center;padding:0 32px 48px;font-size:12px;color:var(--text-3);font-family:var(--mono);max-width:1200px;margin:0 auto}
+
+@media(max-width:640px){
+  .header,.tabs,.grid,.footer{padding-left:20px;padding-right:20px}
+  .grid{grid-template-columns:1fr}
+  .identity{max-width:100%}
+  .tabs{gap:4px}
+  .tab{padding:6px 12px;font-size:12px}
+}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-top">
+    <div class="logo">
+      <div class="logo-dot"></div>
+      Zoey
+    </div>
+    <div class="site-count" id="counter">— 站点</div>
+  </div>
+  <div class="tagline">姚伊笑 · 交互体验设计师主管 · <em>千图网</em></div>
+  <div class="identity">
+    <div class="identity-avatar">Z</div>
+    <div>
+      <div class="identity-name">姚伊笑 (Zoey)</div>
+      <div class="identity-role">UX Lead · 千图AI + Pinart.AI</div>
+    </div>
+    <div class="identity-tags">
+      <span class="id-tag">ENTJ</span>
+      <span class="id-tag">处女座</span>
+    </div>
+  </div>
+</div>
+
+<div class="tabs" id="tabs">
+  <button class="tab active" data-cat="all">全部<span class="count"></span></button>
+  <button class="tab" data-cat="qiantu">千图系<span class="count"></span></button>
+  <button class="tab" data-cat="claude">Claude生态<span class="count"></span></button>
+  <button class="tab" data-cat="research">研究报告<span class="count"></span></button>
+  <button class="tab" data-cat="design">设计工具<span class="count"></span></button>
+  <button class="tab" data-cat="ai">AI工具<span class="count"></span></button>
+  <button class="tab" data-cat="tool">工具集<span class="count"></span></button>
+  <button class="tab" data-cat="inspo">灵感素材<span class="count"></span></button>
+  <button class="tab" data-cat="life">生活<span class="count"></span></button>
+  <button class="tab" data-cat="other">其他<span class="count"></span></button>
+</div>
+
+<div class="grid" id="grid">
+
+<!-- ───────────── 千图系 ───────────── -->
+  <div class="card" data-cat="qiantu" style="--card-accent:var(--tag-qiantu)">
+    <div class="card-head">
+      <div class="card-icon">🎨</div>
+      <div class="card-title-wrap">
+        <div class="card-title">千图主站</div>
+        <div class="card-desc">设计素材平台，核心业务</div>
+      </div>
+      <a class="card-visit" href="https://www.58pic.com" target="_blank" rel="noopener">访问 →</a>
+    </div>
+    <div class="card-url">58pic.com</div>
+    <div class="card-meta"><span class="tag tag-qiantu">千图系</span></div>
+  </div>
+  <div class="card" data-cat="qiantu" style="--card-accent:var(--tag-qiantu)">
+    <div class="card-head">
+      <div class="card-icon">✨</div>
+      <div class="card-title-wrap">
+        <div class="card-title">千图 AI</div>
+        <div class="card-desc">AI 驱动设计工具 · 我的主阵地</div>
+      </div>
+      <a class="card-visit" href="https://ai.58pic.com" target="_blank" rel="noopener">访问 →</a>
+    </div>
+    <div class="card-url">ai.58pic.com</div>
+    <div class="card-meta"><span class="tag tag-qiantu">千图系</span><span class="tag" style="color:#fbbf24;background:#fbbf2418">主负责</span></div>
+  </div>
+  <div class="card" data-cat="qiantu" style="--card-accent:var(--tag-qiantu)">
+    <div class="card-head">
+      <div class="card-icon">🖼️</div>
+      <div class="card-title-wrap">
+        <div class="card-title">Pinart.AI</div>
+        <div class="card-desc">AI 设计相关产品</div>
+      </div>
+      <a class="card-visit" href="https://pinart.ai" target="_blank" rel="noopener">访问 →</a>
+    </div>
+    <div class="card-url">pinart.ai</div>
+    <div class="card-meta"><span class="tag tag-qiantu">千图系</span><span class="tag" style="color:#fbbf24;background:#fbbf2418">主负责</span></div>
+  </div>
+  <div class="card" data-cat="qiantu" style="--card-accent:var(--tag-qiantu)">
+    <div class="card-head">
+      <div class="card-icon">💼</div>
+      <div class="card-title-wrap">
+        <div class="card-title">Anthropic 招聘全景 | Careers Deep Dive</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E5%8D%83%E5%9B%BE%E5%95%86%E4%B8%9A/Anthropic%20%E6%8B%9B%E8%81%98%E5%85%A8%E6%99%AF%20_%20Careers%20Deep%20Dive.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-qiantu">千图商业</span></div>
+  </div>
+  <div class="card" data-cat="qiantu" style="--card-accent:var(--tag-qiantu)">
+    <div class="card-head">
+      <div class="card-icon">💼</div>
+      <div class="card-title-wrap">
+        <div class="card-title">Anthropic 营销工作流研究：给千图运营与增长团队的 10 条启发</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E5%8D%83%E5%9B%BE%E5%95%86%E4%B8%9A/Anthropic%20%E8%90%A5%E9%94%80%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A0%94%E7%A9%B6%EF%BC%9A%E7%BB%99%E5%8D%83%E5%9B%BE%E8%BF%90%E8%90%A5%E4%B8%8E%E5%A2%9E%E9%95%BF%E5%9B%A2%E9%98%9F%E7%9A%84%2010%20%E6%9D%A1%E5%90%AF%E5%8F%91.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-qiantu">千图商业</span></div>
+  </div>
+  <div class="card" data-cat="qiantu" style="--card-accent:var(--tag-qiantu)">
+    <div class="card-head">
+      <div class="card-icon">💼</div>
+      <div class="card-title-wrap">
+        <div class="card-title">scene-brief · 千图内容运营场景Brief Skill</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E5%8D%83%E5%9B%BE%E5%95%86%E4%B8%9A/scene-brief%20%C2%B7%20%E5%8D%83%E5%9B%BE%E5%86%85%E5%AE%B9%E8%BF%90%E8%90%A5%E5%9C%BA%E6%99%AFBrief%20Skill.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-qiantu">千图商业</span></div>
+  </div>
+  <div class="card" data-cat="qiantu" style="--card-accent:var(--tag-qiantu)">
+    <div class="card-head">
+      <div class="card-icon">💼</div>
+      <div class="card-title-wrap">
+        <div class="card-title">自媒体工具市场调研 · 创作者工作流全景图</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E5%8D%83%E5%9B%BE%E5%95%86%E4%B8%9A/%E8%87%AA%E5%AA%92%E4%BD%93%E5%B7%A5%E5%85%B7%E5%B8%82%E5%9C%BA%E8%B0%83%E7%A0%94%20%C2%B7%20%E5%88%9B%E4%BD%9C%E8%80%85%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%85%A8%E6%99%AF%E5%9B%BE.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-qiantu">千图商业</span></div>
+  </div>
+
+<!-- ───────────── Claude生态 ───────────── -->
+  <div class="card" data-cat="claude" style="--card-accent:var(--tag-claude)">
+    <div class="card-head">
+      <div class="card-icon">🤖</div>
+      <div class="card-title-wrap">
+        <div class="card-title">AI Harness 工程 · 让 Agent 稳定运行的约束框架</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/Claude%E7%94%9F%E6%80%81/AI%20Harness%20%E5%B7%A5%E7%A8%8B%20%C2%B7%20%E8%AE%A9%20Agent%20%E7%A8%B3%E5%AE%9A%E8%BF%90%E8%A1%8C%E7%9A%84%E7%BA%A6%E6%9D%9F%E6%A1%86%E6%9E%B6.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-claude">Claude生态</span></div>
+  </div>
+  <div class="card" data-cat="claude" style="--card-accent:var(--tag-claude)">
+    <div class="card-head">
+      <div class="card-icon">🤖</div>
+      <div class="card-title-wrap">
+        <div class="card-title">Claude Chat vs Code vs Cowork — 全面对比</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/Claude%E7%94%9F%E6%80%81/Claude%20Chat%20vs%20Code%20vs%20Cowork%20%E2%80%94%20%E5%85%A8%E9%9D%A2%E5%AF%B9%E6%AF%94.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-claude">Claude生态</span></div>
+  </div>
+  <div class="card" data-cat="claude" style="--card-accent:var(--tag-claude)">
+    <div class="card-head">
+      <div class="card-icon">🤖</div>
+      <div class="card-title-wrap">
+        <div class="card-title">Claude Cowork — Enterprise Admin</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/Claude%E7%94%9F%E6%80%81/Claude%20Cowork%20%E2%80%94%20Enterprise%20Admin.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-claude">Claude生态</span></div>
+  </div>
+  <div class="card" data-cat="claude" style="--card-accent:var(--tag-claude)">
+    <div class="card-head">
+      <div class="card-icon">🤖</div>
+      <div class="card-title-wrap">
+        <div class="card-title">Claude Cowork 的 7 种记忆 · Slides</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/Claude%E7%94%9F%E6%80%81/Claude%20Cowork%20%E7%9A%84%207%20%E7%A7%8D%E8%AE%B0%E5%BF%86%20%C2%B7%20Slides.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-claude">Claude生态</span></div>
+  </div>
+  <div class="card" data-cat="claude" style="--card-accent:var(--tag-claude)">
+    <div class="card-head">
+      <div class="card-icon">🤖</div>
+      <div class="card-title-wrap">
+        <div class="card-title">Claude Skills 构建完全指南 · 中文精读版</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/Claude%E7%94%9F%E6%80%81/Claude%20Skills%20%E6%9E%84%E5%BB%BA%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97%20%C2%B7%20%E4%B8%AD%E6%96%87%E7%B2%BE%E8%AF%BB%E7%89%88.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-claude">Claude生态</span></div>
+  </div>
+  <div class="card" data-cat="claude" style="--card-accent:var(--tag-claude)">
+    <div class="card-head">
+      <div class="card-icon">🤖</div>
+      <div class="card-title-wrap">
+        <div class="card-title">Claude 解决方案</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/Claude%E7%94%9F%E6%80%81/Claude%20%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-claude">Claude生态</span></div>
+  </div>
+  <div class="card" data-cat="claude" style="--card-accent:var(--tag-claude)">
+    <div class="card-head">
+      <div class="card-icon">🤖</div>
+      <div class="card-title-wrap">
+        <div class="card-title">Claude版手册 — 创始人 & 打工人 AI 生存指南 2026</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/Claude%E7%94%9F%E6%80%81/Claude%E7%89%88%E6%89%8B%E5%86%8C%20%E2%80%94%20%E5%88%9B%E5%A7%8B%E4%BA%BA%20%26%20%E6%89%93%E5%B7%A5%E4%BA%BA%20AI%20%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97%202026.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-claude">Claude生态</span></div>
+  </div>
+  <div class="card" data-cat="claude" style="--card-accent:var(--tag-claude)">
+    <div class="card-head">
+      <div class="card-icon">🤖</div>
+      <div class="card-title-wrap">
+        <div class="card-title">Cowork 插件与 Skills 中文指南</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/Claude%E7%94%9F%E6%80%81/Cowork%20%E6%8F%92%E4%BB%B6%E4%B8%8E%20Skills%20%E4%B8%AD%E6%96%87%E6%8C%87%E5%8D%97.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-claude">Claude生态</span></div>
+  </div>
+  <div class="card" data-cat="claude" style="--card-accent:var(--tag-claude)">
+    <div class="card-head">
+      <div class="card-icon">🤖</div>
+      <div class="card-title-wrap">
+        <div class="card-title">Skills 场景选型台</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/Claude%E7%94%9F%E6%80%81/Skills%20%E5%9C%BA%E6%99%AF%E9%80%89%E5%9E%8B%E5%8F%B0.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-claude">Claude生态</span></div>
+  </div>
+  <div class="card" data-cat="claude" style="--card-accent:var(--tag-claude)">
+    <div class="card-head">
+      <div class="card-icon">🤖</div>
+      <div class="card-title-wrap">
+        <div class="card-title">web-presentation · 把内容变成演示</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/Claude%E7%94%9F%E6%80%81/web-presentation%20%C2%B7%20%E6%8A%8A%E5%86%85%E5%AE%B9%E5%8F%98%E6%88%90%E6%BC%94%E7%A4%BA.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-claude">Claude生态</span></div>
+  </div>
+  <div class="card" data-cat="claude" style="--card-accent:var(--tag-claude)">
+    <div class="card-head">
+      <div class="card-icon">🤖</div>
+      <div class="card-title-wrap">
+        <div class="card-title">约束先行：用好 Agent 的关键不是 Skills，而是规则系统</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/Claude%E7%94%9F%E6%80%81/%E7%BA%A6%E6%9D%9F%E5%85%88%E8%A1%8C%EF%BC%9A%E7%94%A8%E5%A5%BD%20Agent%20%E7%9A%84%E5%85%B3%E9%94%AE%E4%B8%8D%E6%98%AF%20Skills%EF%BC%8C%E8%80%8C%E6%98%AF%E8%A7%84%E5%88%99%E7%B3%BB%E7%BB%9F.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-claude">Claude生态</span></div>
+  </div>
+
+<!-- ───────────── 研究报告 ───────────── -->
+  <div class="card" data-cat="research" style="--card-accent:var(--tag-research)">
+    <div class="card-head">
+      <div class="card-icon">📋</div>
+      <div class="card-title-wrap">
+        <div class="card-title">AI Harness 工程 · 让 Agent 稳定运行的约束框架</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A/AI%20Harness%20%E5%B7%A5%E7%A8%8B%20%C2%B7%20%E8%AE%A9%20Agent%20%E7%A8%B3%E5%AE%9A%E8%BF%90%E8%A1%8C%E7%9A%84%E7%BA%A6%E6%9D%9F%E6%A1%86%E6%9E%B6.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-research">研究报告</span></div>
+  </div>
+  <div class="card" data-cat="research" style="--card-accent:var(--tag-research)">
+    <div class="card-head">
+      <div class="card-icon">📋</div>
+      <div class="card-title-wrap">
+        <div class="card-title">Design System 手册 v2 — Apple · Claude · ChatGPT 真实案例版</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A/Design%20System%20%E6%89%8B%E5%86%8C%20v2%20%E2%80%94%20Apple%20%C2%B7%20Claude%20%C2%B7%20ChatGPT%20%E7%9C%9F%E5%AE%9E%E6%A1%88%E4%BE%8B%E7%89%88.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-research">研究报告</span></div>
+  </div>
+  <div class="card" data-cat="research" style="--card-accent:var(--tag-research)">
+    <div class="card-head">
+      <div class="card-icon">📋</div>
+      <div class="card-title-wrap">
+        <div class="card-title">Design.md 解密 — AI时代设计师的新必修课</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A/Design.md%20%E8%A7%A3%E5%AF%86%20%E2%80%94%20AI%E6%97%B6%E4%BB%A3%E8%AE%BE%E8%AE%A1%E5%B8%88%E7%9A%84%E6%96%B0%E5%BF%85%E4%BF%AE%E8%AF%BE.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-research">研究报告</span></div>
+  </div>
+  <div class="card" data-cat="research" style="--card-accent:var(--tag-research)">
+    <div class="card-head">
+      <div class="card-icon">📋</div>
+      <div class="card-title-wrap">
+        <div class="card-title">Determined · 决定论 — Wayne 读书报告</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A/Determined%20%C2%B7%20%E5%86%B3%E5%AE%9A%E8%AE%BA%20%E2%80%94%20Wayne%20%E8%AF%BB%E4%B9%A6%E6%8A%A5%E5%91%8A.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-research">研究报告</span></div>
+  </div>
+  <div class="card" data-cat="research" style="--card-accent:var(--tag-research)">
+    <div class="card-head">
+      <div class="card-icon">📋</div>
+      <div class="card-title-wrap">
+        <div class="card-title">Opus 4.7 vs 4.6 · 产品设计视角深度长文</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A/Opus%204.7%20vs%204.6%20%C2%B7%20%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E8%A7%86%E8%A7%92%E6%B7%B1%E5%BA%A6%E9%95%BF%E6%96%87%20%C2%B7%20Wayne%E7%A0%94%E7%A9%B6%E5%AE%A4.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-research">研究报告</span></div>
+  </div>
+  <div class="card" data-cat="research" style="--card-accent:var(--tag-research)">
+    <div class="card-head">
+      <div class="card-icon">📋</div>
+      <div class="card-title-wrap">
+        <div class="card-title">wwei.ai 权限系统 · 技术评估</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A/wwei.ai%20%E6%9D%83%E9%99%90%E7%B3%BB%E7%BB%9F%20%C2%B7%20%E6%8A%80%E6%9C%AF%E8%AF%84%E4%BC%B0.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-research">研究报告</span></div>
+  </div>
+  <div class="card" data-cat="research" style="--card-accent:var(--tag-research)">
+    <div class="card-head">
+      <div class="card-icon">📋</div>
+      <div class="card-title-wrap">
+        <div class="card-title">万物皆可CLI · Agent时代的交互革命</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A/%E4%B8%87%E7%89%A9%E7%9A%86%E5%8F%AFCLI%20%C2%B7%20Agent%E6%97%B6%E4%BB%A3%E7%9A%84%E4%BA%A4%E4%BA%92%E9%9D%A9%E5%91%BD.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-research">研究报告</span></div>
+  </div>
+  <div class="card" data-cat="research" style="--card-accent:var(--tag-research)">
+    <div class="card-head">
+      <div class="card-icon">📋</div>
+      <div class="card-title-wrap">
+        <div class="card-title">三论·现代科学方法论 — Wayne研究室</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A/%E4%B8%89%E8%AE%BA%C2%B7%E7%8E%B0%E4%BB%A3%E7%A7%91%E5%AD%A6%E6%96%B9%E6%B3%95%E8%AE%BA%20%E2%80%94%20Wayne%E7%A0%94%E7%A9%B6%E5%AE%A4.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-research">研究报告</span></div>
+  </div>
+  <div class="card" data-cat="research" style="--card-accent:var(--tag-research)">
+    <div class="card-head">
+      <div class="card-icon">📋</div>
+      <div class="card-title-wrap">
+        <div class="card-title">以色列AI科技图谱 | 创业国度的全景报告</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A/%E4%BB%A5%E8%89%B2%E5%88%97AI%E7%A7%91%E6%8A%80%E5%9B%BE%E8%B0%B1%20_%20%E5%88%9B%E4%B8%9A%E5%9B%BD%E5%BA%A6%E7%9A%84%E5%85%A8%E6%99%AF%E6%8A%A5%E5%91%8A.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-research">研究报告</span></div>
+  </div>
+  <div class="card" data-cat="research" style="--card-accent:var(--tag-research)">
+    <div class="card-head">
+      <div class="card-icon">📋</div>
+      <div class="card-title-wrap">
+        <div class="card-title">肥尾效应</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A/%E8%82%A5%E5%B0%BE%E6%95%88%E5%BA%94%20%C2%B7%20Wayne%E7%A0%94%E7%A9%B6%E5%AE%A4%E8%AF%BB%E4%B9%A6%E6%8A%A5%E5%91%8A.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-research">研究报告</span></div>
+  </div>
+  <div class="card" data-cat="research" style="--card-accent:var(--tag-research)">
+    <div class="card-head">
+      <div class="card-icon">📋</div>
+      <div class="card-title-wrap">
+        <div class="card-title">陈嘉映双书 · 认知阶梯</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A/%E9%99%88%E5%98%89%E6%98%A0%E5%8F%8C%E4%B9%A6%20%C2%B7%20%E8%AE%A4%E7%9F%A5%E9%98%B6%E6%A2%AF%20_%20Wayne%E7%A0%94%E7%A9%B6%E5%AE%A4.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-research">研究报告</span></div>
+  </div>
+  <div class="card" data-cat="research" style="--card-accent:var(--tag-research)">
+    <div class="card-head">
+      <div class="card-icon">📋</div>
+      <div class="card-title-wrap">
+        <div class="card-title">随机漫步的傻瓜</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A/%E9%9A%8F%E6%9C%BA%E6%BC%AB%E6%AD%A5%E7%9A%84%E5%82%BB%E7%93%9C%20%C2%B7%20Wayne%E7%A0%94%E7%A9%B6%E5%AE%A4%E8%AF%BB%E4%B9%A6%E6%8A%A5%E5%91%8A.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-research">研究报告</span></div>
+  </div>
+
+<!-- ───────────── 设计工具 ───────────── -->
+  <div class="card" data-cat="design" style="--card-accent:var(--tag-design)">
+    <div class="card-head">
+      <div class="card-icon">🔷</div>
+      <div class="card-title-wrap">
+        <div class="card-title">Figma</div>
+        <div class="card-desc">主力设计工具，组件 + 交付</div>
+      </div>
+      <a class="card-visit" href="https://figma.com" target="_blank" rel="noopener">访问 →</a>
+    </div>
+    <div class="card-url">figma.com</div>
+    <div class="card-meta"><span class="tag tag-design">设计工具</span></div>
+  </div>
+  <div class="card" data-cat="design" style="--card-accent:var(--tag-design)">
+    <div class="card-head">
+      <div class="card-icon">📋</div>
+      <div class="card-title-wrap">
+        <div class="card-title">Notion</div>
+        <div class="card-desc">项目文档 · 设计规范沉淀</div>
+      </div>
+      <a class="card-visit" href="https://notion.so" target="_blank" rel="noopener">访问 →</a>
+    </div>
+    <div class="card-url">notion.so</div>
+    <div class="card-meta"><span class="tag tag-design">设计工具</span></div>
+  </div>
+  <div class="card" data-cat="design" style="--card-accent:var(--tag-design)">
+    <div class="card-head">
+      <div class="card-icon">📊</div>
+      <div class="card-title-wrap">
+        <div class="card-title">Linear</div>
+        <div class="card-desc">任务 + 迭代跟踪</div>
+      </div>
+      <a class="card-visit" href="https://linear.app" target="_blank" rel="noopener">访问 →</a>
+    </div>
+    <div class="card-url">linear.app</div>
+    <div class="card-meta"><span class="tag tag-design">设计工具</span></div>
+  </div>
+  <div class="card" data-cat="design" style="--card-accent:var(--tag-design)">
+    <div class="card-head">
+      <div class="card-icon">⚡</div>
+      <div class="card-title-wrap">
+        <div class="card-title">Principle</div>
+        <div class="card-desc">交互动效原型，精细动画验证</div>
+      </div>
+      <a class="card-visit" href="https://principleformac.com" target="_blank" rel="noopener">访问 →</a>
+    </div>
+    <div class="card-url">principleformac.com</div>
+    <div class="card-meta"><span class="tag tag-design">设计工具</span></div>
+  </div>
+
+<!-- ───────────── AI工具 ───────────── -->
+  <div class="card" data-cat="ai" style="--card-accent:var(--tag-ai)">
+    <div class="card-head">
+      <div class="card-icon">🤖</div>
+      <div class="card-title-wrap">
+        <div class="card-title">Claude</div>
+        <div class="card-desc">主力 AI 助手，设计 + 策略 + 编码</div>
+      </div>
+      <a class="card-visit" href="https://claude.ai" target="_blank" rel="noopener">访问 →</a>
+    </div>
+    <div class="card-url">claude.ai</div>
+    <div class="card-meta"><span class="tag tag-ai">AI工具</span><span class="tag" style="color:#fbbf24;background:#fbbf2418">常用</span></div>
+  </div>
+  <div class="card" data-cat="ai" style="--card-accent:var(--tag-ai)">
+    <div class="card-head">
+      <div class="card-icon">🎭</div>
+      <div class="card-title-wrap">
+        <div class="card-title">Midjourney</div>
+        <div class="card-desc">AI 图像生成，视觉灵感爆发</div>
+      </div>
+      <a class="card-visit" href="https://midjourney.com" target="_blank" rel="noopener">访问 →</a>
+    </div>
+    <div class="card-url">midjourney.com</div>
+    <div class="card-meta"><span class="tag tag-ai">AI工具</span></div>
+  </div>
+  <div class="card" data-cat="ai" style="--card-accent:var(--tag-ai)">
+    <div class="card-head">
+      <div class="card-icon">🎬</div>
+      <div class="card-title-wrap">
+        <div class="card-title">Runway</div>
+        <div class="card-desc">AI 视频生成，产品演示神器</div>
+      </div>
+      <a class="card-visit" href="https://runwayml.com" target="_blank" rel="noopener">访问 →</a>
+    </div>
+    <div class="card-url">runwayml.com</div>
+    <div class="card-meta"><span class="tag tag-ai">AI工具</span></div>
+  </div>
+  <div class="card" data-cat="ai" style="--card-accent:var(--tag-ai)">
+    <div class="card-head">
+      <div class="card-icon">🌊</div>
+      <div class="card-title-wrap">
+        <div class="card-title">Lovart</div>
+        <div class="card-desc">AI 设计生成竞品，持续监测</div>
+      </div>
+      <a class="card-visit" href="https://lovart.ai" target="_blank" rel="noopener">访问 →</a>
+    </div>
+    <div class="card-url">lovart.ai</div>
+    <div class="card-meta"><span class="tag tag-ai">AI工具</span><span class="tag" style="color:#ef4444;background:#ef444418">竞品</span></div>
+  </div>
+  <div class="card" data-cat="ai" style="--card-accent:var(--tag-ai)">
+    <div class="card-head">
+      <div class="card-icon">🖌️</div>
+      <div class="card-title-wrap">
+        <div class="card-title">Canva</div>
+        <div class="card-desc">设计平台竞品，功能对标</div>
+      </div>
+      <a class="card-visit" href="https://canva.com" target="_blank" rel="noopener">访问 →</a>
+    </div>
+    <div class="card-url">canva.com</div>
+    <div class="card-meta"><span class="tag tag-ai">AI工具</span><span class="tag" style="color:#ef4444;background:#ef444418">竞品</span></div>
+  </div>
+
+<!-- ───────────── 工具集 ───────────── -->
+  <div class="card" data-cat="tool" style="--card-accent:var(--tag-tool)">
+    <div class="card-head">
+      <div class="card-icon">🔧</div>
+      <div class="card-title-wrap">
+        <div class="card-title">Apple Effects · 38 效果验证稿</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E5%B7%A5%E5%85%B7%E9%9B%86/Apple%20Effects%20%C2%B7%2038%20%E6%95%88%E6%9E%9C%E9%AA%8C%E8%AF%81%E7%A8%BF.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-tool">工具集</span></div>
+  </div>
+  <div class="card" data-cat="tool" style="--card-accent:var(--tag-tool)">
+    <div class="card-head">
+      <div class="card-icon">🔧</div>
+      <div class="card-title-wrap">
+        <div class="card-title">Apple Effects · Web Presentation 素材库实况</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E5%B7%A5%E5%85%B7%E9%9B%86/Apple%20Effects%20%C2%B7%20Web%20Presentation%20%E7%B4%A0%E6%9D%90%E5%BA%93%E5%AE%9E%E5%86%B5.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-tool">工具集</span></div>
+  </div>
+  <div class="card" data-cat="tool" style="--card-accent:var(--tag-tool)">
+    <div class="card-head">
+      <div class="card-icon">🔧</div>
+      <div class="card-title-wrap">
+        <div class="card-title">Frame · 社媒图片封装器 v6</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E5%B7%A5%E5%85%B7%E9%9B%86/Frame%20%C2%B7%20%E7%A4%BE%E5%AA%92%E5%9B%BE%E7%89%87%E5%B0%81%E8%A3%85%E5%99%A8%20v6.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-tool">工具集</span></div>
+  </div>
+  <div class="card" data-cat="tool" style="--card-accent:var(--tag-tool)">
+    <div class="card-head">
+      <div class="card-icon">🔧</div>
+      <div class="card-title-wrap">
+        <div class="card-title">创意库 — Cowork</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E5%B7%A5%E5%85%B7%E9%9B%86/%E5%88%9B%E6%84%8F%E5%BA%93%20%E2%80%94%20Cowork.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-tool">工具集</span></div>
+  </div>
+  <div class="card" data-cat="tool" style="--card-accent:var(--tag-tool)">
+    <div class="card-head">
+      <div class="card-icon">🔧</div>
+      <div class="card-title-wrap">
+        <div class="card-title">战略反思挑战 · 归档</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E5%B7%A5%E5%85%B7%E9%9B%86/%E6%88%98%E7%95%A5%E5%8F%8D%E6%80%9D%E6%8C%91%E6%88%98%20%C2%B7%20%E5%BD%92%E6%A1%A3.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-tool">工具集</span></div>
+  </div>
+
+<!-- ───────────── 灵感素材 ───────────── -->
+  <div class="card" data-cat="inspo" style="--card-accent:var(--tag-inspo)">
+    <div class="card-head">
+      <div class="card-icon">🏀</div>
+      <div class="card-title-wrap">
+        <div class="card-title">Dribbble</div>
+        <div class="card-desc">UI 视觉灵感首站</div>
+      </div>
+      <a class="card-visit" href="https://dribbble.com" target="_blank" rel="noopener">访问 →</a>
+    </div>
+    <div class="card-url">dribbble.com</div>
+    <div class="card-meta"><span class="tag tag-inspo">灵感素材</span></div>
+  </div>
+  <div class="card" data-cat="inspo" style="--card-accent:var(--tag-inspo)">
+    <div class="card-head">
+      <div class="card-icon">📱</div>
+      <div class="card-title-wrap">
+        <div class="card-title">Mobbin</div>
+        <div class="card-desc">真实 App UI 截图库，交互参考</div>
+      </div>
+      <a class="card-visit" href="https://mobbin.com" target="_blank" rel="noopener">访问 →</a>
+    </div>
+    <div class="card-url">mobbin.com</div>
+    <div class="card-meta"><span class="tag tag-inspo">灵感素材</span><span class="tag" style="color:#fbbf24;background:#fbbf2418">常用</span></div>
+  </div>
+  <div class="card" data-cat="inspo" style="--card-accent:var(--tag-inspo)">
+    <div class="card-head">
+      <div class="card-icon">🎨</div>
+      <div class="card-title-wrap">
+        <div class="card-title">Behance</div>
+        <div class="card-desc">创意作品集 + 项目展示</div>
+      </div>
+      <a class="card-visit" href="https://behance.net" target="_blank" rel="noopener">访问 →</a>
+    </div>
+    <div class="card-url">behance.net</div>
+    <div class="card-meta"><span class="tag tag-inspo">灵感素材</span></div>
+  </div>
+  <div class="card" data-cat="inspo" style="--card-accent:var(--tag-inspo)">
+    <div class="card-head">
+      <div class="card-icon">📌</div>
+      <div class="card-title-wrap">
+        <div class="card-title">Pinterest</div>
+        <div class="card-desc">情绪板 + 配色灵感</div>
+      </div>
+      <a class="card-visit" href="https://pinterest.com" target="_blank" rel="noopener">访问 →</a>
+    </div>
+    <div class="card-url">pinterest.com</div>
+    <div class="card-meta"><span class="tag tag-inspo">灵感素材</span></div>
+  </div>
+  <div class="card" data-cat="inspo" style="--card-accent:var(--tag-inspo)">
+    <div class="card-head">
+      <div class="card-icon">🌐</div>
+      <div class="card-title-wrap">
+        <div class="card-title">花瓣网</div>
+        <div class="card-desc">中文设计灵感，国内竞品</div>
+      </div>
+      <a class="card-visit" href="https://huaban.com" target="_blank" rel="noopener">访问 →</a>
+    </div>
+    <div class="card-url">huaban.com</div>
+    <div class="card-meta"><span class="tag tag-inspo">灵感素材</span><span class="tag" style="color:#ef4444;background:#ef444418">竞品</span></div>
+  </div>
+
+<!-- ───────────── 生活 ───────────── -->
+  <div class="card" data-cat="life" style="--card-accent:var(--tag-life)">
+    <div class="card-head">
+      <div class="card-icon">🍼</div>
+      <div class="card-title-wrap">
+        <div class="card-title">多米成长记录</div>
+        <div class="card-desc">Domi，2025.12.05 — 正在长大 🌱</div>
+      </div>
+    </div>
+    <div class="card-meta"><span class="tag tag-life">生活</span><span class="tag" style="color:#fbbf24;background:#fbbf2418">私密</span></div>
+  </div>
+  <div class="card" data-cat="life" style="--card-accent:var(--tag-life)">
+    <div class="card-head">
+      <div class="card-icon">🌿</div>
+      <div class="card-title-wrap">
+        <div class="card-title">Wayne's Running Log</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E7%94%9F%E6%B4%BB/Wayne%27s%20Running%20Log.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-life">生活</span></div>
+  </div>
+  <div class="card" data-cat="life" style="--card-accent:var(--tag-life)">
+    <div class="card-head">
+      <div class="card-icon">🌿</div>
+      <div class="card-title-wrap">
+        <div class="card-title">上海公园地图 — 探索城市绿意</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E7%94%9F%E6%B4%BB/%E4%B8%8A%E6%B5%B7%E5%85%AC%E5%9B%AD%E5%9C%B0%E5%9B%BE%20%E2%80%94%20%E6%8E%A2%E7%B4%A2%E5%9F%8E%E5%B8%82%E7%BB%BF%E6%84%8F.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-life">生活</span></div>
+  </div>
+  <div class="card" data-cat="life" style="--card-accent:var(--tag-life)">
+    <div class="card-head">
+      <div class="card-icon">🌿</div>
+      <div class="card-title-wrap">
+        <div class="card-title">柚柚学习路径指南 — AMC8 & 小托福</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E7%94%9F%E6%B4%BB/%E6%9F%9A%E6%9F%9A%E5%AD%A6%E4%B9%A0%E8%B7%AF%E5%BE%84%E6%8C%87%E5%8D%97%20%E2%80%94%20AMC8%20%26%20%E5%B0%8F%E6%89%98%E7%A6%8F.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-life">生活</span></div>
+  </div>
+
+<!-- ───────────── 其他 ───────────── -->
+  <div class="card" data-cat="other" style="--card-accent:var(--tag-other)">
+    <div class="card-head">
+      <div class="card-icon">📄</div>
+      <div class="card-title-wrap">
+        <div class="card-title">2026: This is AGI — 红杉 AI Ascent 2026 精华</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E5%85%B6%E4%BB%96/2026_%20This%20is%20AGI%20%E2%80%94%20%E7%BA%A2%E6%9D%89%20AI%20Ascent%202026%20%E7%B2%BE%E5%8D%8E.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-other">其他</span></div>
+  </div>
+  <div class="card" data-cat="other" style="--card-accent:var(--tag-other)">
+    <div class="card-head">
+      <div class="card-icon">📄</div>
+      <div class="card-title-wrap">
+        <div class="card-title">AI 创意公司全景研究 · 9 家深度对比 v1.2</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E5%85%B6%E4%BB%96/AI%20%E5%88%9B%E6%84%8F%E5%85%AC%E5%8F%B8%E5%85%A8%E6%99%AF%E7%A0%94%E7%A9%B6%20%C2%B7%209%20%E5%AE%B6%E6%B7%B1%E5%BA%A6%E5%AF%B9%E6%AF%94%20v1.2%20_%20Wayne%20%E7%A0%94%E7%A9%B6%E5%AE%A4.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-other">其他</span></div>
+  </div>
+  <div class="card" data-cat="other" style="--card-accent:var(--tag-other)">
+    <div class="card-head">
+      <div class="card-icon">📄</div>
+      <div class="card-title-wrap">
+        <div class="card-title">AI 指针：50年来鼠标的第一次进化</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E5%85%B6%E4%BB%96/AI%20%E6%8C%87%E9%92%88%EF%BC%9A50%E5%B9%B4%E6%9D%A5%E9%BC%A0%E6%A0%87%E7%9A%84%E7%AC%AC%E4%B8%80%E6%AC%A1%E8%BF%9B%E5%8C%96%20%C2%B7%20Wayne%E7%A0%94%E7%A9%B6%E5%AE%A4.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-other">其他</span></div>
+  </div>
+  <div class="card" data-cat="other" style="--card-accent:var(--tag-other)">
+    <div class="card-head">
+      <div class="card-icon">📄</div>
+      <div class="card-title-wrap">
+        <div class="card-title">AI 能力交易平台竞品研究 2026</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E5%85%B6%E4%BB%96/AI%20%E8%83%BD%E5%8A%9B%E4%BA%A4%E6%98%93%E5%B9%B3%E5%8F%B0%E7%AB%9E%E5%93%81%E7%A0%94%E7%A9%B6%202026.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-other">其他</span></div>
+  </div>
+  <div class="card" data-cat="other" style="--card-accent:var(--tag-other)">
+    <div class="card-head">
+      <div class="card-icon">📄</div>
+      <div class="card-title-wrap">
+        <div class="card-title">Claude Code 官方教程 · 图文精读版</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E5%85%B6%E4%BB%96/Claude%20Code%20%E5%AE%98%E6%96%B9%E6%95%99%E7%A8%8B%20%C2%B7%20%E5%9B%BE%E6%96%87%E7%B2%BE%E8%AF%BB%E7%89%88.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-other">其他</span></div>
+  </div>
+  <div class="card" data-cat="other" style="--card-accent:var(--tag-other)">
+    <div class="card-head">
+      <div class="card-icon">📄</div>
+      <div class="card-title-wrap">
+        <div class="card-title">HTML 出奇地好用 — Wayne研究室</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E5%85%B6%E4%BB%96/HTML%20%E5%87%BA%E5%A5%87%E5%9C%B0%E5%A5%BD%E7%94%A8%20%E2%80%94%20Wayne%E7%A0%94%E7%A9%B6%E5%AE%A4.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-other">其他</span></div>
+  </div>
+  <div class="card" data-cat="other" style="--card-accent:var(--tag-other)">
+    <div class="card-head">
+      <div class="card-icon">📄</div>
+      <div class="card-title-wrap">
+        <div class="card-title">IMDB Top 250 · 电影艺术殿堂</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E5%85%B6%E4%BB%96/IMDB%20Top%20250%20%C2%B7%20%E7%94%B5%E5%BD%B1%E8%89%BA%E6%9C%AF%E6%AE%BF%E5%A0%82.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-other">其他</span></div>
+  </div>
+  <div class="card" data-cat="other" style="--card-accent:var(--tag-other)">
+    <div class="card-head">
+      <div class="card-icon">📄</div>
+      <div class="card-title-wrap">
+        <div class="card-title">Icons · ChatGPT + 主流图标库</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E5%85%B6%E4%BB%96/Icons%20%C2%B7%20ChatGPT%20%2B%20%E4%B8%BB%E6%B5%81%E5%9B%BE%E6%A0%87%E5%BA%93.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-other">其他</span></div>
+  </div>
+  <div class="card" data-cat="other" style="--card-accent:var(--tag-other)">
+    <div class="card-head">
+      <div class="card-icon">📄</div>
+      <div class="card-title-wrap">
+        <div class="card-title">Polymarket 信号 · wwei.ai</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E5%85%B6%E4%BB%96/Polymarket%20%E4%BF%A1%E5%8F%B7%20%C2%B7%20wwei.ai.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-other">其他</span></div>
+  </div>
+  <div class="card" data-cat="other" style="--card-accent:var(--tag-other)">
+    <div class="card-head">
+      <div class="card-icon">📄</div>
+      <div class="card-title-wrap">
+        <div class="card-title">The Good Life · 哈佛85年研究 · 读书报告</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E5%85%B6%E4%BB%96/The%20Good%20Life%20%C2%B7%20%E5%93%88%E4%BD%9B85%E5%B9%B4%E7%A0%94%E7%A9%B6%20%C2%B7%20%E8%AF%BB%E4%B9%A6%E6%8A%A5%E5%91%8A.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-other">其他</span></div>
+  </div>
+  <div class="card" data-cat="other" style="--card-accent:var(--tag-other)">
+    <div class="card-head">
+      <div class="card-icon">📄</div>
+      <div class="card-title-wrap">
+        <div class="card-title">Wayne 的 90 天减腹脂作战图</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E5%85%B6%E4%BB%96/Wayne%20%E7%9A%84%2090%20%E5%A4%A9%E5%87%8F%E8%85%B9%E8%84%82%E4%BD%9C%E6%88%98%E5%9B%BE.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-other">其他</span></div>
+  </div>
+  <div class="card" data-cat="other" style="--card-accent:var(--tag-other)">
+    <div class="card-head">
+      <div class="card-icon">📄</div>
+      <div class="card-title-wrap">
+        <div class="card-title">qt-cyNote · 一键发千图创意笔记</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E5%85%B6%E4%BB%96/qt-cyNote%20%C2%B7%20%E4%B8%80%E9%94%AE%E5%8F%91%E5%8D%83%E5%9B%BE%E5%88%9B%E6%84%8F%E7%AC%94%E8%AE%B0.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-other">其他</span></div>
+  </div>
+  <div class="card" data-cat="other" style="--card-accent:var(--tag-other)">
+    <div class="card-head">
+      <div class="card-icon">📄</div>
+      <div class="card-title-wrap">
+        <div class="card-title">企鹅兰登·伟大的思想 · 20本思想精华导读</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E5%85%B6%E4%BB%96/%E4%BC%81%E9%B9%85%E5%85%B0%E7%99%BB%C2%B7%E4%BC%9F%E5%A4%A7%E7%9A%84%E6%80%9D%E6%83%B3%20%C2%B7%2020%E6%9C%AC%E6%80%9D%E6%83%B3%E7%B2%BE%E5%8D%8E%E5%AF%BC%E8%AF%BB.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-other">其他</span></div>
+  </div>
+  <div class="card" data-cat="other" style="--card-accent:var(--tag-other)">
+    <div class="card-head">
+      <div class="card-icon">📄</div>
+      <div class="card-title-wrap">
+        <div class="card-title">千图 AI Demo 实践问卷</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E5%85%B6%E4%BB%96/%E5%8D%83%E5%9B%BE%20AI%20Demo%20%E5%AE%9E%E8%B7%B5%E9%97%AE%E5%8D%B7.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-other">其他</span></div>
+  </div>
+  <div class="card" data-cat="other" style="--card-accent:var(--tag-other)">
+    <div class="card-head">
+      <div class="card-icon">📄</div>
+      <div class="card-title-wrap">
+        <div class="card-title">千图AI转型参与度调研</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E5%85%B6%E4%BB%96/%E5%8D%83%E5%9B%BEAI%E8%BD%AC%E5%9E%8B%E5%8F%82%E4%B8%8E%E5%BA%A6%E8%B0%83%E7%A0%94.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-other">其他</span></div>
+  </div>
+  <div class="card" data-cat="other" style="--card-accent:var(--tag-other)">
+    <div class="card-head">
+      <div class="card-icon">📄</div>
+      <div class="card-title-wrap">
+        <div class="card-title">当心跳与你为敌 · 焦虑症温柔指南</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E5%85%B6%E4%BB%96/%E5%BD%93%E5%BF%83%E8%B7%B3%E4%B8%8E%E4%BD%A0%E4%B8%BA%E6%95%8C%20%C2%B7%20%E7%84%A6%E8%99%91%E7%97%87%E6%B8%A9%E6%9F%94%E6%8C%87%E5%8D%97.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-other">其他</span></div>
+  </div>
+  <div class="card" data-cat="other" style="--card-accent:var(--tag-other)">
+    <div class="card-head">
+      <div class="card-icon">📄</div>
+      <div class="card-title-wrap">
+        <div class="card-title">思维之上 — AI时代的元问题</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E5%85%B6%E4%BB%96/%E6%80%9D%E7%BB%B4%E4%B9%8B%E4%B8%8A%20%E2%80%94%20AI%E6%97%B6%E4%BB%A3%E7%9A%84%E5%85%83%E9%97%AE%E9%A2%98.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-other">其他</span></div>
+  </div>
+  <div class="card" data-cat="other" style="--card-accent:var(--tag-other)">
+    <div class="card-head">
+      <div class="card-icon">📄</div>
+      <div class="card-title-wrap">
+        <div class="card-title">我眼中的美 — 从一束光到一整个文明的追问</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E5%85%B6%E4%BB%96/%E6%88%91%E7%9C%BC%E4%B8%AD%E7%9A%84%E7%BE%8E%20%E2%80%94%20%E4%BB%8E%E4%B8%80%E6%9D%9F%E5%85%89%E5%88%B0%E4%B8%80%E6%95%B4%E4%B8%AA%E6%96%87%E6%98%8E%E7%9A%84%E8%BF%BD%E9%97%AE.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-other">其他</span></div>
+  </div>
+  <div class="card" data-cat="other" style="--card-accent:var(--tag-other)">
+    <div class="card-head">
+      <div class="card-icon">📄</div>
+      <div class="card-title-wrap">
+        <div class="card-title">排版台 · v1.0</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E5%85%B6%E4%BB%96/%E6%8E%92%E7%89%88%E5%8F%B0%20%C2%B7%20v1.0.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-other">其他</span></div>
+  </div>
+  <div class="card" data-cat="other" style="--card-accent:var(--tag-other)">
+    <div class="card-head">
+      <div class="card-icon">📄</div>
+      <div class="card-title-wrap">
+        <div class="card-title">播客中文台 · 精品科技 CEO 访谈中文简报</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E5%85%B6%E4%BB%96/%E6%92%AD%E5%AE%A2%E4%B8%AD%E6%96%87%E5%8F%B0%20%C2%B7%20%E7%B2%BE%E5%93%81%E7%A7%91%E6%8A%80%20CEO%20%E8%AE%BF%E8%B0%88%E4%B8%AD%E6%96%87%E7%AE%80%E6%8A%A5.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-other">其他</span></div>
+  </div>
+  <div class="card" data-cat="other" style="--card-accent:var(--tag-other)">
+    <div class="card-head">
+      <div class="card-icon">📄</div>
+      <div class="card-title-wrap">
+        <div class="card-title">柚柚成语故事</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E5%85%B6%E4%BB%96/%E6%9F%9A%E6%9F%9A%E6%88%90%E8%AF%AD%E6%95%85%E4%BA%8B.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-other">其他</span></div>
+  </div>
+  <div class="card" data-cat="other" style="--card-accent:var(--tag-other)">
+    <div class="card-head">
+      <div class="card-icon">📄</div>
+      <div class="card-title-wrap">
+        <div class="card-title">阿德勒 · 给成年人的心理学课 — 自卑、勇气与生命的意义</div>
+      </div>
+      <a class="card-visit" href="%E6%96%87%E4%BB%B6/%E5%85%B6%E4%BB%96/%E9%98%BF%E5%BE%B7%E5%8B%92%20%C2%B7%20%E7%BB%99%E6%88%90%E5%B9%B4%E4%BA%BA%E7%9A%84%E5%BF%83%E7%90%86%E5%AD%A6%E8%AF%BE%20%E2%80%94%20%E8%87%AA%E5%8D%91%E3%80%81%E5%8B%87%E6%B0%94%E4%B8%8E%E7%94%9F%E5%91%BD%E7%9A%84%E6%84%8F%E4%B9%89.html" target="_blank" rel="noopener">打开 →</a>
+    </div>
+    <div class="card-meta"><span class="tag tag-other">其他</span></div>
+  </div>
+
+</div><!-- /grid -->
+
+<div class="footer" id="footer">Zoey · 站点导航</div>
+
+<script>
+const cards = [...document.querySelectorAll('.card[data-cat]')];
+const tabs  = [...document.querySelectorAll('.tab[data-cat]')];
+
+// 统计
+const counts = {};
+cards.forEach(c => {
+  const cat = c.dataset.cat;
+  counts[cat] = (counts[cat] || 0) + 1;
+});
+
+tabs.forEach(tab => {
+  const cat = tab.dataset.cat;
+  const span = tab.querySelector('.count');
+  if (cat === 'all') {
+    span.textContent = cards.length;
+    document.getElementById('counter').textContent = cards.length + ' 个站点';
+    document.getElementById('footer').textContent = 'Zoey · ' + cards.length + ' 个站点';
+  } else {
+    span.textContent = counts[cat] || 0;
+  }
+});
+
+// 筛选
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const cat = tab.dataset.cat;
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    cards.forEach(card => {
+      card.classList.toggle('hidden', cat !== 'all' && card.dataset.cat !== cat);
+    });
+  });
+});
+
+// 入场动画延迟
+cards.forEach((c, i) => { c.style.animationDelay = (i * 20) + 'ms'; });
+</script>
+</body>
+</html>

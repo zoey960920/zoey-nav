@@ -1,0 +1,187 @@
+/* 柚柚成语故事 · 通用视觉系统 v0.3 */
+
+:root{
+  /* 中国传统色板 */
+  --paper:           #F5EFE2;  /* 宣纸白 */
+  --paper-warm:      #EFE6D2;  /* 暖宣纸 */
+  --vermillion:      #C04851;  /* 朱砂红 */
+  --indigo:          #2E5C6E;  /* 靛青 */
+  --ochre:           #D5A661;  /* 土黄 */
+  --soot:            #312920;  /* 松烟黑 */
+  --pink:            #F0CDD3;  /* 淡粉 */
+  --green:           #8FB573;  /* 嫩绿 */
+  --gold:            #D9A441;  /* 金 */
+  --duck:            #B5C6B0;  /* 鸭蛋青 */
+
+  /* 字体阶梯 */
+  --t-hero: clamp(36px, 6vw, 72px);
+  --t-h1:   clamp(28px, 4vw, 44px);
+  --t-h2:   clamp(22px, 3vw, 32px);
+  --t-h3:   clamp(18px, 2.4vw, 22px);
+  --t-body: 16px;
+  --t-small:13px;
+
+  /* 圆角 */
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 20px;
+  --r-xl: 28px;
+
+  /* 阴影 */
+  --shadow-sm: 0 1px 3px rgba(49,41,32,.06), 0 4px 12px rgba(49,41,32,.04);
+  --shadow-md: 0 2px 6px rgba(49,41,32,.08), 0 12px 32px rgba(49,41,32,.06);
+  --shadow-lg: 0 4px 12px rgba(49,41,32,.12), 0 24px 48px rgba(49,41,32,.08);
+}
+
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+
+html,body{
+  font-family:"PingFang SC","Hiragino Sans GB","Source Han Sans CN","Microsoft YaHei",sans-serif;
+  background:var(--paper);
+  color:var(--soot);
+  line-height:1.7;
+  font-size:var(--t-body);
+  /* iOS 安全区 */
+  padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  /* 微妙的纸纹背景 */
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(192,72,81,.03) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(46,92,110,.03) 0%, transparent 40%);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+button{
+  font-family:inherit;font-size:inherit;border:none;background:none;cursor:pointer;
+  padding:0;color:inherit;
+}
+
+a{color:var(--soot);text-decoration:none}
+img{display:block;max-width:100%;height:auto}
+
+/* 顶部品牌条 */
+.brand{
+  display:flex;align-items:center;gap:10px;
+  padding:14px 24px;
+  font-weight:700;font-size:16px;letter-spacing:1px;
+}
+.brand .seal{
+  display:inline-block;width:28px;height:28px;
+  background:var(--vermillion);color:#fff;
+  border-radius:6px;
+  display:grid;place-items:center;font-size:13px;font-weight:700;
+  transform:rotate(-4deg);
+  font-family:"STKaiti","KaiTi",serif;
+}
+
+/* 容器 */
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.wrap-narrow{max-width:720px;margin:0 auto;padding:0 24px}
+
+/* 按钮 */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:14px 28px;
+  background:var(--vermillion);color:#fff;
+  border-radius:var(--r-xl);
+  font-size:15px;font-weight:600;letter-spacing:1px;
+  transition:.2s;
+  box-shadow:var(--shadow-sm);
+}
+.btn:active{transform:translateY(1px) scale(.98)}
+.btn:hover{box-shadow:var(--shadow-md)}
+
+.btn-ghost{background:transparent;color:var(--soot);border:1.5px solid rgba(49,41,32,.15)}
+.btn-ghost:hover{border-color:var(--soot);background:rgba(49,41,32,.04)}
+
+.btn-big{padding:18px 36px;font-size:17px;border-radius:32px}
+
+/* 章节标签徽章 */
+.chip{
+  display:inline-block;padding:3px 10px;border-radius:10px;
+  font-size:11px;font-weight:600;letter-spacing:.5px;
+  background:rgba(49,41,32,.06);color:var(--soot);
+}
+.chip-vermillion{background:rgba(192,72,81,.12);color:var(--vermillion)}
+.chip-indigo{background:rgba(46,92,110,.12);color:var(--indigo)}
+.chip-ochre{background:rgba(213,166,97,.18);color:#A87A30}
+.chip-green{background:rgba(143,181,115,.2);color:#5A8543}
+
+/* 卡片 */
+.card{
+  background:#fff;border-radius:var(--r-md);
+  box-shadow:var(--shadow-sm);
+  overflow:hidden;
+  transition:.25s;
+}
+.card:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
+
+/* iOS 风格的呼吸动画（用于"今日"高亮） */
+@keyframes breathe {
+  0%, 100% { transform:scale(1); box-shadow:0 0 0 0 rgba(192,72,81,.4); }
+  50%      { transform:scale(1.02); box-shadow:0 0 0 12px rgba(192,72,81,0); }
+}
+.breathe{ animation:breathe 2.4s ease-in-out infinite; }
+
+/* 印章效果（已学过的集数） */
+.seal-stamp{
+  position:absolute;inset:0;
+  display:grid;place-items:center;
+  pointer-events:none;
+}
+.seal-stamp::after{
+  content:"已学";
+  font-family:"STKaiti","KaiTi",serif;
+  font-size:18px;font-weight:700;
+  color:rgba(192,72,81,.85);
+  background:rgba(192,72,81,.12);
+  border:2.5px solid rgba(192,72,81,.7);
+  border-radius:8px;
+  padding:6px 12px;
+  transform:rotate(-12deg);
+  letter-spacing:2px;
+}
+
+/* utilities */
+.text-center{text-align:center}
+.muted{opacity:.6}
+.mb-1{margin-bottom:8px}
+.mb-2{margin-bottom:16px}
+.mb-3{margin-bottom:24px}
+.mb-4{margin-bottom:32px}
+.mb-5{margin-bottom:48px}
+.mt-3{margin-top:24px}
+.mt-5{margin-top:48px}
+
+/* 读音按钮 */
+.speak-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:36px;height:36px;border-radius:50%;
+  background:rgba(192,72,81,.1);
+  vertical-align:middle;
+  transition:.18s;
+  color:var(--vermillion);
+  cursor:pointer;border:none;
+}
+.speak-btn svg{width:18px;height:18px;fill:currentColor}
+.speak-btn:active{transform:scale(.9)}
+.speak-btn:hover{background:rgba(192,72,81,.18)}
+.speak-btn.speaking{
+  animation:speaking-pulse 1s ease-in-out infinite;
+  background:var(--vermillion);
+  color:#fff;
+}
+.speak-btn.large{width:48px;height:48px}
+.speak-btn.large svg{width:22px;height:22px}
+.speak-btn.small{width:28px;height:28px}
+.speak-btn.small svg{width:14px;height:14px}
+@keyframes speaking-pulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(192,72,81,.4)}
+  50%{box-shadow:0 0 0 10px rgba(192,72,81,0)}
+}
+
+/* 滚动条 */
+::-webkit-scrollbar{width:8px;height:8px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:rgba(49,41,32,.2);border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:rgba(49,41,32,.3)}

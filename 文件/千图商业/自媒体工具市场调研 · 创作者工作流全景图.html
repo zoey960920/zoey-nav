@@ -1,0 +1,5307 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)https://creatortool.wwei.ai/ -->
+<html lang="zh-CN" data-immersive-translate-page-theme="dark"><plasmo-csui><template shadowrootmode="open"><div id="plasmo-shadow-container" style="z-index: 2147483647; position: relative;"><div id="plasmo-overlay-0" class="plasmo-csui-container" style="display: flex; position: absolute; top: 0px; left: 0px;"></div></div></template></plasmo-csui><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自媒体工具市场调研 · 创作者工作流全景图</title>
+    <link rel="stylesheet" href="./自媒体工具市场调研 · 创作者工作流全景图_files/css2">
+    <style>
+/* === 主题变量 === */
+:root {
+    --bg-primary: #060A16;
+    --bg-secondary: #0C1223;
+    --bg-card: #111827;
+    --bg-card-hover: #162037;
+    --text-primary: #F0F4FF;
+    --text-secondary: #8B97B5;
+    --text-muted: #5A6680;
+    --accent: #4F9EFF;
+    --accent-green: #00D4A4;
+    --accent-orange: #FFB340;
+    --accent-pink: #FF6B8A;
+    --accent-purple: #A78BFA;
+    --accent-cyan: #22D3EE;
+    --font-display: "Sora", "Noto Sans SC", sans-serif;
+    --font-body: "IBM Plex Sans", "Noto Sans SC", sans-serif;
+    --font-mono: "IBM Plex Mono", monospace;
+    --title-size: clamp(2rem, 5vw, 4.2rem);
+    --subtitle-size: clamp(1rem, 2vw, 1.35rem);
+    --body-size: clamp(0.8rem, 1.2vw, 1rem);
+    --small-size: clamp(0.7rem, 1vw, 0.85rem);
+    --slide-padding: clamp(1rem, 3vw, 3rem);
+    --content-gap: clamp(0.6rem, 1.5vw, 1.2rem);
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --duration-normal: 0.6s;
+    --card-radius: clamp(8px, 1.2vw, 16px);
+    --glow-blue: 0 0 30px rgba(79, 158, 255, 0.15);
+    --glow-green: 0 0 30px rgba(0, 212, 164, 0.15);
+}
+
+/* === 基础重置 === */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* === viewport-base.css 注入 === */
+html, body {
+    margin: 0; padding: 0; width: 100%; height: 100%;
+    overflow: hidden; scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+body {
+    font-family: var(--font-body);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+.slide {
+    position: relative; width: 100%;
+    height: 100vh; height: 100dvh;
+    overflow: hidden; scroll-snap-align: start;
+    display: grid; align-content: center;
+    padding: var(--slide-padding);
+}
+.slide-content {
+    width: min(1200px, 100%);
+    max-height: 88vh; max-height: 88dvh;
+    margin: 0 auto; overflow: hidden;
+    display: grid; gap: var(--content-gap);
+}
+.slide h1, .slide h2, .slide h3 {
+    margin: 0; font-family: var(--font-display);
+    line-height: 1.15; letter-spacing: -0.02em;
+}
+.slide p, .slide li {
+    margin: 0; line-height: 1.6;
+    font-size: var(--body-size);
+}
+
+/* === 进度条 === */
+.progress-bar {
+    position: fixed; left: 0; top: 0; width: 0; height: 3px;
+    z-index: 9999; background: linear-gradient(90deg, var(--accent), var(--accent-green));
+    transition: width 0.2s linear;
+}
+
+/* === 导航点 === */
+.nav-dots {
+    position: fixed; right: clamp(0.4rem, 1.2vw, 0.8rem);
+    top: 50%; transform: translateY(-50%);
+    display: grid; gap: 0.35rem; z-index: 9998;
+}
+.nav-dots button {
+    width: 6px; height: 6px; border-radius: 999px;
+    border: 0; background: rgba(255,255,255,0.2); cursor: pointer;
+    transition: all 0.3s ease;
+}
+.nav-dots button.active {
+    background: var(--accent); height: 18px;
+}
+
+/* === 章节导航 === */
+.chapter-nav {
+    position: fixed; left: 0; top: 0; height: 100vh;
+    width: clamp(180px, 14vw, 220px);
+    background: rgba(6,10,22,0.95); backdrop-filter: blur(20px);
+    border-right: 1px solid rgba(79,158,255,0.1);
+    z-index: 9997; padding: clamp(1rem, 2vh, 2rem) 0;
+    display: flex; flex-direction: column; gap: 0;
+    transform: translateX(-100%); transition: transform 0.4s var(--ease-out-expo);
+}
+.chapter-nav.open { transform: translateX(0); }
+.chapter-nav a {
+    display: block; padding: clamp(0.4rem, 0.8vh, 0.6rem) clamp(0.8rem, 1.5vw, 1.2rem);
+    color: var(--text-muted); text-decoration: none;
+    font-size: var(--small-size); font-family: var(--font-body);
+    border-left: 2px solid transparent; transition: all 0.3s ease;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.chapter-nav a:hover { color: var(--text-secondary); background: rgba(79,158,255,0.05); }
+.chapter-nav a.active {
+    color: var(--accent); border-left-color: var(--accent);
+    background: rgba(79,158,255,0.08);
+}
+.nav-toggle {
+    position: fixed; left: clamp(0.5rem, 1vw, 1rem);
+    top: clamp(0.5rem, 1vh, 1rem);
+    z-index: 9999; width: 36px; height: 36px;
+    background: rgba(12,18,35,0.8); border: 1px solid rgba(79,158,255,0.2);
+    border-radius: 8px; color: var(--accent); cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; backdrop-filter: blur(10px);
+}
+
+/* === 页码 === */
+.page-counter {
+    position: fixed; bottom: clamp(0.5rem, 1.5vh, 1rem);
+    right: clamp(0.5rem, 1.5vw, 1.5rem);
+    font-family: var(--font-mono); font-size: var(--small-size);
+    color: var(--text-muted); z-index: 9998;
+}
+
+/* === 动画 === */
+.reveal {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity var(--duration-normal) var(--ease-out-expo),
+                transform var(--duration-normal) var(--ease-out-expo);
+}
+.slide.visible .reveal { opacity: 1; transform: translateY(0); }
+.reveal:nth-child(1) { transition-delay: 0.06s; }
+.reveal:nth-child(2) { transition-delay: 0.12s; }
+.reveal:nth-child(3) { transition-delay: 0.18s; }
+.reveal:nth-child(4) { transition-delay: 0.24s; }
+.reveal:nth-child(5) { transition-delay: 0.30s; }
+.reveal:nth-child(6) { transition-delay: 0.36s; }
+
+.reveal-scale {
+    opacity: 0; transform: scale(0.92);
+    transition: opacity 0.6s, transform 0.6s var(--ease-out-expo);
+}
+.slide.visible .reveal-scale { opacity: 1; transform: scale(1); }
+
+/* === 通用组件 === */
+.tag {
+    display: inline-block; padding: clamp(2px, 0.3vh, 4px) clamp(6px, 0.8vw, 10px);
+    border-radius: 4px; font-size: clamp(0.6rem, 0.8vw, 0.75rem);
+    font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;
+}
+.tag-blue { background: rgba(79,158,255,0.15); color: var(--accent); }
+.tag-green { background: rgba(0,212,164,0.15); color: var(--accent-green); }
+.tag-orange { background: rgba(255,179,64,0.15); color: var(--accent-orange); }
+.tag-pink { background: rgba(255,107,138,0.15); color: var(--accent-pink); }
+.tag-purple { background: rgba(167,139,250,0.15); color: var(--accent-purple); }
+
+.metric-card {
+    background: var(--bg-card); border: 1px solid rgba(79,158,255,0.08);
+    border-radius: var(--card-radius); padding: clamp(0.8rem, 1.5vw, 1.2rem);
+    transition: all 0.3s ease;
+}
+.metric-card:hover {
+    background: var(--bg-card-hover); border-color: rgba(79,158,255,0.2);
+    box-shadow: var(--glow-blue);
+}
+.metric-number {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: clamp(1.5rem, 3.5vw, 2.8rem);
+    background: linear-gradient(135deg, var(--accent), var(--accent-green));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text; line-height: 1.1;
+}
+.metric-label {
+    font-size: var(--small-size); color: var(--text-secondary);
+    margin-top: clamp(2px, 0.4vh, 6px);
+}
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(0.5rem, 1.2vw, 1rem); }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(0.5rem, 1.2vw, 1rem); }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(0.5rem, 1vw, 0.8rem); }
+.grid-6 { display: grid; grid-template-columns: repeat(6, 1fr); gap: clamp(0.4rem, 0.8vw, 0.6rem); }
+
+/* === 流程图专用 === */
+.flow-chain {
+    display: flex; align-items: center; justify-content: center;
+    gap: clamp(0.3rem, 0.8vw, 0.6rem); flex-wrap: nowrap;
+}
+.flow-node {
+    background: var(--bg-card); border: 1px solid rgba(79,158,255,0.12);
+    border-radius: var(--card-radius); padding: clamp(0.5rem, 1vw, 0.8rem);
+    text-align: center; flex: 1; min-width: 0; transition: all 0.3s ease;
+}
+.flow-node:hover { border-color: var(--accent); box-shadow: var(--glow-blue); }
+.flow-icon { font-size: clamp(1.2rem, 2vw, 1.8rem); margin-bottom: clamp(2px, 0.3vh, 4px); }
+.flow-name { font-size: clamp(0.65rem, 0.9vw, 0.8rem); font-weight: 600; color: var(--text-primary); }
+.flow-arrow { color: var(--accent); font-size: clamp(0.8rem, 1.2vw, 1rem); flex-shrink: 0; }
+
+/* === 工具卡片 === */
+.tool-card {
+    background: var(--bg-card); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: var(--card-radius); padding: clamp(0.6rem, 1.2vw, 1rem);
+    display: flex; flex-direction: column; gap: clamp(3px, 0.5vh, 6px);
+    transition: all 0.3s ease;
+}
+.tool-card:hover { border-color: rgba(79,158,255,0.3); transform: translateY(-2px); }
+.tool-name { font-weight: 700; font-size: clamp(0.75rem, 1vw, 0.9rem); color: var(--text-primary); }
+.tool-desc { font-size: var(--small-size); color: var(--text-secondary); line-height: 1.4; }
+.tool-platform { font-size: clamp(0.6rem, 0.7vw, 0.7rem); color: var(--text-muted); }
+
+/* === 比较表格 === */
+.compare-table {
+    width: 100%; border-collapse: collapse; font-size: var(--small-size);
+}
+.compare-table th {
+    background: rgba(79,158,255,0.08); color: var(--accent);
+    padding: clamp(4px, 0.6vh, 8px) clamp(6px, 0.8vw, 12px);
+    text-align: left; font-weight: 600; border-bottom: 1px solid rgba(79,158,255,0.15);
+}
+.compare-table td {
+    padding: clamp(4px, 0.5vh, 6px) clamp(6px, 0.8vw, 12px);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    color: var(--text-secondary);
+}
+.compare-table tr:hover td { background: rgba(79,158,255,0.03); }
+
+/* === 章节分隔页 === */
+.chapter-slide { background: var(--bg-primary); }
+.chapter-slide .slide-content {
+    text-align: center; justify-items: center; align-content: center;
+}
+.chapter-number {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: clamp(3rem, 8vw, 7rem); line-height: 1;
+    background: linear-gradient(135deg, var(--accent), var(--accent-cyan));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text; opacity: 0.3;
+}
+.chapter-title {
+    font-size: clamp(1.5rem, 3.5vw, 2.8rem); font-weight: 700;
+    color: var(--text-primary);
+}
+.chapter-sub {
+    font-size: var(--subtitle-size); color: var(--text-secondary);
+    max-width: 600px;
+}
+
+/* === 引言页 === */
+.quote-text {
+    font-family: var(--font-display); font-size: clamp(1.2rem, 2.5vw, 2rem);
+    font-weight: 300; color: var(--text-primary); line-height: 1.5;
+    border-left: 3px solid var(--accent); padding-left: clamp(0.8rem, 1.5vw, 1.5rem);
+    max-width: 800px;
+}
+.quote-source {
+    font-size: var(--small-size); color: var(--text-muted);
+    margin-top: clamp(0.3rem, 0.5vh, 0.5rem);
+}
+
+/* === 图表容器 === */
+.chart-container {
+    background: var(--bg-card); border: 1px solid rgba(79,158,255,0.08);
+    border-radius: var(--card-radius); padding: clamp(0.6rem, 1.2vw, 1rem);
+    position: relative;
+}
+.chart-title {
+    font-size: var(--small-size); color: var(--text-secondary);
+    margin-bottom: clamp(0.3rem, 0.5vh, 0.5rem); font-weight: 500;
+}
+
+/* === 桑基图模拟 === */
+.sankey-row {
+    display: flex; align-items: center; gap: clamp(0.3rem, 0.5vw, 0.5rem);
+    margin-bottom: clamp(3px, 0.4vh, 6px);
+}
+.sankey-left { width: 20%; text-align: right; font-size: var(--small-size); color: var(--text-secondary); }
+.sankey-bar {
+    height: clamp(16px, 2.5vh, 24px); border-radius: 4px;
+    transition: all 0.5s var(--ease-out-expo);
+}
+.sankey-right { font-size: var(--small-size); color: var(--text-muted); }
+
+/* === 标签切换 === */
+.tab-group {
+    display: flex; gap: clamp(4px, 0.5vw, 8px); flex-wrap: wrap;
+}
+.tab-btn {
+    padding: clamp(3px, 0.4vh, 6px) clamp(8px, 1vw, 14px);
+    border: 1px solid rgba(79,158,255,0.2); border-radius: 6px;
+    background: transparent; color: var(--text-secondary);
+    font-size: var(--small-size); cursor: pointer; transition: all 0.3s ease;
+    font-family: var(--font-body);
+}
+.tab-btn:hover { border-color: var(--accent); color: var(--accent); }
+.tab-btn.active {
+    background: rgba(79,158,255,0.15); border-color: var(--accent);
+    color: var(--accent); font-weight: 600;
+}
+
+/* === 网格背景装饰 === */
+.grid-bg::before {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+        linear-gradient(rgba(79,158,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(79,158,255,0.03) 1px, transparent 1px);
+    background-size: 50px 50px; pointer-events: none;
+}
+
+/* === 渐变装饰 === */
+.glow-tl::after {
+    content: ''; position: absolute; top: -20%; left: -10%;
+    width: 50%; height: 50%;
+    background: radial-gradient(ellipse, rgba(79,158,255,0.12) 0%, transparent 70%);
+    pointer-events: none;
+}
+.glow-br::after {
+    content: ''; position: absolute; bottom: -20%; right: -10%;
+    width: 50%; height: 50%;
+    background: radial-gradient(ellipse, rgba(0,212,164,0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* === 首页特殊 === */
+.title-slide { background: var(--bg-primary); }
+.title-slide .slide-content { text-align: center; justify-items: center; align-content: center; }
+.hero-title {
+    font-size: var(--title-size); font-weight: 800;
+    line-height: 1.08; letter-spacing: -0.03em;
+}
+.hero-gradient {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-green) 50%, var(--accent-orange) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.hero-sub {
+    font-size: var(--subtitle-size); color: var(--text-secondary);
+    max-width: 700px; line-height: 1.6;
+}
+
+/* === 高度断点 === */
+@media (max-height: 700px) {
+    .slide { padding: clamp(0.5rem, 1.5vw, 1rem); }
+    .slide-content { max-height: 86vh; gap: clamp(0.4rem, 1vw, 0.7rem); }
+}
+@media (max-height: 600px) {
+    .slide-content { max-height: 84vh; }
+    .slide p, .slide li { font-size: clamp(0.7rem, 1vw, 0.85rem); }
+}
+@media (max-height: 500px) {
+    .slide { padding: clamp(0.3rem, 1vw, 0.6rem); }
+    .slide-content { max-height: 82vh; }
+}
+@media (max-width: 768px) {
+    .chapter-nav { display: none; }
+    .nav-toggle { display: none; }
+    .grid-3, .grid-4, .grid-6 { grid-template-columns: repeat(2, 1fr); }
+    .flow-chain { flex-wrap: wrap; }
+}
+
+/* === prefers-reduced-motion === */
+@media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+    html, body { scroll-behavior: auto; }
+}
+
+/* === 操作提示 === */
+.onboarding-tip {
+    position: fixed; bottom: clamp(2rem, 4vh, 3rem);
+    left: 50%; transform: translateX(-50%);
+    background: rgba(12,18,35,0.95); border: 1px solid rgba(79,158,255,0.2);
+    border-radius: 12px; padding: clamp(0.5rem, 1vh, 0.8rem) clamp(1rem, 2vw, 1.5rem);
+    color: var(--text-secondary); font-size: var(--small-size);
+    z-index: 10000; backdrop-filter: blur(20px);
+    display: flex; align-items: center; gap: 0.8rem;
+    animation: tipFade 0.6s ease; cursor: pointer;
+}
+.onboarding-tip kbd {
+    background: rgba(79,158,255,0.15); padding: 2px 6px;
+    border-radius: 4px; color: var(--accent); font-family: var(--font-mono);
+}
+@keyframes tipFade {
+    from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* === 高亮文字 === */
+.hl { color: var(--accent); font-weight: 600; }
+.hl-green { color: var(--accent-green); font-weight: 600; }
+.hl-orange { color: var(--accent-orange); font-weight: 600; }
+.hl-pink { color: var(--accent-pink); font-weight: 600; }
+
+/* === 内联柱状图 === */
+.bar-h {
+    height: clamp(18px, 2.5vh, 26px); border-radius: 4px;
+    display: flex; align-items: center; padding-left: 8px;
+    font-size: clamp(0.6rem, 0.8vw, 0.72rem); font-weight: 600;
+    color: #fff; transition: width 0.8s var(--ease-out-expo);
+    margin-bottom: clamp(3px, 0.4vh, 5px);
+}
+.bar-label {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: var(--small-size); color: var(--text-secondary);
+    margin-bottom: 2px;
+}
+
+/* === 双列布局 === */
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 2vw, 2rem); align-items: start; }
+@media (max-width: 768px) { .split { grid-template-columns: 1fr; } }
+
+/* === 时间线 === */
+.timeline-item {
+    display: flex; gap: clamp(0.5rem, 1vw, 1rem); align-items: flex-start;
+    padding-bottom: clamp(0.4rem, 0.8vh, 0.6rem);
+    border-left: 2px solid rgba(79,158,255,0.15);
+    padding-left: clamp(0.6rem, 1vw, 1rem);
+    margin-left: clamp(0.3rem, 0.5vw, 0.5rem);
+}
+.timeline-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--accent); flex-shrink: 0;
+    margin-top: 4px; margin-left: calc(-1 * clamp(0.6rem, 1vw, 1rem) - 6px);
+}
+    </style>
+<script src="./自媒体工具市场调研 · 创作者工作流全景图_files/widget.js" defer="" data-wwei-injected="1"></script><style type="text/css">
+  @font-face {
+    font-family: CuboxInter;
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("chrome-extension://bflmgpechpeohjfomgfdkkfcbhfcjohl/fonts/InterVariable.woff2") format("woff2");
+  }
+  #cubox-react-root {
+    z-index: 999999999999999999999;
+  }
+  </style><link rel="stylesheet" href="chrome-extension://bflmgpechpeohjfomgfdkkfcbhfcjohl/css/globalHighlightStyles.css"></head>
+<body>
+    <div class="progress-bar" style="width: 0%;"></div>
+    <nav class="nav-dots" aria-label="页面导航"><button aria-label="Page 1" class="active"></button><button aria-label="Page 2"></button><button aria-label="Page 3"></button><button aria-label="Page 4"></button><button aria-label="Page 5"></button><button aria-label="Page 6"></button><button aria-label="Page 7"></button><button aria-label="Page 8"></button><button aria-label="Page 9"></button><button aria-label="Page 10"></button><button aria-label="Page 11"></button><button aria-label="Page 12"></button><button aria-label="Page 13"></button><button aria-label="Page 14"></button><button aria-label="Page 15"></button><button aria-label="Page 16"></button><button aria-label="Page 17"></button><button aria-label="Page 18"></button><button aria-label="Page 19"></button><button aria-label="Page 20"></button><button aria-label="Page 21"></button><button aria-label="Page 22"></button><button aria-label="Page 23"></button><button aria-label="Page 24"></button><button aria-label="Page 25"></button><button aria-label="Page 26"></button><button aria-label="Page 27"></button><button aria-label="Page 28"></button><button aria-label="Page 29"></button><button aria-label="Page 30"></button><button aria-label="Page 31"></button><button aria-label="Page 32"></button><button aria-label="Page 33"></button><button aria-label="Page 34"></button><button aria-label="Page 35"></button><button aria-label="Page 36"></button><button aria-label="Page 37"></button><button aria-label="Page 38"></button><button aria-label="Page 39"></button><button aria-label="Page 40"></button><button aria-label="Page 41"></button><button aria-label="Page 42"></button></nav>
+    <div class="page-counter">1 / 42</div>
+
+    <button class="nav-toggle" aria-label="打开章节导航">☰</button>
+    <nav class="chapter-nav" id="chapterNav">
+        <a href="https://creatortool.wwei.ai/#" data-slide="0" class="active">封面</a>
+        <a href="https://creatortool.wwei.ai/#" data-slide="1">核心结论</a>
+        <a href="https://creatortool.wwei.ai/#" data-slide="2">市场全景</a>
+        <a href="https://creatortool.wwei.ai/#" data-slide="4">创作者画像</a>
+        <a href="https://creatortool.wwei.ai/#" data-slide="7">工作流全景</a>
+        <a href="https://creatortool.wwei.ai/#" data-slide="9">① 选题</a>
+        <a href="https://creatortool.wwei.ai/#" data-slide="10">② 脚本/写作</a>
+        <a href="https://creatortool.wwei.ai/#" data-slide="11">③ 素材制作</a>
+        <a href="https://creatortool.wwei.ai/#" data-slide="13">④ 编辑后期</a>
+        <a href="https://creatortool.wwei.ai/#" data-slide="15">⑤ 发布分发</a>
+        <a href="https://creatortool.wwei.ai/#" data-slide="16">⑥ 运营增长</a>
+        <a href="https://creatortool.wwei.ai/#" data-slide="18">内容形态分流</a>
+        <a href="https://creatortool.wwei.ai/#" data-slide="22">文字型博主</a>
+        <a href="https://creatortool.wwei.ai/#" data-slide="26">变现模型</a>
+        <a href="https://creatortool.wwei.ai/#" data-slide="30">生产资料</a>
+        <a href="https://creatortool.wwei.ai/#" data-slide="32">中外工具对比</a>
+        <a href="https://creatortool.wwei.ai/#" data-slide="35">AI冲击</a>
+        <a href="https://creatortool.wwei.ai/#" data-slide="38">CEO洞察</a>
+    </nav>
+
+    <!-- ==================== SLIDE 0: 封面 ==================== -->
+    <section class="slide title-slide grid-bg glow-tl visible" id="s0">
+        <div class="slide-content">
+            <p class="reveal" style="font-size:var(--small-size);color:var(--text-muted);letter-spacing:0.15em;text-transform:uppercase;">Wayne研究室 · 2026.04</p>
+            <h1 class="reveal hero-title">自媒体工具<br><span class="hero-gradient">市场调研报告</span></h1>
+            <p class="reveal hero-sub">从创作者工作流全链路出发，拆解2亿+创作者的工具生态、变现路径与生产资料获取方式</p>
+            <div class="reveal" style="display:flex;gap:clamp(0.5rem,1vw,1rem);margin-top:clamp(0.5rem,1vh,1rem);">
+                <span class="tag tag-blue">行业洞察</span>
+                <span class="tag tag-green">40页深度报告</span>
+                <span class="tag tag-orange">CEO视角</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 1: 核心结论 ==================== -->
+    <section class="slide grid-bg" id="s1">
+        <div class="slide-content">
+            <h2 class="reveal" style="font-size:clamp(1.3rem,2.5vw,2rem);">🎯 五个核心结论</h2>
+            <div class="reveal metric-card" style="border-left:3px solid var(--accent);">
+                <p style="font-size:var(--body-size);color:var(--text-primary);"><span class="hl">结论一：</span>自媒体的本质是"<span class="hl-green">选题→创作→分发→变现</span>"四段式价值链，工具只是流程的附着物</p>
+            </div>
+            <div class="reveal metric-card" style="border-left:3px solid var(--accent-green);">
+                <p style="font-size:var(--body-size);"><span class="hl-green">结论二：</span>91%创作者已使用AI工具，但核心瓶颈仍在<span class="hl-orange">选题判断力</span>和<span class="hl-orange">人设辨识度</span>——AI无法替代的环节</p>
+            </div>
+            <div class="reveal metric-card" style="border-left:3px solid var(--accent-orange);">
+                <p style="font-size:var(--body-size);"><span class="hl-orange">结论三：</span>文字型博主拥有最高的变现人效比——边际成本趋近于零、复利效应最强</p>
+            </div>
+            <div class="reveal metric-card" style="border-left:3px solid var(--accent-pink);">
+                <p style="font-size:var(--body-size);"><span class="hl-pink">结论四：</span>2026年变现趋势从"平台依赖"转向"私域所有权"——Owned Products + Owned Channels</p>
+            </div>
+            <div class="reveal metric-card" style="border-left:3px solid var(--accent-purple);">
+                <p style="font-size:var(--body-size);"><span style="color:var(--accent-purple);font-weight:600;">结论五：</span>中国工具生态"超级App整合"，海外"专精+API连接"——两条路径各有千秋</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 2: 市场全景-数据 ==================== -->
+    <section class="slide grid-bg glow-br" id="s2">
+        <div class="slide-content">
+            <h2 class="reveal" style="font-size:clamp(1.2rem,2vw,1.6rem);">创作者经济 · 全景数据</h2>
+            <div class="reveal grid-4">
+                <div class="metric-card"><div class="metric-number">$280B+</div><div class="metric-label">2026年全球市场规模（预估）</div></div>
+                <div class="metric-card"><div class="metric-number">2.07亿</div><div class="metric-label">全球内容创作者</div></div>
+                <div class="metric-card"><div class="metric-number">3亿+</div><div class="metric-label">中国内容创作者规模</div></div>
+                <div class="metric-card"><div class="metric-number">22.4%</div><div class="metric-label">CAGR 年复合增长率</div></div>
+            </div>
+            <div class="reveal grid-3">
+                <div class="metric-card"><div class="metric-number" style="font-size:clamp(1.2rem,2.5vw,2rem);">6000万+</div><div class="metric-label">YouTube创作者</div></div>
+                <div class="metric-card"><div class="metric-number" style="font-size:clamp(1.2rem,2.5vw,2rem);">6400万+</div><div class="metric-label">Instagram影响者</div></div>
+                <div class="metric-card"><div class="metric-number" style="font-size:clamp(1.2rem,2.5vw,2rem);">73%</div><div class="metric-label">成功创作者使用2+外部工具</div></div>
+            </div>
+            <p class="reveal" style="font-size:var(--small-size);color:var(--text-muted);text-align:center;">数据来源：DemandSage, inBeat Agency, Precedence Research, 新榜 | 事实</p>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 3: 市场增长趋势 ==================== -->
+    <section class="slide" id="s3">
+        <div class="slide-content">
+            <h2 class="reveal" style="font-size:clamp(1.2rem,2vw,1.6rem);">市场规模增长曲线 · 2020-2030</h2>
+            <div class="reveal chart-container" style="height:clamp(280px,50vh,420px);">
+                <canvas id="marketChart" width="2332" height="772" style="display: block; box-sizing: border-box; height: 386px; width: 1166px;"></canvas>
+            </div>
+            <p class="reveal" style="font-size:var(--small-size);color:var(--text-muted);text-align:center;">2026-2030为预估值 | 数据来源：Precedence Research, Coherent Market Insights</p>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 4: 章节-创作者画像 ==================== -->
+    <section class="slide chapter-slide" id="s4">
+        <div class="slide-content">
+            <div class="reveal chapter-number">01</div>
+            <h2 class="reveal chapter-title">创作者群体画像</h2>
+            <p class="reveal chapter-sub">谁在做自媒体？他们的身份、动机与分层</p>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 5: 博主身份特征 ==================== -->
+    <section class="slide grid-bg" id="s5">
+        <div class="slide-content">
+            <h2 class="reveal" style="font-size:clamp(1.1rem,2vw,1.5rem);">创作者身份光谱</h2>
+            <div class="reveal split">
+                <div>
+                    <div class="chart-container">
+                        <div class="chart-title">年龄分布（国内创作者）</div>
+                        <div class="bar-label"><span>18-25岁 · Z世代</span><span>18%</span></div>
+                        <div class="bar-h" style="width:18%;background:var(--accent-cyan);">入门</div>
+                        <div class="bar-label"><span>26-30岁 · 主力军</span><span>28%</span></div>
+                        <div class="bar-h" style="width:28%;background:var(--accent);">核心</div>
+                        <div class="bar-label"><span>31-40岁 · 经验型</span><span>31%</span></div>
+                        <div class="bar-h" style="width:31%;background:var(--accent-green);">最高占比</div>
+                        <div class="bar-label"><span>41-50岁 · 跨界者</span><span>15%</span></div>
+                        <div class="bar-h" style="width:15%;background:var(--accent-orange);">增长</div>
+                        <div class="bar-label"><span>50岁+ · 银发创作者</span><span>8%</span></div>
+                        <div class="bar-h" style="width:8%;background:var(--accent-pink);">新兴</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="chart-container">
+                        <div class="chart-title">职业背景分类</div>
+                        <div style="display:grid;gap:clamp(4px,0.5vh,8px);">
+                            <div class="tool-card"><div class="tool-name">📱 全职创作者</div><div class="tool-desc">约15-20%，以此为主业，收入依赖内容</div></div>
+                            <div class="tool-card"><div class="tool-name">💼 斜杠青年/兼职</div><div class="tool-desc">约50-60%，主业之外的第二曲线</div></div>
+                            <div class="tool-card"><div class="tool-name">🏢 企业/品牌账号</div><div class="tool-desc">约15%，由企业新媒体团队运营</div></div>
+                            <div class="tool-card"><div class="tool-name">🎓 学生/新人</div><div class="tool-desc">约10-15%，试水阶段，学习驱动</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="reveal" style="font-size:var(--small-size);color:var(--text-muted);">观点：31-40岁是创作主力——有行业积累、有表达欲、有变现意识 | 数据综合自克劳锐、新榜</p>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 6: 创作者分层 ==================== -->
+    <section class="slide" id="s6">
+        <div class="slide-content">
+            <h2 class="reveal" style="font-size:clamp(1.1rem,2vw,1.5rem);">创作者金字塔 · 从KOC到头部</h2>
+            <div class="reveal" style="display:flex;flex-direction:column;align-items:center;gap:clamp(3px,0.4vh,6px);">
+                <div class="metric-card" style="width:30%;text-align:center;background:linear-gradient(135deg,rgba(255,179,64,0.15),rgba(255,107,138,0.1));border-color:rgba(255,179,64,0.3);">
+                    <div style="font-size:var(--small-size);color:var(--accent-orange);font-weight:700;">🏆 头部 Top 0.1%</div>
+                    <div style="font-size:clamp(0.65rem,0.85vw,0.78rem);color:var(--text-secondary);">粉丝1000万+ · 年入千万+ · 团队化运营</div>
+                </div>
+                <div class="metric-card" style="width:50%;text-align:center;">
+                    <div style="font-size:var(--small-size);color:var(--accent);font-weight:700;">⭐ 腰部 KOL 5%</div>
+                    <div style="font-size:clamp(0.65rem,0.85vw,0.78rem);color:var(--text-secondary);">粉丝10-100万 · 垂直领域专家 · 品牌合作主力</div>
+                </div>
+                <div class="metric-card" style="width:70%;text-align:center;">
+                    <div style="font-size:var(--small-size);color:var(--accent-green);font-weight:700;">📊 中腰部 15%</div>
+                    <div style="font-size:clamp(0.65rem,0.85vw,0.78rem);color:var(--text-secondary);">粉丝1-10万 · 有稳定内容输出 · 开始变现</div>
+                </div>
+                <div class="metric-card" style="width:90%;text-align:center;">
+                    <div style="font-size:var(--small-size);color:var(--accent-purple);font-weight:700;">🌱 尾部 KOC + 新人 80%</div>
+                    <div style="font-size:clamp(0.65rem,0.85vw,0.78rem);color:var(--text-secondary);">粉丝&lt;1万 · 兴趣驱动 · 工具选择以免费/低成本为主</div>
+                </div>
+            </div>
+            <div class="reveal metric-card" style="border-left:3px solid var(--accent-orange);">
+                <p style="font-size:var(--body-size);"><span class="hl-orange">关键洞察：</span>2026年涨粉千万平均用时已从2018年的54天延长至601天——<span class="hl">内容质量&gt;流量红利</span>，分层固化加剧</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 7: 章节-工作流 ==================== -->
+    <section class="slide chapter-slide glow-tl" id="s7">
+        <div class="slide-content">
+            <div class="reveal chapter-number">02</div>
+            <h2 class="reveal chapter-title">工作流全景图</h2>
+            <p class="reveal chapter-sub">从选题到变现，6大核心环节 × 工具图谱</p>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 8: 工作流全景 ==================== -->
+    <section class="slide grid-bg" id="s8">
+        <div class="slide-content">
+            <h2 class="reveal" style="font-size:clamp(1.1rem,2vw,1.5rem);">自媒体内容生产全链路</h2>
+            <div class="reveal flow-chain">
+                <div class="flow-node" style="border-color:rgba(79,158,255,0.3);"><div class="flow-icon">🎯</div><div class="flow-name">选题</div></div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-node" style="border-color:rgba(0,212,164,0.3);"><div class="flow-icon">✍️</div><div class="flow-name">脚本/写作</div></div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-node" style="border-color:rgba(255,179,64,0.3);"><div class="flow-icon">📸</div><div class="flow-name">素材制作</div></div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-node" style="border-color:rgba(255,107,138,0.3);"><div class="flow-icon">🎬</div><div class="flow-name">编辑后期</div></div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-node" style="border-color:rgba(167,139,250,0.3);"><div class="flow-icon">📤</div><div class="flow-name">发布分发</div></div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-node" style="border-color:rgba(34,211,238,0.3);"><div class="flow-icon">📈</div><div class="flow-name">运营增长</div></div>
+            </div>
+            <div class="reveal" style="text-align:center;margin-top:clamp(0.3rem,0.5vh,0.5rem);">
+                <span class="flow-arrow" style="font-size:clamp(1rem,1.5vw,1.3rem);">↓</span>
+            </div>
+            <div class="reveal flow-chain" style="justify-content:center;">
+                <div class="flow-node" style="border-color:rgba(255,179,64,0.4);background:rgba(255,179,64,0.08);max-width:300px;">
+                    <div class="flow-icon">💰</div><div class="flow-name">变现转化</div>
+                </div>
+            </div>
+            <div class="reveal metric-card" style="border-left:3px solid var(--accent);">
+                <p style="font-size:var(--body-size);"><span class="hl">核心观点：</span>每个环节都有10-20个工具竞争，但创作者真正的护城河不在工具，在于<span class="hl-green">选题直觉</span>（前端）和<span class="hl-orange">信任资产</span>（后端）——这两个环节工具渗透率最低</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 9: 选题环节 ==================== -->
+    <section class="slide" id="s9">
+        <div class="slide-content">
+            <div class="reveal" style="display:flex;align-items:center;gap:clamp(0.4rem,0.8vw,0.8rem);">
+                <span style="font-size:clamp(1.2rem,2vw,1.6rem);">🎯</span>
+                <h2 style="font-size:clamp(1.1rem,2vw,1.5rem);">环节① 选题 · 内容的生死线</h2>
+            </div>
+            <p class="reveal" style="color:var(--text-secondary);">选题决定80%的流量上限。它不是"想一个标题"，而是"找到供需缺口"。</p>
+            <div class="reveal split">
+                <div>
+                    <div style="font-size:var(--small-size);color:var(--accent);font-weight:600;margin-bottom:clamp(3px,0.4vh,6px);">中国工具</div>
+                    <div class="tool-card"><div class="tool-name">新榜 / 新红 / 蝉妈妈</div><div class="tool-desc">热门内容追踪、爆款分析、竞品监控</div><div class="tool-platform">抖音/小红书/公众号</div></div>
+                    <div class="tool-card" style="margin-top:clamp(3px,0.4vh,6px);"><div class="tool-name">5118 / 站长工具</div><div class="tool-desc">关键词挖掘、搜索热度趋势、长尾词发现</div><div class="tool-platform">全平台SEO</div></div>
+                    <div class="tool-card" style="margin-top:clamp(3px,0.4vh,6px);"><div class="tool-name">微信指数 / 巨量算数</div><div class="tool-desc">平台官方数据，实时热度趋势</div><div class="tool-platform">微信/抖音</div></div>
+                </div>
+                <div>
+                    <div style="font-size:var(--small-size);color:var(--accent-green);font-weight:600;margin-bottom:clamp(3px,0.4vh,6px);">海外工具</div>
+                    <div class="tool-card"><div class="tool-name">VidIQ / TubeBuddy</div><div class="tool-desc">YouTube关键词研究、竞品频道分析</div><div class="tool-platform">YouTube</div></div>
+                    <div class="tool-card" style="margin-top:clamp(3px,0.4vh,6px);"><div class="tool-name">Google Trends / AnswerThePublic</div><div class="tool-desc">搜索趋势、用户真实提问挖掘</div><div class="tool-platform">全平台</div></div>
+                    <div class="tool-card" style="margin-top:clamp(3px,0.4vh,6px);"><div class="tool-name">SparkToro / BuzzSumo</div><div class="tool-desc">受众画像分析、热门内容发现</div><div class="tool-platform">全平台</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 10: 脚本/写作 ==================== -->
+    <section class="slide grid-bg" id="s10">
+        <div class="slide-content">
+            <div class="reveal" style="display:flex;align-items:center;gap:clamp(0.4rem,0.8vw,0.8rem);">
+                <span style="font-size:clamp(1.2rem,2vw,1.6rem);">✍️</span>
+                <h2 style="font-size:clamp(1.1rem,2vw,1.5rem);">环节② 脚本/文案写作</h2>
+            </div>
+            <p class="reveal" style="color:var(--text-secondary);">AI最先渗透的环节——但"写"容易，"写对"难。</p>
+            <div class="reveal grid-3">
+                <div class="tool-card" style="border-top:2px solid var(--accent);">
+                    <div class="tool-name">ChatGPT / Claude</div>
+                    <div class="tool-desc">通用文案生成、选题brainstorm、大纲扩写</div>
+                    <div class="tool-platform">$20/月 · 全平台通用</div>
+                </div>
+                <div class="tool-card" style="border-top:2px solid var(--accent-green);">
+                    <div class="tool-name">秘塔写作猫</div>
+                    <div class="tool-desc">小红书/公众号/短视频脚本自动生成框架</div>
+                    <div class="tool-platform">免费/付费 · 中国市场</div>
+                </div>
+                <div class="tool-card" style="border-top:2px solid var(--accent-orange);">
+                    <div class="tool-name">Jasper / Copy.ai</div>
+                    <div class="tool-desc">营销文案专精、品牌语气训练</div>
+                    <div class="tool-platform">$39+/月 · 海外市场</div>
+                </div>
+                <div class="tool-card" style="border-top:2px solid var(--accent-pink);">
+                    <div class="tool-name">Notion AI</div>
+                    <div class="tool-desc">笔记→大纲→文章的一站式工作流</div>
+                    <div class="tool-platform">$10/月 · 全平台</div>
+                </div>
+                <div class="tool-card" style="border-top:2px solid var(--accent-purple);">
+                    <div class="tool-name">提词器App（开拍等）</div>
+                    <div class="tool-desc">短视频拍摄时的脚本提词滚动</div>
+                    <div class="tool-platform">免费 · 短视频场景</div>
+                </div>
+                <div class="tool-card" style="border-top:2px solid var(--accent-cyan);">
+                    <div class="tool-name">句易网</div>
+                    <div class="tool-desc">20+平台敏感词检测，规避限流风险</div>
+                    <div class="tool-platform">免费 · 中国市场</div>
+                </div>
+            </div>
+            <div class="reveal metric-card" style="border-left:3px solid var(--accent-orange);">
+                <p style="font-size:var(--small-size);"><span class="hl-orange">洞察：</span>AI文案工具解决的是"效率"，但创作者的竞争力在于"视角"。AI帮你写80分，从80到95靠人。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 11: 素材制作 ==================== -->
+    <section class="slide" id="s11">
+        <div class="slide-content">
+            <div class="reveal" style="display:flex;align-items:center;gap:clamp(0.4rem,0.8vw,0.8rem);">
+                <span style="font-size:clamp(1.2rem,2vw,1.6rem);">📸</span>
+                <h2 style="font-size:clamp(1.1rem,2vw,1.5rem);">环节③ 素材制作（图/视频/音频）</h2>
+            </div>
+            <div class="reveal tab-group">
+                <button class="tab-btn active" onclick="showTab(this,&#39;photo&#39;)">📷 图片/设计</button>
+                <button class="tab-btn" onclick="showTab(this,&#39;video&#39;)">🎥 视频拍摄</button>
+                <button class="tab-btn" onclick="showTab(this,&#39;audio&#39;)">🎙️ 音频/播客</button>
+                <button class="tab-btn" onclick="showTab(this,&#39;ai-gen&#39;)">🤖 AI生成</button>
+            </div>
+            <div class="reveal" id="tab-photo">
+                <div class="grid-3">
+                    <div class="tool-card"><div class="tool-name">Canva</div><div class="tool-desc">封面/缩略图/信息图设计，10万+模板</div><div class="tool-platform">$15/月 · 全球最大设计工具</div></div>
+                    <div class="tool-card"><div class="tool-name">稿定设计 / 创客贴</div><div class="tool-desc">中国版Canva，公众号头图/小红书封面</div><div class="tool-platform">免费/付费 · 中国市场</div></div>
+                    <div class="tool-card"><div class="tool-name">Figma / Photoshop</div><div class="tool-desc">专业级设计，团队协作</div><div class="tool-platform">$12-22/月 · 专业创作者</div></div>
+                </div>
+            </div>
+            <div class="reveal" id="tab-video" style="display:none;">
+                <div class="grid-3">
+                    <div class="tool-card"><div class="tool-name">手机+云台</div><div class="tool-desc">DJI OM系列、iPhone ProRes，90%创作者的起点</div><div class="tool-platform">￥500-2000</div></div>
+                    <div class="tool-card"><div class="tool-name">专业相机</div><div class="tool-desc">Sony ZV-E10、Canon R50等Vlog向机型</div><div class="tool-platform">￥4000-8000</div></div>
+                    <div class="tool-card"><div class="tool-name">灯光/收音</div><div class="tool-desc">环形灯、罗德麦克风、无线领夹麦</div><div class="tool-platform">￥200-2000</div></div>
+                </div>
+            </div>
+            <div class="reveal" id="tab-audio" style="display:none;">
+                <div class="grid-3">
+                    <div class="tool-card"><div class="tool-name">Riverside / Descript</div><div class="tool-desc">远程高清录制、AI转录、一键编辑</div><div class="tool-platform">$15-24/月</div></div>
+                    <div class="tool-card"><div class="tool-name">小宇宙 / 喜马拉雅</div><div class="tool-desc">中国播客平台，内置录制+发布</div><div class="tool-platform">免费</div></div>
+                    <div class="tool-card"><div class="tool-name">Audacity / GarageBand</div><div class="tool-desc">免费音频编辑，多轨混音</div><div class="tool-platform">免费</div></div>
+                </div>
+            </div>
+            <div class="reveal" id="tab-ai-gen" style="display:none;">
+                <div class="grid-3">
+                    <div class="tool-card"><div class="tool-name">Midjourney / DALL-E 3</div><div class="tool-desc">AI图像生成，封面/插画/概念图</div><div class="tool-platform">$10-30/月</div></div>
+                    <div class="tool-card"><div class="tool-name">Runway Gen-4 / 可灵</div><div class="tool-desc">AI视频生成，图生视频、文生视频</div><div class="tool-platform">$12+/月</div></div>
+                    <div class="tool-card"><div class="tool-name">ElevenLabs / 讯飞配音</div><div class="tool-desc">AI语音合成、多语种配音</div><div class="tool-platform">免费/付费</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 12: 素材获取来源 ==================== -->
+    <section class="slide grid-bg" id="s12">
+        <div class="slide-content">
+            <h2 class="reveal" style="font-size:clamp(1.1rem,2vw,1.5rem);">素材获取 · 创作者的"原材料"从哪来？</h2>
+            <div class="reveal grid-3">
+                <div class="metric-card" style="border-top:2px solid var(--accent);">
+                    <div style="font-size:clamp(0.9rem,1.2vw,1.1rem);font-weight:700;color:var(--accent);">版权素材库</div>
+                    <div style="font-size:var(--small-size);color:var(--text-secondary);margin-top:4px;">
+                        Unsplash / Pexels（免费图片）<br>
+                        千图网 / 摄图网（付费图库）<br>
+                        Envato / Shutterstock（付费）<br>
+                        Artlist / Epidemic Sound（音乐）
+                    </div>
+                </div>
+                <div class="metric-card" style="border-top:2px solid var(--accent-green);">
+                    <div style="font-size:clamp(0.9rem,1.2vw,1.1rem);font-weight:700;color:var(--accent-green);">AI生成素材</div>
+                    <div style="font-size:var(--small-size);color:var(--text-secondary);margin-top:4px;">
+                        Midjourney / Stable Diffusion（图）<br>
+                        Suno / Udio（AI音乐）<br>
+                        Runway / Sora / 可灵（视频）<br>
+                        2026年增速最快的来源
+                    </div>
+                </div>
+                <div class="metric-card" style="border-top:2px solid var(--accent-orange);">
+                    <div style="font-size:clamp(0.9rem,1.2vw,1.1rem);font-weight:700;color:var(--accent-orange);">自主创作+UGC</div>
+                    <div style="font-size:var(--small-size);color:var(--text-secondary);margin-top:4px;">
+                        自拍/自录（最强差异化）<br>
+                        屏幕录制（教程类）<br>
+                        用户投稿/共创<br>
+                        社交媒体热点截取
+                    </div>
+                </div>
+            </div>
+            <div class="reveal metric-card" style="border-left:3px solid var(--accent-green);">
+                <p style="font-size:var(--small-size);"><span class="hl-green">千图网机会：</span>创作者对"一站式版权素材+AI增强"的需求在增长。千图网的核心优势可以从"图片供应商"升级为"创作者素材引擎"。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 13: 编辑后期 ==================== -->
+    <section class="slide" id="s13">
+        <div class="slide-content">
+            <div class="reveal" style="display:flex;align-items:center;gap:clamp(0.4rem,0.8vw,0.8rem);">
+                <span style="font-size:clamp(1.2rem,2vw,1.6rem);">🎬</span>
+                <h2 style="font-size:clamp(1.1rem,2vw,1.5rem);">环节④ 编辑后期 · 工具选择最多的环节</h2>
+            </div>
+            <div class="reveal">
+                <table class="compare-table">
+                    <thead>
+                        <tr>
+                            <th>工具</th>
+                            <th>定位</th>
+                            <th>价格</th>
+                            <th>适合人群</th>
+                            <th>核心优势</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td style="color:var(--text-primary);font-weight:600;">剪映/CapCut</td><td>大众短视频</td><td>免费/Pro $8/月</td><td>90%短视频创作者</td><td>AI字幕、模板丰富、发布一体</td></tr>
+                        <tr><td style="color:var(--text-primary);font-weight:600;">DaVinci Resolve</td><td>专业级（免费）</td><td>免费</td><td>专业创作者/调色师</td><td>好莱坞级调色、完全免费</td></tr>
+                        <tr><td style="color:var(--text-primary);font-weight:600;">Premiere Pro</td><td>行业标准</td><td>$23/月</td><td>团队/MCN</td><td>Adobe生态、插件丰富</td></tr>
+                        <tr><td style="color:var(--text-primary);font-weight:600;">Final Cut Pro</td><td>Apple生态</td><td>$300一次性</td><td>Mac用户/YouTuber</td><td>性能优化、磁力时间线</td></tr>
+                        <tr><td style="color:var(--text-primary);font-weight:600;">Descript</td><td>文字驱动剪辑</td><td>$24/月</td><td>播客/口播创作者</td><td>像编辑文档一样编辑视频</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="reveal metric-card" style="border-left:3px solid var(--accent);">
+                <p style="font-size:var(--small-size);"><span class="hl">趋势：</span>最聪明的团队组合使用——DaVinci做母版精剪，CapCut做分发裁剪。粗剪效率提升5倍。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 14: 图文编辑 ==================== -->
+    <section class="slide grid-bg" id="s14">
+        <div class="slide-content">
+            <div class="reveal" style="display:flex;align-items:center;gap:clamp(0.4rem,0.8vw,0.8rem);">
+                <span style="font-size:clamp(1.2rem,2vw,1.6rem);">📝</span>
+                <h2 style="font-size:clamp(1.1rem,2vw,1.5rem);">图文内容编辑 · 排版工具链</h2>
+            </div>
+            <div class="reveal split">
+                <div>
+                    <div style="font-size:var(--small-size);color:var(--accent);font-weight:600;margin-bottom:clamp(3px,0.4vh,6px);">公众号排版</div>
+                    <div class="tool-card"><div class="tool-name">壹伴 / 135编辑器 / 秀米</div><div class="tool-desc">公众号专属排版工具，50万+运营者使用。样式库、一键排版、数据分析</div></div>
+                    <div class="tool-card" style="margin-top:clamp(3px,0.4vh,6px);"><div class="tool-name">Markdown + 墨滴</div><div class="tool-desc">技术类公众号首选，Markdown一键转微信格式</div></div>
+                </div>
+                <div>
+                    <div style="font-size:var(--small-size);color:var(--accent-green);font-weight:600;margin-bottom:clamp(3px,0.4vh,6px);">小红书排版</div>
+                    <div class="tool-card"><div class="tool-name">UPlog / Reditor</div><div class="tool-desc">小红书全流程排版工具，支持emoji/表情组合</div></div>
+                    <div class="tool-card" style="margin-top:clamp(3px,0.4vh,6px);"><div class="tool-name">醒图 / Canva</div><div class="tool-desc">图片二次加工：加字、加边框、调色</div></div>
+                </div>
+            </div>
+            <div class="reveal metric-card" style="border-left:3px solid var(--accent-pink);">
+                <p style="font-size:var(--small-size);"><span class="hl-pink">观点：</span>排版工具看似简单，实际承载了"内容到阅读体验"的最后一公里。好排版能让阅读完成率提升30%+。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 15: 发布分发 ==================== -->
+    <section class="slide" id="s15">
+        <div class="slide-content">
+            <div class="reveal" style="display:flex;align-items:center;gap:clamp(0.4rem,0.8vw,0.8rem);">
+                <span style="font-size:clamp(1.2rem,2vw,1.6rem);">📤</span>
+                <h2 style="font-size:clamp(1.1rem,2vw,1.5rem);">环节⑤ 发布与多平台分发</h2>
+            </div>
+            <div class="reveal split">
+                <div>
+                    <div style="font-size:var(--small-size);color:var(--accent);font-weight:600;margin-bottom:clamp(3px,0.4vh,6px);">海外多平台管理</div>
+                    <div class="tool-card"><div class="tool-name">Buffer / Hootsuite</div><div class="tool-desc">跨平台定时发布、统一排期日历</div><div class="tool-platform">$6-99/月</div></div>
+                    <div class="tool-card" style="margin-top:clamp(3px,0.4vh,6px);"><div class="tool-name">Later / Planable</div><div class="tool-desc">视觉化排期、团队审批流程</div><div class="tool-platform">$18-33/月</div></div>
+                    <div class="tool-card" style="margin-top:clamp(3px,0.4vh,6px);"><div class="tool-name">Opus Clip / Vizard</div><div class="tool-desc">长视频→短视频自动裁切分发</div><div class="tool-platform">$9-19/月</div></div>
+                </div>
+                <div>
+                    <div style="font-size:var(--small-size);color:var(--accent-green);font-weight:600;margin-bottom:clamp(3px,0.4vh,6px);">中国多平台分发</div>
+                    <div class="tool-card"><div class="tool-name">蚁小二 / 易媒</div><div class="tool-desc">一键分发30+平台，账号矩阵管理</div><div class="tool-platform">免费/付费</div></div>
+                    <div class="tool-card" style="margin-top:clamp(3px,0.4vh,6px);"><div class="tool-name">新榜矩阵通</div><div class="tool-desc">MCN级多账号管理、数据看板</div><div class="tool-platform">企业定价</div></div>
+                    <div class="tool-card" style="margin-top:clamp(3px,0.4vh,6px);"><div class="tool-name">微信视频号助手</div><div class="tool-desc">视频号官方创作后台，数据+商业化</div><div class="tool-platform">免费</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 16: 运营增长 ==================== -->
+    <section class="slide grid-bg" id="s16">
+        <div class="slide-content">
+            <div class="reveal" style="display:flex;align-items:center;gap:clamp(0.4rem,0.8vw,0.8rem);">
+                <span style="font-size:clamp(1.2rem,2vw,1.6rem);">📈</span>
+                <h2 style="font-size:clamp(1.1rem,2vw,1.5rem);">环节⑥ 运营增长 · 数据驱动迭代</h2>
+            </div>
+            <div class="reveal grid-3">
+                <div class="metric-card" style="border-top:2px solid var(--accent);">
+                    <div style="font-size:clamp(0.85rem,1.1vw,1rem);font-weight:700;color:var(--accent);">数据分析</div>
+                    <div style="font-size:var(--small-size);color:var(--text-secondary);margin-top:4px;">
+                        <strong>新红</strong> — 小红书数据分析<br>
+                        <strong>千瓜</strong> — 小红书达人/竞品<br>
+                        <strong>飞瓜</strong> — 抖音数据监测<br>
+                        <strong>Sprout Social</strong> — 海外全平台
+                    </div>
+                </div>
+                <div class="metric-card" style="border-top:2px solid var(--accent-green);">
+                    <div style="font-size:clamp(0.85rem,1.1vw,1rem);font-weight:700;color:var(--accent-green);">社群运营</div>
+                    <div style="font-size:var(--small-size);color:var(--text-secondary);margin-top:4px;">
+                        <strong>企业微信/微信群</strong> — 私域核心<br>
+                        <strong>小鹅通/知识星球</strong> — 付费社群<br>
+                        <strong>Discord/Circle</strong> — 海外社群<br>
+                        <strong>Mighty Networks</strong> — 付费社区
+                    </div>
+                </div>
+                <div class="metric-card" style="border-top:2px solid var(--accent-orange);">
+                    <div style="font-size:clamp(0.85rem,1.1vw,1rem);font-weight:700;color:var(--accent-orange);">粉丝互动</div>
+                    <div style="font-size:var(--small-size);color:var(--text-secondary);margin-top:4px;">
+                        <strong>评论管理</strong> — 各平台原生工具<br>
+                        <strong>私信自动回复</strong> — 微信客服/ManyChat<br>
+                        <strong>问卷/投票</strong> — 腾讯问卷/Typeform<br>
+                        <strong>直播互动</strong> — 弹幕/红包/连麦
+                    </div>
+                </div>
+            </div>
+            <div class="reveal metric-card" style="border-left:3px solid var(--accent-green);">
+                <p style="font-size:var(--small-size);"><span class="hl-green">关键洞察：</span>运营的本质是"反馈闭环"——通过数据发现爆款规律，反哺选题环节。工具是手段，闭环能力是核心。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 17: 工具覆盖率热力图 ==================== -->
+    <section class="slide" id="s17">
+        <div class="slide-content">
+            <h2 class="reveal" style="font-size:clamp(1.1rem,2vw,1.5rem);">工具渗透率 × 环节价值矩阵</h2>
+            <div class="reveal chart-container" style="overflow-x:auto;">
+                <table class="compare-table" style="min-width:600px;">
+                    <thead>
+                        <tr>
+                            <th>环节</th>
+                            <th>工具渗透率</th>
+                            <th>AI替代度</th>
+                            <th>对结果影响力</th>
+                            <th>核心能力要求</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td style="color:var(--accent);font-weight:700;">🎯 选题</td><td>★★☆☆☆ 低</td><td>★★☆☆☆ 低</td><td style="color:var(--accent-orange);font-weight:700;">★★★★★ 极高</td><td>判断力、市场嗅觉</td></tr>
+                        <tr><td style="color:var(--accent);font-weight:700;">✍️ 写作</td><td>★★★★☆ 高</td><td>★★★★☆ 高</td><td>★★★★☆ 高</td><td>表达力、人设塑造</td></tr>
+                        <tr><td style="color:var(--accent);font-weight:700;">📸 素材</td><td>★★★★★ 极高</td><td>★★★☆☆ 中</td><td>★★★☆☆ 中</td><td>审美、技术操作</td></tr>
+                        <tr><td style="color:var(--accent);font-weight:700;">🎬 后期</td><td>★★★★★ 极高</td><td>★★★★☆ 高</td><td>★★★☆☆ 中</td><td>技术熟练度</td></tr>
+                        <tr><td style="color:var(--accent);font-weight:700;">📤 分发</td><td>★★★☆☆ 中</td><td>★★★★★ 极高</td><td>★★☆☆☆ 低</td><td>平台规则理解</td></tr>
+                        <tr><td style="color:var(--accent);font-weight:700;">📈 运营</td><td>★★★☆☆ 中</td><td>★★★☆☆ 中</td><td>★★★★☆ 高</td><td>数据敏感度、社交力</td></tr>
+                        <tr><td style="color:var(--accent-orange);font-weight:700;">💰 变现</td><td>★★☆☆☆ 低</td><td>★☆☆☆☆ 极低</td><td style="color:var(--accent-orange);font-weight:700;">★★★★★ 极高</td><td>商业嗅觉、信任资产</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="reveal metric-card" style="border-left:3px solid var(--accent-pink);">
+                <p style="font-size:var(--small-size);"><span class="hl-pink">核心发现：</span>工具渗透率最高的环节（后期/素材），对结果影响力反而最低。选题和变现——最难被工具化的环节——决定成败。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 18: 章节-内容形态分流 ==================== -->
+    <section class="slide chapter-slide glow-br" id="s18">
+        <div class="slide-content">
+            <div class="reveal chapter-number">03</div>
+            <h2 class="reveal chapter-title">内容形态分流</h2>
+            <p class="reveal chapter-sub">短视频 / 长视频 / 图文 / 直播，四条工作流的差异</p>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 19: 四种内容形态对比 ==================== -->
+    <section class="slide grid-bg" id="s19">
+        <div class="slide-content">
+            <h2 class="reveal" style="font-size:clamp(1.1rem,2vw,1.5rem);">四种内容形态 · 工作流差异全景</h2>
+            <div class="reveal grid-2">
+                <div class="metric-card" style="border-top:3px solid var(--accent-pink);">
+                    <div style="font-size:clamp(0.9rem,1.2vw,1.1rem);font-weight:700;color:var(--accent-pink);">📱 短视频（15秒-3分钟）</div>
+                    <div style="font-size:var(--small-size);color:var(--text-secondary);margin-top:4px;">
+                        <strong>平台：</strong>抖音/TikTok/Reels/Shorts<br>
+                        <strong>核心工具：</strong>剪映/CapCut（一站式）<br>
+                        <strong>单条耗时：</strong>30分钟-2小时<br>
+                        <strong>关键成功因素：</strong>前3秒钩子+节奏感
+                    </div>
+                </div>
+                <div class="metric-card" style="border-top:3px solid var(--accent);">
+                    <div style="font-size:clamp(0.9rem,1.2vw,1.1rem);font-weight:700;color:var(--accent);">🎬 长视频（5-60分钟）</div>
+                    <div style="font-size:var(--small-size);color:var(--text-secondary);margin-top:4px;">
+                        <strong>平台：</strong>YouTube/B站<br>
+                        <strong>核心工具：</strong>Premiere/DaVinci+After Effects<br>
+                        <strong>单条耗时：</strong>8-40小时<br>
+                        <strong>关键成功因素：</strong>深度内容+叙事结构
+                    </div>
+                </div>
+                <div class="metric-card" style="border-top:3px solid var(--accent-green);">
+                    <div style="font-size:clamp(0.9rem,1.2vw,1.1rem);font-weight:700;color:var(--accent-green);">📝 图文内容</div>
+                    <div style="font-size:var(--small-size);color:var(--text-secondary);margin-top:4px;">
+                        <strong>平台：</strong>公众号/小红书/知乎/Newsletter<br>
+                        <strong>核心工具：</strong>排版工具+Canva+AI写作<br>
+                        <strong>单条耗时：</strong>1-6小时<br>
+                        <strong>关键成功因素：</strong>观点深度+SEO
+                    </div>
+                </div>
+                <div class="metric-card" style="border-top:3px solid var(--accent-orange);">
+                    <div style="font-size:clamp(0.9rem,1.2vw,1.1rem);font-weight:700;color:var(--accent-orange);">🔴 直播</div>
+                    <div style="font-size:var(--small-size);color:var(--text-secondary);margin-top:4px;">
+                        <strong>平台：</strong>抖音/快手/视频号/Twitch<br>
+                        <strong>核心工具：</strong>OBS/直播伴侣+商品橱窗<br>
+                        <strong>单场耗时：</strong>2-8小时<br>
+                        <strong>关键成功因素：</strong>现场感+转化话术
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 20: 短视频工作流细拆 ==================== -->
+    <section class="slide" id="s20">
+        <div class="slide-content">
+            <h2 class="reveal" style="font-size:clamp(1.1rem,2vw,1.5rem);">短视频创作者 · 典型日工作流</h2>
+            <div class="reveal" style="display:grid;gap:clamp(3px,0.4vh,6px);">
+                <div class="timeline-item"><div class="timeline-dot"></div><div><div style="font-size:var(--small-size);font-weight:700;color:var(--accent);">09:00 — 选题研究（30min）</div><div style="font-size:var(--small-size);color:var(--text-secondary);">刷竞品账号 → 蝉妈妈看数据 → 确定今日选题</div></div></div>
+                <div class="timeline-item"><div class="timeline-dot" style="background:var(--accent-green);"></div><div><div style="font-size:var(--small-size);font-weight:700;color:var(--accent-green);">09:30 — 脚本写作（30min）</div><div style="font-size:var(--small-size);color:var(--text-secondary);">ChatGPT生成框架 → 人工调整口语化 → 写提词器脚本</div></div></div>
+                <div class="timeline-item"><div class="timeline-dot" style="background:var(--accent-orange);"></div><div><div style="font-size:var(--small-size);font-weight:700;color:var(--accent-orange);">10:00 — 拍摄（1h）</div><div style="font-size:var(--small-size);color:var(--text-secondary);">手机+云台+领夹麦 → 多机位/多次拍摄 → 素材备份</div></div></div>
+                <div class="timeline-item"><div class="timeline-dot" style="background:var(--accent-pink);"></div><div><div style="font-size:var(--small-size);font-weight:700;color:var(--accent-pink);">11:00 — 剪辑（1-2h）</div><div style="font-size:var(--small-size);color:var(--text-secondary);">剪映粗剪 → AI自动字幕 → 加BGM/转场/封面 → 导出</div></div></div>
+                <div class="timeline-item"><div class="timeline-dot" style="background:var(--accent-purple);"></div><div><div style="font-size:var(--small-size);font-weight:700;color:var(--accent-purple);">13:00 — 发布+分发（30min）</div><div style="font-size:var(--small-size);color:var(--text-secondary);">写标题/描述/标签 → 蚁小二多平台分发 → 定时发布</div></div></div>
+                <div class="timeline-item"><div class="timeline-dot" style="background:var(--accent-cyan);"></div><div><div style="font-size:var(--small-size);font-weight:700;color:var(--accent-cyan);">14:00-18:00 — 运营互动</div><div style="font-size:var(--small-size);color:var(--text-secondary);">回复评论/私信 → 数据复盘 → 调整明日选题方向</div></div></div>
+            </div>
+            <div class="reveal metric-card" style="border-left:3px solid var(--accent);"><p style="font-size:var(--small-size);">日产1-3条内容，月均工作220-260小时。<span class="hl">本质是流水线作业</span>——效率工具的ROI最高。</p></div>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 21: 长视频工作流 ==================== -->
+    <section class="slide grid-bg" id="s21">
+        <div class="slide-content">
+            <h2 class="reveal" style="font-size:clamp(1.1rem,2vw,1.5rem);">长视频/YouTube创作者 · 周工作流</h2>
+            <div class="reveal" style="display:grid;gap:clamp(3px,0.4vh,6px);">
+                <div class="timeline-item"><div class="timeline-dot"></div><div><div style="font-size:var(--small-size);font-weight:700;color:var(--accent);">Day 1-2 — 深度选题研究</div><div style="font-size:var(--small-size);color:var(--text-secondary);">VidIQ关键词分析 → 竞品视频拆解 → Google Trends验证 → 确定角度</div></div></div>
+                <div class="timeline-item"><div class="timeline-dot" style="background:var(--accent-green);"></div><div><div style="font-size:var(--small-size);font-weight:700;color:var(--accent-green);">Day 2-3 — 脚本+分镜</div><div style="font-size:var(--small-size);color:var(--text-secondary);">Notion写大纲 → 逐段扩写 → B-roll素材清单 → 画分镜（可选）</div></div></div>
+                <div class="timeline-item"><div class="timeline-dot" style="background:var(--accent-orange);"></div><div><div style="font-size:var(--small-size);font-weight:700;color:var(--accent-orange);">Day 3-4 — 拍摄</div><div style="font-size:var(--small-size);color:var(--text-secondary);">A-roll（主讲）+ B-roll（素材画面）→ 多场景/外景 → 专业灯光布景</div></div></div>
+                <div class="timeline-item"><div class="timeline-dot" style="background:var(--accent-pink);"></div><div><div style="font-size:var(--small-size);font-weight:700;color:var(--accent-pink);">Day 4-6 — 后期精剪</div><div style="font-size:var(--small-size);color:var(--text-secondary);">Premiere粗剪 → 调色(DaVinci) → 动效(AE) → 音频处理 → 缩略图(Canva/PS)</div></div></div>
+                <div class="timeline-item"><div class="timeline-dot" style="background:var(--accent-purple);"></div><div><div style="font-size:var(--small-size);font-weight:700;color:var(--accent-purple);">Day 7 — 发布+衍生内容</div><div style="font-size:var(--small-size);color:var(--text-secondary);">发YouTube → Opus Clip自动切Shorts → 写推文/帖子引流 → 社群讨论</div></div></div>
+            </div>
+            <div class="reveal metric-card" style="border-left:3px solid var(--accent-green);">
+                <p style="font-size:var(--small-size);"><span class="hl-green">效率革命：</span>长视频→短视频的自动裁切工具（Opus Clip等），让一条长视频可衍生5-20条短视频，是2025-2026年最大的工作流创新之一。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 22: 章节-文字型博主 ==================== -->
+    <section class="slide chapter-slide" id="s22">
+        <div class="slide-content">
+            <div class="reveal chapter-number">04</div>
+            <h2 class="reveal chapter-title">文字型博主的优势路径</h2>
+            <p class="reveal chapter-sub">边际成本趋零、复利效应最强、变现人效比最高</p>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 23: 文字博主核心优势 ==================== -->
+    <section class="slide grid-bg glow-tl" id="s23">
+        <div class="slide-content">
+            <h2 class="reveal" style="font-size:clamp(1.1rem,2vw,1.5rem);">文字型创作者 · 四大结构性优势</h2>
+            <div class="reveal grid-2">
+                <div class="metric-card" style="border-left:3px solid var(--accent);">
+                    <div style="font-size:clamp(0.9rem,1.2vw,1.1rem);font-weight:700;color:var(--accent);">① 边际成本趋零</div>
+                    <div style="font-size:var(--small-size);color:var(--text-secondary);margin-top:4px;">不需要相机、灯光、云台、场地。一台电脑+一个大脑即可启动。每篇文章的增量成本只有时间。视频创作者每条视频的硬件折旧、外景成本无法避免。</div>
+                </div>
+                <div class="metric-card" style="border-left:3px solid var(--accent-green);">
+                    <div style="font-size:clamp(0.9rem,1.2vw,1.1rem);font-weight:700;color:var(--accent-green);">② SEO复利效应</div>
+                    <div style="font-size:var(--small-size);color:var(--text-secondary);margin-top:4px;">文字是唯一可被搜索引擎深度索引的内容形态。一篇高质量文章可以持续获取搜索流量3-5年。视频虽然能被发现，但依赖平台推荐算法而非搜索。</div>
+                </div>
+                <div class="metric-card" style="border-left:3px solid var(--accent-orange);">
+                    <div style="font-size:clamp(0.9rem,1.2vw,1.1rem);font-weight:700;color:var(--accent-orange);">③ 知识付费天然入口</div>
+                    <div style="font-size:var(--small-size);color:var(--text-secondary);margin-top:4px;">文字→电子书→付费专栏→课程→咨询的升级路径最自然。读者已在"深度阅读"模式中，付费意愿比刷视频时高3-5倍。</div>
+                </div>
+                <div class="metric-card" style="border-left:3px solid var(--accent-pink);">
+                    <div style="font-size:clamp(0.9rem,1.2vw,1.1rem);font-weight:700;color:var(--accent-pink);">④ 私域积累效率最高</div>
+                    <div style="font-size:var(--small-size);color:var(--text-secondary);margin-top:4px;">公众号/Newsletter的订阅关系是"主动选择"。粉丝粘性远高于算法推荐型关注。邮件/公众号列表是真正的"自有资产"，不受平台算法变化影响。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 24: 文字博主工具链 ==================== -->
+    <section class="slide" id="s24">
+        <div class="slide-content">
+            <h2 class="reveal" style="font-size:clamp(1.1rem,2vw,1.5rem);">文字型创作者 · 最佳工具链</h2>
+            <div class="reveal">
+                <table class="compare-table">
+                    <thead>
+                        <tr><th>环节</th><th>工具</th><th>月成本</th><th>核心价值</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td style="color:var(--accent);font-weight:600;">选题</td><td>5118 + 微信指数 + ChatGPT</td><td>$20</td><td>热词挖掘→AI生成选题矩阵</td></tr>
+                        <tr><td style="color:var(--accent);font-weight:600;">写作</td><td>Notion AI / Claude / Obsidian</td><td>$10-20</td><td>大纲→扩写→精修，思维链路管理</td></tr>
+                        <tr><td style="color:var(--accent);font-weight:600;">排版</td><td>壹伴（公众号）/ UPlog（小红书）</td><td>¥0-99/年</td><td>一键美化，阅读完成率+30%</td></tr>
+                        <tr><td style="color:var(--accent);font-weight:600;">配图</td><td>Canva + Midjourney</td><td>$25</td><td>封面/插图设计，AI生成概念图</td></tr>
+                        <tr><td style="color:var(--accent);font-weight:600;">发布</td><td>蚁小二 / 公众号后台</td><td>免费</td><td>一键分发多平台</td></tr>
+                        <tr><td style="color:var(--accent);font-weight:600;">Newsletter</td><td>Substack / beehiiv</td><td>$0-50</td><td>邮件订阅+付费墙+社区</td></tr>
+                        <tr><td style="color:var(--accent);font-weight:600;">变现</td><td>知识星球 / 小鹅通 / Gumroad</td><td>平台抽成</td><td>付费专栏+课程+社群</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="reveal metric-card" style="border-left:3px solid var(--accent-green);">
+                <p style="font-size:var(--small-size);"><span class="hl-green">关键数字：</span>月均工具成本仅$50-80，远低于视频创作者的$200-500+（含硬件折旧）。投入产出比是所有内容形态中最高的。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 25: Newsletter生态 ==================== -->
+    <section class="slide grid-bg" id="s25">
+        <div class="slide-content">
+            <h2 class="reveal" style="font-size:clamp(1.1rem,2vw,1.5rem);">Newsletter · 文字创作者的终极武器</h2>
+            <div class="reveal split">
+                <div>
+                    <div class="chart-container">
+                        <div class="chart-title">三大平台对比</div>
+                        <table class="compare-table">
+                            <thead><tr><th></th><th>Substack</th><th>beehiiv</th><th>Ghost</th></tr></thead>
+                            <tbody>
+                                <tr><td style="color:var(--text-primary);font-weight:500;">定位</td><td>极简写作</td><td>增长导向</td><td>开源自控</td></tr>
+                                <tr><td style="color:var(--text-primary);font-weight:500;">付费抽成</td><td>10%</td><td>0%</td><td>0%</td></tr>
+                                <tr><td style="color:var(--text-primary);font-weight:500;">广告网络</td><td>❌</td><td>✅</td><td>❌</td></tr>
+                                <tr><td style="color:var(--text-primary);font-weight:500;">SEO能力</td><td>弱</td><td>强</td><td>最强</td></tr>
+                                <tr><td style="color:var(--text-primary);font-weight:500;">门槛</td><td>最低</td><td>低</td><td>需技术</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div>
+                    <div class="metric-card" style="border-left:3px solid var(--accent-orange);">
+                        <div style="font-size:clamp(0.9rem,1.1vw,1rem);font-weight:700;color:var(--accent-orange);">为什么Newsletter是文字创作者的终极武器？</div>
+                        <div style="font-size:var(--small-size);color:var(--text-secondary);margin-top:6px;">
+                            <strong>1. 所有权：</strong>邮件列表是你自己的资产，平台倒了用户还在<br>
+                            <strong>2. 触达率：</strong>邮件打开率20-40%，远高于社交媒体3-5%<br>
+                            <strong>3. 付费转化：</strong>Newsletter付费订阅是最稳定的recurring revenue<br>
+                            <strong>4. AI Agent化：</strong>2026趋势——把专业知识封装为AI Agent，月费$9-49
+                        </div>
+                    </div>
+                    <div class="metric-card" style="margin-top:clamp(4px,0.5vh,8px);border-left:3px solid var(--accent-purple);">
+                        <p style="font-size:var(--small-size);"><span style="color:var(--accent-purple);font-weight:600;">中国等价物：</span>公众号 + 知识星球 + 小报童。功能散布在3个产品中，不如海外Newsletter平台整合。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 26: 章节-变现 ==================== -->
+    <section class="slide chapter-slide glow-tl" id="s26">
+        <div class="slide-content">
+            <div class="reveal chapter-number">05</div>
+            <h2 class="reveal chapter-title">变现模型全景</h2>
+            <p class="reveal chapter-sub">从平台依赖到自主所有权，六大变现路径 × 工具链</p>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 27: 变现模式对比 ==================== -->
+    <section class="slide grid-bg" id="s27">
+        <div class="slide-content">
+            <h2 class="reveal" style="font-size:clamp(1.1rem,2vw,1.5rem);">六大变现模式 · 工具与收益对比</h2>
+            <div class="reveal" style="overflow-x:auto;">
+                <table class="compare-table" style="min-width:700px;">
+                    <thead>
+                        <tr><th>变现模式</th><th>收入稳定性</th><th>门槛</th><th>核心工具</th><th>典型月收入</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td style="color:var(--accent-orange);font-weight:700;">💰 广告/流量主</td><td>★★☆☆☆ 波动大</td><td>低（500粉起）</td><td>平台内置</td><td>¥500-5万</td></tr>
+                        <tr><td style="color:var(--accent);font-weight:700;">🤝 品牌合作</td><td>★★★☆☆ 季节性</td><td>中（1万粉起）</td><td>蒲公英/CreatorIQ</td><td>¥3000-50万+</td></tr>
+                        <tr><td style="color:var(--accent-green);font-weight:700;">🛒 带货/电商</td><td>★★★★☆ 较稳</td><td>低（100粉起）</td><td>橱窗/联盟/有赞</td><td>¥1000-100万+</td></tr>
+                        <tr><td style="color:var(--accent-pink);font-weight:700;">📚 知识付费</td><td>★★★★★ 最稳</td><td>高（需专业度）</td><td>小鹅通/Teachable</td><td>¥5000-100万+</td></tr>
+                        <tr><td style="color:var(--accent-purple);font-weight:700;">👥 付费社群</td><td>★★★★★ 最稳</td><td>中高</td><td>知识星球/Patreon/Circle</td><td>¥2000-50万+</td></tr>
+                        <tr><td style="color:var(--accent-cyan);font-weight:700;">🎁 赞赏/打赏</td><td>★☆☆☆☆ 极不稳</td><td>最低</td><td>平台内置/Buy Me a Coffee</td><td>¥100-5000</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="reveal metric-card" style="border-left:3px solid var(--accent-green);">
+                <p style="font-size:var(--small-size);"><span class="hl-green">2026年趋势：</span>头部创作者从"广告为主"转向"自有产品为主"。知识付费+付费社群的组合，提供最稳定的recurring revenue。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 28: 变现路径桑基图 ==================== -->
+    <section class="slide" id="s28">
+        <div class="slide-content">
+            <h2 class="reveal" style="font-size:clamp(1.1rem,2vw,1.5rem);">内容形态 → 变现路径 · 流向图</h2>
+            <div class="reveal chart-container">
+                <div class="chart-title">不同内容形态的最优变现路径权重</div>
+                <div style="display:grid;gap:clamp(6px,1vh,12px);">
+                    <div><div style="font-size:var(--small-size);color:var(--accent-pink);font-weight:600;margin-bottom:2px;">📱 短视频</div>
+                        <div class="sankey-row"><div class="sankey-left">带货</div><div class="sankey-bar" style="width:45%;background:linear-gradient(90deg,var(--accent-pink),var(--accent-orange));"></div><div class="sankey-right">45%</div></div>
+                        <div class="sankey-row"><div class="sankey-left">广告</div><div class="sankey-bar" style="width:30%;background:rgba(255,107,138,0.6);"></div><div class="sankey-right">30%</div></div>
+                        <div class="sankey-row"><div class="sankey-left">直播</div><div class="sankey-bar" style="width:25%;background:rgba(255,107,138,0.4);"></div><div class="sankey-right">25%</div></div>
+                    </div>
+                    <div><div style="font-size:var(--small-size);color:var(--accent);font-weight:600;margin-bottom:2px;">🎬 长视频</div>
+                        <div class="sankey-row"><div class="sankey-left">品牌合作</div><div class="sankey-bar" style="width:40%;background:linear-gradient(90deg,var(--accent),var(--accent-cyan));"></div><div class="sankey-right">40%</div></div>
+                        <div class="sankey-row"><div class="sankey-left">AdSense</div><div class="sankey-bar" style="width:35%;background:rgba(79,158,255,0.6);"></div><div class="sankey-right">35%</div></div>
+                        <div class="sankey-row"><div class="sankey-left">会员/Merch</div><div class="sankey-bar" style="width:25%;background:rgba(79,158,255,0.4);"></div><div class="sankey-right">25%</div></div>
+                    </div>
+                    <div><div style="font-size:var(--small-size);color:var(--accent-green);font-weight:600;margin-bottom:2px;">📝 图文/Newsletter</div>
+                        <div class="sankey-row"><div class="sankey-left">知识付费</div><div class="sankey-bar" style="width:40%;background:linear-gradient(90deg,var(--accent-green),var(--accent));"></div><div class="sankey-right">40%</div></div>
+                        <div class="sankey-row"><div class="sankey-left">付费订阅</div><div class="sankey-bar" style="width:30%;background:rgba(0,212,164,0.6);"></div><div class="sankey-right">30%</div></div>
+                        <div class="sankey-row"><div class="sankey-left">广告/软文</div><div class="sankey-bar" style="width:30%;background:rgba(0,212,164,0.4);"></div><div class="sankey-right">30%</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 29: 变现工具详细 ==================== -->
+    <section class="slide grid-bg" id="s29">
+        <div class="slide-content">
+            <h2 class="reveal" style="font-size:clamp(1.1rem,2vw,1.5rem);">变现基础设施 · 核心工具链</h2>
+            <div class="reveal grid-3">
+                <div class="tool-card" style="border-top:2px solid var(--accent-orange);">
+                    <div class="tool-name">电商/带货</div>
+                    <div class="tool-desc">
+                        <strong>中国：</strong>抖音橱窗、微信小商店、有赞、微店<br>
+                        <strong>海外：</strong>Shopify、LTK、Amazon Associates<br>
+                        <strong>趋势：</strong>一键开店门槛降至100粉
+                    </div>
+                </div>
+                <div class="tool-card" style="border-top:2px solid var(--accent-green);">
+                    <div class="tool-name">知识付费</div>
+                    <div class="tool-desc">
+                        <strong>中国：</strong>小鹅通、千聊、荔枝微课<br>
+                        <strong>海外：</strong>Teachable、Gumroad、Podia<br>
+                        <strong>趋势：</strong>AI Agent封装专业知识
+                    </div>
+                </div>
+                <div class="tool-card" style="border-top:2px solid var(--accent-purple);">
+                    <div class="tool-name">付费社群/订阅</div>
+                    <div class="tool-desc">
+                        <strong>中国：</strong>知识星球、小报童、微信群<br>
+                        <strong>海外：</strong>Patreon、Circle、Mighty Networks<br>
+                        <strong>趋势：</strong>社群成员留存率最高
+                    </div>
+                </div>
+                <div class="tool-card" style="border-top:2px solid var(--accent);">
+                    <div class="tool-name">品牌对接</div>
+                    <div class="tool-desc">
+                        <strong>中国：</strong>蒲公英、星图、磁力聚星<br>
+                        <strong>海外：</strong>CreatorIQ、AspireIQ、Grin<br>
+                        <strong>趋势：</strong>中小博主接单标准化
+                    </div>
+                </div>
+                <div class="tool-card" style="border-top:2px solid var(--accent-pink);">
+                    <div class="tool-name">数字产品</div>
+                    <div class="tool-desc">
+                        <strong>模板/素材：</strong>Notion模板、Canva模板<br>
+                        <strong>电子书：</strong>Gumroad、Lemon Squeezy<br>
+                        <strong>趋势：</strong>一次创作、无限销售
+                    </div>
+                </div>
+                <div class="tool-card" style="border-top:2px solid var(--accent-cyan);">
+                    <div class="tool-name">打赏/Tip</div>
+                    <div class="tool-desc">
+                        <strong>中国：</strong>微信赞赏、B站充电<br>
+                        <strong>海外：</strong>Buy Me a Coffee、Ko-fi<br>
+                        <strong>趋势：</strong>补充收入，非核心
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 30: 章节-生产资料 ==================== -->
+    <section class="slide chapter-slide glow-br" id="s30">
+        <div class="slide-content">
+            <div class="reveal chapter-number">06</div>
+            <h2 class="reveal chapter-title">生产资料获取方式</h2>
+            <p class="reveal chapter-sub">创作者如何获得工具、素材、知识和灵感</p>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 31: 生产资料全景 ==================== -->
+    <section class="slide grid-bg" id="s31">
+        <div class="slide-content">
+            <h2 class="reveal" style="font-size:clamp(1.1rem,2vw,1.5rem);">生产资料获取地图</h2>
+            <div class="reveal grid-2">
+                <div class="metric-card" style="border-top:2px solid var(--accent);">
+                    <div style="font-size:clamp(0.9rem,1.2vw,1.05rem);font-weight:700;color:var(--accent);">🔧 工具获取</div>
+                    <div style="font-size:var(--small-size);color:var(--text-secondary);margin-top:4px;">
+                        <strong>免费起步：</strong>剪映、Canva Free、DaVinci、ChatGPT Free<br>
+                        <strong>订阅制进阶：</strong>$40-60/月覆盖90%需求<br>
+                        <strong>发现渠道：</strong>博主推荐、产品Hunt、即刻/小红书分享<br>
+                        <strong>学习成本：</strong>YouTube教程（免费）→ 付费课程（精准）
+                    </div>
+                </div>
+                <div class="metric-card" style="border-top:2px solid var(--accent-green);">
+                    <div style="font-size:clamp(0.9rem,1.2vw,1.05rem);font-weight:700;color:var(--accent-green);">🎨 素材获取</div>
+                    <div style="font-size:var(--small-size);color:var(--text-secondary);margin-top:4px;">
+                        <strong>免费素材：</strong>Unsplash/Pexels/Pixabay（图片）、Artlist试用（音乐）<br>
+                        <strong>付费素材库：</strong>千图网/摄图网/Envato/Shutterstock<br>
+                        <strong>AI生成：</strong>2026年增长最快，替代部分版权素材需求<br>
+                        <strong>自主拍摄：</strong>差异化最强的素材来源
+                    </div>
+                </div>
+                <div class="metric-card" style="border-top:2px solid var(--accent-orange);">
+                    <div style="font-size:clamp(0.9rem,1.2vw,1.05rem);font-weight:700;color:var(--accent-orange);">📚 知识/技能</div>
+                    <div style="font-size:var(--small-size);color:var(--text-secondary);margin-top:4px;">
+                        <strong>免费学习：</strong>YouTube教程、B站教程、公众号干货文<br>
+                        <strong>付费课程：</strong>得到/混沌/Skillshare/Udemy<br>
+                        <strong>社群学习：</strong>创作者社群（互助+拆解）<br>
+                        <strong>MCN培训：</strong>签约MCN后提供系统培训
+                    </div>
+                </div>
+                <div class="metric-card" style="border-top:2px solid var(--accent-pink);">
+                    <div style="font-size:clamp(0.9rem,1.2vw,1.05rem);font-weight:700;color:var(--accent-pink);">💡 灵感/选题</div>
+                    <div style="font-size:var(--small-size);color:var(--text-secondary);margin-top:4px;">
+                        <strong>竞品监控：</strong>关注同领域头部账号<br>
+                        <strong>热点追踪：</strong>微博热搜/Google Trends/Twitter<br>
+                        <strong>数据工具：</strong>新榜/蝉妈妈/VidIQ的爆款分析<br>
+                        <strong>生活观察：</strong>最不可替代的灵感来源
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 32: 章节-中外对比 ==================== -->
+    <section class="slide chapter-slide" id="s32">
+        <div class="slide-content">
+            <div class="reveal chapter-number">07</div>
+            <h2 class="reveal chapter-title">中国 vs 海外工具生态</h2>
+            <p class="reveal chapter-sub">超级App整合 vs 专精API连接，两条演化路径</p>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 33: 中外工具对比表 ==================== -->
+    <section class="slide grid-bg" id="s33">
+        <div class="slide-content">
+            <h2 class="reveal" style="font-size:clamp(1.1rem,2vw,1.5rem);">中国 vs 海外 · 工具生态对比矩阵</h2>
+            <div class="reveal" style="overflow-x:auto;">
+                <table class="compare-table" style="min-width:650px;">
+                    <thead>
+                        <tr><th>维度</th><th style="color:var(--accent-pink);">🇨🇳 中国生态</th><th style="color:var(--accent);">🌍 海外生态</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td style="color:var(--text-primary);font-weight:500;">设计哲学</td><td>超级App，一站式全包</td><td>专精工具 + API/Zapier串联</td></tr>
+                        <tr><td style="color:var(--text-primary);font-weight:500;">视频剪辑</td><td>剪映（统治级）</td><td>CapCut + Premiere + DaVinci</td></tr>
+                        <tr><td style="color:var(--text-primary);font-weight:500;">图片设计</td><td>稿定设计 / 创客贴</td><td>Canva（全球第一）</td></tr>
+                        <tr><td style="color:var(--text-primary);font-weight:500;">AI写作</td><td>秘塔 / 讯飞星火</td><td>ChatGPT / Claude / Jasper</td></tr>
+                        <tr><td style="color:var(--text-primary);font-weight:500;">数据分析</td><td>新榜/蝉妈妈/千瓜（按平台）</td><td>Sprout Social/VidIQ（跨平台）</td></tr>
+                        <tr><td style="color:var(--text-primary);font-weight:500;">多平台分发</td><td>蚁小二/易媒</td><td>Buffer/Hootsuite/Later</td></tr>
+                        <tr><td style="color:var(--text-primary);font-weight:500;">知识付费</td><td>小鹅通/千聊/知识星球</td><td>Teachable/Gumroad/Podia</td></tr>
+                        <tr><td style="color:var(--text-primary);font-weight:500;">Newsletter</td><td>公众号+小报童（分散）</td><td>Substack/beehiiv/Ghost（整合）</td></tr>
+                        <tr><td style="color:var(--text-primary);font-weight:500;">品牌对接</td><td>蒲公英/星图（平台内置）</td><td>CreatorIQ/AspireIQ（独立平台）</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 34: 两条路径分析 ==================== -->
+    <section class="slide" id="s34">
+        <div class="slide-content">
+            <h2 class="reveal" style="font-size:clamp(1.1rem,2vw,1.5rem);">两种工具生态的本质差异</h2>
+            <div class="reveal split">
+                <div class="metric-card" style="border-top:3px solid var(--accent-pink);">
+                    <div style="font-size:clamp(0.95rem,1.2vw,1.1rem);font-weight:700;color:var(--accent-pink);">🇨🇳 中国：平台即生态</div>
+                    <div style="font-size:var(--small-size);color:var(--text-secondary);margin-top:6px;">
+                        <strong>优势：</strong>学习成本低、上手快、平台数据打通<br>
+                        <strong>劣势：</strong>被平台锁定、数据不可迁移、创新受限<br>
+                        <strong>典型路径：</strong>抖音内选题→拍→剪映剪→抖音发→抖音变现，全链路不出平台<br>
+                        <strong>哲学：</strong>"来我这里，什么都有"
+                    </div>
+                </div>
+                <div class="metric-card" style="border-top:3px solid var(--accent);">
+                    <div style="font-size:clamp(0.95rem,1.2vw,1.1rem);font-weight:700;color:var(--accent);">🌍 海外：组合即自由</div>
+                    <div style="font-size:var(--small-size);color:var(--text-secondary);margin-top:6px;">
+                        <strong>优势：</strong>灵活组合、数据所有权、可迁移<br>
+                        <strong>劣势：</strong>工具切换成本高、集成需技术能力<br>
+                        <strong>典型路径：</strong>ChatGPT写→Premiere剪→Canva封面→Buffer发→Sprout分析<br>
+                        <strong>哲学：</strong>"自己组装最适合的工具链"
+                    </div>
+                </div>
+            </div>
+            <div class="reveal metric-card" style="border-left:3px solid var(--accent-orange);">
+                <p style="font-size:var(--small-size);"><span class="hl-orange">CEO视角：</span>千图网的机会在于做"中间态"——像中国生态一样低门槛一站式，但像海外工具一样开放API、支持数据导出。<span class="hl">核心是成为创作者工作流中不可替代的一个节点。</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 35: 章节-AI冲击 ==================== -->
+    <section class="slide chapter-slide glow-tl" id="s35">
+        <div class="slide-content">
+            <div class="reveal chapter-number">08</div>
+            <h2 class="reveal chapter-title">AI对创作者的冲击</h2>
+            <p class="reveal chapter-sub">91%渗透率之下的机遇与危机</p>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 36: AI影响全景 ==================== -->
+    <section class="slide grid-bg" id="s36">
+        <div class="slide-content">
+            <h2 class="reveal" style="font-size:clamp(1.1rem,2vw,1.5rem);">AI改变了什么 · 没改变什么</h2>
+            <div class="reveal split">
+                <div>
+                    <div style="font-size:var(--small-size);color:var(--accent-green);font-weight:600;margin-bottom:clamp(3px,0.4vh,6px);">✅ AI已经改变的</div>
+                    <div class="tool-card"><div class="tool-name">内容生产效率 +93%</div><div class="tool-desc">AI辅助可将部分任务的内容创建时间减少高达93%</div></div>
+                    <div class="tool-card" style="margin-top:clamp(3px,0.4vh,6px);"><div class="tool-name">长→短视频自动化</div><div class="tool-desc">一条60分钟视频自动产出5-20条短视频</div></div>
+                    <div class="tool-card" style="margin-top:clamp(3px,0.4vh,6px);"><div class="tool-name">字幕/翻译/配音</div><div class="tool-desc">多语种内容分发门槛从"团队"降到"个人"</div></div>
+                    <div class="tool-card" style="margin-top:clamp(3px,0.4vh,6px);"><div class="tool-name">设计/封面生成</div><div class="tool-desc">Canva AI + Midjourney让非设计师也能产出专业视觉</div></div>
+                </div>
+                <div>
+                    <div style="font-size:var(--small-size);color:var(--accent-pink);font-weight:600;margin-bottom:clamp(3px,0.4vh,6px);">❌ AI没有改变的</div>
+                    <div class="tool-card"><div class="tool-name">选题判断力</div><div class="tool-desc">什么值得做、什么时候做——仍靠人的市场嗅觉</div></div>
+                    <div class="tool-card" style="margin-top:clamp(3px,0.4vh,6px);"><div class="tool-name">人设辨识度</div><div class="tool-desc">AI写的文案"对但不特别"，人的个性不可复制</div></div>
+                    <div class="tool-card" style="margin-top:clamp(3px,0.4vh,6px);"><div class="tool-name">信任资产积累</div><div class="tool-desc">粉丝信任需要时间沉淀，AI无法加速</div></div>
+                    <div class="tool-card" style="margin-top:clamp(3px,0.4vh,6px);"><div class="tool-name">变现谈判能力</div><div class="tool-desc">品牌合作议价、课程定价——商业直觉不可替代</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 37: AI工具矩阵 ==================== -->
+    <section class="slide" id="s37">
+        <div class="slide-content">
+            <h2 class="reveal" style="font-size:clamp(1.1rem,2vw,1.5rem);">2026年创作者AI工具图谱</h2>
+            <div class="reveal grid-3">
+                <div class="metric-card" style="border-top:2px solid var(--accent);">
+                    <div style="font-size:clamp(0.85rem,1vw,0.95rem);font-weight:700;color:var(--accent);">📝 AI文案</div>
+                    <div style="font-size:var(--small-size);color:var(--text-secondary);">ChatGPT · Claude · 秘塔<br>Jasper · Copy.ai · Notion AI</div>
+                </div>
+                <div class="metric-card" style="border-top:2px solid var(--accent-green);">
+                    <div style="font-size:clamp(0.85rem,1vw,0.95rem);font-weight:700;color:var(--accent-green);">🎨 AI图像</div>
+                    <div style="font-size:var(--small-size);color:var(--text-secondary);">Midjourney · DALL-E 3<br>Stable Diffusion · 通义万相</div>
+                </div>
+                <div class="metric-card" style="border-top:2px solid var(--accent-orange);">
+                    <div style="font-size:clamp(0.85rem,1vw,0.95rem);font-weight:700;color:var(--accent-orange);">🎬 AI视频</div>
+                    <div style="font-size:var(--small-size);color:var(--text-secondary);">Runway Gen-4 · Sora · 可灵<br>Veo 3 · Pika · HeyGen</div>
+                </div>
+                <div class="metric-card" style="border-top:2px solid var(--accent-pink);">
+                    <div style="font-size:clamp(0.85rem,1vw,0.95rem);font-weight:700;color:var(--accent-pink);">🎙️ AI音频</div>
+                    <div style="font-size:var(--small-size);color:var(--text-secondary);">ElevenLabs · 讯飞配音<br>Suno · Udio · Descript</div>
+                </div>
+                <div class="metric-card" style="border-top:2px solid var(--accent-purple);">
+                    <div style="font-size:clamp(0.85rem,1vw,0.95rem);font-weight:700;color:var(--accent-purple);">✂️ AI剪辑</div>
+                    <div style="font-size:var(--small-size);color:var(--text-secondary);">Opus Clip · Vizard<br>CapCut AI · Descript</div>
+                </div>
+                <div class="metric-card" style="border-top:2px solid var(--accent-cyan);">
+                    <div style="font-size:clamp(0.85rem,1vw,0.95rem);font-weight:700;color:var(--accent-cyan);">📊 AI分析</div>
+                    <div style="font-size:var(--small-size);color:var(--text-secondary);">Sprout Social AI · VidIQ AI<br>ChatGPT数据分析 · Supergrow</div>
+                </div>
+            </div>
+            <div class="reveal metric-card" style="border-left:3px solid var(--accent);">
+                <p style="font-size:var(--small-size);"><span class="hl">事实：</span>每月$40-60即可获得完整AI工具栈。2026年AI工具成本比2024年下降约60%，但能力提升300%+。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 38: 章节-CEO洞察 ==================== -->
+    <section class="slide chapter-slide glow-br" id="s38">
+        <div class="slide-content">
+            <div class="reveal chapter-number">09</div>
+            <h2 class="reveal chapter-title">CEO视角 · 行动洞察</h2>
+            <p class="reveal chapter-sub">对千图网和创意AI从业者的战略启示</p>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 39: CEO洞察-机会 ==================== -->
+    <section class="slide grid-bg glow-tl" id="s39">
+        <div class="slide-content">
+            <h2 class="reveal" style="font-size:clamp(1.1rem,2vw,1.5rem);">千图网的战略机会窗口</h2>
+            <div class="reveal grid-2">
+                <div class="metric-card" style="border-left:3px solid var(--accent);">
+                    <div style="font-size:clamp(0.85rem,1.1vw,1rem);font-weight:700;color:var(--accent);">机会一：从素材库→创作者工作流平台</div>
+                    <div style="font-size:var(--small-size);color:var(--text-secondary);margin-top:4px;">创作者需要的不是"更多素材"，是"在创作流程中无缝获取素材"。千图网可以像Canva嵌入workflow一样，成为创作链路中的素材引擎节点。</div>
+                </div>
+                <div class="metric-card" style="border-left:3px solid var(--accent-green);">
+                    <div style="font-size:clamp(0.85rem,1.1vw,1rem);font-weight:700;color:var(--accent-green);">机会二：AI增强素材 = 新品类</div>
+                    <div style="font-size:var(--small-size);color:var(--text-secondary);margin-top:4px;">传统版权素材被AI生成冲击，但"AI增强版权素材"（半定制、可编辑、带商用授权）是新品类。用户既要速度也要合规。</div>
+                </div>
+                <div class="metric-card" style="border-left:3px solid var(--accent-orange);">
+                    <div style="font-size:clamp(0.85rem,1.1vw,1rem);font-weight:700;color:var(--accent-orange);">机会三：抢占"文字型创作者"工具空白</div>
+                    <div style="font-size:var(--small-size);color:var(--text-secondary);margin-top:4px;">中国市场缺少一个整合"封面设计+排版+AI配图+模板"的图文创作者一站式平台。公众号/小红书创作者是天然用户。</div>
+                </div>
+                <div class="metric-card" style="border-left:3px solid var(--accent-pink);">
+                    <div style="font-size:clamp(0.85rem,1.1vw,1rem);font-weight:700;color:var(--accent-pink);">机会四：模板经济 = 数字产品分销</div>
+                    <div style="font-size:var(--small-size);color:var(--text-secondary);margin-top:4px;">Canva上模板创作者年入百万。千图网可以开放模板市场让创作者上传、销售，平台抽成——从To B版权库延伸到To C创作者经济。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 40: 总结 ==================== -->
+    <section class="slide" id="s40">
+        <div class="slide-content" style="text-align:center;justify-items:center;align-content:center;">
+            <div class="reveal quote-text" style="border-left:none;text-align:center;padding-left:0;">
+                "自媒体的工具在变，但工作流的本质不变：<br>
+                <span class="hl-green">找到值得说的事</span> → <span class="hl">说好它</span> → <span class="hl-orange">让需要的人看到</span> → <span class="hl-pink">把注意力变成价值</span>"
+            </div>
+            <p class="reveal" style="font-size:var(--subtitle-size);color:var(--text-secondary);margin-top:clamp(0.5rem,1vh,1rem);">工具是手段，流程是骨架，<br>判断力和信任才是创作者真正的护城河。</p>
+            <div class="reveal" style="display:flex;gap:clamp(0.5rem,1vw,1rem);margin-top:clamp(0.8rem,1.5vh,1.5rem);">
+                <span class="tag tag-blue">Wayne研究室</span>
+                <span class="tag tag-green">2026.04.12</span>
+            </div>
+            <p class="reveal" style="font-size:var(--small-size);color:var(--text-muted);margin-top:clamp(0.5rem,1vh,0.8rem);">← → 键翻页 | 右侧导航点跳转 | ☰ 打开章节目录</p>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDE 41: 来源标注 ==================== -->
+    <section class="slide grid-bg" id="s41">
+        <div class="slide-content">
+            <h2 class="reveal" style="font-size:clamp(1.1rem,2vw,1.5rem);">📚 数据来源与参考</h2>
+            <div class="reveal" style="font-size:var(--small-size);color:var(--text-secondary);display:grid;gap:clamp(3px,0.4vh,5px);columns:2;">
+                <p>• DemandSage — Creator Economy Statistics 2026</p>
+                <p>• inBeat Agency — 75 Creator Economy Statistics 2026</p>
+                <p>• Precedence Research — Creator Economy Market Size Report</p>
+                <p>• CommuniPass — Creator Monetization in 2026</p>
+                <p>• beehiiv — Inside the Newsletter Evolution of 2025</p>
+                <p>• InfluenceFlow — TikTok Content Creation Tools 2026 Guide</p>
+                <p>• ToolRadar — Best Video Editing Software 2026</p>
+                <p>• 克劳锐 — 2025五大平台KOL粉丝分析研究报告</p>
+                <p>• 新榜 — 2024内容创作者生态报告</p>
+                <p>• 澎湃新闻 — 2024年新媒体生态：五大平台覆盖10.71亿用户</p>
+                <p>• 新浪 — 自媒体分层趋势分析2026</p>
+                <p>• 知乎 — 2026年内容创作者AI工具效率提升</p>
+                <p>• CSDN — 新媒体运营50个神器工具2025</p>
+                <p>• Zemith — AI Tools Every Content Creator Should Use 2026</p>
+            </div>
+            <p class="reveal" style="font-size:clamp(0.6rem,0.75vw,0.7rem);color:var(--text-muted);margin-top:clamp(0.3rem,0.5vh,0.5rem);">标注为「事实」的数据来自公开报告/统计；标注为「观点」的内容为分析推断。</p>
+        </div>
+    </section>
+
+    <!-- ==================== Chart.js CDN ==================== -->
+    <script src="./自媒体工具市场调研 · 创作者工作流全景图_files/chart.umd.min.js"></script>
+
+    <script>
+    /* === 演示控制器 === */
+    class SlidePresentation {
+        constructor() {
+            this.slides = [...document.querySelectorAll(".slide")];
+            this.currentSlide = 0;
+            this.setupIntersectionObserver();
+            this.setupKeyboardNav();
+            this.setupTouchNav();
+            this.setupWheelNav();
+            this.setupProgressBar();
+            this.setupNavDots();
+            this.setupChapterNav();
+            this.setupPageCounter();
+        }
+        setupIntersectionObserver() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        const idx = this.slides.indexOf(entry.target);
+                        if (idx !== -1) { this.currentSlide = idx; this.updateProgress(); this.updateDots(); this.updateChapterNav(); this.updatePageCounter(); }
+                    }
+                });
+            }, { threshold: 0.55 });
+            this.slides.forEach((slide) => observer.observe(slide));
+        }
+        goToSlide(index) {
+            const next = Math.max(0, Math.min(index, this.slides.length - 1));
+            this.currentSlide = next;
+            this.slides[next].scrollIntoView({ behavior: "smooth", block: "start" });
+            this.updateProgress(); this.updateDots(); this.updateChapterNav(); this.updatePageCounter();
+        }
+        setupKeyboardNav() {
+            document.addEventListener("keydown", (e) => {
+                if (["ArrowDown", "ArrowRight", "PageDown", " "].includes(e.key)) { e.preventDefault(); this.goToSlide(this.currentSlide + 1); }
+                if (["ArrowUp", "ArrowLeft", "PageUp"].includes(e.key)) { e.preventDefault(); this.goToSlide(this.currentSlide - 1); }
+            });
+        }
+        setupTouchNav() {
+            let startY = 0;
+            document.addEventListener("touchstart", (e) => { startY = e.touches[0].clientY; }, { passive: true });
+            document.addEventListener("touchend", (e) => {
+                const delta = startY - e.changedTouches[0].clientY;
+                if (Math.abs(delta) < 40) return;
+                if (delta > 0) this.goToSlide(this.currentSlide + 1);
+                else this.goToSlide(this.currentSlide - 1);
+            }, { passive: true });
+        }
+        setupWheelNav() {
+            let lock = false;
+            document.addEventListener("wheel", (e) => {
+                if (lock) return; lock = true;
+                if (e.deltaY > 0) this.goToSlide(this.currentSlide + 1);
+                else this.goToSlide(this.currentSlide - 1);
+                setTimeout(() => { lock = false; }, 400);
+            }, { passive: true });
+        }
+        setupProgressBar() {
+            this.progress = document.querySelector(".progress-bar");
+            this.updateProgress();
+        }
+        setupNavDots() {
+            const nav = document.querySelector(".nav-dots");
+            nav.innerHTML = "";
+            this.slides.forEach((_, idx) => {
+                const dot = document.createElement("button");
+                dot.setAttribute("aria-label", `Page ${idx + 1}`);
+                dot.addEventListener("click", () => this.goToSlide(idx));
+                nav.appendChild(dot);
+            });
+            this.updateDots();
+        }
+        setupChapterNav() {
+            const nav = document.getElementById("chapterNav");
+            const toggle = document.querySelector(".nav-toggle");
+            if (!nav || !toggle) return;
+            toggle.addEventListener("click", () => nav.classList.toggle("open"));
+            nav.querySelectorAll("a[data-slide]").forEach(a => {
+                a.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    this.goToSlide(parseInt(a.dataset.slide));
+                    nav.classList.remove("open");
+                });
+            });
+        }
+        setupPageCounter() {
+            this.counter = document.querySelector(".page-counter");
+            this.updatePageCounter();
+        }
+        updateProgress() {
+            if (!this.progress) return;
+            const ratio = this.slides.length <= 1 ? 1 : this.currentSlide / (this.slides.length - 1);
+            this.progress.style.width = `${Math.round(ratio * 100)}%`;
+        }
+        updateDots() {
+            document.querySelectorAll(".nav-dots button").forEach((dot, idx) => dot.classList.toggle("active", idx === this.currentSlide));
+        }
+        updateChapterNav() {
+            const links = document.querySelectorAll("#chapterNav a[data-slide]");
+            links.forEach(a => {
+                const target = parseInt(a.dataset.slide);
+                const nextLink = [...links].find(l => parseInt(l.dataset.slide) > target);
+                const nextTarget = nextLink ? parseInt(nextLink.dataset.slide) : this.slides.length;
+                a.classList.toggle("active", this.currentSlide >= target && this.currentSlide < nextTarget);
+            });
+        }
+        updatePageCounter() {
+            if (!this.counter) return;
+            this.counter.textContent = `${this.currentSlide + 1} / ${this.slides.length}`;
+        }
+    }
+
+    /* === Tab切换 === */
+    function showTab(btn, id) {
+        const parent = btn.closest('.slide-content');
+        parent.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        ['photo','video','audio','ai-gen'].forEach(t => {
+            const el = parent.querySelector('#tab-' + t) || document.getElementById('tab-' + t);
+            if (el) el.style.display = t === id ? 'block' : 'none';
+        });
+    }
+
+    /* === 市场规模图表 === */
+    function initMarketChart() {
+        const ctx = document.getElementById('marketChart');
+        if (!ctx) return;
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['2020', '2021', '2022', '2023', '2024', '2025', '2026E', '2027E', '2028E', '2029E', '2030E'],
+                datasets: [{
+                    label: '市场规模 ($ Billion)',
+                    data: [60, 85, 105, 130, 160, 210, 275, 340, 410, 480, 528],
+                    backgroundColor: (ctx) => {
+                        const idx = ctx.dataIndex;
+                        return idx >= 6
+                            ? 'rgba(79, 158, 255, 0.3)'
+                            : 'rgba(0, 212, 164, 0.6)';
+                    },
+                    borderColor: (ctx) => {
+                        const idx = ctx.dataIndex;
+                        return idx >= 6 ? '#4F9EFF' : '#00D4A4';
+                    },
+                    borderWidth: 1,
+                    borderRadius: 4,
+                }]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: '#0C1223',
+                        borderColor: 'rgba(79,158,255,0.3)',
+                        borderWidth: 1,
+                        callbacks: { label: (ctx) => `$${ctx.raw}B` }
+                    }
+                },
+                scales: {
+                    x: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#8B97B5', font: { size: 11 } } },
+                    y: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#8B97B5', font: { size: 11 }, callback: (v) => `$${v}B` } }
+                }
+            }
+        });
+    }
+
+    /* === 操作提示 === */
+    function showOnboarding() {
+        const tip = document.createElement('div');
+        tip.className = 'onboarding-tip';
+        tip.innerHTML = '使用 <kbd>←</kbd> <kbd>→</kbd> 翻页 · <kbd>☰</kbd> 打开目录 · 右侧导航点跳转';
+        tip.addEventListener('click', () => tip.remove());
+        document.body.appendChild(tip);
+        setTimeout(() => { if (tip.parentNode) tip.remove(); }, 6000);
+    }
+
+    /* === 初始化 === */
+    document.addEventListener('DOMContentLoaded', () => {
+        new SlidePresentation();
+        initMarketChart();
+        setTimeout(showOnboarding, 1500);
+    });
+    </script>
+<script defer="" src="./自媒体工具市场调研 · 创作者工作流全景图_files/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;73a749ca3ace4b2abd6813f039000869&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+<div id="wwei-auth-widget" style="position: fixed; top: 16px; right: 16px; z-index: 2147483647;"><template shadowrootmode="open"><style>
+      :host { all: initial; }
+      * { box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif; }
+      .wrap { position: relative; }
+      .avatar {
+        width: 36px; height: 36px; border-radius: 50%; padding: 0; cursor: pointer; position: relative;
+        border: 2px solid rgba(255,255,255,0.15); background: #111214; color: #f0f0f2;
+        display: flex; align-items: center; justify-content: center; overflow: hidden;
+        transition: all .2s; box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      }
+      .avatar:hover { transform: scale(1.05); border-color: rgba(255,255,255,0.3); }
+      .avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+      .avatar .fallback { font-weight: 600; font-size: 14px; }
+      .avatar.loading { animation: pulse 1.4s infinite; cursor: default; }
+      @keyframes pulse { 0%,100% { opacity: 0.5; } 50% { opacity: 0.9; } }
+      .dot {
+        position: absolute; bottom: -2px; right: -2px; width: 12px; height: 12px;
+        border-radius: 50%; border: 2px solid #111214;
+      }
+      .login-btn {
+        display: inline-block; padding: 7px 16px; border-radius: 100px;
+        background: rgba(110, 231, 183, 0.95); color: #08090a; font-size: 13px; font-weight: 500;
+        text-decoration: none; transition: all .2s; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        border: 1px solid rgba(110, 231, 183, 0.3);
+      }
+      .login-btn:hover { background: #6ee7b7; transform: translateY(-1px); }
+      .dropdown {
+        position: absolute; top: 44px; right: 0; min-width: 260px;
+        background: #111214; border: 1px solid #1e2024; border-radius: 12px;
+        padding: 16px; opacity: 0; transform: translateY(-6px) scale(0.96);
+        pointer-events: none; transition: all .18s cubic-bezier(.4,0,.2,1);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.4); color: #f0f0f2;
+      }
+      .dropdown.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+      .dropdown-head { display: flex; gap: 12px; align-items: center; }
+      .dropdown-avatar { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; flex-shrink: 0; background: #1e2024; display: flex; align-items: center; justify-content: center; }
+      .dropdown-avatar img { width: 100%; height: 100%; object-fit: cover; }
+      .dropdown-info { flex: 1; min-width: 0; }
+      .dropdown-name { font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .dropdown-email { font-size: 11px; color: #a0a3ab; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .dropdown-level {
+        display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px;
+        font-size: 10px; font-weight: 600; letter-spacing: 0.05em;
+        border: 1px solid;
+      }
+      .dropdown-divider { height: 1px; background: #1e2024; margin: 14px 0; }
+      .dropdown-item {
+        display: block; padding: 8px 12px; font-size: 13px; color: #f0f0f2;
+        text-decoration: none; border-radius: 6px; transition: background .15s;
+      }
+      .dropdown-item:hover { background: #1e2024; }
+    </style>
+        <div class="wrap">
+          <button class="avatar" id="avatar" aria-label="user menu" title="yiyixiao920@gmail.com · ADMIN">
+            <img src="https://lh3.googleusercontent.com/a/ACg8ocKu-yjD3iu0mgzG7jWbJHAxSpl7HBx0GqADxeh6y8jMFDEhpA=s96-c" referrerpolicy="no-referrer" alt="">
+            <span class="dot" style="background:#f87171" title="ADMIN"></span>
+          </button>
+          <div class="dropdown" id="dropdown">
+            <div class="dropdown-head">
+              <div class="dropdown-avatar"><img src="https://lh3.googleusercontent.com/a/ACg8ocKu-yjD3iu0mgzG7jWbJHAxSpl7HBx0GqADxeh6y8jMFDEhpA=s96-c" referrerpolicy="no-referrer" alt=""></div>
+              <div class="dropdown-info">
+                <div class="dropdown-name">姚伊笑</div>
+                <div class="dropdown-email">yiyixiao920@gmail.com</div>
+                <div class="dropdown-level" style="color:#f87171;border-color:#f8717140">ADMIN</div>
+              </div>
+            </div>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="https://admin.wwei.ai/">管理后台 →</a>
+            <a class="dropdown-item" href="https://auth.wwei.ai/logout?next=https%3A%2F%2Fcreatortool.wwei.ai%2F">退出登录</a>
+          </div>
+        </div>
+      </template></div><div id="cubox-react-root"><template shadowrootmode="open"><link rel="stylesheet" href="chrome-extension://bflmgpechpeohjfomgfdkkfcbhfcjohl/css/content.css"><div><div style="z-index: 2147483647;"></div></div></template></div><a id="colorPickerDivHidden"><img src="chrome-extension://njolgcnddhepjpplfifbmagdgkidikpj/logo.png" data-cubox-image-id="ae8686952839c0b69466b05216a82003" data-cubox-image-index="0" data-cubox-image-load="false"></a></body><plasmo-csui id="aitdk-csui"><template shadowrootmode="open"><style>*,:before,:after{box-sizing:border-box;border:0 solid #e5e7eb}:before,:after{--tw-content:""}html{-webkit-text-size-adjust:100%;tab-size:4;font-feature-settings:normal;font-variation-settings:normal;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}body{line-height:inherit;margin:0}hr{color:inherit;border-top-width:1px;height:0}abbr:where([title]){text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em}small{font-size:80%}sub,sup{vertical-align:baseline;font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-feature-settings:inherit;font-variation-settings:inherit;font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,[type=button],[type=reset],[type=submit]{-webkit-appearance:button;background-color:#0000;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button{height:auto}::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dl,dd,h1,h2,h3,h4,h5,h6,hr,figure,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}ol,ul,menu{margin:0;padding:0;list-style:none}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}button,[role=button]{cursor:pointer}:disabled{cursor:default}img,svg,video,canvas,audio,iframe,embed,object{vertical-align:middle;display:block}img,video{max-width:100%;height:auto}[hidden]{display:none}:host,:root{--background:0 0% 100%;--foreground:224 71.4% 4.1%;--card:0 0% 100%;--card-foreground:224 71.4% 4.1%;--popover:0 0% 100%;--popover-foreground:224 71.4% 4.1%;--primary:262.1 83.3% 57.8%;--primary-foreground:210 20% 98%;--secondary:220 14.3% 95.9%;--secondary-foreground:220.9 39.3% 11%;--muted:220 14.3% 95.9%;--muted-foreground:220 8.9% 46.1%;--accent:220 14.3% 95.9%;--accent-foreground:220.9 39.3% 11%;--destructive:0 84.2% 60.2%;--destructive-foreground:210 20% 98%;--border:220 13% 91%;--input:220 13% 91%;--ring:262.1 83.3% 57.8%;--radius:4.2px;z-index:2147483647}.dark{--background:224 71.4% 4.1%;--foreground:210 20% 98%;--card:224 71.4% 4.1%;--card-foreground:210 20% 98%;--popover:224 71.4% 4.1%;--popover-foreground:210 20% 98%;--primary:263.4 70% 50.4%;--primary-foreground:210 20% 98%;--secondary:215 27.9% 16.9%;--secondary-foreground:210 20% 98%;--muted:215 27.9% 16.9%;--muted-foreground:217.9 10.6% 64.9%;--accent:215 27.9% 16.9%;--accent-foreground:210 20% 98%;--destructive:0 62.8% 30.6%;--destructive-foreground:210 20% 98%;--border:215 27.9% 16.9%;--input:215 27.9% 16.9%;--ring:263.4 70% 50.4%}*{border-color:hsl(var(--border))}html{font-size:14px}body{background-color:hsl(var(--background));color:hsl(var(--foreground));font-feature-settings:"rlig" 1,"calt" 1;font-size:14px}*,:before,:after,::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:#3b82f680;--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }.container{width:100%;margin-left:auto;margin-right:auto;padding-left:28px;padding-right:28px}@media (width>=1400px){.container{max-width:1400px}}.visible{visibility:visible}.invisible{visibility:hidden}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.bottom-0{bottom:0}.left-1\/2{left:50%}.right-0{right:0}.right-2{right:7px}.top-0{top:0}.top-1\/2{top:50%}.top-2{top:7px}.-z-\[1\]{z-index:-1}.z-\[1\]{z-index:1}.z-\[2147483647\]{z-index:2147483647}.mx-auto{margin-left:auto;margin-right:auto}.-ml-\[13px\]{margin-left:-13px}.-mt-\[13px\]{margin-top:-13px}.mt-3{margin-top:10.5px}.mt-5{margin-top:17.5px}.block{display:block}.flex{display:flex}.hidden{display:none}.h-full{height:100%}.w-\[420px\]{width:420px}.w-\[520px\]{width:520px}.w-full{width:100%}@keyframes spin{to{transform:rotate(360deg)}}.animate-spin{animation:1s linear infinite spin}.cursor-pointer{cursor:pointer}.items-center{align-items:center}.justify-center{justify-content:center}.gap-x-2{column-gap:7px}.rounded{border-radius:3.5px}.bg-\[\#635bff\]{--tw-bg-opacity:1;background-color:rgb(99 91 255/var(--tw-bg-opacity))}.bg-\[\#635bff\]\/10{background-color:#635bff1a}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity))}.p-1{padding:3.5px}.p-6{padding:21px}.px-4{padding-left:14px;padding-right:14px}.py-2{padding-top:7px;padding-bottom:7px}.py-2\.5{padding-top:8.75px;padding-bottom:8.75px}.text-\[14px\]{font-size:14px}.text-xl{font-size:17.5px;line-height:24.5px}.font-medium{font-weight:500}.leading-6{line-height:21px}.text-black{--tw-text-opacity:1;color:rgb(0 0 0/var(--tw-text-opacity))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175/var(--tw-text-opacity))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128/var(--tw-text-opacity))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55/var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity))}.shadow-2xl{--tw-shadow:0 25px 50px -12px #00000040;--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.outline{outline-style:solid}.filter{filter:var(--tw-blur)var(--tw-brightness)var(--tw-contrast)var(--tw-grayscale)var(--tw-hue-rotate)var(--tw-invert)var(--tw-saturate)var(--tw-sepia)var(--tw-drop-shadow)}.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-duration:.15s;transition-timing-function:cubic-bezier(.4,0,.2,1)}@keyframes enter{0%{opacity:var(--tw-enter-opacity,1);transform:translate3d(var(--tw-enter-translate-x,0),var(--tw-enter-translate-y,0),0)scale3d(var(--tw-enter-scale,1),var(--tw-enter-scale,1),var(--tw-enter-scale,1))rotate(var(--tw-enter-rotate,0))}}@keyframes exit{to{opacity:var(--tw-exit-opacity,1);transform:translate3d(var(--tw-exit-translate-x,0),var(--tw-exit-translate-y,0),0)scale3d(var(--tw-exit-scale,1),var(--tw-exit-scale,1),var(--tw-exit-scale,1))rotate(var(--tw-exit-rotate,0))}}.hover\:bg-\[\#635bff\]\/90:hover{background-color:#635bffe6}</style><div id="plasmo-shadow-container" style="z-index: 2147483647; position: relative;"><div id="plasmo-inline" class="plasmo-csui-container" style="display: flex; position: relative; top: 0px; left: 0px;"><div class="aitdk-extension shadow-2xl flex fixed w-[520px] top-0 right-0 bottom-0 bg-white hidden"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x absolute right-2 top-2 z-[1] p-1 cursor-pointer text-gray-500"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-loader-circle animate-spin text-gray-400 absolute top-1/2 left-1/2 -ml-[13px] -mt-[13px] -z-[1]"><path d="M21 12a9 9 0 1 1-6.219-8.56"></path></svg></div></div></div></template></plasmo-csui><div id="immersive-translate-browser-popup" style="all: initial"><template shadowrootmode="open"><style>/** 基础色阶定义 **/
+:root,
+#mount[data-theme="light"],
+#mount:not([data-theme="dark"]) {
+  /* 中性灰阶（light） */
+  --c-00: #000000;
+  --c-22: #222222;
+  --c-33: #333333;
+  --c-66: #666666;
+  --c-83: #838383;
+  --c-99: #999999;
+  --c-c7: #c7c7c7;
+  --c-cc: #cccccc;
+  --c-e6: #e6e6e6;
+  --c-f5: #f5f5f5;
+  --c-ff: #ffffff;
+  /* 品牌主色阶（light） */
+  --p-main: #ea4c89;
+  --p-hover: #ec5e95;
+  --p-active: #e34a85;
+  --p-special: #ee71a2;
+  --p-disabled: #f4a5c4;
+  --p-text-disabled: #f9c9dc;
+  --p-weak: #fdedf3;
+  /* Surface 层级（light，TC 填充-1） */
+  --s-1: #f3f5f6;
+  --s-1-hover: #f6f8f9;
+  --s-1-active: #edf1f2;
+  --s-1-weak: #fafbfb;
+  /* 输入/边框（light，TC 填充-2） */
+  --input-bg-base: #fafbfc;
+  --input-border: #ecf0f7;
+  --input-border-strong: #e0e0e6;
+  --input-bg-strong: #fafdff;
+}
+
+:root[data-theme="dark"],
+[data-theme="dark"] {
+  /* 中性灰阶（dark） */
+  --c-00: #ffffff;
+  --c-22: #dbdbdb;
+  --c-33: #dbdbdb;
+  --c-66: #b3b3b3;
+  --c-83: #838383;
+  --c-99: #707070;
+  --c-c7: #666666;
+  --c-cc: #5c5c5c;
+  --c-e6: #3b3b3b;
+  --c-f5: #262626;
+  --c-ff: #222222;
+  /* 品牌主色阶（dark） */
+  --p-main: #e23c7c;
+  --p-hover: #ea4c89;
+  --p-active: #d5467d;
+  --p-special: #a93a65;
+  --p-disabled: #7e2f4d;
+  --p-text-disabled: #522335;
+  --p-weak: #26171d;
+  /* Surface 层级（dark，TC 填充-1） */
+  --s-1: #2d2e2f;
+  --s-1-hover: #323434;
+  --s-1-active: #202121;
+  --s-1-weak: #262627;
+  /* 输入/边框（dark，TC 填充-2） */
+  --input-bg-base: #2b2d30;
+  --input-border: #3e434b;
+  --input-border-strong: #43474b;
+  --input-bg-strong: #1f2123;
+}
+
+:root,
+#mount [data-theme] {
+  /* 业务/通用变量引用色阶（全局可见，含 Shadow DOM） */
+  --primary: var(--p-main);
+  --primary-hover: var(--p-hover);
+  --primary-inverse: #fff;
+  --modal-background: var(--s-1);
+  --modal-border: var(--input-border);
+  --modal-text: var(--c-22);
+  --modal-text-secondary: var(--c-66);
+  --modal-error: var(--p-main);
+  --modal-required: #f53f3f;
+  --modal-success: #68cd52;
+  --modal-button-background: var(--p-main);
+  --modal-button-text: var(--c-ff);
+  --modal-input-background: var(--input-bg-base);
+  --modal-check-color: var(--p-main);
+  --background-color: var(--c-ff);
+  --background-light-green: var(--s-1-weak, #f5f7f9);
+  --text-black-2: var(--c-22);
+  --text-gray-2: var(--c-22);
+  --text-gray-6: var(--c-66);
+  --text-gray-9: var(--c-99);
+  --text-gray-c2: var(--c-c7);
+  --switch-background-color: var(--c-c7, hsl(205deg, 16%, 77%));
+  --float-ball-more-button-border-color: var(--c-f5, #f6f6f6);
+  --float-ball-more-button-background-color: var(--c-ff);
+  --float-ball-more-button-hover-color: var(--p-weak);
+  --float-ball-more-button-svg-color: #6c6f73;
+  --service-bg-hover: var(--s-1-hover, #f7faff);
+  --service-bg: var(--s-1-weak, #fafbfb);
+}
+
+#mount {
+  --font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
+    "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  /* PC/H5 兼容的字号、间距、圆角、阴影变量 */
+  --f-12: 12px;
+  --f-14: 14px;
+  --f-15: 15px;
+  --f-16: 16px;
+  --f-18: 18px;
+  --f-20: 20px;
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-18: 18px;
+  --space-24: 24px;
+  --radius-8: 8px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --control-height-lg: 44px;
+  --width-28: 28px;
+  --width-24: 24px;
+  --width-20: 20px;
+  --width-18: 18px;
+  --width-16: 16px;
+  --width-label-md: 56px;
+  --shadow-lg: 0 18px 48px rgba(0, 0, 0, 0.12);
+
+  /* 常规变量 */
+  --line-height: 1.5;
+  --font-weight: 400;
+  --font-size: 16px;
+  --border-radius: 4px;
+  --border-width: 2px;
+  --outline-width: 3px;
+  --spacing: 16px;
+  --typography-spacing-vertical: 24px;
+  --block-spacing-vertical: calc(var(--spacing) * 2);
+  --block-spacing-horizontal: var(--spacing);
+  --grid-spacing-vertical: 0;
+  --grid-spacing-horizontal: var(--spacing);
+  --form-element-spacing-vertical: 12px;
+  --form-element-spacing-horizontal: 16px;
+  --nav-element-spacing-vertical: 16px;
+  --nav-element-spacing-horizontal: 8px;
+  --nav-link-spacing-vertical: 8px;
+  --nav-link-spacing-horizontal: 8px;
+  --form-label-font-weight: var(--font-weight);
+  --transition: 0.2s ease-in-out;
+  --modal-overlay-backdrop-filter: blur(4px);
+  --switch-color: var(--primary-inverse);
+  --switch-checked-background-color: var(--primary);
+  --icon-xia: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgaWQ9IkZyYW1lIj4KPHBhdGggaWQ9IlZlY3RvciIgZD0iTTguMDAyOTEgOS42Nzk4M0wzLjgzMzM5IDUuNTEyMjFMMy4wMjUzOSA2LjMxOTgzTDguMDAzMjkgMTEuMjk1MUwxMi45NzYyIDYuMzE5ODNMMTIuMTY3OSA1LjUxMjIxTDguMDAyOTEgOS42Nzk4M1oiIGZpbGw9IiM4MzgzODMiLz4KPC9nPgo8L3N2Zz4K");
+  /* 兼容旧变量：主色直接引用品牌主色阶 */
+  --primary: var(--p-main);
+  --primary-hover: var(--p-hover);
+  --primary-inverse: #fff;
+  /* Modal 业务变量引用色阶 */
+  --modal-background: var(--s-1);
+  --modal-border: var(--input-border);
+  --modal-text: var(--c-22);
+  --modal-text-secondary: var(--c-66);
+  --modal-error: var(--p-main);
+  --modal-required: #f53f3f;
+  --modal-success: #68cd52;
+  --modal-button-background: var(--p-main);
+  --modal-button-text: var(--c-ff);
+  --modal-input-background: var(--input-bg-base);
+  --modal-check-color: var(--p-main);
+  --background-color: var(--c-ff);
+  --background-light-green: var(--s-1-weak, #f5f7f9);
+  --text-black-2: var(--c-22);
+  --text-gray-2: var(--c-22);
+  --text-gray-6: var(--c-66);
+  --text-gray-9: var(--c-99);
+  --text-gray-c2: var(--c-c7);
+  --switch-background-color: var(--c-c7, hsl(205deg, 16%, 77%));
+  --float-ball-more-button-border-color: var(--c-f5, #f6f6f6);
+  --float-ball-more-button-background-color: var(--c-ff);
+  --float-ball-more-button-hover-color: var(--p-weak);
+  --float-ball-more-button-svg-color: #6c6f73;
+  --service-bg-hover: var(--s-1-hover, #f7faff);
+  --service-bg: var(--s-1-weak, #fafbfb);
+  line-height: var(--line-height);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+}
+
+@media (max-width: 480px) {
+  :root,
+  #mount {
+    --f-12: 10px;
+    --f-14: 12px;
+    --f-15: 13px;
+    --f-16: 14px;
+    --f-18: 16px;
+    --f-20: 18px;
+    --space-4: 4px;
+    --space-6: 4px;
+    --space-8: 6px;
+    --space-12: 8px;
+    --space-16: 12px;
+    --space-18: 14px;
+    --space-24: 18px;
+    --radius-8: 6px;
+    --radius-12: 10px;
+    --radius-16: 12px;
+    --control-height-lg: 38px;
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.1);
+    --width-28: 24px;
+    --width-24: 20px;
+    --width-20: 16px;
+    --width-18: 14px;
+    --width-16: 12px;
+    --width-label-md: 52px;
+  }
+}
+
+#mount * {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+:where(#mount) a,
+:where(#mount) [role="link"] {
+  --color: var(--primary);
+  --background-color: transparent;
+  outline: none;
+  background-color: var(--background-color);
+  color: var(--color);
+  -webkit-text-decoration: var(--text-decoration);
+  text-decoration: var(--text-decoration);
+  transition: background-color var(--transition), color var(--transition),
+    box-shadow var(--transition), -webkit-text-decoration var(--transition);
+  transition: background-color var(--transition), color var(--transition),
+    text-decoration var(--transition), box-shadow var(--transition);
+  transition: background-color var(--transition), color var(--transition),
+    text-decoration var(--transition), box-shadow var(--transition),
+    -webkit-text-decoration var(--transition);
+}
+:where(#mount) a:is([aria-current], :hover, :active, :focus),
+:where(#mount) [role="link"]:is([aria-current], :hover, :active, :focus) {
+  --color: var(--primary-hover);
+  --text-decoration: underline;
+}
+
+:where(#mount) label {
+  font-size: 13px;
+  line-height: 1.3;
+  color: var(--text-gray-2, #222222);
+}
+
+:where(#mount) button {
+  width: 100%;
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.3;
+  min-height: 44px;
+  border-radius: 12px;
+  padding: 0 14px;
+  border: none;
+  background-color: var(--primary, #ea4c89);
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+:where(#mount) button:hover {
+  background-color: var(--primary-hover, #f082ac);
+}
+
+:where(#mount) button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+:where(#mount) select,
+:where(#mount) input,
+:where(#mount) textarea {
+  font-family: inherit;
+  color: var(--text-gray-2, #222222);
+}
+
+:where(#mount) select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: inherit;
+  color: var(--text-gray-2, inherit);
+  font-size: 13px;
+  line-height: 1.3;
+  outline: none;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--popup-item-background-color, transparent);
+  background-image: var(--icon-xia, none);
+  background-repeat: no-repeat;
+  background-position: center right 12px;
+  background-size: 16px auto;
+  cursor: pointer;
+}
+
+:where(#mount) input[type="checkbox"] {
+  accent-color: var(--primary, #ea4c89);
+}
+
+[type="checkbox"],
+[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 1.25em;
+  height: 1.25em;
+  margin-top: -0.125em;
+  margin-right: 0.375em;
+  margin-left: 0;
+  -webkit-margin-start: 0;
+  margin-inline-start: 0;
+  -webkit-margin-end: 0.375em;
+  margin-inline-end: 0.375em;
+  border-width: var(--border-width);
+  font-size: inherit;
+  vertical-align: middle;
+  cursor: pointer;
+}
+[type="checkbox"]::-ms-check,
+[type="radio"]::-ms-check {
+  display: none;
+}
+[type="checkbox"]:checked,
+[type="checkbox"]:checked:active,
+[type="checkbox"]:checked:focus,
+[type="radio"]:checked,
+[type="radio"]:checked:active,
+[type="radio"]:checked:focus {
+  --background-color: var(--primary);
+  --border-color: var(--primary);
+  background-image: var(--icon-checkbox);
+  background-position: center;
+  background-size: 0.75em auto;
+  background-repeat: no-repeat;
+}
+[type="checkbox"] ~ label,
+[type="radio"] ~ label {
+  display: inline-block;
+  margin-right: 0.375em;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+[type="checkbox"]:indeterminate {
+  --background-color: var(--primary);
+  --border-color: var(--primary);
+  background-image: var(--icon-minus);
+  background-position: center;
+  background-size: 0.75em auto;
+  background-repeat: no-repeat;
+}
+
+[type="radio"] {
+  border-radius: 50%;
+}
+[type="radio"]:checked,
+[type="radio"]:checked:active,
+[type="radio"]:checked:focus {
+  --background-color: var(--primary-inverse);
+  border-width: 0.35em;
+  background-image: none;
+}
+
+:where(#mount) [type="checkbox"][role="switch"] {
+  --background-color: var(--switch-background-color);
+  --border-color: var(--switch-background-color);
+  --color: var(--switch-color);
+  width: 2.25em;
+  height: 1.25em;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 1.25em;
+  background-color: var(--background-color);
+  line-height: 1.25em;
+}
+:where(#mount) [type="checkbox"][role="switch"]:focus {
+  --background-color: var(--switch-background-color);
+  --border-color: var(--switch-background-color);
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked {
+  --background-color: var(--switch-checked-background-color);
+  --border-color: var(--switch-checked-background-color);
+}
+:where(#mount) [type="checkbox"][role="switch"]:before {
+  display: block;
+  width: calc(1.25em - (var(--border-width) * 2));
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--color);
+  content: "";
+  transition: margin 0.1s ease-in-out;
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked {
+  background-image: none;
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked::before {
+  margin-left: calc(1.125em - var(--border-width));
+  -webkit-margin-start: calc(1.125em - var(--border-width));
+  margin-inline-start: calc(1.125em - var(--border-width));
+}
+
+:where(#mount) [type="checkbox"][aria-invalid="false"],
+:where(#mount) [type="checkbox"]:checked[aria-invalid="false"],
+:where(#mount) [type="radio"][aria-invalid="false"],
+:where(#mount) [type="radio"]:checked[aria-invalid="false"],
+:where(#mount) [type="checkbox"][role="switch"][aria-invalid="false"],
+:where(#mount) [type="checkbox"][role="switch"]:checked[aria-invalid="false"] {
+  --border-color: var(--form-element-valid-border-color);
+}
+:where(#mount) [type="checkbox"][aria-invalid="true"],
+:where(#mount) [type="checkbox"]:checked[aria-invalid="true"],
+:where(#mount) [type="radio"][aria-invalid="true"],
+:where(#mount) [type="radio"]:checked[aria-invalid="true"],
+:where(#mount) [type="checkbox"][role="switch"][aria-invalid="true"],
+:where(#mount) [type="checkbox"][role="switch"]:checked[aria-invalid="true"] {
+  --border-color: var(--form-element-invalid-border-color);
+}
+
+.text-black {
+  color: var(--text-black-2);
+}
+
+.text-gray-2 {
+  color: var(--text-gray-2);
+}
+
+.text-gray-6 {
+  color: var(--text-gray-6);
+}
+
+.text-gray-9 {
+  color: var(--text-gray-9);
+}
+
+.text-gray-c2 {
+  color: var(--text-gray-c2);
+}
+
+.pt-4 {
+  padding-top: 16px;
+}
+
+.p-2 {
+  padding: 8px;
+}
+
+.pl-5 {
+  padding-left: 48px;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.pl-2 {
+  padding-left: 8px;
+}
+
+.pl-4 {
+  padding-left: 24px;
+}
+
+.pt-2 {
+  padding-top: 8px;
+}
+
+.pb-2 {
+  padding-bottom: 8px;
+}
+
+.pb-4 {
+  padding-bottom: 16px;
+}
+
+.pb-5 {
+  padding-bottom: 20px;
+}
+
+.pr-5 {
+  padding-right: 48px;
+}
+
+.text-sm {
+  font-size: 13px;
+}
+
+.text-base {
+  font-size: 16px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.mb-0 {
+  margin-bottom: 0px;
+}
+
+.mb-2 {
+  margin-bottom: 8px;
+}
+
+.mb-4 {
+  margin-bottom: 16px;
+}
+
+.mb-3 {
+  margin-bottom: 12px;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.py-2 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.py-2-5 {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mt-2 {
+  margin-top: 8px;
+}
+
+.mt-3 {
+  margin-top: 12px;
+}
+
+.mt-4 {
+  margin-top: 16px;
+}
+
+.mt-5 {
+  margin-top: 20px;
+}
+
+.mt-6 {
+  margin-top: 24px;
+}
+
+.mb-1 {
+  margin-bottom: 4px;
+}
+
+.ml-4 {
+  margin-left: 24px;
+}
+
+.ml-3 {
+  margin-left: 16px;
+}
+
+.ml-2 {
+  margin-left: 8px;
+}
+
+.ml-1 {
+  margin-left: 4px;
+}
+
+.mr-1 {
+  margin-right: 4px;
+}
+
+.mr-2 {
+  margin-right: 8px;
+}
+
+.mr-3 {
+  margin-right: 16px;
+}
+
+.mx-2 {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.pl-3 {
+  padding-left: 12px;
+}
+
+.pr-3 {
+  padding-right: 12px;
+}
+
+.p-3 {
+  padding: 12px;
+}
+
+.px-1 {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.px-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.pt-3 {
+  padding-top: 12px;
+}
+
+.px-6 {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.px-4 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.pt-6 {
+  padding-top: 20px;
+}
+
+.py-3 {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.py-0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.left-auto {
+  left: auto !important;
+}
+
+.max-h-28 {
+  max-height: 112px;
+}
+
+.max-h-30 {
+  max-height: 120px;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
+.text-xs {
+  font-size: 12px;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-3 {
+  flex: 3;
+}
+
+.flex-4 {
+  flex: 4;
+}
+
+.flex-2 {
+  flex: 2;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.max-content {
+  width: max-content;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-baseline {
+  align-items: baseline;
+}
+
+.my-5 {
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+.my-4 {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.my-3 {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.pt-3 {
+  padding-top: 12px;
+}
+
+.px-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.pt-2 {
+  padding-top: 8px;
+}
+
+.px-2 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.pt-1 {
+  padding-top: 4px;
+}
+
+.px-1 {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.pb-2 {
+  padding-bottom: 8px;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.shrink-0 {
+  flex-shrink: 0;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.close {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  background-image: var(--icon-close);
+  background-position: center;
+  background-size: auto 1rem;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  transition: opacity var(--transition);
+}
+
+.padding-two-column {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.muted {
+  color: #999;
+}
+
+.text-label {
+  color: #666;
+}
+
+.display-none {
+  display: none;
+}
+
+/* dark use #18232c */
+@media (prefers-color-scheme: dark) {
+  .text-label {
+    color: #9ca3af;
+  }
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.text-decoration-none:is([aria-current], :hover, :active, :focus),
+[role="link"]:is([aria-current], :hover, :active, :focus) {
+  --text-decoration: none !important;
+  background-color: transparent !important;
+}
+
+.text-overflow-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.max-w-20 {
+  max-width: 180px;
+  white-space: nowrap;
+}
+
+[data-theme="light"],
+#mount:not([data-theme="dark"]) {
+  --popup-footer-background-color: #e8eaeb;
+  --popup-content-background-color: #ffffff;
+  --popup-item-background-color: #f3f5f6;
+  --popup-item-hover-background-color: #eaeced;
+  --popup-trial-pro-background-color: #f9fbfc;
+  --service-select-content-shadow: 0px 2px 12px 0px rgba(75, 76, 77, 0.2);
+  --service-select-border-color: #fafafa;
+  --service-select-selected-background-color: #f3f5f6;
+  --download-app-background: #f3f5f6;
+  --translate-language-background-color: #f3f5f6;
+  --translate-language-icon-color: #666666;
+  --translate-language-text-color: #222222;
+  --translate-language-hover-background-color: #fdedf3;
+  --translate-language-hover-icon-color: #e95d93;
+  --error-bg: #fdedf3;
+  --error-text: #222;
+  --error-link: #ea4c89;
+}
+
+[data-theme="dark"] {
+  --popup-footer-background-color: #0d0d0d;
+  --popup-content-background-color: #191919;
+  --popup-item-background-color: #272727;
+  --popup-item-hover-background-color: #333333;
+  --popup-trial-pro-background-color: #222222;
+  --service-select-content-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.9);
+  --service-select-border-color: #2c2c2c;
+  --service-select-selected-background-color: #333333;
+  --download-app-background: #333;
+  --translate-language-background-color: #2d2e2f;
+  --translate-language-icon-color: #b3b3b3;
+  --translate-language-text-color: #b3b3b3;
+  --translate-language-hover-background-color: #a97b8c;
+  --translate-language-hover-icon-color: rgba(255, 255, 255, 0.9);
+  --error-bg: #26171d;
+  --error-text: #dbdbdb;
+  --error-link: #ea4c89;
+}
+
+#mount {
+  min-width: 268px;
+}
+
+body {
+  padding: 0;
+  margin: 0 auto;
+  min-width: 268px;
+  border-radius: 10px;
+}
+
+.popup-container {
+  font-size: 16px;
+  --font-size: 16px;
+  color: #666;
+  background-color: var(--popup-footer-background-color);
+  width: 316px;
+  min-width: 316px;
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-content {
+  background-color: var(--popup-content-background-color);
+  border-radius: 0px 0px 12px 12px;
+  padding: 16px 20px;
+}
+
+.popup-userscript-three-feature-layout {
+  background-color: var(--popup-footer-background-color);
+  width: 350px;
+  min-width: 350px;
+}
+
+.popup-userscript-three-feature-layout .popup-content {
+  padding-bottom: 20px;
+  border-radius: 0 0 12px 12px;
+}
+
+.popup-userscript-three-feature-layout .popup-footer {
+  border-radius: 0;
+}
+
+.immersive-translate-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  touch-action: none;
+}
+
+.immersive-translate-popup-wrapper {
+  background: var(--background-color);
+  border-radius: 10px;
+  border: 1px solid var(--muted-border-color);
+}
+
+.main-button {
+  font-size: 16px;
+  font-weight: 700;
+  vertical-align: middle;
+  border-radius: 12px;
+  padding: unset;
+  height: 48px;
+  line-height: 48px;
+  flex: 1;
+}
+
+select.translate-service,
+select.min-select {
+  --form-element-spacing-horizontal: 0;
+  margin-bottom: 0px;
+  max-width: unset;
+  flex: 1;
+  overflow: hidden;
+  font-size: 13px;
+  border: none;
+  border-radius: 8px;
+  padding-right: 30px;
+  padding-left: 0px;
+  background-position: center right 12px;
+  background-size: 16px auto;
+  background-image: var(--icon-xia);
+  text-overflow: ellipsis;
+  color: var(--text-gray-2);
+  background-color: transparent;
+  box-shadow: unset !important;
+  cursor: pointer;
+}
+
+select.more {
+  background-position: center right;
+  padding-right: 20px;
+}
+
+select.translate-service {
+  color: var(--text-black-2);
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSI4IiB2aWV3Qm94PSIwIDAgOCA4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIG9wYWNpdHk9IjAuOCI+PHBhdGggZD0iTTMuNDc5NzMgNi4zODY0M0wwLjcyOTI5NyAzLjMyMjE2QzAuNjE2ODggMy4xOTY5NCAwLjU1NDY5NSAzLjAzNDU5IDAuNTU0Njg4IDIuODY2M0MwLjU1NDY4OCAyLjQ4OTI0IDAuODYwNTQ3IDIuMTgzNTkgMS4yMzc4NCAyLjE4MzU5SDYuNzM4NzFDNi45MDcwNyAyLjE4MzU4IDcuMDY5NTEgMi4yNDU3MiA3LjE5NDg4IDIuMzU4MDlDNy40NzU3NCAyLjYwOTg2IDcuNDk5MTkgMy4wNDE0OCA3LjI0NzI2IDMuMzIyMTZMNC40OTY4MiA2LjM4NjQ0QzQuNDgwMzIgNi40MDQ4MiA0LjQ2MjgzIDYuNDIyMjkgNC40NDQ0NCA2LjQzODc4QzQuMTYzNTggNi42OTA1NSAzLjczMTY2IDYuNjY3MTEgMy40Nzk3MyA2LjM4NjQzWiIgZmlsbD0iIzk5OTk5OSIvPjwvZz48L3N2Zz4K");
+  background-size: 8px auto;
+}
+
+.min-select-container.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.popup-footer {
+  background-color: var(--popup-footer-background-color);
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+/* Footer 三栏布局样式 */
+.footer-link-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  min-width: 72px;
+}
+
+.footer-icon-btn {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-icon-btn svg {
+  color: #999999;
+}
+
+[data-theme="dark"] .footer-icon-btn svg {
+  color: #707070;
+}
+
+.footer-link-text {
+  font-size: 12px;
+  line-height: 18px;
+  color: #666666;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .footer-link-text {
+  color: #b3b3b3;
+}
+
+.footer-link-btn-right {
+  justify-content: flex-end;
+}
+
+.footer-center-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #999999;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.footer-center-text.is-overflowing {
+  justify-content: flex-start;
+}
+
+.footer-center-text.is-overflowing .footer-center-content {
+  animation: footer-scroll-text 12s linear infinite;
+}
+
+@keyframes footer-scroll-text {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.footer-center-content {
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-scroll-gap {
+  display: inline-block;
+  width: 80px;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .footer-center-text {
+  color: #707070;
+}
+
+.footer-text-content {
+  display: inline-block;
+}
+
+.footer-privacy-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-version-inline-text {
+  font-size: 12px;
+  color: #999999;
+  line-height: 1;
+  border-bottom: 1px solid transparent;
+}
+
+[data-theme="dark"] .footer-version-inline-text {
+  color: #707070;
+}
+
+.footer-version-inline-text:hover {
+  border-bottom-color: #999999;
+}
+
+[data-theme="dark"] .footer-version-inline-text:hover {
+  border-bottom-color: #707070;
+}
+
+.translate-language-row {
+  gap: 4px;
+}
+
+.translate-language-exchange {
+  width: 36px;
+  height: 48px;
+  background-color: var(--translate-language-background-color);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--translate-language-icon-color);
+  flex-shrink: 0;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.translate-language-exchange:hover {
+  color: var(--translate-language-hover-icon-color);
+}
+
+.translate-language-exchange-active {
+  background-color: var(--translate-language-hover-background-color);
+  color: var(--translate-language-hover-icon-color);
+}
+
+.translate-language-exchange-active:hover {
+  background-color: var(--translate-language-hover-background-color);
+  color: var(--translate-language-hover-icon-color);
+}
+
+.translate-language-arrow {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+}
+
+.translation-service-container {
+  background-color: var(--popup-item-background-color);
+  border-radius: 12px;
+}
+
+.translation-service-primary-field {
+  position: relative;
+}
+
+.translation-service-guide-hitbox {
+  position: absolute;
+  right: 46px;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: auto;
+}
+
+.min-select-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 44px;
+  background-color: var(--popup-item-background-color);
+  padding-left: 16px;
+}
+
+.min-select-container:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.min-select-container:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.min-select-container:only-child {
+  border-radius: 10px;
+}
+
+.popup-ai-context-label {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+  min-width: 60px;
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+.popup-ai-context-switch {
+  align-self: center;
+  margin: 0;
+  margin-inline-end: 12px;
+}
+
+.translate-mode {
+  width: 36px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: var(--translate-language-background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  color: var(--translate-language-text-color);
+  margin-right: 8px;
+}
+
+/* 快捷操作设置标题栏 */
+.widgets-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 4px;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.widgets-header-title {
+  color: #999999;
+}
+
+.widgets-header-action {
+  color: #999999;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.widgets-header-action:hover {
+  color: #666666;
+}
+
+.widgets-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+  gap: 8px;
+}
+
+.popup-userscript-three-feature-layout .widgets-container-compact-monkey {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 12px;
+}
+
+.widgets-container.widgets-single-item {
+  grid-template-columns: minmax(0, 1fr);
+  margin-top: 12px;
+}
+
+.widgets-container.widgets-single-item .widget-item {
+  max-width: none;
+}
+
+/* 当只有两个小组件时的样式优化 */
+.widgets-container.widgets-two-items {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.widgets-container.widgets-two-items .widget-item {
+  max-width: none;
+}
+
+.widget-item {
+  display: flex;
+  width: 100%;
+  min-height: 44px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 1px solid #eef0f2;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  padding: 0 14px;
+  text-align: left;
+  gap: 6px;
+}
+
+.widget-item.widget-item-single {
+  flex: 1 1 auto;
+  flex-direction: row;
+  justify-content: center;
+  border: 1px solid #eef0f2;
+  border-radius: 16px;
+  padding: 0 14px;
+  background: transparent;
+}
+
+.popup-userscript-three-feature-layout .widget-item-compact {
+  min-height: 60px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  padding: 8px 12px;
+}
+
+.widget-item svg {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+}
+
+.widget-icon-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--c-66, #666666);
+  font-size: 14px;
+  line-height: 21px;
+  text-align: left;
+  word-break: keep-all;
+}
+
+.popup-userscript-three-feature-layout .widget-item-compact .widget-icon-text {
+  white-space: nowrap;
+  overflow: visible;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.widget-item.widget-item-single .widget-icon-text {
+  white-space: nowrap;
+  text-align: left;
+  color: var(--c-66, #666666);
+}
+
+[data-theme="dark"] .widget-item,
+[data-theme="dark"] .widget-item.widget-item-single {
+  border-color: #2e2e2e;
+}
+
+[data-theme="dark"] .widget-icon-text,
+[data-theme="dark"] .widget-item.widget-item-single .widget-icon-text {
+  color: var(--c-66, #666666);
+}
+
+[data-theme="dark"] .more-settings-icon {
+  fill: #191919;
+}
+
+.share-button-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 2px 3px 0 8px;
+}
+
+.share-button-container svg {
+  fill: var(--text-gray-9);
+}
+
+.min-select-container:hover,
+.widget-item:hover {
+  background-color: var(--popup-item-hover-background-color);
+}
+
+.main-button:hover {
+  background-color: #f5508f;
+}
+
+.share-button-container:hover {
+  background-color: var(--popup-item-background-color);
+  border-radius: 6px;
+}
+
+.error-boundary {
+  background: #fff2f0;
+  border: 1px solid #ffccc7;
+  display: flex;
+  padding: 12px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.88);
+  word-break: break-all;
+  margin: 12px;
+  border-radius: 12px;
+  flex-direction: column;
+}
+
+.upgrade-pro {
+  border-radius: 11px;
+  background: linear-gradient(57deg, #272727 19.8%, #696969 82.2%);
+  padding: 2px 8px;
+  transform: scale(0.85);
+}
+
+.upgrade-pro span {
+  background: linear-gradient(180deg, #ffeab4 17.65%, #f8c235 85.29%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+.upgrade-pro svg {
+  margin-top: -2px;
+}
+
+.upgrade-pro:hover {
+  background: linear-gradient(57deg, #3d3d3d 19.8%, #949494 82.2%);
+}
+
+.border-bottom-radius-0 {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.trial-pro-container {
+  border-radius: 0px 0px 12px 12px;
+  background: var(--popup-trial-pro-background-color);
+  display: flex;
+  align-items: center;
+  height: 44px;
+  padding-left: 16px;
+  padding-right: 12px;
+  font-size: 12px;
+}
+
+.trial-pro-container label {
+  line-height: 13px;
+  color: var(--text-black-2);
+}
+
+.trial-pro-container img {
+  margin-left: 5px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.upgrade-pro-discount-act {
+  height: 25px;
+  display: flex;
+  padding: 0 4px;
+  align-items: center;
+  border-radius: 15px;
+  background: linear-gradient(
+    90deg,
+    #cefbfa 11.33%,
+    #d7f56f 63.75%,
+    #fccd5e 100%
+  );
+  transform: scale(0.9);
+  box-shadow: 0px 1.8px 3.6px 0px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.upgrade-pro-discount-act span {
+  font-size: 12px;
+  font-weight: 700;
+  margin-left: 4px;
+  color: #222222;
+}
+
+.upgrade-pro-discount-act:hover {
+  text-decoration: unset;
+  background: linear-gradient(
+    90deg,
+    #e2fffe 11.33%,
+    #e6ff91 63.75%,
+    #ffdf93 100%
+  );
+}
+
+.custom-select-container {
+  width: 200px;
+  position: relative;
+  flex: 1;
+}
+
+#translation-service-select {
+  padding-right: 12px;
+}
+
+.custom-select-content {
+  border-radius: 12px;
+  background: var(--popup-content-background-color);
+  box-shadow: var(--service-select-content-shadow);
+  border: 1px solid var(--service-select-border-color);
+  padding: 8px;
+  position: absolute;
+  left: -68px;
+  right: 0;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.custom-select-item.default {
+  width: 100%;
+  padding: 0;
+}
+
+.custom-select-item {
+  font-size: 14px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--text-black-2);
+  width: auto;
+  overflow: hidden;
+  height: 30px;
+  line-height: 30px;
+}
+
+.custom-select-item-img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .custom-select-item-img {
+    margin-right: 6px;
+  }
+}
+
+.custom-select-content .custom-select-item.selected,
+.custom-select-content .custom-select-item:hover {
+  background: var(--service-select-selected-background-color);
+}
+
+.custom-select-item > span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.custom-select-item-pro {
+  font-size: 12px;
+  margin-left: 6px;
+  display: flex;
+}
+
+.custom-select-item-pro img {
+  margin: 0 3px;
+  width: 20px;
+  flex-shrink: 0;
+}
+
+.service-select-inline-sponsor-container {
+  width: 50px;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.service-select-inline-sponsor-marquee {
+  min-width: max-content;
+  display: inline-flex;
+  align-items: center;
+  column-gap: 12px;
+  animation: service-select-inline-sponsor-scroll 10s linear infinite;
+}
+
+.service-select-inline-sponsor-track {
+  min-width: max-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+@keyframes service-select-inline-sponsor-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 6px));
+  }
+}
+
+.custom-select-group-header {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-gray-9);
+  padding: 8px 8px 6px;
+  margin-top: 2px;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.custom-select-group-header--recommendation {
+  color: #beb3a0;
+  font-weight: 400;
+  letter-spacing: 0;
+  padding-top: 4px;
+}
+
+.custom-select-group-header-tip {
+  display: inline-flex;
+  align-items: center;
+  color: #bcbcbc;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.more-container {
+  position: relative;
+}
+
+.new-menu-indicator {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #ef3434;
+  border-radius: 50%;
+  right: 18px;
+  top: 4px;
+}
+
+.download-app {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px;
+  background: var(--download-app-background);
+  padding: 4px 8px;
+  color: var(--text-gray-6);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Popup 动画效果 */
+@keyframes popup-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes popup-fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+}
+
+.popup-generic-content {
+  animation: popup-fade-in 0.2s ease-out;
+}
+
+.popup-generic-content.hiding {
+  animation: popup-fade-out 0.15s ease-in;
+}
+
+select.min-select {
+  --form-element-spacing-horizontal: 0;
+  max-width: 128px;
+  overflow: hidden;
+  color: var(--primary);
+  font-size: 13px;
+  border: none;
+  padding: 0;
+  padding-right: 20px;
+  text-overflow: ellipsis;
+  color: var(--color);
+}
+select.min-select-secondary {
+  color: var(--color);
+}
+select.min-select:focus {
+  outline: none;
+  border: none;
+  --box-shadow: none;
+}
+
+select.min-select-left {
+  padding-right: 0px;
+  /* padding-left: 24px; */
+  /* background-position: center left 0; */
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+select.transform-padding-left {
+  padding-left: 12px;
+  transform: translateX(-12px);
+  background-position: center right 0px;
+}
+
+select.text-gray-6 {
+  color: var(--text-gray-6);
+}
+
+/* dark use black, for windows */
+@media (prefers-color-scheme: dark) {
+  select.translate-service option,
+  select.min-select option {
+    background-color: #666666;
+  }
+}
+
+select.min-select-no-arrow {
+  background-image: none;
+  padding-right: 0;
+}
+
+.activity-tips {
+  border-radius: 8px;
+  padding: 0px 8px;
+  height: 26px;
+  background: linear-gradient(
+    83deg,
+    #faccde -0.87%,
+    #fce7ef 43.13%,
+    #fbd6e4 72.08%,
+    #ffb3d1 96.34%
+  );
+  color: #333;
+  cursor: pointer;
+  gap: 4px;
+  font-size: 12px;
+}
+
+.activity-tips-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.countdown-container {
+  min-width: 50px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.01em;
+}
+
+.activity-tips-text {
+  font-weight: 600;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 非会员升级提示 */
+.upgrade-tips {
+  padding: 0px 6px 0px 4px;
+  height: 18px;
+  color: #ea4c89;
+  cursor: pointer;
+  gap: 6px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.upgrade-tips svg:first-child {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  filter: drop-shadow(0px 4px 4px rgba(236, 76, 140, 0.2));
+}
+
+.upgrade-tips-text {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.upgrade-tips-switch {
+  position: relative;
+  width: 30px;
+  height: 18px;
+  border-radius: 24px;
+  background: #cccccc;
+  flex-shrink: 0;
+}
+
+.upgrade-tips-switch-thumb {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+/* 抽屉组件样式 */
+.drawer-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+
+.drawer-overlay.drawer-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.drawer-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ffffff;
+  border-radius: 12px 12px 0 0;
+  z-index: 101;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-visible .drawer-panel {
+  transform: translateY(0);
+}
+
+[data-theme="dark"] .drawer-panel {
+  background: #222222;
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  flex-shrink: 0;
+}
+
+.drawer-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333333;
+}
+
+[data-theme="dark"] .drawer-title {
+  color: #e0e0e0;
+}
+
+.drawer-close {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999999;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.drawer-close:hover {
+  background-color: #f3f5f6;
+}
+
+[data-theme="dark"] .drawer-close:hover {
+  background-color: #333333;
+}
+
+.drawer-body {
+  padding: 16px 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.drawer-body.drawer-body-hover {
+  padding: 0 20px 20px 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.drawer-body.drawer-body-more-settings {
+  padding-top: 0;
+}
+
+.drawer-footer {
+  padding: 12px 20px;
+  border-top: 1px solid #eef0f2;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+[data-theme="dark"] .drawer-footer {
+  border-top: 1px solid #2e2e2e;
+}
+
+.drawer-footer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.drawer-footer-actions-single {
+  justify-content: center;
+}
+
+.drawer-footer-text {
+  font-size: 12px;
+  cursor: pointer;
+  color: #999999;
+  text-decoration: none;
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.drawer-footer-actions-single .drawer-footer-text {
+  flex: 0 1 auto;
+  max-width: 100%;
+}
+
+.drawer-footer-text:hover {
+  text-decoration: underline;
+}
+
+/* 抽屉内容区域样式 */
+.drawer-section {
+  margin-bottom: 16px;
+}
+
+.drawer-section:last-child {
+  margin-bottom: 0;
+}
+
+.drawer-section-highlight {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+[data-theme="dark"] .drawer-section-highlight {
+  background-color: #2a2a2a;
+}
+
+.drawer-section-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #666666;
+  margin-bottom: 12px;
+}
+
+[data-theme="dark"] .drawer-section-title {
+  color: #999999;
+}
+
+.drawer-section-divider {
+  height: 1px;
+  background-color: #eef0f2;
+  margin: 16px 0;
+}
+
+/* ========== 通用抽屉组件样式 ========== */
+.popup-drawer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.popup-drawer-card {
+  background: #f3f5f6;
+  border-radius: 12px;
+  padding: 12px 12px 16px;
+}
+
+[data-theme="dark"] .popup-drawer-card {
+  background: #2a2a2a;
+}
+
+.popup-drawer-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 21px;
+  gap: 12px;
+}
+
+.popup-drawer-card-header input[type="checkbox"][role="switch"] {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.popup-drawer-card-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #222222;
+  line-height: 21px;
+}
+
+[data-theme="dark"] .popup-drawer-card-title {
+  color: #e0e0e0;
+}
+
+.popup-drawer-card-divider {
+  height: 1px;
+  width: calc(100% + 24px);
+  background-color: #ffffff;
+  margin: 12px -12px 16px;
+}
+
+[data-theme="dark"] .popup-drawer-card-divider {
+  background-color: #333333;
+}
+
+.popup-drawer-demo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.popup-drawer-demo-region-fixed {
+  height: 51px;
+  max-height: 51px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-region-min {
+  min-height: 51px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-selection {
+  width: 100%;
+  min-width: 0;
+  flex-wrap: nowrap;
+}
+
+.popup-drawer-demo-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-plus,
+.popup-drawer-demo-equal {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  color: #333333;
+}
+
+[data-theme="dark"] .popup-drawer-demo-plus,
+[data-theme="dark"] .popup-drawer-demo-equal {
+  color: #e0e0e0;
+}
+
+.popup-drawer-demo-logo {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-logo img {
+  width: 28px;
+  height: 28px;
+  display: block;
+  filter: drop-shadow(0 4px 12px rgba(255, 166, 201, 0.5));
+}
+
+.popup-drawer-demo-result {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #333333;
+}
+
+.popup-drawer-demo-result-ellipsis {
+  min-width: 0;
+  max-width: calc(100% - 72px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .popup-drawer-demo-result {
+  color: #e0e0e0;
+}
+
+.popup-drawer-trigger {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.popup-drawer-trigger-label {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #999999;
+  padding-left: 4px;
+}
+
+.popup-drawer-trigger-options {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.popup-drawer-trigger-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #333333;
+  background: #ffffff;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.popup-drawer-trigger-option-disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.popup-drawer-trigger-option:not(.popup-drawer-trigger-option-selected):hover {
+  border-color: #d0d3d6;
+}
+
+.popup-drawer-trigger-option-selected {
+  border: 0.5px solid #ea4c89;
+  background: #fdedf3;
+  box-shadow: 0px 4px 12px rgba(255, 166, 201, 0.5);
+}
+
+[data-theme="dark"] .popup-drawer-trigger-option {
+  background: #1f1f1f;
+  border-color: #333333;
+  color: #e0e0e0;
+}
+
+[data-theme="dark"]
+  .popup-drawer-trigger-option:not(
+    .popup-drawer-trigger-option-selected
+  ):hover {
+  border-color: #444444;
+}
+
+[data-theme="dark"] .popup-drawer-trigger-option-selected {
+  background: rgba(233, 76, 137, 0.2);
+  border-color: #ea4c89;
+  box-shadow: 0 4px 12px 0 rgba(255, 166, 201, 0.3);
+}
+
+.popup-drawer-trigger-option-with-icon {
+  gap: 8px;
+}
+
+/* ========== 通用抽屉演示区域样式 ========== */
+/* 键帽样式 */
+.popup-drawer-demo-keycap {
+  min-width: 72px;
+  padding: 9px;
+  height: auto;
+  box-sizing: border-box;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  color: #ffffff;
+  background:
+    radial-gradient(
+      60px 36px at 85% 100%,
+      rgba(208, 208, 208, 0.2),
+      rgba(255, 255, 255, 0)
+    ),
+    radial-gradient(72px 36px at 50% 0%, #101010 0%, #242424 100%);
+  box-shadow:
+    2px 2px 3.5px rgba(0, 0, 0, 0.4),
+    inset 0.5px 0.7px 0.4px rgba(255, 255, 255, 0.5),
+    inset -0.5px -0.5px 0.2px rgba(0, 0, 0, 0.6);
+}
+
+.popup-drawer-demo-keycap-text {
+  max-width: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 小圆点样式 */
+.popup-drawer-demo-mini-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ea4c89;
+  flex-shrink: 0;
+  align-self: center;
+  box-shadow: 0 4px 12px rgba(255, 166, 201, 0.5);
+}
+
+[data-theme="dark"] .drawer-section-divider {
+  background-color: #333333;
+}
+
+/* 开关行 */
+.drawer-switch-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.drawer-switch-row.drawer-row-border {
+  border-bottom: 1px solid #eef0f2;
+  margin-bottom: 8px;
+  padding-bottom: 12px;
+}
+
+[data-theme="dark"] .drawer-switch-row.drawer-row-border {
+  border-bottom-color: #333333;
+}
+
+.drawer-switch-label {
+  font-size: 14px;
+  color: #222222;
+}
+
+[data-theme="dark"] .drawer-switch-label {
+  color: #e0e0e0;
+}
+
+/* 链接行 */
+.drawer-link-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  cursor: pointer;
+  border-bottom: 1px solid #eef0f2;
+  font-size: 14px;
+  color: #222222;
+}
+
+.drawer-link-row:last-child {
+  border-bottom: none;
+}
+
+[data-theme="dark"] .drawer-link-row {
+  border-bottom-color: #333333;
+  color: #e0e0e0;
+}
+
+.drawer-link-row:hover {
+  color: #ea4c89;
+}
+
+/* 演示区域 */
+.drawer-demo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 0;
+}
+
+.drawer-demo-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+}
+
+[data-theme="dark"] .drawer-demo-icon {
+  background-color: #333333;
+  border-color: #444444;
+}
+
+.drawer-demo-plus,
+.drawer-demo-equal {
+  font-size: 16px;
+  color: #999999;
+}
+
+.drawer-demo-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.drawer-demo-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.drawer-demo-result {
+  font-size: 14px;
+  color: #222222;
+  padding: 8px 12px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+}
+
+[data-theme="dark"] .drawer-demo-result {
+  background-color: #333333;
+  border-color: #444444;
+  color: #e0e0e0;
+}
+
+/* 触发方式选项 */
+.drawer-options {
+  display: flex;
+  gap: 8px;
+}
+
+.drawer-options-wrap {
+  flex-wrap: wrap;
+}
+
+.drawer-option {
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #666666;
+  background-color: #f3f5f6;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+[data-theme="dark"] .drawer-option {
+  background-color: #333333;
+  color: #b3b3b3;
+}
+
+.drawer-option:hover {
+  background-color: #eaeced;
+}
+
+[data-theme="dark"] .drawer-option:hover {
+  background-color: #3a3a3a;
+}
+
+.drawer-option-selected {
+  border-color: #ea4c89;
+  background-color: #fdedf3;
+  color: #ea4c89;
+  box-shadow: 0px 4px 12px rgba(255, 166, 201, 0.5);
+}
+
+[data-theme="dark"] .drawer-option-selected {
+  background-color: rgba(234, 76, 137, 0.2);
+}
+
+.drawer-body.drawer-body-selection {
+  padding: 0 20px 20px 20px;
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+
+/* ========== 更多设置抽屉样式 ========== */
+.more-settings-drawer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.more-settings-quick-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.more-settings-feature-card {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 40px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: #f3f5f6;
+  transition: background-color 0.2s ease;
+}
+
+.more-settings-feature-card:hover {
+  background-color: #e8eaec;
+}
+
+.more-settings-feature-card:active {
+  background-color: #dde0e2;
+}
+
+.more-settings-feature-card-label {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #666666;
+  white-space: nowrap;
+}
+
+.more-settings-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.more-settings-switch-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 21px;
+  gap: 12px;
+}
+
+.more-settings-switch-label {
+  flex: 1;
+  min-width: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #222222;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.more-settings-switch-row input[type="checkbox"] {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+[data-theme="dark"] .more-settings-switch-label {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .more-settings-feature-card {
+  background-color: #2a2a2a;
+}
+
+[data-theme="dark"] .more-settings-feature-card:hover {
+  background-color: #333333;
+}
+
+[data-theme="dark"] .more-settings-feature-card:active {
+  background-color: #3a3a3a;
+}
+
+[data-theme="dark"] .more-settings-feature-card-label {
+  color: #e0e0e0;
+}
+
+/* 动作按钮样式 */
+.more-settings-action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 12px;
+  color: #222222;
+  background-color: #f3f5f6;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.more-settings-action-button:hover {
+  background-color: #e8eaec;
+}
+
+.more-settings-action-button:active {
+  background-color: #dde0e2;
+}
+
+.more-settings-action-button-label {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  color: inherit;
+  text-align: center;
+}
+
+[data-theme="dark"] .more-settings-action-button {
+  color: #e0e0e0;
+  background-color: #2a2a2a;
+}
+
+[data-theme="dark"] .more-settings-action-button:hover {
+  background-color: #333333;
+}
+
+[data-theme="dark"] .more-settings-action-button:active {
+  background-color: #3a3a3a;
+}
+
+[data-theme="dark"] .more-settings-action-button-label {
+  color: #e0e0e0;
+}
+
+/* 错误消息组件样式 */
+.error-message-container {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 16px;
+  margin-top: 6px;
+  margin-bottom: -14px;
+  border: 1px solid #f53f3f;
+  border-radius: 12px;
+  background-color: var(--error-bg);
+}
+
+.error-message-icon-wrapper {
+  width: 21px;
+  height: 21px;
+  min-width: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4px;
+}
+
+.error-message-icon {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #f53f3f;
+}
+
+.error-message-text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: var(--error-text);
+}
+
+.error-message-text a {
+  color: var(--error-link);
+  text-decoration: underline;
+}
+
+.ad-banner-container {
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+
+html {
+  font-size: 17px;
+}
+
+@media print {
+  .imt-fb-container {
+    display: none !important;
+  }
+}
+
+#mount {
+  position: absolute;
+  display: none;
+  min-width: 250px;
+  height: auto;
+  --font-size: 17px;
+  font-size: 17px;
+}
+
+/* float-ball */
+.imt-fb-container {
+  position: fixed;
+  padding: 0;
+  top: 335px;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  display: none;
+  direction: ltr;
+  background-color: transparent !important;
+}
+
+.imt-fb-container:hover .imt-manga-button {
+  opacity: 1;
+}
+
+.imt-fb-container.left {
+  align-items: flex-start;
+  left: 0;
+}
+
+.imt-fb-container.right {
+  align-items: flex-end;
+  right: 0;
+}
+
+.imt-fb-btn {
+  cursor: pointer;
+  background: var(--float-ball-more-button-background-color);
+  height: 36px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+}
+
+.imt-fb-btn.left {
+  border-top-right-radius: 36px;
+  border-bottom-right-radius: 36px;
+  padding-left: 3px;
+}
+
+.imt-fb-btn.right {
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+  padding-right: 3px;
+}
+
+.imt-fb-btn.mini.left {
+  transform: translateX(-22px);
+}
+
+.imt-fb-btn.mini.right {
+  transform: translateX(22px);
+}
+
+.imt-fb-btn.mini.active {
+  transform: translateX(0);
+}
+
+.imt-fb-btn div {
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+.imt-fb-btn .imt-fb-hit-area {
+  position: absolute;
+  top: 0;
+  height: 36px;
+  bottom: -6px;
+  left: -6px;
+  right: -6px;
+  background: transparent;
+}
+
+.imt-fb-btn.mini.right .imt-fb-hit-area {
+  left: -10px;
+}
+
+.imt-fb-btn.mini.left .imt-fb-hit-area {
+  right: -10px;
+}
+
+.imt-fb-btn.left div {
+  border-top-right-radius: 34px;
+  border-bottom-right-radius: 34px;
+  justify-content: flex-end;
+}
+
+.imt-fb-btn.right div {
+  border-top-left-radius: 34px;
+  border-bottom-left-radius: 34px;
+}
+
+.imt-fb-logo-img {
+  width: 20px;
+  height: 20px;
+  margin: 0 10px;
+}
+
+.imt-fb-logo-img-big-bg {
+  width: 28px;
+  height: 28px;
+  margin: 0;
+  background-color: #ed6d8f;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.imt-float-ball-translated {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  bottom: 4px;
+  right: 4px;
+}
+
+.btn-animate {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform ease-out 250ms;
+  transition: -webkit-transform ease-out 250ms;
+  transition: transform ease-out 250ms;
+  transition: transform ease-out 250ms, -webkit-transform ease-out 250ms;
+}
+
+.imt-fb-setting-btn {
+  margin-right: 18px;
+  width: 28px;
+  height: 28px;
+}
+
+.immersive-translate-popup-wrapper {
+  background: var(--background-color);
+  border-radius: 20px;
+  box-shadow: 2px 10px 24px 0px #0e121614;
+  border: none;
+}
+
+.popup-container {
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-content {
+  border-radius: 20px 20px 12px 12px;
+}
+.popup-footer {
+  border-radius: 20px;
+}
+
+.popup-userscript-three-feature-layout {
+  border-radius: 20px;
+}
+
+.popup-userscript-three-feature-layout .popup-content {
+  border-radius: 20px 20px 12px 12px;
+}
+
+.popup-userscript-three-feature-layout .popup-footer {
+  border-radius: 0;
+}
+
+.imt-fb-close-button {
+  cursor: pointer;
+  position: absolute;
+  left: -10px;
+  bottom: -20px;
+}
+.imt-fb-container.left .imt-fb-close-button {
+  left: auto;
+  right: -10px;
+}
+
+.imt-fb-close-content {
+  padding: 22px;
+  width: 320px;
+  pointer-events: all;
+}
+
+.imt-fb-close-title {
+  font-weight: 500;
+  color: var(--text-black-2);
+}
+
+.imt-fb-close-radio-content {
+  background-color: var(--background-light-green);
+  padding: 8px 20px;
+}
+
+.imt-fb-radio-sel,
+.imt-fb-radio-nor {
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.imt-fb-radio-sel {
+  border: 2px solid var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imt-fb-radio-sel div {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: var(--primary);
+}
+
+.imt-fb-radio-nor {
+  border: 2px solid var(--input-border-strong);
+}
+
+.imt-fb-primary-btn {
+  background-color: var(--primary);
+  width: 72px;
+  height: 32px;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 32px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.imt-fb-default-btn {
+  border: 1px solid var(--primary);
+  width: 72px;
+  height: 32px;
+  border-radius: 8px;
+  color: var(--primary);
+  line-height: 32px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.imt-fb-guide-container {
+  width: 312px;
+  transform: translateY(-45%);
+}
+
+.imt-fb-guide-bg {
+  position: absolute;
+  left: 30px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  height: 100%;
+  width: 90%;
+}
+
+.imt-fb-guide-bg.left {
+  transform: scaleX(-1);
+}
+
+.imt-fb-guide-content {
+  margin: 16px -30px 80px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imt-fb-guide-content.left {
+  margin: 16px 21px 60px 32px;
+}
+
+.imt-fb-guide-img {
+  width: 220px;
+  height: 112px;
+}
+
+.imt-fb-guide-message {
+  font-size: 14px;
+  line-height: 28px;
+  color: #333333;
+  white-space: pre-wrap;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.imt-manga-guide-message {
+  font-size: 16px;
+  line-height: 24px;
+  color: #333333;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.imt-fb-guide-button {
+  margin-top: 16px;
+  line-height: 40px;
+  height: 40px;
+  padding: 0 20px;
+  width: unset;
+}
+
+.imt-fb-side {
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: all;
+  position: relative;
+}
+
+.imt-fb-side {
+  margin: 10px 0;
+}
+
+.imt-fb-side::before,
+.imt-manga-button::before,
+.imt-fb-round-button::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  left: 2px;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color 0.15s ease;
+}
+
+.imt-fb-side:hover::before,
+.imt-manga-button:hover::before,
+.imt-fb-round-button:hover::before {
+  background-color: var(--float-ball-more-button-hover-color);
+}
+
+.imt-fb-new-badge {
+  width: 26px;
+  height: 14px;
+  padding: 3px;
+  background-color: #f53f3f;
+  border-radius: 4px;
+  position: absolute;
+  top: -5px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imt-fb-side * {
+  pointer-events: all;
+}
+
+.imt-fb-pin-icon {
+  position: absolute;
+  left: -16px;
+  bottom: -12px;
+  opacity: 0;
+  cursor: pointer;
+}
+.imt-fb-container.left .imt-fb-pin-icon {
+  left: auto;
+  right: -16px;
+}
+
+.imt-fb-side:hover .imt-fb-pin-icon {
+  opacity: 1;
+}
+
+.imt-fb-more-button {
+  width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+/* Sheet.css */
+.immersive-translate-sheet {
+  position: fixed;
+  transform: translateY(100%);
+  /* Start off screen */
+  left: 0;
+  right: 0;
+  background-color: var(--background-color);
+  transition: transform 0.3s ease-out;
+  /* Smooth slide transition */
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+  /* Ensure it's above other content */
+  bottom: 0;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  overflow: hidden;
+}
+
+.immersive-translate-sheet.visible {
+  transform: translateY(0);
+}
+
+.immersive-translate-sheet-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.immersive-translate-sheet-backdrop.visible {
+  opacity: 1;
+}
+
+.popup-container-sheet {
+  max-width: 100vw;
+  width: 100vw;
+}
+
+.imt-no-events svg * {
+  pointer-events: none !important;
+}
+
+.imt-manga-button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: all;
+  margin: 0 0 10px 0;
+  background-color: var(--float-ball-more-button-background-color);
+  border-radius: 50%;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.08);
+  right: 8px;
+}
+
+.imt-manga-feedback {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.imt-fb-round-button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: var(--float-ball-more-button-background-color);
+  border-radius: 50%;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.imt-fb-round-button > svg {
+  z-index: 1;
+}
+
+.imt-fb-upgrade-button {
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.imt-fb-power-user-card {
+  position: absolute;
+  bottom: -130px;
+  width: 266px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 2px 10px 24px 0 rgba(14, 18, 22, 0.08);
+  border: 1px solid rgba(250, 251, 251, 1);
+  pointer-events: all;
+  z-index: 2;
+  background: linear-gradient(172deg, rgba(255, 255, 255, 0.30) 4.36%, #FFF 35.98%), linear-gradient(0deg, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.40) 100%), radial-gradient(39.95% 47.41% at -0.53% 55.22%, #E0C4F7 0%, rgba(224, 196, 247, 0.00) 100%), radial-gradient(56.37% 54.27% at 86.17% 0%, #E0C4F6 0%, rgba(224, 196, 246, 0.00) 100%), radial-gradient(42.04% 37.43% at -0.53% 3.75%, #AED5FF 0%, rgba(174, 213, 255, 0.00) 100%), radial-gradient(66.88% 52.09% at 36.81% 19.55%, #757ED8 0%, #6B6AC0 100%), #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imt-fb-power-user-card.right {
+  right: 60px;
+}
+
+.imt-fb-power-user-card.right::after {
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: 130px;
+  border-width: 10px 0 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent #fff;
+  filter: drop-shadow(2px 0 2px rgba(14, 18, 22, 0.06));
+}
+
+.imt-fb-power-user-card.left {
+  left: 60px;
+}
+
+.imt-fb-power-user-card.left::after {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 130px;
+  border-width: 10px 10px 10px 0;
+  border-style: solid;
+  border-color: transparent #fff transparent transparent;
+  filter: drop-shadow(-2px 0 2px rgba(14, 18, 22, 0.06));
+}
+
+.imt-fb-power-user-card-banner {
+  display: block;
+  width: 128px;
+  height: auto;
+  margin-top: 8px;
+  border-radius: 8px 8px 0 0;
+}
+
+.imt-fb-power-user-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 16px 24px 0;
+  box-sizing: border-box;
+}
+
+.imt-fb-power-user-card-title {
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+}
+
+.imt-fb-power-user-card-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.imt-fb-power-user-card-body {
+  padding: 12px 24px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.imt-fb-power-user-card-desc {
+  color: #333;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+}
+
+.imt-fb-power-user-card-primary {
+  margin-top: 16px;
+  height: 37px;
+  border-radius: 8px;
+  background: linear-gradient(110deg, #F497BC 17.37%, #EC4C8C 89.68%);
+  color: var(--ZX-FFFFFF, #FFF);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px; /* 150% */
+  display: flex;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  flex: 1 0 0;
+}
+
+.imt-manga-translated {
+  position: absolute;
+  left: 24px;
+  top: 20px;
+}
+
+.imt-float-ball-loading {
+  animation: imt-loading-animation 0.6s infinite linear !important;
+}
+
+.imt-manga-guide-bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  transform: translateY(-50%);
+}
+.imt-manga-guide-content {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  margin: 0 40px 0;
+}
+
+.img-manga-guide-button {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.img-manga-close {
+  position: absolute;
+  bottom: -200px;
+  width: 32px;
+  height: 32px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  cursor: pointer;
+}
+
+.imt-fb-container.dragging .imt-manga-button,
+.imt-fb-container.dragging .btn-animate:not(.imt-fb-btn) {
+  display: none !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn {
+  border-radius: 50% !important;
+  width: 36px !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  cursor: move !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn div {
+  border-radius: 50% !important;
+  width: 36px !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn.left,
+.imt-fb-container.dragging .imt-fb-btn.right {
+  border-radius: 50% !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn.left div,
+.imt-fb-container.dragging .imt-fb-btn.right div {
+  border-radius: 50% !important;
+}
+
+.imt-fb-container.dragging .imt-fb-logo-img {
+  margin: 0 !important;
+}
+
+.imt-fb-container.dragging .imt-float-ball-translated {
+  right: 2px !important;
+  bottom: 2px !important;
+}
+
+@-webkit-keyframes imt-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes imt-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.imt-fb-icon {
+  color: #666666;
+}
+
+[data-theme="dark"] .imt-fb-icon {
+  color: #b3b3b3;
+}
+
+[data-theme="light"] .imt-fb-icon {
+  color: #666666;
+}
+
+/* 悬浮球设置弹窗样式 */
+.imt-fb-setting-wrapper {
+  border-radius: 12px;
+  box-shadow: 2px 10px 24px 0px rgba(0, 0, 0, 0.06);
+}
+
+.imt-fb-setting-content {
+  padding: 16px;
+  width: 350px;
+  pointer-events: all;
+}
+
+.imt-fb-setting-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--text-black-2);
+}
+
+.imt-fb-setting-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px 0;
+}
+
+.imt-fb-preview-wrapper {
+  display: flex;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.imt-fb-preview-item {
+  width: 99px;
+  height: 57px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+}
+
+.imt-fb-preview-item.light {
+  background-color: #f3f5f6;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.imt-fb-preview-item.dark {
+  background-color: #444;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.imt-fb-preview-ball {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.imt-fb-preview-ball.light {
+  background-color: #fff;
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+}
+
+.imt-fb-preview-ball.dark {
+  background-color: #111;
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+}
+
+.imt-fb-preview-ball.full {
+  width: 41px;
+  justify-content: center;
+}
+
+.imt-fb-preview-ball.mini {
+  width: 41px;
+  justify-content: center;
+  transform: translateX(21px);
+}
+
+.imt-fb-preview-ball .imt-fb-preview-logo {
+  flex-shrink: 0;
+}
+
+/* 选项区域 */
+.imt-fb-setting-options {
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.imt-fb-setting-option-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4px;
+}
+
+.imt-fb-setting-option-label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: var(--text-black-2);
+}
+
+/* Toggle 开关样式 */
+.imt-fb-toggle {
+  width: 30px;
+  height: 18px;
+  background-color: var(--switch-background-color);
+  border-radius: 24px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.imt-fb-toggle.checked {
+  background-color: var(--primary);
+}
+
+.imt-fb-toggle.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.imt-fb-toggle-thumb {
+  width: 14px;
+  height: 14px;
+  background-color: var(--switch-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s ease;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+}
+
+.imt-fb-toggle.checked .imt-fb-toggle-thumb {
+  transform: translateX(12px);
+}
+
+.imt-fb-setting-hide-options {
+  background-color: var(--background-light-green);
+  padding: 8px 20px;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.imt-fb-setting-save-btn {
+  background-color: var(--primary);
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 45px;
+  height: 45px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: opacity 0.2s ease;
+}
+
+.imt-fb-setting-save-btn:hover {
+  opacity: 0.9;
+}
+
+.imt-fb-setting-save-btn:active {
+  opacity: 0.8;
+}
+</style><div id="mount" style="display: block;"><div hidden="" id="immersive-translate-popup-overlay" class="immersive-translate-popup-overlay" style="z-index: 2147483647; background-color: rgba(0, 0, 0, 0.5);"><div class="immersive-translate-popup-wrapper" style="position: fixed; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);"></div></div></div></template></div></html>

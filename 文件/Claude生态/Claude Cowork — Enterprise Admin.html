@@ -1,0 +1,5285 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://cowork-admin.wwei.ai/ -->
+<html lang="zh" data-immersive-translate-page-theme="light"><plasmo-csui><template shadowrootmode="open"><div id="plasmo-shadow-container" style="z-index: 2147483647; position: relative;"><div id="plasmo-overlay-0" class="plasmo-csui-container" style="display: flex; position: absolute; top: 0px; left: 0px;"></div></div></template></plasmo-csui><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Cowork — Enterprise Admin</title>
+<script src="./Claude Cowork — Enterprise Admin_files/chart.umd.min.js"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --brand: #CF6748;
+    --brand-light: #F5E8E3;
+    --brand-dark: #a84e32;
+    --sidebar-bg: #111010;
+    --sidebar-hover: #1e1d1d;
+    --sidebar-active: #2a2928;
+    --sidebar-text: #a8a29e;
+    --sidebar-text-active: #fafaf9;
+    --bg: #F7F6F3;
+    --card: #ffffff;
+    --border: #e5e3de;
+    --text: #1c1917;
+    --text-2: #57534e;
+    --text-3: #a8a29e;
+    --green: #16a34a;
+    --green-bg: #f0fdf4;
+    --red: #dc2626;
+    --red-bg: #fef2f2;
+    --amber: #d97706;
+    --amber-bg: #fffbeb;
+    --blue: #2563eb;
+    --blue-bg: #eff6ff;
+    --radius: 8px;
+    --radius-lg: 12px;
+    --shadow: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.04);
+    --shadow-md: 0 4px 12px rgba(0,0,0,.10);
+  }
+
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif; background: var(--bg); color: var(--text); display: flex; height: 100vh; overflow: hidden; font-size: 14px; }
+
+  /* ── Sidebar ── */
+  .sidebar {
+    width: 220px; flex-shrink: 0;
+    background: var(--sidebar-bg);
+    display: flex; flex-direction: column;
+    border-right: 1px solid #222;
+    overflow-y: auto;
+  }
+  .sidebar-logo {
+    padding: 18px 16px 12px;
+    display: flex; align-items: center; gap: 10px;
+    border-bottom: 1px solid #222;
+  }
+  .sidebar-logo svg { width: 28px; height: 28px; }
+  .sidebar-logo-text { display: flex; flex-direction: column; }
+  .sidebar-logo-text span:first-child { color: #fafaf9; font-size: 13px; font-weight: 600; letter-spacing: .01em; }
+  .sidebar-logo-text span:last-child { color: #6b7280; font-size: 10px; margin-top: 1px; }
+
+  .org-selector {
+    margin: 12px 10px;
+    background: #1e1d1d;
+    border: 1px solid #2e2c2b;
+    border-radius: 6px;
+    padding: 8px 10px;
+    display: flex; align-items: center; justify-content: space-between;
+    cursor: pointer; color: #d4cfc9;
+    font-size: 12px; font-weight: 500;
+  }
+  .org-selector:hover { background: #252423; }
+  .org-dot { width: 22px; height: 22px; background: var(--brand); border-radius: 5px; display: flex; align-items: center; justify-content: center; font-size: 10px; color: white; font-weight: 700; margin-right: 7px; }
+
+  .sidebar-section { padding: 16px 10px 4px; }
+  .sidebar-section-label { font-size: 10px; font-weight: 600; color: #4a4745; text-transform: uppercase; letter-spacing: .06em; padding: 0 6px; margin-bottom: 4px; }
+
+  .nav-item {
+    display: flex; align-items: center; gap: 9px;
+    padding: 7px 10px; border-radius: 6px;
+    cursor: pointer; color: var(--sidebar-text);
+    font-size: 13px; font-weight: 450;
+    transition: all .15s; margin-bottom: 1px;
+    position: relative;
+  }
+  .nav-item:hover { background: var(--sidebar-hover); color: #d4cfc9; }
+  .nav-item.active { background: var(--sidebar-active); color: var(--sidebar-text-active); }
+  .nav-item .nav-icon { width: 16px; height: 16px; flex-shrink: 0; opacity: .7; }
+  .nav-item.active .nav-icon { opacity: 1; }
+  .nav-badge { margin-left: auto; background: var(--brand); color: white; font-size: 10px; font-weight: 600; border-radius: 10px; padding: 1px 6px; }
+  .nav-badge.neutral { background: #2e2c2b; color: #a8a29e; }
+
+  .sidebar-footer { margin-top: auto; padding: 12px 10px; border-top: 1px solid #222; }
+
+  /* ── Main layout ── */
+  .main { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+
+  .topbar {
+    background: white; border-bottom: 1px solid var(--border);
+    padding: 0 24px; height: 52px;
+    display: flex; align-items: center; gap: 16px;
+    flex-shrink: 0;
+  }
+  .topbar-title { font-size: 15px; font-weight: 600; color: var(--text); }
+  .topbar-subtitle { font-size: 13px; color: var(--text-3); margin-left: 4px; }
+  .topbar-right { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+  .btn { padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 500; cursor: pointer; border: none; transition: all .15s; }
+  .btn-primary { background: var(--brand); color: white; }
+  .btn-primary:hover { background: var(--brand-dark); }
+  .btn-ghost { background: white; border: 1px solid var(--border); color: var(--text); }
+  .btn-ghost:hover { background: var(--bg); }
+  .btn-sm { padding: 4px 10px; font-size: 12px; }
+  .avatar { width: 30px; height: 30px; border-radius: 50%; background: var(--brand); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: white; }
+
+  .content { flex: 1; overflow-y: auto; padding: 24px; }
+
+  /* ── Cards ── */
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 20px; box-shadow: var(--shadow); }
+  .card-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .card-sub { font-size: 12px; color: var(--text-3); }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+
+  /* ── KPI Cards ── */
+  .kpi-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 18px 20px; box-shadow: var(--shadow); }
+  .kpi-label { font-size: 12px; color: var(--text-3); font-weight: 500; margin-bottom: 6px; }
+  .kpi-value { font-size: 28px; font-weight: 700; color: var(--text); line-height: 1; }
+  .kpi-delta { font-size: 12px; margin-top: 6px; display: flex; align-items: center; gap: 4px; }
+  .kpi-delta.up { color: var(--green); }
+  .kpi-delta.down { color: var(--red); }
+  .kpi-delta.neutral { color: var(--text-3); }
+
+  /* ── Tables ── */
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; }
+  thead th { font-size: 11px; font-weight: 600; color: var(--text-3); text-transform: uppercase; letter-spacing: .05em; padding: 10px 12px; border-bottom: 1px solid var(--border); text-align: left; white-space: nowrap; }
+  tbody tr { transition: background .1s; }
+  tbody tr:hover { background: #faf9f7; }
+  tbody td { padding: 11px 12px; font-size: 13px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  tbody tr:last-child td { border-bottom: none; }
+
+  /* ── Badges ── */
+  .badge { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 20px; font-size: 11px; font-weight: 600; }
+  .badge-green { background: var(--green-bg); color: var(--green); }
+  .badge-red { background: var(--red-bg); color: var(--red); }
+  .badge-amber { background: var(--amber-bg); color: var(--amber); }
+  .badge-blue { background: var(--blue-bg); color: var(--blue); }
+  .badge-gray { background: #f4f2ee; color: var(--text-2); }
+  .badge-brand { background: var(--brand-light); color: var(--brand-dark); }
+
+  /* ── Toggle ── */
+  .toggle { position: relative; width: 36px; height: 20px; cursor: pointer; }
+  .toggle input { opacity: 0; width: 0; height: 0; }
+  .toggle-slider { position: absolute; inset: 0; background: #d4cfc9; border-radius: 20px; transition: .2s; }
+  .toggle-slider::before { content: ''; position: absolute; width: 14px; height: 14px; left: 3px; top: 3px; background: white; border-radius: 50%; transition: .2s; box-shadow: 0 1px 3px rgba(0,0,0,.2); }
+  .toggle input:checked + .toggle-slider { background: var(--brand); }
+  .toggle input:checked + .toggle-slider::before { transform: translateX(16px); }
+
+  /* ── Progress bar ── */
+  .progress-bar { background: var(--border); border-radius: 4px; height: 6px; overflow: hidden; }
+  .progress-fill { height: 100%; border-radius: 4px; background: var(--brand); transition: width .3s; }
+  .progress-fill.green { background: var(--green); }
+  .progress-fill.amber { background: var(--amber); }
+  .progress-fill.red { background: var(--red); }
+
+  /* ── Section header ── */
+  .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+  .section-title { font-size: 15px; font-weight: 600; }
+  .section-sub { font-size: 12px; color: var(--text-3); margin-top: 2px; }
+
+  /* ── Connector card ── */
+  .connector-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+  .connector-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 16px; display: flex; flex-direction: column; gap: 12px; box-shadow: var(--shadow); }
+  .connector-header { display: flex; align-items: center; gap: 10px; }
+  .connector-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+  .connector-name { font-size: 13px; font-weight: 600; }
+  .connector-category { font-size: 11px; color: var(--text-3); }
+  .connector-footer { display: flex; align-items: center; justify-content: space-between; }
+  .connector-users { font-size: 11px; color: var(--text-3); }
+
+  /* ── Permission table ── */
+  .perm-table { width: 100%; border-collapse: collapse; }
+  .perm-table th { font-size: 11px; color: var(--text-3); font-weight: 600; text-transform: uppercase; letter-spacing: .05em; padding: 8px 12px; border-bottom: 1px solid var(--border); text-align: left; }
+  .perm-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); font-size: 13px; vertical-align: middle; }
+  .perm-table tr:last-child td { border-bottom: none; }
+  .perm-check { width: 16px; height: 16px; border-radius: 4px; border: 1.5px solid var(--border); display: inline-flex; align-items: center; justify-content: center; }
+  .perm-check.on { background: var(--brand); border-color: var(--brand); }
+  .perm-check.on::after { content: '✓'; color: white; font-size: 10px; }
+
+  /* ── Tabs ── */
+  .tabs { display: flex; gap: 0; border-bottom: 1px solid var(--border); margin-bottom: 20px; }
+  .tab { padding: 10px 16px; font-size: 13px; font-weight: 500; color: var(--text-3); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all .15s; }
+  .tab:hover { color: var(--text); }
+  .tab.active { color: var(--brand); border-bottom-color: var(--brand); }
+
+  /* ── Pages ── */
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* ── Alert ── */
+  .alert { display: flex; gap: 10px; padding: 12px 14px; border-radius: var(--radius); margin-bottom: 16px; }
+  .alert-blue { background: var(--blue-bg); border: 1px solid #bfdbfe; color: #1d4ed8; }
+  .alert-amber { background: var(--amber-bg); border: 1px solid #fde68a; color: #92400e; }
+
+  /* ── Input ── */
+  .input { padding: 7px 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 13px; color: var(--text); background: white; outline: none; width: 100%; }
+  .input:focus { border-color: var(--brand); box-shadow: 0 0 0 2px rgba(207,103,72,.12); }
+  .select { appearance: none; padding: 7px 28px 7px 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 13px; background: white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23a8a29e' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 8px center; cursor: pointer; outline: none; }
+  .select:focus { border-color: var(--brand); }
+
+  /* ── Chip ── */
+  .chip { display: inline-flex; align-items: center; gap: 4px; background: #f4f2ee; color: var(--text-2); border-radius: 20px; padding: 2px 8px; font-size: 11px; font-weight: 500; }
+
+  /* ── Scrollbar ── */
+  ::-webkit-scrollbar { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #d4cfc9; border-radius: 3px; }
+
+  /* ── User avatar ── */
+  .user-row { display: flex; align-items: center; gap: 10px; }
+  .user-avatar { width: 28px; height: 28px; border-radius: 50%; background: var(--brand-light); color: var(--brand); display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; flex-shrink: 0; }
+
+  /* ── Chart container ── */
+  .chart-container { position: relative; height: 200px; }
+
+  /* ── Spend card ── */
+  .spend-group { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; }
+  .spend-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+  .spend-name { font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 8px; }
+  .spend-amounts { font-size: 12px; color: var(--text-3); }
+
+  /* ── OTEL config ── */
+  .code-block { background: #1c1917; color: #d4cfc9; border-radius: var(--radius); padding: 14px; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 12px; line-height: 1.7; overflow-x: auto; }
+  .code-key { color: #86efac; }
+  .code-val { color: #fdba74; }
+  .code-comment { color: #57534e; }
+
+  /* ── Empty state ── */
+  .empty { text-align: center; padding: 40px; color: var(--text-3); }
+  .empty svg { margin: 0 auto 12px; display: block; opacity: .4; }
+
+  /* ── Pill group for date range ── */
+  .pill-group { display: flex; background: #f4f2ee; border-radius: 6px; padding: 3px; gap: 2px; }
+  .pill { padding: 4px 12px; border-radius: 4px; font-size: 12px; font-weight: 500; cursor: pointer; color: var(--text-3); transition: all .15s; }
+  .pill.active { background: white; color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+</style>
+<script src="./Claude Cowork — Enterprise Admin_files/widget.js" defer="" data-wwei-injected="1"></script><style type="text/css">
+  @font-face {
+    font-family: CuboxInter;
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("chrome-extension://bflmgpechpeohjfomgfdkkfcbhfcjohl/fonts/InterVariable.woff2") format("woff2");
+  }
+  #cubox-react-root {
+    z-index: 999999999999999999999;
+  }
+  </style><link rel="stylesheet" href="chrome-extension://bflmgpechpeohjfomgfdkkfcbhfcjohl/css/globalHighlightStyles.css"></head>
+<body>
+
+<!-- ──────── Sidebar ──────── -->
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="32" height="32" rx="7" fill="#CF6748"></rect>
+      <path d="M8 16C8 11.58 11.58 8 16 8s8 3.58 8 8-3.58 8-8 8" stroke="white" stroke-width="2.2" stroke-linecap="round"></path>
+      <path d="M16 13v6M13 16h6" stroke="white" stroke-width="2" stroke-linecap="round"></path>
+    </svg>
+    <div class="sidebar-logo-text">
+      <span>Claude</span>
+      <span>Admin Console</span>
+    </div>
+  </div>
+
+  <div class="org-selector">
+    <div style="display:flex;align-items:center">
+      <div class="org-dot">C</div>
+      <div>
+        <div style="font-size:12px;font-weight:600;color:#d4cfc9">Chutu Network</div>
+        <div style="font-size:10px;color:#6b7280">Enterprise · 480 seats</div>
+      </div>
+    </div>
+    <svg width="14" height="14" fill="none" stroke="#6b7280" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg>
+  </div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-section-label" data-en="Analytics" data-zh="数据分析">Analytics</div>
+    <div class="nav-item active" onclick="showPage(&#39;overview&#39;,this)">
+      <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect></svg>
+      Overview
+    </div>
+    <div class="nav-item" onclick="showPage(&#39;activity&#39;,this)">
+      <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+      Activity
+      <span class="nav-badge neutral">Live</span>
+    </div>
+  </div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-section-label" data-en="Access" data-zh="权限级别">Access</div>
+    <div class="nav-item" onclick="showPage(&#39;users&#39;,this)">
+      <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+      Users &amp; Groups
+      <span class="nav-badge neutral">480</span>
+    </div>
+    <div class="nav-item" onclick="showPage(&#39;roles&#39;,this)">
+      <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+      Roles &amp; Permissions
+    </div>
+  </div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-section-label" data-en="Configuration" data-zh="配置管理">Configuration</div>
+    <div class="nav-item" onclick="showPage(&#39;connectors&#39;,this)">
+      <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+      Connectors &amp; Plugins
+      <span class="nav-badge">12</span>
+    </div>
+    <div class="nav-item" onclick="showPage(&#39;spend&#39;,this)">
+      <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+      Spend Limits
+    </div>
+    <div class="nav-item" onclick="showPage(&#39;security&#39;,this)">
+      <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+      Security
+    </div>
+    <div class="nav-item" onclick="showPage(&#39;observability&#39;,this)">
+      <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M20.188 10.934a8.98 8.98 0 0 1 0 2.132M3.812 10.934a8.98 8.98 0 0 0 0 2.132M7.634 4.634a9 9 0 0 0-1.5 1.5M16.366 4.634a9 9 0 0 1 1.5 1.5M7.634 19.366a9 9 0 0 1-1.5-1.5M16.366 19.366a9 9 0 0 0 1.5-1.5"></path></svg>
+      Observability
+    </div>
+  </div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-section-label" data-en="Org Settings" data-zh="组织设置">Org Settings</div>
+    <div class="nav-item" onclick="showPage(&#39;sso&#39;,this)">
+      <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+      SSO &amp; SCIM
+    </div>
+    <div class="nav-item" onclick="showPage(&#39;billing&#39;,this)">
+      <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+      Billing &amp; Plans
+    </div>
+  </div>
+
+  <div class="sidebar-footer">
+    <div class="nav-item" style="gap:8px">
+      <div class="avatar" style="width:24px;height:24px;font-size:9px;flex-shrink:0">W</div>
+      <div>
+        <div style="font-size:12px;color:#d4cfc9;font-weight:500">Wayne Wang</div>
+        <div style="font-size:10px;color:#6b7280">Super Admin</div>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<!-- ──────── Main ──────── -->
+<div class="main">
+
+  <!-- Top Bar -->
+  <div class="topbar">
+    <div id="topbar-title" class="topbar-title">Overview</div>
+    <div class="topbar-right">
+    <button id="lang-toggle" onclick="toggleLang()" style="padding:5px 12px;border-radius:6px;border:1px solid #e5e3de;background:white;font-size:12px;font-weight:600;cursor:pointer;color:#1c1917;display:flex;align-items:center;gap:5px">
+  <span id="lang-icon">🌐</span>
+  <span id="lang-label">中文</span>
+</button>
+    
+      <div class="pill-group">
+        <div class="pill active">7D</div>
+        <div class="pill">30D</div>
+        <div class="pill">90D</div>
+      </div>
+      <button class="btn btn-ghost btn-sm" data-en="Export CSV" data-zh="导出 CSV">Export CSV</button>
+      <button class="btn btn-primary btn-sm" onclick="showPage(&#39;users&#39;,document.querySelector(&#39;.nav-item:nth-of-type(1)&#39;))" data-en="+ Invite Users" data-zh="+ 邀请用户">+ Invite Users</button>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="content">
+
+    <!-- ───── PAGE: Overview ───── -->
+    <div id="page-overview" class="page active">
+      <div class="alert alert-blue" style="font-size:12px">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+        <span>Claude Cowork Enterprise is now GA. <strong>Computer Use</strong> is available for all Pro/Max users in your org. <a href="https://cowork-admin.wwei.ai/#" style="text-decoration:underline">Review deployment guide →</a></span>
+      </div>
+
+      <div class="grid-4" style="margin-bottom:20px">
+        <div class="kpi-card">
+          <div class="kpi-label" data-en="Active Cowork Users (7D)" data-zh="活跃 Cowork 用户（7日）">Active Cowork Users (7D)</div>
+          <div class="kpi-value">312</div>
+          <div class="kpi-delta up" data-en="↑ +18% vs last week" data-zh="↑ 较上周 +18%">↑ +18% vs last week</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label" data-en="Total Sessions (7D)" data-zh="总会话数（7日）">Total Sessions (7D)</div>
+          <div class="kpi-value">4,821</div>
+          <div class="kpi-delta up" data-en="↑ +24%" data-zh="↑ +24%">↑ +24%</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label" data-en="Avg. Session Length" data-zh="平均会话时长">Avg. Session Length</div>
+          <div class="kpi-value">22m</div>
+          <div class="kpi-delta neutral" data-en="— Stable" data-zh="— 持平">— Stable</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label" data-en="MTD Spend" data-zh="本月累计消费">MTD Spend</div>
+          <div class="kpi-value">$1,940</div>
+          <div class="kpi-delta up" style="color:var(--amber)">↑ $3,200 budget</div>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-bottom:20px">
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+            <div>
+              <div class="card-title" data-en="DAU / WAU / MAU Trend" data-zh="DAU / WAU / MAU 趋势">DAU / WAU / MAU Trend</div>
+              <div class="card-sub" data-en="Cowork active users over time" data-zh="Cowork 活跃用户趋势">Cowork active users over time</div>
+            </div>
+            <select class="select" style="font-size:12px;padding:4px 22px 4px 8px">
+              <option data-en="All Products" data-zh="全部产品">All Products</option>
+              <option selected="" data-en="Cowork only" data-zh="仅 Cowork">Cowork only</option>
+              <option data-en="Chat" data-zh="对话">Chat</option>
+              <option data-en="Claude Code" data-zh="Claude Code">Claude Code</option>
+            </select>
+          </div>
+          <div class="chart-container">
+            <canvas id="usageChart" width="1432" height="400" style="display: block; box-sizing: border-box; height: 200px; width: 716px;"></canvas>
+          </div>
+        </div>
+
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+            <div>
+              <div class="card-title" data-en="Product Usage Breakdown" data-zh="产品使用占比">Product Usage Breakdown</div>
+              <div class="card-sub" data-en="Sessions by product this month" data-zh="本月各产品会话分布">Sessions by product this month</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:16px;align-items:center">
+            <div style="position:relative;width:140px;height:140px;flex-shrink:0">
+              <canvas id="donutChart" width="280" height="280" style="display: block; box-sizing: border-box; height: 140px; width: 140px;"></canvas>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px;flex:1">
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="width:10px;height:10px;border-radius:50%;background:#CF6748;flex-shrink:0"></div>
+                <div style="flex:1;font-size:12px;color:var(--text-2)">Cowork</div>
+                <div style="font-size:13px;font-weight:600">62%</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="width:10px;height:10px;border-radius:50%;background:#2563eb;flex-shrink:0"></div>
+                <div style="flex:1;font-size:12px;color:var(--text-2)">Chat</div>
+                <div style="font-size:13px;font-weight:600">28%</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="width:10px;height:10px;border-radius:50%;background:#16a34a;flex-shrink:0"></div>
+                <div style="flex:1;font-size:12px;color:var(--text-2)">Claude Code</div>
+                <div style="font-size:13px;font-weight:600">10%</div>
+              </div>
+              <div style="margin-top:8px;padding-top:10px;border-top:1px solid var(--border)">
+                <div style="font-size:11px;color:var(--text-3)">Total sessions (30D)</div>
+                <div style="font-size:16px;font-weight:700;margin-top:2px">18,430</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-title" style="margin-bottom:14px" data-en="Top Skills Invoked (7D)" data-zh="热门 Skill 调用（7日）">Top Skills Invoked (7D)</div>
+          <table>
+            <thead><tr><th data-en="Skill" data-zh="Skill">Skill</th><th data-en="Invocations" data-zh="调用次数">Invocations</th><th data-en="Unique Users" data-zh="独立用户">Unique Users</th><th data-en="Trend" data-zh="趋势">Trend</th></tr></thead>
+            <tbody>
+              <tr><td><div style="display:flex;align-items:center;gap:8px"><span style="font-size:16px">📊</span> <span>data:analyze</span></div></td><td>1,204</td><td>89</td><td><span class="badge badge-green">↑ 31%</span></td></tr>
+              <tr><td><div style="display:flex;align-items:center;gap:8px"><span style="font-size:16px">📝</span> <span>docx</span></div></td><td>988</td><td>124</td><td><span class="badge badge-green">↑ 12%</span></td></tr>
+              <tr><td><div style="display:flex;align-items:center;gap:8px"><span style="font-size:16px">📈</span> <span>pptx</span></div></td><td>756</td><td>67</td><td><span class="badge badge-amber">→ +3%</span></td></tr>
+              <tr><td><div style="display:flex;align-items:center;gap:8px"><span style="font-size:16px">🔍</span> <span>enterprise-search:search</span></div></td><td>612</td><td>201</td><td><span class="badge badge-green">↑ 44%</span></td></tr>
+              <tr><td><div style="display:flex;align-items:center;gap:8px"><span style="font-size:16px">⚙️</span> <span>operations:process-doc</span></div></td><td>430</td><td>38</td><td><span class="badge badge-gray">↓ -5%</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card">
+          <div class="card-title" style="margin-bottom:14px" data-en="Top Connectors Used (7D)" data-zh="热门连接器（7日）">Top Connectors Used (7D)</div>
+          <table>
+            <thead><tr><th data-en="Connector" data-zh="连接器">Connector</th><th data-en="Calls" data-zh="调用次数">Calls</th><th data-en="Users" data-zh="用户数">Users</th><th data-en="Status" data-zh="状态">Status</th></tr></thead>
+            <tbody>
+              <tr><td><div style="display:flex;align-items:center;gap:8px"><span>🔔</span>Slack</div></td><td>3,412</td><td>187</td><td><span class="badge badge-green" data-en="Healthy" data-zh="正常">Healthy</span></td></tr>
+              <tr><td><div style="display:flex;align-items:center;gap:8px"><span>📁</span>Google Drive</div></td><td>2,890</td><td>153</td><td><span class="badge badge-green" data-en="Healthy" data-zh="正常">Healthy</span></td></tr>
+              <tr><td><div style="display:flex;align-items:center;gap:8px"><span>📋</span>Notion</div></td><td>1,740</td><td>98</td><td><span class="badge badge-green" data-en="Healthy" data-zh="正常">Healthy</span></td></tr>
+              <tr><td><div style="display:flex;align-items:center;gap:8px"><span>🎥</span>Zoom</div></td><td>890</td><td>44</td><td><span class="badge badge-amber" data-en="Rate limited" data-zh="频率限制">Rate limited</span></td></tr>
+              <tr><td><div style="display:flex;align-items:center;gap:8px"><span>📧</span>Gmail</div></td><td>640</td><td>72</td><td><span class="badge badge-green" data-en="Healthy" data-zh="正常">Healthy</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───── PAGE: Users & Groups ───── -->
+    <div id="page-users" class="page">
+      <div class="tabs">
+        <div class="tab active" onclick="switchTab(this,&#39;users&#39;)">Users</div>
+        <div class="tab" onclick="switchTab(this,&#39;groups&#39;)">Groups</div>
+        <div class="tab" onclick="switchTab(this,&#39;scim&#39;)">SCIM Sync</div>
+      </div>
+
+      <!-- Users tab -->
+      <div id="users-tab-users">
+        <div class="section-header">
+          <div>
+            <div class="section-title" data-en="All Users" data-zh="所有用户">All Users</div>
+            <div class="section-sub" data-en="480 members · 312 active in last 7 days" data-zh="480 名成员 · 近 7 日 312 名活跃">480 members · 312 active in last 7 days</div>
+          </div>
+          <div style="display:flex;gap:8px">
+            <input class="input" placeholder="Search users..." style="width:200px">
+            <select class="select" style="width:140px">
+              <option data-en="All Groups" data-zh="所有分组">All Groups</option>
+              <option data-en="Engineering" data-zh="工程">Engineering</option>
+              <option data-en="Design" data-zh="设计">Design</option>
+              <option data-en="Marketing" data-zh="市场">Marketing</option>
+              <option data-en="Operations" data-zh="运营">Operations</option>
+            </select>
+            <button class="btn btn-primary btn-sm" data-en="+ Invite" data-zh="+ 邀请">+ Invite</button>
+          </div>
+        </div>
+        <div class="card" style="padding:0">
+          <table>
+            <thead><tr><th data-en="User" data-zh="用户">User</th><th data-en="Groups" data-zh="分组">Groups</th><th data-en="Role" data-zh="角色">Role</th><th data-en="Cowork" data-zh="Cowork">Cowork</th><th data-en="Last Active" data-zh="最近活跃">Last Active</th><th data-en="Sessions (7D)" data-zh="会话数（7日）">Sessions (7D)</th><th></th></tr></thead>
+            <tbody>
+              <tr>
+                <td><div class="user-row"><div class="user-avatar">ZL</div><div><div style="font-size:13px;font-weight:500">Zhang Lei</div><div style="font-size:11px;color:var(--text-3)">zhangle@chutu.com</div></div></div></td>
+                <td><span class="chip">Engineering</span></td>
+                <td><span class="badge badge-brand">Cowork Pro</span></td>
+                <td><label class="toggle"><input type="checkbox" checked=""><span class="toggle-slider"></span></label></td>
+                <td style="color:var(--text-3);font-size:12px" data-en="Today" data-zh="今天">Today</td><td>24</td>
+                <td><button class="btn btn-ghost btn-sm" data-en="Manage" data-zh="管理">Manage</button></td>
+              </tr>
+              <tr>
+                <td><div class="user-row"><div class="user-avatar" style="background:#dbeafe;color:#2563eb">WX</div><div><div style="font-size:13px;font-weight:500">Wang Xiaoming</div><div style="font-size:11px;color:var(--text-3)">wangxm@chutu.com</div></div></div></td>
+                <td><span class="chip">Design</span></td>
+                <td><span class="badge badge-brand">Cowork Pro</span></td>
+                <td><label class="toggle"><input type="checkbox" checked=""><span class="toggle-slider"></span></label></td>
+                <td style="color:var(--text-3);font-size:12px">2h ago</td><td>18</td>
+                <td><button class="btn btn-ghost btn-sm" data-en="Manage" data-zh="管理">Manage</button></td>
+              </tr>
+              <tr>
+                <td><div class="user-row"><div class="user-avatar" style="background:#f0fdf4;color:#16a34a">LY</div><div><div style="font-size:13px;font-weight:500">Liu Ying</div><div style="font-size:11px;color:var(--text-3)">liuying@chutu.com</div></div></div></td>
+                <td><span class="chip">Marketing</span></td>
+                <td><span class="badge badge-gray">Viewer</span></td>
+                <td><label class="toggle"><input type="checkbox"><span class="toggle-slider"></span></label></td>
+                <td style="color:var(--text-3);font-size:12px">3 days ago</td><td>4</td>
+                <td><button class="btn btn-ghost btn-sm" data-en="Manage" data-zh="管理">Manage</button></td>
+              </tr>
+              <tr>
+                <td><div class="user-row"><div class="user-avatar" style="background:#fef9c3;color:#854d0e">CH</div><div><div style="font-size:13px;font-weight:500">Chen Hao</div><div style="font-size:11px;color:var(--text-3)">chenhao@chutu.com</div></div></div></td>
+                <td><span class="chip">Operations</span> <span class="chip">Finance</span></td>
+                <td><span class="badge badge-brand">Cowork Pro</span></td>
+                <td><label class="toggle"><input type="checkbox" checked=""><span class="toggle-slider"></span></label></td>
+                <td style="color:var(--text-3);font-size:12px" data-en="Yesterday" data-zh="昨天">Yesterday</td><td>11</td>
+                <td><button class="btn btn-ghost btn-sm" data-en="Manage" data-zh="管理">Manage</button></td>
+              </tr>
+              <tr>
+                <td><div class="user-row"><div class="user-avatar" style="background:#fce7f3;color:#9d174d">SJ</div><div><div style="font-size:13px;font-weight:500">Sun Jie</div><div style="font-size:11px;color:var(--text-3)">sunjie@chutu.com</div></div></div></td>
+                <td><span class="chip">Engineering</span></td>
+                <td><span class="badge badge-green" style="background:#f0fdf4;color:#15803d">Admin</span></td>
+                <td><label class="toggle"><input type="checkbox" checked=""><span class="toggle-slider"></span></label></td>
+                <td style="color:var(--text-3);font-size:12px">1h ago</td><td>31</td>
+                <td><button class="btn btn-ghost btn-sm" data-en="Manage" data-zh="管理">Manage</button></td>
+              </tr>
+              <tr>
+                <td><div class="user-row"><div class="user-avatar" style="background:#f3e8ff;color:#7e22ce">MQ</div><div><div style="font-size:13px;font-weight:500">Ma Qian</div><div style="font-size:11px;color:var(--text-3)">maqian@chutu.com</div></div></div></td>
+                <td><span class="chip">Sales</span></td>
+                <td><span class="badge badge-brand">Cowork Pro</span></td>
+                <td><label class="toggle"><input type="checkbox" checked=""><span class="toggle-slider"></span></label></td>
+                <td style="color:var(--text-3);font-size:12px" data-en="Today" data-zh="今天">Today</td><td>8</td>
+                <td><button class="btn btn-ghost btn-sm" data-en="Manage" data-zh="管理">Manage</button></td>
+              </tr>
+            </tbody>
+          </table>
+          <div style="padding:12px 16px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border)">
+            <span style="font-size:12px;color:var(--text-3)">Showing 6 of 480 users</span>
+            <div style="display:flex;gap:6px">
+              <button class="btn btn-ghost btn-sm">←</button>
+              <button class="btn btn-ghost btn-sm" style="background:var(--brand-light);border-color:var(--brand);color:var(--brand)">1</button>
+              <button class="btn btn-ghost btn-sm">2</button>
+              <button class="btn btn-ghost btn-sm">3</button>
+              <button class="btn btn-ghost btn-sm">→</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───── PAGE: Roles ───── -->
+    <div id="page-roles" class="page">
+      <div class="alert alert-amber" style="font-size:12px;margin-bottom:20px">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="flex-shrink:0;margin-top:1px"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        <span>The <strong>most restrictive limit</strong> across a user's groups applies. Users in multiple groups with conflicting permissions will receive the more restricted access.</span>
+      </div>
+
+      <div class="grid-2" style="margin-bottom:20px">
+        <div>
+          <div class="section-header">
+            <div class="section-title" data-en="Roles (5)" data-zh="角色（5 个）">Roles (5)</div>
+            <button class="btn btn-primary btn-sm" data-en="+ New Role" data-zh="+ 新建角色">+ New Role</button>
+          </div>
+          <div class="card" style="padding:0">
+            <table>
+              <thead><tr><th data-en="Role Name" data-zh="角色名称">Role Name</th><th data-en="Users" data-zh="用户数">Users</th><th data-en="Cowork" data-zh="Cowork">Cowork</th><th></th></tr></thead>
+              <tbody>
+                <tr style="background:#faf9f7">
+                  <td><div><div style="font-weight:600;font-size:13px">Super Admin</div><div style="font-size:11px;color:var(--text-3)">Full access to all features</div></div></td>
+                  <td>3</td>
+                  <td><span class="badge badge-green" data-en="Full" data-zh="完整">Full</span></td>
+                  <td><button class="btn btn-ghost btn-sm" data-en="Edit" data-zh="编辑">Edit</button></td>
+                </tr>
+                <tr>
+                  <td><div><div style="font-weight:600;font-size:13px">Cowork Pro</div><div style="font-size:11px;color:var(--text-3)">Full Cowork + connectors</div></div></td>
+                  <td>218</td>
+                  <td><span class="badge badge-green" data-en="Full" data-zh="完整">Full</span></td>
+                  <td><button class="btn btn-ghost btn-sm" data-en="Edit" data-zh="编辑">Edit</button></td>
+                </tr>
+                <tr>
+                  <td><div><div style="font-weight:600;font-size:13px">Cowork Standard</div><div style="font-size:11px;color:var(--text-3)">Cowork, no Computer Use</div></div></td>
+                  <td>145</td>
+                  <td><span class="badge badge-amber" data-en="Limited" data-zh="受限">Limited</span></td>
+                  <td><button class="btn btn-ghost btn-sm" data-en="Edit" data-zh="编辑">Edit</button></td>
+                </tr>
+                <tr>
+                  <td><div><div style="font-weight:600;font-size:13px">Chat Only</div><div style="font-size:11px;color:var(--text-3)">No Cowork access</div></div></td>
+                  <td>108</td>
+                  <td><span class="badge badge-gray" data-en="Disabled" data-zh="已禁用">Disabled</span></td>
+                  <td><button class="btn btn-ghost btn-sm" data-en="Edit" data-zh="编辑">Edit</button></td>
+                </tr>
+                <tr>
+                  <td><div><div style="font-weight:600;font-size:13px">Viewer</div><div style="font-size:11px;color:var(--text-3)">Read-only, no AI features</div></div></td>
+                  <td>6</td>
+                  <td><span class="badge badge-gray" data-en="Disabled" data-zh="已禁用">Disabled</span></td>
+                  <td><button class="btn btn-ghost btn-sm" data-en="Edit" data-zh="编辑">Edit</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div>
+          <div class="section-header">
+            <div class="section-title" data-en="Role Detail — Cowork Pro" data-zh="角色详情 — Cowork Pro">Role Detail — Cowork Pro</div>
+            <button class="btn btn-ghost btn-sm" data-en="Save Changes" data-zh="保存更改">Save Changes</button>
+          </div>
+          <div class="card" style="padding:0">
+            <table class="perm-table">
+              <thead><tr><th data-en="Feature" data-zh="功能">Feature</th><th data-en="Access" data-zh="权限级别">Access</th></tr></thead>
+              <tbody>
+                <tr><td style="font-weight:500" data-en="Claude Cowork" data-zh="Claude Cowork">Claude Cowork</td><td><div class="perm-check on"></div></td></tr>
+                <tr><td data-en="Computer Use" data-zh="电脑操控">Computer Use</td><td><div class="perm-check on"></div></td></tr>
+                <tr><td data-en="Scheduled Tasks" data-zh="定时任务">Scheduled Tasks</td><td><div class="perm-check on"></div></td></tr>
+                <tr><td data-en="MCP Connectors" data-zh="MCP 连接器">MCP Connectors</td><td><div class="perm-check on"></div></td></tr>
+                <tr><td data-en="Plugin Marketplace" data-zh="插件市场">Plugin Marketplace</td><td><div class="perm-check on"></div></td></tr>
+                <tr><td data-en="File System Access" data-zh="文件系统访问">File System Access</td><td><div class="perm-check on"></div></td></tr>
+                <tr><td data-en="Claude Code" data-zh="Claude Code">Claude Code</td><td><div class="perm-check on"></div></td></tr>
+                <tr><td style="font-weight:500" data-en="Model Selection" data-zh="模型选择">Model Selection</td><td></td></tr>
+                <tr><td style="padding-left:20px">claude-sonnet-4-6</td><td><div class="perm-check on"></div></td></tr>
+                <tr><td style="padding-left:20px">claude-opus-4-6</td><td><div class="perm-check on"></div></td></tr>
+                <tr><td style="padding-left:20px">claude-haiku-4-5</td><td><div class="perm-check on"></div></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───── PAGE: Connectors ───── -->
+    <div id="page-connectors" class="page">
+      <div class="section-header" style="margin-bottom:20px">
+        <div>
+          <div class="section-title" data-en="Connectors &amp; Plugins" data-zh="连接器与插件">Connectors &amp; Plugins</div>
+          <div class="section-sub" data-en="12 connectors enabled · 2 pending approval · Per-tool permission control available" data-zh="已启用 12 个连接器 · 2 个待审批 · 支持工具级权限控制">12 connectors enabled · 2 pending approval · Per-tool permission control available</div>
+        </div>
+        <div style="display:flex;gap:8px">
+          <input class="input" placeholder="Search connectors..." style="width:180px">
+          <button class="btn btn-primary btn-sm" data-en="Browse Marketplace" data-zh="浏览市场">Browse Marketplace</button>
+        </div>
+      </div>
+
+      <div style="font-size:13px;font-weight:600;color:var(--text-3);margin-bottom:10px;text-transform:uppercase;letter-spacing:.05em;font-size:11px">Enabled</div>
+      <div class="connector-grid" style="margin-bottom:24px">
+
+        <div class="connector-card">
+          <div class="connector-header">
+            <div class="connector-icon" style="background:#f7fee7">🔔</div>
+            <div><div class="connector-name">Slack</div><div class="connector-category" data-en="Communication" data-zh="通讯">Communication</div></div>
+          </div>
+          <div style="font-size:11px;color:var(--text-3)">Send messages, search history, manage channels</div>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text-2)"><span>Read messages</span><div class="perm-check on" style="width:14px;height:14px"></div></div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text-2)"><span>Send messages</span><div class="perm-check on" style="width:14px;height:14px"></div></div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text-2)"><span>Delete messages</span><div class="perm-check" style="width:14px;height:14px"></div></div>
+          </div>
+          <div class="connector-footer">
+            <div class="connector-users">187 users connected</div>
+            <label class="toggle"><input type="checkbox" checked=""><span class="toggle-slider"></span></label>
+          </div>
+        </div>
+
+        <div class="connector-card">
+          <div class="connector-header">
+            <div class="connector-icon" style="background:#fef9c3">📁</div>
+            <div><div class="connector-name">Google Drive</div><div class="connector-category" data-en="Storage" data-zh="存储">Storage</div></div>
+          </div>
+          <div style="font-size:11px;color:var(--text-3)">Read, create, and manage files on Google Drive</div>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text-2)"><span>Read files</span><div class="perm-check on" style="width:14px;height:14px"></div></div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text-2)"><span>Create files</span><div class="perm-check on" style="width:14px;height:14px"></div></div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text-2)"><span>Delete files</span><div class="perm-check" style="width:14px;height:14px"></div></div>
+          </div>
+          <div class="connector-footer">
+            <div class="connector-users">153 users connected</div>
+            <label class="toggle"><input type="checkbox" checked=""><span class="toggle-slider"></span></label>
+          </div>
+        </div>
+
+        <div class="connector-card">
+          <div class="connector-header">
+            <div class="connector-icon" style="background:#f5f3ff">📋</div>
+            <div><div class="connector-name">Notion</div><div class="connector-category" data-en="Knowledge" data-zh="知识库">Knowledge</div></div>
+          </div>
+          <div style="font-size:11px;color:var(--text-3)">Access and edit Notion pages and databases</div>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text-2)"><span>Read pages</span><div class="perm-check on" style="width:14px;height:14px"></div></div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text-2)"><span>Edit pages</span><div class="perm-check on" style="width:14px;height:14px"></div></div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text-2)"><span>Delete pages</span><div class="perm-check" style="width:14px;height:14px"></div></div>
+          </div>
+          <div class="connector-footer">
+            <div class="connector-users">98 users connected</div>
+            <label class="toggle"><input type="checkbox" checked=""><span class="toggle-slider"></span></label>
+          </div>
+        </div>
+
+        <div class="connector-card">
+          <div class="connector-header">
+            <div class="connector-icon" style="background:#eff6ff">🎥</div>
+            <div><div class="connector-name">Zoom</div><div class="connector-category" data-en="Meetings" data-zh="会议">Meetings</div></div>
+          </div>
+          <div style="font-size:11px;color:var(--text-3)">Meeting summaries, transcripts, action items</div>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text-2)"><span>Get transcripts</span><div class="perm-check on" style="width:14px;height:14px"></div></div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text-2)"><span>Get summaries</span><div class="perm-check on" style="width:14px;height:14px"></div></div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text-2)"><span>Schedule meetings</span><div class="perm-check" style="width:14px;height:14px"></div></div>
+          </div>
+          <div class="connector-footer">
+            <div class="connector-users" style="color:var(--amber)">⚠ Rate limited</div>
+            <label class="toggle"><input type="checkbox" checked=""><span class="toggle-slider"></span></label>
+          </div>
+        </div>
+
+        <div class="connector-card">
+          <div class="connector-header">
+            <div class="connector-icon" style="background:#fef2f2">📧</div>
+            <div><div class="connector-name">Gmail</div><div class="connector-category" data-en="Email" data-zh="邮件">Email</div></div>
+          </div>
+          <div style="font-size:11px;color:var(--text-3)">Read, compose, and send emails via Gmail</div>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text-2)"><span>Read emails</span><div class="perm-check on" style="width:14px;height:14px"></div></div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text-2)"><span>Compose drafts</span><div class="perm-check on" style="width:14px;height:14px"></div></div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text-2)"><span>Send emails</span><div class="perm-check on" style="width:14px;height:14px"></div></div>
+          </div>
+          <div class="connector-footer">
+            <div class="connector-users">72 users connected</div>
+            <label class="toggle"><input type="checkbox" checked=""><span class="toggle-slider"></span></label>
+          </div>
+        </div>
+
+        <div class="connector-card">
+          <div class="connector-header">
+            <div class="connector-icon" style="background:#f0fdf4">📊</div>
+            <div><div class="connector-name">Microsoft 365</div><div class="connector-category" data-en="Productivity Suite" data-zh="生产力套件">Productivity Suite</div></div>
+          </div>
+          <div style="font-size:11px;color:var(--text-3)">Word, Excel, PowerPoint, OneDrive, SharePoint</div>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text-2)"><span>Read files</span><div class="perm-check on" style="width:14px;height:14px"></div></div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text-2)"><span>Edit documents</span><div class="perm-check on" style="width:14px;height:14px"></div></div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text-2)"><span>Delete files</span><div class="perm-check" style="width:14px;height:14px"></div></div>
+          </div>
+          <div class="connector-footer">
+            <div class="connector-users">61 users connected</div>
+            <label class="toggle"><input type="checkbox" checked=""><span class="toggle-slider"></span></label>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="font-size:11px;font-weight:600;color:var(--text-3);margin-bottom:10px;text-transform:uppercase;letter-spacing:.05em">Available to Enable</div>
+      <div class="connector-grid">
+        <div class="connector-card" style="opacity:.7">
+          <div class="connector-header">
+            <div class="connector-icon" style="background:#f0f9ff">🐙</div>
+            <div><div class="connector-name">GitHub</div><div class="connector-category" data-en="Code" data-zh="代码">Code</div></div>
+          </div>
+          <div style="font-size:11px;color:var(--text-3)">Issues, PRs, repos, code search</div>
+          <div class="connector-footer" style="margin-top:auto">
+            <span class="badge badge-blue" data-en="New" data-zh="新上架">New</span>
+            <label class="toggle"><input type="checkbox"><span class="toggle-slider"></span></label>
+          </div>
+        </div>
+        <div class="connector-card" style="opacity:.7">
+          <div class="connector-header">
+            <div class="connector-icon" style="background:#fdf4ff">📌</div>
+            <div><div class="connector-name">Asana</div><div class="connector-category" data-en="Project Mgmt" data-zh="项目管理">Project Mgmt</div></div>
+          </div>
+          <div style="font-size:11px;color:var(--text-3)">Tasks, projects, team workspaces</div>
+          <div class="connector-footer" style="margin-top:auto">
+            <span class="badge badge-gray" data-en="Available" data-zh="可启用">Available</span>
+            <label class="toggle"><input type="checkbox"><span class="toggle-slider"></span></label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───── PAGE: Spend ───── -->
+    <div id="page-spend" class="page">
+      <div class="grid-2" style="margin-bottom:20px">
+        <div class="card">
+          <div class="card-title" data-en="Organization Spend Limit" data-zh="组织总费用限额">Organization Spend Limit</div>
+          <div class="card-sub" style="margin-bottom:16px" data-en="Monthly cap across all users and groups" data-zh="全员与分组的每月上限">Monthly cap across all users and groups</div>
+          <div style="display:flex;align-items:flex-end;gap:8px;margin-bottom:12px">
+            <div style="font-size:32px;font-weight:700">$1,940</div>
+            <div style="font-size:14px;color:var(--text-3);margin-bottom:6px">/ $5,000 limit</div>
+          </div>
+          <div class="progress-bar" style="margin-bottom:8px"><div class="progress-fill amber" style="width:38.8%"></div></div>
+          <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text-3)">
+            <span>38.8% used</span>
+            <span>Resets May 1</span>
+          </div>
+          <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border);display:flex;gap:8px">
+            <input class="input" value="5000" style="width:100px">
+            <select class="select">
+              <option>USD / month</option>
+            </select>
+            <button class="btn btn-primary btn-sm" data-en="Update" data-zh="更新">Update</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title" style="margin-bottom:12px" data-en="Spend by Product (MTD)" data-zh="各产品消费占比（本月）">Spend by Product (MTD)</div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:5px"><span>Cowork</span><span style="font-weight:600">$1,204 <span style="color:var(--text-3);font-weight:400">(62%)</span></span></div>
+              <div class="progress-bar"><div class="progress-fill" style="width:62%"></div></div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:5px"><span>Chat</span><span style="font-weight:600">$543 <span style="color:var(--text-3);font-weight:400">(28%)</span></span></div>
+              <div class="progress-bar"><div class="progress-fill" style="width:28%;background:var(--blue)"></div></div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:5px"><span>Claude Code</span><span style="font-weight:600">$193 <span style="color:var(--text-3);font-weight:400">(10%)</span></span></div>
+              <div class="progress-bar"><div class="progress-fill" style="width:10%;background:var(--green)"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-header">
+        <div class="section-title" data-en="Per-Group Spend Limits" data-zh="分组费用限额">Per-Group Spend Limits</div>
+        <button class="btn btn-primary btn-sm" data-en="+ Set Group Limit" data-zh="+ 设置分组限额">+ Set Group Limit</button>
+      </div>
+      <div class="card" style="padding:0">
+        <table>
+          <thead><tr><th>Group</th><th data-en="Members" data-zh="成员">Members</th><th data-en="Monthly Limit" data-zh="月度限额">Monthly Limit</th><th data-en="MTD Usage" data-zh="本月已用">MTD Usage</th><th data-en="% Used" data-zh="使用率">% Used</th><th data-en="Alert at" data-zh="预警阈值">Alert at</th><th></th></tr></thead>
+          <tbody>
+            <tr>
+              <td><div style="font-weight:500">Engineering</div></td>
+              <td>142</td>
+              <td>$2,000</td>
+              <td>$840</td>
+              <td>
+                <div style="display:flex;align-items:center;gap:8px">
+                  <div class="progress-bar" style="width:80px"><div class="progress-fill green" style="width:42%"></div></div>
+                  <span style="font-size:12px">42%</span>
+                </div>
+              </td>
+              <td style="color:var(--text-3);font-size:12px">80%</td>
+              <td><button class="btn btn-ghost btn-sm" data-en="Edit" data-zh="编辑">Edit</button></td>
+            </tr>
+            <tr>
+              <td><div style="font-weight:500">Design</div></td>
+              <td>67</td>
+              <td>$800</td>
+              <td>$534</td>
+              <td>
+                <div style="display:flex;align-items:center;gap:8px">
+                  <div class="progress-bar" style="width:80px"><div class="progress-fill amber" style="width:66.7%"></div></div>
+                  <span style="font-size:12px">67%</span>
+                </div>
+              </td>
+              <td style="color:var(--amber);font-size:12px">⚠ 80%</td>
+              <td><button class="btn btn-ghost btn-sm" data-en="Edit" data-zh="编辑">Edit</button></td>
+            </tr>
+            <tr>
+              <td><div style="font-weight:500">Marketing</div></td>
+              <td>54</td>
+              <td>$600</td>
+              <td>$198</td>
+              <td>
+                <div style="display:flex;align-items:center;gap:8px">
+                  <div class="progress-bar" style="width:80px"><div class="progress-fill green" style="width:33%"></div></div>
+                  <span style="font-size:12px">33%</span>
+                </div>
+              </td>
+              <td style="color:var(--text-3);font-size:12px">80%</td>
+              <td><button class="btn btn-ghost btn-sm" data-en="Edit" data-zh="编辑">Edit</button></td>
+            </tr>
+            <tr>
+              <td><div style="font-weight:500">Operations</div></td>
+              <td>89</td>
+              <td>$900</td>
+              <td>$312</td>
+              <td>
+                <div style="display:flex;align-items:center;gap:8px">
+                  <div class="progress-bar" style="width:80px"><div class="progress-fill green" style="width:34.7%"></div></div>
+                  <span style="font-size:12px">35%</span>
+                </div>
+              </td>
+              <td style="color:var(--text-3);font-size:12px">80%</td>
+              <td><button class="btn btn-ghost btn-sm" data-en="Edit" data-zh="编辑">Edit</button></td>
+            </tr>
+            <tr>
+              <td><div style="font-weight:500">Sales</div></td>
+              <td>128</td>
+              <td>$1,200</td>
+              <td>$56</td>
+              <td>
+                <div style="display:flex;align-items:center;gap:8px">
+                  <div class="progress-bar" style="width:80px"><div class="progress-fill green" style="width:4.7%"></div></div>
+                  <span style="font-size:12px">5%</span>
+                </div>
+              </td>
+              <td style="color:var(--text-3);font-size:12px">80%</td>
+              <td><button class="btn btn-ghost btn-sm" data-en="Edit" data-zh="编辑">Edit</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ───── PAGE: Security ───── -->
+    <div id="page-security" class="page">
+      <div class="grid-2" style="margin-bottom:20px">
+        <div class="card">
+          <div class="card-title" style="margin-bottom:4px" data-en="Network Egress Allowlist" data-zh="网络出口白名单">Network Egress Allowlist</div>
+          <div class="card-sub" style="margin-bottom:14px" data-en="Restrict which domains Claude Cowork can connect to" data-zh="限制 Claude Cowork 可访问的域名">Restrict which domains Claude Cowork can connect to</div>
+          <div style="display:flex;gap:8px;margin-bottom:12px">
+            <input class="input" placeholder="e.g. api.github.com" style="flex:1">
+            <button class="btn btn-primary btn-sm" data-en="Add" data-zh="添加">Add</button>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 10px;background:var(--bg);border-radius:6px;font-size:12px">
+              <span style="font-family:monospace">*.slack.com</span>
+              <div style="display:flex;gap:6px"><span class="badge badge-green" data-en="Active" data-zh="已启用">Active</span><button class="btn btn-ghost btn-sm" style="color:var(--red)" data-en="Remove" data-zh="移除">Remove</button></div>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 10px;background:var(--bg);border-radius:6px;font-size:12px">
+              <span style="font-family:monospace">*.googleapis.com</span>
+              <div style="display:flex;gap:6px"><span class="badge badge-green" data-en="Active" data-zh="已启用">Active</span><button class="btn btn-ghost btn-sm" style="color:var(--red)" data-en="Remove" data-zh="移除">Remove</button></div>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 10px;background:var(--bg);border-radius:6px;font-size:12px">
+              <span style="font-family:monospace">notion.so</span>
+              <div style="display:flex;gap:6px"><span class="badge badge-green" data-en="Active" data-zh="已启用">Active</span><button class="btn btn-ghost btn-sm" style="color:var(--red)" data-en="Remove" data-zh="移除">Remove</button></div>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 10px;background:var(--bg);border-radius:6px;font-size:12px">
+              <span style="font-family:monospace">zoom.us</span>
+              <div style="display:flex;gap:6px"><span class="badge badge-green" data-en="Active" data-zh="已启用">Active</span><button class="btn btn-ghost btn-sm" style="color:var(--red)" data-en="Remove" data-zh="移除">Remove</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title" style="margin-bottom:4px" data-en="Desktop Extension Controls" data-zh="桌面端扩展控制">Desktop Extension Controls</div>
+          <div class="card-sub" style="margin-bottom:16px" data-en="Manage Claude Cowork app behavior on user machines" data-zh="管理用户机器上的 Cowork 应用行为">Manage Claude Cowork app behavior on user machines</div>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <div>
+                <div style="font-size:13px;font-weight:500">Require SSO login</div>
+                <div style="font-size:11px;color:var(--text-3)">Block personal account access</div>
+              </div>
+              <label class="toggle"><input type="checkbox" checked=""><span class="toggle-slider"></span></label>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <div>
+                <div style="font-size:13px;font-weight:500">Allow file system access</div>
+                <div style="font-size:11px;color:var(--text-3)">Users can mount local folders</div>
+              </div>
+              <label class="toggle"><input type="checkbox" checked=""><span class="toggle-slider"></span></label>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <div>
+                <div style="font-size:13px;font-weight:500">Computer Use</div>
+                <div style="font-size:11px;color:var(--text-3)">Allow screen control actions</div>
+              </div>
+              <label class="toggle"><input type="checkbox" checked=""><span class="toggle-slider"></span></label>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <div>
+                <div style="font-size:13px;font-weight:500">Clipboard read access</div>
+                <div style="font-size:11px;color:var(--text-3)">Claude can read clipboard content</div>
+              </div>
+              <label class="toggle"><input type="checkbox"><span class="toggle-slider"></span></label>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <div>
+                <div style="font-size:13px;font-weight:500">Auto-update enforcement</div>
+                <div style="font-size:11px;color:var(--text-3)">Force latest version on all devices</div>
+              </div>
+              <label class="toggle"><input type="checkbox" checked=""><span class="toggle-slider"></span></label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title" style="margin-bottom:4px" data-en="Compliance &amp; Audit Log" data-zh="合规与审计日志">Compliance &amp; Audit Log</div>
+        <div class="card-sub" style="margin-bottom:14px" data-en="Recent sensitive actions across your organization" data-zh="组织内近期敏感操作记录">Recent sensitive actions across your organization</div>
+        <table>
+          <thead><tr><th data-en="Time" data-zh="时间">Time</th><th data-en="User" data-zh="用户">User</th><th data-en="Action" data-zh="操作">Action</th><th data-en="Resource" data-zh="资源">Resource</th><th data-en="Status" data-zh="状态">Status</th></tr></thead>
+          <tbody>
+            <tr><td style="font-size:12px;color:var(--text-3)">Today 14:32</td><td><div class="user-row"><div class="user-avatar" style="width:22px;height:22px;font-size:9px">ZL</div> Zhang Lei</div></td><td data-en="File mount" data-zh="挂载文件">File mount</td><td style="font-family:monospace;font-size:12px">/Users/zhangl/Projects</td><td><span class="badge badge-green" data-en="Approved" data-zh="已通过">Approved</span></td></tr>
+            <tr><td style="font-size:12px;color:var(--text-3)">Today 13:18</td><td><div class="user-row"><div class="user-avatar" style="width:22px;height:22px;font-size:9px;background:#dbeafe;color:#2563eb">WX</div> Wang Xiaoming</div></td><td data-en="Computer Use action" data-zh="电脑操控">Computer Use action</td><td>Finder → Desktop</td><td><span class="badge badge-amber" data-en="Manual approval" data-zh="需手动审批">Manual approval</span></td></tr>
+            <tr><td style="font-size:12px;color:var(--text-3)">Today 11:05</td><td><div class="user-row"><div class="user-avatar" style="width:22px;height:22px;font-size:9px;background:#fce7f3;color:#9d174d">SJ</div> Sun Jie</div></td><td data-en="Slack message sent" data-zh="发送 Slack 消息">Slack message sent</td><td>#engineering</td><td><span class="badge badge-green" data-en="Approved" data-zh="已通过">Approved</span></td></tr>
+            <tr><td style="font-size:12px;color:var(--text-3)">Yesterday 16:40</td><td><div class="user-row"><div class="user-avatar" style="width:22px;height:22px;font-size:9px;background:#f0fdf4;color:#16a34a">LY</div> Liu Ying</div></td><td data-en="Email draft sent" data-zh="发送邮件草稿">Email draft sent</td><td>Gmail → external</td><td><span class="badge badge-green" data-en="Approved" data-zh="已通过">Approved</span></td></tr>
+            <tr><td style="font-size:12px;color:var(--text-3)">Yesterday 09:12</td><td><div class="user-row"><div class="user-avatar" style="width:22px;height:22px;font-size:9px;background:#fef9c3;color:#854d0e">CH</div> Chen Hao</div></td><td data-en="Connector auth attempt" data-zh="连接器授权尝试">Connector auth attempt</td><td>GitHub (blocked)</td><td><span class="badge badge-red" data-en="Blocked" data-zh="已拦截">Blocked</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ───── PAGE: Observability ───── -->
+    <div id="page-observability" class="page">
+      <div class="grid-2" style="margin-bottom:20px">
+        <div class="card">
+          <div class="card-title" style="margin-bottom:4px" data-en="OpenTelemetry Export" data-zh="OpenTelemetry 导出">OpenTelemetry Export</div>
+          <div class="card-sub" style="margin-bottom:14px" data-en="Stream Cowork events to your SIEM (Splunk, Cribl, Datadog)" data-zh="将 Cowork 事件推送到 SIEM（Splunk、Cribl、Datadog）">Stream Cowork events to your SIEM (Splunk, Cribl, Datadog)</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+            <div>
+              <div style="font-size:13px;font-weight:500">OTEL Export</div>
+              <div style="font-size:11px;color:var(--text-3)">Currently streaming to Splunk</div>
+            </div>
+            <label class="toggle"><input type="checkbox" checked=""><span class="toggle-slider"></span></label>
+          </div>
+          <div style="font-size:12px;font-weight:500;color:var(--text-2);margin-bottom:8px">Endpoint</div>
+          <input class="input" value="https://splunk.chutu.com:4318/v1/traces" style="margin-bottom:12px;font-family:monospace;font-size:12px">
+          <div style="font-size:12px;font-weight:500;color:var(--text-2);margin-bottom:8px">Sample OTEL event payload</div>
+          <div class="code-block">
+<span class="code-comment">// Tool call event</span>
+{
+  <span class="code-key">"event"</span>: <span class="code-val">"cowork.tool_call"</span>,
+  <span class="code-key">"user_id"</span>: <span class="code-val">"u_zhanglei"</span>,
+  <span class="code-key">"session_id"</span>: <span class="code-val">"s_8fa21c"</span>,
+  <span class="code-key">"tool"</span>: <span class="code-val">"slack__send_message"</span>,
+  <span class="code-key">"approval"</span>: <span class="code-val">"auto"</span>,
+  <span class="code-key">"timestamp"</span>: <span class="code-val">"2026-04-15T14:32:11Z"</span>
+}</div>
+        </div>
+
+        <div class="card">
+          <div class="card-title" style="margin-bottom:14px" data-en="Event Types Tracked" data-zh="追踪事件类型">Event Types Tracked</div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:9px 10px;border:1px solid var(--border);border-radius:6px">
+              <div><div style="font-size:13px;font-weight:500">Tool calls</div><div style="font-size:11px;color:var(--text-3)">All connector &amp; skill invocations</div></div>
+              <label class="toggle"><input type="checkbox" checked=""><span class="toggle-slider"></span></label>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:9px 10px;border:1px solid var(--border);border-radius:6px">
+              <div><div style="font-size:13px;font-weight:500">File operations</div><div style="font-size:11px;color:var(--text-3)">Read, write, delete events</div></div>
+              <label class="toggle"><input type="checkbox" checked=""><span class="toggle-slider"></span></label>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:9px 10px;border:1px solid var(--border);border-radius:6px">
+              <div><div style="font-size:13px;font-weight:500">Computer Use actions</div><div style="font-size:11px;color:var(--text-3)">Screen interactions, clicks</div></div>
+              <label class="toggle"><input type="checkbox" checked=""><span class="toggle-slider"></span></label>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:9px 10px;border:1px solid var(--border);border-radius:6px">
+              <div><div style="font-size:13px;font-weight:500">Approval decisions</div><div style="font-size:11px;color:var(--text-3)">Auto vs manual approval logs</div></div>
+              <label class="toggle"><input type="checkbox" checked=""><span class="toggle-slider"></span></label>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:9px 10px;border:1px solid var(--border);border-radius:6px">
+              <div><div style="font-size:13px;font-weight:500">Session start/end</div><div style="font-size:11px;color:var(--text-3)">Session lifecycle events</div></div>
+              <label class="toggle"><input type="checkbox"><span class="toggle-slider"></span></label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───── PAGE: SSO ───── -->
+    <div id="page-sso" class="page">
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-title" style="margin-bottom:4px" data-en="SSO Configuration" data-zh="SSO 配置">SSO Configuration</div>
+          <div class="card-sub" style="margin-bottom:16px" data-en="Single Sign-On via SAML 2.0 or OIDC" data-zh="通过 SAML 2.0 或 OIDC 单点登录">Single Sign-On via SAML 2.0 or OIDC</div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div><div style="font-size:12px;font-weight:500;color:var(--text-2);margin-bottom:4px">Identity Provider</div>
+              <select class="select" style="width:100%"><option>Okta</option><option>Azure AD</option><option>Google Workspace</option><option>Custom SAML</option></select></div>
+            <div><div style="font-size:12px;font-weight:500;color:var(--text-2);margin-bottom:4px">SSO Metadata URL</div>
+              <input class="input" value="https://chutu.okta.com/app/anthropic/sso/saml/metadata" style="font-family:monospace;font-size:11px"></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 12px;background:var(--bg);border-radius:8px;border:1px solid var(--border)">
+              <div><div style="font-size:13px;font-weight:500">Enforce SSO</div><div style="font-size:11px;color:var(--text-3)">Block non-SSO logins</div></div>
+              <label class="toggle"><input type="checkbox" checked=""><span class="toggle-slider"></span></label>
+            </div>
+            <div style="display:flex;gap:8px"><button class="btn btn-primary btn-sm" data-en="Save Config" data-zh="保存配置">Save Config</button><button class="btn btn-ghost btn-sm" data-en="Test SSO" data-zh="测试 SSO">Test SSO</button></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title" style="margin-bottom:4px" data-en="SCIM Provisioning" data-zh="SCIM 用户同步">SCIM Provisioning</div>
+          <div class="card-sub" style="margin-bottom:16px" data-en="Auto-sync users and groups from your IdP" data-zh="从身份提供商自动同步用户与分组">Auto-sync users and groups from your IdP</div>
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px">
+            <div style="width:8px;height:8px;border-radius:50%;background:var(--green);flex-shrink:0"></div>
+            <span style="font-size:13px;font-weight:500;color:var(--green)">SCIM Active</span>
+            <span style="font-size:12px;color:var(--text-3)">Last sync: 6 min ago</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div><div style="font-size:12px;font-weight:500;color:var(--text-2);margin-bottom:4px">SCIM Endpoint</div>
+              <input class="input" value="https://claude.ai/scim/v2/chutu-network" readonly="" style="font-family:monospace;font-size:11px;background:#f9f8f6"></div>
+            <div><div style="font-size:12px;font-weight:500;color:var(--text-2);margin-bottom:4px">Bearer Token</div>
+              <div style="display:flex;gap:6px"><input class="input" value="••••••••••••••••••••••" readonly="" style="flex:1"><button class="btn btn-ghost btn-sm" data-en="Rotate" data-zh="轮换">Rotate</button></div></div>
+            <div style="padding:10px 12px;background:var(--green-bg);border:1px solid #bbf7d0;border-radius:8px;font-size:12px;color:var(--green)">
+              ✓ 480 users synced · 8 groups mapped · Nested groups not supported
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───── PAGE: Billing ───── -->
+    <div id="page-billing" class="page">
+      <div class="grid-2" style="margin-bottom:20px">
+        <div class="card">
+          <div class="card-title" style="margin-bottom:4px" data-en="Current Plan" data-zh="当前套餐">Current Plan</div>
+          <div class="card-sub" style="margin-bottom:14px" data-en="Enterprise · Annual contract" data-zh="企业版 · 年度合同">Enterprise · Annual contract</div>
+          <div style="padding:16px;background:linear-gradient(135deg,#1c1917,#292524);border-radius:10px;color:white;margin-bottom:14px">
+            <div style="font-size:11px;color:#a8a29e;margin-bottom:4px">ANTHROPIC</div>
+            <div style="font-size:18px;font-weight:700;margin-bottom:2px">Enterprise Plan</div>
+            <div style="font-size:12px;color:#a8a29e">480 seats · Renews Jan 1, 2027</div>
+            <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+              <span style="background:rgba(255,255,255,.1);border-radius:20px;padding:2px 8px;font-size:11px">Claude Cowork GA</span>
+              <span style="background:rgba(255,255,255,.1);border-radius:20px;padding:2px 8px;font-size:11px">Computer Use</span>
+              <span style="background:rgba(255,255,255,.1);border-radius:20px;padding:2px 8px;font-size:11px">SCIM</span>
+              <span style="background:rgba(255,255,255,.1);border-radius:20px;padding:2px 8px;font-size:11px">OTEL</span>
+              <span style="background:rgba(207,103,72,.3);border-radius:20px;padding:2px 8px;font-size:11px;color:#fdba74">Opus 4.6 ✓</span>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px">
+            <button class="btn btn-ghost btn-sm" data-en="View Contract" data-zh="查看合同">View Contract</button>
+            <button class="btn btn-ghost btn-sm" data-en="Add Seats" data-zh="增加席位">Add Seats</button>
+            <button class="btn btn-ghost btn-sm" data-en="Contact CSM" data-zh="联系客户经理">Contact CSM</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title" style="margin-bottom:14px" data-en="Invoice History" data-zh="账单历史">Invoice History</div>
+          <table>
+            <thead><tr><th data-en="Period" data-zh="账期">Period</th><th data-en="Amount" data-zh="金额">Amount</th><th data-en="Status" data-zh="状态">Status</th><th></th></tr></thead>
+            <tbody>
+              <tr><td>Apr 2026</td><td>$14,400</td><td><span class="badge badge-amber" data-en="Upcoming" data-zh="待支付">Upcoming</span></td><td></td></tr>
+              <tr><td>Mar 2026</td><td>$14,400</td><td><span class="badge badge-green" data-en="Paid" data-zh="已支付">Paid</span></td><td><a href="https://cowork-admin.wwei.ai/#" style="font-size:12px;color:var(--brand)">PDF</a></td></tr>
+              <tr><td>Feb 2026</td><td>$14,400</td><td><span class="badge badge-green" data-en="Paid" data-zh="已支付">Paid</span></td><td><a href="https://cowork-admin.wwei.ai/#" style="font-size:12px;color:var(--brand)">PDF</a></td></tr>
+              <tr><td>Jan 2026</td><td>$14,400</td><td><span class="badge badge-green" data-en="Paid" data-zh="已支付">Paid</span></td><td><a href="https://cowork-admin.wwei.ai/#" style="font-size:12px;color:var(--brand)">PDF</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───── PAGE: Activity ───── -->
+    <div id="page-activity" class="page">
+      <div class="card" style="margin-bottom:20px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+          <div class="card-title" data-en="Live Activity Feed" data-zh="实时操作动态">Live Activity Feed</div>
+          <span class="badge badge-green" style="animation:pulse 2s infinite">● Live</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:1px">
+          <div style="display:flex;gap:12px;padding:9px 0;border-bottom:1px solid var(--border);font-size:12px">
+            <span style="color:var(--text-3);flex-shrink:0;width:50px">14:35</span>
+            <div class="user-avatar" style="width:20px;height:20px;font-size:8px;flex-shrink:0">ZL</div>
+            <span><strong>Zhang Lei</strong> ran skill <span class="chip">data:analyze</span> on sales_q1.xlsx</span>
+            <span class="badge badge-green" style="margin-left:auto">Done</span>
+          </div>
+          <div style="display:flex;gap:12px;padding:9px 0;border-bottom:1px solid var(--border);font-size:12px">
+            <span style="color:var(--text-3);flex-shrink:0;width:50px">14:33</span>
+            <div class="user-avatar" style="width:20px;height:20px;font-size:8px;flex-shrink:0;background:#fce7f3;color:#9d174d">SJ</div>
+            <span><strong>Sun Jie</strong> used Computer Use → opened Finder</span>
+            <span class="badge badge-amber" style="margin-left:auto" data-en="Approved" data-zh="已通过">Approved</span>
+          </div>
+          <div style="display:flex;gap:12px;padding:9px 0;border-bottom:1px solid var(--border);font-size:12px">
+            <span style="color:var(--text-3);flex-shrink:0;width:50px">14:28</span>
+            <div class="user-avatar" style="width:20px;height:20px;font-size:8px;flex-shrink:0;background:#dbeafe;color:#2563eb">WX</div>
+            <span><strong>Wang Xiaoming</strong> created doc via <span class="chip">docx</span> skill → saved to Drive</span>
+            <span class="badge badge-green" style="margin-left:auto">Done</span>
+          </div>
+          <div style="display:flex;gap:12px;padding:9px 0;border-bottom:1px solid var(--border);font-size:12px">
+            <span style="color:var(--text-3);flex-shrink:0;width:50px">14:20</span>
+            <div class="user-avatar" style="width:20px;height:20px;font-size:8px;flex-shrink:0;background:#fef9c3;color:#854d0e">CH</div>
+            <span><strong>Chen Hao</strong> searched Slack via connector · 42 results</span>
+            <span class="badge badge-green" style="margin-left:auto">Done</span>
+          </div>
+          <div style="display:flex;gap:12px;padding:9px 0;font-size:12px">
+            <span style="color:var(--text-3);flex-shrink:0;width:50px">14:14</span>
+            <div class="user-avatar" style="width:20px;height:20px;font-size:8px;flex-shrink:0;background:#f3e8ff;color:#7e22ce">MQ</div>
+            <span><strong>Ma Qian</strong> scheduled task <em>"Weekly pipeline report"</em> → runs every Monday 09:00</span>
+            <span class="badge badge-blue" style="margin-left:auto">Scheduled</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /content -->
+</div><!-- /main -->
+
+<style>
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.5} }
+</style>
+
+<script>
+// ── Navigation ──
+function showPage(id, el) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  if(el) el.classList.add('active');
+  const titles = {
+    overview:'Overview', users:'Users & Groups', roles:'Roles & Permissions',
+    connectors:'Connectors & Plugins', spend:'Spend Limits',
+    security:'Security', observability:'Observability',
+    sso:'SSO & SCIM', billing:'Billing & Plans', activity:'Activity Feed'
+  };
+  document.getElementById('topbar-title').textContent = titles[id] || id;
+}
+
+function switchTab(el, group) {
+  el.parentElement.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// Pill group toggle
+document.querySelectorAll('.pill').forEach(p => {
+  p.addEventListener('click', function() {
+    this.closest('.pill-group').querySelectorAll('.pill').forEach(x => x.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+// ── Charts ──
+const usageCtx = document.getElementById('usageChart').getContext('2d');
+const labels = ['Apr 9','Apr 10','Apr 11','Apr 12','Apr 13','Apr 14','Apr 15'];
+new Chart(usageCtx, {
+  type: 'line',
+  data: {
+    labels,
+    datasets: [
+      {
+        label: 'DAU', data: [210, 234, 198, 245, 267, 289, 312],
+        borderColor: '#CF6748', backgroundColor: 'rgba(207,103,72,.08)',
+        borderWidth: 2, tension: .4, fill: true, pointRadius: 3, pointBackgroundColor: '#CF6748'
+      },
+      {
+        label: 'WAU', data: [310, 322, 330, 340, 358, 370, 380],
+        borderColor: '#2563eb', backgroundColor: 'transparent',
+        borderWidth: 1.5, borderDash: [4,3], tension: .4, pointRadius: 2, pointBackgroundColor: '#2563eb'
+      }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: true, position: 'top', labels: { boxWidth: 10, font: { size: 11 }, padding: 14 } } },
+    scales: {
+      x: { grid: { display: false }, ticks: { font: { size: 11 }, color: '#a8a29e' } },
+      y: { grid: { color: '#f4f2ee' }, ticks: { font: { size: 11 }, color: '#a8a29e' } }
+    }
+  }
+});
+
+const donutCtx = document.getElementById('donutChart').getContext('2d');
+new Chart(donutCtx, {
+  type: 'doughnut',
+  data: {
+    datasets: [{
+      data: [62, 28, 10],
+      backgroundColor: ['#CF6748','#2563eb','#16a34a'],
+      borderWidth: 0, hoverOffset: 4
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false, cutout: '70%',
+    plugins: { legend: { display: false }, tooltip: { callbacks: {
+      label: ctx => ` ${ctx.raw}%`
+    }}}
+  }
+});
+</script>
+
+<script>
+const TRANS = {
+  en: {
+    // sidebar
+    'Analytics': 'Analytics', 'Access': 'Access', 'Configuration': 'Configuration',
+    'Org Settings': 'Org Settings',
+    'Overview': 'Overview', 'Activity': 'Activity',
+    'Users & Groups': 'Users & Groups', 'Roles & Permissions': 'Roles & Permissions',
+    'Connectors & Plugins': 'Connectors & Plugins', 'Spend Limits': 'Spend Limits',
+    'Security': 'Security', 'Observability': 'Observability',
+    'SSO & SCIM': 'SSO & SCIM', 'Billing & Plans': 'Billing & Plans',
+    'Super Admin': 'Super Admin',
+    // topbar
+    'Export CSV': 'Export CSV', '+ Invite Users': '+ Invite Users',
+    // overview
+    'Active Cowork Users (7D)': 'Active Cowork Users (7D)',
+    'Total Sessions (7D)': 'Total Sessions (7D)',
+    'Avg. Session Length': 'Avg. Session Length',
+    'MTD Spend': 'MTD Spend',
+    '↑ +18% vs last week': '↑ +18% vs last week',
+    '↑ +24%': '↑ +24%',
+    '— Stable': '— Stable',
+    'DAU / WAU / MAU Trend': 'DAU / WAU / MAU Trend',
+    'Cowork active users over time': 'Cowork active users over time',
+    'All Products': 'All Products', 'Cowork only': 'Cowork only',
+    'Chat': 'Chat', 'Claude Code': 'Claude Code',
+    'Product Usage Breakdown': 'Product Usage Breakdown',
+    'Sessions by product this month': 'Sessions by product this month',
+    'Total sessions (30D)': 'Total sessions (30D)',
+    'Top Skills Invoked (7D)': 'Top Skills Invoked (7D)',
+    'Top Connectors Used (7D)': 'Top Connectors Used (7D)',
+    'Skill': 'Skill', 'Invocations': 'Invocations', 'Unique Users': 'Unique Users', 'Trend': 'Trend',
+    'Connector': 'Connector', 'Calls': 'Calls', 'Users': 'Users', 'Status': 'Status',
+    'Healthy': 'Healthy', 'Rate limited': 'Rate limited',
+    // users
+    'All Users': 'All Users',
+    '480 members · 312 active in last 7 days': '480 members · 312 active in last 7 days',
+    'Search users...': 'Search users...',
+    'All Groups': 'All Groups', 'Engineering': 'Engineering', 'Design': 'Design',
+    'Marketing': 'Marketing', 'Operations': 'Operations',
+    '+ Invite': '+ Invite',
+    'User': 'User', 'Groups': 'Groups', 'Role': 'Role', 'Cowork': 'Cowork',
+    'Last Active': 'Last Active', 'Sessions (7D)': 'Sessions (7D)',
+    'Today': 'Today', 'Yesterday': 'Yesterday',
+    'Manage': 'Manage',
+    'Showing 6 of 480 users': 'Showing 6 of 480 users',
+    // roles
+    'Roles (5)': 'Roles (5)', '+ New Role': '+ New Role',
+    'Role Name': 'Role Name', 'Access': 'Access',
+    'Full access to all features': 'Full access to all features',
+    'Full Cowork + connectors': 'Full Cowork + connectors',
+    'Cowork, no Computer Use': 'Cowork, no Computer Use',
+    'No Cowork access': 'No Cowork access',
+    'Read-only, no AI features': 'Read-only, no AI features',
+    'Full': 'Full', 'Limited': 'Limited', 'Disabled': 'Disabled',
+    'Edit': 'Edit',
+    'Role Detail — Cowork Pro': 'Role Detail — Cowork Pro',
+    'Save Changes': 'Save Changes',
+    'Feature': 'Feature',
+    'Claude Cowork': 'Claude Cowork', 'Computer Use': 'Computer Use',
+    'Scheduled Tasks': 'Scheduled Tasks', 'MCP Connectors': 'MCP Connectors',
+    'Plugin Marketplace': 'Plugin Marketplace', 'File System Access': 'File System Access',
+    'Model Selection': 'Model Selection',
+    // connectors
+    'Connectors & Plugins': 'Connectors & Plugins',
+    '12 connectors enabled · 2 pending approval · Per-tool permission control available': '12 connectors enabled · 2 pending approval · Per-tool permission control available',
+    'Search connectors...': 'Search connectors...',
+    'Browse Marketplace': 'Browse Marketplace',
+    'Enabled': 'Enabled', 'Available to Enable': 'Available to Enable',
+    'Communication': 'Communication', 'Storage': 'Storage', 'Knowledge': 'Knowledge',
+    'Meetings': 'Meetings', 'Email': 'Email', 'Productivity Suite': 'Productivity Suite',
+    'Code': 'Code', 'Project Mgmt': 'Project Mgmt',
+    'Send messages, search history, manage channels': 'Send messages, search history, manage channels',
+    'Read, create, and manage files on Google Drive': 'Read, create, and manage files on Google Drive',
+    'Access and edit Notion pages and databases': 'Access and edit Notion pages and databases',
+    'Meeting summaries, transcripts, action items': 'Meeting summaries, transcripts, action items',
+    'Read, compose, and send emails via Gmail': 'Read, compose, and send emails via Gmail',
+    'Word, Excel, PowerPoint, OneDrive, SharePoint': 'Word, Excel, PowerPoint, OneDrive, SharePoint',
+    'Issues, PRs, repos, code search': 'Issues, PRs, repos, code search',
+    'Tasks, projects, team workspaces': 'Tasks, projects, team workspaces',
+    'Read messages': 'Read messages', 'Send messages': 'Send messages', 'Delete messages': 'Delete messages',
+    'Read files': 'Read files', 'Create files': 'Create files', 'Delete files': 'Delete files',
+    'Read pages': 'Read pages', 'Edit pages': 'Edit pages', 'Delete pages': 'Delete pages',
+    'Get transcripts': 'Get transcripts', 'Get summaries': 'Get summaries', 'Schedule meetings': 'Schedule meetings',
+    'Read emails': 'Read emails', 'Compose drafts': 'Compose drafts', 'Send emails': 'Send emails',
+    'Edit documents': 'Edit documents',
+    'users connected': 'users connected', '⚠ Rate limited': '⚠ Rate limited',
+    'New': 'New', 'Available': 'Available',
+    // spend
+    'Organization Spend Limit': 'Organization Spend Limit',
+    'Monthly cap across all users and groups': 'Monthly cap across all users and groups',
+    '38.8% used': '38.8% used', 'Resets May 1': 'Resets May 1', 'Update': 'Update',
+    'Spend by Product (MTD)': 'Spend by Product (MTD)',
+    'Per-Group Spend Limits': 'Per-Group Spend Limits', '+ Set Group Limit': '+ Set Group Limit',
+    'Members': 'Members', 'Monthly Limit': 'Monthly Limit', 'MTD Usage': 'MTD Usage',
+    '% Used': '% Used', 'Alert at': 'Alert at',
+    // security
+    'Network Egress Allowlist': 'Network Egress Allowlist',
+    'Restrict which domains Claude Cowork can connect to': 'Restrict which domains Claude Cowork can connect to',
+    'e.g. api.github.com': 'e.g. api.github.com', 'Add': 'Add', 'Active': 'Active', 'Remove': 'Remove',
+    'Desktop Extension Controls': 'Desktop Extension Controls',
+    'Manage Claude Cowork app behavior on user machines': 'Manage Claude Cowork app behavior on user machines',
+    'Require SSO login': 'Require SSO login', 'Block personal account access': 'Block personal account access',
+    'Allow file system access': 'Allow file system access', 'Users can mount local folders': 'Users can mount local folders',
+    'Clipboard read access': 'Clipboard read access', 'Claude can read clipboard content': 'Claude can read clipboard content',
+    'Auto-update enforcement': 'Auto-update enforcement', 'Force latest version on all devices': 'Force latest version on all devices',
+    'Compliance & Audit Log': 'Compliance & Audit Log',
+    'Recent sensitive actions across your organization': 'Recent sensitive actions across your organization',
+    'Time': 'Time', 'Action': 'Action', 'Resource': 'Resource',
+    'Approved': 'Approved', 'Manual approval': 'Manual approval', 'Blocked': 'Blocked',
+    'File mount': 'File mount', 'Computer Use action': 'Computer Use action',
+    'Slack message sent': 'Slack message sent', 'Email draft sent': 'Email draft sent',
+    'Connector auth attempt': 'Connector auth attempt',
+    // observability
+    'OpenTelemetry Export': 'OpenTelemetry Export',
+    'Stream Cowork events to your SIEM (Splunk, Cribl, Datadog)': 'Stream Cowork events to your SIEM (Splunk, Cribl, Datadog)',
+    'OTEL Export': 'OTEL Export', 'Currently streaming to Splunk': 'Currently streaming to Splunk',
+    'Endpoint': 'Endpoint',
+    'Sample OTEL event payload': 'Sample OTEL event payload',
+    'Event Types Tracked': 'Event Types Tracked',
+    'Tool calls': 'Tool calls', 'All connector & skill invocations': 'All connector & skill invocations',
+    'File operations': 'File operations', 'Read, write, delete events': 'Read, write, delete events',
+    'Computer Use actions': 'Computer Use actions', 'Screen interactions, clicks': 'Screen interactions, clicks',
+    'Approval decisions': 'Approval decisions', 'Auto vs manual approval logs': 'Auto vs manual approval logs',
+    'Session start/end': 'Session start/end', 'Session lifecycle events': 'Session lifecycle events',
+    // sso
+    'SSO Configuration': 'SSO Configuration',
+    'Single Sign-On via SAML 2.0 or OIDC': 'Single Sign-On via SAML 2.0 or OIDC',
+    'Identity Provider': 'Identity Provider', 'SSO Metadata URL': 'SSO Metadata URL',
+    'Enforce SSO': 'Enforce SSO', 'Block non-SSO logins': 'Block non-SSO logins',
+    'Save Config': 'Save Config', 'Test SSO': 'Test SSO',
+    'SCIM Provisioning': 'SCIM Provisioning',
+    'Auto-sync users and groups from your IdP': 'Auto-sync users and groups from your IdP',
+    'SCIM Active': 'SCIM Active', 'Last sync: 6 min ago': 'Last sync: 6 min ago',
+    'SCIM Endpoint': 'SCIM Endpoint', 'Bearer Token': 'Bearer Token', 'Rotate': 'Rotate',
+    // billing
+    'Current Plan': 'Current Plan', 'Enterprise · Annual contract': 'Enterprise · Annual contract',
+    'Enterprise Plan': 'Enterprise Plan', '480 seats · Renews Jan 1, 2027': '480 seats · Renews Jan 1, 2027',
+    'View Contract': 'View Contract', 'Add Seats': 'Add Seats', 'Contact CSM': 'Contact CSM',
+    'Invoice History': 'Invoice History',
+    'Period': 'Period', 'Amount': 'Amount',
+    'Upcoming': 'Upcoming', 'Paid': 'Paid',
+    // activity
+    'Live Activity Feed': 'Live Activity Feed', '● Live': '● Live',
+    'Admin Console': 'Admin Console',
+  },
+  zh: {
+    'Analytics': '数据分析', 'Access': '访问控制', 'Configuration': '配置管理',
+    'Org Settings': '组织设置',
+    'Overview': '总览', 'Activity': '实时动态',
+    'Users & Groups': '用户与分组', 'Roles & Permissions': '角色与权限',
+    'Connectors & Plugins': '连接器与插件', 'Spend Limits': '费用限额',
+    'Security': '安全', 'Observability': '可观测性',
+    'SSO & SCIM': 'SSO 与 SCIM', 'Billing & Plans': '账单与套餐',
+    'Super Admin': '超级管理员',
+    'Export CSV': '导出 CSV', '+ Invite Users': '+ 邀请用户',
+    'Active Cowork Users (7D)': '活跃 Cowork 用户（7日）',
+    'Total Sessions (7D)': '总会话数（7日）',
+    'Avg. Session Length': '平均会话时长',
+    'MTD Spend': '本月累计消费',
+    '↑ +18% vs last week': '↑ 较上周 +18%',
+    '↑ +24%': '↑ +24%',
+    '— Stable': '— 持平',
+    'DAU / WAU / MAU Trend': 'DAU / WAU / MAU 趋势',
+    'Cowork active users over time': 'Cowork 活跃用户趋势',
+    'All Products': '全部产品', 'Cowork only': '仅 Cowork',
+    'Chat': '对话', 'Claude Code': 'Claude Code',
+    'Product Usage Breakdown': '产品使用占比',
+    'Sessions by product this month': '本月各产品会话分布',
+    'Total sessions (30D)': '总会话（30日）',
+    'Top Skills Invoked (7D)': '热门 Skill 调用（7日）',
+    'Top Connectors Used (7D)': '热门连接器（7日）',
+    'Skill': 'Skill', 'Invocations': '调用次数', 'Unique Users': '独立用户', 'Trend': '趋势',
+    'Connector': '连接器', 'Calls': '调用次数', 'Users': '用户数', 'Status': '状态',
+    'Healthy': '正常', 'Rate limited': '频率限制',
+    'All Users': '所有用户',
+    '480 members · 312 active in last 7 days': '480 名成员 · 近 7 日 312 名活跃',
+    'Search users...': '搜索用户...',
+    'All Groups': '所有分组', 'Engineering': '工程', 'Design': '设计',
+    'Marketing': '市场', 'Operations': '运营',
+    '+ Invite': '+ 邀请',
+    'User': '用户', 'Groups': '分组', 'Role': '角色', 'Cowork': 'Cowork',
+    'Last Active': '最近活跃', 'Sessions (7D)': '会话数（7日）',
+    'Today': '今天', 'Yesterday': '昨天',
+    'Manage': '管理',
+    'Showing 6 of 480 users': '显示 480 名用户中的 6 名',
+    'Roles (5)': '角色（5 个）', '+ New Role': '+ 新建角色',
+    'Role Name': '角色名称', 'Access': '权限级别',
+    'Full access to all features': '完整功能访问权限',
+    'Full Cowork + connectors': '完整 Cowork + 连接器',
+    'Cowork, no Computer Use': 'Cowork，不含 Computer Use',
+    'No Cowork access': '不含 Cowork 访问',
+    'Read-only, no AI features': '只读，无 AI 功能',
+    'Full': '完整', 'Limited': '受限', 'Disabled': '已禁用',
+    'Edit': '编辑',
+    'Role Detail — Cowork Pro': '角色详情 — Cowork Pro',
+    'Save Changes': '保存更改',
+    'Feature': '功能',
+    'Claude Cowork': 'Claude Cowork', 'Computer Use': '电脑操控',
+    'Scheduled Tasks': '定时任务', 'MCP Connectors': 'MCP 连接器',
+    'Plugin Marketplace': '插件市场', 'File System Access': '文件系统访问',
+    'Model Selection': '模型选择',
+    '12 connectors enabled · 2 pending approval · Per-tool permission control available': '已启用 12 个连接器 · 2 个待审批 · 支持工具级权限控制',
+    'Search connectors...': '搜索连接器...',
+    'Browse Marketplace': '浏览市场',
+    'Enabled': '已启用', 'Available to Enable': '可启用',
+    'Communication': '通讯', 'Storage': '存储', 'Knowledge': '知识库',
+    'Meetings': '会议', 'Email': '邮件', 'Productivity Suite': '生产力套件',
+    'Code': '代码', 'Project Mgmt': '项目管理',
+    'Send messages, search history, manage channels': '发送消息、搜索历史、管理频道',
+    'Read, create, and manage files on Google Drive': '读取、创建、管理 Google Drive 文件',
+    'Access and edit Notion pages and databases': '访问和编辑 Notion 页面与数据库',
+    'Meeting summaries, transcripts, action items': '会议摘要、转录稿、行动项',
+    'Read, compose, and send emails via Gmail': '通过 Gmail 读取、撰写、发送邮件',
+    'Word, Excel, PowerPoint, OneDrive, SharePoint': 'Word、Excel、PowerPoint、OneDrive、SharePoint',
+    'Issues, PRs, repos, code search': 'Issues、PR、仓库、代码搜索',
+    'Tasks, projects, team workspaces': '任务、项目、团队工作区',
+    'Read messages': '读取消息', 'Send messages': '发送消息', 'Delete messages': '删除消息',
+    'Read files': '读取文件', 'Create files': '创建文件', 'Delete files': '删除文件',
+    'Read pages': '读取页面', 'Edit pages': '编辑页面', 'Delete pages': '删除页面',
+    'Get transcripts': '获取转录稿', 'Get summaries': '获取摘要', 'Schedule meetings': '安排会议',
+    'Read emails': '读取邮件', 'Compose drafts': '撰写草稿', 'Send emails': '发送邮件',
+    'Edit documents': '编辑文档',
+    'users connected': '个用户已连接', '⚠ Rate limited': '⚠ 频率受限',
+    'New': '新上架', 'Available': '可启用',
+    'Organization Spend Limit': '组织总费用限额',
+    'Monthly cap across all users and groups': '全员与分组的每月上限',
+    '38.8% used': '已用 38.8%', 'Resets May 1': '5月1日重置', 'Update': '更新',
+    'Spend by Product (MTD)': '各产品消费占比（本月）',
+    'Per-Group Spend Limits': '分组费用限额',
+    '+ Set Group Limit': '+ 设置分组限额',
+    'Members': '成员', 'Monthly Limit': '月度限额', 'MTD Usage': '本月已用',
+    '% Used': '使用率', 'Alert at': '预警阈值',
+    'Network Egress Allowlist': '网络出口白名单',
+    'Restrict which domains Claude Cowork can connect to': '限制 Claude Cowork 可访问的域名',
+    'e.g. api.github.com': '如 api.github.com', 'Add': '添加', 'Active': '已启用', 'Remove': '移除',
+    'Desktop Extension Controls': '桌面端扩展控制',
+    'Manage Claude Cowork app behavior on user machines': '管理用户机器上的 Cowork 应用行为',
+    'Require SSO login': '强制 SSO 登录', 'Block personal account access': '禁止个人账号访问',
+    'Allow file system access': '允许文件系统访问', 'Users can mount local folders': '用户可挂载本地目录',
+    'Clipboard read access': '剪贴板读取权限', 'Claude can read clipboard content': 'Claude 可读取剪贴板内容',
+    'Auto-update enforcement': '强制自动更新', 'Force latest version on all devices': '强制所有设备使用最新版本',
+    'Compliance & Audit Log': '合规与审计日志',
+    'Recent sensitive actions across your organization': '组织内近期敏感操作记录',
+    'Time': '时间', 'Action': '操作', 'Resource': '资源',
+    'Approved': '已通过', 'Manual approval': '需手动审批', 'Blocked': '已拦截',
+    'File mount': '挂载文件', 'Computer Use action': '电脑操控', 'Slack message sent': '发送 Slack 消息',
+    'Email draft sent': '发送邮件草稿', 'Connector auth attempt': '连接器授权尝试',
+    'OpenTelemetry Export': 'OpenTelemetry 导出',
+    'Stream Cowork events to your SIEM (Splunk, Cribl, Datadog)': '将 Cowork 事件推送到 SIEM（Splunk、Cribl、Datadog）',
+    'OTEL Export': 'OTEL 导出', 'Currently streaming to Splunk': '当前推送至 Splunk',
+    'Endpoint': '推送端点',
+    'Sample OTEL event payload': 'OTEL 事件示例',
+    'Event Types Tracked': '追踪事件类型',
+    'Tool calls': '工具调用', 'All connector & skill invocations': '所有连接器与 Skill 调用',
+    'File operations': '文件操作', 'Read, write, delete events': '读取、写入、删除事件',
+    'Computer Use actions': '电脑操控动作', 'Screen interactions, clicks': '屏幕交互与点击',
+    'Approval decisions': '审批决策', 'Auto vs manual approval logs': '自动与手动审批记录',
+    'Session start/end': '会话开始/结束', 'Session lifecycle events': '会话生命周期事件',
+    'SSO Configuration': 'SSO 配置',
+    'Single Sign-On via SAML 2.0 or OIDC': '通过 SAML 2.0 或 OIDC 单点登录',
+    'Identity Provider': '身份提供商', 'SSO Metadata URL': 'SSO 元数据 URL',
+    'Enforce SSO': '强制 SSO', 'Block non-SSO logins': '禁止非 SSO 登录',
+    'Save Config': '保存配置', 'Test SSO': '测试 SSO',
+    'SCIM Provisioning': 'SCIM 用户同步',
+    'Auto-sync users and groups from your IdP': '从身份提供商自动同步用户与分组',
+    'SCIM Active': 'SCIM 已启用', 'Last sync: 6 min ago': '上次同步：6 分钟前',
+    'SCIM Endpoint': 'SCIM 端点', 'Bearer Token': '访问令牌', 'Rotate': '轮换',
+    'Current Plan': '当前套餐', 'Enterprise · Annual contract': '企业版 · 年度合同',
+    'Enterprise Plan': '企业版套餐', '480 seats · Renews Jan 1, 2027': '480 席位 · 2027年1月1日续费',
+    'View Contract': '查看合同', 'Add Seats': '增加席位', 'Contact CSM': '联系客户经理',
+    'Invoice History': '账单历史',
+    'Period': '账期', 'Amount': '金额',
+    'Upcoming': '待支付', 'Paid': '已支付',
+    'Live Activity Feed': '实时操作动态',
+    'Admin Console': '管理控制台',
+  }
+};
+
+let currentLang = 'en';
+
+function applyLang(lang) {
+  const dict = TRANS[lang];
+  const selectors = [
+    '.sidebar-section-label', '.nav-item', '.topbar-title',
+    '.card-title', '.card-sub', '.section-title', '.section-sub',
+    '.kpi-label', '.kpi-delta', 'th', '.badge', 'button',
+    'label', '.connector-name', '.connector-category',
+    'select option', '.connector-users', '.spend-amounts',
+    'td', '.alert span', '.alert strong'
+  ];
+  
+  document.querySelectorAll(selectors.join(',')).forEach(el => {
+    el.childNodes.forEach(child => {
+      if (child.nodeType === Node.TEXT_NODE) {
+        const trimmed = child.textContent.trim();
+        if (trimmed && dict[trimmed] !== undefined) {
+          child.textContent = child.textContent.replace(trimmed, dict[trimmed]);
+        }
+      }
+    });
+  });
+  
+  const titleEl = document.getElementById('topbar-title');
+  if (titleEl) {
+    const t = titleEl.textContent.trim();
+    if (dict[t]) titleEl.textContent = dict[t];
+  }
+}
+
+function toggleLang() {
+  currentLang = currentLang === 'en' ? 'zh' : 'en';
+  const label = document.getElementById('lang-label');
+  if (label) label.textContent = currentLang === 'en' ? '中文' : 'EN';
+  
+  applyAllFromData(currentLang);
+}
+
+function initI18n() {
+  // 1. 处理含子元素的容器（如 nav-item）：只替换直接 text node
+  document.querySelectorAll('.nav-item, .org-selector, .sidebar-footer .nav-item').forEach(el => {
+    el.childNodes.forEach(child => {
+      if (child.nodeType === Node.TEXT_NODE) {
+        const text = child.textContent.trim();
+        if (text && TRANS.zh[text] !== undefined) {
+          child._en = child.textContent;
+          child._zh = child.textContent.replace(text, TRANS.zh[text]);
+          child._i18n = true;
+        }
+      }
+    });
+  });
+  // 2. 处理简单元素（无有效子元素）
+  const simpleSelectors = [
+    '.sidebar-section-label', '.kpi-label', '.kpi-delta',
+    '.card-title', '.card-sub', '.section-title', '.section-sub',
+    '.connector-name', '.connector-category',
+    'th', 'select option'
+  ];
+  document.querySelectorAll(simpleSelectors.join(',')).forEach(el => {
+    const text = el.textContent.trim();
+    if (text && TRANS.zh[text] !== undefined) {
+      el.dataset.en = text; el.dataset.zh = TRANS.zh[text];
+    }
+  });
+  // 3. badge 单独处理
+  document.querySelectorAll('.badge').forEach(el => {
+    const text = el.textContent.trim();
+    if (text && TRANS.zh[text] !== undefined) {
+      el.dataset.en = text; el.dataset.zh = TRANS.zh[text];
+    }
+  });
+  // 4. 按钮（排除 toggle 和 lang-toggle）
+  document.querySelectorAll('button:not(.toggle *):not(#lang-toggle)').forEach(el => {
+    const text = el.textContent.trim();
+    if (text && TRANS.zh[text] !== undefined) {
+      el.dataset.en = text; el.dataset.zh = TRANS.zh[text];
+    }
+  });
+  // 5. td 纯文本单元格
+  document.querySelectorAll('td').forEach(el => {
+    if (!el.querySelector('div,span,input,label,button,a')) {
+      const text = el.textContent.trim();
+      if (text && TRANS.zh[text] !== undefined) {
+        el.dataset.en = text; el.dataset.zh = TRANS.zh[text];
+      }
+    }
+  });
+}
+
+
+
+function applyAllFromData(lang) {
+  // 恢复/替换 nav-item 中的 text node
+  document.querySelectorAll('.nav-item, .org-selector, .sidebar-footer .nav-item').forEach(el => {
+    el.childNodes.forEach(child => {
+      if (child.nodeType === Node.TEXT_NODE && child._i18n) {
+        child.textContent = lang === 'zh' ? child._zh : child._en;
+      }
+    });
+  });
+  // 恢复/替换 data-en 元素
+  document.querySelectorAll('[data-en]').forEach(el => {
+    el.textContent = el.dataset[lang] || el.dataset.en;
+  });
+  // topbar title 单独处理
+  const titleEl = document.getElementById('topbar-title');
+  if (titleEl) {
+    const t = titleEl.textContent.trim();
+    const mapped = TRANS[lang][t] || TRANS[lang === 'zh' ? 'en' : 'zh'][t];
+    if (mapped) titleEl.textContent = mapped;
+  }
+}
+
+
+
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(initI18n, 100);
+});
+</script>
+<script defer="" src="./Claude Cowork — Enterprise Admin_files/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;73a749ca3ace4b2abd6813f039000869&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+<div id="wwei-auth-widget" style="position: fixed; top: 16px; right: 16px; z-index: 2147483647;"><template shadowrootmode="open"><style>
+      :host { all: initial; }
+      * { box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif; }
+      .wrap { position: relative; }
+      .avatar {
+        width: 36px; height: 36px; border-radius: 50%; padding: 0; cursor: pointer; position: relative;
+        border: 2px solid rgba(255,255,255,0.15); background: #111214; color: #f0f0f2;
+        display: flex; align-items: center; justify-content: center; overflow: hidden;
+        transition: all .2s; box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      }
+      .avatar:hover { transform: scale(1.05); border-color: rgba(255,255,255,0.3); }
+      .avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+      .avatar .fallback { font-weight: 600; font-size: 14px; }
+      .avatar.loading { animation: pulse 1.4s infinite; cursor: default; }
+      @keyframes pulse { 0%,100% { opacity: 0.5; } 50% { opacity: 0.9; } }
+      .dot {
+        position: absolute; bottom: -2px; right: -2px; width: 12px; height: 12px;
+        border-radius: 50%; border: 2px solid #111214;
+      }
+      .login-btn {
+        display: inline-block; padding: 7px 16px; border-radius: 100px;
+        background: rgba(110, 231, 183, 0.95); color: #08090a; font-size: 13px; font-weight: 500;
+        text-decoration: none; transition: all .2s; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        border: 1px solid rgba(110, 231, 183, 0.3);
+      }
+      .login-btn:hover { background: #6ee7b7; transform: translateY(-1px); }
+      .dropdown {
+        position: absolute; top: 44px; right: 0; min-width: 260px;
+        background: #111214; border: 1px solid #1e2024; border-radius: 12px;
+        padding: 16px; opacity: 0; transform: translateY(-6px) scale(0.96);
+        pointer-events: none; transition: all .18s cubic-bezier(.4,0,.2,1);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.4); color: #f0f0f2;
+      }
+      .dropdown.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+      .dropdown-head { display: flex; gap: 12px; align-items: center; }
+      .dropdown-avatar { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; flex-shrink: 0; background: #1e2024; display: flex; align-items: center; justify-content: center; }
+      .dropdown-avatar img { width: 100%; height: 100%; object-fit: cover; }
+      .dropdown-info { flex: 1; min-width: 0; }
+      .dropdown-name { font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .dropdown-email { font-size: 11px; color: #a0a3ab; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .dropdown-level {
+        display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px;
+        font-size: 10px; font-weight: 600; letter-spacing: 0.05em;
+        border: 1px solid;
+      }
+      .dropdown-divider { height: 1px; background: #1e2024; margin: 14px 0; }
+      .dropdown-item {
+        display: block; padding: 8px 12px; font-size: 13px; color: #f0f0f2;
+        text-decoration: none; border-radius: 6px; transition: background .15s;
+      }
+      .dropdown-item:hover { background: #1e2024; }
+    </style>
+        <div class="wrap">
+          <button class="avatar" id="avatar" aria-label="user menu" title="yiyixiao920@gmail.com · ADMIN">
+            <img src="https://lh3.googleusercontent.com/a/ACg8ocKu-yjD3iu0mgzG7jWbJHAxSpl7HBx0GqADxeh6y8jMFDEhpA=s96-c" referrerpolicy="no-referrer" alt="">
+            <span class="dot" style="background:#f87171" title="ADMIN"></span>
+          </button>
+          <div class="dropdown" id="dropdown">
+            <div class="dropdown-head">
+              <div class="dropdown-avatar"><img src="https://lh3.googleusercontent.com/a/ACg8ocKu-yjD3iu0mgzG7jWbJHAxSpl7HBx0GqADxeh6y8jMFDEhpA=s96-c" referrerpolicy="no-referrer" alt=""></div>
+              <div class="dropdown-info">
+                <div class="dropdown-name">姚伊笑</div>
+                <div class="dropdown-email">yiyixiao920@gmail.com</div>
+                <div class="dropdown-level" style="color:#f87171;border-color:#f8717140">ADMIN</div>
+              </div>
+            </div>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="https://admin.wwei.ai/">管理后台 →</a>
+            <a class="dropdown-item" href="https://auth.wwei.ai/logout?next=https%3A%2F%2Fcowork-admin.wwei.ai%2F">退出登录</a>
+          </div>
+        </div>
+      </template></div><div id="cubox-react-root"><template shadowrootmode="open"><link rel="stylesheet" href="chrome-extension://bflmgpechpeohjfomgfdkkfcbhfcjohl/css/content.css"><div><div style="z-index: 2147483647;"></div></div></template></div><a id="colorPickerDivHidden"><img src="chrome-extension://njolgcnddhepjpplfifbmagdgkidikpj/logo.png" data-cubox-image-id="ae8686952839c0b69466b05216a82003" data-cubox-image-index="0" data-cubox-image-load="false"></a></body><plasmo-csui id="aitdk-csui"><template shadowrootmode="open"><style>*,:before,:after{box-sizing:border-box;border:0 solid #e5e7eb}:before,:after{--tw-content:""}html{-webkit-text-size-adjust:100%;tab-size:4;font-feature-settings:normal;font-variation-settings:normal;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}body{line-height:inherit;margin:0}hr{color:inherit;border-top-width:1px;height:0}abbr:where([title]){text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em}small{font-size:80%}sub,sup{vertical-align:baseline;font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-feature-settings:inherit;font-variation-settings:inherit;font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,[type=button],[type=reset],[type=submit]{-webkit-appearance:button;background-color:#0000;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button{height:auto}::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dl,dd,h1,h2,h3,h4,h5,h6,hr,figure,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}ol,ul,menu{margin:0;padding:0;list-style:none}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}button,[role=button]{cursor:pointer}:disabled{cursor:default}img,svg,video,canvas,audio,iframe,embed,object{vertical-align:middle;display:block}img,video{max-width:100%;height:auto}[hidden]{display:none}:host,:root{--background:0 0% 100%;--foreground:224 71.4% 4.1%;--card:0 0% 100%;--card-foreground:224 71.4% 4.1%;--popover:0 0% 100%;--popover-foreground:224 71.4% 4.1%;--primary:262.1 83.3% 57.8%;--primary-foreground:210 20% 98%;--secondary:220 14.3% 95.9%;--secondary-foreground:220.9 39.3% 11%;--muted:220 14.3% 95.9%;--muted-foreground:220 8.9% 46.1%;--accent:220 14.3% 95.9%;--accent-foreground:220.9 39.3% 11%;--destructive:0 84.2% 60.2%;--destructive-foreground:210 20% 98%;--border:220 13% 91%;--input:220 13% 91%;--ring:262.1 83.3% 57.8%;--radius:4.2px;z-index:2147483647}.dark{--background:224 71.4% 4.1%;--foreground:210 20% 98%;--card:224 71.4% 4.1%;--card-foreground:210 20% 98%;--popover:224 71.4% 4.1%;--popover-foreground:210 20% 98%;--primary:263.4 70% 50.4%;--primary-foreground:210 20% 98%;--secondary:215 27.9% 16.9%;--secondary-foreground:210 20% 98%;--muted:215 27.9% 16.9%;--muted-foreground:217.9 10.6% 64.9%;--accent:215 27.9% 16.9%;--accent-foreground:210 20% 98%;--destructive:0 62.8% 30.6%;--destructive-foreground:210 20% 98%;--border:215 27.9% 16.9%;--input:215 27.9% 16.9%;--ring:263.4 70% 50.4%}*{border-color:hsl(var(--border))}html{font-size:14px}body{background-color:hsl(var(--background));color:hsl(var(--foreground));font-feature-settings:"rlig" 1,"calt" 1;font-size:14px}*,:before,:after,::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:#3b82f680;--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }.container{width:100%;margin-left:auto;margin-right:auto;padding-left:28px;padding-right:28px}@media (width>=1400px){.container{max-width:1400px}}.visible{visibility:visible}.invisible{visibility:hidden}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.bottom-0{bottom:0}.left-1\/2{left:50%}.right-0{right:0}.right-2{right:7px}.top-0{top:0}.top-1\/2{top:50%}.top-2{top:7px}.-z-\[1\]{z-index:-1}.z-\[1\]{z-index:1}.z-\[2147483647\]{z-index:2147483647}.mx-auto{margin-left:auto;margin-right:auto}.-ml-\[13px\]{margin-left:-13px}.-mt-\[13px\]{margin-top:-13px}.mt-3{margin-top:10.5px}.mt-5{margin-top:17.5px}.block{display:block}.flex{display:flex}.hidden{display:none}.h-full{height:100%}.w-\[420px\]{width:420px}.w-\[520px\]{width:520px}.w-full{width:100%}@keyframes spin{to{transform:rotate(360deg)}}.animate-spin{animation:1s linear infinite spin}.cursor-pointer{cursor:pointer}.items-center{align-items:center}.justify-center{justify-content:center}.gap-x-2{column-gap:7px}.rounded{border-radius:3.5px}.bg-\[\#635bff\]{--tw-bg-opacity:1;background-color:rgb(99 91 255/var(--tw-bg-opacity))}.bg-\[\#635bff\]\/10{background-color:#635bff1a}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity))}.p-1{padding:3.5px}.p-6{padding:21px}.px-4{padding-left:14px;padding-right:14px}.py-2{padding-top:7px;padding-bottom:7px}.py-2\.5{padding-top:8.75px;padding-bottom:8.75px}.text-\[14px\]{font-size:14px}.text-xl{font-size:17.5px;line-height:24.5px}.font-medium{font-weight:500}.leading-6{line-height:21px}.text-black{--tw-text-opacity:1;color:rgb(0 0 0/var(--tw-text-opacity))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175/var(--tw-text-opacity))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128/var(--tw-text-opacity))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55/var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity))}.shadow-2xl{--tw-shadow:0 25px 50px -12px #00000040;--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.outline{outline-style:solid}.filter{filter:var(--tw-blur)var(--tw-brightness)var(--tw-contrast)var(--tw-grayscale)var(--tw-hue-rotate)var(--tw-invert)var(--tw-saturate)var(--tw-sepia)var(--tw-drop-shadow)}.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-duration:.15s;transition-timing-function:cubic-bezier(.4,0,.2,1)}@keyframes enter{0%{opacity:var(--tw-enter-opacity,1);transform:translate3d(var(--tw-enter-translate-x,0),var(--tw-enter-translate-y,0),0)scale3d(var(--tw-enter-scale,1),var(--tw-enter-scale,1),var(--tw-enter-scale,1))rotate(var(--tw-enter-rotate,0))}}@keyframes exit{to{opacity:var(--tw-exit-opacity,1);transform:translate3d(var(--tw-exit-translate-x,0),var(--tw-exit-translate-y,0),0)scale3d(var(--tw-exit-scale,1),var(--tw-exit-scale,1),var(--tw-exit-scale,1))rotate(var(--tw-exit-rotate,0))}}.hover\:bg-\[\#635bff\]\/90:hover{background-color:#635bffe6}</style><div id="plasmo-shadow-container" style="z-index: 2147483647; position: relative;"><div id="plasmo-inline" class="plasmo-csui-container" style="display: flex; position: relative; top: 0px; left: 0px;"><div class="aitdk-extension shadow-2xl flex fixed w-[520px] top-0 right-0 bottom-0 bg-white hidden"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x absolute right-2 top-2 z-[1] p-1 cursor-pointer text-gray-500"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-loader-circle animate-spin text-gray-400 absolute top-1/2 left-1/2 -ml-[13px] -mt-[13px] -z-[1]"><path d="M21 12a9 9 0 1 1-6.219-8.56"></path></svg></div></div></div></template></plasmo-csui><div id="immersive-translate-browser-popup" style="all: initial"><template shadowrootmode="open"><style>/** 基础色阶定义 **/
+:root,
+#mount[data-theme="light"],
+#mount:not([data-theme="dark"]) {
+  /* 中性灰阶（light） */
+  --c-00: #000000;
+  --c-22: #222222;
+  --c-33: #333333;
+  --c-66: #666666;
+  --c-83: #838383;
+  --c-99: #999999;
+  --c-c7: #c7c7c7;
+  --c-cc: #cccccc;
+  --c-e6: #e6e6e6;
+  --c-f5: #f5f5f5;
+  --c-ff: #ffffff;
+  /* 品牌主色阶（light） */
+  --p-main: #ea4c89;
+  --p-hover: #ec5e95;
+  --p-active: #e34a85;
+  --p-special: #ee71a2;
+  --p-disabled: #f4a5c4;
+  --p-text-disabled: #f9c9dc;
+  --p-weak: #fdedf3;
+  /* Surface 层级（light，TC 填充-1） */
+  --s-1: #f3f5f6;
+  --s-1-hover: #f6f8f9;
+  --s-1-active: #edf1f2;
+  --s-1-weak: #fafbfb;
+  /* 输入/边框（light，TC 填充-2） */
+  --input-bg-base: #fafbfc;
+  --input-border: #ecf0f7;
+  --input-border-strong: #e0e0e6;
+  --input-bg-strong: #fafdff;
+}
+
+:root[data-theme="dark"],
+[data-theme="dark"] {
+  /* 中性灰阶（dark） */
+  --c-00: #ffffff;
+  --c-22: #dbdbdb;
+  --c-33: #dbdbdb;
+  --c-66: #b3b3b3;
+  --c-83: #838383;
+  --c-99: #707070;
+  --c-c7: #666666;
+  --c-cc: #5c5c5c;
+  --c-e6: #3b3b3b;
+  --c-f5: #262626;
+  --c-ff: #222222;
+  /* 品牌主色阶（dark） */
+  --p-main: #e23c7c;
+  --p-hover: #ea4c89;
+  --p-active: #d5467d;
+  --p-special: #a93a65;
+  --p-disabled: #7e2f4d;
+  --p-text-disabled: #522335;
+  --p-weak: #26171d;
+  /* Surface 层级（dark，TC 填充-1） */
+  --s-1: #2d2e2f;
+  --s-1-hover: #323434;
+  --s-1-active: #202121;
+  --s-1-weak: #262627;
+  /* 输入/边框（dark，TC 填充-2） */
+  --input-bg-base: #2b2d30;
+  --input-border: #3e434b;
+  --input-border-strong: #43474b;
+  --input-bg-strong: #1f2123;
+}
+
+:root,
+#mount [data-theme] {
+  /* 业务/通用变量引用色阶（全局可见，含 Shadow DOM） */
+  --primary: var(--p-main);
+  --primary-hover: var(--p-hover);
+  --primary-inverse: #fff;
+  --modal-background: var(--s-1);
+  --modal-border: var(--input-border);
+  --modal-text: var(--c-22);
+  --modal-text-secondary: var(--c-66);
+  --modal-error: var(--p-main);
+  --modal-required: #f53f3f;
+  --modal-success: #68cd52;
+  --modal-button-background: var(--p-main);
+  --modal-button-text: var(--c-ff);
+  --modal-input-background: var(--input-bg-base);
+  --modal-check-color: var(--p-main);
+  --background-color: var(--c-ff);
+  --background-light-green: var(--s-1-weak, #f5f7f9);
+  --text-black-2: var(--c-22);
+  --text-gray-2: var(--c-22);
+  --text-gray-6: var(--c-66);
+  --text-gray-9: var(--c-99);
+  --text-gray-c2: var(--c-c7);
+  --switch-background-color: var(--c-c7, hsl(205deg, 16%, 77%));
+  --float-ball-more-button-border-color: var(--c-f5, #f6f6f6);
+  --float-ball-more-button-background-color: var(--c-ff);
+  --float-ball-more-button-hover-color: var(--p-weak);
+  --float-ball-more-button-svg-color: #6c6f73;
+  --service-bg-hover: var(--s-1-hover, #f7faff);
+  --service-bg: var(--s-1-weak, #fafbfb);
+}
+
+#mount {
+  --font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
+    "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  /* PC/H5 兼容的字号、间距、圆角、阴影变量 */
+  --f-12: 12px;
+  --f-14: 14px;
+  --f-15: 15px;
+  --f-16: 16px;
+  --f-18: 18px;
+  --f-20: 20px;
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-18: 18px;
+  --space-24: 24px;
+  --radius-8: 8px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --control-height-lg: 44px;
+  --width-28: 28px;
+  --width-24: 24px;
+  --width-20: 20px;
+  --width-18: 18px;
+  --width-16: 16px;
+  --width-label-md: 56px;
+  --shadow-lg: 0 18px 48px rgba(0, 0, 0, 0.12);
+
+  /* 常规变量 */
+  --line-height: 1.5;
+  --font-weight: 400;
+  --font-size: 16px;
+  --border-radius: 4px;
+  --border-width: 2px;
+  --outline-width: 3px;
+  --spacing: 16px;
+  --typography-spacing-vertical: 24px;
+  --block-spacing-vertical: calc(var(--spacing) * 2);
+  --block-spacing-horizontal: var(--spacing);
+  --grid-spacing-vertical: 0;
+  --grid-spacing-horizontal: var(--spacing);
+  --form-element-spacing-vertical: 12px;
+  --form-element-spacing-horizontal: 16px;
+  --nav-element-spacing-vertical: 16px;
+  --nav-element-spacing-horizontal: 8px;
+  --nav-link-spacing-vertical: 8px;
+  --nav-link-spacing-horizontal: 8px;
+  --form-label-font-weight: var(--font-weight);
+  --transition: 0.2s ease-in-out;
+  --modal-overlay-backdrop-filter: blur(4px);
+  --switch-color: var(--primary-inverse);
+  --switch-checked-background-color: var(--primary);
+  --icon-xia: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgaWQ9IkZyYW1lIj4KPHBhdGggaWQ9IlZlY3RvciIgZD0iTTguMDAyOTEgOS42Nzk4M0wzLjgzMzM5IDUuNTEyMjFMMy4wMjUzOSA2LjMxOTgzTDguMDAzMjkgMTEuMjk1MUwxMi45NzYyIDYuMzE5ODNMMTIuMTY3OSA1LjUxMjIxTDguMDAyOTEgOS42Nzk4M1oiIGZpbGw9IiM4MzgzODMiLz4KPC9nPgo8L3N2Zz4K");
+  /* 兼容旧变量：主色直接引用品牌主色阶 */
+  --primary: var(--p-main);
+  --primary-hover: var(--p-hover);
+  --primary-inverse: #fff;
+  /* Modal 业务变量引用色阶 */
+  --modal-background: var(--s-1);
+  --modal-border: var(--input-border);
+  --modal-text: var(--c-22);
+  --modal-text-secondary: var(--c-66);
+  --modal-error: var(--p-main);
+  --modal-required: #f53f3f;
+  --modal-success: #68cd52;
+  --modal-button-background: var(--p-main);
+  --modal-button-text: var(--c-ff);
+  --modal-input-background: var(--input-bg-base);
+  --modal-check-color: var(--p-main);
+  --background-color: var(--c-ff);
+  --background-light-green: var(--s-1-weak, #f5f7f9);
+  --text-black-2: var(--c-22);
+  --text-gray-2: var(--c-22);
+  --text-gray-6: var(--c-66);
+  --text-gray-9: var(--c-99);
+  --text-gray-c2: var(--c-c7);
+  --switch-background-color: var(--c-c7, hsl(205deg, 16%, 77%));
+  --float-ball-more-button-border-color: var(--c-f5, #f6f6f6);
+  --float-ball-more-button-background-color: var(--c-ff);
+  --float-ball-more-button-hover-color: var(--p-weak);
+  --float-ball-more-button-svg-color: #6c6f73;
+  --service-bg-hover: var(--s-1-hover, #f7faff);
+  --service-bg: var(--s-1-weak, #fafbfb);
+  line-height: var(--line-height);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+}
+
+@media (max-width: 480px) {
+  :root,
+  #mount {
+    --f-12: 10px;
+    --f-14: 12px;
+    --f-15: 13px;
+    --f-16: 14px;
+    --f-18: 16px;
+    --f-20: 18px;
+    --space-4: 4px;
+    --space-6: 4px;
+    --space-8: 6px;
+    --space-12: 8px;
+    --space-16: 12px;
+    --space-18: 14px;
+    --space-24: 18px;
+    --radius-8: 6px;
+    --radius-12: 10px;
+    --radius-16: 12px;
+    --control-height-lg: 38px;
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.1);
+    --width-28: 24px;
+    --width-24: 20px;
+    --width-20: 16px;
+    --width-18: 14px;
+    --width-16: 12px;
+    --width-label-md: 52px;
+  }
+}
+
+#mount * {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+:where(#mount) a,
+:where(#mount) [role="link"] {
+  --color: var(--primary);
+  --background-color: transparent;
+  outline: none;
+  background-color: var(--background-color);
+  color: var(--color);
+  -webkit-text-decoration: var(--text-decoration);
+  text-decoration: var(--text-decoration);
+  transition: background-color var(--transition), color var(--transition),
+    box-shadow var(--transition), -webkit-text-decoration var(--transition);
+  transition: background-color var(--transition), color var(--transition),
+    text-decoration var(--transition), box-shadow var(--transition);
+  transition: background-color var(--transition), color var(--transition),
+    text-decoration var(--transition), box-shadow var(--transition),
+    -webkit-text-decoration var(--transition);
+}
+:where(#mount) a:is([aria-current], :hover, :active, :focus),
+:where(#mount) [role="link"]:is([aria-current], :hover, :active, :focus) {
+  --color: var(--primary-hover);
+  --text-decoration: underline;
+}
+
+:where(#mount) label {
+  font-size: 13px;
+  line-height: 1.3;
+  color: var(--text-gray-2, #222222);
+}
+
+:where(#mount) button {
+  width: 100%;
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.3;
+  min-height: 44px;
+  border-radius: 12px;
+  padding: 0 14px;
+  border: none;
+  background-color: var(--primary, #ea4c89);
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+:where(#mount) button:hover {
+  background-color: var(--primary-hover, #f082ac);
+}
+
+:where(#mount) button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+:where(#mount) select,
+:where(#mount) input,
+:where(#mount) textarea {
+  font-family: inherit;
+  color: var(--text-gray-2, #222222);
+}
+
+:where(#mount) select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: inherit;
+  color: var(--text-gray-2, inherit);
+  font-size: 13px;
+  line-height: 1.3;
+  outline: none;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--popup-item-background-color, transparent);
+  background-image: var(--icon-xia, none);
+  background-repeat: no-repeat;
+  background-position: center right 12px;
+  background-size: 16px auto;
+  cursor: pointer;
+}
+
+:where(#mount) input[type="checkbox"] {
+  accent-color: var(--primary, #ea4c89);
+}
+
+[type="checkbox"],
+[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 1.25em;
+  height: 1.25em;
+  margin-top: -0.125em;
+  margin-right: 0.375em;
+  margin-left: 0;
+  -webkit-margin-start: 0;
+  margin-inline-start: 0;
+  -webkit-margin-end: 0.375em;
+  margin-inline-end: 0.375em;
+  border-width: var(--border-width);
+  font-size: inherit;
+  vertical-align: middle;
+  cursor: pointer;
+}
+[type="checkbox"]::-ms-check,
+[type="radio"]::-ms-check {
+  display: none;
+}
+[type="checkbox"]:checked,
+[type="checkbox"]:checked:active,
+[type="checkbox"]:checked:focus,
+[type="radio"]:checked,
+[type="radio"]:checked:active,
+[type="radio"]:checked:focus {
+  --background-color: var(--primary);
+  --border-color: var(--primary);
+  background-image: var(--icon-checkbox);
+  background-position: center;
+  background-size: 0.75em auto;
+  background-repeat: no-repeat;
+}
+[type="checkbox"] ~ label,
+[type="radio"] ~ label {
+  display: inline-block;
+  margin-right: 0.375em;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+[type="checkbox"]:indeterminate {
+  --background-color: var(--primary);
+  --border-color: var(--primary);
+  background-image: var(--icon-minus);
+  background-position: center;
+  background-size: 0.75em auto;
+  background-repeat: no-repeat;
+}
+
+[type="radio"] {
+  border-radius: 50%;
+}
+[type="radio"]:checked,
+[type="radio"]:checked:active,
+[type="radio"]:checked:focus {
+  --background-color: var(--primary-inverse);
+  border-width: 0.35em;
+  background-image: none;
+}
+
+:where(#mount) [type="checkbox"][role="switch"] {
+  --background-color: var(--switch-background-color);
+  --border-color: var(--switch-background-color);
+  --color: var(--switch-color);
+  width: 2.25em;
+  height: 1.25em;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 1.25em;
+  background-color: var(--background-color);
+  line-height: 1.25em;
+}
+:where(#mount) [type="checkbox"][role="switch"]:focus {
+  --background-color: var(--switch-background-color);
+  --border-color: var(--switch-background-color);
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked {
+  --background-color: var(--switch-checked-background-color);
+  --border-color: var(--switch-checked-background-color);
+}
+:where(#mount) [type="checkbox"][role="switch"]:before {
+  display: block;
+  width: calc(1.25em - (var(--border-width) * 2));
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--color);
+  content: "";
+  transition: margin 0.1s ease-in-out;
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked {
+  background-image: none;
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked::before {
+  margin-left: calc(1.125em - var(--border-width));
+  -webkit-margin-start: calc(1.125em - var(--border-width));
+  margin-inline-start: calc(1.125em - var(--border-width));
+}
+
+:where(#mount) [type="checkbox"][aria-invalid="false"],
+:where(#mount) [type="checkbox"]:checked[aria-invalid="false"],
+:where(#mount) [type="radio"][aria-invalid="false"],
+:where(#mount) [type="radio"]:checked[aria-invalid="false"],
+:where(#mount) [type="checkbox"][role="switch"][aria-invalid="false"],
+:where(#mount) [type="checkbox"][role="switch"]:checked[aria-invalid="false"] {
+  --border-color: var(--form-element-valid-border-color);
+}
+:where(#mount) [type="checkbox"][aria-invalid="true"],
+:where(#mount) [type="checkbox"]:checked[aria-invalid="true"],
+:where(#mount) [type="radio"][aria-invalid="true"],
+:where(#mount) [type="radio"]:checked[aria-invalid="true"],
+:where(#mount) [type="checkbox"][role="switch"][aria-invalid="true"],
+:where(#mount) [type="checkbox"][role="switch"]:checked[aria-invalid="true"] {
+  --border-color: var(--form-element-invalid-border-color);
+}
+
+.text-black {
+  color: var(--text-black-2);
+}
+
+.text-gray-2 {
+  color: var(--text-gray-2);
+}
+
+.text-gray-6 {
+  color: var(--text-gray-6);
+}
+
+.text-gray-9 {
+  color: var(--text-gray-9);
+}
+
+.text-gray-c2 {
+  color: var(--text-gray-c2);
+}
+
+.pt-4 {
+  padding-top: 16px;
+}
+
+.p-2 {
+  padding: 8px;
+}
+
+.pl-5 {
+  padding-left: 48px;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.pl-2 {
+  padding-left: 8px;
+}
+
+.pl-4 {
+  padding-left: 24px;
+}
+
+.pt-2 {
+  padding-top: 8px;
+}
+
+.pb-2 {
+  padding-bottom: 8px;
+}
+
+.pb-4 {
+  padding-bottom: 16px;
+}
+
+.pb-5 {
+  padding-bottom: 20px;
+}
+
+.pr-5 {
+  padding-right: 48px;
+}
+
+.text-sm {
+  font-size: 13px;
+}
+
+.text-base {
+  font-size: 16px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.mb-0 {
+  margin-bottom: 0px;
+}
+
+.mb-2 {
+  margin-bottom: 8px;
+}
+
+.mb-4 {
+  margin-bottom: 16px;
+}
+
+.mb-3 {
+  margin-bottom: 12px;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.py-2 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.py-2-5 {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mt-2 {
+  margin-top: 8px;
+}
+
+.mt-3 {
+  margin-top: 12px;
+}
+
+.mt-4 {
+  margin-top: 16px;
+}
+
+.mt-5 {
+  margin-top: 20px;
+}
+
+.mt-6 {
+  margin-top: 24px;
+}
+
+.mb-1 {
+  margin-bottom: 4px;
+}
+
+.ml-4 {
+  margin-left: 24px;
+}
+
+.ml-3 {
+  margin-left: 16px;
+}
+
+.ml-2 {
+  margin-left: 8px;
+}
+
+.ml-1 {
+  margin-left: 4px;
+}
+
+.mr-1 {
+  margin-right: 4px;
+}
+
+.mr-2 {
+  margin-right: 8px;
+}
+
+.mr-3 {
+  margin-right: 16px;
+}
+
+.mx-2 {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.pl-3 {
+  padding-left: 12px;
+}
+
+.pr-3 {
+  padding-right: 12px;
+}
+
+.p-3 {
+  padding: 12px;
+}
+
+.px-1 {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.px-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.pt-3 {
+  padding-top: 12px;
+}
+
+.px-6 {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.px-4 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.pt-6 {
+  padding-top: 20px;
+}
+
+.py-3 {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.py-0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.left-auto {
+  left: auto !important;
+}
+
+.max-h-28 {
+  max-height: 112px;
+}
+
+.max-h-30 {
+  max-height: 120px;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
+.text-xs {
+  font-size: 12px;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-3 {
+  flex: 3;
+}
+
+.flex-4 {
+  flex: 4;
+}
+
+.flex-2 {
+  flex: 2;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.max-content {
+  width: max-content;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-baseline {
+  align-items: baseline;
+}
+
+.my-5 {
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+.my-4 {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.my-3 {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.pt-3 {
+  padding-top: 12px;
+}
+
+.px-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.pt-2 {
+  padding-top: 8px;
+}
+
+.px-2 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.pt-1 {
+  padding-top: 4px;
+}
+
+.px-1 {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.pb-2 {
+  padding-bottom: 8px;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.shrink-0 {
+  flex-shrink: 0;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.close {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  background-image: var(--icon-close);
+  background-position: center;
+  background-size: auto 1rem;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  transition: opacity var(--transition);
+}
+
+.padding-two-column {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.muted {
+  color: #999;
+}
+
+.text-label {
+  color: #666;
+}
+
+.display-none {
+  display: none;
+}
+
+/* dark use #18232c */
+@media (prefers-color-scheme: dark) {
+  .text-label {
+    color: #9ca3af;
+  }
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.text-decoration-none:is([aria-current], :hover, :active, :focus),
+[role="link"]:is([aria-current], :hover, :active, :focus) {
+  --text-decoration: none !important;
+  background-color: transparent !important;
+}
+
+.text-overflow-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.max-w-20 {
+  max-width: 180px;
+  white-space: nowrap;
+}
+
+[data-theme="light"],
+#mount:not([data-theme="dark"]) {
+  --popup-footer-background-color: #e8eaeb;
+  --popup-content-background-color: #ffffff;
+  --popup-item-background-color: #f3f5f6;
+  --popup-item-hover-background-color: #eaeced;
+  --popup-trial-pro-background-color: #f9fbfc;
+  --service-select-content-shadow: 0px 2px 12px 0px rgba(75, 76, 77, 0.2);
+  --service-select-border-color: #fafafa;
+  --service-select-selected-background-color: #f3f5f6;
+  --download-app-background: #f3f5f6;
+  --translate-language-background-color: #f3f5f6;
+  --translate-language-icon-color: #666666;
+  --translate-language-text-color: #222222;
+  --translate-language-hover-background-color: #fdedf3;
+  --translate-language-hover-icon-color: #e95d93;
+  --error-bg: #fdedf3;
+  --error-text: #222;
+  --error-link: #ea4c89;
+}
+
+[data-theme="dark"] {
+  --popup-footer-background-color: #0d0d0d;
+  --popup-content-background-color: #191919;
+  --popup-item-background-color: #272727;
+  --popup-item-hover-background-color: #333333;
+  --popup-trial-pro-background-color: #222222;
+  --service-select-content-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.9);
+  --service-select-border-color: #2c2c2c;
+  --service-select-selected-background-color: #333333;
+  --download-app-background: #333;
+  --translate-language-background-color: #2d2e2f;
+  --translate-language-icon-color: #b3b3b3;
+  --translate-language-text-color: #b3b3b3;
+  --translate-language-hover-background-color: #a97b8c;
+  --translate-language-hover-icon-color: rgba(255, 255, 255, 0.9);
+  --error-bg: #26171d;
+  --error-text: #dbdbdb;
+  --error-link: #ea4c89;
+}
+
+#mount {
+  min-width: 268px;
+}
+
+body {
+  padding: 0;
+  margin: 0 auto;
+  min-width: 268px;
+  border-radius: 10px;
+}
+
+.popup-container {
+  font-size: 16px;
+  --font-size: 16px;
+  color: #666;
+  background-color: var(--popup-footer-background-color);
+  width: 316px;
+  min-width: 316px;
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-content {
+  background-color: var(--popup-content-background-color);
+  border-radius: 0px 0px 12px 12px;
+  padding: 16px 20px;
+}
+
+.popup-userscript-three-feature-layout {
+  background-color: var(--popup-footer-background-color);
+  width: 350px;
+  min-width: 350px;
+}
+
+.popup-userscript-three-feature-layout .popup-content {
+  padding-bottom: 20px;
+  border-radius: 0 0 12px 12px;
+}
+
+.popup-userscript-three-feature-layout .popup-footer {
+  border-radius: 0;
+}
+
+.immersive-translate-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  touch-action: none;
+}
+
+.immersive-translate-popup-wrapper {
+  background: var(--background-color);
+  border-radius: 10px;
+  border: 1px solid var(--muted-border-color);
+}
+
+.main-button {
+  font-size: 16px;
+  font-weight: 700;
+  vertical-align: middle;
+  border-radius: 12px;
+  padding: unset;
+  height: 48px;
+  line-height: 48px;
+  flex: 1;
+}
+
+select.translate-service,
+select.min-select {
+  --form-element-spacing-horizontal: 0;
+  margin-bottom: 0px;
+  max-width: unset;
+  flex: 1;
+  overflow: hidden;
+  font-size: 13px;
+  border: none;
+  border-radius: 8px;
+  padding-right: 30px;
+  padding-left: 0px;
+  background-position: center right 12px;
+  background-size: 16px auto;
+  background-image: var(--icon-xia);
+  text-overflow: ellipsis;
+  color: var(--text-gray-2);
+  background-color: transparent;
+  box-shadow: unset !important;
+  cursor: pointer;
+}
+
+select.more {
+  background-position: center right;
+  padding-right: 20px;
+}
+
+select.translate-service {
+  color: var(--text-black-2);
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSI4IiB2aWV3Qm94PSIwIDAgOCA4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIG9wYWNpdHk9IjAuOCI+PHBhdGggZD0iTTMuNDc5NzMgNi4zODY0M0wwLjcyOTI5NyAzLjMyMjE2QzAuNjE2ODggMy4xOTY5NCAwLjU1NDY5NSAzLjAzNDU5IDAuNTU0Njg4IDIuODY2M0MwLjU1NDY4OCAyLjQ4OTI0IDAuODYwNTQ3IDIuMTgzNTkgMS4yMzc4NCAyLjE4MzU5SDYuNzM4NzFDNi45MDcwNyAyLjE4MzU4IDcuMDY5NTEgMi4yNDU3MiA3LjE5NDg4IDIuMzU4MDlDNy40NzU3NCAyLjYwOTg2IDcuNDk5MTkgMy4wNDE0OCA3LjI0NzI2IDMuMzIyMTZMNC40OTY4MiA2LjM4NjQ0QzQuNDgwMzIgNi40MDQ4MiA0LjQ2MjgzIDYuNDIyMjkgNC40NDQ0NCA2LjQzODc4QzQuMTYzNTggNi42OTA1NSAzLjczMTY2IDYuNjY3MTEgMy40Nzk3MyA2LjM4NjQzWiIgZmlsbD0iIzk5OTk5OSIvPjwvZz48L3N2Zz4K");
+  background-size: 8px auto;
+}
+
+.min-select-container.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.popup-footer {
+  background-color: var(--popup-footer-background-color);
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+/* Footer 三栏布局样式 */
+.footer-link-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  min-width: 72px;
+}
+
+.footer-icon-btn {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-icon-btn svg {
+  color: #999999;
+}
+
+[data-theme="dark"] .footer-icon-btn svg {
+  color: #707070;
+}
+
+.footer-link-text {
+  font-size: 12px;
+  line-height: 18px;
+  color: #666666;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .footer-link-text {
+  color: #b3b3b3;
+}
+
+.footer-link-btn-right {
+  justify-content: flex-end;
+}
+
+.footer-center-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #999999;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.footer-center-text.is-overflowing {
+  justify-content: flex-start;
+}
+
+.footer-center-text.is-overflowing .footer-center-content {
+  animation: footer-scroll-text 12s linear infinite;
+}
+
+@keyframes footer-scroll-text {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.footer-center-content {
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-scroll-gap {
+  display: inline-block;
+  width: 80px;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .footer-center-text {
+  color: #707070;
+}
+
+.footer-text-content {
+  display: inline-block;
+}
+
+.footer-privacy-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-version-inline-text {
+  font-size: 12px;
+  color: #999999;
+  line-height: 1;
+  border-bottom: 1px solid transparent;
+}
+
+[data-theme="dark"] .footer-version-inline-text {
+  color: #707070;
+}
+
+.footer-version-inline-text:hover {
+  border-bottom-color: #999999;
+}
+
+[data-theme="dark"] .footer-version-inline-text:hover {
+  border-bottom-color: #707070;
+}
+
+.translate-language-row {
+  gap: 4px;
+}
+
+.translate-language-exchange {
+  width: 36px;
+  height: 48px;
+  background-color: var(--translate-language-background-color);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--translate-language-icon-color);
+  flex-shrink: 0;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.translate-language-exchange:hover {
+  color: var(--translate-language-hover-icon-color);
+}
+
+.translate-language-exchange-active {
+  background-color: var(--translate-language-hover-background-color);
+  color: var(--translate-language-hover-icon-color);
+}
+
+.translate-language-exchange-active:hover {
+  background-color: var(--translate-language-hover-background-color);
+  color: var(--translate-language-hover-icon-color);
+}
+
+.translate-language-arrow {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+}
+
+.translation-service-container {
+  background-color: var(--popup-item-background-color);
+  border-radius: 12px;
+}
+
+.translation-service-primary-field {
+  position: relative;
+}
+
+.translation-service-guide-hitbox {
+  position: absolute;
+  right: 46px;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: auto;
+}
+
+.min-select-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 44px;
+  background-color: var(--popup-item-background-color);
+  padding-left: 16px;
+}
+
+.min-select-container:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.min-select-container:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.min-select-container:only-child {
+  border-radius: 10px;
+}
+
+.popup-ai-context-label {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+  min-width: 60px;
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+.popup-ai-context-switch {
+  align-self: center;
+  margin: 0;
+  margin-inline-end: 12px;
+}
+
+.translate-mode {
+  width: 36px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: var(--translate-language-background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  color: var(--translate-language-text-color);
+  margin-right: 8px;
+}
+
+/* 快捷操作设置标题栏 */
+.widgets-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 4px;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.widgets-header-title {
+  color: #999999;
+}
+
+.widgets-header-action {
+  color: #999999;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.widgets-header-action:hover {
+  color: #666666;
+}
+
+.widgets-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+  gap: 8px;
+}
+
+.popup-userscript-three-feature-layout .widgets-container-compact-monkey {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 12px;
+}
+
+.widgets-container.widgets-single-item {
+  grid-template-columns: minmax(0, 1fr);
+  margin-top: 12px;
+}
+
+.widgets-container.widgets-single-item .widget-item {
+  max-width: none;
+}
+
+/* 当只有两个小组件时的样式优化 */
+.widgets-container.widgets-two-items {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.widgets-container.widgets-two-items .widget-item {
+  max-width: none;
+}
+
+.widget-item {
+  display: flex;
+  width: 100%;
+  min-height: 44px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 1px solid #eef0f2;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  padding: 0 14px;
+  text-align: left;
+  gap: 6px;
+}
+
+.widget-item.widget-item-single {
+  flex: 1 1 auto;
+  flex-direction: row;
+  justify-content: center;
+  border: 1px solid #eef0f2;
+  border-radius: 16px;
+  padding: 0 14px;
+  background: transparent;
+}
+
+.popup-userscript-three-feature-layout .widget-item-compact {
+  min-height: 60px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  padding: 8px 12px;
+}
+
+.widget-item svg {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+}
+
+.widget-icon-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--c-66, #666666);
+  font-size: 14px;
+  line-height: 21px;
+  text-align: left;
+  word-break: keep-all;
+}
+
+.popup-userscript-three-feature-layout .widget-item-compact .widget-icon-text {
+  white-space: nowrap;
+  overflow: visible;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.widget-item.widget-item-single .widget-icon-text {
+  white-space: nowrap;
+  text-align: left;
+  color: var(--c-66, #666666);
+}
+
+[data-theme="dark"] .widget-item,
+[data-theme="dark"] .widget-item.widget-item-single {
+  border-color: #2e2e2e;
+}
+
+[data-theme="dark"] .widget-icon-text,
+[data-theme="dark"] .widget-item.widget-item-single .widget-icon-text {
+  color: var(--c-66, #666666);
+}
+
+[data-theme="dark"] .more-settings-icon {
+  fill: #191919;
+}
+
+.share-button-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 2px 3px 0 8px;
+}
+
+.share-button-container svg {
+  fill: var(--text-gray-9);
+}
+
+.min-select-container:hover,
+.widget-item:hover {
+  background-color: var(--popup-item-hover-background-color);
+}
+
+.main-button:hover {
+  background-color: #f5508f;
+}
+
+.share-button-container:hover {
+  background-color: var(--popup-item-background-color);
+  border-radius: 6px;
+}
+
+.error-boundary {
+  background: #fff2f0;
+  border: 1px solid #ffccc7;
+  display: flex;
+  padding: 12px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.88);
+  word-break: break-all;
+  margin: 12px;
+  border-radius: 12px;
+  flex-direction: column;
+}
+
+.upgrade-pro {
+  border-radius: 11px;
+  background: linear-gradient(57deg, #272727 19.8%, #696969 82.2%);
+  padding: 2px 8px;
+  transform: scale(0.85);
+}
+
+.upgrade-pro span {
+  background: linear-gradient(180deg, #ffeab4 17.65%, #f8c235 85.29%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+.upgrade-pro svg {
+  margin-top: -2px;
+}
+
+.upgrade-pro:hover {
+  background: linear-gradient(57deg, #3d3d3d 19.8%, #949494 82.2%);
+}
+
+.border-bottom-radius-0 {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.trial-pro-container {
+  border-radius: 0px 0px 12px 12px;
+  background: var(--popup-trial-pro-background-color);
+  display: flex;
+  align-items: center;
+  height: 44px;
+  padding-left: 16px;
+  padding-right: 12px;
+  font-size: 12px;
+}
+
+.trial-pro-container label {
+  line-height: 13px;
+  color: var(--text-black-2);
+}
+
+.trial-pro-container img {
+  margin-left: 5px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.upgrade-pro-discount-act {
+  height: 25px;
+  display: flex;
+  padding: 0 4px;
+  align-items: center;
+  border-radius: 15px;
+  background: linear-gradient(
+    90deg,
+    #cefbfa 11.33%,
+    #d7f56f 63.75%,
+    #fccd5e 100%
+  );
+  transform: scale(0.9);
+  box-shadow: 0px 1.8px 3.6px 0px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.upgrade-pro-discount-act span {
+  font-size: 12px;
+  font-weight: 700;
+  margin-left: 4px;
+  color: #222222;
+}
+
+.upgrade-pro-discount-act:hover {
+  text-decoration: unset;
+  background: linear-gradient(
+    90deg,
+    #e2fffe 11.33%,
+    #e6ff91 63.75%,
+    #ffdf93 100%
+  );
+}
+
+.custom-select-container {
+  width: 200px;
+  position: relative;
+  flex: 1;
+}
+
+#translation-service-select {
+  padding-right: 12px;
+}
+
+.custom-select-content {
+  border-radius: 12px;
+  background: var(--popup-content-background-color);
+  box-shadow: var(--service-select-content-shadow);
+  border: 1px solid var(--service-select-border-color);
+  padding: 8px;
+  position: absolute;
+  left: -68px;
+  right: 0;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.custom-select-item.default {
+  width: 100%;
+  padding: 0;
+}
+
+.custom-select-item {
+  font-size: 14px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--text-black-2);
+  width: auto;
+  overflow: hidden;
+  height: 30px;
+  line-height: 30px;
+}
+
+.custom-select-item-img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .custom-select-item-img {
+    margin-right: 6px;
+  }
+}
+
+.custom-select-content .custom-select-item.selected,
+.custom-select-content .custom-select-item:hover {
+  background: var(--service-select-selected-background-color);
+}
+
+.custom-select-item > span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.custom-select-item-pro {
+  font-size: 12px;
+  margin-left: 6px;
+  display: flex;
+}
+
+.custom-select-item-pro img {
+  margin: 0 3px;
+  width: 20px;
+  flex-shrink: 0;
+}
+
+.service-select-inline-sponsor-container {
+  width: 50px;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.service-select-inline-sponsor-marquee {
+  min-width: max-content;
+  display: inline-flex;
+  align-items: center;
+  column-gap: 12px;
+  animation: service-select-inline-sponsor-scroll 10s linear infinite;
+}
+
+.service-select-inline-sponsor-track {
+  min-width: max-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+@keyframes service-select-inline-sponsor-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 6px));
+  }
+}
+
+.custom-select-group-header {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-gray-9);
+  padding: 8px 8px 6px;
+  margin-top: 2px;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.custom-select-group-header--recommendation {
+  color: #beb3a0;
+  font-weight: 400;
+  letter-spacing: 0;
+  padding-top: 4px;
+}
+
+.custom-select-group-header-tip {
+  display: inline-flex;
+  align-items: center;
+  color: #bcbcbc;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.more-container {
+  position: relative;
+}
+
+.new-menu-indicator {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #ef3434;
+  border-radius: 50%;
+  right: 18px;
+  top: 4px;
+}
+
+.download-app {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px;
+  background: var(--download-app-background);
+  padding: 4px 8px;
+  color: var(--text-gray-6);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Popup 动画效果 */
+@keyframes popup-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes popup-fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+}
+
+.popup-generic-content {
+  animation: popup-fade-in 0.2s ease-out;
+}
+
+.popup-generic-content.hiding {
+  animation: popup-fade-out 0.15s ease-in;
+}
+
+select.min-select {
+  --form-element-spacing-horizontal: 0;
+  max-width: 128px;
+  overflow: hidden;
+  color: var(--primary);
+  font-size: 13px;
+  border: none;
+  padding: 0;
+  padding-right: 20px;
+  text-overflow: ellipsis;
+  color: var(--color);
+}
+select.min-select-secondary {
+  color: var(--color);
+}
+select.min-select:focus {
+  outline: none;
+  border: none;
+  --box-shadow: none;
+}
+
+select.min-select-left {
+  padding-right: 0px;
+  /* padding-left: 24px; */
+  /* background-position: center left 0; */
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+select.transform-padding-left {
+  padding-left: 12px;
+  transform: translateX(-12px);
+  background-position: center right 0px;
+}
+
+select.text-gray-6 {
+  color: var(--text-gray-6);
+}
+
+/* dark use black, for windows */
+@media (prefers-color-scheme: dark) {
+  select.translate-service option,
+  select.min-select option {
+    background-color: #666666;
+  }
+}
+
+select.min-select-no-arrow {
+  background-image: none;
+  padding-right: 0;
+}
+
+.activity-tips {
+  border-radius: 8px;
+  padding: 0px 8px;
+  height: 26px;
+  background: linear-gradient(
+    83deg,
+    #faccde -0.87%,
+    #fce7ef 43.13%,
+    #fbd6e4 72.08%,
+    #ffb3d1 96.34%
+  );
+  color: #333;
+  cursor: pointer;
+  gap: 4px;
+  font-size: 12px;
+}
+
+.activity-tips-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.countdown-container {
+  min-width: 50px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.01em;
+}
+
+.activity-tips-text {
+  font-weight: 600;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 非会员升级提示 */
+.upgrade-tips {
+  padding: 0px 6px 0px 4px;
+  height: 18px;
+  color: #ea4c89;
+  cursor: pointer;
+  gap: 6px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.upgrade-tips svg:first-child {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  filter: drop-shadow(0px 4px 4px rgba(236, 76, 140, 0.2));
+}
+
+.upgrade-tips-text {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.upgrade-tips-switch {
+  position: relative;
+  width: 30px;
+  height: 18px;
+  border-radius: 24px;
+  background: #cccccc;
+  flex-shrink: 0;
+}
+
+.upgrade-tips-switch-thumb {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+/* 抽屉组件样式 */
+.drawer-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+
+.drawer-overlay.drawer-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.drawer-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ffffff;
+  border-radius: 12px 12px 0 0;
+  z-index: 101;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-visible .drawer-panel {
+  transform: translateY(0);
+}
+
+[data-theme="dark"] .drawer-panel {
+  background: #222222;
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  flex-shrink: 0;
+}
+
+.drawer-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333333;
+}
+
+[data-theme="dark"] .drawer-title {
+  color: #e0e0e0;
+}
+
+.drawer-close {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999999;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.drawer-close:hover {
+  background-color: #f3f5f6;
+}
+
+[data-theme="dark"] .drawer-close:hover {
+  background-color: #333333;
+}
+
+.drawer-body {
+  padding: 16px 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.drawer-body.drawer-body-hover {
+  padding: 0 20px 20px 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.drawer-body.drawer-body-more-settings {
+  padding-top: 0;
+}
+
+.drawer-footer {
+  padding: 12px 20px;
+  border-top: 1px solid #eef0f2;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+[data-theme="dark"] .drawer-footer {
+  border-top: 1px solid #2e2e2e;
+}
+
+.drawer-footer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.drawer-footer-actions-single {
+  justify-content: center;
+}
+
+.drawer-footer-text {
+  font-size: 12px;
+  cursor: pointer;
+  color: #999999;
+  text-decoration: none;
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.drawer-footer-actions-single .drawer-footer-text {
+  flex: 0 1 auto;
+  max-width: 100%;
+}
+
+.drawer-footer-text:hover {
+  text-decoration: underline;
+}
+
+/* 抽屉内容区域样式 */
+.drawer-section {
+  margin-bottom: 16px;
+}
+
+.drawer-section:last-child {
+  margin-bottom: 0;
+}
+
+.drawer-section-highlight {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+[data-theme="dark"] .drawer-section-highlight {
+  background-color: #2a2a2a;
+}
+
+.drawer-section-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #666666;
+  margin-bottom: 12px;
+}
+
+[data-theme="dark"] .drawer-section-title {
+  color: #999999;
+}
+
+.drawer-section-divider {
+  height: 1px;
+  background-color: #eef0f2;
+  margin: 16px 0;
+}
+
+/* ========== 通用抽屉组件样式 ========== */
+.popup-drawer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.popup-drawer-card {
+  background: #f3f5f6;
+  border-radius: 12px;
+  padding: 12px 12px 16px;
+}
+
+[data-theme="dark"] .popup-drawer-card {
+  background: #2a2a2a;
+}
+
+.popup-drawer-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 21px;
+  gap: 12px;
+}
+
+.popup-drawer-card-header input[type="checkbox"][role="switch"] {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.popup-drawer-card-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #222222;
+  line-height: 21px;
+}
+
+[data-theme="dark"] .popup-drawer-card-title {
+  color: #e0e0e0;
+}
+
+.popup-drawer-card-divider {
+  height: 1px;
+  width: calc(100% + 24px);
+  background-color: #ffffff;
+  margin: 12px -12px 16px;
+}
+
+[data-theme="dark"] .popup-drawer-card-divider {
+  background-color: #333333;
+}
+
+.popup-drawer-demo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.popup-drawer-demo-region-fixed {
+  height: 51px;
+  max-height: 51px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-region-min {
+  min-height: 51px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-selection {
+  width: 100%;
+  min-width: 0;
+  flex-wrap: nowrap;
+}
+
+.popup-drawer-demo-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-plus,
+.popup-drawer-demo-equal {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  color: #333333;
+}
+
+[data-theme="dark"] .popup-drawer-demo-plus,
+[data-theme="dark"] .popup-drawer-demo-equal {
+  color: #e0e0e0;
+}
+
+.popup-drawer-demo-logo {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-logo img {
+  width: 28px;
+  height: 28px;
+  display: block;
+  filter: drop-shadow(0 4px 12px rgba(255, 166, 201, 0.5));
+}
+
+.popup-drawer-demo-result {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #333333;
+}
+
+.popup-drawer-demo-result-ellipsis {
+  min-width: 0;
+  max-width: calc(100% - 72px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .popup-drawer-demo-result {
+  color: #e0e0e0;
+}
+
+.popup-drawer-trigger {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.popup-drawer-trigger-label {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #999999;
+  padding-left: 4px;
+}
+
+.popup-drawer-trigger-options {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.popup-drawer-trigger-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #333333;
+  background: #ffffff;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.popup-drawer-trigger-option-disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.popup-drawer-trigger-option:not(.popup-drawer-trigger-option-selected):hover {
+  border-color: #d0d3d6;
+}
+
+.popup-drawer-trigger-option-selected {
+  border: 0.5px solid #ea4c89;
+  background: #fdedf3;
+  box-shadow: 0px 4px 12px rgba(255, 166, 201, 0.5);
+}
+
+[data-theme="dark"] .popup-drawer-trigger-option {
+  background: #1f1f1f;
+  border-color: #333333;
+  color: #e0e0e0;
+}
+
+[data-theme="dark"]
+  .popup-drawer-trigger-option:not(
+    .popup-drawer-trigger-option-selected
+  ):hover {
+  border-color: #444444;
+}
+
+[data-theme="dark"] .popup-drawer-trigger-option-selected {
+  background: rgba(233, 76, 137, 0.2);
+  border-color: #ea4c89;
+  box-shadow: 0 4px 12px 0 rgba(255, 166, 201, 0.3);
+}
+
+.popup-drawer-trigger-option-with-icon {
+  gap: 8px;
+}
+
+/* ========== 通用抽屉演示区域样式 ========== */
+/* 键帽样式 */
+.popup-drawer-demo-keycap {
+  min-width: 72px;
+  padding: 9px;
+  height: auto;
+  box-sizing: border-box;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  color: #ffffff;
+  background:
+    radial-gradient(
+      60px 36px at 85% 100%,
+      rgba(208, 208, 208, 0.2),
+      rgba(255, 255, 255, 0)
+    ),
+    radial-gradient(72px 36px at 50% 0%, #101010 0%, #242424 100%);
+  box-shadow:
+    2px 2px 3.5px rgba(0, 0, 0, 0.4),
+    inset 0.5px 0.7px 0.4px rgba(255, 255, 255, 0.5),
+    inset -0.5px -0.5px 0.2px rgba(0, 0, 0, 0.6);
+}
+
+.popup-drawer-demo-keycap-text {
+  max-width: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 小圆点样式 */
+.popup-drawer-demo-mini-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ea4c89;
+  flex-shrink: 0;
+  align-self: center;
+  box-shadow: 0 4px 12px rgba(255, 166, 201, 0.5);
+}
+
+[data-theme="dark"] .drawer-section-divider {
+  background-color: #333333;
+}
+
+/* 开关行 */
+.drawer-switch-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.drawer-switch-row.drawer-row-border {
+  border-bottom: 1px solid #eef0f2;
+  margin-bottom: 8px;
+  padding-bottom: 12px;
+}
+
+[data-theme="dark"] .drawer-switch-row.drawer-row-border {
+  border-bottom-color: #333333;
+}
+
+.drawer-switch-label {
+  font-size: 14px;
+  color: #222222;
+}
+
+[data-theme="dark"] .drawer-switch-label {
+  color: #e0e0e0;
+}
+
+/* 链接行 */
+.drawer-link-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  cursor: pointer;
+  border-bottom: 1px solid #eef0f2;
+  font-size: 14px;
+  color: #222222;
+}
+
+.drawer-link-row:last-child {
+  border-bottom: none;
+}
+
+[data-theme="dark"] .drawer-link-row {
+  border-bottom-color: #333333;
+  color: #e0e0e0;
+}
+
+.drawer-link-row:hover {
+  color: #ea4c89;
+}
+
+/* 演示区域 */
+.drawer-demo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 0;
+}
+
+.drawer-demo-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+}
+
+[data-theme="dark"] .drawer-demo-icon {
+  background-color: #333333;
+  border-color: #444444;
+}
+
+.drawer-demo-plus,
+.drawer-demo-equal {
+  font-size: 16px;
+  color: #999999;
+}
+
+.drawer-demo-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.drawer-demo-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.drawer-demo-result {
+  font-size: 14px;
+  color: #222222;
+  padding: 8px 12px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+}
+
+[data-theme="dark"] .drawer-demo-result {
+  background-color: #333333;
+  border-color: #444444;
+  color: #e0e0e0;
+}
+
+/* 触发方式选项 */
+.drawer-options {
+  display: flex;
+  gap: 8px;
+}
+
+.drawer-options-wrap {
+  flex-wrap: wrap;
+}
+
+.drawer-option {
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #666666;
+  background-color: #f3f5f6;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+[data-theme="dark"] .drawer-option {
+  background-color: #333333;
+  color: #b3b3b3;
+}
+
+.drawer-option:hover {
+  background-color: #eaeced;
+}
+
+[data-theme="dark"] .drawer-option:hover {
+  background-color: #3a3a3a;
+}
+
+.drawer-option-selected {
+  border-color: #ea4c89;
+  background-color: #fdedf3;
+  color: #ea4c89;
+  box-shadow: 0px 4px 12px rgba(255, 166, 201, 0.5);
+}
+
+[data-theme="dark"] .drawer-option-selected {
+  background-color: rgba(234, 76, 137, 0.2);
+}
+
+.drawer-body.drawer-body-selection {
+  padding: 0 20px 20px 20px;
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+
+/* ========== 更多设置抽屉样式 ========== */
+.more-settings-drawer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.more-settings-quick-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.more-settings-feature-card {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 40px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: #f3f5f6;
+  transition: background-color 0.2s ease;
+}
+
+.more-settings-feature-card:hover {
+  background-color: #e8eaec;
+}
+
+.more-settings-feature-card:active {
+  background-color: #dde0e2;
+}
+
+.more-settings-feature-card-label {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #666666;
+  white-space: nowrap;
+}
+
+.more-settings-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.more-settings-switch-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 21px;
+  gap: 12px;
+}
+
+.more-settings-switch-label {
+  flex: 1;
+  min-width: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #222222;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.more-settings-switch-row input[type="checkbox"] {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+[data-theme="dark"] .more-settings-switch-label {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .more-settings-feature-card {
+  background-color: #2a2a2a;
+}
+
+[data-theme="dark"] .more-settings-feature-card:hover {
+  background-color: #333333;
+}
+
+[data-theme="dark"] .more-settings-feature-card:active {
+  background-color: #3a3a3a;
+}
+
+[data-theme="dark"] .more-settings-feature-card-label {
+  color: #e0e0e0;
+}
+
+/* 动作按钮样式 */
+.more-settings-action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 12px;
+  color: #222222;
+  background-color: #f3f5f6;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.more-settings-action-button:hover {
+  background-color: #e8eaec;
+}
+
+.more-settings-action-button:active {
+  background-color: #dde0e2;
+}
+
+.more-settings-action-button-label {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  color: inherit;
+  text-align: center;
+}
+
+[data-theme="dark"] .more-settings-action-button {
+  color: #e0e0e0;
+  background-color: #2a2a2a;
+}
+
+[data-theme="dark"] .more-settings-action-button:hover {
+  background-color: #333333;
+}
+
+[data-theme="dark"] .more-settings-action-button:active {
+  background-color: #3a3a3a;
+}
+
+[data-theme="dark"] .more-settings-action-button-label {
+  color: #e0e0e0;
+}
+
+/* 错误消息组件样式 */
+.error-message-container {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 16px;
+  margin-top: 6px;
+  margin-bottom: -14px;
+  border: 1px solid #f53f3f;
+  border-radius: 12px;
+  background-color: var(--error-bg);
+}
+
+.error-message-icon-wrapper {
+  width: 21px;
+  height: 21px;
+  min-width: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4px;
+}
+
+.error-message-icon {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #f53f3f;
+}
+
+.error-message-text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: var(--error-text);
+}
+
+.error-message-text a {
+  color: var(--error-link);
+  text-decoration: underline;
+}
+
+.ad-banner-container {
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+
+html {
+  font-size: 17px;
+}
+
+@media print {
+  .imt-fb-container {
+    display: none !important;
+  }
+}
+
+#mount {
+  position: absolute;
+  display: none;
+  min-width: 250px;
+  height: auto;
+  --font-size: 17px;
+  font-size: 17px;
+}
+
+/* float-ball */
+.imt-fb-container {
+  position: fixed;
+  padding: 0;
+  top: 335px;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  display: none;
+  direction: ltr;
+  background-color: transparent !important;
+}
+
+.imt-fb-container:hover .imt-manga-button {
+  opacity: 1;
+}
+
+.imt-fb-container.left {
+  align-items: flex-start;
+  left: 0;
+}
+
+.imt-fb-container.right {
+  align-items: flex-end;
+  right: 0;
+}
+
+.imt-fb-btn {
+  cursor: pointer;
+  background: var(--float-ball-more-button-background-color);
+  height: 36px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+}
+
+.imt-fb-btn.left {
+  border-top-right-radius: 36px;
+  border-bottom-right-radius: 36px;
+  padding-left: 3px;
+}
+
+.imt-fb-btn.right {
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+  padding-right: 3px;
+}
+
+.imt-fb-btn.mini.left {
+  transform: translateX(-22px);
+}
+
+.imt-fb-btn.mini.right {
+  transform: translateX(22px);
+}
+
+.imt-fb-btn.mini.active {
+  transform: translateX(0);
+}
+
+.imt-fb-btn div {
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+.imt-fb-btn .imt-fb-hit-area {
+  position: absolute;
+  top: 0;
+  height: 36px;
+  bottom: -6px;
+  left: -6px;
+  right: -6px;
+  background: transparent;
+}
+
+.imt-fb-btn.mini.right .imt-fb-hit-area {
+  left: -10px;
+}
+
+.imt-fb-btn.mini.left .imt-fb-hit-area {
+  right: -10px;
+}
+
+.imt-fb-btn.left div {
+  border-top-right-radius: 34px;
+  border-bottom-right-radius: 34px;
+  justify-content: flex-end;
+}
+
+.imt-fb-btn.right div {
+  border-top-left-radius: 34px;
+  border-bottom-left-radius: 34px;
+}
+
+.imt-fb-logo-img {
+  width: 20px;
+  height: 20px;
+  margin: 0 10px;
+}
+
+.imt-fb-logo-img-big-bg {
+  width: 28px;
+  height: 28px;
+  margin: 0;
+  background-color: #ed6d8f;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.imt-float-ball-translated {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  bottom: 4px;
+  right: 4px;
+}
+
+.btn-animate {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform ease-out 250ms;
+  transition: -webkit-transform ease-out 250ms;
+  transition: transform ease-out 250ms;
+  transition: transform ease-out 250ms, -webkit-transform ease-out 250ms;
+}
+
+.imt-fb-setting-btn {
+  margin-right: 18px;
+  width: 28px;
+  height: 28px;
+}
+
+.immersive-translate-popup-wrapper {
+  background: var(--background-color);
+  border-radius: 20px;
+  box-shadow: 2px 10px 24px 0px #0e121614;
+  border: none;
+}
+
+.popup-container {
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-content {
+  border-radius: 20px 20px 12px 12px;
+}
+.popup-footer {
+  border-radius: 20px;
+}
+
+.popup-userscript-three-feature-layout {
+  border-radius: 20px;
+}
+
+.popup-userscript-three-feature-layout .popup-content {
+  border-radius: 20px 20px 12px 12px;
+}
+
+.popup-userscript-three-feature-layout .popup-footer {
+  border-radius: 0;
+}
+
+.imt-fb-close-button {
+  cursor: pointer;
+  position: absolute;
+  left: -10px;
+  bottom: -20px;
+}
+.imt-fb-container.left .imt-fb-close-button {
+  left: auto;
+  right: -10px;
+}
+
+.imt-fb-close-content {
+  padding: 22px;
+  width: 320px;
+  pointer-events: all;
+}
+
+.imt-fb-close-title {
+  font-weight: 500;
+  color: var(--text-black-2);
+}
+
+.imt-fb-close-radio-content {
+  background-color: var(--background-light-green);
+  padding: 8px 20px;
+}
+
+.imt-fb-radio-sel,
+.imt-fb-radio-nor {
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.imt-fb-radio-sel {
+  border: 2px solid var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imt-fb-radio-sel div {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: var(--primary);
+}
+
+.imt-fb-radio-nor {
+  border: 2px solid var(--input-border-strong);
+}
+
+.imt-fb-primary-btn {
+  background-color: var(--primary);
+  width: 72px;
+  height: 32px;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 32px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.imt-fb-default-btn {
+  border: 1px solid var(--primary);
+  width: 72px;
+  height: 32px;
+  border-radius: 8px;
+  color: var(--primary);
+  line-height: 32px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.imt-fb-guide-container {
+  width: 312px;
+  transform: translateY(-45%);
+}
+
+.imt-fb-guide-bg {
+  position: absolute;
+  left: 30px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  height: 100%;
+  width: 90%;
+}
+
+.imt-fb-guide-bg.left {
+  transform: scaleX(-1);
+}
+
+.imt-fb-guide-content {
+  margin: 16px -30px 80px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imt-fb-guide-content.left {
+  margin: 16px 21px 60px 32px;
+}
+
+.imt-fb-guide-img {
+  width: 220px;
+  height: 112px;
+}
+
+.imt-fb-guide-message {
+  font-size: 14px;
+  line-height: 28px;
+  color: #333333;
+  white-space: pre-wrap;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.imt-manga-guide-message {
+  font-size: 16px;
+  line-height: 24px;
+  color: #333333;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.imt-fb-guide-button {
+  margin-top: 16px;
+  line-height: 40px;
+  height: 40px;
+  padding: 0 20px;
+  width: unset;
+}
+
+.imt-fb-side {
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: all;
+  position: relative;
+}
+
+.imt-fb-side {
+  margin: 10px 0;
+}
+
+.imt-fb-side::before,
+.imt-manga-button::before,
+.imt-fb-round-button::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  left: 2px;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color 0.15s ease;
+}
+
+.imt-fb-side:hover::before,
+.imt-manga-button:hover::before,
+.imt-fb-round-button:hover::before {
+  background-color: var(--float-ball-more-button-hover-color);
+}
+
+.imt-fb-new-badge {
+  width: 26px;
+  height: 14px;
+  padding: 3px;
+  background-color: #f53f3f;
+  border-radius: 4px;
+  position: absolute;
+  top: -5px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imt-fb-side * {
+  pointer-events: all;
+}
+
+.imt-fb-pin-icon {
+  position: absolute;
+  left: -16px;
+  bottom: -12px;
+  opacity: 0;
+  cursor: pointer;
+}
+.imt-fb-container.left .imt-fb-pin-icon {
+  left: auto;
+  right: -16px;
+}
+
+.imt-fb-side:hover .imt-fb-pin-icon {
+  opacity: 1;
+}
+
+.imt-fb-more-button {
+  width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+/* Sheet.css */
+.immersive-translate-sheet {
+  position: fixed;
+  transform: translateY(100%);
+  /* Start off screen */
+  left: 0;
+  right: 0;
+  background-color: var(--background-color);
+  transition: transform 0.3s ease-out;
+  /* Smooth slide transition */
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+  /* Ensure it's above other content */
+  bottom: 0;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  overflow: hidden;
+}
+
+.immersive-translate-sheet.visible {
+  transform: translateY(0);
+}
+
+.immersive-translate-sheet-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.immersive-translate-sheet-backdrop.visible {
+  opacity: 1;
+}
+
+.popup-container-sheet {
+  max-width: 100vw;
+  width: 100vw;
+}
+
+.imt-no-events svg * {
+  pointer-events: none !important;
+}
+
+.imt-manga-button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: all;
+  margin: 0 0 10px 0;
+  background-color: var(--float-ball-more-button-background-color);
+  border-radius: 50%;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.08);
+  right: 8px;
+}
+
+.imt-manga-feedback {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.imt-fb-round-button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: var(--float-ball-more-button-background-color);
+  border-radius: 50%;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.imt-fb-round-button > svg {
+  z-index: 1;
+}
+
+.imt-fb-upgrade-button {
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.imt-fb-power-user-card {
+  position: absolute;
+  bottom: -130px;
+  width: 266px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 2px 10px 24px 0 rgba(14, 18, 22, 0.08);
+  border: 1px solid rgba(250, 251, 251, 1);
+  pointer-events: all;
+  z-index: 2;
+  background: linear-gradient(172deg, rgba(255, 255, 255, 0.30) 4.36%, #FFF 35.98%), linear-gradient(0deg, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.40) 100%), radial-gradient(39.95% 47.41% at -0.53% 55.22%, #E0C4F7 0%, rgba(224, 196, 247, 0.00) 100%), radial-gradient(56.37% 54.27% at 86.17% 0%, #E0C4F6 0%, rgba(224, 196, 246, 0.00) 100%), radial-gradient(42.04% 37.43% at -0.53% 3.75%, #AED5FF 0%, rgba(174, 213, 255, 0.00) 100%), radial-gradient(66.88% 52.09% at 36.81% 19.55%, #757ED8 0%, #6B6AC0 100%), #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imt-fb-power-user-card.right {
+  right: 60px;
+}
+
+.imt-fb-power-user-card.right::after {
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: 130px;
+  border-width: 10px 0 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent #fff;
+  filter: drop-shadow(2px 0 2px rgba(14, 18, 22, 0.06));
+}
+
+.imt-fb-power-user-card.left {
+  left: 60px;
+}
+
+.imt-fb-power-user-card.left::after {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 130px;
+  border-width: 10px 10px 10px 0;
+  border-style: solid;
+  border-color: transparent #fff transparent transparent;
+  filter: drop-shadow(-2px 0 2px rgba(14, 18, 22, 0.06));
+}
+
+.imt-fb-power-user-card-banner {
+  display: block;
+  width: 128px;
+  height: auto;
+  margin-top: 8px;
+  border-radius: 8px 8px 0 0;
+}
+
+.imt-fb-power-user-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 16px 24px 0;
+  box-sizing: border-box;
+}
+
+.imt-fb-power-user-card-title {
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+}
+
+.imt-fb-power-user-card-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.imt-fb-power-user-card-body {
+  padding: 12px 24px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.imt-fb-power-user-card-desc {
+  color: #333;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+}
+
+.imt-fb-power-user-card-primary {
+  margin-top: 16px;
+  height: 37px;
+  border-radius: 8px;
+  background: linear-gradient(110deg, #F497BC 17.37%, #EC4C8C 89.68%);
+  color: var(--ZX-FFFFFF, #FFF);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px; /* 150% */
+  display: flex;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  flex: 1 0 0;
+}
+
+.imt-manga-translated {
+  position: absolute;
+  left: 24px;
+  top: 20px;
+}
+
+.imt-float-ball-loading {
+  animation: imt-loading-animation 0.6s infinite linear !important;
+}
+
+.imt-manga-guide-bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  transform: translateY(-50%);
+}
+.imt-manga-guide-content {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  margin: 0 40px 0;
+}
+
+.img-manga-guide-button {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.img-manga-close {
+  position: absolute;
+  bottom: -200px;
+  width: 32px;
+  height: 32px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  cursor: pointer;
+}
+
+.imt-fb-container.dragging .imt-manga-button,
+.imt-fb-container.dragging .btn-animate:not(.imt-fb-btn) {
+  display: none !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn {
+  border-radius: 50% !important;
+  width: 36px !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  cursor: move !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn div {
+  border-radius: 50% !important;
+  width: 36px !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn.left,
+.imt-fb-container.dragging .imt-fb-btn.right {
+  border-radius: 50% !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn.left div,
+.imt-fb-container.dragging .imt-fb-btn.right div {
+  border-radius: 50% !important;
+}
+
+.imt-fb-container.dragging .imt-fb-logo-img {
+  margin: 0 !important;
+}
+
+.imt-fb-container.dragging .imt-float-ball-translated {
+  right: 2px !important;
+  bottom: 2px !important;
+}
+
+@-webkit-keyframes imt-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes imt-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.imt-fb-icon {
+  color: #666666;
+}
+
+[data-theme="dark"] .imt-fb-icon {
+  color: #b3b3b3;
+}
+
+[data-theme="light"] .imt-fb-icon {
+  color: #666666;
+}
+
+/* 悬浮球设置弹窗样式 */
+.imt-fb-setting-wrapper {
+  border-radius: 12px;
+  box-shadow: 2px 10px 24px 0px rgba(0, 0, 0, 0.06);
+}
+
+.imt-fb-setting-content {
+  padding: 16px;
+  width: 350px;
+  pointer-events: all;
+}
+
+.imt-fb-setting-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--text-black-2);
+}
+
+.imt-fb-setting-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px 0;
+}
+
+.imt-fb-preview-wrapper {
+  display: flex;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.imt-fb-preview-item {
+  width: 99px;
+  height: 57px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+}
+
+.imt-fb-preview-item.light {
+  background-color: #f3f5f6;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.imt-fb-preview-item.dark {
+  background-color: #444;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.imt-fb-preview-ball {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.imt-fb-preview-ball.light {
+  background-color: #fff;
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+}
+
+.imt-fb-preview-ball.dark {
+  background-color: #111;
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+}
+
+.imt-fb-preview-ball.full {
+  width: 41px;
+  justify-content: center;
+}
+
+.imt-fb-preview-ball.mini {
+  width: 41px;
+  justify-content: center;
+  transform: translateX(21px);
+}
+
+.imt-fb-preview-ball .imt-fb-preview-logo {
+  flex-shrink: 0;
+}
+
+/* 选项区域 */
+.imt-fb-setting-options {
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.imt-fb-setting-option-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4px;
+}
+
+.imt-fb-setting-option-label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: var(--text-black-2);
+}
+
+/* Toggle 开关样式 */
+.imt-fb-toggle {
+  width: 30px;
+  height: 18px;
+  background-color: var(--switch-background-color);
+  border-radius: 24px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.imt-fb-toggle.checked {
+  background-color: var(--primary);
+}
+
+.imt-fb-toggle.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.imt-fb-toggle-thumb {
+  width: 14px;
+  height: 14px;
+  background-color: var(--switch-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s ease;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+}
+
+.imt-fb-toggle.checked .imt-fb-toggle-thumb {
+  transform: translateX(12px);
+}
+
+.imt-fb-setting-hide-options {
+  background-color: var(--background-light-green);
+  padding: 8px 20px;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.imt-fb-setting-save-btn {
+  background-color: var(--primary);
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 45px;
+  height: 45px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: opacity 0.2s ease;
+}
+
+.imt-fb-setting-save-btn:hover {
+  opacity: 0.9;
+}
+
+.imt-fb-setting-save-btn:active {
+  opacity: 0.8;
+}
+</style><div id="mount" style="display: block;"><div hidden="" id="immersive-translate-popup-overlay" class="immersive-translate-popup-overlay" style="z-index: 2147483647; background-color: rgba(0, 0, 0, 0.5);"><div class="immersive-translate-popup-wrapper" style="position: fixed; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);"></div></div></div></template></div></html>

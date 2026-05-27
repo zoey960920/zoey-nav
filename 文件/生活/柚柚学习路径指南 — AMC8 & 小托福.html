@@ -1,0 +1,4454 @@
+<!DOCTYPE html>
+<!-- saved from url=(0027)https://yoyo-study.wwei.ai/ -->
+<html lang="zh-CN" data-immersive-translate-page-theme="light"><plasmo-csui><template shadowrootmode="open"><div id="plasmo-shadow-container" style="z-index: 2147483647; position: relative;"><div id="plasmo-overlay-0" class="plasmo-csui-container" style="display: flex; position: absolute; top: 0px; left: 0px;"></div></div></template></plasmo-csui><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>柚柚学习路径指南 — AMC8 &amp; 小托福</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link href="./柚柚学习路径指南 — AMC8 &amp; 小托福_files/css2" rel="stylesheet">
+<style>
+:root{--bg:#FDFAF5;--bg2:#F0F4FF;--card:#FFFFFF;--text:#1A2340;--text2:#4A5568;--muted:#718096;--border:#E2E8F0;--amc:#2563EB;--amc-light:#EFF6FF;--toefl:#D97706;--toefl-light:#FFFBEB;--green:#059669;--green-light:#ECFDF5;--red:#DC2626;--font-d:"Manrope","Noto Sans SC",sans-serif;--font-b:"Noto Sans SC","Manrope",sans-serif;--ease:cubic-bezier(0.16,1,0.3,1);}
+html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;scroll-behavior:smooth;scroll-snap-type:y mandatory;}
+body{font-family:var(--font-b);background:var(--bg);color:var(--text);}
+*,*::before,*::after{box-sizing:border-box;}
+.slide{position:relative;width:100%;height:100vh;height:100dvh;overflow:hidden;scroll-snap-align:start;display:grid;align-content:center;padding:clamp(1rem,3.5vw,3.5rem);}
+.sc{width:min(1100px,100%);max-height:88vh;max-height:88dvh;margin:0 auto;overflow:hidden;display:grid;gap:clamp(0.55rem,1.4vw,1.1rem);}
+.slide h1,.slide h2,.slide h3{margin:0;font-family:var(--font-d);line-height:1.15;}
+.slide p,.slide li{margin:0;line-height:1.6;font-size:clamp(.85rem,1.25vw,1.02rem);}
+.progress{position:fixed;left:0;top:0;width:0;height:4px;z-index:9999;background:var(--amc);transition:width .2s linear;}
+.dots{position:fixed;right:clamp(.5rem,1.5vw,1rem);top:50%;transform:translateY(-50%);display:grid;gap:.45rem;z-index:9998;}
+.dots button{width:8px;height:8px;border-radius:999px;border:0;background:rgba(26,35,64,.18);cursor:pointer;transition:all .2s;}
+.dots button.active{background:var(--amc);transform:scale(1.35);}
+@media(prefers-reduced-motion:no-preference){
+  .r{opacity:0;transform:translateY(22px);transition:opacity .6s var(--ease),transform .6s var(--ease);}
+  .slide.vis .r{opacity:1;transform:translateY(0);}
+  .r:nth-child(1){transition-delay:.06s}.r:nth-child(2){transition-delay:.14s}
+  .r:nth-child(3){transition-delay:.22s}.r:nth-child(4){transition-delay:.30s}
+  .r:nth-child(5){transition-delay:.38s}.r:nth-child(6){transition-delay:.46s}
+}
+@media(max-height:700px){.slide{padding:clamp(.75rem,2vw,1.2rem);}.sc{max-height:84vh;gap:clamp(.4rem,1vw,.65rem);}}
+@media(max-height:600px){.sc{max-height:82vh;}.slide p,.slide li{font-size:clamp(.78rem,1.1vw,.88rem);}}
+@media(max-height:500px){.slide{padding:clamp(.5rem,1.2vw,.8rem);}.sc{max-height:80vh;}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
+/* shared components */
+.label{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;}
+.label::before{content:"";display:block;width:18px;height:2px;}
+.label.amc{color:var(--amc)}.label.amc::before{background:var(--amc)}
+.label.toefl{color:var(--toefl)}.label.toefl::before{background:var(--toefl)}
+.label.sum{color:var(--green)}.label.sum::before{background:var(--green)}
+.stitle{font-size:clamp(1.4rem,3.2vw,2.3rem);font-weight:800;color:var(--text);}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:clamp(.75rem,1.8vw,1.3rem);box-shadow:0 2px 8px rgba(0,0,0,.04);}
+.card.amc{border-color:var(--amc);background:var(--amc-light);}
+.card.toefl{border-color:var(--toefl);background:var(--toefl-light);}
+.card.green{border-color:var(--green);background:var(--green-light);}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(.55rem,1.3vw,.9rem);}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.55rem,1.3vw,.9rem);}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(.55rem,1.3vw,.9rem);}
+.plist{display:grid;gap:clamp(.4rem,.9vw,.65rem);}
+.pitem{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:clamp(.6rem,1.4vw,.95rem);}
+.pnum{display:inline-block;color:white;border-radius:50%;width:22px;height:22px;line-height:22px;text-align:center;font-size:.7rem;font-weight:700;margin-bottom:.3rem;}
+.pnum.amc{background:var(--amc)}.pnum.toefl{background:var(--toefl)}
+.ptxt{font-size:clamp(.8rem,1.15vw,.92rem);line-height:1.5;margin-bottom:.35rem;}
+.opts{display:grid;grid-template-columns:repeat(5,1fr);gap:.25rem;}
+.opt{background:#F8FAFC;border:1px solid var(--border);border-radius:6px;padding:.2rem .3rem;text-align:center;font-size:.72rem;}
+.agrid{display:grid;grid-template-columns:repeat(5,1fr);gap:.45rem;}
+.acell{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.5rem;text-align:center;}
+.acell .qn{font-size:.68rem;color:var(--muted)}.acell .qa{font-weight:800;font-size:.95rem;}
+.acell .qa.amc{color:var(--amc)}.acell .qa.toefl{color:var(--toefl)}
+.slist{display:grid;gap:.4rem;}
+.sitem{display:grid;grid-template-columns:auto 1fr;gap:.55rem;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.6rem;font-size:clamp(.75rem,1.05vw,.85rem);}
+.sbadge{color:white;border-radius:6px;padding:.1rem .4rem;font-size:.68rem;font-weight:700;white-space:nowrap;align-self:start;}
+.sbadge.amc{background:var(--amc)}.sbadge.toefl{background:var(--toefl)}
+.icard{display:flex;flex-direction:column;gap:.3rem;}
+.icard .ico{font-size:1.5rem;}
+.icard .ilabel{font-size:.68rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);}
+.icard .ival{font-weight:700;font-size:clamp(.85rem,1.35vw,1rem);}
+.icard .idesc{font-size:clamp(.72rem,1vw,.82rem);color:var(--text2);}
+.verdict{border-radius:14px;padding:clamp(.9rem,2.2vw,1.5rem);border:2px solid;}
+.verdict.amc{border-color:var(--amc);background:var(--amc-light);}
+.verdict.toefl{border-color:var(--toefl);background:var(--toefl-light);}
+.vhead{display:flex;align-items:center;gap:.8rem;margin-bottom:.65rem;}
+.vemoji{font-size:clamp(1.5rem,3.2vw,2.2rem);}
+.vtitle{font-size:clamp(.9rem,1.7vw,1.2rem);font-weight:800;}
+.vtitle.amc{color:var(--amc)}.vtitle.toefl{color:var(--toefl)}
+.vreason{display:flex;gap:.5rem;font-size:clamp(.77rem,1.1vw,.88rem);margin-bottom:.3rem;}
+.vreason::before{content:"✓";font-weight:700;flex-shrink:0;}
+.vreason.amc::before{color:var(--amc)}.vreason.toefl::before{color:var(--toefl)}
+.vcaution{margin-top:.6rem;padding:.5rem .7rem;border-radius:0 8px 8px 0;font-size:clamp(.7rem,.98vw,.8rem);}
+.vcaution.amber{background:#FEF3C7;border-left:3px solid var(--toefl);color:#7C3E08;}
+.vcaution.teal{background:#D1FAE5;border-left:3px solid var(--green);color:#065F46;}
+.steps{display:grid;gap:.5rem;}
+.step{display:grid;grid-template-columns:34px 1fr;gap:.8rem;align-items:start;}
+.stepn{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;color:white;flex-shrink:0;}
+.stepn.amc{background:var(--amc)}.stepn.toefl{background:var(--toefl)}.stepn.sum{background:var(--green)}
+.stept{font-weight:700;font-size:clamp(.83rem,1.2vw,.96rem);}
+.stepd{font-size:clamp(.7rem,1.02vw,.82rem);color:var(--text2);margin-top:.12rem;}
+.difflist{display:grid;gap:.5rem;}
+.diffsec{border-radius:10px;padding:clamp(.6rem,1.3vw,.95rem);border-left:4px solid;}
+.diffsec.easy{border-color:var(--green);background:var(--green-light);}
+.diffsec.med{border-color:var(--toefl);background:var(--toefl-light);}
+.diffsec.hard{border-color:var(--red);background:#FEF2F2;}
+.diffh{display:flex;justify-content:space-between;align-items:center;margin-bottom:.3rem;}
+.difflab{font-weight:700;font-size:clamp(.82rem,1.2vw,.95rem);}
+.difflab.easy{color:var(--green)}.difflab.med{color:var(--toefl)}.difflab.hard{color:var(--red)}
+.diffbg{height:7px;background:#E2E8F0;border-radius:4px;overflow:hidden;}
+.diffbar{height:100%;border-radius:4px;}
+.diffd{font-size:clamp(.7rem,1.02vw,.82rem);color:var(--text2);margin-top:.28rem;}
+.ctable{border-collapse:collapse;width:100%;font-size:clamp(.75rem,1.1vw,.88rem);}
+.ctable th,.ctable td{padding:.42rem .55rem;border:1px solid var(--border);text-align:center;vertical-align:middle;}
+.ctable th{background:var(--bg2);font-weight:700;}
+.ctable tr:nth-child(even) td{background:#FAFAFA;}
+.ctable .ac{color:var(--amc);font-weight:700;}.ctable .tc{color:var(--toefl);font-weight:700;}
+/* section divider slide */
+.divider-slide{display:flex;align-items:center;justify-content:center;}
+.div-box{text-align:center;padding:2.5rem 3rem;border-radius:20px;}
+.div-box.amc{background:linear-gradient(135deg,#1A2340 0%,#2563EB 100%);color:white;}
+.div-box.toefl{background:linear-gradient(135deg,#7C3E08 0%,#D97706 100%);color:white;}
+.div-box.sum{background:linear-gradient(135deg,#065F46 0%,#059669 100%);color:white;}
+.div-part{font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;opacity:.7;margin-bottom:.6rem;}
+.div-num{font-size:clamp(3rem,8vw,5.5rem);font-weight:900;font-family:var(--font-d);line-height:1;}
+.div-title{font-size:clamp(1.2rem,2.5vw,1.8rem);font-weight:700;margin-top:.5rem;}
+.div-sub{font-size:clamp(.82rem,1.3vw,1rem);opacity:.75;margin-top:.4rem;}
+</style>
+
+
+<script src="./柚柚学习路径指南 — AMC8 &amp; 小托福_files/widget.js" defer="" data-wwei-injected="1"></script><style type="text/css">
+  @font-face {
+    font-family: CuboxInter;
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("chrome-extension://bflmgpechpeohjfomgfdkkfcbhfcjohl/fonts/InterVariable.woff2") format("woff2");
+  }
+  #cubox-react-root {
+    z-index: 999999999999999999999;
+  }
+  </style><link rel="stylesheet" href="chrome-extension://bflmgpechpeohjfomgfdkkfcbhfcjohl/css/globalHighlightStyles.css"></head>
+<body>
+<div class="progress" style="width: 0%;"></div>
+<nav class="dots" aria-label="页面导航"><button aria-label="第 1 页" class="active"></button><button aria-label="第 2 页"></button><button aria-label="第 3 页"></button><button aria-label="第 4 页"></button><button aria-label="第 5 页"></button><button aria-label="第 6 页"></button><button aria-label="第 7 页"></button><button aria-label="第 8 页"></button><button aria-label="第 9 页"></button><button aria-label="第 10 页"></button><button aria-label="第 11 页"></button><button aria-label="第 12 页"></button><button aria-label="第 13 页"></button><button aria-label="第 14 页"></button><button aria-label="第 15 页"></button><button aria-label="第 16 页"></button><button aria-label="第 17 页"></button><button aria-label="第 18 页"></button><button aria-label="第 19 页"></button><button aria-label="第 20 页"></button></nav>
+
+<!-- ===== SLIDE 1: COVER ===== -->
+<section class="slide vis" style="background:linear-gradient(135deg,#1A2340 0%,#1e40af 60%,#0f766e 100%);">
+<div class="sc" style="text-align:center;align-items:center;">
+  <div class="r" style="display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:2rem;padding:.35rem 1.1rem;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.8);">柚柚学习路径指南 · 2026</div>
+  <h1 class="r" style="font-size:clamp(2.2rem,6vw,4.5rem);font-weight:900;color:white;line-height:1.05;">AMC 8 <span style="color:#FFD47E;">&amp;</span><br>小托福</h1>
+  <p class="r" style="color:rgba(255,255,255,.75);max-width:560px;margin:0 auto;font-size:clamp(.9rem,1.6vw,1.1rem);">数学竞赛 + 英语测评<br>考什么？难不难？柚柚适合吗？</p>
+  <div class="r" style="display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;margin-top:.3rem;">
+    <div style="text-align:center;"><div style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:#FFD47E;font-family:var(--font-d);">20</div><div style="font-size:.75rem;color:rgba(255,255,255,.6);">页完整指南</div></div>
+    <div style="text-align:center;"><div style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:#86EFAC;font-family:var(--font-d);">10</div><div style="font-size:.75rem;color:rgba(255,255,255,.6);">道 AMC 样题</div></div>
+    <div style="text-align:center;"><div style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:#FCA5A5;font-family:var(--font-d);">10</div><div style="font-size:.75rem;color:rgba(255,255,255,.6);">道小托福样题</div></div>
+    <div style="text-align:center;"><div style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:#C4B5FD;font-family:var(--font-d);">1</div><div style="font-size:.75rem;color:rgba(255,255,255,.6);">份综合建议</div></div>
+  </div>
+  <p class="r" style="font-size:.75rem;color:rgba(255,255,255,.4);">↓ 滚动或方向键翻页</p>
+</div>
+</section>
+
+<!-- ===== SLIDE 2: AMC8 DIVIDER ===== -->
+<section class="slide divider-slide" style="background:#F0F4FF;">
+<div class="div-box amc r">
+  <div class="div-part">Part 1 · 数学竞赛</div>
+  <div class="div-num">AMC 8</div>
+  <div class="div-title">美国数学竞赛</div>
+  <div class="div-sub">American Mathematics Competition · 适合小学3年级～初二</div>
+</div>
+</section>
+
+<!-- ===== SLIDE 3: AMC8 基本信息 ===== -->
+<section class="slide">
+<div class="sc">
+  <div class="label amc r">AMC 8 基本信息</div>
+  <h2 class="stitle r">AMC 8 是什么？</h2>
+  <div class="grid4 r">
+    <div class="card icard">
+      <div class="ico">🏛️</div><div class="ilabel">主办机构</div>
+      <div class="ival">MAA</div>
+      <div class="idesc">美国数学协会，创立1950s，全球认可</div>
+    </div>
+    <div class="card icard amc">
+      <div class="ico">🎓</div><div class="ilabel">参赛资格</div>
+      <div class="ival">8年级及以下</div>
+      <div class="idesc">年龄≤14.5岁，小学3年级起可参加</div>
+    </div>
+    <div class="card icard">
+      <div class="ico">📝</div><div class="ilabel">考试形式</div>
+      <div class="ival">25道单选题</div>
+      <div class="idesc">40分钟，5个选项，满分25分</div>
+    </div>
+    <div class="card icard">
+      <div class="ico">⭐</div><div class="ilabel">计分规则</div>
+      <div class="ival">答对+1分</div>
+      <div class="idesc">答错不扣分，不会就跳过没关系</div>
+    </div>
+  </div>
+  <div class="grid2 r">
+    <div class="card icard">
+      <div class="ico">📅</div><div class="ilabel">考试时间</div>
+      <div class="ival">每年1月（约第3周）</div>
+      <div class="idesc">全球认证考点，中国主要城市均有，在线/纸笔均可</div>
+    </div>
+    <div class="card icard">
+      <div class="ico">🏆</div><div class="ilabel">奖项与价值</div>
+      <div class="ival">证书 + 成绩单 + AIME资格</div>
+      <div class="idesc">全球顶约5%可晋级AIME；对国际学校申请和海外留学有加分</div>
+    </div>
+  </div>
+  <div class="card amc r" style="padding:.7rem 1rem;">
+    <p style="color:var(--amc);font-size:clamp(.78rem,1.1vw,.88rem);font-weight:500;">💡 <strong>地位：</strong>AMC 8 → AMC 10/12 → AIME → USAMO，是全球最权威的中学数学竞赛体系起点</p>
+  </div>
+</div>
+</section>
+
+<!-- ===== SLIDE 4: AMC8 难度分布 ===== -->
+<section class="slide">
+<div class="sc">
+  <div class="label amc r">难度结构</div>
+  <h2 class="stitle r">25题怎么分布？</h2>
+  <div class="difflist r">
+    <div class="diffsec easy">
+      <div class="diffh"><span class="difflab easy">🟢 基础题（第1-10题）· 40%</span><span style="font-size:.8rem;color:var(--muted);">40题分</span></div>
+      <div class="diffbg"><div class="diffbar" style="background:var(--green);width:40%;"></div></div>
+      <div class="diffd">基础运算、简单几何、数字规律。小学高年级（4-6年级）能做，做对这部分已获得基础成就感。</div>
+    </div>
+    <div class="diffsec med">
+      <div class="diffh"><span class="difflab med">🟡 中等题（第11-20题）· 40%</span><span style="font-size:.8rem;color:var(--muted);">40题分</span></div>
+      <div class="diffbg"><div class="diffbar" style="background:var(--toefl);width:40%;"></div></div>
+      <div class="diffd">多步推理、组合/代数综合。区分一般参赛者和高分选手的核心区段，需系统备考。</div>
+    </div>
+    <div class="diffsec hard">
+      <div class="diffh"><span class="difflab hard">🔴 挑战题（第21-25题）· 20%</span><span style="font-size:.8rem;color:var(--muted);">20题分</span></div>
+      <div class="diffbg"><div class="diffbar" style="background:var(--red);width:20%;"></div></div>
+      <div class="diffd">需灵活运用多个知识点，常需创造性思路。做对1-2题已属优秀；全对者全国寥寥。</div>
+    </div>
+  </div>
+  <div class="grid2 r">
+    <div class="card" style="background:#EFF6FF;border-color:var(--amc);">
+      <p style="color:var(--amc);font-size:clamp(.78rem,1.1vw,.88rem);">🎯 <strong>参考目标（小学生）：</strong>做对15-18题已属优秀；20+题可进入AIME资格竞争</p>
+    </div>
+    <div class="card" style="background:var(--green-light);border-color:var(--green);">
+      <p style="color:var(--green);font-size:clamp(.78rem,1.1vw,.88rem);">✨ <strong>考试特点：</strong>无需语言表达，纯书面选择，内向安静型孩子反而有优势</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== SLIDE 5: AMC8 考查内容 ===== -->
+<section class="slide">
+<div class="sc">
+  <div class="label amc r">考查内容</div>
+  <h2 class="stitle r">考什么数学知识？四大领域各占25%</h2>
+  <div class="grid2 r">
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.4rem;">
+        <span style="font-size:1.5rem;">🔢</span>
+        <span style="font-weight:700;font-size:clamp(.88rem,1.35vw,1rem);">数论</span>
+        <span style="margin-left:auto;background:var(--amc-light);color:var(--amc);font-weight:700;font-size:.75rem;padding:.15rem .55rem;border-radius:1rem;">~25%</span>
+      </div>
+      <p style="font-size:clamp(.75rem,1.05vw,.85rem);color:var(--text2);">整除性、质因数、公约数/公倍数、余数、数字规律、进制转换</p>
+    </div>
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.4rem;">
+        <span style="font-size:1.5rem;">📐</span>
+        <span style="font-weight:700;font-size:clamp(.88rem,1.35vw,1rem);">几何</span>
+        <span style="margin-left:auto;background:var(--amc-light);color:var(--amc);font-weight:700;font-size:.75rem;padding:.15rem .55rem;border-radius:1rem;">~25%</span>
+      </div>
+      <p style="font-size:clamp(.75rem,1.05vw,.85rem);color:var(--text2);">面积、周长、三角形、圆、坐标系、图形变换、相似形</p>
+    </div>
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.4rem;">
+        <span style="font-size:1.5rem;">🔀</span>
+        <span style="font-weight:700;font-size:clamp(.88rem,1.35vw,1rem);">组合计数</span>
+        <span style="margin-left:auto;background:var(--amc-light);color:var(--amc);font-weight:700;font-size:.75rem;padding:.15rem .55rem;border-radius:1rem;">~25%</span>
+      </div>
+      <p style="font-size:clamp(.75rem,1.05vw,.85rem);color:var(--text2);">排列组合、概率、路径计数、分类讨论、容斥原理</p>
+    </div>
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.4rem;">
+        <span style="font-size:1.5rem;">📊</span>
+        <span style="font-weight:700;font-size:clamp(.88rem,1.35vw,1rem);">代数与应用</span>
+        <span style="margin-left:auto;background:var(--amc-light);color:var(--amc);font-weight:700;font-size:.75rem;padding:.15rem .55rem;border-radius:1rem;">~25%</span>
+      </div>
+      <p style="font-size:clamp(.75rem,1.05vw,.85rem);color:var(--text2);">方程、比例、速率、图表读取、逻辑推理、平均数</p>
+    </div>
+  </div>
+  <div class="card amc r" style="padding:.7rem 1rem;">
+    <p style="color:var(--amc);font-size:clamp(.78rem,1.1vw,.88rem);">🎯 <strong>英语要求极低：</strong>题目描述清晰，用词简单（数字+基础词汇），英语非母语完全没有障碍。核心考的是数学思维，不是语言能力。</p>
+  </div>
+</div>
+</section>
+
+<!-- ===== SLIDE 6: AMC8 样题 1-5 ===== -->
+<section class="slide">
+<div class="sc">
+  <div class="label amc r">样题演示</div>
+  <h2 class="stitle r">试试看：第1-5题（基础～中等）</h2>
+  <div class="plist r">
+    <div class="pitem">
+      <div class="pnum amc">1</div>
+      <div class="ptxt">一个袋子里有3红、4蓝、5绿共12颗弹珠。随机取一颗，<strong>不是红色</strong>的概率是？</div>
+      <div class="opts"><div class="opt">(A) 1/4</div><div class="opt">(B) 3/4</div><div class="opt">(C) 1/3</div><div class="opt">(D) 5/12</div><div class="opt">(E) 2/3</div></div>
+    </div>
+    <div class="pitem">
+      <div class="pnum amc">2</div>
+      <div class="ptxt">一个长方形周长为24，长是宽的2倍。它的面积是多少？</div>
+      <div class="opts"><div class="opt">(A) 16</div><div class="opt">(B) 24</div><div class="opt">(C) 32</div><div class="opt">(D) 36</div><div class="opt">(E) 48</div></div>
+    </div>
+    <div class="pitem">
+      <div class="pnum amc">3</div>
+      <div class="ptxt">若 3x + 5 = 20，则 6x + 1 的值是？</div>
+      <div class="opts"><div class="opt">(A) 25</div><div class="opt">(B) 29</div><div class="opt">(C) 31</div><div class="opt">(D) 33</div><div class="opt">(E) 35</div></div>
+    </div>
+    <div class="pitem">
+      <div class="pnum amc">4</div>
+      <div class="ptxt">Ana吃了1块披萨的1/4，Ben吃了1/3。Carlos吃完剩余全部，Carlos吃了多少？</div>
+      <div class="opts"><div class="opt">(A) 1/4</div><div class="opt">(B) 5/12</div><div class="opt">(C) 7/12</div><div class="opt">(D) 1/3</div><div class="opt">(E) 1/2</div></div>
+    </div>
+    <div class="pitem">
+      <div class="pnum amc">5</div>
+      <div class="ptxt">从A城到B城60km/h用了2小时，返程用120km/h。全程平均速度是？</div>
+      <div class="opts"><div class="opt">(A) 80</div><div class="opt">(B) 90</div><div class="opt">(C) 75</div><div class="opt">(D) 85</div><div class="opt">(E) 100</div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== SLIDE 7: AMC8 样题 6-10 ===== -->
+<section class="slide">
+<div class="sc">
+  <div class="label amc r">样题演示</div>
+  <h2 class="stitle r">继续：第6-10题（中等～挑战）</h2>
+  <div class="plist r">
+    <div class="pitem">
+      <div class="pnum amc">6</div>
+      <div class="ptxt">1到100中，能同时被3和4整除的整数有多少个？</div>
+      <div class="opts"><div class="opt">(A) 6</div><div class="opt">(B) 7</div><div class="opt">(C) 8</div><div class="opt">(D) 9</div><div class="opt">(E) 10</div></div>
+    </div>
+    <div class="pitem">
+      <div class="pnum amc">7</div>
+      <div class="ptxt">"MATH"四个字母共有多少种不同排列方式？</div>
+      <div class="opts"><div class="opt">(A) 4</div><div class="opt">(B) 8</div><div class="opt">(C) 12</div><div class="opt">(D) 24</div><div class="opt">(E) 48</div></div>
+    </div>
+    <div class="pitem">
+      <div class="pnum amc">8</div>
+      <div class="ptxt">一个班30人，2/5是女生。再来3个男生后，男生占全班比例是？</div>
+      <div class="opts"><div class="opt">(A) 3/5</div><div class="opt">(B) 21/33</div><div class="opt">(C) 7/11</div><div class="opt">(D) 11/15</div><div class="opt">(E) 19/30</div></div>
+    </div>
+    <div class="pitem">
+      <div class="pnum amc">9</div>
+      <div class="ptxt">5×5方格中，从左上角到右下角只能向右或向下，共有多少种路径？</div>
+      <div class="opts"><div class="opt">(A) 35</div><div class="opt">(B) 56</div><div class="opt">(C) 70</div><div class="opt">(D) 84</div><div class="opt">(E) 126</div></div>
+    </div>
+    <div class="pitem">
+      <div class="pnum amc">10</div>
+      <div class="ptxt">两个正整数之积为36，之和最小是多少？（需整数解）</div>
+      <div class="opts"><div class="opt">(A) 10</div><div class="opt">(B) 12</div><div class="opt">(C) 13</div><div class="opt">(D) 15</div><div class="opt">(E) 20</div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== SLIDE 8: AMC8 答案解析 ===== -->
+<section class="slide">
+<div class="sc">
+  <div class="label amc r">答案与解析</div>
+  <h2 class="stitle r">对答案 + 思路拆解</h2>
+  <div class="agrid r">
+    <div class="acell"><div class="qn">Q1</div><div class="qa amc">B</div></div>
+    <div class="acell"><div class="qn">Q2</div><div class="qa amc">C</div></div>
+    <div class="acell"><div class="qn">Q3</div><div class="qa amc">C</div></div>
+    <div class="acell"><div class="qn">Q4</div><div class="qa amc">B</div></div>
+    <div class="acell"><div class="qn">Q5</div><div class="qa amc">A</div></div>
+    <div class="acell"><div class="qn">Q6</div><div class="qa amc">C</div></div>
+    <div class="acell"><div class="qn">Q7</div><div class="qa amc">D</div></div>
+    <div class="acell"><div class="qn">Q8</div><div class="qa amc">C</div></div>
+    <div class="acell"><div class="qn">Q9</div><div class="qa amc">C</div></div>
+    <div class="acell"><div class="qn">Q10</div><div class="qa amc">C</div></div>
+  </div>
+  <div class="slist r">
+    <div class="sitem"><span class="sbadge amc">Q1 B</span><span>不红=9颗，9/12=<strong>3/4</strong></span></div>
+    <div class="sitem"><span class="sbadge amc">Q2 C</span><span>设宽=w，2(3w)=24→w=4；面积=4×8=<strong>32</strong></span></div>
+    <div class="sitem"><span class="sbadge amc">Q3 C</span><span>3x=15→x=5；6(5)+1=<strong>31</strong></span></div>
+    <div class="sitem"><span class="sbadge amc">Q4 B</span><span>1-1/4-1/3=12/12-3/12-4/12=<strong>5/12</strong></span></div>
+    <div class="sitem"><span class="sbadge amc">Q5 A</span><span>距离=120km；去程2h返程1h，总3h；240÷3=<strong>80</strong>km/h（调和平均！）</span></div>
+    <div class="sitem"><span class="sbadge amc">Q6 C</span><span>同被3和4整除=被12整除；100÷12=8余4，共<strong>8</strong>个</span></div>
+    <div class="sitem"><span class="sbadge amc">Q7 D</span><span>4个不同字母全排列=4!=4×3×2×1=<strong>24</strong></span></div>
+    <div class="sitem"><span class="sbadge amc">Q8 C</span><span>原男生18人+3=21，总人数33；21/33=<strong>7/11</strong></span></div>
+    <div class="sitem"><span class="sbadge amc">Q9 C</span><span>需走4右+4下共8步，C(8,4)=8!/(4!4!)=<strong>70</strong>种</span></div>
+    <div class="sitem"><span class="sbadge amc">Q10 C</span><span>枚举：(1,36)→37，(2,18)→20，(3,12)→15，(4,9)→13，(6,6)→12；最小=<strong>12</strong></span></div>
+  </div>
+</div>
+</section>
+
+<!-- ===== SLIDE 9: AMC8 备考路径 ===== -->
+<section class="slide">
+<div class="sc">
+  <div class="label amc r">备考路径</div>
+  <h2 class="stitle r">如何系统备考 AMC 8？</h2>
+  <div class="steps r">
+    <div class="step">
+      <div class="stepn amc">1</div>
+      <div><div class="stept">摸底测试（1-2周）</div><div class="stepd">下载近5年真题做一套，严格计时40分钟。看错在哪个区间（1-10 / 11-20 / 21-25）</div></div>
+    </div>
+    <div class="step">
+      <div class="stepn amc">2</div>
+      <div><div class="stept">知识系统化（2-4个月）</div><div class="stepd">数论（整除/余数）、几何（面积/坐标）、组合（排列/概率）各专项学习。推荐《Art of Problem Solving》系列</div></div>
+    </div>
+    <div class="step">
+      <div class="stepn amc">3</div>
+      <div><div class="stept">刷题专练（持续）</div><div class="stepd">AoPS官网有全部历年真题，按题型分类。每周做2-3套，错题整理归类</div></div>
+    </div>
+    <div class="step">
+      <div class="stepn amc">4</div>
+      <div><div class="stept">模拟考试（考前2个月）</div><div class="stepd">严格40分钟完整套卷，模拟考场状态。目标：前20题正确率≥85%</div></div>
+    </div>
+    <div class="step">
+      <div class="stepn amc">5</div>
+      <div><div class="stept">复盘优化（每次之后）</div><div class="stepd">每道错题找根本原因：知识点缺失 or 粗心计算？针对性补强，切勿跳过</div></div>
+    </div>
+  </div>
+  <div class="card amc r" style="padding:.65rem 1rem;">
+    <p style="color:var(--amc);font-size:clamp(.76rem,1.08vw,.86rem);">📚 资源：AoPS官网真题库（artofproblemsolving.com）· 翰林/龙腾AMC培训班 · Youtube "AMC 8 Prep" · 《竞赛数学》系列教材</p>
+  </div>
+</div>
+</section>
+
+<!-- ===== SLIDE 10: AMC8 × 柚柚 ===== -->
+<section class="slide" style="background:linear-gradient(135deg,#EFF6FF 0%,#FDFAF5 100%);">
+<div class="sc">
+  <div class="label amc r">柚柚 × AMC 8</div>
+  <h2 class="stitle r">AMC 8 适合柚柚吗？</h2>
+  <div class="verdict amc r">
+    <div class="vhead">
+      <span class="vemoji">🍊</span>
+      <div><div class="vtitle amc">推荐尝试 ✨ 内向型孩子的理想竞赛</div><div style="font-size:.82rem;color:var(--muted);">综合匹配度：⭐⭐⭐⭐ · 前提：数学兴趣和逻辑思维基础</div></div>
+    </div>
+    <div class="vreason amc"><strong>文静内秀</strong>→ AMC8是纯书面选择题，不需要语言表达，不当众发言，完全靠思维独立作答</div>
+    <div class="vreason amc"><strong>错不扣分</strong>→ 心理压力小，允许犹豫，鼓励有把握再作答，非常适合谨慎型学习者</div>
+    <div class="vreason amc"><strong>爱观察</strong>→ AMC8题目常有"找规律"场景，观察力强的孩子往往能快速发现解题切入点</div>
+    <div class="vreason amc"><strong>独立完成</strong>→ 40分钟安静专注，内向孩子的深度专注力往往比外向孩子更稳定</div>
+    <div class="vreason amc"><strong>成就感阶梯</strong>→ 目标可分级：先做对前10题→15题→20题，不用一开始追求高分</div>
+    <div class="vcaution amber">⚠️ 关键前提：需评估柚柚对数学的兴趣和天赋。建议无压力做一套真题摸底，如果做得投入、不排斥，就非常值得备考。</div>
+  </div>
+</div>
+</section>
+
+<!-- ===== SLIDE 11: TOEFL DIVIDER ===== -->
+<section class="slide divider-slide" style="background:#FFFBEB;">
+<div class="div-box toefl r">
+  <div class="div-part">Part 2 · 英语测评</div>
+  <div class="div-num">小托福</div>
+  <div class="div-title">TOEFL Primary</div>
+  <div class="div-sub">Educational Testing Service (ETS) · 适合8岁以上青少年</div>
+</div>
+</section>
+
+<!-- ===== SLIDE 12: 小托福基本介绍 ===== -->
+<section class="slide">
+<div class="sc">
+  <div class="label toefl r">小托福基本信息</div>
+  <h2 class="stitle r">小托福是什么？</h2>
+  <div class="grid4 r">
+    <div class="card icard">
+      <div class="ico">🏢</div><div class="ilabel">主办机构</div>
+      <div class="ival">ETS</div>
+      <div class="idesc">全球最大教育测评机构，托福GRE同一家</div>
+    </div>
+    <div class="card icard toefl">
+      <div class="ico">📊</div><div class="ilabel">考试等级</div>
+      <div class="ival">Step 1 / Step 2</div>
+      <div class="idesc">两个难度等级，按英语基础选择</div>
+    </div>
+    <div class="card icard">
+      <div class="ico">📝</div><div class="ilabel">考试内容</div>
+      <div class="ival">阅读 + 听力</div>
+      <div class="idesc">各36题各30分钟，纸笔or数字，共约60-70分钟</div>
+    </div>
+    <div class="card icard">
+      <div class="ico">🎯</div><div class="ilabel">适合人群</div>
+      <div class="ival">8岁以上学生</div>
+      <div class="idesc">有基础英语沟通能力的青少年</div>
+    </div>
+  </div>
+  <div class="grid2 r">
+    <div class="card icard">
+      <div class="ico">📅</div><div class="ilabel">考试频次</div>
+      <div class="ival">全年多次，按考点排期</div>
+      <div class="idesc">中国各大城市均有ETS认证考点，报名灵活</div>
+    </div>
+    <div class="card icard">
+      <div class="ico">🏆</div><div class="ilabel">证书价值</div>
+      <div class="ival">ETS官方证书 + 成绩单</div>
+      <div class="idesc">国际学校入学参考、海外营地申请、英语能力证明</div>
+    </div>
+  </div>
+  <div class="card toefl r" style="padding:.65rem 1rem;">
+    <p style="color:var(--toefl);font-size:clamp(.76rem,1.08vw,.86rem);">💡 <strong>体系：</strong>TOEFL Primary（8-11岁）→ TOEFL Junior（11-17岁）→ TOEFL（成人），是英语能力的成长路径</p>
+  </div>
+</div>
+</section>
+
+<!-- ===== SLIDE 13: Step1 vs Step2 ===== -->
+<section class="slide">
+<div class="sc">
+  <div class="label toefl r">等级选择</div>
+  <h2 class="stitle r">Step 1 vs Step 2：选哪个？</h2>
+  <div class="r" style="overflow:auto;">
+    <table class="ctable">
+      <thead>
+        <tr>
+          <th>对比项目</th>
+          <th class="ac" style="background:var(--amc-light);">Step 1</th>
+          <th class="tc" style="background:var(--toefl-light);">Step 2</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>适合年龄</td><td>8-11岁（约小学3-5年级）</td><td>10-13岁（约小学5年级-初一）</td></tr>
+        <tr><td>词汇量要求</td><td>约1000词</td><td>约1500词</td></tr>
+        <tr><td>阅读内容</td><td>日常生活、简单故事、课堂场景</td><td>超出日常的简单故事、学校学术场景</td></tr>
+        <tr><td>听力内容</td><td>简短对话、教室指令、公共广播</td><td>略长对话、学校生活、叙事性内容</td></tr>
+        <tr><td>对应CEFR</td><td>Pre-A1 ~ A1（初学者到入门）</td><td>A1 ~ B1（入门到中级）</td></tr>
+        <tr><td>分数量尺</td><td>阅读101-140，听力101-140</td><td>阅读101-151，听力101-151</td></tr>
+        <tr><td>题目数量</td><td>阅读36题 + 听力36题</td><td>阅读36题 + 听力36题</td></tr>
+        <tr><td>题目时间</td><td>各30分钟</td><td>各30分钟</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="grid2 r">
+    <div class="card" style="background:var(--amc-light);border-color:var(--amc);">
+      <p style="font-size:clamp(.76rem,1.1vw,.86rem);color:var(--amc);">📌 <strong>选Step 1 if：</strong>刚开始学英语2-3年，词汇量500-1000，能看懂简单绘本</p>
+    </div>
+    <div class="card toefl">
+      <p style="font-size:clamp(.76rem,1.1vw,.86rem);color:var(--toefl);">📌 <strong>选Step 2 if：</strong>英语学习3年以上，能阅读简单英文章节书，词汇量1000+</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== SLIDE 14: 考试结构 & 分数体系 ===== -->
+<section class="slide">
+<div class="sc">
+  <div class="label toefl r">考试结构</div>
+  <h2 class="stitle r">考试结构 &amp; 分数体系</h2>
+  <div class="grid2 r">
+    <div class="card">
+      <div style="font-weight:700;font-size:clamp(.9rem,1.4vw,1.05rem);margin-bottom:.5rem;color:var(--toefl);">📖 阅读部分</div>
+      <div style="display:grid;gap:.3rem;font-size:clamp(.77rem,1.1vw,.88rem);color:var(--text2);">
+        <div>• 题目数量：36道选择题</div>
+        <div>• 考试时间：30分钟</div>
+        <div>• 题目类型：图片配文、标识阅读、短文理解、对话读取</div>
+        <div>• Step 1：日常生活场景为主</div>
+        <div>• Step 2：学校学术和故事类文章</div>
+      </div>
+    </div>
+    <div class="card">
+      <div style="font-weight:700;font-size:clamp(.9rem,1.4vw,1.05rem);margin-bottom:.5rem;color:var(--toefl);">🎧 听力部分</div>
+      <div style="display:grid;gap:.3rem;font-size:clamp(.77rem,1.1vw,.88rem);color:var(--text2);">
+        <div>• 题目数量：36道选择题</div>
+        <div>• 考试时间：30分钟</div>
+        <div>• 题目类型：图片选择、短对话理解、广播/通知</div>
+        <div>• Step 1：简短指令和简单对话</div>
+        <div>• Step 2：较长对话和叙事内容</div>
+      </div>
+    </div>
+  </div>
+  <div class="card r">
+    <div style="font-weight:700;font-size:clamp(.88rem,1.3vw,1rem);margin-bottom:.5rem;">📊 分数体系与CEFR对照</div>
+    <div class="r" style="overflow:auto;">
+      <table class="ctable" style="font-size:clamp(.7rem,.98vw,.82rem);">
+        <thead><tr><th>CEFR等级</th><th>描述</th><th>Step 1分数</th><th>Step 2分数</th></tr></thead>
+        <tbody>
+          <tr><td>Pre-A1</td><td>完全初学者</td><td class="tc">101-118</td><td>—</td></tr>
+          <tr><td>A1</td><td>能理解简单英语指令</td><td class="tc">119-135</td><td class="tc">101-130</td></tr>
+          <tr><td>A2</td><td>能理解日常简单对话</td><td class="tc">136-140</td><td class="tc">131-143</td></tr>
+          <tr><td>B1</td><td>能在熟悉话题交流</td><td>—</td><td class="tc">144-151</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card toefl r" style="padding:.6rem 1rem;">
+    <p style="color:var(--toefl);font-size:clamp(.74rem,1.05vw,.84rem);">💡 <strong>证书：</strong>ETS官方纸质证书+数字成绩单，报告阅读+听力各维度得分，真实反映学生英语能力</p>
+  </div>
+</div>
+</section>
+
+<!-- ===== SLIDE 15: 阅读样题 ===== -->
+<section class="slide">
+<div class="sc">
+  <div class="label toefl r">阅读样题（Step 1）</div>
+  <h2 class="stitle r">试试看：阅读5题</h2>
+  <div class="plist r">
+    <div class="pitem">
+      <div class="pnum toefl">R1</div>
+      <div class="ptxt">【标识阅读】门上写着："LIBRARY — No talking, no food or drinks." 在图书馆里你<strong>可以</strong>做什么？</div>
+      <div class="opts"><div class="opt">(A) Talk</div><div class="opt">(B) Read books</div><div class="opt">(C) Eat snacks</div><div class="opt">(D) Drink water</div></div>
+    </div>
+    <div class="pitem">
+      <div class="pnum toefl">R2</div>
+      <div class="ptxt">【短文】"Emma has a dog named Spot. She walks him every morning before school. Spot loves running in the park."<br>When does Emma walk her dog?</div>
+      <div class="opts"><div class="opt">(A) After school</div><div class="opt">(B) Every evening</div><div class="opt">(C) Every morning</div><div class="opt">(D) On weekends</div></div>
+    </div>
+    <div class="pitem">
+      <div class="pnum toefl">R3</div>
+      <div class="ptxt">【填空】"Please _____ your hands before eating lunch."</div>
+      <div class="opts"><div class="opt">(A) wash</div><div class="opt">(B) shake</div><div class="opt">(C) paint</div><div class="opt">(D) tie</div></div>
+    </div>
+    <div class="pitem">
+      <div class="pnum toefl">R4</div>
+      <div class="ptxt">【短文理解】"It was raining outside. Tom couldn't go to the park. He stayed home and read a book instead."<br>Why did Tom stay home?</div>
+      <div class="opts"><div class="opt">(A) He was sick</div><div class="opt">(B) He wanted to read</div><div class="opt">(C) It was raining</div><div class="opt">(D) Park was closed</div></div>
+    </div>
+    <div class="pitem">
+      <div class="pnum toefl">R5</div>
+      <div class="ptxt">【时间表】课程表显示：Monday: Math, Art / Tuesday: Science, PE / Wednesday: Math, Music.<br>On which day do students have PE?</div>
+      <div class="opts"><div class="opt">(A) Monday</div><div class="opt">(B) Tuesday</div><div class="opt">(C) Wednesday</div><div class="opt">(D) Thursday</div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== SLIDE 16: 听力样题 ===== -->
+<section class="slide">
+<div class="sc">
+  <div class="label toefl r">听力样题（Step 1）</div>
+  <h2 class="stitle r">试试看：听力5题（以文字描述听力内容）</h2>
+  <div class="plist r">
+    <div class="pitem">
+      <div class="pnum toefl">L1</div>
+      <div class="ptxt">【听到】🔊 <em>"Good morning, class. Please take out your homework. We will review it before starting today's lesson."</em><br>What will the teacher do first?</div>
+      <div class="opts"><div class="opt">(A) Give homework</div><div class="opt">(B) Start new lesson</div><div class="opt">(C) Review homework</div><div class="opt">(D) Take attendance</div></div>
+    </div>
+    <div class="pitem">
+      <div class="pnum toefl">L2</div>
+      <div class="ptxt">【听到】🔊 <em>"Tomorrow will be cloudy with a chance of rain in the afternoon. Bring an umbrella just in case."</em><br>What might happen tomorrow afternoon?</div>
+      <div class="opts"><div class="opt">(A) Sunny day</div><div class="opt">(B) It might rain</div><div class="opt">(C) Very cold</div><div class="opt">(D) It will snow</div></div>
+    </div>
+    <div class="pitem">
+      <div class="pnum toefl">L3</div>
+      <div class="ptxt">【听到对话】🔊 <em>"Mom: Your piano lesson is at 4 today. / Child: I thought it was Thursday? / Mom: No, it moved to Wednesday this week."</em><br>When is the piano lesson this week?</div>
+      <div class="opts"><div class="opt">(A) Thursday</div><div class="opt">(B) Friday</div><div class="opt">(C) Wednesday</div><div class="opt">(D) Tuesday</div></div>
+    </div>
+    <div class="pitem">
+      <div class="pnum toefl">L4</div>
+      <div class="ptxt">【听到广播】🔊 <em>"Attention students: the school library is open during lunch. You can borrow books or use the computers."</em><br>What can students do at the library during lunch?</div>
+      <div class="opts"><div class="opt">(A) Eat lunch</div><div class="opt">(B) Watch movies</div><div class="opt">(C) Borrow books</div><div class="opt">(D) Play games</div></div>
+    </div>
+    <div class="pitem">
+      <div class="pnum toefl">L5</div>
+      <div class="ptxt">【听到对话】🔊 <em>"Sarah: Do you want to go to the park this weekend? It should be sunny. / Mike: Sure! Saturday works for me."</em><br>When are they going to the park?</div>
+      <div class="opts"><div class="opt">(A) Today</div><div class="opt">(B) Tomorrow</div><div class="opt">(C) Saturday</div><div class="opt">(D) Sunday</div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== SLIDE 17: 小托福答案解析 ===== -->
+<section class="slide">
+<div class="sc">
+  <div class="label toefl r">答案与解析</div>
+  <h2 class="stitle r">对答案 + 解题思路</h2>
+  <div class="agrid r">
+    <div class="acell"><div class="qn">R1</div><div class="qa toefl">B</div></div>
+    <div class="acell"><div class="qn">R2</div><div class="qa toefl">C</div></div>
+    <div class="acell"><div class="qn">R3</div><div class="qa toefl">A</div></div>
+    <div class="acell"><div class="qn">R4</div><div class="qa toefl">C</div></div>
+    <div class="acell"><div class="qn">R5</div><div class="qa toefl">B</div></div>
+    <div class="acell"><div class="qn">L1</div><div class="qa toefl">C</div></div>
+    <div class="acell"><div class="qn">L2</div><div class="qa toefl">B</div></div>
+    <div class="acell"><div class="qn">L3</div><div class="qa toefl">C</div></div>
+    <div class="acell"><div class="qn">L4</div><div class="qa toefl">C</div></div>
+    <div class="acell"><div class="qn">L5</div><div class="qa toefl">C</div></div>
+  </div>
+  <div class="slist r">
+    <div class="sitem"><span class="sbadge toefl">R1 B</span><span>标识说"不能说话、不能吃喝"，但没说不能Read books → <strong>B</strong></span></div>
+    <div class="sitem"><span class="sbadge toefl">R2 C</span><span>原文 "every morning before school" → <strong>C Every morning</strong></span></div>
+    <div class="sitem"><span class="sbadge toefl">R3 A</span><span>饭前洗手是日常常识，wash hands → <strong>A wash</strong></span></div>
+    <div class="sitem"><span class="sbadge toefl">R4 C</span><span>原文 "It was raining outside" 是Tom留在家里的原因 → <strong>C</strong></span></div>
+    <div class="sitem"><span class="sbadge toefl">R5 B</span><span>课程表：Tuesday有PE → <strong>B Tuesday</strong></span></div>
+    <div class="sitem"><span class="sbadge toefl">L1 C</span><span>"We will review it before starting..." → 先复习作业 → <strong>C Review homework</strong></span></div>
+    <div class="sitem"><span class="sbadge toefl">L2 B</span><span>"chance of rain" = 可能下雨 → <strong>B It might rain</strong></span></div>
+    <div class="sitem"><span class="sbadge toefl">L3 C</span><span>妈妈说 "moved to Wednesday this week" → <strong>C Wednesday</strong></span></div>
+    <div class="sitem"><span class="sbadge toefl">L4 C</span><span>"borrow books or use the computers" → 可以借书 → <strong>C Borrow books</strong></span></div>
+    <div class="sitem"><span class="sbadge toefl">L5 C</span><span>Mike说 "Saturday works" → <strong>C Saturday</strong></span></div>
+  </div>
+</div>
+</section>
+
+<!-- ===== SLIDE 18: 小托福 × 柚柚 ===== -->
+<section class="slide" style="background:linear-gradient(135deg,#FFFBEB 0%,#FDFAF5 100%);">
+<div class="sc">
+  <div class="label toefl r">柚柚 × 小托福</div>
+  <h2 class="stitle r">小托福适合柚柚吗？</h2>
+  <div class="verdict toefl r">
+    <div class="vhead">
+      <span class="vemoji">📚</span>
+      <div><div class="vtitle toefl">条件成熟则推荐 · 英语基础是关键变量</div><div style="font-size:.82rem;color:var(--muted);">综合匹配度：⭐⭐⭐ ~ ⭐⭐⭐⭐（取决于英语学习环境）</div></div>
+    </div>
+    <div class="vreason toefl"><strong>文静爱观察</strong>→ 阅读理解恰好考"理解力+注意细节"，这正是内秀孩子的优势区域</div>
+    <div class="vreason toefl"><strong>独立思考型</strong>→ 小托福是书面测试，不需要口头表达，没有社交压力，适合安静作答</div>
+    <div class="vreason toefl"><strong>阅读题型</strong>→ Step 1阅读以图片+简短文字为主，认识图形和场景，观察力强很加分</div>
+    <div class="vreason toefl"><strong>证书价值</strong>→ ETS官方背书，国际学校和海外营地认可，是英语能力的客观证明</div>
+    <div class="vreason toefl"><strong>进阶路径清晰</strong>→ Step1→Step2→TOEFL Junior，每2-3年上一个台阶，长期规划价值高</div>
+    <div class="vcaution teal">✅ 核心问题：柚柚的英语学习环境和年限？若每周英语学习时间≥3小时、已学习2年以上，建议先测Step 1。关键是要有持续输入（绘本/动画/课外读物），不能只靠备考冲刺。</div>
+  </div>
+</div>
+</section>
+
+<!-- ===== SLIDE 19: 备考资源 ===== -->
+<section class="slide">
+<div class="sc">
+  <div class="label toefl r">备考资源</div>
+  <h2 class="stitle r">小托福备考怎么准备？</h2>
+  <div class="steps r">
+    <div class="step">
+      <div class="stepn toefl">1</div>
+      <div><div class="stept">确定等级（先免费摸底）</div><div class="stepd">ETS官网下载Step 1 / Step 2免费样卷（PDF），做一遍看正确率。Step 1建议准确率≥60%才报考Step 2</div></div>
+    </div>
+    <div class="step">
+      <div class="stepn toefl">2</div>
+      <div><div class="stept">词汇积累（贯穿全程）</div><div class="stepd">Step 1需约1000词，Step 2需约1500词。推荐工具：Anki词卡+Oxford Primary词表；每天10-15个新词</div></div>
+    </div>
+    <div class="step">
+      <div class="stepn toefl">3</div>
+      <div><div class="stept">阅读输入（每天15-20分钟）</div><div class="stepd">Level适合的英文绘本/章节书（Elephant &amp; Piggie, Magic Tree House等），大量输入比专项练题更重要</div></div>
+    </div>
+    <div class="step">
+      <div class="stepn toefl">4</div>
+      <div><div class="stept">听力输入（同步进行）</div><div class="stepd">英文动画（Peppa Pig, Daniel Tiger适合Step 1）、有声书跟读、每天20-30分钟持续接触</div></div>
+    </div>
+    <div class="step">
+      <div class="stepn toefl">5</div>
+      <div><div class="stept">模拟练习（考前1个月）</div><div class="stepd">ETS官方练习册：《TOEFL Primary Practice Tests Step 1/2》，严格计时，熟悉题型和节奏</div></div>
+    </div>
+  </div>
+  <div class="card toefl r" style="padding:.65rem 1rem;">
+    <p style="color:var(--toefl);font-size:clamp(.74rem,1.05vw,.84rem);">📚 资源：ETS官网样题(ets.org/toefl/primary)· 新东方/朗阁小托福课程 · Amazon购《TOEFL Primary Practice Tests》· 英语绘本APP: ReadingEgg</p>
+  </div>
+</div>
+</section>
+
+<!-- ===== SLIDE 20: 总结与建议 ===== -->
+<section class="slide" style="background:linear-gradient(135deg,#ECFDF5 0%,#F0F4FF 100%);">
+<div class="sc">
+  <div class="label sum r">总结 · 给Wayne的建议</div>
+  <h2 class="stitle r">AMC8 &amp; 小托福：对比 + 行动建议</h2>
+  <div class="r" style="overflow:auto;">
+    <table class="ctable">
+      <thead>
+        <tr><th>对比维度</th><th class="ac">AMC 8</th><th class="tc">小托福</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>核心能力</td><td>逻辑推理 / 数学思维</td><td>英语阅读理解 / 听力</td></tr>
+        <tr><td>适合柚柚气质</td><td class="ac">✅✅ 内向安静型完全匹配</td><td class="tc">✅ 阅读优势明显，听力需积累</td></tr>
+        <tr><td>准备周期</td><td>3-6个月系统备考</td><td>长期输入+1-3个月冲刺</td></tr>
+        <tr><td>考试压力</td><td>低（错不扣分）</td><td>低（无口语，全选择）</td></tr>
+        <tr><td>关键前提</td><td>数学兴趣 + 逻辑天赋</td><td>英语学习年限 + 持续输入</td></tr>
+        <tr><td>证书认可</td><td>数学竞赛体系</td><td>国际英语能力认证</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="grid2 r">
+    <div class="card green">
+      <div style="font-weight:700;color:var(--green);font-size:clamp(.88rem,1.3vw,1rem);margin-bottom:.4rem;">🎯 建议优先顺序</div>
+      <div class="steps" style="gap:.35rem;">
+        <div class="step">
+          <div class="stepn sum" style="width:28px;height:28px;font-size:.78rem;">1</div>
+          <div><div class="stept" style="font-size:clamp(.78rem,1.1vw,.9rem);">先做AMC8摸底</div><div class="stepd">下载一套真题，无压力做20道，看柚柚是否投入、是否排斥</div></div>
+        </div>
+        <div class="step">
+          <div class="stepn sum" style="width:28px;height:28px;font-size:.78rem;">2</div>
+          <div><div class="stept" style="font-size:clamp(.78rem,1.1vw,.9rem);">评估英语基础</div><div class="stepd">给柚柚做ETS免费Step 1样卷，看正确率判断是否适合近期参加</div></div>
+        </div>
+        <div class="step">
+          <div class="stepn sum" style="width:28px;height:28px;font-size:.78rem;">3</div>
+          <div><div class="stept" style="font-size:clamp(.78rem,1.1vw,.9rem);">按兴趣决策</div><div class="stepd">若两个都投入，可并行（AMC8系统备考 + 小托福日常积累），不必二选一</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div style="font-weight:700;color:var(--text);font-size:clamp(.88rem,1.3vw,1rem);margin-bottom:.4rem;">💬 Wayne请注意</div>
+      <div style="display:grid;gap:.35rem;font-size:clamp(.75rem,1.08vw,.86rem);color:var(--text2);">
+        <div>📌 <strong>事实：</strong>柚柚文静内秀的气质，天然适合书面测评类竞赛</div>
+        <div>📌 <strong>观点：</strong>AMC8比小托福更"纯粹"——考的是天赋×努力，环境影响小</div>
+        <div>📌 <strong>观点：</strong>小托福更依赖长期英语环境，家庭英语氛围是最大变量</div>
+        <div>📌 <strong>建议：</strong>先观察，不要强推。让柚柚对题目感到好奇才是最好的开始</div>
+        <div>📌 <strong>时间线：</strong>AMC8每年1月，建议提前6个月开始；小托福全年可报，随时启动</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<script>
+/* === 演示控制器 === */
+class SlidePresentation {
+  constructor() {
+    this.slides = [...document.querySelectorAll(".slide")];
+    this.current = 0;
+    this.setupObserver();
+    this.setupKeyboard();
+    this.setupTouch();
+    this.setupWheel();
+    this.setupProgress();
+    this.setupDots();
+  }
+  setupObserver() {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add("vis");
+          const i = this.slides.indexOf(e.target);
+          if (i >= 0) { this.current = i; this.updateProgress(); this.updateDots(); }
+        }
+      });
+    }, { threshold: 0.55 });
+    this.slides.forEach(s => obs.observe(s));
+  }
+  go(i) {
+    const n = Math.max(0, Math.min(i, this.slides.length - 1));
+    this.current = n;
+    this.slides[n].scrollIntoView({ behavior: "smooth", block: "start" });
+    this.updateProgress(); this.updateDots();
+  }
+  setupKeyboard() {
+    document.addEventListener("keydown", e => {
+      if (["ArrowDown","PageDown"," ","ArrowRight"].includes(e.key)) { e.preventDefault(); this.go(this.current + 1); }
+      if (["ArrowUp","PageUp","ArrowLeft"].includes(e.key)) { e.preventDefault(); this.go(this.current - 1); }
+    });
+  }
+  setupTouch() {
+    let sy = 0;
+    document.addEventListener("touchstart", e => { sy = e.touches[0].clientY; }, { passive: true });
+    document.addEventListener("touchend", e => {
+      const d = sy - e.changedTouches[0].clientY;
+      if (Math.abs(d) < 40) return;
+      if (d > 0) this.go(this.current + 1); else this.go(this.current - 1);
+    }, { passive: true });
+  }
+  setupWheel() {
+    let lock = false;
+    document.addEventListener("wheel", e => {
+      if (lock) return; lock = true;
+      if (e.deltaY > 0) this.go(this.current + 1); else this.go(this.current - 1);
+      setTimeout(() => { lock = false; }, 420);
+    }, { passive: true });
+  }
+  setupProgress() {
+    this.bar = document.querySelector(".progress");
+    this.updateProgress();
+  }
+  setupDots() {
+    const nav = document.querySelector(".dots");
+    nav.innerHTML = "";
+    this.slides.forEach((_, i) => {
+      const b = document.createElement("button");
+      b.setAttribute("aria-label", `第 ${i+1} 页`);
+      b.addEventListener("click", () => this.go(i));
+      nav.appendChild(b);
+    });
+    this.updateDots();
+  }
+  updateProgress() {
+    if (!this.bar) return;
+    const r = this.slides.length <= 1 ? 1 : this.current / (this.slides.length - 1);
+    this.bar.style.width = `${Math.round(r * 100)}%`;
+  }
+  updateDots() {
+    document.querySelectorAll(".dots button").forEach((d, i) => d.classList.toggle("active", i === this.current));
+  }
+}
+new SlidePresentation();
+</script>
+<script defer="" src="./柚柚学习路径指南 — AMC8 &amp; 小托福_files/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;73a749ca3ace4b2abd6813f039000869&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+<div id="wwei-auth-widget" style="position: fixed; top: 16px; right: 16px; z-index: 2147483647;"><template shadowrootmode="open"><style>
+      :host { all: initial; }
+      * { box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif; }
+      .wrap { position: relative; }
+      .avatar {
+        width: 36px; height: 36px; border-radius: 50%; padding: 0; cursor: pointer; position: relative;
+        border: 2px solid rgba(255,255,255,0.15); background: #111214; color: #f0f0f2;
+        display: flex; align-items: center; justify-content: center; overflow: hidden;
+        transition: all .2s; box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      }
+      .avatar:hover { transform: scale(1.05); border-color: rgba(255,255,255,0.3); }
+      .avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+      .avatar .fallback { font-weight: 600; font-size: 14px; }
+      .avatar.loading { animation: pulse 1.4s infinite; cursor: default; }
+      @keyframes pulse { 0%,100% { opacity: 0.5; } 50% { opacity: 0.9; } }
+      .dot {
+        position: absolute; bottom: -2px; right: -2px; width: 12px; height: 12px;
+        border-radius: 50%; border: 2px solid #111214;
+      }
+      .login-btn {
+        display: inline-block; padding: 7px 16px; border-radius: 100px;
+        background: rgba(110, 231, 183, 0.95); color: #08090a; font-size: 13px; font-weight: 500;
+        text-decoration: none; transition: all .2s; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        border: 1px solid rgba(110, 231, 183, 0.3);
+      }
+      .login-btn:hover { background: #6ee7b7; transform: translateY(-1px); }
+      .dropdown {
+        position: absolute; top: 44px; right: 0; min-width: 260px;
+        background: #111214; border: 1px solid #1e2024; border-radius: 12px;
+        padding: 16px; opacity: 0; transform: translateY(-6px) scale(0.96);
+        pointer-events: none; transition: all .18s cubic-bezier(.4,0,.2,1);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.4); color: #f0f0f2;
+      }
+      .dropdown.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+      .dropdown-head { display: flex; gap: 12px; align-items: center; }
+      .dropdown-avatar { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; flex-shrink: 0; background: #1e2024; display: flex; align-items: center; justify-content: center; }
+      .dropdown-avatar img { width: 100%; height: 100%; object-fit: cover; }
+      .dropdown-info { flex: 1; min-width: 0; }
+      .dropdown-name { font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .dropdown-email { font-size: 11px; color: #a0a3ab; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .dropdown-level {
+        display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px;
+        font-size: 10px; font-weight: 600; letter-spacing: 0.05em;
+        border: 1px solid;
+      }
+      .dropdown-divider { height: 1px; background: #1e2024; margin: 14px 0; }
+      .dropdown-item {
+        display: block; padding: 8px 12px; font-size: 13px; color: #f0f0f2;
+        text-decoration: none; border-radius: 6px; transition: background .15s;
+      }
+      .dropdown-item:hover { background: #1e2024; }
+    </style>
+        <div class="wrap">
+          <button class="avatar" id="avatar" aria-label="user menu" title="yiyixiao920@gmail.com · ADMIN">
+            <img src="https://lh3.googleusercontent.com/a/ACg8ocKu-yjD3iu0mgzG7jWbJHAxSpl7HBx0GqADxeh6y8jMFDEhpA=s96-c" referrerpolicy="no-referrer" alt="">
+            <span class="dot" style="background:#f87171" title="ADMIN"></span>
+          </button>
+          <div class="dropdown" id="dropdown">
+            <div class="dropdown-head">
+              <div class="dropdown-avatar"><img src="https://lh3.googleusercontent.com/a/ACg8ocKu-yjD3iu0mgzG7jWbJHAxSpl7HBx0GqADxeh6y8jMFDEhpA=s96-c" referrerpolicy="no-referrer" alt=""></div>
+              <div class="dropdown-info">
+                <div class="dropdown-name">姚伊笑</div>
+                <div class="dropdown-email">yiyixiao920@gmail.com</div>
+                <div class="dropdown-level" style="color:#f87171;border-color:#f8717140">ADMIN</div>
+              </div>
+            </div>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="https://admin.wwei.ai/">管理后台 →</a>
+            <a class="dropdown-item" href="https://auth.wwei.ai/logout?next=https%3A%2F%2Fyoyo-study.wwei.ai%2F">退出登录</a>
+          </div>
+        </div>
+      </template></div><div id="cubox-react-root"><template shadowrootmode="open"><link rel="stylesheet" href="chrome-extension://bflmgpechpeohjfomgfdkkfcbhfcjohl/css/content.css"><div><div style="z-index: 2147483647;"></div></div></template></div><a id="colorPickerDivHidden"><img src="chrome-extension://njolgcnddhepjpplfifbmagdgkidikpj/logo.png" data-cubox-image-id="ae8686952839c0b69466b05216a82003" data-cubox-image-index="0" data-cubox-image-load="false"></a></body><plasmo-csui id="aitdk-csui"><template shadowrootmode="open"><style>*,:before,:after{box-sizing:border-box;border:0 solid #e5e7eb}:before,:after{--tw-content:""}html{-webkit-text-size-adjust:100%;tab-size:4;font-feature-settings:normal;font-variation-settings:normal;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}body{line-height:inherit;margin:0}hr{color:inherit;border-top-width:1px;height:0}abbr:where([title]){text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em}small{font-size:80%}sub,sup{vertical-align:baseline;font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-feature-settings:inherit;font-variation-settings:inherit;font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,[type=button],[type=reset],[type=submit]{-webkit-appearance:button;background-color:#0000;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button{height:auto}::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dl,dd,h1,h2,h3,h4,h5,h6,hr,figure,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}ol,ul,menu{margin:0;padding:0;list-style:none}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}button,[role=button]{cursor:pointer}:disabled{cursor:default}img,svg,video,canvas,audio,iframe,embed,object{vertical-align:middle;display:block}img,video{max-width:100%;height:auto}[hidden]{display:none}:host,:root{--background:0 0% 100%;--foreground:224 71.4% 4.1%;--card:0 0% 100%;--card-foreground:224 71.4% 4.1%;--popover:0 0% 100%;--popover-foreground:224 71.4% 4.1%;--primary:262.1 83.3% 57.8%;--primary-foreground:210 20% 98%;--secondary:220 14.3% 95.9%;--secondary-foreground:220.9 39.3% 11%;--muted:220 14.3% 95.9%;--muted-foreground:220 8.9% 46.1%;--accent:220 14.3% 95.9%;--accent-foreground:220.9 39.3% 11%;--destructive:0 84.2% 60.2%;--destructive-foreground:210 20% 98%;--border:220 13% 91%;--input:220 13% 91%;--ring:262.1 83.3% 57.8%;--radius:4.2px;z-index:2147483647}.dark{--background:224 71.4% 4.1%;--foreground:210 20% 98%;--card:224 71.4% 4.1%;--card-foreground:210 20% 98%;--popover:224 71.4% 4.1%;--popover-foreground:210 20% 98%;--primary:263.4 70% 50.4%;--primary-foreground:210 20% 98%;--secondary:215 27.9% 16.9%;--secondary-foreground:210 20% 98%;--muted:215 27.9% 16.9%;--muted-foreground:217.9 10.6% 64.9%;--accent:215 27.9% 16.9%;--accent-foreground:210 20% 98%;--destructive:0 62.8% 30.6%;--destructive-foreground:210 20% 98%;--border:215 27.9% 16.9%;--input:215 27.9% 16.9%;--ring:263.4 70% 50.4%}*{border-color:hsl(var(--border))}html{font-size:14px}body{background-color:hsl(var(--background));color:hsl(var(--foreground));font-feature-settings:"rlig" 1,"calt" 1;font-size:14px}*,:before,:after,::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:#3b82f680;--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }.container{width:100%;margin-left:auto;margin-right:auto;padding-left:28px;padding-right:28px}@media (width>=1400px){.container{max-width:1400px}}.visible{visibility:visible}.invisible{visibility:hidden}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.bottom-0{bottom:0}.left-1\/2{left:50%}.right-0{right:0}.right-2{right:7px}.top-0{top:0}.top-1\/2{top:50%}.top-2{top:7px}.-z-\[1\]{z-index:-1}.z-\[1\]{z-index:1}.z-\[2147483647\]{z-index:2147483647}.mx-auto{margin-left:auto;margin-right:auto}.-ml-\[13px\]{margin-left:-13px}.-mt-\[13px\]{margin-top:-13px}.mt-3{margin-top:10.5px}.mt-5{margin-top:17.5px}.block{display:block}.flex{display:flex}.hidden{display:none}.h-full{height:100%}.w-\[420px\]{width:420px}.w-\[520px\]{width:520px}.w-full{width:100%}@keyframes spin{to{transform:rotate(360deg)}}.animate-spin{animation:1s linear infinite spin}.cursor-pointer{cursor:pointer}.items-center{align-items:center}.justify-center{justify-content:center}.gap-x-2{column-gap:7px}.rounded{border-radius:3.5px}.bg-\[\#635bff\]{--tw-bg-opacity:1;background-color:rgb(99 91 255/var(--tw-bg-opacity))}.bg-\[\#635bff\]\/10{background-color:#635bff1a}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity))}.p-1{padding:3.5px}.p-6{padding:21px}.px-4{padding-left:14px;padding-right:14px}.py-2{padding-top:7px;padding-bottom:7px}.py-2\.5{padding-top:8.75px;padding-bottom:8.75px}.text-\[14px\]{font-size:14px}.text-xl{font-size:17.5px;line-height:24.5px}.font-medium{font-weight:500}.leading-6{line-height:21px}.text-black{--tw-text-opacity:1;color:rgb(0 0 0/var(--tw-text-opacity))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175/var(--tw-text-opacity))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128/var(--tw-text-opacity))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55/var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity))}.shadow-2xl{--tw-shadow:0 25px 50px -12px #00000040;--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.outline{outline-style:solid}.filter{filter:var(--tw-blur)var(--tw-brightness)var(--tw-contrast)var(--tw-grayscale)var(--tw-hue-rotate)var(--tw-invert)var(--tw-saturate)var(--tw-sepia)var(--tw-drop-shadow)}.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-duration:.15s;transition-timing-function:cubic-bezier(.4,0,.2,1)}@keyframes enter{0%{opacity:var(--tw-enter-opacity,1);transform:translate3d(var(--tw-enter-translate-x,0),var(--tw-enter-translate-y,0),0)scale3d(var(--tw-enter-scale,1),var(--tw-enter-scale,1),var(--tw-enter-scale,1))rotate(var(--tw-enter-rotate,0))}}@keyframes exit{to{opacity:var(--tw-exit-opacity,1);transform:translate3d(var(--tw-exit-translate-x,0),var(--tw-exit-translate-y,0),0)scale3d(var(--tw-exit-scale,1),var(--tw-exit-scale,1),var(--tw-exit-scale,1))rotate(var(--tw-exit-rotate,0))}}.hover\:bg-\[\#635bff\]\/90:hover{background-color:#635bffe6}</style><div id="plasmo-shadow-container" style="z-index: 2147483647; position: relative;"><div id="plasmo-inline" class="plasmo-csui-container" style="display: flex; position: relative; top: 0px; left: 0px;"><div class="aitdk-extension shadow-2xl flex fixed w-[520px] top-0 right-0 bottom-0 bg-white hidden"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x absolute right-2 top-2 z-[1] p-1 cursor-pointer text-gray-500"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-loader-circle animate-spin text-gray-400 absolute top-1/2 left-1/2 -ml-[13px] -mt-[13px] -z-[1]"><path d="M21 12a9 9 0 1 1-6.219-8.56"></path></svg></div></div></div></template></plasmo-csui><div id="immersive-translate-browser-popup" style="all: initial"><template shadowrootmode="open"><style>/** 基础色阶定义 **/
+:root,
+#mount[data-theme="light"],
+#mount:not([data-theme="dark"]) {
+  /* 中性灰阶（light） */
+  --c-00: #000000;
+  --c-22: #222222;
+  --c-33: #333333;
+  --c-66: #666666;
+  --c-83: #838383;
+  --c-99: #999999;
+  --c-c7: #c7c7c7;
+  --c-cc: #cccccc;
+  --c-e6: #e6e6e6;
+  --c-f5: #f5f5f5;
+  --c-ff: #ffffff;
+  /* 品牌主色阶（light） */
+  --p-main: #ea4c89;
+  --p-hover: #ec5e95;
+  --p-active: #e34a85;
+  --p-special: #ee71a2;
+  --p-disabled: #f4a5c4;
+  --p-text-disabled: #f9c9dc;
+  --p-weak: #fdedf3;
+  /* Surface 层级（light，TC 填充-1） */
+  --s-1: #f3f5f6;
+  --s-1-hover: #f6f8f9;
+  --s-1-active: #edf1f2;
+  --s-1-weak: #fafbfb;
+  /* 输入/边框（light，TC 填充-2） */
+  --input-bg-base: #fafbfc;
+  --input-border: #ecf0f7;
+  --input-border-strong: #e0e0e6;
+  --input-bg-strong: #fafdff;
+}
+
+:root[data-theme="dark"],
+[data-theme="dark"] {
+  /* 中性灰阶（dark） */
+  --c-00: #ffffff;
+  --c-22: #dbdbdb;
+  --c-33: #dbdbdb;
+  --c-66: #b3b3b3;
+  --c-83: #838383;
+  --c-99: #707070;
+  --c-c7: #666666;
+  --c-cc: #5c5c5c;
+  --c-e6: #3b3b3b;
+  --c-f5: #262626;
+  --c-ff: #222222;
+  /* 品牌主色阶（dark） */
+  --p-main: #e23c7c;
+  --p-hover: #ea4c89;
+  --p-active: #d5467d;
+  --p-special: #a93a65;
+  --p-disabled: #7e2f4d;
+  --p-text-disabled: #522335;
+  --p-weak: #26171d;
+  /* Surface 层级（dark，TC 填充-1） */
+  --s-1: #2d2e2f;
+  --s-1-hover: #323434;
+  --s-1-active: #202121;
+  --s-1-weak: #262627;
+  /* 输入/边框（dark，TC 填充-2） */
+  --input-bg-base: #2b2d30;
+  --input-border: #3e434b;
+  --input-border-strong: #43474b;
+  --input-bg-strong: #1f2123;
+}
+
+:root,
+#mount [data-theme] {
+  /* 业务/通用变量引用色阶（全局可见，含 Shadow DOM） */
+  --primary: var(--p-main);
+  --primary-hover: var(--p-hover);
+  --primary-inverse: #fff;
+  --modal-background: var(--s-1);
+  --modal-border: var(--input-border);
+  --modal-text: var(--c-22);
+  --modal-text-secondary: var(--c-66);
+  --modal-error: var(--p-main);
+  --modal-required: #f53f3f;
+  --modal-success: #68cd52;
+  --modal-button-background: var(--p-main);
+  --modal-button-text: var(--c-ff);
+  --modal-input-background: var(--input-bg-base);
+  --modal-check-color: var(--p-main);
+  --background-color: var(--c-ff);
+  --background-light-green: var(--s-1-weak, #f5f7f9);
+  --text-black-2: var(--c-22);
+  --text-gray-2: var(--c-22);
+  --text-gray-6: var(--c-66);
+  --text-gray-9: var(--c-99);
+  --text-gray-c2: var(--c-c7);
+  --switch-background-color: var(--c-c7, hsl(205deg, 16%, 77%));
+  --float-ball-more-button-border-color: var(--c-f5, #f6f6f6);
+  --float-ball-more-button-background-color: var(--c-ff);
+  --float-ball-more-button-hover-color: var(--p-weak);
+  --float-ball-more-button-svg-color: #6c6f73;
+  --service-bg-hover: var(--s-1-hover, #f7faff);
+  --service-bg: var(--s-1-weak, #fafbfb);
+}
+
+#mount {
+  --font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
+    "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  /* PC/H5 兼容的字号、间距、圆角、阴影变量 */
+  --f-12: 12px;
+  --f-14: 14px;
+  --f-15: 15px;
+  --f-16: 16px;
+  --f-18: 18px;
+  --f-20: 20px;
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-18: 18px;
+  --space-24: 24px;
+  --radius-8: 8px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --control-height-lg: 44px;
+  --width-28: 28px;
+  --width-24: 24px;
+  --width-20: 20px;
+  --width-18: 18px;
+  --width-16: 16px;
+  --width-label-md: 56px;
+  --shadow-lg: 0 18px 48px rgba(0, 0, 0, 0.12);
+
+  /* 常规变量 */
+  --line-height: 1.5;
+  --font-weight: 400;
+  --font-size: 16px;
+  --border-radius: 4px;
+  --border-width: 2px;
+  --outline-width: 3px;
+  --spacing: 16px;
+  --typography-spacing-vertical: 24px;
+  --block-spacing-vertical: calc(var(--spacing) * 2);
+  --block-spacing-horizontal: var(--spacing);
+  --grid-spacing-vertical: 0;
+  --grid-spacing-horizontal: var(--spacing);
+  --form-element-spacing-vertical: 12px;
+  --form-element-spacing-horizontal: 16px;
+  --nav-element-spacing-vertical: 16px;
+  --nav-element-spacing-horizontal: 8px;
+  --nav-link-spacing-vertical: 8px;
+  --nav-link-spacing-horizontal: 8px;
+  --form-label-font-weight: var(--font-weight);
+  --transition: 0.2s ease-in-out;
+  --modal-overlay-backdrop-filter: blur(4px);
+  --switch-color: var(--primary-inverse);
+  --switch-checked-background-color: var(--primary);
+  --icon-xia: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgaWQ9IkZyYW1lIj4KPHBhdGggaWQ9IlZlY3RvciIgZD0iTTguMDAyOTEgOS42Nzk4M0wzLjgzMzM5IDUuNTEyMjFMMy4wMjUzOSA2LjMxOTgzTDguMDAzMjkgMTEuMjk1MUwxMi45NzYyIDYuMzE5ODNMMTIuMTY3OSA1LjUxMjIxTDguMDAyOTEgOS42Nzk4M1oiIGZpbGw9IiM4MzgzODMiLz4KPC9nPgo8L3N2Zz4K");
+  /* 兼容旧变量：主色直接引用品牌主色阶 */
+  --primary: var(--p-main);
+  --primary-hover: var(--p-hover);
+  --primary-inverse: #fff;
+  /* Modal 业务变量引用色阶 */
+  --modal-background: var(--s-1);
+  --modal-border: var(--input-border);
+  --modal-text: var(--c-22);
+  --modal-text-secondary: var(--c-66);
+  --modal-error: var(--p-main);
+  --modal-required: #f53f3f;
+  --modal-success: #68cd52;
+  --modal-button-background: var(--p-main);
+  --modal-button-text: var(--c-ff);
+  --modal-input-background: var(--input-bg-base);
+  --modal-check-color: var(--p-main);
+  --background-color: var(--c-ff);
+  --background-light-green: var(--s-1-weak, #f5f7f9);
+  --text-black-2: var(--c-22);
+  --text-gray-2: var(--c-22);
+  --text-gray-6: var(--c-66);
+  --text-gray-9: var(--c-99);
+  --text-gray-c2: var(--c-c7);
+  --switch-background-color: var(--c-c7, hsl(205deg, 16%, 77%));
+  --float-ball-more-button-border-color: var(--c-f5, #f6f6f6);
+  --float-ball-more-button-background-color: var(--c-ff);
+  --float-ball-more-button-hover-color: var(--p-weak);
+  --float-ball-more-button-svg-color: #6c6f73;
+  --service-bg-hover: var(--s-1-hover, #f7faff);
+  --service-bg: var(--s-1-weak, #fafbfb);
+  line-height: var(--line-height);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+}
+
+@media (max-width: 480px) {
+  :root,
+  #mount {
+    --f-12: 10px;
+    --f-14: 12px;
+    --f-15: 13px;
+    --f-16: 14px;
+    --f-18: 16px;
+    --f-20: 18px;
+    --space-4: 4px;
+    --space-6: 4px;
+    --space-8: 6px;
+    --space-12: 8px;
+    --space-16: 12px;
+    --space-18: 14px;
+    --space-24: 18px;
+    --radius-8: 6px;
+    --radius-12: 10px;
+    --radius-16: 12px;
+    --control-height-lg: 38px;
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.1);
+    --width-28: 24px;
+    --width-24: 20px;
+    --width-20: 16px;
+    --width-18: 14px;
+    --width-16: 12px;
+    --width-label-md: 52px;
+  }
+}
+
+#mount * {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+:where(#mount) a,
+:where(#mount) [role="link"] {
+  --color: var(--primary);
+  --background-color: transparent;
+  outline: none;
+  background-color: var(--background-color);
+  color: var(--color);
+  -webkit-text-decoration: var(--text-decoration);
+  text-decoration: var(--text-decoration);
+  transition: background-color var(--transition), color var(--transition),
+    box-shadow var(--transition), -webkit-text-decoration var(--transition);
+  transition: background-color var(--transition), color var(--transition),
+    text-decoration var(--transition), box-shadow var(--transition);
+  transition: background-color var(--transition), color var(--transition),
+    text-decoration var(--transition), box-shadow var(--transition),
+    -webkit-text-decoration var(--transition);
+}
+:where(#mount) a:is([aria-current], :hover, :active, :focus),
+:where(#mount) [role="link"]:is([aria-current], :hover, :active, :focus) {
+  --color: var(--primary-hover);
+  --text-decoration: underline;
+}
+
+:where(#mount) label {
+  font-size: 13px;
+  line-height: 1.3;
+  color: var(--text-gray-2, #222222);
+}
+
+:where(#mount) button {
+  width: 100%;
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.3;
+  min-height: 44px;
+  border-radius: 12px;
+  padding: 0 14px;
+  border: none;
+  background-color: var(--primary, #ea4c89);
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+:where(#mount) button:hover {
+  background-color: var(--primary-hover, #f082ac);
+}
+
+:where(#mount) button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+:where(#mount) select,
+:where(#mount) input,
+:where(#mount) textarea {
+  font-family: inherit;
+  color: var(--text-gray-2, #222222);
+}
+
+:where(#mount) select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: inherit;
+  color: var(--text-gray-2, inherit);
+  font-size: 13px;
+  line-height: 1.3;
+  outline: none;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--popup-item-background-color, transparent);
+  background-image: var(--icon-xia, none);
+  background-repeat: no-repeat;
+  background-position: center right 12px;
+  background-size: 16px auto;
+  cursor: pointer;
+}
+
+:where(#mount) input[type="checkbox"] {
+  accent-color: var(--primary, #ea4c89);
+}
+
+[type="checkbox"],
+[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 1.25em;
+  height: 1.25em;
+  margin-top: -0.125em;
+  margin-right: 0.375em;
+  margin-left: 0;
+  -webkit-margin-start: 0;
+  margin-inline-start: 0;
+  -webkit-margin-end: 0.375em;
+  margin-inline-end: 0.375em;
+  border-width: var(--border-width);
+  font-size: inherit;
+  vertical-align: middle;
+  cursor: pointer;
+}
+[type="checkbox"]::-ms-check,
+[type="radio"]::-ms-check {
+  display: none;
+}
+[type="checkbox"]:checked,
+[type="checkbox"]:checked:active,
+[type="checkbox"]:checked:focus,
+[type="radio"]:checked,
+[type="radio"]:checked:active,
+[type="radio"]:checked:focus {
+  --background-color: var(--primary);
+  --border-color: var(--primary);
+  background-image: var(--icon-checkbox);
+  background-position: center;
+  background-size: 0.75em auto;
+  background-repeat: no-repeat;
+}
+[type="checkbox"] ~ label,
+[type="radio"] ~ label {
+  display: inline-block;
+  margin-right: 0.375em;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+[type="checkbox"]:indeterminate {
+  --background-color: var(--primary);
+  --border-color: var(--primary);
+  background-image: var(--icon-minus);
+  background-position: center;
+  background-size: 0.75em auto;
+  background-repeat: no-repeat;
+}
+
+[type="radio"] {
+  border-radius: 50%;
+}
+[type="radio"]:checked,
+[type="radio"]:checked:active,
+[type="radio"]:checked:focus {
+  --background-color: var(--primary-inverse);
+  border-width: 0.35em;
+  background-image: none;
+}
+
+:where(#mount) [type="checkbox"][role="switch"] {
+  --background-color: var(--switch-background-color);
+  --border-color: var(--switch-background-color);
+  --color: var(--switch-color);
+  width: 2.25em;
+  height: 1.25em;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 1.25em;
+  background-color: var(--background-color);
+  line-height: 1.25em;
+}
+:where(#mount) [type="checkbox"][role="switch"]:focus {
+  --background-color: var(--switch-background-color);
+  --border-color: var(--switch-background-color);
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked {
+  --background-color: var(--switch-checked-background-color);
+  --border-color: var(--switch-checked-background-color);
+}
+:where(#mount) [type="checkbox"][role="switch"]:before {
+  display: block;
+  width: calc(1.25em - (var(--border-width) * 2));
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--color);
+  content: "";
+  transition: margin 0.1s ease-in-out;
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked {
+  background-image: none;
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked::before {
+  margin-left: calc(1.125em - var(--border-width));
+  -webkit-margin-start: calc(1.125em - var(--border-width));
+  margin-inline-start: calc(1.125em - var(--border-width));
+}
+
+:where(#mount) [type="checkbox"][aria-invalid="false"],
+:where(#mount) [type="checkbox"]:checked[aria-invalid="false"],
+:where(#mount) [type="radio"][aria-invalid="false"],
+:where(#mount) [type="radio"]:checked[aria-invalid="false"],
+:where(#mount) [type="checkbox"][role="switch"][aria-invalid="false"],
+:where(#mount) [type="checkbox"][role="switch"]:checked[aria-invalid="false"] {
+  --border-color: var(--form-element-valid-border-color);
+}
+:where(#mount) [type="checkbox"][aria-invalid="true"],
+:where(#mount) [type="checkbox"]:checked[aria-invalid="true"],
+:where(#mount) [type="radio"][aria-invalid="true"],
+:where(#mount) [type="radio"]:checked[aria-invalid="true"],
+:where(#mount) [type="checkbox"][role="switch"][aria-invalid="true"],
+:where(#mount) [type="checkbox"][role="switch"]:checked[aria-invalid="true"] {
+  --border-color: var(--form-element-invalid-border-color);
+}
+
+.text-black {
+  color: var(--text-black-2);
+}
+
+.text-gray-2 {
+  color: var(--text-gray-2);
+}
+
+.text-gray-6 {
+  color: var(--text-gray-6);
+}
+
+.text-gray-9 {
+  color: var(--text-gray-9);
+}
+
+.text-gray-c2 {
+  color: var(--text-gray-c2);
+}
+
+.pt-4 {
+  padding-top: 16px;
+}
+
+.p-2 {
+  padding: 8px;
+}
+
+.pl-5 {
+  padding-left: 48px;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.pl-2 {
+  padding-left: 8px;
+}
+
+.pl-4 {
+  padding-left: 24px;
+}
+
+.pt-2 {
+  padding-top: 8px;
+}
+
+.pb-2 {
+  padding-bottom: 8px;
+}
+
+.pb-4 {
+  padding-bottom: 16px;
+}
+
+.pb-5 {
+  padding-bottom: 20px;
+}
+
+.pr-5 {
+  padding-right: 48px;
+}
+
+.text-sm {
+  font-size: 13px;
+}
+
+.text-base {
+  font-size: 16px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.mb-0 {
+  margin-bottom: 0px;
+}
+
+.mb-2 {
+  margin-bottom: 8px;
+}
+
+.mb-4 {
+  margin-bottom: 16px;
+}
+
+.mb-3 {
+  margin-bottom: 12px;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.py-2 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.py-2-5 {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mt-2 {
+  margin-top: 8px;
+}
+
+.mt-3 {
+  margin-top: 12px;
+}
+
+.mt-4 {
+  margin-top: 16px;
+}
+
+.mt-5 {
+  margin-top: 20px;
+}
+
+.mt-6 {
+  margin-top: 24px;
+}
+
+.mb-1 {
+  margin-bottom: 4px;
+}
+
+.ml-4 {
+  margin-left: 24px;
+}
+
+.ml-3 {
+  margin-left: 16px;
+}
+
+.ml-2 {
+  margin-left: 8px;
+}
+
+.ml-1 {
+  margin-left: 4px;
+}
+
+.mr-1 {
+  margin-right: 4px;
+}
+
+.mr-2 {
+  margin-right: 8px;
+}
+
+.mr-3 {
+  margin-right: 16px;
+}
+
+.mx-2 {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.pl-3 {
+  padding-left: 12px;
+}
+
+.pr-3 {
+  padding-right: 12px;
+}
+
+.p-3 {
+  padding: 12px;
+}
+
+.px-1 {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.px-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.pt-3 {
+  padding-top: 12px;
+}
+
+.px-6 {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.px-4 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.pt-6 {
+  padding-top: 20px;
+}
+
+.py-3 {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.py-0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.left-auto {
+  left: auto !important;
+}
+
+.max-h-28 {
+  max-height: 112px;
+}
+
+.max-h-30 {
+  max-height: 120px;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
+.text-xs {
+  font-size: 12px;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-3 {
+  flex: 3;
+}
+
+.flex-4 {
+  flex: 4;
+}
+
+.flex-2 {
+  flex: 2;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.max-content {
+  width: max-content;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-baseline {
+  align-items: baseline;
+}
+
+.my-5 {
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+.my-4 {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.my-3 {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.pt-3 {
+  padding-top: 12px;
+}
+
+.px-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.pt-2 {
+  padding-top: 8px;
+}
+
+.px-2 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.pt-1 {
+  padding-top: 4px;
+}
+
+.px-1 {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.pb-2 {
+  padding-bottom: 8px;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.shrink-0 {
+  flex-shrink: 0;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.close {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  background-image: var(--icon-close);
+  background-position: center;
+  background-size: auto 1rem;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  transition: opacity var(--transition);
+}
+
+.padding-two-column {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.muted {
+  color: #999;
+}
+
+.text-label {
+  color: #666;
+}
+
+.display-none {
+  display: none;
+}
+
+/* dark use #18232c */
+@media (prefers-color-scheme: dark) {
+  .text-label {
+    color: #9ca3af;
+  }
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.text-decoration-none:is([aria-current], :hover, :active, :focus),
+[role="link"]:is([aria-current], :hover, :active, :focus) {
+  --text-decoration: none !important;
+  background-color: transparent !important;
+}
+
+.text-overflow-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.max-w-20 {
+  max-width: 180px;
+  white-space: nowrap;
+}
+
+[data-theme="light"],
+#mount:not([data-theme="dark"]) {
+  --popup-footer-background-color: #e8eaeb;
+  --popup-content-background-color: #ffffff;
+  --popup-item-background-color: #f3f5f6;
+  --popup-item-hover-background-color: #eaeced;
+  --popup-trial-pro-background-color: #f9fbfc;
+  --service-select-content-shadow: 0px 2px 12px 0px rgba(75, 76, 77, 0.2);
+  --service-select-border-color: #fafafa;
+  --service-select-selected-background-color: #f3f5f6;
+  --download-app-background: #f3f5f6;
+  --translate-language-background-color: #f3f5f6;
+  --translate-language-icon-color: #666666;
+  --translate-language-text-color: #222222;
+  --translate-language-hover-background-color: #fdedf3;
+  --translate-language-hover-icon-color: #e95d93;
+  --error-bg: #fdedf3;
+  --error-text: #222;
+  --error-link: #ea4c89;
+}
+
+[data-theme="dark"] {
+  --popup-footer-background-color: #0d0d0d;
+  --popup-content-background-color: #191919;
+  --popup-item-background-color: #272727;
+  --popup-item-hover-background-color: #333333;
+  --popup-trial-pro-background-color: #222222;
+  --service-select-content-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.9);
+  --service-select-border-color: #2c2c2c;
+  --service-select-selected-background-color: #333333;
+  --download-app-background: #333;
+  --translate-language-background-color: #2d2e2f;
+  --translate-language-icon-color: #b3b3b3;
+  --translate-language-text-color: #b3b3b3;
+  --translate-language-hover-background-color: #a97b8c;
+  --translate-language-hover-icon-color: rgba(255, 255, 255, 0.9);
+  --error-bg: #26171d;
+  --error-text: #dbdbdb;
+  --error-link: #ea4c89;
+}
+
+#mount {
+  min-width: 268px;
+}
+
+body {
+  padding: 0;
+  margin: 0 auto;
+  min-width: 268px;
+  border-radius: 10px;
+}
+
+.popup-container {
+  font-size: 16px;
+  --font-size: 16px;
+  color: #666;
+  background-color: var(--popup-footer-background-color);
+  width: 316px;
+  min-width: 316px;
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-content {
+  background-color: var(--popup-content-background-color);
+  border-radius: 0px 0px 12px 12px;
+  padding: 16px 20px;
+}
+
+.popup-userscript-three-feature-layout {
+  background-color: var(--popup-footer-background-color);
+  width: 350px;
+  min-width: 350px;
+}
+
+.popup-userscript-three-feature-layout .popup-content {
+  padding-bottom: 20px;
+  border-radius: 0 0 12px 12px;
+}
+
+.popup-userscript-three-feature-layout .popup-footer {
+  border-radius: 0;
+}
+
+.immersive-translate-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  touch-action: none;
+}
+
+.immersive-translate-popup-wrapper {
+  background: var(--background-color);
+  border-radius: 10px;
+  border: 1px solid var(--muted-border-color);
+}
+
+.main-button {
+  font-size: 16px;
+  font-weight: 700;
+  vertical-align: middle;
+  border-radius: 12px;
+  padding: unset;
+  height: 48px;
+  line-height: 48px;
+  flex: 1;
+}
+
+select.translate-service,
+select.min-select {
+  --form-element-spacing-horizontal: 0;
+  margin-bottom: 0px;
+  max-width: unset;
+  flex: 1;
+  overflow: hidden;
+  font-size: 13px;
+  border: none;
+  border-radius: 8px;
+  padding-right: 30px;
+  padding-left: 0px;
+  background-position: center right 12px;
+  background-size: 16px auto;
+  background-image: var(--icon-xia);
+  text-overflow: ellipsis;
+  color: var(--text-gray-2);
+  background-color: transparent;
+  box-shadow: unset !important;
+  cursor: pointer;
+}
+
+select.more {
+  background-position: center right;
+  padding-right: 20px;
+}
+
+select.translate-service {
+  color: var(--text-black-2);
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSI4IiB2aWV3Qm94PSIwIDAgOCA4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIG9wYWNpdHk9IjAuOCI+PHBhdGggZD0iTTMuNDc5NzMgNi4zODY0M0wwLjcyOTI5NyAzLjMyMjE2QzAuNjE2ODggMy4xOTY5NCAwLjU1NDY5NSAzLjAzNDU5IDAuNTU0Njg4IDIuODY2M0MwLjU1NDY4OCAyLjQ4OTI0IDAuODYwNTQ3IDIuMTgzNTkgMS4yMzc4NCAyLjE4MzU5SDYuNzM4NzFDNi45MDcwNyAyLjE4MzU4IDcuMDY5NTEgMi4yNDU3MiA3LjE5NDg4IDIuMzU4MDlDNy40NzU3NCAyLjYwOTg2IDcuNDk5MTkgMy4wNDE0OCA3LjI0NzI2IDMuMzIyMTZMNC40OTY4MiA2LjM4NjQ0QzQuNDgwMzIgNi40MDQ4MiA0LjQ2MjgzIDYuNDIyMjkgNC40NDQ0NCA2LjQzODc4QzQuMTYzNTggNi42OTA1NSAzLjczMTY2IDYuNjY3MTEgMy40Nzk3MyA2LjM4NjQzWiIgZmlsbD0iIzk5OTk5OSIvPjwvZz48L3N2Zz4K");
+  background-size: 8px auto;
+}
+
+.min-select-container.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.popup-footer {
+  background-color: var(--popup-footer-background-color);
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+/* Footer 三栏布局样式 */
+.footer-link-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  min-width: 72px;
+}
+
+.footer-icon-btn {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-icon-btn svg {
+  color: #999999;
+}
+
+[data-theme="dark"] .footer-icon-btn svg {
+  color: #707070;
+}
+
+.footer-link-text {
+  font-size: 12px;
+  line-height: 18px;
+  color: #666666;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .footer-link-text {
+  color: #b3b3b3;
+}
+
+.footer-link-btn-right {
+  justify-content: flex-end;
+}
+
+.footer-center-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #999999;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.footer-center-text.is-overflowing {
+  justify-content: flex-start;
+}
+
+.footer-center-text.is-overflowing .footer-center-content {
+  animation: footer-scroll-text 12s linear infinite;
+}
+
+@keyframes footer-scroll-text {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.footer-center-content {
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-scroll-gap {
+  display: inline-block;
+  width: 80px;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .footer-center-text {
+  color: #707070;
+}
+
+.footer-text-content {
+  display: inline-block;
+}
+
+.footer-privacy-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-version-inline-text {
+  font-size: 12px;
+  color: #999999;
+  line-height: 1;
+  border-bottom: 1px solid transparent;
+}
+
+[data-theme="dark"] .footer-version-inline-text {
+  color: #707070;
+}
+
+.footer-version-inline-text:hover {
+  border-bottom-color: #999999;
+}
+
+[data-theme="dark"] .footer-version-inline-text:hover {
+  border-bottom-color: #707070;
+}
+
+.translate-language-row {
+  gap: 4px;
+}
+
+.translate-language-exchange {
+  width: 36px;
+  height: 48px;
+  background-color: var(--translate-language-background-color);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--translate-language-icon-color);
+  flex-shrink: 0;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.translate-language-exchange:hover {
+  color: var(--translate-language-hover-icon-color);
+}
+
+.translate-language-exchange-active {
+  background-color: var(--translate-language-hover-background-color);
+  color: var(--translate-language-hover-icon-color);
+}
+
+.translate-language-exchange-active:hover {
+  background-color: var(--translate-language-hover-background-color);
+  color: var(--translate-language-hover-icon-color);
+}
+
+.translate-language-arrow {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+}
+
+.translation-service-container {
+  background-color: var(--popup-item-background-color);
+  border-radius: 12px;
+}
+
+.translation-service-primary-field {
+  position: relative;
+}
+
+.translation-service-guide-hitbox {
+  position: absolute;
+  right: 46px;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: auto;
+}
+
+.min-select-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 44px;
+  background-color: var(--popup-item-background-color);
+  padding-left: 16px;
+}
+
+.min-select-container:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.min-select-container:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.min-select-container:only-child {
+  border-radius: 10px;
+}
+
+.popup-ai-context-label {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+  min-width: 60px;
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+.popup-ai-context-switch {
+  align-self: center;
+  margin: 0;
+  margin-inline-end: 12px;
+}
+
+.translate-mode {
+  width: 36px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: var(--translate-language-background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  color: var(--translate-language-text-color);
+  margin-right: 8px;
+}
+
+/* 快捷操作设置标题栏 */
+.widgets-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 4px;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.widgets-header-title {
+  color: #999999;
+}
+
+.widgets-header-action {
+  color: #999999;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.widgets-header-action:hover {
+  color: #666666;
+}
+
+.widgets-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+  gap: 8px;
+}
+
+.popup-userscript-three-feature-layout .widgets-container-compact-monkey {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 12px;
+}
+
+.widgets-container.widgets-single-item {
+  grid-template-columns: minmax(0, 1fr);
+  margin-top: 12px;
+}
+
+.widgets-container.widgets-single-item .widget-item {
+  max-width: none;
+}
+
+/* 当只有两个小组件时的样式优化 */
+.widgets-container.widgets-two-items {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.widgets-container.widgets-two-items .widget-item {
+  max-width: none;
+}
+
+.widget-item {
+  display: flex;
+  width: 100%;
+  min-height: 44px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 1px solid #eef0f2;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  padding: 0 14px;
+  text-align: left;
+  gap: 6px;
+}
+
+.widget-item.widget-item-single {
+  flex: 1 1 auto;
+  flex-direction: row;
+  justify-content: center;
+  border: 1px solid #eef0f2;
+  border-radius: 16px;
+  padding: 0 14px;
+  background: transparent;
+}
+
+.popup-userscript-three-feature-layout .widget-item-compact {
+  min-height: 60px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  padding: 8px 12px;
+}
+
+.widget-item svg {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+}
+
+.widget-icon-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--c-66, #666666);
+  font-size: 14px;
+  line-height: 21px;
+  text-align: left;
+  word-break: keep-all;
+}
+
+.popup-userscript-three-feature-layout .widget-item-compact .widget-icon-text {
+  white-space: nowrap;
+  overflow: visible;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.widget-item.widget-item-single .widget-icon-text {
+  white-space: nowrap;
+  text-align: left;
+  color: var(--c-66, #666666);
+}
+
+[data-theme="dark"] .widget-item,
+[data-theme="dark"] .widget-item.widget-item-single {
+  border-color: #2e2e2e;
+}
+
+[data-theme="dark"] .widget-icon-text,
+[data-theme="dark"] .widget-item.widget-item-single .widget-icon-text {
+  color: var(--c-66, #666666);
+}
+
+[data-theme="dark"] .more-settings-icon {
+  fill: #191919;
+}
+
+.share-button-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 2px 3px 0 8px;
+}
+
+.share-button-container svg {
+  fill: var(--text-gray-9);
+}
+
+.min-select-container:hover,
+.widget-item:hover {
+  background-color: var(--popup-item-hover-background-color);
+}
+
+.main-button:hover {
+  background-color: #f5508f;
+}
+
+.share-button-container:hover {
+  background-color: var(--popup-item-background-color);
+  border-radius: 6px;
+}
+
+.error-boundary {
+  background: #fff2f0;
+  border: 1px solid #ffccc7;
+  display: flex;
+  padding: 12px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.88);
+  word-break: break-all;
+  margin: 12px;
+  border-radius: 12px;
+  flex-direction: column;
+}
+
+.upgrade-pro {
+  border-radius: 11px;
+  background: linear-gradient(57deg, #272727 19.8%, #696969 82.2%);
+  padding: 2px 8px;
+  transform: scale(0.85);
+}
+
+.upgrade-pro span {
+  background: linear-gradient(180deg, #ffeab4 17.65%, #f8c235 85.29%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+.upgrade-pro svg {
+  margin-top: -2px;
+}
+
+.upgrade-pro:hover {
+  background: linear-gradient(57deg, #3d3d3d 19.8%, #949494 82.2%);
+}
+
+.border-bottom-radius-0 {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.trial-pro-container {
+  border-radius: 0px 0px 12px 12px;
+  background: var(--popup-trial-pro-background-color);
+  display: flex;
+  align-items: center;
+  height: 44px;
+  padding-left: 16px;
+  padding-right: 12px;
+  font-size: 12px;
+}
+
+.trial-pro-container label {
+  line-height: 13px;
+  color: var(--text-black-2);
+}
+
+.trial-pro-container img {
+  margin-left: 5px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.upgrade-pro-discount-act {
+  height: 25px;
+  display: flex;
+  padding: 0 4px;
+  align-items: center;
+  border-radius: 15px;
+  background: linear-gradient(
+    90deg,
+    #cefbfa 11.33%,
+    #d7f56f 63.75%,
+    #fccd5e 100%
+  );
+  transform: scale(0.9);
+  box-shadow: 0px 1.8px 3.6px 0px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.upgrade-pro-discount-act span {
+  font-size: 12px;
+  font-weight: 700;
+  margin-left: 4px;
+  color: #222222;
+}
+
+.upgrade-pro-discount-act:hover {
+  text-decoration: unset;
+  background: linear-gradient(
+    90deg,
+    #e2fffe 11.33%,
+    #e6ff91 63.75%,
+    #ffdf93 100%
+  );
+}
+
+.custom-select-container {
+  width: 200px;
+  position: relative;
+  flex: 1;
+}
+
+#translation-service-select {
+  padding-right: 12px;
+}
+
+.custom-select-content {
+  border-radius: 12px;
+  background: var(--popup-content-background-color);
+  box-shadow: var(--service-select-content-shadow);
+  border: 1px solid var(--service-select-border-color);
+  padding: 8px;
+  position: absolute;
+  left: -68px;
+  right: 0;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.custom-select-item.default {
+  width: 100%;
+  padding: 0;
+}
+
+.custom-select-item {
+  font-size: 14px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--text-black-2);
+  width: auto;
+  overflow: hidden;
+  height: 30px;
+  line-height: 30px;
+}
+
+.custom-select-item-img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .custom-select-item-img {
+    margin-right: 6px;
+  }
+}
+
+.custom-select-content .custom-select-item.selected,
+.custom-select-content .custom-select-item:hover {
+  background: var(--service-select-selected-background-color);
+}
+
+.custom-select-item > span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.custom-select-item-pro {
+  font-size: 12px;
+  margin-left: 6px;
+  display: flex;
+}
+
+.custom-select-item-pro img {
+  margin: 0 3px;
+  width: 20px;
+  flex-shrink: 0;
+}
+
+.service-select-inline-sponsor-container {
+  width: 50px;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.service-select-inline-sponsor-marquee {
+  min-width: max-content;
+  display: inline-flex;
+  align-items: center;
+  column-gap: 12px;
+  animation: service-select-inline-sponsor-scroll 10s linear infinite;
+}
+
+.service-select-inline-sponsor-track {
+  min-width: max-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+@keyframes service-select-inline-sponsor-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 6px));
+  }
+}
+
+.custom-select-group-header {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-gray-9);
+  padding: 8px 8px 6px;
+  margin-top: 2px;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.custom-select-group-header--recommendation {
+  color: #beb3a0;
+  font-weight: 400;
+  letter-spacing: 0;
+  padding-top: 4px;
+}
+
+.custom-select-group-header-tip {
+  display: inline-flex;
+  align-items: center;
+  color: #bcbcbc;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.more-container {
+  position: relative;
+}
+
+.new-menu-indicator {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #ef3434;
+  border-radius: 50%;
+  right: 18px;
+  top: 4px;
+}
+
+.download-app {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px;
+  background: var(--download-app-background);
+  padding: 4px 8px;
+  color: var(--text-gray-6);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Popup 动画效果 */
+@keyframes popup-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes popup-fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+}
+
+.popup-generic-content {
+  animation: popup-fade-in 0.2s ease-out;
+}
+
+.popup-generic-content.hiding {
+  animation: popup-fade-out 0.15s ease-in;
+}
+
+select.min-select {
+  --form-element-spacing-horizontal: 0;
+  max-width: 128px;
+  overflow: hidden;
+  color: var(--primary);
+  font-size: 13px;
+  border: none;
+  padding: 0;
+  padding-right: 20px;
+  text-overflow: ellipsis;
+  color: var(--color);
+}
+select.min-select-secondary {
+  color: var(--color);
+}
+select.min-select:focus {
+  outline: none;
+  border: none;
+  --box-shadow: none;
+}
+
+select.min-select-left {
+  padding-right: 0px;
+  /* padding-left: 24px; */
+  /* background-position: center left 0; */
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+select.transform-padding-left {
+  padding-left: 12px;
+  transform: translateX(-12px);
+  background-position: center right 0px;
+}
+
+select.text-gray-6 {
+  color: var(--text-gray-6);
+}
+
+/* dark use black, for windows */
+@media (prefers-color-scheme: dark) {
+  select.translate-service option,
+  select.min-select option {
+    background-color: #666666;
+  }
+}
+
+select.min-select-no-arrow {
+  background-image: none;
+  padding-right: 0;
+}
+
+.activity-tips {
+  border-radius: 8px;
+  padding: 0px 8px;
+  height: 26px;
+  background: linear-gradient(
+    83deg,
+    #faccde -0.87%,
+    #fce7ef 43.13%,
+    #fbd6e4 72.08%,
+    #ffb3d1 96.34%
+  );
+  color: #333;
+  cursor: pointer;
+  gap: 4px;
+  font-size: 12px;
+}
+
+.activity-tips-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.countdown-container {
+  min-width: 50px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.01em;
+}
+
+.activity-tips-text {
+  font-weight: 600;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 非会员升级提示 */
+.upgrade-tips {
+  padding: 0px 6px 0px 4px;
+  height: 18px;
+  color: #ea4c89;
+  cursor: pointer;
+  gap: 6px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.upgrade-tips svg:first-child {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  filter: drop-shadow(0px 4px 4px rgba(236, 76, 140, 0.2));
+}
+
+.upgrade-tips-text {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.upgrade-tips-switch {
+  position: relative;
+  width: 30px;
+  height: 18px;
+  border-radius: 24px;
+  background: #cccccc;
+  flex-shrink: 0;
+}
+
+.upgrade-tips-switch-thumb {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+/* 抽屉组件样式 */
+.drawer-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+
+.drawer-overlay.drawer-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.drawer-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ffffff;
+  border-radius: 12px 12px 0 0;
+  z-index: 101;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-visible .drawer-panel {
+  transform: translateY(0);
+}
+
+[data-theme="dark"] .drawer-panel {
+  background: #222222;
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  flex-shrink: 0;
+}
+
+.drawer-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333333;
+}
+
+[data-theme="dark"] .drawer-title {
+  color: #e0e0e0;
+}
+
+.drawer-close {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999999;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.drawer-close:hover {
+  background-color: #f3f5f6;
+}
+
+[data-theme="dark"] .drawer-close:hover {
+  background-color: #333333;
+}
+
+.drawer-body {
+  padding: 16px 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.drawer-body.drawer-body-hover {
+  padding: 0 20px 20px 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.drawer-body.drawer-body-more-settings {
+  padding-top: 0;
+}
+
+.drawer-footer {
+  padding: 12px 20px;
+  border-top: 1px solid #eef0f2;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+[data-theme="dark"] .drawer-footer {
+  border-top: 1px solid #2e2e2e;
+}
+
+.drawer-footer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.drawer-footer-actions-single {
+  justify-content: center;
+}
+
+.drawer-footer-text {
+  font-size: 12px;
+  cursor: pointer;
+  color: #999999;
+  text-decoration: none;
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.drawer-footer-actions-single .drawer-footer-text {
+  flex: 0 1 auto;
+  max-width: 100%;
+}
+
+.drawer-footer-text:hover {
+  text-decoration: underline;
+}
+
+/* 抽屉内容区域样式 */
+.drawer-section {
+  margin-bottom: 16px;
+}
+
+.drawer-section:last-child {
+  margin-bottom: 0;
+}
+
+.drawer-section-highlight {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+[data-theme="dark"] .drawer-section-highlight {
+  background-color: #2a2a2a;
+}
+
+.drawer-section-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #666666;
+  margin-bottom: 12px;
+}
+
+[data-theme="dark"] .drawer-section-title {
+  color: #999999;
+}
+
+.drawer-section-divider {
+  height: 1px;
+  background-color: #eef0f2;
+  margin: 16px 0;
+}
+
+/* ========== 通用抽屉组件样式 ========== */
+.popup-drawer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.popup-drawer-card {
+  background: #f3f5f6;
+  border-radius: 12px;
+  padding: 12px 12px 16px;
+}
+
+[data-theme="dark"] .popup-drawer-card {
+  background: #2a2a2a;
+}
+
+.popup-drawer-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 21px;
+  gap: 12px;
+}
+
+.popup-drawer-card-header input[type="checkbox"][role="switch"] {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.popup-drawer-card-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #222222;
+  line-height: 21px;
+}
+
+[data-theme="dark"] .popup-drawer-card-title {
+  color: #e0e0e0;
+}
+
+.popup-drawer-card-divider {
+  height: 1px;
+  width: calc(100% + 24px);
+  background-color: #ffffff;
+  margin: 12px -12px 16px;
+}
+
+[data-theme="dark"] .popup-drawer-card-divider {
+  background-color: #333333;
+}
+
+.popup-drawer-demo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.popup-drawer-demo-region-fixed {
+  height: 51px;
+  max-height: 51px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-region-min {
+  min-height: 51px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-selection {
+  width: 100%;
+  min-width: 0;
+  flex-wrap: nowrap;
+}
+
+.popup-drawer-demo-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-plus,
+.popup-drawer-demo-equal {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  color: #333333;
+}
+
+[data-theme="dark"] .popup-drawer-demo-plus,
+[data-theme="dark"] .popup-drawer-demo-equal {
+  color: #e0e0e0;
+}
+
+.popup-drawer-demo-logo {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-logo img {
+  width: 28px;
+  height: 28px;
+  display: block;
+  filter: drop-shadow(0 4px 12px rgba(255, 166, 201, 0.5));
+}
+
+.popup-drawer-demo-result {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #333333;
+}
+
+.popup-drawer-demo-result-ellipsis {
+  min-width: 0;
+  max-width: calc(100% - 72px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .popup-drawer-demo-result {
+  color: #e0e0e0;
+}
+
+.popup-drawer-trigger {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.popup-drawer-trigger-label {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #999999;
+  padding-left: 4px;
+}
+
+.popup-drawer-trigger-options {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.popup-drawer-trigger-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #333333;
+  background: #ffffff;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.popup-drawer-trigger-option-disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.popup-drawer-trigger-option:not(.popup-drawer-trigger-option-selected):hover {
+  border-color: #d0d3d6;
+}
+
+.popup-drawer-trigger-option-selected {
+  border: 0.5px solid #ea4c89;
+  background: #fdedf3;
+  box-shadow: 0px 4px 12px rgba(255, 166, 201, 0.5);
+}
+
+[data-theme="dark"] .popup-drawer-trigger-option {
+  background: #1f1f1f;
+  border-color: #333333;
+  color: #e0e0e0;
+}
+
+[data-theme="dark"]
+  .popup-drawer-trigger-option:not(
+    .popup-drawer-trigger-option-selected
+  ):hover {
+  border-color: #444444;
+}
+
+[data-theme="dark"] .popup-drawer-trigger-option-selected {
+  background: rgba(233, 76, 137, 0.2);
+  border-color: #ea4c89;
+  box-shadow: 0 4px 12px 0 rgba(255, 166, 201, 0.3);
+}
+
+.popup-drawer-trigger-option-with-icon {
+  gap: 8px;
+}
+
+/* ========== 通用抽屉演示区域样式 ========== */
+/* 键帽样式 */
+.popup-drawer-demo-keycap {
+  min-width: 72px;
+  padding: 9px;
+  height: auto;
+  box-sizing: border-box;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  color: #ffffff;
+  background:
+    radial-gradient(
+      60px 36px at 85% 100%,
+      rgba(208, 208, 208, 0.2),
+      rgba(255, 255, 255, 0)
+    ),
+    radial-gradient(72px 36px at 50% 0%, #101010 0%, #242424 100%);
+  box-shadow:
+    2px 2px 3.5px rgba(0, 0, 0, 0.4),
+    inset 0.5px 0.7px 0.4px rgba(255, 255, 255, 0.5),
+    inset -0.5px -0.5px 0.2px rgba(0, 0, 0, 0.6);
+}
+
+.popup-drawer-demo-keycap-text {
+  max-width: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 小圆点样式 */
+.popup-drawer-demo-mini-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ea4c89;
+  flex-shrink: 0;
+  align-self: center;
+  box-shadow: 0 4px 12px rgba(255, 166, 201, 0.5);
+}
+
+[data-theme="dark"] .drawer-section-divider {
+  background-color: #333333;
+}
+
+/* 开关行 */
+.drawer-switch-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.drawer-switch-row.drawer-row-border {
+  border-bottom: 1px solid #eef0f2;
+  margin-bottom: 8px;
+  padding-bottom: 12px;
+}
+
+[data-theme="dark"] .drawer-switch-row.drawer-row-border {
+  border-bottom-color: #333333;
+}
+
+.drawer-switch-label {
+  font-size: 14px;
+  color: #222222;
+}
+
+[data-theme="dark"] .drawer-switch-label {
+  color: #e0e0e0;
+}
+
+/* 链接行 */
+.drawer-link-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  cursor: pointer;
+  border-bottom: 1px solid #eef0f2;
+  font-size: 14px;
+  color: #222222;
+}
+
+.drawer-link-row:last-child {
+  border-bottom: none;
+}
+
+[data-theme="dark"] .drawer-link-row {
+  border-bottom-color: #333333;
+  color: #e0e0e0;
+}
+
+.drawer-link-row:hover {
+  color: #ea4c89;
+}
+
+/* 演示区域 */
+.drawer-demo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 0;
+}
+
+.drawer-demo-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+}
+
+[data-theme="dark"] .drawer-demo-icon {
+  background-color: #333333;
+  border-color: #444444;
+}
+
+.drawer-demo-plus,
+.drawer-demo-equal {
+  font-size: 16px;
+  color: #999999;
+}
+
+.drawer-demo-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.drawer-demo-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.drawer-demo-result {
+  font-size: 14px;
+  color: #222222;
+  padding: 8px 12px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+}
+
+[data-theme="dark"] .drawer-demo-result {
+  background-color: #333333;
+  border-color: #444444;
+  color: #e0e0e0;
+}
+
+/* 触发方式选项 */
+.drawer-options {
+  display: flex;
+  gap: 8px;
+}
+
+.drawer-options-wrap {
+  flex-wrap: wrap;
+}
+
+.drawer-option {
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #666666;
+  background-color: #f3f5f6;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+[data-theme="dark"] .drawer-option {
+  background-color: #333333;
+  color: #b3b3b3;
+}
+
+.drawer-option:hover {
+  background-color: #eaeced;
+}
+
+[data-theme="dark"] .drawer-option:hover {
+  background-color: #3a3a3a;
+}
+
+.drawer-option-selected {
+  border-color: #ea4c89;
+  background-color: #fdedf3;
+  color: #ea4c89;
+  box-shadow: 0px 4px 12px rgba(255, 166, 201, 0.5);
+}
+
+[data-theme="dark"] .drawer-option-selected {
+  background-color: rgba(234, 76, 137, 0.2);
+}
+
+.drawer-body.drawer-body-selection {
+  padding: 0 20px 20px 20px;
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+
+/* ========== 更多设置抽屉样式 ========== */
+.more-settings-drawer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.more-settings-quick-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.more-settings-feature-card {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 40px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: #f3f5f6;
+  transition: background-color 0.2s ease;
+}
+
+.more-settings-feature-card:hover {
+  background-color: #e8eaec;
+}
+
+.more-settings-feature-card:active {
+  background-color: #dde0e2;
+}
+
+.more-settings-feature-card-label {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #666666;
+  white-space: nowrap;
+}
+
+.more-settings-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.more-settings-switch-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 21px;
+  gap: 12px;
+}
+
+.more-settings-switch-label {
+  flex: 1;
+  min-width: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #222222;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.more-settings-switch-row input[type="checkbox"] {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+[data-theme="dark"] .more-settings-switch-label {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .more-settings-feature-card {
+  background-color: #2a2a2a;
+}
+
+[data-theme="dark"] .more-settings-feature-card:hover {
+  background-color: #333333;
+}
+
+[data-theme="dark"] .more-settings-feature-card:active {
+  background-color: #3a3a3a;
+}
+
+[data-theme="dark"] .more-settings-feature-card-label {
+  color: #e0e0e0;
+}
+
+/* 动作按钮样式 */
+.more-settings-action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 12px;
+  color: #222222;
+  background-color: #f3f5f6;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.more-settings-action-button:hover {
+  background-color: #e8eaec;
+}
+
+.more-settings-action-button:active {
+  background-color: #dde0e2;
+}
+
+.more-settings-action-button-label {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  color: inherit;
+  text-align: center;
+}
+
+[data-theme="dark"] .more-settings-action-button {
+  color: #e0e0e0;
+  background-color: #2a2a2a;
+}
+
+[data-theme="dark"] .more-settings-action-button:hover {
+  background-color: #333333;
+}
+
+[data-theme="dark"] .more-settings-action-button:active {
+  background-color: #3a3a3a;
+}
+
+[data-theme="dark"] .more-settings-action-button-label {
+  color: #e0e0e0;
+}
+
+/* 错误消息组件样式 */
+.error-message-container {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 16px;
+  margin-top: 6px;
+  margin-bottom: -14px;
+  border: 1px solid #f53f3f;
+  border-radius: 12px;
+  background-color: var(--error-bg);
+}
+
+.error-message-icon-wrapper {
+  width: 21px;
+  height: 21px;
+  min-width: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4px;
+}
+
+.error-message-icon {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #f53f3f;
+}
+
+.error-message-text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: var(--error-text);
+}
+
+.error-message-text a {
+  color: var(--error-link);
+  text-decoration: underline;
+}
+
+.ad-banner-container {
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+
+html {
+  font-size: 17px;
+}
+
+@media print {
+  .imt-fb-container {
+    display: none !important;
+  }
+}
+
+#mount {
+  position: absolute;
+  display: none;
+  min-width: 250px;
+  height: auto;
+  --font-size: 17px;
+  font-size: 17px;
+}
+
+/* float-ball */
+.imt-fb-container {
+  position: fixed;
+  padding: 0;
+  top: 335px;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  display: none;
+  direction: ltr;
+  background-color: transparent !important;
+}
+
+.imt-fb-container:hover .imt-manga-button {
+  opacity: 1;
+}
+
+.imt-fb-container.left {
+  align-items: flex-start;
+  left: 0;
+}
+
+.imt-fb-container.right {
+  align-items: flex-end;
+  right: 0;
+}
+
+.imt-fb-btn {
+  cursor: pointer;
+  background: var(--float-ball-more-button-background-color);
+  height: 36px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+}
+
+.imt-fb-btn.left {
+  border-top-right-radius: 36px;
+  border-bottom-right-radius: 36px;
+  padding-left: 3px;
+}
+
+.imt-fb-btn.right {
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+  padding-right: 3px;
+}
+
+.imt-fb-btn.mini.left {
+  transform: translateX(-22px);
+}
+
+.imt-fb-btn.mini.right {
+  transform: translateX(22px);
+}
+
+.imt-fb-btn.mini.active {
+  transform: translateX(0);
+}
+
+.imt-fb-btn div {
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+.imt-fb-btn .imt-fb-hit-area {
+  position: absolute;
+  top: 0;
+  height: 36px;
+  bottom: -6px;
+  left: -6px;
+  right: -6px;
+  background: transparent;
+}
+
+.imt-fb-btn.mini.right .imt-fb-hit-area {
+  left: -10px;
+}
+
+.imt-fb-btn.mini.left .imt-fb-hit-area {
+  right: -10px;
+}
+
+.imt-fb-btn.left div {
+  border-top-right-radius: 34px;
+  border-bottom-right-radius: 34px;
+  justify-content: flex-end;
+}
+
+.imt-fb-btn.right div {
+  border-top-left-radius: 34px;
+  border-bottom-left-radius: 34px;
+}
+
+.imt-fb-logo-img {
+  width: 20px;
+  height: 20px;
+  margin: 0 10px;
+}
+
+.imt-fb-logo-img-big-bg {
+  width: 28px;
+  height: 28px;
+  margin: 0;
+  background-color: #ed6d8f;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.imt-float-ball-translated {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  bottom: 4px;
+  right: 4px;
+}
+
+.btn-animate {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform ease-out 250ms;
+  transition: -webkit-transform ease-out 250ms;
+  transition: transform ease-out 250ms;
+  transition: transform ease-out 250ms, -webkit-transform ease-out 250ms;
+}
+
+.imt-fb-setting-btn {
+  margin-right: 18px;
+  width: 28px;
+  height: 28px;
+}
+
+.immersive-translate-popup-wrapper {
+  background: var(--background-color);
+  border-radius: 20px;
+  box-shadow: 2px 10px 24px 0px #0e121614;
+  border: none;
+}
+
+.popup-container {
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-content {
+  border-radius: 20px 20px 12px 12px;
+}
+.popup-footer {
+  border-radius: 20px;
+}
+
+.popup-userscript-three-feature-layout {
+  border-radius: 20px;
+}
+
+.popup-userscript-three-feature-layout .popup-content {
+  border-radius: 20px 20px 12px 12px;
+}
+
+.popup-userscript-three-feature-layout .popup-footer {
+  border-radius: 0;
+}
+
+.imt-fb-close-button {
+  cursor: pointer;
+  position: absolute;
+  left: -10px;
+  bottom: -20px;
+}
+.imt-fb-container.left .imt-fb-close-button {
+  left: auto;
+  right: -10px;
+}
+
+.imt-fb-close-content {
+  padding: 22px;
+  width: 320px;
+  pointer-events: all;
+}
+
+.imt-fb-close-title {
+  font-weight: 500;
+  color: var(--text-black-2);
+}
+
+.imt-fb-close-radio-content {
+  background-color: var(--background-light-green);
+  padding: 8px 20px;
+}
+
+.imt-fb-radio-sel,
+.imt-fb-radio-nor {
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.imt-fb-radio-sel {
+  border: 2px solid var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imt-fb-radio-sel div {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: var(--primary);
+}
+
+.imt-fb-radio-nor {
+  border: 2px solid var(--input-border-strong);
+}
+
+.imt-fb-primary-btn {
+  background-color: var(--primary);
+  width: 72px;
+  height: 32px;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 32px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.imt-fb-default-btn {
+  border: 1px solid var(--primary);
+  width: 72px;
+  height: 32px;
+  border-radius: 8px;
+  color: var(--primary);
+  line-height: 32px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.imt-fb-guide-container {
+  width: 312px;
+  transform: translateY(-45%);
+}
+
+.imt-fb-guide-bg {
+  position: absolute;
+  left: 30px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  height: 100%;
+  width: 90%;
+}
+
+.imt-fb-guide-bg.left {
+  transform: scaleX(-1);
+}
+
+.imt-fb-guide-content {
+  margin: 16px -30px 80px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imt-fb-guide-content.left {
+  margin: 16px 21px 60px 32px;
+}
+
+.imt-fb-guide-img {
+  width: 220px;
+  height: 112px;
+}
+
+.imt-fb-guide-message {
+  font-size: 14px;
+  line-height: 28px;
+  color: #333333;
+  white-space: pre-wrap;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.imt-manga-guide-message {
+  font-size: 16px;
+  line-height: 24px;
+  color: #333333;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.imt-fb-guide-button {
+  margin-top: 16px;
+  line-height: 40px;
+  height: 40px;
+  padding: 0 20px;
+  width: unset;
+}
+
+.imt-fb-side {
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: all;
+  position: relative;
+}
+
+.imt-fb-side {
+  margin: 10px 0;
+}
+
+.imt-fb-side::before,
+.imt-manga-button::before,
+.imt-fb-round-button::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  left: 2px;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color 0.15s ease;
+}
+
+.imt-fb-side:hover::before,
+.imt-manga-button:hover::before,
+.imt-fb-round-button:hover::before {
+  background-color: var(--float-ball-more-button-hover-color);
+}
+
+.imt-fb-new-badge {
+  width: 26px;
+  height: 14px;
+  padding: 3px;
+  background-color: #f53f3f;
+  border-radius: 4px;
+  position: absolute;
+  top: -5px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imt-fb-side * {
+  pointer-events: all;
+}
+
+.imt-fb-pin-icon {
+  position: absolute;
+  left: -16px;
+  bottom: -12px;
+  opacity: 0;
+  cursor: pointer;
+}
+.imt-fb-container.left .imt-fb-pin-icon {
+  left: auto;
+  right: -16px;
+}
+
+.imt-fb-side:hover .imt-fb-pin-icon {
+  opacity: 1;
+}
+
+.imt-fb-more-button {
+  width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+/* Sheet.css */
+.immersive-translate-sheet {
+  position: fixed;
+  transform: translateY(100%);
+  /* Start off screen */
+  left: 0;
+  right: 0;
+  background-color: var(--background-color);
+  transition: transform 0.3s ease-out;
+  /* Smooth slide transition */
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+  /* Ensure it's above other content */
+  bottom: 0;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  overflow: hidden;
+}
+
+.immersive-translate-sheet.visible {
+  transform: translateY(0);
+}
+
+.immersive-translate-sheet-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.immersive-translate-sheet-backdrop.visible {
+  opacity: 1;
+}
+
+.popup-container-sheet {
+  max-width: 100vw;
+  width: 100vw;
+}
+
+.imt-no-events svg * {
+  pointer-events: none !important;
+}
+
+.imt-manga-button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: all;
+  margin: 0 0 10px 0;
+  background-color: var(--float-ball-more-button-background-color);
+  border-radius: 50%;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.08);
+  right: 8px;
+}
+
+.imt-manga-feedback {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.imt-fb-round-button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: var(--float-ball-more-button-background-color);
+  border-radius: 50%;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.imt-fb-round-button > svg {
+  z-index: 1;
+}
+
+.imt-fb-upgrade-button {
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.imt-fb-power-user-card {
+  position: absolute;
+  bottom: -130px;
+  width: 266px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 2px 10px 24px 0 rgba(14, 18, 22, 0.08);
+  border: 1px solid rgba(250, 251, 251, 1);
+  pointer-events: all;
+  z-index: 2;
+  background: linear-gradient(172deg, rgba(255, 255, 255, 0.30) 4.36%, #FFF 35.98%), linear-gradient(0deg, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.40) 100%), radial-gradient(39.95% 47.41% at -0.53% 55.22%, #E0C4F7 0%, rgba(224, 196, 247, 0.00) 100%), radial-gradient(56.37% 54.27% at 86.17% 0%, #E0C4F6 0%, rgba(224, 196, 246, 0.00) 100%), radial-gradient(42.04% 37.43% at -0.53% 3.75%, #AED5FF 0%, rgba(174, 213, 255, 0.00) 100%), radial-gradient(66.88% 52.09% at 36.81% 19.55%, #757ED8 0%, #6B6AC0 100%), #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imt-fb-power-user-card.right {
+  right: 60px;
+}
+
+.imt-fb-power-user-card.right::after {
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: 130px;
+  border-width: 10px 0 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent #fff;
+  filter: drop-shadow(2px 0 2px rgba(14, 18, 22, 0.06));
+}
+
+.imt-fb-power-user-card.left {
+  left: 60px;
+}
+
+.imt-fb-power-user-card.left::after {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 130px;
+  border-width: 10px 10px 10px 0;
+  border-style: solid;
+  border-color: transparent #fff transparent transparent;
+  filter: drop-shadow(-2px 0 2px rgba(14, 18, 22, 0.06));
+}
+
+.imt-fb-power-user-card-banner {
+  display: block;
+  width: 128px;
+  height: auto;
+  margin-top: 8px;
+  border-radius: 8px 8px 0 0;
+}
+
+.imt-fb-power-user-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 16px 24px 0;
+  box-sizing: border-box;
+}
+
+.imt-fb-power-user-card-title {
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+}
+
+.imt-fb-power-user-card-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.imt-fb-power-user-card-body {
+  padding: 12px 24px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.imt-fb-power-user-card-desc {
+  color: #333;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+}
+
+.imt-fb-power-user-card-primary {
+  margin-top: 16px;
+  height: 37px;
+  border-radius: 8px;
+  background: linear-gradient(110deg, #F497BC 17.37%, #EC4C8C 89.68%);
+  color: var(--ZX-FFFFFF, #FFF);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px; /* 150% */
+  display: flex;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  flex: 1 0 0;
+}
+
+.imt-manga-translated {
+  position: absolute;
+  left: 24px;
+  top: 20px;
+}
+
+.imt-float-ball-loading {
+  animation: imt-loading-animation 0.6s infinite linear !important;
+}
+
+.imt-manga-guide-bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  transform: translateY(-50%);
+}
+.imt-manga-guide-content {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  margin: 0 40px 0;
+}
+
+.img-manga-guide-button {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.img-manga-close {
+  position: absolute;
+  bottom: -200px;
+  width: 32px;
+  height: 32px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  cursor: pointer;
+}
+
+.imt-fb-container.dragging .imt-manga-button,
+.imt-fb-container.dragging .btn-animate:not(.imt-fb-btn) {
+  display: none !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn {
+  border-radius: 50% !important;
+  width: 36px !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  cursor: move !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn div {
+  border-radius: 50% !important;
+  width: 36px !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn.left,
+.imt-fb-container.dragging .imt-fb-btn.right {
+  border-radius: 50% !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn.left div,
+.imt-fb-container.dragging .imt-fb-btn.right div {
+  border-radius: 50% !important;
+}
+
+.imt-fb-container.dragging .imt-fb-logo-img {
+  margin: 0 !important;
+}
+
+.imt-fb-container.dragging .imt-float-ball-translated {
+  right: 2px !important;
+  bottom: 2px !important;
+}
+
+@-webkit-keyframes imt-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes imt-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.imt-fb-icon {
+  color: #666666;
+}
+
+[data-theme="dark"] .imt-fb-icon {
+  color: #b3b3b3;
+}
+
+[data-theme="light"] .imt-fb-icon {
+  color: #666666;
+}
+
+/* 悬浮球设置弹窗样式 */
+.imt-fb-setting-wrapper {
+  border-radius: 12px;
+  box-shadow: 2px 10px 24px 0px rgba(0, 0, 0, 0.06);
+}
+
+.imt-fb-setting-content {
+  padding: 16px;
+  width: 350px;
+  pointer-events: all;
+}
+
+.imt-fb-setting-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--text-black-2);
+}
+
+.imt-fb-setting-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px 0;
+}
+
+.imt-fb-preview-wrapper {
+  display: flex;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.imt-fb-preview-item {
+  width: 99px;
+  height: 57px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+}
+
+.imt-fb-preview-item.light {
+  background-color: #f3f5f6;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.imt-fb-preview-item.dark {
+  background-color: #444;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.imt-fb-preview-ball {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.imt-fb-preview-ball.light {
+  background-color: #fff;
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+}
+
+.imt-fb-preview-ball.dark {
+  background-color: #111;
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+}
+
+.imt-fb-preview-ball.full {
+  width: 41px;
+  justify-content: center;
+}
+
+.imt-fb-preview-ball.mini {
+  width: 41px;
+  justify-content: center;
+  transform: translateX(21px);
+}
+
+.imt-fb-preview-ball .imt-fb-preview-logo {
+  flex-shrink: 0;
+}
+
+/* 选项区域 */
+.imt-fb-setting-options {
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.imt-fb-setting-option-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4px;
+}
+
+.imt-fb-setting-option-label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: var(--text-black-2);
+}
+
+/* Toggle 开关样式 */
+.imt-fb-toggle {
+  width: 30px;
+  height: 18px;
+  background-color: var(--switch-background-color);
+  border-radius: 24px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.imt-fb-toggle.checked {
+  background-color: var(--primary);
+}
+
+.imt-fb-toggle.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.imt-fb-toggle-thumb {
+  width: 14px;
+  height: 14px;
+  background-color: var(--switch-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s ease;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+}
+
+.imt-fb-toggle.checked .imt-fb-toggle-thumb {
+  transform: translateX(12px);
+}
+
+.imt-fb-setting-hide-options {
+  background-color: var(--background-light-green);
+  padding: 8px 20px;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.imt-fb-setting-save-btn {
+  background-color: var(--primary);
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 45px;
+  height: 45px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: opacity 0.2s ease;
+}
+
+.imt-fb-setting-save-btn:hover {
+  opacity: 0.9;
+}
+
+.imt-fb-setting-save-btn:active {
+  opacity: 0.8;
+}
+</style><div id="mount" style="display: block;"><div hidden="" id="immersive-translate-popup-overlay" class="immersive-translate-popup-overlay" style="z-index: 2147483647; background-color: rgba(0, 0, 0, 0.5);"><div class="immersive-translate-popup-wrapper" style="position: fixed; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);"></div></div></div></template></div></html>

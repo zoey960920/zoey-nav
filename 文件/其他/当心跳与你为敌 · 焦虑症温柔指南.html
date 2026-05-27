@@ -1,0 +1,5737 @@
+<!DOCTYPE html>
+<!-- saved from url=(0026)https://mind-care.wwei.ai/ -->
+<html lang="zh-CN" data-immersive-translate-page-theme="light"><plasmo-csui><template shadowrootmode="open"><div id="plasmo-shadow-container" style="z-index: 2147483647; position: relative;"><div id="plasmo-overlay-0" class="plasmo-csui-container" style="display: flex; position: absolute; top: 0px; left: 0px;"></div></div></template></plasmo-csui><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>当心跳与你为敌 · 焦虑症温柔指南</title>
+<meta name="description" content="一份温和、系统、图文并茂的焦虑症心理健康手册：从识别症状、辨别谱系、药物认知，到陪伴他人和日常自我照护。">
+<meta name="theme-color" content="#5B8A82">
+<link rel="preconnect" href="https://images.unsplash.com/" crossorigin="">
+<style>
+  :root {
+    --bg: #f7f3ec;
+    --bg-warm: #f1ead e;
+    --bg-cream: #fbf7f1;
+    --paper: #ffffff;
+    --ink: #243530;
+    --ink-soft: #4a5a55;
+    --ink-mute: #8a948f;
+    --line: #e6dfd2;
+    --line-soft: #efe9dd;
+    --sage: #5b8a82;
+    --sage-deep: #3f6c66;
+    --sage-soft: #d9e8e4;
+    --sage-tint: #ecf3f1;
+    --tan: #c2956a;
+    --tan-soft: #f1e3d1;
+    --dust: #6f8aa6;
+    --dust-soft: #e2e9f1;
+    --coral: #c97b63;
+    --coral-soft: #f6e1d8;
+    --amber: #d8a14a;
+    --amber-soft: #f5e6c4;
+    --shadow: 0 1px 2px rgba(36,53,48,.04), 0 8px 24px rgba(36,53,48,.06);
+    --shadow-lg: 0 2px 6px rgba(36,53,48,.05), 0 24px 48px rgba(36,53,48,.10);
+    --radius: 18px;
+    --radius-sm: 12px;
+    --radius-lg: 28px;
+    --serif: "Source Han Serif SC", "Songti SC", "Noto Serif SC", Georgia, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.85;
+    font-size: 16px;
+    letter-spacing: .01em;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--sage-soft); color: var(--sage-deep); }
+  a { color: var(--sage-deep); text-decoration: none; border-bottom: 1px solid rgba(63,108,102,.25); transition: all .2s; }
+  a:hover { color: var(--tan); border-color: var(--tan); }
+
+  /* —— 进度条 —— */
+  .progress {
+    position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 90;
+    background: transparent;
+  }
+  .progress > i {
+    display: block; height: 100%; width: 0;
+    background: linear-gradient(90deg, var(--sage), var(--tan));
+    transition: width .15s linear;
+  }
+
+  /* —— 顶部导航 —— */
+  .nav {
+    position: sticky; top: 0; z-index: 80;
+    backdrop-filter: saturate(180%) blur(16px);
+    -webkit-backdrop-filter: saturate(180%) blur(16px);
+    background: rgba(247,243,236,.82);
+    border-bottom: 1px solid rgba(230,223,210,.7);
+  }
+  .nav-inner {
+    max-width: 1180px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 28px;
+    gap: 16px;
+  }
+  .brand {
+    display: flex; align-items: center; gap: 10px;
+    font-family: var(--serif);
+    font-size: 18px; font-weight: 600; letter-spacing: .04em;
+    color: var(--ink);
+    border: none;
+  }
+  .brand-dot { width: 22px; height: 22px; }
+  .nav-list {
+    display: flex; gap: 4px; flex-wrap: wrap;
+    font-size: 13px;
+  }
+  .nav-list a {
+    border: none; color: var(--ink-soft);
+    padding: 6px 12px; border-radius: 999px;
+    transition: all .2s;
+  }
+  .nav-list a:hover { background: var(--sage-tint); color: var(--sage-deep); }
+  @media (max-width: 900px) {
+    .nav-list { display: none; }
+  }
+
+  /* —— 通用容器 —— */
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+  .narrow { max-width: 820px; margin: 0 auto; padding: 0 32px; }
+  section { padding: 116px 0; }
+  @media (max-width: 600px) {
+    section { padding: 72px 0; }
+    .wrap, .narrow { padding: 0 22px; }
+  }
+
+  /* —— Hero —— */
+  .hero {
+    position: relative;
+    padding: 120px 0 100px;
+    background:
+      radial-gradient(1200px 500px at 80% -10%, rgba(91,138,130,.18), transparent 60%),
+      radial-gradient(800px 400px at -10% 30%, rgba(194,149,106,.14), transparent 60%),
+      var(--bg);
+    overflow: hidden;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--sage-deep);
+    font-size: 13px; letter-spacing: .18em; text-transform: uppercase;
+    padding: 6px 14px;
+    background: var(--sage-tint);
+    border-radius: 999px;
+    border: 1px solid rgba(91,138,130,.2);
+  }
+  .hero-title {
+    font-family: var(--serif);
+    font-size: clamp(36px, 5.4vw, 60px);
+    line-height: 1.18;
+    letter-spacing: -.01em;
+    margin: 28px 0 18px;
+    font-weight: 600;
+  }
+  .hero-title em {
+    font-style: normal;
+    background: linear-gradient(120deg, var(--sage-deep), var(--tan));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .hero-sub {
+    font-size: clamp(16px, 1.6vw, 19px);
+    color: var(--ink-soft);
+    max-width: 720px;
+    line-height: 1.85;
+  }
+  .hero-meta {
+    margin-top: 36px;
+    display: flex; flex-wrap: wrap; gap: 18px;
+    color: var(--ink-mute);
+    font-size: 13.5px;
+  }
+  .hero-meta b { color: var(--ink-soft); font-weight: 500; }
+  .hero-illust {
+    position: absolute; right: -60px; top: 80px;
+    width: 380px; max-width: 40vw;
+    opacity: .9;
+    pointer-events: none;
+  }
+  @media (max-width: 800px) { .hero-illust { display: none; } }
+
+  /* —— 引子卡片 —— */
+  .preface {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 44px 48px;
+    margin-top: 68px;
+    box-shadow: var(--shadow);
+    position: relative;
+  }
+  .preface:before {
+    content: "“"; position: absolute; left: 18px; top: -10px;
+    font-family: var(--serif); font-size: 80px; color: var(--sage); line-height: 1;
+  }
+  .preface p { margin: 0; color: var(--ink-soft); font-size: 16.5px; }
+  .preface p + p { margin-top: 14px; }
+  .preface footer {
+    margin-top: 22px; font-size: 13px; color: var(--ink-mute); letter-spacing: .04em;
+  }
+
+  /* —— 章节标题 —— */
+  .sec-head { margin-bottom: 64px; }
+  .sec-num {
+    display: inline-block;
+    font-family: var(--serif);
+    font-size: 14px; letter-spacing: .3em;
+    color: var(--tan);
+    border-bottom: 1px solid var(--tan);
+    padding-bottom: 4px;
+  }
+  .sec-title {
+    font-family: var(--serif);
+    font-size: clamp(28px, 3.4vw, 38px);
+    line-height: 1.25;
+    margin: 18px 0 14px;
+    font-weight: 600;
+  }
+  .sec-lead {
+    color: var(--ink-soft);
+    font-size: 17px;
+    max-width: 760px;
+  }
+
+  /* —— 卡片基础 —— */
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 32px;
+    box-shadow: var(--shadow);
+  }
+  .card-eyebrow {
+    font-size: 12.5px; letter-spacing: .2em;
+    color: var(--ink-mute); text-transform: uppercase;
+  }
+  .card h3 {
+    font-family: var(--serif);
+    font-size: 22px;
+    margin: 6px 0 14px;
+    font-weight: 600;
+  }
+
+  /* —— 案例 vignette —— */
+  .vignette {
+    background: linear-gradient(180deg, var(--bg-cream), var(--paper));
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--tan);
+    border-radius: var(--radius-sm);
+    padding: 28px 32px;
+    margin: 32px 0;
+    position: relative;
+  }
+  .vignette-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px; letter-spacing: .15em;
+    color: var(--tan); text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .vignette-tag svg { width: 14px; height: 14px; }
+  .vignette h4 {
+    font-family: var(--serif);
+    font-size: 17px; margin: 0 0 10px;
+    font-weight: 600; color: var(--ink);
+  }
+  .vignette p { margin: 0; color: var(--ink-soft); font-size: 15.5px; }
+  .vignette p + p { margin-top: 10px; }
+
+  /* —— 谱系网格 —— */
+  .spectrum {
+    display: grid; gap: 22px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  .type-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 30px;
+    transition: all .25s;
+    position: relative;
+    overflow: hidden;
+  }
+  .type-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: var(--sage); }
+  .type-card .icon {
+    width: 46px; height: 46px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 16px;
+  }
+  .type-card .icon svg { width: 24px; height: 24px; }
+  .type-card h3 {
+    font-family: var(--serif);
+    font-size: 19px;
+    margin: 0 0 6px;
+    font-weight: 600;
+  }
+  .type-card .en {
+    font-size: 12px; color: var(--ink-mute); letter-spacing: .08em;
+    margin-bottom: 14px;
+  }
+  .type-card p { margin: 0 0 12px; color: var(--ink-soft); font-size: 14.5px; line-height: 1.72; }
+  .type-card .signal {
+    border-top: 1px dashed var(--line);
+    padding-top: 12px; margin-top: 12px;
+    font-size: 13.5px; color: var(--ink-soft);
+  }
+  .type-card .signal b { color: var(--sage-deep); font-weight: 500; }
+
+  .ic-1 { background: var(--sage-tint); color: var(--sage-deep); }
+  .ic-2 { background: var(--tan-soft); color: var(--tan); }
+  .ic-3 { background: var(--dust-soft); color: var(--dust); }
+  .ic-4 { background: var(--coral-soft); color: var(--coral); }
+  .ic-5 { background: var(--amber-soft); color: var(--amber); }
+  .ic-6 { background: #e2dff0; color: #6f5fa3; }
+  .ic-7 { background: #d8e9d4; color: #5b8550; }
+
+  /* —— 症状光谱条 —— */
+  .severity {
+    display: grid; grid-template-columns: 1fr; gap: 0;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    box-shadow: var(--shadow);
+  }
+  .severity-row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 28px;
+    padding: 30px 34px;
+    border-bottom: 1px solid var(--line);
+    align-items: start;
+  }
+  .severity-row:last-child { border-bottom: none; }
+  .severity-row .level {
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .severity-row .badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 4px 10px; border-radius: 999px;
+    font-size: 12.5px; letter-spacing: .1em;
+    width: fit-content;
+  }
+  .lv-1 { background: var(--sage-tint); color: var(--sage-deep); }
+  .lv-2 { background: var(--amber-soft); color: #9d7320; }
+  .lv-3 { background: var(--coral-soft); color: var(--coral); }
+  .lv-4 { background: #f3d8d2; color: #a3463a; }
+  .severity-row h4 {
+    font-family: var(--serif);
+    margin: 0 0 8px; font-size: 18px; font-weight: 600;
+  }
+  .severity-row ul {
+    margin: 0; padding-left: 18px;
+    color: var(--ink-soft); font-size: 14.5px;
+  }
+  .severity-row ul li { margin: 4px 0; }
+  .severity-row .scene {
+    margin-top: 12px;
+    color: var(--tan);
+    font-size: 13.5px;
+    font-style: italic;
+  }
+  @media (max-width: 600px) {
+    .severity-row { grid-template-columns: 1fr; gap: 12px; padding: 20px 22px; }
+  }
+
+  /* —— 高危人群 —— */
+  .risk-grid {
+    display: grid; gap: 22px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+  .risk-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    padding: 28px;
+  }
+  .risk-card .num {
+    font-family: var(--serif);
+    font-size: 32px;
+    color: var(--sage);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .risk-card h4 {
+    font-family: var(--serif);
+    font-size: 17px; margin: 0 0 10px; font-weight: 600;
+  }
+  .risk-card p {
+    color: var(--ink-soft); font-size: 14.5px;
+    margin: 0 0 8px;
+  }
+  .risk-card .ex {
+    font-size: 13px; color: var(--tan); font-style: italic;
+    border-top: 1px dashed var(--line);
+    padding-top: 10px; margin-top: 10px;
+  }
+
+  /* —— 信号 checklist —— */
+  .signals {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 40px 44px;
+    box-shadow: var(--shadow);
+  }
+  .signals h4 {
+    font-family: var(--serif);
+    font-size: 17px;
+    margin: 0 0 16px;
+    font-weight: 600;
+    color: var(--sage-deep);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .signals h4 svg { width: 18px; height: 18px; }
+  .signal-list {
+    list-style: none; padding: 0; margin: 0 0 26px;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 8px 24px;
+  }
+  .signal-list li {
+    position: relative; padding-left: 26px;
+    color: var(--ink-soft); font-size: 14.5px;
+    line-height: 1.7;
+  }
+  .signal-list li:before {
+    content: ""; position: absolute;
+    left: 4px; top: 9px; width: 14px; height: 14px;
+    border-radius: 4px;
+    background: var(--sage-tint);
+    border: 1.5px solid var(--sage);
+  }
+
+  /* —— DO / DON'T —— */
+  .compare {
+    display: grid; gap: 24px;
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 760px) { .compare { grid-template-columns: 1fr; } }
+  .compare-col {
+    background: var(--paper);
+    border-radius: var(--radius);
+    padding: 34px;
+    border: 1px solid var(--line);
+  }
+  .compare-col.do { border-top: 4px solid var(--sage); }
+  .compare-col.dont { border-top: 4px solid var(--coral); }
+  .compare-col h4 {
+    font-family: var(--serif);
+    font-size: 18px; margin: 0 0 18px; font-weight: 600;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .compare-col.do h4 { color: var(--sage-deep); }
+  .compare-col.dont h4 { color: var(--coral); }
+  .compare-col ul { margin: 0; padding: 0; list-style: none; }
+  .compare-col li {
+    padding: 12px 0; border-bottom: 1px dashed var(--line);
+    font-size: 15px; color: var(--ink-soft); line-height: 1.7;
+  }
+  .compare-col li:last-child { border-bottom: none; }
+  .compare-col li b { color: var(--ink); font-weight: 500; }
+  .compare-col li .quote {
+    display: block; margin-top: 4px;
+    font-size: 13.5px; color: var(--ink-mute); font-style: italic;
+  }
+
+  /* —— 药物表 —— */
+  .meds {
+    display: grid; gap: 22px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+  .med-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .med-card .top {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 12px; margin-bottom: 14px;
+  }
+  .med-card h3 {
+    font-family: var(--serif);
+    font-size: 19px; margin: 0 0 4px; font-weight: 600;
+  }
+  .med-card .en { color: var(--ink-mute); font-size: 12.5px; letter-spacing: .05em; }
+  .med-card .pill {
+    flex-shrink: 0;
+    font-size: 11.5px; letter-spacing: .12em;
+    padding: 4px 10px; border-radius: 999px;
+  }
+  .pill-a { background: var(--sage-tint); color: var(--sage-deep); }
+  .pill-b { background: var(--tan-soft); color: var(--tan); }
+  .pill-c { background: var(--coral-soft); color: var(--coral); }
+  .pill-d { background: var(--dust-soft); color: var(--dust); }
+  .pill-e { background: var(--amber-soft); color: #9d7320; }
+
+  .med-card .row {
+    display: grid; grid-template-columns: 80px 1fr;
+    gap: 12px; padding: 8px 0;
+    font-size: 14px; border-bottom: 1px dashed var(--line-soft);
+  }
+  .med-card .row:last-child { border-bottom: none; }
+  .med-card .row .k { color: var(--ink-mute); font-size: 13px; }
+  .med-card .row .v { color: var(--ink-soft); }
+  .med-card .row .v b { color: var(--ink); font-weight: 500; }
+
+  .med-card .examples {
+    background: var(--bg-warm);
+    border-radius: 10px; padding: 10px 14px;
+    margin-top: 12px;
+    font-size: 13px; color: var(--ink-soft);
+  }
+  .med-card .examples b { color: var(--ink); font-weight: 500; }
+
+  /* —— 治疗方法 —— */
+  .therapy {
+    display: grid; gap: 22px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  .therapy-card {
+    background: linear-gradient(180deg, var(--paper), var(--bg-cream));
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 32px;
+  }
+  .therapy-card .icon { font-size: 30px; line-height: 1; margin-bottom: 12px; }
+  .therapy-card h4 { font-family: var(--serif); font-size: 18px; margin: 0 0 10px; }
+  .therapy-card p { color: var(--ink-soft); font-size: 14.5px; margin: 0 0 10px; }
+
+  /* —— 日常练习卡片 —— */
+  .daily {
+    display: grid; gap: 22px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+  .daily-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 30px;
+    transition: all .25s;
+    display: flex; flex-direction: column;
+  }
+  .daily-card:hover { border-color: var(--sage); transform: translateY(-2px); }
+  .daily-card .num {
+    font-family: var(--serif);
+    font-size: 16px; color: var(--tan);
+    letter-spacing: .15em;
+    margin-bottom: 8px;
+  }
+  .daily-card h4 {
+    font-family: var(--serif);
+    font-size: 17px; margin: 0 0 10px; font-weight: 600;
+  }
+  .daily-card p {
+    color: var(--ink-soft); font-size: 14px;
+    margin: 0; flex: 1;
+  }
+  .daily-card .how {
+    margin-top: 12px; padding-top: 12px;
+    border-top: 1px dashed var(--line);
+    font-size: 13px; color: var(--sage-deep);
+  }
+  .daily-card .how b { font-weight: 500; }
+
+  /* —— 紧急资源 —— */
+  .emergency {
+    background: linear-gradient(135deg, #fdf3e8, #f7e9d6);
+    border-radius: var(--radius-lg);
+    padding: 52px 56px;
+    border: 1px solid var(--tan-soft);
+    box-shadow: var(--shadow);
+  }
+  .emergency h3 {
+    font-family: var(--serif);
+    font-size: 24px;
+    margin: 0 0 8px;
+    color: #8d4a1c;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .emergency > p { color: var(--ink-soft); margin: 0 0 24px; }
+  .hotlines {
+    display: grid; gap: 14px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  .hotline {
+    background: rgba(255,255,255,.7);
+    border-radius: var(--radius-sm);
+    padding: 18px 22px;
+    border: 1px solid rgba(194,149,106,.18);
+  }
+  .hotline h4 {
+    margin: 0 0 4px;
+    font-family: var(--serif); font-size: 16px; font-weight: 600;
+  }
+  .hotline .num {
+    font-family: var(--serif);
+    font-size: 22px; font-weight: 600;
+    color: var(--coral);
+    letter-spacing: .03em;
+  }
+  .hotline p {
+    margin: 6px 0 0;
+    font-size: 13px; color: var(--ink-soft);
+  }
+
+  /* —— 引言图片 —— */
+  .photo {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    margin: 56px 0;
+    aspect-ratio: 16/7;
+    background: var(--sage-tint);
+  }
+  .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  /* —— 强调引言 —— */
+  .pull {
+    font-family: var(--serif);
+    font-size: clamp(20px, 2.4vw, 28px);
+    line-height: 1.55;
+    color: var(--ink);
+    border-left: 3px solid var(--sage);
+    padding: 8px 0 8px 26px;
+    margin: 36px 0;
+    max-width: 760px;
+  }
+  .pull cite { display: block; margin-top: 10px; font-size: 14px; color: var(--ink-mute); font-style: normal; }
+
+  /* —— 免责 —— */
+  .disclaimer {
+    margin-top: 36px;
+    padding: 20px 24px;
+    background: var(--bg-warm);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+  .disclaimer b { color: var(--ink); font-weight: 500; }
+
+  /* —— 页脚 —— */
+  footer.foot {
+    border-top: 1px solid var(--line);
+    margin-top: 60px;
+    padding: 56px 0 80px;
+    background: var(--bg-warm);
+  }
+  .foot-grid {
+    display: grid; gap: 20px;
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+  @media (max-width: 760px) { .foot-grid { grid-template-columns: 1fr; } }
+  .foot p { color: var(--ink-soft); margin: 0 0 8px; font-size: 14px; }
+  .foot h5 { font-family: var(--serif); font-size: 14px; letter-spacing: .15em; color: var(--ink-mute); margin: 0 0 12px; text-transform: uppercase; }
+  .foot ul { list-style: none; padding: 0; margin: 0; }
+  .foot li { padding: 4px 0; font-size: 14px; }
+  .foot li a { color: var(--ink-soft); border: none; }
+  .foot li a:hover { color: var(--sage-deep); }
+  .copyright {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    color: var(--ink-mute);
+    font-size: 12.5px;
+    letter-spacing: .04em;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  }
+
+  /* —— util —— */
+  .anchor { position: relative; top: -80px; visibility: hidden; }
+  .grid-2 { display: grid; gap: 24px; grid-template-columns: 1.2fr 1fr; }
+  @media (max-width: 800px) { .grid-2 { grid-template-columns: 1fr; } }
+
+  /* —— 自我对话练习 —— */
+  .reframe {
+    display: grid; grid-template-columns: 1fr auto 1fr;
+    gap: 18px; align-items: stretch;
+    margin: 24px 0;
+  }
+  @media (max-width: 700px) {
+    .reframe { grid-template-columns: 1fr; }
+    .reframe .arrow { transform: rotate(90deg); margin: 4px auto; }
+  }
+  .reframe .col {
+    border-radius: var(--radius-sm);
+    padding: 18px 20px;
+    font-size: 14.5px;
+    line-height: 1.7;
+  }
+  .reframe .from { background: var(--coral-soft); color: #863c2c; }
+  .reframe .to { background: var(--sage-tint); color: var(--sage-deep); }
+  .reframe .col b { display: block; font-size: 12px; letter-spacing: .15em; margin-bottom: 8px; opacity: .7; }
+  .reframe .arrow {
+    display: flex; align-items: center; color: var(--ink-mute);
+  }
+
+  /* —— 朋友写给朋友的信 —— */
+  .letter {
+    background: linear-gradient(180deg, #fef9ee, #fdf2dd);
+    border: 1px solid #f0dfb6;
+    border-radius: var(--radius-lg);
+    padding: 52px 56px;
+    font-family: var(--serif);
+    color: var(--ink);
+    line-height: 2.0;
+    box-shadow: var(--shadow);
+    position: relative;
+  }
+  .letter h3 {
+    font-size: 22px; margin: 0 0 18px;
+  }
+  .letter p { margin: 0 0 14px; font-size: 16.5px; }
+  .letter .sign { text-align: right; margin-top: 24px; color: var(--ink-soft); font-size: 14.5px; }
+
+  /* ============ 移动端优化（≤640px） ============ */
+  @media (max-width: 640px) {
+    body { font-size: 15.5px; line-height: 1.75; }
+    .wrap, .narrow { padding: 0 18px; }
+    section { padding: 56px 0; }
+
+    /* —— 顶栏 —— */
+    .nav-inner { padding: 11px 18px; }
+    .brand { font-size: 16px; }
+    .brand-dot { width: 20px; height: 20px; }
+
+    /* —— Hero —— */
+    .hero { padding: 80px 0 64px; }
+    .hero-eyebrow { font-size: 11.5px; padding: 5px 12px; letter-spacing: .14em; }
+    .hero-title { margin: 22px 0 14px; line-height: 1.22; }
+    .hero-sub { font-size: 15.5px; line-height: 1.78; }
+    .hero-meta { gap: 10px 16px; margin-top: 26px; font-size: 12.5px; }
+
+    /* —— 引子卡片 —— */
+    .preface { padding: 26px 22px; margin-top: 36px; border-radius: 20px; }
+    .preface:before { font-size: 60px; left: 12px; top: -4px; }
+    .preface p { font-size: 15.5px; }
+
+    /* —— 章节标题 —— */
+    .sec-head { margin-bottom: 32px; }
+    .sec-num { font-size: 12px; letter-spacing: .25em; }
+    .sec-title { margin: 14px 0 10px; line-height: 1.3; }
+    .sec-lead { font-size: 15.5px; }
+
+    /* —— 各种卡片缩小 padding —— */
+    .card, .type-card, .risk-card, .therapy-card, .daily-card { padding: 26px 22px; }
+    .vignette { padding: 24px 24px; margin: 24px 0; }
+    .vignette h4 { font-size: 16px; }
+    .vignette p { font-size: 15px; }
+    .signals { padding: 28px 24px; }
+    .compare-col { padding: 26px 22px; }
+    .med-card { padding: 26px 22px; }
+    .emergency { padding: 36px 24px; border-radius: 22px; }
+    .emergency h3 { font-size: 20px; gap: 10px; }
+    .letter { padding: 32px 26px; border-radius: 22px; }
+    .letter h3 { font-size: 19px; margin-bottom: 14px; }
+    .letter p { font-size: 15.5px; line-height: 1.9; }
+    .pull { font-size: 19px; padding: 6px 0 6px 18px; margin: 32px 0; }
+    .photo { aspect-ratio: 16/9; margin: 32px 0; border-radius: 20px; }
+
+    /* —— 谱系卡片 —— */
+    .type-card .icon { width: 42px; height: 42px; margin-bottom: 12px; }
+    .type-card h3 { font-size: 18px; }
+    .type-card p { font-size: 14px; }
+
+    /* —— 症状光谱：上下堆叠并优化间距 —— */
+    .severity-row { padding: 20px 22px; gap: 10px; }
+    .severity-row .badge { font-size: 12px; padding: 3px 10px; }
+    .severity-row h4 { font-size: 16.5px; }
+    .severity-row ul { font-size: 14px; padding-left: 16px; }
+
+    /* —— 信号清单 —— */
+    .signal-list { gap: 4px 0; }
+    .signal-list li { font-size: 14px; padding-left: 22px; }
+    .signal-list li:before { width: 12px; height: 12px; top: 8px; }
+    .signals h4 { font-size: 16px; margin-top: 10px; }
+
+    /* —— DO / DON'T 列 —— */
+    .compare-col h4 { font-size: 16.5px; margin-bottom: 14px; }
+    .compare-col li { font-size: 14.5px; padding: 10px 0; }
+    .compare-col li .quote { font-size: 13px; }
+
+    /* —— 药物卡片：让 row 在窄屏上下堆叠 —— */
+    .med-card .top { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .med-card h3 { font-size: 17px; }
+    .med-card .row { grid-template-columns: 1fr; gap: 2px; padding: 10px 0; }
+    .med-card .row .k { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; opacity: .8; }
+    .med-card .row .v { font-size: 14.5px; }
+    .med-card .examples { font-size: 13px; padding: 10px 12px; }
+    .med-card .pill { font-size: 11px; padding: 3px 9px; }
+
+    /* —— 治疗卡 —— */
+    .therapy-card h4 { font-size: 17px; }
+
+    /* —— 日常卡 —— */
+    .daily-card h4 { font-size: 16px; }
+    .daily-card p { font-size: 13.5px; }
+    .daily-card .how { font-size: 12.5px; }
+
+    /* —— 紧急热线卡 —— */
+    .hotline { padding: 16px 18px; }
+    .hotline h4 { font-size: 15px; }
+    .hotline .num { font-size: 20px; letter-spacing: 0; word-break: keep-all; }
+    .hotline p { font-size: 12.5px; }
+
+    /* —— reframe 上下堆叠 —— */
+    .reframe { gap: 10px; margin: 18px 0; }
+    .reframe .col { padding: 14px 16px; font-size: 14px; }
+
+    /* —— footer —— */
+    footer.foot { padding: 40px 0 56px; }
+    .foot-grid { gap: 28px; }
+    .copyright { flex-direction: column; gap: 8px; font-size: 12px; }
+    .disclaimer { padding: 16px 18px; font-size: 13px; }
+  }
+
+  /* —— 超窄屏（≤380px，iPhone SE / 折叠机外屏） —— */
+  @media (max-width: 380px) {
+    .hero-title { font-size: 30px; }
+    .sec-title { font-size: 24px; }
+    .hotline .num { font-size: 18px; }
+    .preface { padding: 22px 18px; }
+    .emergency { padding: 24px 18px; }
+    .letter { padding: 24px 20px; }
+  }
+
+  /* —— 触屏上去掉 hover 抬升避免误触 —— */
+  @media (hover: none) {
+    .type-card:hover, .daily-card:hover { transform: none; }
+  }
+
+  /* ============ 视觉图解专用样式 ============ */
+  /* 杏仁核误报机制图 */
+  .diagram {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 44px;
+    margin: 60px 0;
+    box-shadow: var(--shadow);
+  }
+  .diagram-title {
+    font-family: var(--serif); font-size: 17px; font-weight: 600;
+    color: var(--ink); margin: 0 0 6px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .diagram-title svg { width: 18px; height: 18px; color: var(--sage); }
+  .diagram-sub { color: var(--ink-mute); font-size: 13.5px; margin: 0 0 24px; letter-spacing: .03em; }
+  .diagram svg.flow { width: 100%; height: auto; display: block; }
+
+  /* 渐变光谱条 */
+  .gradient-bar {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 36px 40px;
+    margin-bottom: 40px;
+    box-shadow: var(--shadow);
+  }
+  .gradient-bar h4 {
+    font-family: var(--serif); font-size: 16px; margin: 0 0 18px;
+    font-weight: 600; color: var(--ink-soft);
+  }
+  .gradient-track {
+    height: 14px; border-radius: 999px;
+    background: linear-gradient(90deg,
+      #d9e8e4 0%, #d9e8e4 22%,
+      #f5e6c4 28%, #f5e6c4 48%,
+      #f6e1d8 54%, #f6e1d8 74%,
+      #f3d8d2 80%, #f3d8d2 100%);
+    position: relative;
+    margin-bottom: 8px;
+  }
+  .gradient-marks {
+    display: flex; justify-content: space-between;
+    font-size: 12.5px; color: var(--ink-mute);
+    padding: 0 4px;
+    letter-spacing: .04em;
+  }
+  .gradient-marks span { flex: 1; text-align: center; }
+  .gradient-marks span b { display: block; color: var(--ink); font-weight: 600; font-size: 13.5px; margin-bottom: 2px; font-family: var(--serif); }
+
+  /* 焦虑循环图 */
+  .cycle-wrap {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 48px 36px;
+    margin: 60px 0;
+    box-shadow: var(--shadow);
+    text-align: center;
+  }
+  .cycle-wrap svg.cycle { max-width: 520px; width: 100%; height: auto; margin: 0 auto; display: block; }
+  .cycle-caption { color: var(--ink-soft); font-size: 14px; max-width: 580px; margin: 18px auto 0; line-height: 1.7; }
+
+  /* 4-4-6 呼吸图 */
+  .breath {
+    background: linear-gradient(135deg, var(--sage-tint), var(--bg-cream));
+    border-radius: var(--radius-lg);
+    padding: 56px 32px;
+    margin: 48px 0;
+    text-align: center;
+    border: 1px solid var(--line-soft);
+  }
+  .breath-circle {
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    margin: 0 auto 22px;
+    background: radial-gradient(circle at 35% 35%, #ffffff 0%, var(--sage-soft) 60%, var(--sage) 100%);
+    box-shadow: 0 8px 30px rgba(91,138,130,.22), inset 0 -12px 30px rgba(63,108,102,.18);
+    animation: breathAnim 14s ease-in-out infinite;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--sage-deep);
+    font-family: var(--serif); font-size: 17px; font-weight: 600;
+    letter-spacing: .08em;
+  }
+  @keyframes breathAnim {
+    0%   { transform: scale(.78); }
+    28.5% { transform: scale(1.12); }
+    57.1% { transform: scale(1.12); }
+    100% { transform: scale(.78); }
+  }
+  .breath h4 {
+    font-family: var(--serif); font-size: 18px; margin: 0 0 8px; font-weight: 600;
+  }
+  .breath p { color: var(--ink-soft); font-size: 14.5px; margin: 0; max-width: 440px; margin: 0 auto; }
+  .breath-steps {
+    display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;
+    margin-top: 22px;
+    font-size: 13.5px; color: var(--ink-soft);
+  }
+  .breath-steps span b { color: var(--sage-deep); font-weight: 600; }
+
+  @media (max-width: 640px) {
+    .diagram, .cycle-wrap { padding: 24px 18px; }
+    .gradient-bar { padding: 22px 20px; }
+    .breath { padding: 32px 20px; }
+    .breath-circle { width: 140px; height: 140px; font-size: 16px; }
+    .gradient-marks { font-size: 11px; }
+    .gradient-marks span b { font-size: 12.5px; }
+  }
+</style>
+<script src="./当心跳与你为敌 · 焦虑症温柔指南_files/widget.js" defer="" data-wwei-injected="1"></script><style type="text/css">
+  @font-face {
+    font-family: CuboxInter;
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("chrome-extension://bflmgpechpeohjfomgfdkkfcbhfcjohl/fonts/InterVariable.woff2") format("woff2");
+  }
+  #cubox-react-root {
+    z-index: 999999999999999999999;
+  }
+  </style><link rel="stylesheet" href="chrome-extension://bflmgpechpeohjfomgfdkkfcbhfcjohl/css/globalHighlightStyles.css"></head>
+<body>
+
+<div class="progress"><i id="pg" style="width: 0%;"></i></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="https://mind-care.wwei.ai/#top">
+      <svg class="brand-dot" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="10" stroke="#5B8A82" stroke-width="1.5"></circle>
+        <path d="M7 13c1.5-2 3-2 5 0s3.5 2 5 0" stroke="#C2956A" stroke-width="1.6" stroke-linecap="round"></path>
+      </svg>
+      心安手册
+    </a>
+    <div class="nav-list">
+      <a href="https://mind-care.wwei.ai/#story">引子</a>
+      <a href="https://mind-care.wwei.ai/#what">认识焦虑</a>
+      <a href="https://mind-care.wwei.ai/#types">七大谱系</a>
+      <a href="https://mind-care.wwei.ai/#severity">症状光谱</a>
+      <a href="https://mind-care.wwei.ai/#risk">高危人群</a>
+      <a href="https://mind-care.wwei.ai/#signals">早期信号</a>
+      <a href="https://mind-care.wwei.ai/#support">如何陪伴</a>
+      <a href="https://mind-care.wwei.ai/#meds">药物指南</a>
+      <a href="https://mind-care.wwei.ai/#therapy">心理治疗</a>
+      <a href="https://mind-care.wwei.ai/#daily">日常照护</a>
+      <a href="https://mind-care.wwei.ai/#help">紧急援助</a>
+    </div>
+  </div>
+</nav>
+
+<a id="top" class="anchor"></a>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+    <span class="hero-eyebrow">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-7-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6.5-7 11-7 11h-4z" stroke="currentColor" stroke-width="1.6"></path></svg>
+      A Gentle Guide · 给焦虑者与陪伴者的温柔指南
+    </span>
+    <h1 class="hero-title">
+      当心跳与你为敌，<br>
+      你需要的不是更多检查，<br>
+      而是<em>一份耐心地图</em>。
+    </h1>
+    <p class="hero-sub">
+      你可能跑过三家医院，做过心电图、动态血压、CT 与抽血，每一张报告都写着"未见异常"。但身体仍在尖叫——胸闷、心慌、手抖、喉咙堵、随时要昏倒。医生说这是焦虑症，开了药你不敢吃。这本手册想做的事很简单：把一团混乱拆给你看，让你知道自己在经历什么、什么是正常的、什么时候必须求助。
+    </p>
+    <div class="hero-meta">
+      <span><b>阅读时长</b> 约 25 分钟</span>
+      <span><b>适合</b> 焦虑者本人 · 家人 · 朋友 · 同事</span>
+      <span><b>立场</b> 科普向，非临床建议</span>
+    </div>
+
+    <div class="preface">
+      <p>"焦虑症不是你太脆弱，也不是你想多了。它是一组真实存在的神经-内分泌反应，只是被错误时间触发。你心跳加速时，身体真的在加速；你觉得喘不过气时，氧气是真的让你不踏实。问题不在于'你假装难受'，而在于'报警系统过于敏感'。"</p>
+      <p>这本手册不会替代医生，但会替你做一件事：陪你把一团模糊的恐惧，拆成一个个可以看见、可以命名、可以应对的小盒子。看见，就是处理它的第一步。</p>
+      <footer>—— 编者手记</footer>
+    </div>
+  </div>
+
+  <svg class="hero-illust" viewBox="0 0 400 400">
+    <defs>
+      <lineargradient id="g1" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#d9e8e4"></stop>
+        <stop offset="1" stop-color="#f1e3d1"></stop>
+      </lineargradient>
+    </defs>
+    <circle cx="200" cy="200" r="160" fill="url(#g1)"></circle>
+    <path d="M70 220 L120 220 L140 180 L170 260 L200 140 L230 240 L260 200 L330 200" stroke="#5B8A82" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".75"></path>
+    <circle cx="200" cy="200" r="6" fill="#C2956A"></circle>
+  </svg>
+</header>
+
+<!-- ============ STORY ============ -->
+<a id="story" class="anchor"></a>
+<section>
+  <div class="narrow">
+    <div class="sec-head">
+      <span class="sec-num">PART · 01</span>
+      <h2 class="sec-title">那个"明明检查没事却觉得自己快死了"的人，并不孤单</h2>
+      <p class="sec-lead">在介绍任何概念之前，我们先看几位真实存在的人。如果你或你关心的人，正在经历这些场景中的任何一种，请记住——这不是矫情，也不是装病。</p>
+    </div>
+
+    <div class="photo" style="aspect-ratio: 16/8; margin: 0 0 40px; border-radius: 22px;">
+      <img src="./当心跳与你为敌 · 焦虑症温柔指南_files/hero.png" alt="清晨窗边一杯茶与翻开的书，柔和阳光" loading="lazy" data-cubox-image-id="1db8c2122af2758d704d9816c0a374e7" data-cubox-image-index="0" data-cubox-image-load="false">
+    </div>
+
+    <div class="vignette">
+      <div class="vignette-tag">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M3 12h3l3-8 4 16 3-8h5" stroke="currentColor" stroke-width="2"></path></svg>
+        案例 · 32岁产品经理 小林
+      </div>
+      <h4>苹果手表上的心率，把我从生活里偷走了</h4>
+      <p>小林从去年九月开始反复看手表。他坚信自己心率"不对劲"——静息心率 78 算偏快吗？走路上到 95 算心动过速吗？他做了三次 24 小时动态心电图，去过三甲心血管内科和心律失常专病门诊，所有结果都是窦性心律，无异常。</p>
+      <p>但他停不下来。开会前测一次、午饭后测一次、睡前测三次。每次心率"超过 90"他就要去阳台深呼吸。后来他干脆不戴手表，但手又不自觉摸脖子摸手腕。心理科医生开了舍曲林，他攥着药盒不敢吃："万一这药把我心脏真搞坏了呢？"</p>
+    </div>
+
+    <div class="vignette">
+      <div class="vignette-tag">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M3 12h3l3-8 4 16 3-8h5" stroke="currentColor" stroke-width="2"></path></svg>
+        案例 · 28岁初中老师 林姐
+      </div>
+      <h4>我喉咙总觉得有东西，是不是甲状腺癌？</h4>
+      <p>林姐三个月内做了两次甲功五项、一次甲状腺彩超、一次喉镜。所有医生都告诉她结节是良性的，喉咙没问题。但每天早上她一摸到颈部就会"再确认一次"，越摸越紧，越紧越觉得肿。</p>
+      <p>她在小红书搜"甲状腺癌早期症状"看到深夜三点，看着看着就开始心慌、手心冒汗、出现一种"现实不真实"的感觉。她不敢告诉爱人，怕被骂"瞎想"。</p>
+    </div>
+
+    <div class="vignette">
+      <div class="vignette-tag">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M3 12h3l3-8 4 16 3-8h5" stroke="currentColor" stroke-width="2"></path></svg>
+        案例 · 40岁创业者 老周
+      </div>
+      <h4>大单签下来那一刻，我以为我要心梗了</h4>
+      <p>融资当天庆功宴，老周突然胸口像被按住，喘不上气，左手发麻，眼前有一阵黑。他被救护车拉到急诊，所有指标正常。半夜回家路上又来了一次——之后两个月他不敢出差、不敢一个人开车、不敢坐地铁。</p>
+      <p>他坚信"上次没死是侥幸"，整天等下一次。最后他确诊的不是心脏病，是**惊恐障碍**。他说："我宁愿是真心梗，至少有片子可看。"</p>
+    </div>
+
+    <div class="pull">
+      这些人没有一个是"想太多"。他们只是被一个误报频繁的烟雾警报折磨着——警报响时他们闻不到烟，但身体已经被吓得跳起来。我们这本手册，就是来教你如何与这个警报和解，并最终修好它。
+      <cite>— 焦虑症不等于"心理脆弱"，它是身体真实发生的化学风暴</cite>
+    </div>
+
+    <div class="photo" style="aspect-ratio: 21/9; margin-top: 64px;">
+      <img src="./当心跳与你为敌 · 焦虑症温柔指南_files/photo-1507525428034-b723cf961d3e" alt="海边的清晨" loading="lazy" data-cubox-image-id="dc9707542ed45525571c47210036d168" data-cubox-image-index="1" data-cubox-image-load="true">
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT ============ -->
+<a id="what" class="anchor"></a>
+<section style="background: linear-gradient(180deg, var(--bg), var(--bg-cream));">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">PART · 02</span>
+      <h2 class="sec-title">焦虑症到底是什么？一个被误读最多的疾病</h2>
+      <p class="sec-lead">很多人以为焦虑症是"想不开"的同义词，是性格弱的人才会得。这是最大的误解。我们必须先清掉这个误解，才能谈后面的事。</p>
+    </div>
+
+    <div class="grid-2">
+      <div>
+        <h3 style="font-family:var(--serif); font-size:22px; margin:0 0 12px;">它是身体反应的"误判"，不是想象出来的痛苦</h3>
+        <p style="color:var(--ink-soft); font-size:16px;">人类大脑有一个原始警报中枢叫<b>杏仁核</b>，它的工作是在你看见老虎时让你心跳飙升、肌肉紧张、气管扩张——这套反应叫"战逃反应"，几万年来救过我们祖先无数次。</p>
+        <p style="color:var(--ink-soft); font-size:16px;">焦虑症的本质是：杏仁核太敏感了，它把"开会、坐地铁、心跳偶尔快一下"也识别成了"老虎"。一旦误报，肾上腺素和皮质醇会真实地涌入血液，于是你真的心跳加速、真的发抖、真的呼吸不上来——这不是装的，也不是想象的，是化学反应。</p>
+        <p style="color:var(--ink-soft); font-size:16px;">所以"你想开点就好了"这句话毫无用处。你不是想不开，你是身体先于意识开始战斗了。</p>
+      </div>
+      <div class="card">
+        <span class="card-eyebrow">关键概念</span>
+        <h3>三个必须分清的词</h3>
+        <p style="color:var(--ink-soft); font-size:14.5px; margin:0 0 14px;"><b>焦虑（情绪）：</b>每个人都有，是面对未知时的一种警觉，正常且有用。比如考试前轻微紧张能让你发挥更好。</p>
+        <p style="color:var(--ink-soft); font-size:14.5px; margin:0 0 14px;"><b>焦虑发作（事件）：</b>突然来一阵强烈的躯体反应，如心慌、出汗、手抖、濒死感，10–30 分钟达到顶峰然后退去。一次发作不等于得病。</p>
+        <p style="color:var(--ink-soft); font-size:14.5px; margin:0;"><b>焦虑障碍（疾病）：</b>持续 6 个月以上、显著影响生活/工作/睡眠/人际，并且本人无法靠"放松一下"自行恢复——这才是临床意义上的"焦虑症"。</p>
+      </div>
+    </div>
+
+    <div class="photo">
+      <img src="./当心跳与你为敌 · 焦虑症温柔指南_files/photo-1499728603263-13726abce5fd" alt="清晨穿过树林的光" loading="lazy" data-cubox-image-id="5e97e7a27a2dc1512ba085b6eefbb551" data-cubox-image-index="2" data-cubox-image-load="false">
+    </div>
+
+    <!-- 杏仁核误报机制图 -->
+    <div class="diagram">
+      <h3 class="diagram-title">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M9 7a3 3 0 0 1 3-3 3 3 0 0 1 3 3M5 12a3 3 0 0 1 3-3M19 12a3 3 0 0 0-3-3M5 12a3 3 0 0 0 3 3M19 12a3 3 0 0 1-3 3M9 17a3 3 0 0 0 3 3 3 3 0 0 0 3-3" stroke="currentColor" stroke-width="1.6"></path></svg>
+        焦虑发作的化学链条 — 杏仁核误判机制图解
+      </h3>
+      <p class="diagram-sub">把"我怎么突然就这样了"这一团迷雾，拆成 5 个看得见的步骤</p>
+      <svg class="flow" viewBox="0 0 880 280" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L9,3 z" fill="#8a948f"></path>
+          </marker>
+          <lineargradient id="brainG" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#d9e8e4"></stop>
+            <stop offset="1" stop-color="#5b8a82"></stop>
+          </lineargradient>
+          <lineargradient id="alarmG" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#f6e1d8"></stop>
+            <stop offset="1" stop-color="#c97b63"></stop>
+          </lineargradient>
+          <lineargradient id="bodyG" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#f5e6c4"></stop>
+            <stop offset="1" stop-color="#d8a14a"></stop>
+          </lineargradient>
+        </defs>
+
+        <!-- 节点 1：触发 -->
+        <g>
+          <circle cx="80" cy="100" r="48" fill="url(#brainG)"></circle>
+          <text x="80" y="96" text-anchor="middle" font-size="13" fill="#243530" font-family="-apple-system,sans-serif" font-weight="600">触发事件</text>
+          <text x="80" y="114" text-anchor="middle" font-size="11" fill="#4a5a55">咖啡 / 心跳快</text>
+          <text x="80" y="180" text-anchor="middle" font-size="12" fill="#8a948f" font-family="serif" font-style="italic">本身是中性的</text>
+        </g>
+
+        <!-- 箭头 -->
+        <line x1="135" y1="100" x2="195" y2="100" stroke="#8a948f" stroke-width="1.5" marker-end="url(#arrow)"></line>
+
+        <!-- 节点 2：杏仁核 -->
+        <g>
+          <circle cx="250" cy="100" r="48" fill="url(#alarmG)"></circle>
+          <text x="250" y="96" text-anchor="middle" font-size="13" fill="#fff" font-weight="600">杏仁核</text>
+          <text x="250" y="114" text-anchor="middle" font-size="11" fill="#fff">误判为危险</text>
+          <text x="250" y="180" text-anchor="middle" font-size="12" fill="#8a948f" font-family="serif" font-style="italic">大脑判断为"老虎"</text>
+        </g>
+
+        <line x1="305" y1="100" x2="365" y2="100" stroke="#8a948f" stroke-width="1.5" marker-end="url(#arrow)"></line>
+
+        <!-- 节点 3：激素 -->
+        <g>
+          <circle cx="420" cy="100" r="48" fill="url(#bodyG)"></circle>
+          <text x="420" y="92" text-anchor="middle" font-size="12" fill="#fff" font-weight="600">肾上腺素</text>
+          <text x="420" y="108" text-anchor="middle" font-size="12" fill="#fff" font-weight="600">皮质醇</text>
+          <text x="420" y="124" text-anchor="middle" font-size="11" fill="#fff">大量涌出</text>
+          <text x="420" y="180" text-anchor="middle" font-size="12" fill="#8a948f" font-family="serif" font-style="italic">3 秒内进入血液</text>
+        </g>
+
+        <line x1="475" y1="100" x2="535" y2="100" stroke="#8a948f" stroke-width="1.5" marker-end="url(#arrow)"></line>
+
+        <!-- 节点 4：身体 -->
+        <g>
+          <circle cx="590" cy="100" r="48" fill="#fbf7f1" stroke="#c2956a" stroke-width="2"></circle>
+          <text x="590" y="92" text-anchor="middle" font-size="12" fill="#243530" font-weight="600">心跳/呼吸</text>
+          <text x="590" y="108" text-anchor="middle" font-size="12" fill="#243530" font-weight="600">出汗/手抖</text>
+          <text x="590" y="124" text-anchor="middle" font-size="11" fill="#4a5a55">真实反应</text>
+          <text x="590" y="180" text-anchor="middle" font-size="12" fill="#8a948f" font-family="serif" font-style="italic">不是装的，是真的</text>
+        </g>
+
+        <line x1="645" y1="100" x2="705" y2="100" stroke="#8a948f" stroke-width="1.5" marker-end="url(#arrow)"></line>
+
+        <!-- 节点 5：放大解读 -->
+        <g>
+          <circle cx="760" cy="100" r="48" fill="#f3d8d2" stroke="#a3463a" stroke-width="2"></circle>
+          <text x="760" y="92" text-anchor="middle" font-size="12" fill="#a3463a" font-weight="600">"我要死了"</text>
+          <text x="760" y="108" text-anchor="middle" font-size="12" fill="#a3463a" font-weight="600">"我心梗了"</text>
+          <text x="760" y="124" text-anchor="middle" font-size="11" fill="#a3463a">恐慌升级</text>
+          <text x="760" y="180" text-anchor="middle" font-size="12" fill="#8a948f" font-family="serif" font-style="italic">大脑二次解读</text>
+        </g>
+
+        <!-- 反馈弧线 -->
+        <path d="M 760 50 Q 760 -10, 420 -10 Q 80 -10, 80 50" stroke="#c97b63" stroke-width="1.5" stroke-dasharray="5,5" fill="none" marker-end="url(#arrow)" transform="translate(0,30)"></path>
+        <text x="420" y="38" text-anchor="middle" font-size="12" fill="#c97b63" font-style="italic" font-family="serif">↻ 二次解读放大反应，回到杏仁核形成循环</text>
+
+        <!-- 标题 -->
+        <text x="440" y="252" text-anchor="middle" font-size="13.5" fill="#4a5a55" font-family="serif">
+          解开这个循环，只需要在任意一个环节"插一脚"——这就是治疗的全部秘密
+        </text>
+      </svg>
+    </div>
+
+    <div class="reframe">
+      <div class="col from">
+        <b>常见误解</b>
+        "焦虑症的人是太矫情，让他坚强一点就好。"
+      </div>
+      <div class="arrow">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2"></path></svg>
+      </div>
+      <div class="col to">
+        <b>正确视角</b>
+        "焦虑症是杏仁核-自主神经系统的真实失调，相当于身体的火警一直误响，不是性格问题，而是生理-心理共病。"
+      </div>
+    </div>
+
+    <p style="color: var(--ink-soft); font-size:16px; margin-top: 20px;">
+      根据中国精神卫生调查（CMHS, 2019）数据，<b>中国成年人焦虑障碍终身患病率约为 7.6%</b>，也就是大概每 13 个成年人就有 1 个一生中至少经历过一次。世界卫生组织 2023 年报告显示全球焦虑障碍人数已超过 3 亿。这是个非常大众的疾病，远远不是"少数人想不开"。
+    </p>
+  </div>
+</section>
+
+<!-- ============ TYPES ============ -->
+<a id="types" class="anchor"></a>
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">PART · 03</span>
+      <h2 class="sec-title">焦虑不是一种病，是一个家族 — 七大谱系一次看懂</h2>
+      <p class="sec-lead">医生说"你是焦虑症"——但这只是一个大类。它下面有七种主要分支，每一种长得很不一样。看懂自己属于哪一种，是治疗的第一步。</p>
+    </div>
+
+    <div class="photo" style="aspect-ratio: 21/8; margin: 0 0 40px;">
+      <img src="./当心跳与你为敌 · 焦虑症温柔指南_files/photo-1490750967868-88aa4486c946" alt="盛开的紫色花朵簇" loading="lazy" data-cubox-image-id="4cc427802f42976b89b058de56221f09" data-cubox-image-index="3" data-cubox-image-load="false">
+    </div>
+
+    <div class="spectrum">
+      <div class="type-card">
+        <div class="icon ic-1">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M3 12c2-4 6-4 9 0s7 4 9 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+        </div>
+        <h3>广泛性焦虑障碍</h3>
+        <div class="en">GAD · Generalized Anxiety Disorder</div>
+        <p>对几乎所有事情都"操心"——工作、孩子、车祸、地震、明天是否下雨。担心的东西不停切换，但担心本身从不停。常伴失眠、肌肉紧绷、易疲劳。</p>
+        <div class="signal"><b>典型场景：</b>"晚上 12 点躺床上，脑子里 30 个事情打架，怎么也关不掉。"</div>
+      </div>
+
+      <div class="type-card">
+        <div class="icon ic-2">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 2v6M12 16v6M2 12h6M16 12h6M5 5l4 4M15 15l4 4M19 5l-4 4M9 15l-4 4" stroke="currentColor" stroke-width="1.8"></path></svg>
+        </div>
+        <h3>惊恐障碍</h3>
+        <div class="en">Panic Disorder</div>
+        <p>无预警地突然爆发剧烈躯体症状：心率飙到 130+、胸痛、窒息感、麻木、濒死感、失控感。一次 10–30 分钟，过后筋疲力尽。最折磨的不是发作本身，而是"等下一次发作"的恐惧。</p>
+        <div class="signal"><b>典型场景：</b>开车堵在隧道里突然觉得要心梗，叫救护车送急诊但所有指标正常。</div>
+      </div>
+
+      <div class="type-card">
+        <div class="icon ic-3">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v8M12 17h.01M5 21h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2z" stroke="currentColor" stroke-width="1.8"></path></svg>
+        </div>
+        <h3>疾病焦虑障碍</h3>
+        <div class="en">Illness Anxiety / Hypochondriasis</div>
+        <p>过度担心自己得了重大疾病（癌症、心脏病、艾滋）。不停搜索症状、反复检查身体、跑各种医院。即使医生说没事，过几天又开始怀疑下一种病。<b>本案朋友的画像很可能落在此处。</b></p>
+        <div class="signal"><b>典型场景：</b>每天测血压三次，每次都担心"是不是晨峰高血压马上中风"。</div>
+      </div>
+
+      <div class="type-card">
+        <div class="icon ic-4">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 11.5a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 22c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="currentColor" stroke-width="1.8"></path></svg>
+        </div>
+        <h3>社交焦虑障碍</h3>
+        <div class="en">Social Anxiety Disorder</div>
+        <p>对"被他人评价"极度敏感。开会发言、点餐、当众吃饭、跟陌生人对视都会面红耳赤、出汗、声音抖。不是"怕生"，是怕到回避。久了会影响升职、社交、亲密关系。</p>
+        <div class="signal"><b>典型场景：</b>电梯里只有一个同事，宁可走 18 层楼梯也不进去。</div>
+      </div>
+
+      <div class="type-card">
+        <div class="icon ic-5">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 22a10 10 0 1 1 10-10 10 10 0 0 1-10 10zM12 7v6l4 2" stroke="currentColor" stroke-width="1.8"></path></svg>
+        </div>
+        <h3>特定恐惧症</h3>
+        <div class="en">Specific Phobia</div>
+        <p>对特定单一事物的极端恐惧：高、密闭空间、坐飞机、针、血、蛇、电梯、开车过桥。本人知道不合理，但生理反应无法控制。如果不影响生活就不算病，影响才是。</p>
+        <div class="signal"><b>典型场景：</b>外派去东京但宁可坐邮轮三天也不上飞机。</div>
+      </div>
+
+      <div class="type-card">
+        <div class="icon ic-6">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M3 12c0-5 4-9 9-9s9 4 9 9-4 9-9 9-9-4-9-9z" stroke="currentColor" stroke-width="1.8"></path><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8"></path></svg>
+        </div>
+        <h3>强迫障碍</h3>
+        <div class="en">OCD · Obsessive-Compulsive Disorder</div>
+        <p>严格说不属于焦虑障碍（DSM-5 已独立分类），但发病机制高度相关。脑里反复出现某个念头（怕脏、怕忘、怕伤害别人），通过反复仪式（洗手、检查、计数）来缓解。</p>
+        <div class="signal"><b>典型场景：</b>出门后必须返回家三次确认燃气阀，否则一天都坐立不安。</div>
+      </div>
+
+      <div class="type-card">
+        <div class="icon ic-7">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M3 21l9-18 9 18H3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path><path d="M12 9v5M12 17h.01" stroke="currentColor" stroke-width="2"></path></svg>
+        </div>
+        <h3>创伤后应激障碍</h3>
+        <div class="en">PTSD · Post-Traumatic Stress Disorder</div>
+        <p>经历重大创伤（事故、暴力、丧亲、医疗事件、灾难）后一个月以上仍反复闪回、噩梦、警觉、麻木、回避相关情境。汶川亲历者、家暴幸存者、ICU 出院者是高发人群。</p>
+        <div class="signal"><b>典型场景：</b>车祸后半年仍不敢坐副驾，听到刹车声就要哭。</div>
+      </div>
+    </div>
+
+    <div class="photo" style="aspect-ratio: 21/8; margin: 56px 0 0;">
+      <img src="./当心跳与你为敌 · 焦虑症温柔指南_files/photo-1419242902214-272b3f66ee7a" alt="散落的薰衣草与柔光" loading="lazy" data-cubox-image-id="badc2d7d7bd70ebe0e089a88ffaeab38" data-cubox-image-index="4" data-cubox-image-load="false">
+    </div>
+
+    <div class="vignette" style="margin-top: 32px;">
+      <div class="vignette-tag">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"></circle><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.6"></path></svg>
+        给本案朋友的具体定位
+      </div>
+      <h4>"心率高、血压高、医生说没事但不敢吃药"——很可能是 疾病焦虑 + 惊恐障碍 复合型</h4>
+      <p>这种组合非常常见：身体出现一次真实的不适（喝咖啡心慌、低血糖头晕），大脑把它解读为"心脏要出问题了"，于是开始反复关注心跳血压。注意力越聚焦，自主神经越兴奋，越能"测到"异常，于是循环加剧。又因为反复搜索"高血压会中风死人"，对药物本身也产生怀疑——怕副作用 &gt; 怕病本身。</p>
+      <p>好消息是：这种类型对认知行为治疗（CBT）反应非常好，配合 SSRI 类药物 4–8 周可以明显缓解。但前提是先迈出那一步：相信医生而不是相信百度。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SEVERITY ============ -->
+<a id="severity" class="anchor"></a>
+<section style="background: var(--bg-cream);">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">PART · 04</span>
+      <h2 class="sec-title">从"偶尔紧张"到"无法出门"— 症状的四级光谱</h2>
+      <p class="sec-lead">焦虑不是 0 或 1。它有一条很长的渐变带。下面这条光谱是临床上常用的分级，对照一下，你大概能知道自己或朋友站在哪里。</p>
+    </div>
+
+    <div class="photo" style="aspect-ratio: 16/6; margin: 0 0 48px;">
+      <img src="./当心跳与你为敌 · 焦虑症温柔指南_files/photo-1506905925346-21bda4d32df4" alt="层叠的远山在晨雾中" loading="lazy" data-cubox-image-id="31f50892477b7726c74ee15797936130" data-cubox-image-index="5" data-cubox-image-load="false">
+    </div>
+
+    <!-- 渐变光谱可视条 -->
+    <div class="gradient-bar">
+      <h4>从健康到求助 · 一条连续的带</h4>
+      <div class="gradient-track"></div>
+      <div class="gradient-marks">
+        <span><b>第 1 级</b>偶尔紧张</span>
+        <span><b>第 2 级</b>持续两周</span>
+        <span><b>第 3 级</b>干扰生活</span>
+        <span><b>第 4 级</b>必须就医</span>
+      </div>
+    </div>
+
+    <div class="severity">
+      <div class="severity-row">
+        <div class="level">
+          <span class="badge lv-1">第 1 级 · 轻度</span>
+          <span style="font-size:13px; color:var(--ink-mute);">健康-亚健康过渡带</span>
+        </div>
+        <div>
+          <h4>偶发的焦虑情绪 — 没人不会有</h4>
+          <ul>
+            <li>面对不确定的事会担心，但不影响入睡或第二天表现</li>
+            <li>身体偶尔有反应：心跳快一点、手心微汗</li>
+            <li>休息一晚或聊一聊就能恢复</li>
+            <li>注意力大致正常，工作可以推进</li>
+          </ul>
+          <p class="scene">场景：明天有个大客户提案，今晚有点睡不踏实，但准备完后倒头就着了。这是健康人的反应。</p>
+        </div>
+      </div>
+
+      <div class="severity-row">
+        <div class="level">
+          <span class="badge lv-2">第 2 级 · 中轻度</span>
+          <span style="font-size:13px; color:var(--ink-mute);">需要自我调整</span>
+        </div>
+        <div>
+          <h4>持续两周以上的紧张 — 开始磨人但能扛</h4>
+          <ul>
+            <li>睡眠变差：入睡困难或凌晨 3-4 点醒来想事情</li>
+            <li>容易心烦、对噪音敏感、对家人没耐心</li>
+            <li>身体反应增多：胸闷、肩颈僵硬、肠胃不舒服</li>
+            <li>开始反复确认（锁门、邮件已发、孩子安全）</li>
+            <li>工作还能完成，但效率下降，情绪化决策增多</li>
+          </ul>
+          <p class="scene">场景：项目延期一个月以来，每天醒来第一件事就是看手机有没有坏消息，胃酸反复，但还能坚持上班。</p>
+        </div>
+      </div>
+
+      <div class="severity-row">
+        <div class="level">
+          <span class="badge lv-3">第 3 级 · 中度（可能已是临床焦虑症）</span>
+          <span style="font-size:13px; color:var(--ink-mute);">建议求助专业医生</span>
+        </div>
+        <div>
+          <h4>开始干扰生活 — 该看医生了</h4>
+          <ul>
+            <li>反复出现明显躯体症状：心慌、胸痛、手抖、出汗、头晕、呼吸不顺</li>
+            <li>跑过医院做过多次检查，结果都没器质问题</li>
+            <li>开始回避：不敢一个人坐地铁、不敢出差、不敢看体检报告</li>
+            <li>睡眠严重受损（入睡 1 小时以上 或 半夜频繁醒）</li>
+            <li>注意力涣散，工作出错，开始请假</li>
+            <li>家人关系变紧张，但很难解释自己怎么了</li>
+          </ul>
+          <p class="scene">场景：本案的小林、林姐、老周都在这一级。这一级靠"自己想开"已经没用了，<b>必须求助精神科或心身医学科</b>。</p>
+        </div>
+      </div>
+
+      <div class="severity-row">
+        <div class="level">
+          <span class="badge lv-4">第 4 级 · 重度</span>
+          <span style="font-size:13px; color:var(--ink-mute);">必须立即就医</span>
+        </div>
+        <div>
+          <h4>生活几乎停摆 — 不要硬扛</h4>
+          <ul>
+            <li>无法独立出门，甚至无法独自待在家里</li>
+            <li>每天多次惊恐发作，伴有强烈濒死感、失控感</li>
+            <li>持续失眠或终日昏睡</li>
+            <li>食欲明显下降或暴食，体重短期变化超过 5%</li>
+            <li>开始出现抑郁症状：兴趣丧失、自责、麻木</li>
+            <li>偶尔闪过"消失也不错"的想法 — 任何这类念头都必须立刻告诉医生或拨打心理援助热线</li>
+          </ul>
+          <p class="scene">场景：这个阶段不要再和自己讲道理。请立刻联系本手册末尾的紧急热线，或前往三甲医院精神科急诊。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      <b>关于自评：</b>临床上常用的简易筛查工具有 GAD-7（广泛焦虑量表）、PHQ-9（抑郁筛查）、ASI-3（焦虑敏感指数）。这些表 5–10 分钟可填，可以自查也可以让朋友陪填，但<b>它们不能替代医生诊断</b>。手机上有"问止中医"、"好心情"、"简单心理"等正规 App 都可在线测。如果分数偏高，请把结果带去精神科门诊。
+    </div>
+  </div>
+</section>
+
+<!-- ============ RISK ============ -->
+<a id="risk" class="anchor"></a>
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">PART · 05</span>
+      <h2 class="sec-title">谁更容易"中招"？焦虑症藏在这些人身上</h2>
+      <p class="sec-lead">焦虑症不是随机降临，它有清晰的高风险画像。看一看，你身边是不是有这样的人——也许包括你自己。</p>
+    </div>
+
+    <div class="photo" style="aspect-ratio: 16/6; margin: 0 0 48px;">
+      <img src="./当心跳与你为敌 · 焦虑症温柔指南_files/photo-1470770841072-f978cf4d019e" alt="清晨山间湖泊的倒影" loading="lazy" data-cubox-image-id="f0b27098a52bb88383c5fbb547921c3e" data-cubox-image-index="6" data-cubox-image-load="false">
+    </div>
+
+    <div class="risk-grid">
+      <div class="risk-card">
+        <div class="num">01</div>
+        <h4>高度负责的"完美主义者"</h4>
+        <p>对自己标准极高、不能接受出错。表面上是优等生、骨干、能扛事的人，内心一直在自我审判。</p>
+        <p class="ex">"小林是产研团队 PM，三年没出过纰漏。第一次焦虑发作就在他做错一份周报后的那个夜晚。"</p>
+      </div>
+
+      <div class="risk-card">
+        <div class="num">02</div>
+        <h4>长期高压创业者 / 职场骨干</h4>
+        <p>多线程、高强度、决策压力大的人。皮质醇长期偏高 → 自主神经持续激活 → 阈值越来越低。</p>
+        <p class="ex">"老周创业 6 年，每次大事敲定后反而崩。这不是巧合 — 是肾上腺素退潮太快，反弹成惊恐。"</p>
+      </div>
+
+      <div class="risk-card">
+        <div class="num">03</div>
+        <h4>有焦虑/抑郁家族史的人</h4>
+        <p>父母或兄弟姐妹有焦虑/抑郁/酒精滥用史，遗传贡献 30%–40%。不是命定，但风险确实高。</p>
+        <p class="ex">"陈姐父亲一辈子'肝郁气滞'，自己也常年偏头痛。儿子刚高考，她开始凌晨惊醒。"</p>
+      </div>
+
+      <div class="risk-card">
+        <div class="num">04</div>
+        <h4>童年有重大不安经历的人</h4>
+        <p>父母离异/家暴/留守/严苛批评/早年丧亲。这些会改变杏仁核的"敏感度设置"，到成年后才浮出来。</p>
+        <p class="ex">"老吴小时候父母吵架打他出气，30 岁后听到夫妻在邻桌争吵就胃痉挛。"</p>
+      </div>
+
+      <div class="risk-card">
+        <div class="num">05</div>
+        <h4>女性、产后、围绝经期</h4>
+        <p>女性终身患病率约为男性 2 倍。雌激素和孕激素波动直接影响 5-羟色胺水平。产后 3 个月、绝经前后是两个高峰。</p>
+        <p class="ex">"方姐生完二胎四个月，半夜起来喂奶时心跳到 140，第一反应是'我得了产后心肌病'。"</p>
+      </div>
+
+      <div class="risk-card">
+        <div class="num">06</div>
+        <h4>失眠者、咖啡因 / 酒精依赖者</h4>
+        <p>睡不好 → 杏仁核敏感 → 更焦虑 → 更失眠。咖啡因每日 &gt;400mg、酒每日 &gt;2 标准杯都会显著拉高焦虑阈值。</p>
+        <p class="ex">"小江每天 4 杯美式 + 凌晨 2 点睡，期末前出现幻觉性窒息 — 戒咖啡两周后好了大半。"</p>
+      </div>
+
+      <div class="risk-card">
+        <div class="num">07</div>
+        <h4>慢性病或刚做过大手术的人</h4>
+        <p>甲亢、心律失常、糖尿病、术后恢复期会真实地让身体"心慌出汗"，容易诱发"我是不是又出大事了"的恐惧循环。</p>
+        <p class="ex">"林大叔做完心脏支架手术半年，每次胸口轻微不适就拨 120，年内 5 次 — 检查都没问题。"</p>
+      </div>
+
+      <div class="risk-card">
+        <div class="num">08</div>
+        <h4>长期独处 / 社交支持薄弱的人</h4>
+        <p>独居、异地、关系疏离的人没有"安全网"。一个能讲心里话的人，是最便宜也最有效的抗焦虑药。</p>
+        <p class="ex">"博士第三年的小路异地无朋友，开始反复看胸口拍片。回家陪父母过年两周，症状减半。"</p>
+      </div>
+    </div>
+
+    <p style="color: var(--ink-soft); font-size:16px; margin-top:32px;">
+      看到这里要明白一件事：<b>这些标签不是预言，只是风险因子</b>。完美主义者也有过得很好的一辈子；童年不安的人也能成为安全的成年人。但如果你符合 3 条以上，那就值得给自己更多关照——别等爆发再处理。
+    </p>
+  </div>
+</section>
+
+<!-- ============ SIGNALS ============ -->
+<a id="signals" class="anchor"></a>
+<section style="background: var(--bg-cream);">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">PART · 06</span>
+      <h2 class="sec-title">提前认识这些信号 — 在它变重之前拦下来</h2>
+      <p class="sec-lead">焦虑症几乎从不是"突然得的"，它有 3-12 个月的酝酿期。如果你能识别下面这些早期信号，你或你的朋友就有大量空间在 2 级提前止损，避免滑到 3-4 级。</p>
+    </div>
+
+    <div class="photo" style="aspect-ratio: 16/6; margin: 0 0 48px;">
+      <img src="./当心跳与你为敌 · 焦虑症温柔指南_files/photo-1493106819501-66d381c466f1" alt="晨雾中的森林" loading="lazy" data-cubox-image-id="78cb55d4bdf4a973c77d06dae6056d9f" data-cubox-image-index="7" data-cubox-image-load="false">
+    </div>
+
+    <div class="signals">
+      <h4>
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 8v4l3 2M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="1.8"></path></svg>
+        身体类信号 · 出现持续 2 周以上请重视
+      </h4>
+      <ul class="signal-list">
+        <li>入睡变难、凌晨 3-4 点早醒后再难入睡</li>
+        <li>胸口闷、像被按住、深呼吸不上来（医生检查无异常）</li>
+        <li>无诱因的心慌、心跳像打鼓、手抖手麻</li>
+        <li>肩颈背腰长期僵硬，按摩当时舒服第二天又紧</li>
+        <li>胃酸、胃胀、肠易激（一紧张就跑厕所）</li>
+        <li>头晕、耳鸣、视物模糊但眼科耳鼻喉无异常</li>
+        <li>手心脚心持续出汗、口干舌燥</li>
+        <li>食欲忽大忽小、暴食或没胃口</li>
+      </ul>
+
+      <h4>
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2a8 8 0 1 0 8 8M12 2v8h8" stroke="currentColor" stroke-width="1.8"></path></svg>
+        情绪类信号
+      </h4>
+      <ul class="signal-list">
+        <li>对家人小事失去耐心（孩子吵闹、伴侣磨叽都难忍）</li>
+        <li>容易被新闻、社交媒体内容触发不安</li>
+        <li>反复想"如果……怎么办"的最坏情景</li>
+        <li>原来喜欢的事变得提不起劲（追剧、健身、做饭）</li>
+        <li>开始回避社交：约朋友约一半就想取消</li>
+        <li>总有一种"事情会变糟"的预感</li>
+        <li>晨起即不适，越接近夜晚越好（或正相反）</li>
+        <li>看到喜欢的事物想哭但不知为何</li>
+      </ul>
+
+      <h4>
+        <svg viewBox="0 0 24 24" fill="none"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" stroke="currentColor" stroke-width="1.8"></path></svg>
+        行为类信号 · 这些是最容易被忽略的
+      </h4>
+      <ul class="signal-list">
+        <li>反复确认（锁门、燃气、发件箱、孩子是否安全）</li>
+        <li>频繁刷手机看心率/血压/血糖等数值</li>
+        <li>反复百度自己的症状，越看越对号入座</li>
+        <li>对咖啡、烟、酒、安眠药的依赖明显增加</li>
+        <li>开始挑剔每一个小细节（孩子作业、配偶碗洗法）</li>
+        <li>开始频繁请假或周日晚上极度抗拒明天</li>
+        <li>原来 30 分钟能做完的事现在要 2 小时</li>
+        <li>说话变快、走路变快、开车变急</li>
+      </ul>
+    </div>
+
+    <!-- 焦虑循环图 -->
+    <div class="cycle-wrap">
+      <h3 class="diagram-title" style="justify-content:center; margin-bottom:6px;">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="1.6"></path><path d="M16 12l-4 4-4-4M12 8v8" stroke="currentColor" stroke-width="1.6"></path></svg>
+        焦虑循环 · 看清这个圈，就能在任何一环按下暂停键
+      </h3>
+      <p class="diagram-sub" style="text-align:center; margin-bottom:24px;">为什么"越想越严重"是真的 — 它确实在自我喂养</p>
+      <svg class="cycle" viewBox="0 0 480 380" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arr2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L9,3 z" fill="#5b8a82"></path>
+          </marker>
+        </defs>
+
+        <!-- 中央 -->
+        <circle cx="240" cy="190" r="64" fill="#ecf3f1" stroke="#5b8a82" stroke-width="1.5" stroke-dasharray="3,3"></circle>
+        <text x="240" y="180" text-anchor="middle" font-size="14" fill="#3f6c66" font-family="serif" font-weight="600">焦虑</text>
+        <text x="240" y="200" text-anchor="middle" font-size="14" fill="#3f6c66" font-family="serif" font-weight="600">自我循环</text>
+        <text x="240" y="220" text-anchor="middle" font-size="11" fill="#8a948f">越想越严重</text>
+
+        <!-- 上：触发 -->
+        <g>
+          <rect x="170" y="20" width="140" height="68" rx="14" fill="#fbf7f1" stroke="#d8a14a" stroke-width="1.5"></rect>
+          <text x="240" y="48" text-anchor="middle" font-size="13" fill="#243530" font-weight="600">① 一个小信号</text>
+          <text x="240" y="68" text-anchor="middle" font-size="11" fill="#4a5a55">心跳快了一下 / 头晕一秒</text>
+        </g>
+
+        <!-- 右：思维 -->
+        <g>
+          <rect x="340" y="155" width="140" height="68" rx="14" fill="#f6e1d8" stroke="#c97b63" stroke-width="1.5"></rect>
+          <text x="410" y="183" text-anchor="middle" font-size="13" fill="#243530" font-weight="600">② 灾难化思维</text>
+          <text x="410" y="203" text-anchor="middle" font-size="11" fill="#4a5a55">"我是不是要死了"</text>
+        </g>
+
+        <!-- 下：身体 -->
+        <g>
+          <rect x="170" y="290" width="140" height="68" rx="14" fill="#f5e6c4" stroke="#9d7320" stroke-width="1.5"></rect>
+          <text x="240" y="318" text-anchor="middle" font-size="13" fill="#243530" font-weight="600">③ 身体真的反应</text>
+          <text x="240" y="338" text-anchor="middle" font-size="11" fill="#4a5a55">心跳更快、出汗、手抖</text>
+        </g>
+
+        <!-- 左：注意 -->
+        <g>
+          <rect x="0" y="155" width="140" height="68" rx="14" fill="#d9e8e4" stroke="#3f6c66" stroke-width="1.5"></rect>
+          <text x="70" y="183" text-anchor="middle" font-size="13" fill="#243530" font-weight="600">④ 过度关注</text>
+          <text x="70" y="203" text-anchor="middle" font-size="11" fill="#4a5a55">不停测心率、查百度</text>
+        </g>
+
+        <!-- 弧形箭头 -->
+        <path d="M 310 80 Q 400 100, 410 145" stroke="#5b8a82" stroke-width="1.8" fill="none" marker-end="url(#arr2)"></path>
+        <path d="M 410 225 Q 380 290, 310 320" stroke="#5b8a82" stroke-width="1.8" fill="none" marker-end="url(#arr2)"></path>
+        <path d="M 170 320 Q 90 290, 70 225" stroke="#5b8a82" stroke-width="1.8" fill="none" marker-end="url(#arr2)"></path>
+        <path d="M 70 155 Q 90 95, 170 80" stroke="#5b8a82" stroke-width="1.8" fill="none" marker-end="url(#arr2)"></path>
+      </svg>
+      <p class="cycle-caption">在任何一环都可以"插一脚"打破循环：在 ① 用呼吸稳定身体；在 ② 用 CBT 改写灾难化解读；在 ③ 用 SSRI 调节神经化学；在 ④ 用"担心时间"控制注意力。这就是治疗的全貌——不是消灭焦虑，是切断循环。</p>
+    </div>
+
+    <h3 style="font-family:var(--serif); font-size:22px; margin: 36px 0 16px;">如何"杜绝"这些信号变重？四件事，每件都要做。</h3>
+    <p style="color:var(--ink-soft); font-size:16px;">坦白讲，<b>"杜绝"是个伪命题</b>——焦虑情绪不可能被杜绝，它本身是有用的。但我们可以做的是：让<u>正常焦虑情绪</u>不要演变成<u>焦虑障碍</u>。下面是被反复研究验证有效的四件事：</p>
+
+    <div class="daily" style="margin-top: 20px;">
+      <div class="daily-card">
+        <div class="num">守则 一</div>
+        <h4>把"假证据"踢出脑子</h4>
+        <p>每个人都有"灾难化思维"——一个小心慌就联想到中风。下次冒出这种念头，问自己三个问题：<br>① 我有什么真凭实据？<br>② 别的可能性是什么？<br>③ 即使最坏发生，我能怎么办？</p>
+        <div class="how"><b>立刻可做：</b>买个小本子，把每次"灾难念头"写下来，第二天回看，多数都没发生。</div>
+      </div>
+      <div class="daily-card">
+        <div class="num">守则 二</div>
+        <h4>守好睡眠的底盘</h4>
+        <p>睡眠是杏仁核的"解毒程序"，连续 3 天睡不好杏仁核会"误判"翻倍。23 点之前上床，关大灯，离开手机至少 30 分钟。</p>
+        <div class="how"><b>立刻可做：</b>设个 22:30 的"准备睡觉"闹钟，比早起闹钟更重要。</div>
+      </div>
+      <div class="daily-card">
+        <div class="num">守则 三</div>
+        <h4>每周 3 次有氧运动</h4>
+        <p>30 分钟中等强度（快走、慢跑、骑车、跳绳）能稳定升高 BDNF 和 5-羟色胺，效果不输 SSRI。<b>不需要多久，但必须规律。</b></p>
+        <div class="how"><b>立刻可做：</b>下班提前两站下车走回家。从今晚就开始。</div>
+      </div>
+      <div class="daily-card">
+        <div class="num">守则 四</div>
+        <h4>每天 10 分钟"无目的时间"</h4>
+        <p>不是冥想，不是放空——是<b>不带目的</b>地散步、听一首完整的歌、给阳台浇水、和小狗对视。把"做点什么"的开关关掉一会儿。</p>
+        <div class="how"><b>立刻可做：</b>从明天午饭后开始，10 分钟，不带手机。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SUPPORT ============ -->
+<a id="support" class="anchor"></a>
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">PART · 07</span>
+      <h2 class="sec-title">如何陪伴一个焦虑的人 — 你说什么，会决定他敢不敢求助</h2>
+      <p class="sec-lead">最伤人的话往往出自最爱他的人。下面这张对照表是无数焦虑者复诊时最常重复的"我希望那一刻他能这样说"。</p>
+    </div>
+
+    <div class="photo" style="aspect-ratio: 16/6; margin: 0 0 36px;">
+      <img src="./当心跳与你为敌 · 焦虑症温柔指南_files/photo-1518199266791-5375a83190b7" alt="握住的两只手" loading="lazy" data-cubox-image-id="f65192990a844cb3c320f2c021bdea24" data-cubox-image-index="8" data-cubox-image-load="false">
+    </div>
+
+    <div class="compare">
+      <div class="compare-col dont">
+        <h4>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"></circle><path d="M8 8l8 8M16 8l-8 8" stroke="currentColor" stroke-width="2"></path></svg>
+          请避免说
+        </h4>
+        <ul>
+          <li><b>"你想多了，没事的。"</b><span class="quote">他不是在想，是在感受。否定他感受 = 否定他这个人。</span></li>
+          <li><b>"你看XX都没事，你怎么这样？"</b><span class="quote">比较是焦虑者最熟悉的酷刑，他每天都在和自己比。</span></li>
+          <li><b>"坚强一点，别这么矫情。"</b><span class="quote">焦虑症恰恰常发生在最坚强的人身上——是因为扛太久。</span></li>
+          <li><b>"是不是你太闲了/太忙了/吃太好了？"</b><span class="quote">归因焦虑只会让他更自责，自责加重焦虑。</span></li>
+          <li><b>"那药不能吃，副作用大，会上瘾。"</b><span class="quote">这句话最常出自家人。它直接关掉了治疗这扇门。</span></li>
+          <li><b>"你看你这样，我也很累。"</b><span class="quote">他知道你累，他比你更自责，但他控制不住。</span></li>
+          <li><b>"你这样下去工作怎么办？孩子怎么办？"</b><span class="quote">他凌晨 4 点已经把这些问题想了 100 遍了。</span></li>
+        </ul>
+      </div>
+      <div class="compare-col do">
+        <h4>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"></path></svg>
+          请试着说
+        </h4>
+        <ul>
+          <li><b>"听起来很难受，我在这。"</b><span class="quote">不评判，只确认。十句道理不如这一句。</span></li>
+          <li><b>"我陪你一起去看医生好吗？我开车。"</b><span class="quote">把"看病"从抽象任务变成具体小事。</span></li>
+          <li><b>"你现在最难受的是哪一种感觉？"</b><span class="quote">具体化。让他从"末日感"回到"此刻"。</span></li>
+          <li><b>"我们现在做一件具体的小事，散个步好吗？"</b><span class="quote">焦虑高峰时，注意力转移最快回到身体。</span></li>
+          <li><b>"医生开的药我陪你查清楚，一起决定要不要吃。"</b><span class="quote">尊重他对药的疑虑，但不直接否定治疗。</span></li>
+          <li><b>"你不需要立刻好起来，慢慢来。"</b><span class="quote">焦虑者最怕"还没好"，给他时间是最大的礼物。</span></li>
+          <li><b>"我的事我可以处理，不要担心给我添麻烦。"</b><span class="quote">他需要的是"你不是负担"这个明确信号。</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="vignette">
+      <div class="vignette-tag">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10z" stroke="currentColor" stroke-width="1.8"></path></svg>
+        真实场景脚本 · 拿来就能用
+      </div>
+      <h4>当朋友突然说"我心跳又快了，我是不是要心梗了"</h4>
+      <p><b>不要这样：</b>"哎呀你又来，多少回了，没事的赶紧睡。"</p>
+      <p><b>试着这样：</b>"我在。你现在坐下来，我给你倒杯温水。我们一起做一件事——你跟我一起呼吸：吸气 4 秒，憋 4 秒，呼气 6 秒。我们做 10 轮，做完你告诉我你现在的心跳是多少。如果还不缓，我陪你去最近的急诊。但我猜做完会缓过来——上次也是。"</p>
+      <p><b>原理：</b>4-4-6 呼吸法激活迷走神经，3 分钟内能把心率降下来。陪伴 + 具体动作 + 给出底线方案（"还不缓我陪你去急诊"），比任何安抚的话都有效。</p>
+    </div>
+
+    <div class="letter" style="margin-top: 40px;">
+      <h3>一封"给焦虑朋友"的信 — 你可以照着发给他</h3>
+      <p>嘿，我知道你现在不太好。我也知道你已经看了很多医生、做了很多检查，所有报告都说没事，但你还是难受得不敢一个人睡。</p>
+      <p>我想告诉你：你没有矫情，你的痛苦是真的。心跳不该跳的时候它真的在跳，胸口堵的时候是真的有那种感觉。我相信你。</p>
+      <p>但有一件事我想求你——不要再一个人扛了。我不要你立刻好起来，也不要你必须吃那个让你害怕的药。我只要你答应我一件小事：下周三上午，我请假，我们一起去复诊一次，把"为什么不敢吃药"原原本本告诉医生。让医生陪我们一起决定。</p>
+      <p>我不会让你一个人做这个决定的。你照顾过我太多次了，这次轮到我。</p>
+      <p class="sign">— 一个不会走开的人</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MEDS ============ -->
+<a id="meds" class="anchor"></a>
+<section style="background: var(--bg-cream);">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">PART · 08</span>
+      <h2 class="sec-title">关于药 — 不是糖也不是毒，看懂它你才能做选择</h2>
+      <p class="sec-lead">对药物的恐惧，几乎是焦虑症患者最大的治疗障碍。下面把临床常用的五大类药讲清楚：每一类是干嘛的、起效多快、副作用如何、适合谁。看完你不一定要吃，但你能看懂医生为什么开。</p>
+    </div>
+
+    <div class="photo" style="aspect-ratio: 16/6; margin: 0 0 48px;">
+      <img src="./当心跳与你为敌 · 焦虑症温柔指南_files/photo-1473773508845-188df298d2d1" alt="一杯抹茶与简洁餐具" loading="lazy" data-cubox-image-id="a4b983f08e8bf0429fc8a27b070f654d" data-cubox-image-index="9" data-cubox-image-load="false">
+    </div>
+
+    <div class="meds">
+      <!-- SSRI -->
+      <div class="med-card">
+        <div class="top">
+          <div>
+            <h3>SSRI · 选择性 5-羟色胺再摄取抑制剂</h3>
+            <div class="en">First-line · 治疗一线</div>
+          </div>
+          <span class="pill pill-a">推荐</span>
+        </div>
+        <p style="color:var(--ink-soft); font-size:14.5px; margin:0 0 14px;">焦虑症的"主力部队"。通过提高大脑 5-羟色胺浓度调节情绪和恐惧反应，是中重度焦虑的首选。<b>不会让你"嗨"，也不会上瘾</b>，但需要规律服 4-6 周才显效。</p>
+        <div class="row"><span class="k">起效时间</span><span class="v">2-4 周开始，<b>4-8 周达稳定</b></span></div>
+        <div class="row"><span class="k">疗程</span><span class="v">建议持续 6-12 个月</span></div>
+        <div class="row"><span class="k">常见副作用</span><span class="v">前 2 周可能恶心、头晕、性欲降低，多数 2-3 周后自然消退</span></div>
+        <div class="row"><span class="k">是否成瘾</span><span class="v"><b>不会成瘾</b>，但需要医生指导下逐渐停药</span></div>
+        <div class="row"><span class="k">适合人群</span><span class="v">广泛性焦虑、惊恐障碍、社交焦虑、疑病、强迫</span></div>
+        <div class="examples"><b>常见药名：</b>舍曲林（左洛复）· 帕罗西汀（赛乐特）· 艾司西酞普兰（来士普）· 氟西汀（百忧解）· 氟伏沙明（兰释）</div>
+      </div>
+
+      <!-- SNRI -->
+      <div class="med-card">
+        <div class="top">
+          <div>
+            <h3>SNRI · 5-羟色胺-去甲肾上腺素再摄取抑制剂</h3>
+            <div class="en">First-line alternative · 二线一线</div>
+          </div>
+          <span class="pill pill-a">推荐</span>
+        </div>
+        <p style="color:var(--ink-soft); font-size:14.5px; margin:0 0 14px;">和 SSRI 同等地位的一线选择，多了一条去甲肾上腺素通道，对躯体症状（疲劳、慢性疼痛、注意力差）特别好。同样不成瘾。</p>
+        <div class="row"><span class="k">起效时间</span><span class="v">2-4 周</span></div>
+        <div class="row"><span class="k">疗程</span><span class="v">6-12 个月</span></div>
+        <div class="row"><span class="k">常见副作用</span><span class="v">前期可能血压略升、出汗、口干、便秘</span></div>
+        <div class="row"><span class="k">是否成瘾</span><span class="v"><b>不会成瘾</b>；停药需缓慢减量</span></div>
+        <div class="row"><span class="k">适合人群</span><span class="v">伴疲劳/疼痛/抑郁的焦虑患者</span></div>
+        <div class="examples"><b>常见药名：</b>文拉法辛（怡诺思 / 博乐欣）· 度洛西汀（欣百达）</div>
+      </div>
+
+      <!-- BZD -->
+      <div class="med-card">
+        <div class="top">
+          <div>
+            <h3>苯二氮卓类 · 短期"灭火器"</h3>
+            <div class="en">BZD · Short-term Use Only</div>
+          </div>
+          <span class="pill pill-c">谨慎</span>
+        </div>
+        <p style="color:var(--ink-soft); font-size:14.5px; margin:0 0 14px;">起效极快（30-60 分钟），是惊恐发作时的"灭火器"。但<b>有依赖性、会反弹焦虑</b>，原则上只做 2-4 周短期使用，不能长期单用。</p>
+        <div class="row"><span class="k">起效时间</span><span class="v"><b>30-60 分钟</b>立竿见影</span></div>
+        <div class="row"><span class="k">疗程</span><span class="v">通常 ≤ 2-4 周</span></div>
+        <div class="row"><span class="k">常见副作用</span><span class="v">嗜睡、协调障碍、记忆暂时下降、白天困倦</span></div>
+        <div class="row"><span class="k">是否成瘾</span><span class="v"><b>会形成依赖</b>，长期使用必须医生监督</span></div>
+        <div class="row"><span class="k">适合人群</span><span class="v">惊恐发作"救急"、严重失眠的衔接、SSRI 起效前的过渡</span></div>
+        <div class="examples"><b>常见药名：</b>阿普唑仑（佳静安定）· 劳拉西泮（罗拉）· 氯硝西泮（克诺平）· 地西泮（安定）</div>
+      </div>
+
+      <!-- 丁螺环酮 -->
+      <div class="med-card">
+        <div class="top">
+          <div>
+            <h3>丁螺环酮 / 坦度螺酮</h3>
+            <div class="en">Buspirone · 5-HT1A 部分激动剂</div>
+          </div>
+          <span class="pill pill-d">温和</span>
+        </div>
+        <p style="color:var(--ink-soft); font-size:14.5px; margin:0 0 14px;">温和的非成瘾抗焦虑药，适合广泛性焦虑、对 SSRI 副作用敏感的人。起效慢，但不影响驾驶和工作专注度。</p>
+        <div class="row"><span class="k">起效时间</span><span class="v">2-4 周</span></div>
+        <div class="row"><span class="k">疗程</span><span class="v">3-6 个月</span></div>
+        <div class="row"><span class="k">常见副作用</span><span class="v">轻度头晕、恶心，副作用谱整体较轻</span></div>
+        <div class="row"><span class="k">是否成瘾</span><span class="v"><b>不会成瘾</b></span></div>
+        <div class="row"><span class="k">适合人群</span><span class="v">不能耐受 SSRI、需要保持高度认知功能的人</span></div>
+        <div class="examples"><b>常见药名：</b>丁螺环酮（布斯帕）· 坦度螺酮（律康）</div>
+      </div>
+
+      <!-- β受体阻滞剂 -->
+      <div class="med-card">
+        <div class="top">
+          <div>
+            <h3>β 受体阻滞剂</h3>
+            <div class="en">Beta-blockers · 控制躯体反应</div>
+          </div>
+          <span class="pill pill-e">辅助</span>
+        </div>
+        <p style="color:var(--ink-soft); font-size:14.5px; margin:0 0 14px;">原本是降压药，但能阻断肾上腺素对心脏的作用，<b>专门压住心跳快、手抖、声音抖</b>这些躯体表现。常用于演讲焦虑、表演焦虑、特定场景的"按需服用"。</p>
+        <div class="row"><span class="k">起效时间</span><span class="v">30-60 分钟</span></div>
+        <div class="row"><span class="k">疗程</span><span class="v">按需或短期</span></div>
+        <div class="row"><span class="k">常见副作用</span><span class="v">心率减慢、低血压、手脚冰凉</span></div>
+        <div class="row"><span class="k">是否成瘾</span><span class="v"><b>不会成瘾</b></span></div>
+        <div class="row"><span class="k">适合人群</span><span class="v">演讲/上台前服用；不适合哮喘、心动过缓者</span></div>
+        <div class="examples"><b>常见药名：</b>普萘洛尔（心得安）· 美托洛尔（倍他乐克）</div>
+      </div>
+
+      <!-- 中药辅助 -->
+      <div class="med-card">
+        <div class="top">
+          <div>
+            <h3>中医辅助治疗</h3>
+            <div class="en">TCM · 辅助方案</div>
+          </div>
+          <span class="pill pill-b">辅助</span>
+        </div>
+        <p style="color:var(--ink-soft); font-size:14.5px; margin:0 0 14px;">中度以下焦虑可作为辅助。常见辨证：肝郁气滞用逍遥丸、心脾两虚用归脾丸、阴虚火旺用天王补心丸。<b>不能替代精神科治疗，但可以一起用。</b></p>
+        <div class="row"><span class="k">起效时间</span><span class="v">2-6 周</span></div>
+        <div class="row"><span class="k">常见副作用</span><span class="v">部分人胃肠道反应、嗜睡</span></div>
+        <div class="row"><span class="k">是否成瘾</span><span class="v"><b>不会成瘾</b></span></div>
+        <div class="row"><span class="k">适合人群</span><span class="v">轻中度焦虑、对西药副作用敏感、慢性身心症</span></div>
+        <div class="examples"><b>常用方：</b>逍遥丸 · 加味逍遥丸 · 甘麦大枣汤 · 柴胡疏肝散 · 酸枣仁汤</div>
+      </div>
+    </div>
+
+    <div class="vignette" style="margin-top: 32px;">
+      <div class="vignette-tag">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2v6M12 16v6M2 12h6M16 12h6" stroke="currentColor" stroke-width="2"></path></svg>
+        给"不敢吃药"那位朋友的几句大白话
+      </div>
+      <h4>SSRI 不会让你成瘾，更不会"吃了下不来"</h4>
+      <p>这是中文互联网最大的误传。SSRI 在临床使用 30 多年，全世界有数千万患者吃过，<b>不属于成瘾药物</b>。但它在身体里建立了新的化学平衡，所以停药需要医生指导下两三个月慢慢减——不是因为成瘾，而是给身体时间适应。这就像一个人扶着拐杖走路两年，不能某天突然丢掉拐杖，要慢慢练习。</p>
+      <p>真正会成瘾的是<b>苯二氮卓类</b>（例如阿普唑仑），那是另一类药，多用于救急 2-4 周，医生本身就会限制时间。</p>
+      <p>另一个常见担心是"吃了人会变傻 / 没情绪"。轻度钝感是可能的（那也是它在保护你），但医生会调整剂量。如果觉得不对劲，说出来换药/调量很正常，<b>真正的副作用永远比"什么都不做"小得多</b>。</p>
+    </div>
+
+    <div class="disclaimer">
+      <b>关于药物的几条铁律：</b>
+      ① 任何精神科药物必须由<b>精神科或心身医学科医生</b>开具，不要听药店推销，更不要按朋友吃过的药买；
+      ② 起效慢的药要给足时间——SSRI 第一周可能反而难受，这是身体在适应，多数 2-3 周后就好；
+      ③ 不要自行停药、不要漏服、不要换品牌；
+      ④ 备孕、怀孕、哺乳期请提前告诉医生；
+      ⑤ 任何药物 + 酒精都是不好的组合。
+    </div>
+  </div>
+</section>
+
+<!-- ============ THERAPY ============ -->
+<a id="therapy" class="anchor"></a>
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">PART · 09</span>
+      <h2 class="sec-title">心理治疗 — 比药更慢，但效果更长久</h2>
+      <p class="sec-lead">大量研究表明：中重度焦虑用"药物 + 心理治疗"效果最好。轻中度焦虑甚至可以单靠心理治疗治好。下面是四种被国际指南认可的循证心理治疗方法。</p>
+    </div>
+
+    <div class="photo" style="aspect-ratio: 16/6; margin: 0 0 48px;">
+      <img src="./当心跳与你为敌 · 焦虑症温柔指南_files/photo-1455390582262-044cdead277a" alt="清晨翻开的笔记本与一杯咖啡" loading="lazy" data-cubox-image-id="bf391cba56280b4aeab98396a208c9a9" data-cubox-image-index="10" data-cubox-image-load="false">
+    </div>
+
+    <div class="therapy">
+      <div class="therapy-card">
+        <div class="icon">🧭</div>
+        <h4>CBT · 认知行为治疗</h4>
+        <p>金标准，最被研究验证。帮你识别"灾难化思维"，把"心跳快=要死了"这种自动联想改写成更现实的版本，再通过"暴露训练"逐步面对害怕的情境。</p>
+        <p style="font-size:13px; color:var(--tan); font-style:italic; margin-top:8px;">疗程：8-20 次，每周 1 次</p>
+      </div>
+      <div class="therapy-card">
+        <div class="icon">🌊</div>
+        <h4>ACT · 接纳与承诺疗法</h4>
+        <p>不和焦虑对抗，先接纳它的存在，然后把生活注意力放回"对你重要的事"。对于"反复跟焦虑较劲反而加剧"的人特别有效。</p>
+        <p style="font-size:13px; color:var(--tan); font-style:italic; margin-top:8px;">疗程：6-12 次</p>
+      </div>
+      <div class="therapy-card">
+        <div class="icon">🌬</div>
+        <h4>正念减压 MBSR</h4>
+        <p>8 周结构化课程，通过冥想、身体扫描、瑜伽训练"和此刻在一起"的能力。可作为日常习惯，对预防复发非常有用。</p>
+        <p style="font-size:13px; color:var(--tan); font-style:italic; margin-top:8px;">疗程：8 周课程，可终身练习</p>
+      </div>
+      <div class="therapy-card">
+        <div class="icon">👀</div>
+        <h4>EMDR · 眼动脱敏再处理</h4>
+        <p>专门针对 PTSD 和早年创伤诱发的焦虑。通过有节律的双侧刺激（眼动 / 拍打），帮大脑重新处理"卡住的记忆"。</p>
+        <p style="font-size:13px; color:var(--tan); font-style:italic; margin-top:8px;">疗程：6-12 次</p>
+      </div>
+    </div>
+
+    <div class="vignette" style="margin-top: 32px;">
+      <div class="vignette-tag">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.6"></path></svg>
+        在中国如何找到靠谱的心理治疗
+      </div>
+      <h4>三个相对靠谱的入口，加一个红旗清单</h4>
+      <p><b>① 三甲医院心身医学科 / 精神心理科</b>——可走医保，但排队久、单次时间短。北京安定、上海精卫、华西心理卫生等是国家级中心。</p>
+      <p><b>② 大学心理咨询中心</b>——很多综合大学的心理咨询中心对外接诊，价格亲民，督导规范。</p>
+      <p><b>③ 持牌平台 + 注册心理师</b>——简单心理、壹心理（注意筛选 Reg.中级 / 高级注册心理师 资质）；好心情、京东健康在线问诊。</p>
+      <p><b>红旗信号（看到马上跑）：</b>承诺 3 次治好、要求买高价"灵性课程"、把焦虑归因为"祖业"或"前世"、和你建立超过咨询关系（恋爱、合伙做生意）、不签订咨询协议。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DAILY ============ -->
+<a id="daily" class="anchor"></a>
+<section style="background: linear-gradient(180deg, var(--bg-cream), var(--bg));">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">PART · 10</span>
+      <h2 class="sec-title">十二件小事 — 每天做一点点，远胜偶尔大干一场</h2>
+      <p class="sec-lead">心理健康不是一场冲刺，是一条小溪。下面是 12 个被研究验证、操作门槛极低、可以从今天开始的小习惯。一次只挑 1-2 个，做满 21 天再加新的。</p>
+    </div>
+
+    <div class="photo" style="aspect-ratio: 21/8; margin: 0 0 48px;">
+      <img src="./当心跳与你为敌 · 焦虑症温柔指南_files/photo-1518806118471-f28b20a1d79d" alt="阳光透过窗帘洒在床头与书本" loading="lazy" data-cubox-image-id="66de9ada6f77a8c3281ab556cb6250dc" data-cubox-image-index="11" data-cubox-image-load="false">
+    </div>
+
+    <!-- 4-4-6 呼吸动画 -->
+    <div class="breath">
+      <div class="breath-circle">跟随我</div>
+      <h4>4-4-6 呼吸 · 跟着这个圆呼吸 1 分钟</h4>
+      <p>看着圆变大就<b>吸气 4 秒</b>，圆停留就<b>屏息 4 秒</b>，圆缩小就<b>呼气 6 秒</b>。这是激活迷走神经最快的方式 — 焦虑发作时跟做 5 轮，能把心率从 120 拉回 80。</p>
+      <div class="breath-steps">
+        <span>🌬 <b>吸气</b> 4 秒（圆变大）</span>
+        <span>⏸ <b>屏息</b> 4 秒（圆停留）</span>
+        <span>💨 <b>呼气</b> 6 秒（圆缩小）</span>
+      </div>
+    </div>
+
+    <div class="daily">
+      <div class="daily-card">
+        <div class="num">DAILY · 01</div>
+        <h4>4-4-6 呼吸法</h4>
+        <p>吸气 4 秒、屏息 4 秒、呼气 6 秒。一组 5 次，每天 3 组。直接激活迷走神经，把心率降下来。</p>
+        <div class="how"><b>怎么开始：</b>设三个固定时间——醒来、午饭后、睡前各做一组。</div>
+      </div>
+      <div class="daily-card">
+        <div class="num">DAILY · 02</div>
+        <h4>5-4-3-2-1 grounding</h4>
+        <p>焦虑发作时，说出 5 个看到的、4 个听到的、3 个摸到的、2 个闻到的、1 个尝到的。把注意力从内部脑回路拉回外部世界。</p>
+        <div class="how"><b>怎么开始：</b>把这 5 个数字写在手机锁屏。</div>
+      </div>
+      <div class="daily-card">
+        <div class="num">DAILY · 03</div>
+        <h4>每晨晒太阳 10 分钟</h4>
+        <p>起床后 1 小时内出门或走到窗边，看一会儿天空。早晨光照能稳定昼夜节律和血清素分泌。</p>
+        <div class="how"><b>怎么开始：</b>把咖啡机移到阳台/窗边，磨豆子的时候顺便晒。</div>
+      </div>
+      <div class="daily-card">
+        <div class="num">DAILY · 04</div>
+        <h4>每天走 6,000 步</h4>
+        <p>不是 10,000，是 6,000。研究表明这个数字对焦虑/抑郁的边际效用最大。多了不一定更好，少了不够。</p>
+        <div class="how"><b>怎么开始：</b>下班前一站下地铁。</div>
+      </div>
+      <div class="daily-card">
+        <div class="num">DAILY · 05</div>
+        <h4>每天写 3 行</h4>
+        <p>不是日记，三行就够：今天最难的事 / 我做对了什么 / 我感谢什么。三个月后回看会改变你对自己的判断。</p>
+        <div class="how"><b>怎么开始：</b>用备忘录或一个本子，睡前 2 分钟。</div>
+      </div>
+      <div class="daily-card">
+        <div class="num">DAILY · 06</div>
+        <h4>戒掉 14 点后的咖啡因</h4>
+        <p>咖啡因半衰期 6 小时。下午 2 点的拿铁会到晚上 8 点还在你血里转。这一条对很多人比吃药还管用。</p>
+        <div class="how"><b>怎么开始：</b>下午只喝麦茶 / 大麦茶 / 黑咖换浅烘 / 直接白水。</div>
+      </div>
+      <div class="daily-card">
+        <div class="num">DAILY · 07</div>
+        <h4>每周一次"无屏幕之夜"</h4>
+        <p>选一晚晚上 8 点之后不看手机/电脑/电视。读书、做饭、洗个长澡、和家人聊天。大脑需要无信息时段。</p>
+        <div class="how"><b>怎么开始：</b>把家里的"周三"或"周日"定为这一晚。</div>
+      </div>
+      <div class="daily-card">
+        <div class="num">DAILY · 08</div>
+        <h4>每周联系一个人</h4>
+        <p>不是发"在吗"，是给一个具体的人发：我想起你那次帮我 XX，谢谢你。社会连接是天然的抗焦虑剂。</p>
+        <div class="how"><b>怎么开始：</b>每周三早上花 5 分钟想"这周该谢谁"。</div>
+      </div>
+      <div class="daily-card">
+        <div class="num">DAILY · 09</div>
+        <h4>每天 3 分钟身体扫描</h4>
+        <p>从头到脚扫一遍，哪里紧绷？让那个地方主动放松一下。常见聚焦点：眉心、下颌、肩膀、手心、肚子。</p>
+        <div class="how"><b>怎么开始：</b>开车堵在红绿灯时做。</div>
+      </div>
+      <div class="daily-card">
+        <div class="num">DAILY · 10</div>
+        <h4>设一个"担心时间"</h4>
+        <p>每天指定 17:30-17:45 是"专门担心时间"。其他时间冒出担心就记下来，到点再处理。可以"驯化"反复回想。</p>
+        <div class="how"><b>怎么开始：</b>用便签随时记录，每天到点再看。</div>
+      </div>
+      <div class="daily-card">
+        <div class="num">DAILY · 11</div>
+        <h4>限制健康搜索</h4>
+        <p>百度症状是焦虑者的毒品。每天最多搜索一次（不超过 5 分钟），其他时间想搜，先做 4-4-6 呼吸 1 分钟。</p>
+        <div class="how"><b>怎么开始：</b>把"百度"等图标移到第二屏，腾出一点摩擦力。</div>
+      </div>
+      <div class="daily-card">
+        <div class="num">DAILY · 12</div>
+        <h4>给自己一句"够了"</h4>
+        <p>焦虑者的内核是"永远不够"。每天睡前对自己说一句："今天我做的，够了。"哪怕你只起了床。</p>
+        <div class="how"><b>怎么开始：</b>把这句话写在床头贴一张便利贴。</div>
+      </div>
+    </div>
+
+    <div class="pull" style="margin-top: 50px;">
+      你不需要变成另一个人。<br>
+      你只需要让今天的你，比昨天的你，少受一点苦。
+    </div>
+  </div>
+</section>
+
+<!-- ============ HELP ============ -->
+<a id="help" class="anchor"></a>
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">PART · 11</span>
+      <h2 class="sec-title">紧急援助 — 当你或他撑不住的时候</h2>
+      <p class="sec-lead">这一页请收藏。当任何一个时刻，你或你身边的人冒出"消失也不错"或"想伤害自己"的念头，请立刻拨打下面任意一个电话。它们 24 小时有人接听，免费、保密。</p>
+    </div>
+
+    <div class="photo" style="aspect-ratio: 16/6; margin: 0 0 36px;">
+      <img src="./当心跳与你为敌 · 焦虑症温柔指南_files/section-emergency.png" alt="清晨的湖面，远山与一只独鸟" loading="lazy" data-cubox-image-id="5b3c53e0232886aa8ca248ec50a2be7a" data-cubox-image-index="12" data-cubox-image-load="false">
+    </div>
+
+    <div class="emergency">
+      <h3>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 9v4M12 17h.01M10.3 3.86l-7.97 14A2 2 0 0 0 4.06 21h15.88a2 2 0 0 0 1.73-3.14l-7.97-14a2 2 0 0 0-3.4 0z" stroke="currentColor" stroke-width="2"></path></svg>
+        24 小时心理援助热线
+      </h3>
+      <p>这些号码不仅给"自杀危机"，任何强烈情绪、孤独、绝望、害怕、需要有人听一下的时刻都可以打。</p>
+
+      <div class="hotlines">
+        <div class="hotline">
+          <h4>北京心理危机研究与干预中心</h4>
+          <div class="num">010-82951332</div>
+          <p>24 小时 · 全国可拨</p>
+        </div>
+        <div class="hotline">
+          <h4>全国心理援助热线</h4>
+          <div class="num">400-161-9995</div>
+          <p>24 小时 · 国家卫健委指定</p>
+        </div>
+        <div class="hotline">
+          <h4>上海市心理援助热线</h4>
+          <div class="num">021-12320-5</div>
+          <p>24 小时 · 上海市精神卫生中心</p>
+        </div>
+        <div class="hotline">
+          <h4>广州市心理援助热线</h4>
+          <div class="num">020-81899120</div>
+          <p>24 小时</p>
+        </div>
+        <div class="hotline">
+          <h4>希望 24 热线</h4>
+          <div class="num">400-161-9995 转 1</div>
+          <p>24 小时 · 上海市生命教育与危机干预中心</p>
+        </div>
+        <div class="hotline">
+          <h4>急救通用</h4>
+          <div class="num">120</div>
+          <p>身体危急或无法控制冲动 · 直接派急救</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="vignette" style="margin-top: 36px;">
+      <div class="vignette-tag">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="currentColor" stroke-width="1.8"></path></svg>
+        如果你是陪在他身边的人 · 这是黄金 30 分钟
+      </div>
+      <h4>当朋友说"我活不下去了"</h4>
+      <p><b>不要做：</b>劝他"想想孩子/想想父母"；不要承诺"明天就会好"；不要离开他独自一人；不要质问他"你怎么会这样想"。</p>
+      <p><b>立刻做：</b>① 留在他身边或保持电话不断线；② 把他能用来伤害自己的东西移走（药、刀、绳）；③ 问一句简单具体的话："你现在最难受的是什么？" 让他说出来；④ 拨打上面任一热线，按"危机来电"接通；⑤ 必要时拨 120 或陪他去最近三甲医院精神科急诊。</p>
+      <p><b>记住：</b>你不需要变成心理咨询师。你只需要做"那个不会走开的人"。这就够了。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p style="font-family:var(--serif); font-size:18px; color:var(--ink); margin-bottom:12px;">心安手册 · A Gentle Guide to Anxiety</p>
+        <p>这本手册不为推销任何药物或机构，也不替代医生诊断。它的所有内容来自公开循证医学指南（DSM-5-TR、NICE、CMHS、APA Practice Guideline）和临床心理学常识，只为让"焦虑"这件事变得不那么可怕一点。</p>
+        <p style="margin-top: 16px;">如果它帮到你或你身边的人，请把这一页发给那个还在硬扛的人。</p>
+      </div>
+      <div>
+        <h5>主要参考</h5>
+        <ul>
+          <li>DSM-5-TR (APA, 2022)</li>
+          <li>NICE GAD Guideline (CG113)</li>
+          <li>中国精神卫生调查 CMHS 2019</li>
+          <li>WHO Mental Health Report 2022</li>
+          <li>《焦虑症 CBT 治疗手册》Beck Institute</li>
+        </ul>
+      </div>
+      <div>
+        <h5>本手册章节</h5>
+        <ul>
+          <li><a href="https://mind-care.wwei.ai/#story">引子 · 你不是一个人</a></li>
+          <li><a href="https://mind-care.wwei.ai/#what">认识焦虑症</a></li>
+          <li><a href="https://mind-care.wwei.ai/#types">七大谱系</a></li>
+          <li><a href="https://mind-care.wwei.ai/#severity">症状光谱</a></li>
+          <li><a href="https://mind-care.wwei.ai/#meds">药物指南</a></li>
+          <li><a href="https://mind-care.wwei.ai/#help">紧急援助</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <span>© 2026 · 心安手册 · 仅作公益科普 · 非临床建议</span>
+      <span>v0.1 · 用温柔做事的人，让世界少一些惊恐</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // 阅读进度条
+  const pg = document.getElementById('pg');
+  function upd(){
+    const h = document.documentElement;
+    const pct = h.scrollTop / (h.scrollHeight - h.clientHeight);
+    pg.style.width = (pct * 100) + '%';
+  }
+  document.addEventListener('scroll', upd, {passive: true});
+  upd();
+</script>
+
+<script defer="" src="./当心跳与你为敌 · 焦虑症温柔指南_files/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;73a749ca3ace4b2abd6813f039000869&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+<div id="wwei-auth-widget" style="position: fixed; top: 16px; right: 16px; z-index: 2147483647;"><template shadowrootmode="open"><style>
+      :host { all: initial; }
+      * { box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif; }
+      .wrap { position: relative; }
+      .avatar {
+        width: 36px; height: 36px; border-radius: 50%; padding: 0; cursor: pointer; position: relative;
+        border: 2px solid rgba(255,255,255,0.15); background: #111214; color: #f0f0f2;
+        display: flex; align-items: center; justify-content: center; overflow: hidden;
+        transition: all .2s; box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      }
+      .avatar:hover { transform: scale(1.05); border-color: rgba(255,255,255,0.3); }
+      .avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+      .avatar .fallback { font-weight: 600; font-size: 14px; }
+      .avatar.loading { animation: pulse 1.4s infinite; cursor: default; }
+      @keyframes pulse { 0%,100% { opacity: 0.5; } 50% { opacity: 0.9; } }
+      .dot {
+        position: absolute; bottom: -2px; right: -2px; width: 12px; height: 12px;
+        border-radius: 50%; border: 2px solid #111214;
+      }
+      .login-btn {
+        display: inline-block; padding: 7px 16px; border-radius: 100px;
+        background: rgba(110, 231, 183, 0.95); color: #08090a; font-size: 13px; font-weight: 500;
+        text-decoration: none; transition: all .2s; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        border: 1px solid rgba(110, 231, 183, 0.3);
+      }
+      .login-btn:hover { background: #6ee7b7; transform: translateY(-1px); }
+      .dropdown {
+        position: absolute; top: 44px; right: 0; min-width: 260px;
+        background: #111214; border: 1px solid #1e2024; border-radius: 12px;
+        padding: 16px; opacity: 0; transform: translateY(-6px) scale(0.96);
+        pointer-events: none; transition: all .18s cubic-bezier(.4,0,.2,1);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.4); color: #f0f0f2;
+      }
+      .dropdown.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+      .dropdown-head { display: flex; gap: 12px; align-items: center; }
+      .dropdown-avatar { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; flex-shrink: 0; background: #1e2024; display: flex; align-items: center; justify-content: center; }
+      .dropdown-avatar img { width: 100%; height: 100%; object-fit: cover; }
+      .dropdown-info { flex: 1; min-width: 0; }
+      .dropdown-name { font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .dropdown-email { font-size: 11px; color: #a0a3ab; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .dropdown-level {
+        display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px;
+        font-size: 10px; font-weight: 600; letter-spacing: 0.05em;
+        border: 1px solid;
+      }
+      .dropdown-divider { height: 1px; background: #1e2024; margin: 14px 0; }
+      .dropdown-item {
+        display: block; padding: 8px 12px; font-size: 13px; color: #f0f0f2;
+        text-decoration: none; border-radius: 6px; transition: background .15s;
+      }
+      .dropdown-item:hover { background: #1e2024; }
+    </style>
+        <div class="wrap">
+          <button class="avatar" id="avatar" aria-label="user menu" title="yiyixiao920@gmail.com · ADMIN">
+            <img src="https://lh3.googleusercontent.com/a/ACg8ocKu-yjD3iu0mgzG7jWbJHAxSpl7HBx0GqADxeh6y8jMFDEhpA=s96-c" referrerpolicy="no-referrer" alt="">
+            <span class="dot" style="background:#f87171" title="ADMIN"></span>
+          </button>
+          <div class="dropdown" id="dropdown">
+            <div class="dropdown-head">
+              <div class="dropdown-avatar"><img src="https://lh3.googleusercontent.com/a/ACg8ocKu-yjD3iu0mgzG7jWbJHAxSpl7HBx0GqADxeh6y8jMFDEhpA=s96-c" referrerpolicy="no-referrer" alt=""></div>
+              <div class="dropdown-info">
+                <div class="dropdown-name">姚伊笑</div>
+                <div class="dropdown-email">yiyixiao920@gmail.com</div>
+                <div class="dropdown-level" style="color:#f87171;border-color:#f8717140">ADMIN</div>
+              </div>
+            </div>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="https://admin.wwei.ai/">管理后台 →</a>
+            <a class="dropdown-item" href="https://auth.wwei.ai/logout?next=https%3A%2F%2Fmind-care.wwei.ai%2F">退出登录</a>
+          </div>
+        </div>
+      </template></div><div id="cubox-react-root"><template shadowrootmode="open"><link rel="stylesheet" href="chrome-extension://bflmgpechpeohjfomgfdkkfcbhfcjohl/css/content.css"><div><div style="z-index: 2147483647;"></div></div></template></div><a id="colorPickerDivHidden"><img src="chrome-extension://njolgcnddhepjpplfifbmagdgkidikpj/logo.png" data-cubox-image-id="ae8686952839c0b69466b05216a82003" data-cubox-image-index="13" data-cubox-image-load="false"></a></body><plasmo-csui id="aitdk-csui"><template shadowrootmode="open"><style>*,:before,:after{box-sizing:border-box;border:0 solid #e5e7eb}:before,:after{--tw-content:""}html{-webkit-text-size-adjust:100%;tab-size:4;font-feature-settings:normal;font-variation-settings:normal;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}body{line-height:inherit;margin:0}hr{color:inherit;border-top-width:1px;height:0}abbr:where([title]){text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em}small{font-size:80%}sub,sup{vertical-align:baseline;font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-feature-settings:inherit;font-variation-settings:inherit;font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,[type=button],[type=reset],[type=submit]{-webkit-appearance:button;background-color:#0000;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button{height:auto}::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dl,dd,h1,h2,h3,h4,h5,h6,hr,figure,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}ol,ul,menu{margin:0;padding:0;list-style:none}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}button,[role=button]{cursor:pointer}:disabled{cursor:default}img,svg,video,canvas,audio,iframe,embed,object{vertical-align:middle;display:block}img,video{max-width:100%;height:auto}[hidden]{display:none}:host,:root{--background:0 0% 100%;--foreground:224 71.4% 4.1%;--card:0 0% 100%;--card-foreground:224 71.4% 4.1%;--popover:0 0% 100%;--popover-foreground:224 71.4% 4.1%;--primary:262.1 83.3% 57.8%;--primary-foreground:210 20% 98%;--secondary:220 14.3% 95.9%;--secondary-foreground:220.9 39.3% 11%;--muted:220 14.3% 95.9%;--muted-foreground:220 8.9% 46.1%;--accent:220 14.3% 95.9%;--accent-foreground:220.9 39.3% 11%;--destructive:0 84.2% 60.2%;--destructive-foreground:210 20% 98%;--border:220 13% 91%;--input:220 13% 91%;--ring:262.1 83.3% 57.8%;--radius:4.2px;z-index:2147483647}.dark{--background:224 71.4% 4.1%;--foreground:210 20% 98%;--card:224 71.4% 4.1%;--card-foreground:210 20% 98%;--popover:224 71.4% 4.1%;--popover-foreground:210 20% 98%;--primary:263.4 70% 50.4%;--primary-foreground:210 20% 98%;--secondary:215 27.9% 16.9%;--secondary-foreground:210 20% 98%;--muted:215 27.9% 16.9%;--muted-foreground:217.9 10.6% 64.9%;--accent:215 27.9% 16.9%;--accent-foreground:210 20% 98%;--destructive:0 62.8% 30.6%;--destructive-foreground:210 20% 98%;--border:215 27.9% 16.9%;--input:215 27.9% 16.9%;--ring:263.4 70% 50.4%}*{border-color:hsl(var(--border))}html{font-size:14px}body{background-color:hsl(var(--background));color:hsl(var(--foreground));font-feature-settings:"rlig" 1,"calt" 1;font-size:14px}*,:before,:after,::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:#3b82f680;--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }.container{width:100%;margin-left:auto;margin-right:auto;padding-left:28px;padding-right:28px}@media (width>=1400px){.container{max-width:1400px}}.visible{visibility:visible}.invisible{visibility:hidden}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.bottom-0{bottom:0}.left-1\/2{left:50%}.right-0{right:0}.right-2{right:7px}.top-0{top:0}.top-1\/2{top:50%}.top-2{top:7px}.-z-\[1\]{z-index:-1}.z-\[1\]{z-index:1}.z-\[2147483647\]{z-index:2147483647}.mx-auto{margin-left:auto;margin-right:auto}.-ml-\[13px\]{margin-left:-13px}.-mt-\[13px\]{margin-top:-13px}.mt-3{margin-top:10.5px}.mt-5{margin-top:17.5px}.block{display:block}.flex{display:flex}.hidden{display:none}.h-full{height:100%}.w-\[420px\]{width:420px}.w-\[520px\]{width:520px}.w-full{width:100%}@keyframes spin{to{transform:rotate(360deg)}}.animate-spin{animation:1s linear infinite spin}.cursor-pointer{cursor:pointer}.items-center{align-items:center}.justify-center{justify-content:center}.gap-x-2{column-gap:7px}.rounded{border-radius:3.5px}.bg-\[\#635bff\]{--tw-bg-opacity:1;background-color:rgb(99 91 255/var(--tw-bg-opacity))}.bg-\[\#635bff\]\/10{background-color:#635bff1a}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity))}.p-1{padding:3.5px}.p-6{padding:21px}.px-4{padding-left:14px;padding-right:14px}.py-2{padding-top:7px;padding-bottom:7px}.py-2\.5{padding-top:8.75px;padding-bottom:8.75px}.text-\[14px\]{font-size:14px}.text-xl{font-size:17.5px;line-height:24.5px}.font-medium{font-weight:500}.leading-6{line-height:21px}.text-black{--tw-text-opacity:1;color:rgb(0 0 0/var(--tw-text-opacity))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175/var(--tw-text-opacity))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128/var(--tw-text-opacity))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55/var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity))}.shadow-2xl{--tw-shadow:0 25px 50px -12px #00000040;--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.outline{outline-style:solid}.filter{filter:var(--tw-blur)var(--tw-brightness)var(--tw-contrast)var(--tw-grayscale)var(--tw-hue-rotate)var(--tw-invert)var(--tw-saturate)var(--tw-sepia)var(--tw-drop-shadow)}.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-duration:.15s;transition-timing-function:cubic-bezier(.4,0,.2,1)}@keyframes enter{0%{opacity:var(--tw-enter-opacity,1);transform:translate3d(var(--tw-enter-translate-x,0),var(--tw-enter-translate-y,0),0)scale3d(var(--tw-enter-scale,1),var(--tw-enter-scale,1),var(--tw-enter-scale,1))rotate(var(--tw-enter-rotate,0))}}@keyframes exit{to{opacity:var(--tw-exit-opacity,1);transform:translate3d(var(--tw-exit-translate-x,0),var(--tw-exit-translate-y,0),0)scale3d(var(--tw-exit-scale,1),var(--tw-exit-scale,1),var(--tw-exit-scale,1))rotate(var(--tw-exit-rotate,0))}}.hover\:bg-\[\#635bff\]\/90:hover{background-color:#635bffe6}</style><div id="plasmo-shadow-container" style="z-index: 2147483647; position: relative;"><div id="plasmo-inline" class="plasmo-csui-container" style="display: flex; position: relative; top: 0px; left: 0px;"><div class="aitdk-extension shadow-2xl flex fixed w-[520px] top-0 right-0 bottom-0 bg-white hidden"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x absolute right-2 top-2 z-[1] p-1 cursor-pointer text-gray-500"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-loader-circle animate-spin text-gray-400 absolute top-1/2 left-1/2 -ml-[13px] -mt-[13px] -z-[1]"><path d="M21 12a9 9 0 1 1-6.219-8.56"></path></svg></div></div></div></template></plasmo-csui><div id="immersive-translate-browser-popup" style="all: initial"><template shadowrootmode="open"><style>/** 基础色阶定义 **/
+:root,
+#mount[data-theme="light"],
+#mount:not([data-theme="dark"]) {
+  /* 中性灰阶（light） */
+  --c-00: #000000;
+  --c-22: #222222;
+  --c-33: #333333;
+  --c-66: #666666;
+  --c-83: #838383;
+  --c-99: #999999;
+  --c-c7: #c7c7c7;
+  --c-cc: #cccccc;
+  --c-e6: #e6e6e6;
+  --c-f5: #f5f5f5;
+  --c-ff: #ffffff;
+  /* 品牌主色阶（light） */
+  --p-main: #ea4c89;
+  --p-hover: #ec5e95;
+  --p-active: #e34a85;
+  --p-special: #ee71a2;
+  --p-disabled: #f4a5c4;
+  --p-text-disabled: #f9c9dc;
+  --p-weak: #fdedf3;
+  /* Surface 层级（light，TC 填充-1） */
+  --s-1: #f3f5f6;
+  --s-1-hover: #f6f8f9;
+  --s-1-active: #edf1f2;
+  --s-1-weak: #fafbfb;
+  /* 输入/边框（light，TC 填充-2） */
+  --input-bg-base: #fafbfc;
+  --input-border: #ecf0f7;
+  --input-border-strong: #e0e0e6;
+  --input-bg-strong: #fafdff;
+}
+
+:root[data-theme="dark"],
+[data-theme="dark"] {
+  /* 中性灰阶（dark） */
+  --c-00: #ffffff;
+  --c-22: #dbdbdb;
+  --c-33: #dbdbdb;
+  --c-66: #b3b3b3;
+  --c-83: #838383;
+  --c-99: #707070;
+  --c-c7: #666666;
+  --c-cc: #5c5c5c;
+  --c-e6: #3b3b3b;
+  --c-f5: #262626;
+  --c-ff: #222222;
+  /* 品牌主色阶（dark） */
+  --p-main: #e23c7c;
+  --p-hover: #ea4c89;
+  --p-active: #d5467d;
+  --p-special: #a93a65;
+  --p-disabled: #7e2f4d;
+  --p-text-disabled: #522335;
+  --p-weak: #26171d;
+  /* Surface 层级（dark，TC 填充-1） */
+  --s-1: #2d2e2f;
+  --s-1-hover: #323434;
+  --s-1-active: #202121;
+  --s-1-weak: #262627;
+  /* 输入/边框（dark，TC 填充-2） */
+  --input-bg-base: #2b2d30;
+  --input-border: #3e434b;
+  --input-border-strong: #43474b;
+  --input-bg-strong: #1f2123;
+}
+
+:root,
+#mount [data-theme] {
+  /* 业务/通用变量引用色阶（全局可见，含 Shadow DOM） */
+  --primary: var(--p-main);
+  --primary-hover: var(--p-hover);
+  --primary-inverse: #fff;
+  --modal-background: var(--s-1);
+  --modal-border: var(--input-border);
+  --modal-text: var(--c-22);
+  --modal-text-secondary: var(--c-66);
+  --modal-error: var(--p-main);
+  --modal-required: #f53f3f;
+  --modal-success: #68cd52;
+  --modal-button-background: var(--p-main);
+  --modal-button-text: var(--c-ff);
+  --modal-input-background: var(--input-bg-base);
+  --modal-check-color: var(--p-main);
+  --background-color: var(--c-ff);
+  --background-light-green: var(--s-1-weak, #f5f7f9);
+  --text-black-2: var(--c-22);
+  --text-gray-2: var(--c-22);
+  --text-gray-6: var(--c-66);
+  --text-gray-9: var(--c-99);
+  --text-gray-c2: var(--c-c7);
+  --switch-background-color: var(--c-c7, hsl(205deg, 16%, 77%));
+  --float-ball-more-button-border-color: var(--c-f5, #f6f6f6);
+  --float-ball-more-button-background-color: var(--c-ff);
+  --float-ball-more-button-hover-color: var(--p-weak);
+  --float-ball-more-button-svg-color: #6c6f73;
+  --service-bg-hover: var(--s-1-hover, #f7faff);
+  --service-bg: var(--s-1-weak, #fafbfb);
+}
+
+#mount {
+  --font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
+    "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  /* PC/H5 兼容的字号、间距、圆角、阴影变量 */
+  --f-12: 12px;
+  --f-14: 14px;
+  --f-15: 15px;
+  --f-16: 16px;
+  --f-18: 18px;
+  --f-20: 20px;
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-18: 18px;
+  --space-24: 24px;
+  --radius-8: 8px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --control-height-lg: 44px;
+  --width-28: 28px;
+  --width-24: 24px;
+  --width-20: 20px;
+  --width-18: 18px;
+  --width-16: 16px;
+  --width-label-md: 56px;
+  --shadow-lg: 0 18px 48px rgba(0, 0, 0, 0.12);
+
+  /* 常规变量 */
+  --line-height: 1.5;
+  --font-weight: 400;
+  --font-size: 16px;
+  --border-radius: 4px;
+  --border-width: 2px;
+  --outline-width: 3px;
+  --spacing: 16px;
+  --typography-spacing-vertical: 24px;
+  --block-spacing-vertical: calc(var(--spacing) * 2);
+  --block-spacing-horizontal: var(--spacing);
+  --grid-spacing-vertical: 0;
+  --grid-spacing-horizontal: var(--spacing);
+  --form-element-spacing-vertical: 12px;
+  --form-element-spacing-horizontal: 16px;
+  --nav-element-spacing-vertical: 16px;
+  --nav-element-spacing-horizontal: 8px;
+  --nav-link-spacing-vertical: 8px;
+  --nav-link-spacing-horizontal: 8px;
+  --form-label-font-weight: var(--font-weight);
+  --transition: 0.2s ease-in-out;
+  --modal-overlay-backdrop-filter: blur(4px);
+  --switch-color: var(--primary-inverse);
+  --switch-checked-background-color: var(--primary);
+  --icon-xia: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgaWQ9IkZyYW1lIj4KPHBhdGggaWQ9IlZlY3RvciIgZD0iTTguMDAyOTEgOS42Nzk4M0wzLjgzMzM5IDUuNTEyMjFMMy4wMjUzOSA2LjMxOTgzTDguMDAzMjkgMTEuMjk1MUwxMi45NzYyIDYuMzE5ODNMMTIuMTY3OSA1LjUxMjIxTDguMDAyOTEgOS42Nzk4M1oiIGZpbGw9IiM4MzgzODMiLz4KPC9nPgo8L3N2Zz4K");
+  /* 兼容旧变量：主色直接引用品牌主色阶 */
+  --primary: var(--p-main);
+  --primary-hover: var(--p-hover);
+  --primary-inverse: #fff;
+  /* Modal 业务变量引用色阶 */
+  --modal-background: var(--s-1);
+  --modal-border: var(--input-border);
+  --modal-text: var(--c-22);
+  --modal-text-secondary: var(--c-66);
+  --modal-error: var(--p-main);
+  --modal-required: #f53f3f;
+  --modal-success: #68cd52;
+  --modal-button-background: var(--p-main);
+  --modal-button-text: var(--c-ff);
+  --modal-input-background: var(--input-bg-base);
+  --modal-check-color: var(--p-main);
+  --background-color: var(--c-ff);
+  --background-light-green: var(--s-1-weak, #f5f7f9);
+  --text-black-2: var(--c-22);
+  --text-gray-2: var(--c-22);
+  --text-gray-6: var(--c-66);
+  --text-gray-9: var(--c-99);
+  --text-gray-c2: var(--c-c7);
+  --switch-background-color: var(--c-c7, hsl(205deg, 16%, 77%));
+  --float-ball-more-button-border-color: var(--c-f5, #f6f6f6);
+  --float-ball-more-button-background-color: var(--c-ff);
+  --float-ball-more-button-hover-color: var(--p-weak);
+  --float-ball-more-button-svg-color: #6c6f73;
+  --service-bg-hover: var(--s-1-hover, #f7faff);
+  --service-bg: var(--s-1-weak, #fafbfb);
+  line-height: var(--line-height);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+}
+
+@media (max-width: 480px) {
+  :root,
+  #mount {
+    --f-12: 10px;
+    --f-14: 12px;
+    --f-15: 13px;
+    --f-16: 14px;
+    --f-18: 16px;
+    --f-20: 18px;
+    --space-4: 4px;
+    --space-6: 4px;
+    --space-8: 6px;
+    --space-12: 8px;
+    --space-16: 12px;
+    --space-18: 14px;
+    --space-24: 18px;
+    --radius-8: 6px;
+    --radius-12: 10px;
+    --radius-16: 12px;
+    --control-height-lg: 38px;
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.1);
+    --width-28: 24px;
+    --width-24: 20px;
+    --width-20: 16px;
+    --width-18: 14px;
+    --width-16: 12px;
+    --width-label-md: 52px;
+  }
+}
+
+#mount * {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+:where(#mount) a,
+:where(#mount) [role="link"] {
+  --color: var(--primary);
+  --background-color: transparent;
+  outline: none;
+  background-color: var(--background-color);
+  color: var(--color);
+  -webkit-text-decoration: var(--text-decoration);
+  text-decoration: var(--text-decoration);
+  transition: background-color var(--transition), color var(--transition),
+    box-shadow var(--transition), -webkit-text-decoration var(--transition);
+  transition: background-color var(--transition), color var(--transition),
+    text-decoration var(--transition), box-shadow var(--transition);
+  transition: background-color var(--transition), color var(--transition),
+    text-decoration var(--transition), box-shadow var(--transition),
+    -webkit-text-decoration var(--transition);
+}
+:where(#mount) a:is([aria-current], :hover, :active, :focus),
+:where(#mount) [role="link"]:is([aria-current], :hover, :active, :focus) {
+  --color: var(--primary-hover);
+  --text-decoration: underline;
+}
+
+:where(#mount) label {
+  font-size: 13px;
+  line-height: 1.3;
+  color: var(--text-gray-2, #222222);
+}
+
+:where(#mount) button {
+  width: 100%;
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.3;
+  min-height: 44px;
+  border-radius: 12px;
+  padding: 0 14px;
+  border: none;
+  background-color: var(--primary, #ea4c89);
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+:where(#mount) button:hover {
+  background-color: var(--primary-hover, #f082ac);
+}
+
+:where(#mount) button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+:where(#mount) select,
+:where(#mount) input,
+:where(#mount) textarea {
+  font-family: inherit;
+  color: var(--text-gray-2, #222222);
+}
+
+:where(#mount) select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: inherit;
+  color: var(--text-gray-2, inherit);
+  font-size: 13px;
+  line-height: 1.3;
+  outline: none;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--popup-item-background-color, transparent);
+  background-image: var(--icon-xia, none);
+  background-repeat: no-repeat;
+  background-position: center right 12px;
+  background-size: 16px auto;
+  cursor: pointer;
+}
+
+:where(#mount) input[type="checkbox"] {
+  accent-color: var(--primary, #ea4c89);
+}
+
+[type="checkbox"],
+[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 1.25em;
+  height: 1.25em;
+  margin-top: -0.125em;
+  margin-right: 0.375em;
+  margin-left: 0;
+  -webkit-margin-start: 0;
+  margin-inline-start: 0;
+  -webkit-margin-end: 0.375em;
+  margin-inline-end: 0.375em;
+  border-width: var(--border-width);
+  font-size: inherit;
+  vertical-align: middle;
+  cursor: pointer;
+}
+[type="checkbox"]::-ms-check,
+[type="radio"]::-ms-check {
+  display: none;
+}
+[type="checkbox"]:checked,
+[type="checkbox"]:checked:active,
+[type="checkbox"]:checked:focus,
+[type="radio"]:checked,
+[type="radio"]:checked:active,
+[type="radio"]:checked:focus {
+  --background-color: var(--primary);
+  --border-color: var(--primary);
+  background-image: var(--icon-checkbox);
+  background-position: center;
+  background-size: 0.75em auto;
+  background-repeat: no-repeat;
+}
+[type="checkbox"] ~ label,
+[type="radio"] ~ label {
+  display: inline-block;
+  margin-right: 0.375em;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+[type="checkbox"]:indeterminate {
+  --background-color: var(--primary);
+  --border-color: var(--primary);
+  background-image: var(--icon-minus);
+  background-position: center;
+  background-size: 0.75em auto;
+  background-repeat: no-repeat;
+}
+
+[type="radio"] {
+  border-radius: 50%;
+}
+[type="radio"]:checked,
+[type="radio"]:checked:active,
+[type="radio"]:checked:focus {
+  --background-color: var(--primary-inverse);
+  border-width: 0.35em;
+  background-image: none;
+}
+
+:where(#mount) [type="checkbox"][role="switch"] {
+  --background-color: var(--switch-background-color);
+  --border-color: var(--switch-background-color);
+  --color: var(--switch-color);
+  width: 2.25em;
+  height: 1.25em;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 1.25em;
+  background-color: var(--background-color);
+  line-height: 1.25em;
+}
+:where(#mount) [type="checkbox"][role="switch"]:focus {
+  --background-color: var(--switch-background-color);
+  --border-color: var(--switch-background-color);
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked {
+  --background-color: var(--switch-checked-background-color);
+  --border-color: var(--switch-checked-background-color);
+}
+:where(#mount) [type="checkbox"][role="switch"]:before {
+  display: block;
+  width: calc(1.25em - (var(--border-width) * 2));
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--color);
+  content: "";
+  transition: margin 0.1s ease-in-out;
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked {
+  background-image: none;
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked::before {
+  margin-left: calc(1.125em - var(--border-width));
+  -webkit-margin-start: calc(1.125em - var(--border-width));
+  margin-inline-start: calc(1.125em - var(--border-width));
+}
+
+:where(#mount) [type="checkbox"][aria-invalid="false"],
+:where(#mount) [type="checkbox"]:checked[aria-invalid="false"],
+:where(#mount) [type="radio"][aria-invalid="false"],
+:where(#mount) [type="radio"]:checked[aria-invalid="false"],
+:where(#mount) [type="checkbox"][role="switch"][aria-invalid="false"],
+:where(#mount) [type="checkbox"][role="switch"]:checked[aria-invalid="false"] {
+  --border-color: var(--form-element-valid-border-color);
+}
+:where(#mount) [type="checkbox"][aria-invalid="true"],
+:where(#mount) [type="checkbox"]:checked[aria-invalid="true"],
+:where(#mount) [type="radio"][aria-invalid="true"],
+:where(#mount) [type="radio"]:checked[aria-invalid="true"],
+:where(#mount) [type="checkbox"][role="switch"][aria-invalid="true"],
+:where(#mount) [type="checkbox"][role="switch"]:checked[aria-invalid="true"] {
+  --border-color: var(--form-element-invalid-border-color);
+}
+
+.text-black {
+  color: var(--text-black-2);
+}
+
+.text-gray-2 {
+  color: var(--text-gray-2);
+}
+
+.text-gray-6 {
+  color: var(--text-gray-6);
+}
+
+.text-gray-9 {
+  color: var(--text-gray-9);
+}
+
+.text-gray-c2 {
+  color: var(--text-gray-c2);
+}
+
+.pt-4 {
+  padding-top: 16px;
+}
+
+.p-2 {
+  padding: 8px;
+}
+
+.pl-5 {
+  padding-left: 48px;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.pl-2 {
+  padding-left: 8px;
+}
+
+.pl-4 {
+  padding-left: 24px;
+}
+
+.pt-2 {
+  padding-top: 8px;
+}
+
+.pb-2 {
+  padding-bottom: 8px;
+}
+
+.pb-4 {
+  padding-bottom: 16px;
+}
+
+.pb-5 {
+  padding-bottom: 20px;
+}
+
+.pr-5 {
+  padding-right: 48px;
+}
+
+.text-sm {
+  font-size: 13px;
+}
+
+.text-base {
+  font-size: 16px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.mb-0 {
+  margin-bottom: 0px;
+}
+
+.mb-2 {
+  margin-bottom: 8px;
+}
+
+.mb-4 {
+  margin-bottom: 16px;
+}
+
+.mb-3 {
+  margin-bottom: 12px;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.py-2 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.py-2-5 {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mt-2 {
+  margin-top: 8px;
+}
+
+.mt-3 {
+  margin-top: 12px;
+}
+
+.mt-4 {
+  margin-top: 16px;
+}
+
+.mt-5 {
+  margin-top: 20px;
+}
+
+.mt-6 {
+  margin-top: 24px;
+}
+
+.mb-1 {
+  margin-bottom: 4px;
+}
+
+.ml-4 {
+  margin-left: 24px;
+}
+
+.ml-3 {
+  margin-left: 16px;
+}
+
+.ml-2 {
+  margin-left: 8px;
+}
+
+.ml-1 {
+  margin-left: 4px;
+}
+
+.mr-1 {
+  margin-right: 4px;
+}
+
+.mr-2 {
+  margin-right: 8px;
+}
+
+.mr-3 {
+  margin-right: 16px;
+}
+
+.mx-2 {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.pl-3 {
+  padding-left: 12px;
+}
+
+.pr-3 {
+  padding-right: 12px;
+}
+
+.p-3 {
+  padding: 12px;
+}
+
+.px-1 {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.px-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.pt-3 {
+  padding-top: 12px;
+}
+
+.px-6 {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.px-4 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.pt-6 {
+  padding-top: 20px;
+}
+
+.py-3 {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.py-0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.left-auto {
+  left: auto !important;
+}
+
+.max-h-28 {
+  max-height: 112px;
+}
+
+.max-h-30 {
+  max-height: 120px;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
+.text-xs {
+  font-size: 12px;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-3 {
+  flex: 3;
+}
+
+.flex-4 {
+  flex: 4;
+}
+
+.flex-2 {
+  flex: 2;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.max-content {
+  width: max-content;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-baseline {
+  align-items: baseline;
+}
+
+.my-5 {
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+.my-4 {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.my-3 {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.pt-3 {
+  padding-top: 12px;
+}
+
+.px-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.pt-2 {
+  padding-top: 8px;
+}
+
+.px-2 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.pt-1 {
+  padding-top: 4px;
+}
+
+.px-1 {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.pb-2 {
+  padding-bottom: 8px;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.shrink-0 {
+  flex-shrink: 0;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.close {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  background-image: var(--icon-close);
+  background-position: center;
+  background-size: auto 1rem;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  transition: opacity var(--transition);
+}
+
+.padding-two-column {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.muted {
+  color: #999;
+}
+
+.text-label {
+  color: #666;
+}
+
+.display-none {
+  display: none;
+}
+
+/* dark use #18232c */
+@media (prefers-color-scheme: dark) {
+  .text-label {
+    color: #9ca3af;
+  }
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.text-decoration-none:is([aria-current], :hover, :active, :focus),
+[role="link"]:is([aria-current], :hover, :active, :focus) {
+  --text-decoration: none !important;
+  background-color: transparent !important;
+}
+
+.text-overflow-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.max-w-20 {
+  max-width: 180px;
+  white-space: nowrap;
+}
+
+[data-theme="light"],
+#mount:not([data-theme="dark"]) {
+  --popup-footer-background-color: #e8eaeb;
+  --popup-content-background-color: #ffffff;
+  --popup-item-background-color: #f3f5f6;
+  --popup-item-hover-background-color: #eaeced;
+  --popup-trial-pro-background-color: #f9fbfc;
+  --service-select-content-shadow: 0px 2px 12px 0px rgba(75, 76, 77, 0.2);
+  --service-select-border-color: #fafafa;
+  --service-select-selected-background-color: #f3f5f6;
+  --download-app-background: #f3f5f6;
+  --translate-language-background-color: #f3f5f6;
+  --translate-language-icon-color: #666666;
+  --translate-language-text-color: #222222;
+  --translate-language-hover-background-color: #fdedf3;
+  --translate-language-hover-icon-color: #e95d93;
+  --error-bg: #fdedf3;
+  --error-text: #222;
+  --error-link: #ea4c89;
+}
+
+[data-theme="dark"] {
+  --popup-footer-background-color: #0d0d0d;
+  --popup-content-background-color: #191919;
+  --popup-item-background-color: #272727;
+  --popup-item-hover-background-color: #333333;
+  --popup-trial-pro-background-color: #222222;
+  --service-select-content-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.9);
+  --service-select-border-color: #2c2c2c;
+  --service-select-selected-background-color: #333333;
+  --download-app-background: #333;
+  --translate-language-background-color: #2d2e2f;
+  --translate-language-icon-color: #b3b3b3;
+  --translate-language-text-color: #b3b3b3;
+  --translate-language-hover-background-color: #a97b8c;
+  --translate-language-hover-icon-color: rgba(255, 255, 255, 0.9);
+  --error-bg: #26171d;
+  --error-text: #dbdbdb;
+  --error-link: #ea4c89;
+}
+
+#mount {
+  min-width: 268px;
+}
+
+body {
+  padding: 0;
+  margin: 0 auto;
+  min-width: 268px;
+  border-radius: 10px;
+}
+
+.popup-container {
+  font-size: 16px;
+  --font-size: 16px;
+  color: #666;
+  background-color: var(--popup-footer-background-color);
+  width: 316px;
+  min-width: 316px;
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-content {
+  background-color: var(--popup-content-background-color);
+  border-radius: 0px 0px 12px 12px;
+  padding: 16px 20px;
+}
+
+.popup-userscript-three-feature-layout {
+  background-color: var(--popup-footer-background-color);
+  width: 350px;
+  min-width: 350px;
+}
+
+.popup-userscript-three-feature-layout .popup-content {
+  padding-bottom: 20px;
+  border-radius: 0 0 12px 12px;
+}
+
+.popup-userscript-three-feature-layout .popup-footer {
+  border-radius: 0;
+}
+
+.immersive-translate-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  touch-action: none;
+}
+
+.immersive-translate-popup-wrapper {
+  background: var(--background-color);
+  border-radius: 10px;
+  border: 1px solid var(--muted-border-color);
+}
+
+.main-button {
+  font-size: 16px;
+  font-weight: 700;
+  vertical-align: middle;
+  border-radius: 12px;
+  padding: unset;
+  height: 48px;
+  line-height: 48px;
+  flex: 1;
+}
+
+select.translate-service,
+select.min-select {
+  --form-element-spacing-horizontal: 0;
+  margin-bottom: 0px;
+  max-width: unset;
+  flex: 1;
+  overflow: hidden;
+  font-size: 13px;
+  border: none;
+  border-radius: 8px;
+  padding-right: 30px;
+  padding-left: 0px;
+  background-position: center right 12px;
+  background-size: 16px auto;
+  background-image: var(--icon-xia);
+  text-overflow: ellipsis;
+  color: var(--text-gray-2);
+  background-color: transparent;
+  box-shadow: unset !important;
+  cursor: pointer;
+}
+
+select.more {
+  background-position: center right;
+  padding-right: 20px;
+}
+
+select.translate-service {
+  color: var(--text-black-2);
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSI4IiB2aWV3Qm94PSIwIDAgOCA4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIG9wYWNpdHk9IjAuOCI+PHBhdGggZD0iTTMuNDc5NzMgNi4zODY0M0wwLjcyOTI5NyAzLjMyMjE2QzAuNjE2ODggMy4xOTY5NCAwLjU1NDY5NSAzLjAzNDU5IDAuNTU0Njg4IDIuODY2M0MwLjU1NDY4OCAyLjQ4OTI0IDAuODYwNTQ3IDIuMTgzNTkgMS4yMzc4NCAyLjE4MzU5SDYuNzM4NzFDNi45MDcwNyAyLjE4MzU4IDcuMDY5NTEgMi4yNDU3MiA3LjE5NDg4IDIuMzU4MDlDNy40NzU3NCAyLjYwOTg2IDcuNDk5MTkgMy4wNDE0OCA3LjI0NzI2IDMuMzIyMTZMNC40OTY4MiA2LjM4NjQ0QzQuNDgwMzIgNi40MDQ4MiA0LjQ2MjgzIDYuNDIyMjkgNC40NDQ0NCA2LjQzODc4QzQuMTYzNTggNi42OTA1NSAzLjczMTY2IDYuNjY3MTEgMy40Nzk3MyA2LjM4NjQzWiIgZmlsbD0iIzk5OTk5OSIvPjwvZz48L3N2Zz4K");
+  background-size: 8px auto;
+}
+
+.min-select-container.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.popup-footer {
+  background-color: var(--popup-footer-background-color);
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+/* Footer 三栏布局样式 */
+.footer-link-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  min-width: 72px;
+}
+
+.footer-icon-btn {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-icon-btn svg {
+  color: #999999;
+}
+
+[data-theme="dark"] .footer-icon-btn svg {
+  color: #707070;
+}
+
+.footer-link-text {
+  font-size: 12px;
+  line-height: 18px;
+  color: #666666;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .footer-link-text {
+  color: #b3b3b3;
+}
+
+.footer-link-btn-right {
+  justify-content: flex-end;
+}
+
+.footer-center-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #999999;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.footer-center-text.is-overflowing {
+  justify-content: flex-start;
+}
+
+.footer-center-text.is-overflowing .footer-center-content {
+  animation: footer-scroll-text 12s linear infinite;
+}
+
+@keyframes footer-scroll-text {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.footer-center-content {
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-scroll-gap {
+  display: inline-block;
+  width: 80px;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .footer-center-text {
+  color: #707070;
+}
+
+.footer-text-content {
+  display: inline-block;
+}
+
+.footer-privacy-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-version-inline-text {
+  font-size: 12px;
+  color: #999999;
+  line-height: 1;
+  border-bottom: 1px solid transparent;
+}
+
+[data-theme="dark"] .footer-version-inline-text {
+  color: #707070;
+}
+
+.footer-version-inline-text:hover {
+  border-bottom-color: #999999;
+}
+
+[data-theme="dark"] .footer-version-inline-text:hover {
+  border-bottom-color: #707070;
+}
+
+.translate-language-row {
+  gap: 4px;
+}
+
+.translate-language-exchange {
+  width: 36px;
+  height: 48px;
+  background-color: var(--translate-language-background-color);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--translate-language-icon-color);
+  flex-shrink: 0;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.translate-language-exchange:hover {
+  color: var(--translate-language-hover-icon-color);
+}
+
+.translate-language-exchange-active {
+  background-color: var(--translate-language-hover-background-color);
+  color: var(--translate-language-hover-icon-color);
+}
+
+.translate-language-exchange-active:hover {
+  background-color: var(--translate-language-hover-background-color);
+  color: var(--translate-language-hover-icon-color);
+}
+
+.translate-language-arrow {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+}
+
+.translation-service-container {
+  background-color: var(--popup-item-background-color);
+  border-radius: 12px;
+}
+
+.translation-service-primary-field {
+  position: relative;
+}
+
+.translation-service-guide-hitbox {
+  position: absolute;
+  right: 46px;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: auto;
+}
+
+.min-select-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 44px;
+  background-color: var(--popup-item-background-color);
+  padding-left: 16px;
+}
+
+.min-select-container:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.min-select-container:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.min-select-container:only-child {
+  border-radius: 10px;
+}
+
+.popup-ai-context-label {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+  min-width: 60px;
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+.popup-ai-context-switch {
+  align-self: center;
+  margin: 0;
+  margin-inline-end: 12px;
+}
+
+.translate-mode {
+  width: 36px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: var(--translate-language-background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  color: var(--translate-language-text-color);
+  margin-right: 8px;
+}
+
+/* 快捷操作设置标题栏 */
+.widgets-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 4px;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.widgets-header-title {
+  color: #999999;
+}
+
+.widgets-header-action {
+  color: #999999;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.widgets-header-action:hover {
+  color: #666666;
+}
+
+.widgets-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+  gap: 8px;
+}
+
+.popup-userscript-three-feature-layout .widgets-container-compact-monkey {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 12px;
+}
+
+.widgets-container.widgets-single-item {
+  grid-template-columns: minmax(0, 1fr);
+  margin-top: 12px;
+}
+
+.widgets-container.widgets-single-item .widget-item {
+  max-width: none;
+}
+
+/* 当只有两个小组件时的样式优化 */
+.widgets-container.widgets-two-items {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.widgets-container.widgets-two-items .widget-item {
+  max-width: none;
+}
+
+.widget-item {
+  display: flex;
+  width: 100%;
+  min-height: 44px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 1px solid #eef0f2;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  padding: 0 14px;
+  text-align: left;
+  gap: 6px;
+}
+
+.widget-item.widget-item-single {
+  flex: 1 1 auto;
+  flex-direction: row;
+  justify-content: center;
+  border: 1px solid #eef0f2;
+  border-radius: 16px;
+  padding: 0 14px;
+  background: transparent;
+}
+
+.popup-userscript-three-feature-layout .widget-item-compact {
+  min-height: 60px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  padding: 8px 12px;
+}
+
+.widget-item svg {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+}
+
+.widget-icon-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--c-66, #666666);
+  font-size: 14px;
+  line-height: 21px;
+  text-align: left;
+  word-break: keep-all;
+}
+
+.popup-userscript-three-feature-layout .widget-item-compact .widget-icon-text {
+  white-space: nowrap;
+  overflow: visible;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.widget-item.widget-item-single .widget-icon-text {
+  white-space: nowrap;
+  text-align: left;
+  color: var(--c-66, #666666);
+}
+
+[data-theme="dark"] .widget-item,
+[data-theme="dark"] .widget-item.widget-item-single {
+  border-color: #2e2e2e;
+}
+
+[data-theme="dark"] .widget-icon-text,
+[data-theme="dark"] .widget-item.widget-item-single .widget-icon-text {
+  color: var(--c-66, #666666);
+}
+
+[data-theme="dark"] .more-settings-icon {
+  fill: #191919;
+}
+
+.share-button-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 2px 3px 0 8px;
+}
+
+.share-button-container svg {
+  fill: var(--text-gray-9);
+}
+
+.min-select-container:hover,
+.widget-item:hover {
+  background-color: var(--popup-item-hover-background-color);
+}
+
+.main-button:hover {
+  background-color: #f5508f;
+}
+
+.share-button-container:hover {
+  background-color: var(--popup-item-background-color);
+  border-radius: 6px;
+}
+
+.error-boundary {
+  background: #fff2f0;
+  border: 1px solid #ffccc7;
+  display: flex;
+  padding: 12px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.88);
+  word-break: break-all;
+  margin: 12px;
+  border-radius: 12px;
+  flex-direction: column;
+}
+
+.upgrade-pro {
+  border-radius: 11px;
+  background: linear-gradient(57deg, #272727 19.8%, #696969 82.2%);
+  padding: 2px 8px;
+  transform: scale(0.85);
+}
+
+.upgrade-pro span {
+  background: linear-gradient(180deg, #ffeab4 17.65%, #f8c235 85.29%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+.upgrade-pro svg {
+  margin-top: -2px;
+}
+
+.upgrade-pro:hover {
+  background: linear-gradient(57deg, #3d3d3d 19.8%, #949494 82.2%);
+}
+
+.border-bottom-radius-0 {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.trial-pro-container {
+  border-radius: 0px 0px 12px 12px;
+  background: var(--popup-trial-pro-background-color);
+  display: flex;
+  align-items: center;
+  height: 44px;
+  padding-left: 16px;
+  padding-right: 12px;
+  font-size: 12px;
+}
+
+.trial-pro-container label {
+  line-height: 13px;
+  color: var(--text-black-2);
+}
+
+.trial-pro-container img {
+  margin-left: 5px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.upgrade-pro-discount-act {
+  height: 25px;
+  display: flex;
+  padding: 0 4px;
+  align-items: center;
+  border-radius: 15px;
+  background: linear-gradient(
+    90deg,
+    #cefbfa 11.33%,
+    #d7f56f 63.75%,
+    #fccd5e 100%
+  );
+  transform: scale(0.9);
+  box-shadow: 0px 1.8px 3.6px 0px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.upgrade-pro-discount-act span {
+  font-size: 12px;
+  font-weight: 700;
+  margin-left: 4px;
+  color: #222222;
+}
+
+.upgrade-pro-discount-act:hover {
+  text-decoration: unset;
+  background: linear-gradient(
+    90deg,
+    #e2fffe 11.33%,
+    #e6ff91 63.75%,
+    #ffdf93 100%
+  );
+}
+
+.custom-select-container {
+  width: 200px;
+  position: relative;
+  flex: 1;
+}
+
+#translation-service-select {
+  padding-right: 12px;
+}
+
+.custom-select-content {
+  border-radius: 12px;
+  background: var(--popup-content-background-color);
+  box-shadow: var(--service-select-content-shadow);
+  border: 1px solid var(--service-select-border-color);
+  padding: 8px;
+  position: absolute;
+  left: -68px;
+  right: 0;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.custom-select-item.default {
+  width: 100%;
+  padding: 0;
+}
+
+.custom-select-item {
+  font-size: 14px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--text-black-2);
+  width: auto;
+  overflow: hidden;
+  height: 30px;
+  line-height: 30px;
+}
+
+.custom-select-item-img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .custom-select-item-img {
+    margin-right: 6px;
+  }
+}
+
+.custom-select-content .custom-select-item.selected,
+.custom-select-content .custom-select-item:hover {
+  background: var(--service-select-selected-background-color);
+}
+
+.custom-select-item > span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.custom-select-item-pro {
+  font-size: 12px;
+  margin-left: 6px;
+  display: flex;
+}
+
+.custom-select-item-pro img {
+  margin: 0 3px;
+  width: 20px;
+  flex-shrink: 0;
+}
+
+.service-select-inline-sponsor-container {
+  width: 50px;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.service-select-inline-sponsor-marquee {
+  min-width: max-content;
+  display: inline-flex;
+  align-items: center;
+  column-gap: 12px;
+  animation: service-select-inline-sponsor-scroll 10s linear infinite;
+}
+
+.service-select-inline-sponsor-track {
+  min-width: max-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+@keyframes service-select-inline-sponsor-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 6px));
+  }
+}
+
+.custom-select-group-header {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-gray-9);
+  padding: 8px 8px 6px;
+  margin-top: 2px;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.custom-select-group-header--recommendation {
+  color: #beb3a0;
+  font-weight: 400;
+  letter-spacing: 0;
+  padding-top: 4px;
+}
+
+.custom-select-group-header-tip {
+  display: inline-flex;
+  align-items: center;
+  color: #bcbcbc;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.more-container {
+  position: relative;
+}
+
+.new-menu-indicator {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #ef3434;
+  border-radius: 50%;
+  right: 18px;
+  top: 4px;
+}
+
+.download-app {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px;
+  background: var(--download-app-background);
+  padding: 4px 8px;
+  color: var(--text-gray-6);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Popup 动画效果 */
+@keyframes popup-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes popup-fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+}
+
+.popup-generic-content {
+  animation: popup-fade-in 0.2s ease-out;
+}
+
+.popup-generic-content.hiding {
+  animation: popup-fade-out 0.15s ease-in;
+}
+
+select.min-select {
+  --form-element-spacing-horizontal: 0;
+  max-width: 128px;
+  overflow: hidden;
+  color: var(--primary);
+  font-size: 13px;
+  border: none;
+  padding: 0;
+  padding-right: 20px;
+  text-overflow: ellipsis;
+  color: var(--color);
+}
+select.min-select-secondary {
+  color: var(--color);
+}
+select.min-select:focus {
+  outline: none;
+  border: none;
+  --box-shadow: none;
+}
+
+select.min-select-left {
+  padding-right: 0px;
+  /* padding-left: 24px; */
+  /* background-position: center left 0; */
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+select.transform-padding-left {
+  padding-left: 12px;
+  transform: translateX(-12px);
+  background-position: center right 0px;
+}
+
+select.text-gray-6 {
+  color: var(--text-gray-6);
+}
+
+/* dark use black, for windows */
+@media (prefers-color-scheme: dark) {
+  select.translate-service option,
+  select.min-select option {
+    background-color: #666666;
+  }
+}
+
+select.min-select-no-arrow {
+  background-image: none;
+  padding-right: 0;
+}
+
+.activity-tips {
+  border-radius: 8px;
+  padding: 0px 8px;
+  height: 26px;
+  background: linear-gradient(
+    83deg,
+    #faccde -0.87%,
+    #fce7ef 43.13%,
+    #fbd6e4 72.08%,
+    #ffb3d1 96.34%
+  );
+  color: #333;
+  cursor: pointer;
+  gap: 4px;
+  font-size: 12px;
+}
+
+.activity-tips-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.countdown-container {
+  min-width: 50px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.01em;
+}
+
+.activity-tips-text {
+  font-weight: 600;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 非会员升级提示 */
+.upgrade-tips {
+  padding: 0px 6px 0px 4px;
+  height: 18px;
+  color: #ea4c89;
+  cursor: pointer;
+  gap: 6px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.upgrade-tips svg:first-child {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  filter: drop-shadow(0px 4px 4px rgba(236, 76, 140, 0.2));
+}
+
+.upgrade-tips-text {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.upgrade-tips-switch {
+  position: relative;
+  width: 30px;
+  height: 18px;
+  border-radius: 24px;
+  background: #cccccc;
+  flex-shrink: 0;
+}
+
+.upgrade-tips-switch-thumb {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+/* 抽屉组件样式 */
+.drawer-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+
+.drawer-overlay.drawer-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.drawer-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ffffff;
+  border-radius: 12px 12px 0 0;
+  z-index: 101;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-visible .drawer-panel {
+  transform: translateY(0);
+}
+
+[data-theme="dark"] .drawer-panel {
+  background: #222222;
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  flex-shrink: 0;
+}
+
+.drawer-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333333;
+}
+
+[data-theme="dark"] .drawer-title {
+  color: #e0e0e0;
+}
+
+.drawer-close {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999999;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.drawer-close:hover {
+  background-color: #f3f5f6;
+}
+
+[data-theme="dark"] .drawer-close:hover {
+  background-color: #333333;
+}
+
+.drawer-body {
+  padding: 16px 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.drawer-body.drawer-body-hover {
+  padding: 0 20px 20px 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.drawer-body.drawer-body-more-settings {
+  padding-top: 0;
+}
+
+.drawer-footer {
+  padding: 12px 20px;
+  border-top: 1px solid #eef0f2;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+[data-theme="dark"] .drawer-footer {
+  border-top: 1px solid #2e2e2e;
+}
+
+.drawer-footer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.drawer-footer-actions-single {
+  justify-content: center;
+}
+
+.drawer-footer-text {
+  font-size: 12px;
+  cursor: pointer;
+  color: #999999;
+  text-decoration: none;
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.drawer-footer-actions-single .drawer-footer-text {
+  flex: 0 1 auto;
+  max-width: 100%;
+}
+
+.drawer-footer-text:hover {
+  text-decoration: underline;
+}
+
+/* 抽屉内容区域样式 */
+.drawer-section {
+  margin-bottom: 16px;
+}
+
+.drawer-section:last-child {
+  margin-bottom: 0;
+}
+
+.drawer-section-highlight {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+[data-theme="dark"] .drawer-section-highlight {
+  background-color: #2a2a2a;
+}
+
+.drawer-section-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #666666;
+  margin-bottom: 12px;
+}
+
+[data-theme="dark"] .drawer-section-title {
+  color: #999999;
+}
+
+.drawer-section-divider {
+  height: 1px;
+  background-color: #eef0f2;
+  margin: 16px 0;
+}
+
+/* ========== 通用抽屉组件样式 ========== */
+.popup-drawer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.popup-drawer-card {
+  background: #f3f5f6;
+  border-radius: 12px;
+  padding: 12px 12px 16px;
+}
+
+[data-theme="dark"] .popup-drawer-card {
+  background: #2a2a2a;
+}
+
+.popup-drawer-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 21px;
+  gap: 12px;
+}
+
+.popup-drawer-card-header input[type="checkbox"][role="switch"] {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.popup-drawer-card-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #222222;
+  line-height: 21px;
+}
+
+[data-theme="dark"] .popup-drawer-card-title {
+  color: #e0e0e0;
+}
+
+.popup-drawer-card-divider {
+  height: 1px;
+  width: calc(100% + 24px);
+  background-color: #ffffff;
+  margin: 12px -12px 16px;
+}
+
+[data-theme="dark"] .popup-drawer-card-divider {
+  background-color: #333333;
+}
+
+.popup-drawer-demo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.popup-drawer-demo-region-fixed {
+  height: 51px;
+  max-height: 51px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-region-min {
+  min-height: 51px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-selection {
+  width: 100%;
+  min-width: 0;
+  flex-wrap: nowrap;
+}
+
+.popup-drawer-demo-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-plus,
+.popup-drawer-demo-equal {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  color: #333333;
+}
+
+[data-theme="dark"] .popup-drawer-demo-plus,
+[data-theme="dark"] .popup-drawer-demo-equal {
+  color: #e0e0e0;
+}
+
+.popup-drawer-demo-logo {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-logo img {
+  width: 28px;
+  height: 28px;
+  display: block;
+  filter: drop-shadow(0 4px 12px rgba(255, 166, 201, 0.5));
+}
+
+.popup-drawer-demo-result {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #333333;
+}
+
+.popup-drawer-demo-result-ellipsis {
+  min-width: 0;
+  max-width: calc(100% - 72px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .popup-drawer-demo-result {
+  color: #e0e0e0;
+}
+
+.popup-drawer-trigger {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.popup-drawer-trigger-label {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #999999;
+  padding-left: 4px;
+}
+
+.popup-drawer-trigger-options {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.popup-drawer-trigger-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #333333;
+  background: #ffffff;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.popup-drawer-trigger-option-disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.popup-drawer-trigger-option:not(.popup-drawer-trigger-option-selected):hover {
+  border-color: #d0d3d6;
+}
+
+.popup-drawer-trigger-option-selected {
+  border: 0.5px solid #ea4c89;
+  background: #fdedf3;
+  box-shadow: 0px 4px 12px rgba(255, 166, 201, 0.5);
+}
+
+[data-theme="dark"] .popup-drawer-trigger-option {
+  background: #1f1f1f;
+  border-color: #333333;
+  color: #e0e0e0;
+}
+
+[data-theme="dark"]
+  .popup-drawer-trigger-option:not(
+    .popup-drawer-trigger-option-selected
+  ):hover {
+  border-color: #444444;
+}
+
+[data-theme="dark"] .popup-drawer-trigger-option-selected {
+  background: rgba(233, 76, 137, 0.2);
+  border-color: #ea4c89;
+  box-shadow: 0 4px 12px 0 rgba(255, 166, 201, 0.3);
+}
+
+.popup-drawer-trigger-option-with-icon {
+  gap: 8px;
+}
+
+/* ========== 通用抽屉演示区域样式 ========== */
+/* 键帽样式 */
+.popup-drawer-demo-keycap {
+  min-width: 72px;
+  padding: 9px;
+  height: auto;
+  box-sizing: border-box;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  color: #ffffff;
+  background:
+    radial-gradient(
+      60px 36px at 85% 100%,
+      rgba(208, 208, 208, 0.2),
+      rgba(255, 255, 255, 0)
+    ),
+    radial-gradient(72px 36px at 50% 0%, #101010 0%, #242424 100%);
+  box-shadow:
+    2px 2px 3.5px rgba(0, 0, 0, 0.4),
+    inset 0.5px 0.7px 0.4px rgba(255, 255, 255, 0.5),
+    inset -0.5px -0.5px 0.2px rgba(0, 0, 0, 0.6);
+}
+
+.popup-drawer-demo-keycap-text {
+  max-width: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 小圆点样式 */
+.popup-drawer-demo-mini-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ea4c89;
+  flex-shrink: 0;
+  align-self: center;
+  box-shadow: 0 4px 12px rgba(255, 166, 201, 0.5);
+}
+
+[data-theme="dark"] .drawer-section-divider {
+  background-color: #333333;
+}
+
+/* 开关行 */
+.drawer-switch-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.drawer-switch-row.drawer-row-border {
+  border-bottom: 1px solid #eef0f2;
+  margin-bottom: 8px;
+  padding-bottom: 12px;
+}
+
+[data-theme="dark"] .drawer-switch-row.drawer-row-border {
+  border-bottom-color: #333333;
+}
+
+.drawer-switch-label {
+  font-size: 14px;
+  color: #222222;
+}
+
+[data-theme="dark"] .drawer-switch-label {
+  color: #e0e0e0;
+}
+
+/* 链接行 */
+.drawer-link-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  cursor: pointer;
+  border-bottom: 1px solid #eef0f2;
+  font-size: 14px;
+  color: #222222;
+}
+
+.drawer-link-row:last-child {
+  border-bottom: none;
+}
+
+[data-theme="dark"] .drawer-link-row {
+  border-bottom-color: #333333;
+  color: #e0e0e0;
+}
+
+.drawer-link-row:hover {
+  color: #ea4c89;
+}
+
+/* 演示区域 */
+.drawer-demo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 0;
+}
+
+.drawer-demo-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+}
+
+[data-theme="dark"] .drawer-demo-icon {
+  background-color: #333333;
+  border-color: #444444;
+}
+
+.drawer-demo-plus,
+.drawer-demo-equal {
+  font-size: 16px;
+  color: #999999;
+}
+
+.drawer-demo-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.drawer-demo-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.drawer-demo-result {
+  font-size: 14px;
+  color: #222222;
+  padding: 8px 12px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+}
+
+[data-theme="dark"] .drawer-demo-result {
+  background-color: #333333;
+  border-color: #444444;
+  color: #e0e0e0;
+}
+
+/* 触发方式选项 */
+.drawer-options {
+  display: flex;
+  gap: 8px;
+}
+
+.drawer-options-wrap {
+  flex-wrap: wrap;
+}
+
+.drawer-option {
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #666666;
+  background-color: #f3f5f6;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+[data-theme="dark"] .drawer-option {
+  background-color: #333333;
+  color: #b3b3b3;
+}
+
+.drawer-option:hover {
+  background-color: #eaeced;
+}
+
+[data-theme="dark"] .drawer-option:hover {
+  background-color: #3a3a3a;
+}
+
+.drawer-option-selected {
+  border-color: #ea4c89;
+  background-color: #fdedf3;
+  color: #ea4c89;
+  box-shadow: 0px 4px 12px rgba(255, 166, 201, 0.5);
+}
+
+[data-theme="dark"] .drawer-option-selected {
+  background-color: rgba(234, 76, 137, 0.2);
+}
+
+.drawer-body.drawer-body-selection {
+  padding: 0 20px 20px 20px;
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+
+/* ========== 更多设置抽屉样式 ========== */
+.more-settings-drawer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.more-settings-quick-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.more-settings-feature-card {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 40px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: #f3f5f6;
+  transition: background-color 0.2s ease;
+}
+
+.more-settings-feature-card:hover {
+  background-color: #e8eaec;
+}
+
+.more-settings-feature-card:active {
+  background-color: #dde0e2;
+}
+
+.more-settings-feature-card-label {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #666666;
+  white-space: nowrap;
+}
+
+.more-settings-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.more-settings-switch-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 21px;
+  gap: 12px;
+}
+
+.more-settings-switch-label {
+  flex: 1;
+  min-width: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #222222;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.more-settings-switch-row input[type="checkbox"] {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+[data-theme="dark"] .more-settings-switch-label {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .more-settings-feature-card {
+  background-color: #2a2a2a;
+}
+
+[data-theme="dark"] .more-settings-feature-card:hover {
+  background-color: #333333;
+}
+
+[data-theme="dark"] .more-settings-feature-card:active {
+  background-color: #3a3a3a;
+}
+
+[data-theme="dark"] .more-settings-feature-card-label {
+  color: #e0e0e0;
+}
+
+/* 动作按钮样式 */
+.more-settings-action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 12px;
+  color: #222222;
+  background-color: #f3f5f6;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.more-settings-action-button:hover {
+  background-color: #e8eaec;
+}
+
+.more-settings-action-button:active {
+  background-color: #dde0e2;
+}
+
+.more-settings-action-button-label {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  color: inherit;
+  text-align: center;
+}
+
+[data-theme="dark"] .more-settings-action-button {
+  color: #e0e0e0;
+  background-color: #2a2a2a;
+}
+
+[data-theme="dark"] .more-settings-action-button:hover {
+  background-color: #333333;
+}
+
+[data-theme="dark"] .more-settings-action-button:active {
+  background-color: #3a3a3a;
+}
+
+[data-theme="dark"] .more-settings-action-button-label {
+  color: #e0e0e0;
+}
+
+/* 错误消息组件样式 */
+.error-message-container {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 16px;
+  margin-top: 6px;
+  margin-bottom: -14px;
+  border: 1px solid #f53f3f;
+  border-radius: 12px;
+  background-color: var(--error-bg);
+}
+
+.error-message-icon-wrapper {
+  width: 21px;
+  height: 21px;
+  min-width: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4px;
+}
+
+.error-message-icon {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #f53f3f;
+}
+
+.error-message-text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: var(--error-text);
+}
+
+.error-message-text a {
+  color: var(--error-link);
+  text-decoration: underline;
+}
+
+.ad-banner-container {
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+
+html {
+  font-size: 17px;
+}
+
+@media print {
+  .imt-fb-container {
+    display: none !important;
+  }
+}
+
+#mount {
+  position: absolute;
+  display: none;
+  min-width: 250px;
+  height: auto;
+  --font-size: 17px;
+  font-size: 17px;
+}
+
+/* float-ball */
+.imt-fb-container {
+  position: fixed;
+  padding: 0;
+  top: 335px;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  display: none;
+  direction: ltr;
+  background-color: transparent !important;
+}
+
+.imt-fb-container:hover .imt-manga-button {
+  opacity: 1;
+}
+
+.imt-fb-container.left {
+  align-items: flex-start;
+  left: 0;
+}
+
+.imt-fb-container.right {
+  align-items: flex-end;
+  right: 0;
+}
+
+.imt-fb-btn {
+  cursor: pointer;
+  background: var(--float-ball-more-button-background-color);
+  height: 36px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+}
+
+.imt-fb-btn.left {
+  border-top-right-radius: 36px;
+  border-bottom-right-radius: 36px;
+  padding-left: 3px;
+}
+
+.imt-fb-btn.right {
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+  padding-right: 3px;
+}
+
+.imt-fb-btn.mini.left {
+  transform: translateX(-22px);
+}
+
+.imt-fb-btn.mini.right {
+  transform: translateX(22px);
+}
+
+.imt-fb-btn.mini.active {
+  transform: translateX(0);
+}
+
+.imt-fb-btn div {
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+.imt-fb-btn .imt-fb-hit-area {
+  position: absolute;
+  top: 0;
+  height: 36px;
+  bottom: -6px;
+  left: -6px;
+  right: -6px;
+  background: transparent;
+}
+
+.imt-fb-btn.mini.right .imt-fb-hit-area {
+  left: -10px;
+}
+
+.imt-fb-btn.mini.left .imt-fb-hit-area {
+  right: -10px;
+}
+
+.imt-fb-btn.left div {
+  border-top-right-radius: 34px;
+  border-bottom-right-radius: 34px;
+  justify-content: flex-end;
+}
+
+.imt-fb-btn.right div {
+  border-top-left-radius: 34px;
+  border-bottom-left-radius: 34px;
+}
+
+.imt-fb-logo-img {
+  width: 20px;
+  height: 20px;
+  margin: 0 10px;
+}
+
+.imt-fb-logo-img-big-bg {
+  width: 28px;
+  height: 28px;
+  margin: 0;
+  background-color: #ed6d8f;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.imt-float-ball-translated {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  bottom: 4px;
+  right: 4px;
+}
+
+.btn-animate {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform ease-out 250ms;
+  transition: -webkit-transform ease-out 250ms;
+  transition: transform ease-out 250ms;
+  transition: transform ease-out 250ms, -webkit-transform ease-out 250ms;
+}
+
+.imt-fb-setting-btn {
+  margin-right: 18px;
+  width: 28px;
+  height: 28px;
+}
+
+.immersive-translate-popup-wrapper {
+  background: var(--background-color);
+  border-radius: 20px;
+  box-shadow: 2px 10px 24px 0px #0e121614;
+  border: none;
+}
+
+.popup-container {
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-content {
+  border-radius: 20px 20px 12px 12px;
+}
+.popup-footer {
+  border-radius: 20px;
+}
+
+.popup-userscript-three-feature-layout {
+  border-radius: 20px;
+}
+
+.popup-userscript-three-feature-layout .popup-content {
+  border-radius: 20px 20px 12px 12px;
+}
+
+.popup-userscript-three-feature-layout .popup-footer {
+  border-radius: 0;
+}
+
+.imt-fb-close-button {
+  cursor: pointer;
+  position: absolute;
+  left: -10px;
+  bottom: -20px;
+}
+.imt-fb-container.left .imt-fb-close-button {
+  left: auto;
+  right: -10px;
+}
+
+.imt-fb-close-content {
+  padding: 22px;
+  width: 320px;
+  pointer-events: all;
+}
+
+.imt-fb-close-title {
+  font-weight: 500;
+  color: var(--text-black-2);
+}
+
+.imt-fb-close-radio-content {
+  background-color: var(--background-light-green);
+  padding: 8px 20px;
+}
+
+.imt-fb-radio-sel,
+.imt-fb-radio-nor {
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.imt-fb-radio-sel {
+  border: 2px solid var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imt-fb-radio-sel div {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: var(--primary);
+}
+
+.imt-fb-radio-nor {
+  border: 2px solid var(--input-border-strong);
+}
+
+.imt-fb-primary-btn {
+  background-color: var(--primary);
+  width: 72px;
+  height: 32px;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 32px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.imt-fb-default-btn {
+  border: 1px solid var(--primary);
+  width: 72px;
+  height: 32px;
+  border-radius: 8px;
+  color: var(--primary);
+  line-height: 32px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.imt-fb-guide-container {
+  width: 312px;
+  transform: translateY(-45%);
+}
+
+.imt-fb-guide-bg {
+  position: absolute;
+  left: 30px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  height: 100%;
+  width: 90%;
+}
+
+.imt-fb-guide-bg.left {
+  transform: scaleX(-1);
+}
+
+.imt-fb-guide-content {
+  margin: 16px -30px 80px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imt-fb-guide-content.left {
+  margin: 16px 21px 60px 32px;
+}
+
+.imt-fb-guide-img {
+  width: 220px;
+  height: 112px;
+}
+
+.imt-fb-guide-message {
+  font-size: 14px;
+  line-height: 28px;
+  color: #333333;
+  white-space: pre-wrap;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.imt-manga-guide-message {
+  font-size: 16px;
+  line-height: 24px;
+  color: #333333;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.imt-fb-guide-button {
+  margin-top: 16px;
+  line-height: 40px;
+  height: 40px;
+  padding: 0 20px;
+  width: unset;
+}
+
+.imt-fb-side {
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: all;
+  position: relative;
+}
+
+.imt-fb-side {
+  margin: 10px 0;
+}
+
+.imt-fb-side::before,
+.imt-manga-button::before,
+.imt-fb-round-button::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  left: 2px;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color 0.15s ease;
+}
+
+.imt-fb-side:hover::before,
+.imt-manga-button:hover::before,
+.imt-fb-round-button:hover::before {
+  background-color: var(--float-ball-more-button-hover-color);
+}
+
+.imt-fb-new-badge {
+  width: 26px;
+  height: 14px;
+  padding: 3px;
+  background-color: #f53f3f;
+  border-radius: 4px;
+  position: absolute;
+  top: -5px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imt-fb-side * {
+  pointer-events: all;
+}
+
+.imt-fb-pin-icon {
+  position: absolute;
+  left: -16px;
+  bottom: -12px;
+  opacity: 0;
+  cursor: pointer;
+}
+.imt-fb-container.left .imt-fb-pin-icon {
+  left: auto;
+  right: -16px;
+}
+
+.imt-fb-side:hover .imt-fb-pin-icon {
+  opacity: 1;
+}
+
+.imt-fb-more-button {
+  width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+/* Sheet.css */
+.immersive-translate-sheet {
+  position: fixed;
+  transform: translateY(100%);
+  /* Start off screen */
+  left: 0;
+  right: 0;
+  background-color: var(--background-color);
+  transition: transform 0.3s ease-out;
+  /* Smooth slide transition */
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+  /* Ensure it's above other content */
+  bottom: 0;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  overflow: hidden;
+}
+
+.immersive-translate-sheet.visible {
+  transform: translateY(0);
+}
+
+.immersive-translate-sheet-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.immersive-translate-sheet-backdrop.visible {
+  opacity: 1;
+}
+
+.popup-container-sheet {
+  max-width: 100vw;
+  width: 100vw;
+}
+
+.imt-no-events svg * {
+  pointer-events: none !important;
+}
+
+.imt-manga-button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: all;
+  margin: 0 0 10px 0;
+  background-color: var(--float-ball-more-button-background-color);
+  border-radius: 50%;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.08);
+  right: 8px;
+}
+
+.imt-manga-feedback {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.imt-fb-round-button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: var(--float-ball-more-button-background-color);
+  border-radius: 50%;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.imt-fb-round-button > svg {
+  z-index: 1;
+}
+
+.imt-fb-upgrade-button {
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.imt-fb-power-user-card {
+  position: absolute;
+  bottom: -130px;
+  width: 266px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 2px 10px 24px 0 rgba(14, 18, 22, 0.08);
+  border: 1px solid rgba(250, 251, 251, 1);
+  pointer-events: all;
+  z-index: 2;
+  background: linear-gradient(172deg, rgba(255, 255, 255, 0.30) 4.36%, #FFF 35.98%), linear-gradient(0deg, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.40) 100%), radial-gradient(39.95% 47.41% at -0.53% 55.22%, #E0C4F7 0%, rgba(224, 196, 247, 0.00) 100%), radial-gradient(56.37% 54.27% at 86.17% 0%, #E0C4F6 0%, rgba(224, 196, 246, 0.00) 100%), radial-gradient(42.04% 37.43% at -0.53% 3.75%, #AED5FF 0%, rgba(174, 213, 255, 0.00) 100%), radial-gradient(66.88% 52.09% at 36.81% 19.55%, #757ED8 0%, #6B6AC0 100%), #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imt-fb-power-user-card.right {
+  right: 60px;
+}
+
+.imt-fb-power-user-card.right::after {
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: 130px;
+  border-width: 10px 0 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent #fff;
+  filter: drop-shadow(2px 0 2px rgba(14, 18, 22, 0.06));
+}
+
+.imt-fb-power-user-card.left {
+  left: 60px;
+}
+
+.imt-fb-power-user-card.left::after {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 130px;
+  border-width: 10px 10px 10px 0;
+  border-style: solid;
+  border-color: transparent #fff transparent transparent;
+  filter: drop-shadow(-2px 0 2px rgba(14, 18, 22, 0.06));
+}
+
+.imt-fb-power-user-card-banner {
+  display: block;
+  width: 128px;
+  height: auto;
+  margin-top: 8px;
+  border-radius: 8px 8px 0 0;
+}
+
+.imt-fb-power-user-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 16px 24px 0;
+  box-sizing: border-box;
+}
+
+.imt-fb-power-user-card-title {
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+}
+
+.imt-fb-power-user-card-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.imt-fb-power-user-card-body {
+  padding: 12px 24px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.imt-fb-power-user-card-desc {
+  color: #333;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+}
+
+.imt-fb-power-user-card-primary {
+  margin-top: 16px;
+  height: 37px;
+  border-radius: 8px;
+  background: linear-gradient(110deg, #F497BC 17.37%, #EC4C8C 89.68%);
+  color: var(--ZX-FFFFFF, #FFF);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px; /* 150% */
+  display: flex;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  flex: 1 0 0;
+}
+
+.imt-manga-translated {
+  position: absolute;
+  left: 24px;
+  top: 20px;
+}
+
+.imt-float-ball-loading {
+  animation: imt-loading-animation 0.6s infinite linear !important;
+}
+
+.imt-manga-guide-bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  transform: translateY(-50%);
+}
+.imt-manga-guide-content {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  margin: 0 40px 0;
+}
+
+.img-manga-guide-button {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.img-manga-close {
+  position: absolute;
+  bottom: -200px;
+  width: 32px;
+  height: 32px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  cursor: pointer;
+}
+
+.imt-fb-container.dragging .imt-manga-button,
+.imt-fb-container.dragging .btn-animate:not(.imt-fb-btn) {
+  display: none !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn {
+  border-radius: 50% !important;
+  width: 36px !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  cursor: move !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn div {
+  border-radius: 50% !important;
+  width: 36px !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn.left,
+.imt-fb-container.dragging .imt-fb-btn.right {
+  border-radius: 50% !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn.left div,
+.imt-fb-container.dragging .imt-fb-btn.right div {
+  border-radius: 50% !important;
+}
+
+.imt-fb-container.dragging .imt-fb-logo-img {
+  margin: 0 !important;
+}
+
+.imt-fb-container.dragging .imt-float-ball-translated {
+  right: 2px !important;
+  bottom: 2px !important;
+}
+
+@-webkit-keyframes imt-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes imt-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.imt-fb-icon {
+  color: #666666;
+}
+
+[data-theme="dark"] .imt-fb-icon {
+  color: #b3b3b3;
+}
+
+[data-theme="light"] .imt-fb-icon {
+  color: #666666;
+}
+
+/* 悬浮球设置弹窗样式 */
+.imt-fb-setting-wrapper {
+  border-radius: 12px;
+  box-shadow: 2px 10px 24px 0px rgba(0, 0, 0, 0.06);
+}
+
+.imt-fb-setting-content {
+  padding: 16px;
+  width: 350px;
+  pointer-events: all;
+}
+
+.imt-fb-setting-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--text-black-2);
+}
+
+.imt-fb-setting-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px 0;
+}
+
+.imt-fb-preview-wrapper {
+  display: flex;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.imt-fb-preview-item {
+  width: 99px;
+  height: 57px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+}
+
+.imt-fb-preview-item.light {
+  background-color: #f3f5f6;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.imt-fb-preview-item.dark {
+  background-color: #444;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.imt-fb-preview-ball {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.imt-fb-preview-ball.light {
+  background-color: #fff;
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+}
+
+.imt-fb-preview-ball.dark {
+  background-color: #111;
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+}
+
+.imt-fb-preview-ball.full {
+  width: 41px;
+  justify-content: center;
+}
+
+.imt-fb-preview-ball.mini {
+  width: 41px;
+  justify-content: center;
+  transform: translateX(21px);
+}
+
+.imt-fb-preview-ball .imt-fb-preview-logo {
+  flex-shrink: 0;
+}
+
+/* 选项区域 */
+.imt-fb-setting-options {
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.imt-fb-setting-option-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4px;
+}
+
+.imt-fb-setting-option-label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: var(--text-black-2);
+}
+
+/* Toggle 开关样式 */
+.imt-fb-toggle {
+  width: 30px;
+  height: 18px;
+  background-color: var(--switch-background-color);
+  border-radius: 24px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.imt-fb-toggle.checked {
+  background-color: var(--primary);
+}
+
+.imt-fb-toggle.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.imt-fb-toggle-thumb {
+  width: 14px;
+  height: 14px;
+  background-color: var(--switch-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s ease;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+}
+
+.imt-fb-toggle.checked .imt-fb-toggle-thumb {
+  transform: translateX(12px);
+}
+
+.imt-fb-setting-hide-options {
+  background-color: var(--background-light-green);
+  padding: 8px 20px;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.imt-fb-setting-save-btn {
+  background-color: var(--primary);
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 45px;
+  height: 45px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: opacity 0.2s ease;
+}
+
+.imt-fb-setting-save-btn:hover {
+  opacity: 0.9;
+}
+
+.imt-fb-setting-save-btn:active {
+  opacity: 0.8;
+}
+</style><div id="mount" style="display: block;"><div hidden="" id="immersive-translate-popup-overlay" class="immersive-translate-popup-overlay" style="z-index: 2147483647; background-color: rgba(0, 0, 0, 0.5);"><div class="immersive-translate-popup-wrapper" style="position: fixed; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);"></div></div></div></template></div></html>

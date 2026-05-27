@@ -1,0 +1,4965 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)https://siwei-zhishang.wwei.ai/ -->
+<html lang="zh-CN" data-immersive-translate-page-theme="light"><plasmo-csui><template shadowrootmode="open"><div id="plasmo-shadow-container" style="z-index: 2147483647; position: relative;"><div id="plasmo-overlay-0" class="plasmo-csui-container" style="display: flex; position: absolute; top: 0px; left: 0px;"></div></div></template></plasmo-csui><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>思维之上 — AI时代的元问题</title>
+<meta name="description" content="一本关于愿景、思维、方法论、方法与工具的书。从工具崇拜，回到愿景觉醒。">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./思维之上 — AI时代的元问题_files/css2" rel="stylesheet">
+<style>
+:root{
+  --paper:#FAF7F0;
+  --paper-2:#F4EFE3;
+  --ink:#1B1B1A;
+  --ink-2:#3A3936;
+  --ink-3:#6B6863;
+  --line:#D9D2C2;
+  --green:#00B277;
+  --green-2:#008C5E;
+  --green-bg:rgba(0,178,119,0.08);
+  --red:#B44030;
+  --gold:#A8843E;
+  --serif:'Noto Serif SC','Source Han Serif SC','SimSun','Songti SC',serif;
+  --sans:'Noto Sans SC','PingFang SC','HarmonyOS Sans SC','Microsoft YaHei',sans-serif;
+  --latin:'Cormorant Garamond',Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--serif);
+  background:var(--paper);
+  color:var(--ink);
+  font-size:17px;
+  line-height:1.85;
+  font-feature-settings:"palt";
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--green);color:#fff}
+img{max-width:100%;display:block}
+
+/* progress bar */
+.progress{position:fixed;top:0;left:0;height:3px;background:var(--green);width:0;z-index:200;transition:width .15s}
+
+/* nav */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  backdrop-filter:saturate(140%) blur(14px);
+  -webkit-backdrop-filter:saturate(140%) blur(14px);
+  background:rgba(250,247,240,0.78);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{max-width:1180px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{font-family:var(--sans);font-weight:700;letter-spacing:.04em;font-size:14px}
+.brand span{color:var(--green)}
+.nav-links{display:flex;gap:18px;font-family:var(--sans);font-size:13px}
+.nav-links a{color:var(--ink-2);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--green)}
+.nav-cta{font-family:var(--sans);font-size:12px;color:var(--ink-3)}
+@media(max-width:780px){.nav-links{display:none}}
+
+/* hero */
+.hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  padding:120px 28px 80px;
+  text-align:center;
+  background:
+    radial-gradient(ellipse at 50% 30%, rgba(0,178,119,0.08), transparent 60%),
+    var(--paper);
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background-image:
+    radial-gradient(circle at 20% 40%, rgba(168,132,62,0.06), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(0,178,119,0.05), transparent 40%);
+  pointer-events:none;
+}
+.hero-tag{
+  font-family:var(--sans);font-size:12px;letter-spacing:.4em;
+  color:var(--green);margin-bottom:36px;text-transform:uppercase;
+  border:1px solid var(--green);padding:8px 18px;border-radius:99px;
+}
+.hero-title{
+  font-family:var(--serif);
+  font-weight:900;
+  font-size:clamp(56px,11vw,140px);
+  line-height:.95;
+  letter-spacing:-.02em;
+  margin-bottom:30px;
+  position:relative;
+}
+.hero-title em{font-style:normal;color:var(--green)}
+.hero-sub{
+  font-family:var(--latin);
+  font-style:italic;
+  font-size:clamp(20px,3vw,30px);
+  color:var(--ink-3);
+  margin-bottom:14px;
+  letter-spacing:.02em;
+}
+.hero-sub-cn{
+  font-family:var(--serif);font-weight:300;
+  font-size:clamp(16px,2.2vw,22px);
+  color:var(--ink-2);
+  letter-spacing:.1em;
+  margin-bottom:60px;
+}
+.hero-meta{
+  font-family:var(--sans);font-size:12px;color:var(--ink-3);
+  letter-spacing:.3em;margin-bottom:60px;
+}
+.hero-meta span{margin:0 12px}
+.scroll-cue{
+  font-family:var(--sans);font-size:11px;letter-spacing:.4em;
+  color:var(--ink-3);
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+}
+.scroll-cue::after{
+  content:"";width:1px;height:50px;background:var(--ink-3);
+  animation:dropline 2s ease-in-out infinite;
+}
+@keyframes dropline{0%,100%{transform:scaleY(.4);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}}
+
+/* central thesis card */
+.thesis{
+  max-width:880px;margin:0 auto;padding:80px 28px;
+  text-align:center;
+}
+.thesis-eyebrow{
+  font-family:var(--sans);font-size:12px;letter-spacing:.4em;color:var(--green);
+  margin-bottom:24px;text-transform:uppercase;
+}
+.thesis-h{
+  font-family:var(--serif);font-weight:700;
+  font-size:clamp(28px,4vw,42px);line-height:1.4;
+  margin-bottom:36px;
+}
+.thesis-h em{font-style:normal;color:var(--green);font-weight:900}
+.thesis-h s{text-decoration:line-through;color:var(--ink-3);text-decoration-color:var(--red);text-decoration-thickness:2px}
+.thesis-sub{
+  font-family:var(--serif);font-size:18px;color:var(--ink-2);
+  max-width:660px;margin:0 auto;
+}
+
+/* pyramid section */
+.pyramid-section{
+  background:var(--paper-2);
+  padding:100px 28px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.pyramid-wrap{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+@media(max-width:880px){.pyramid-wrap{grid-template-columns:1fr;gap:40px}}
+.pyramid-text h2{
+  font-family:var(--serif);font-weight:900;font-size:clamp(32px,4vw,44px);
+  line-height:1.2;margin-bottom:24px;
+}
+.pyramid-text h2 em{font-style:normal;color:var(--green)}
+.pyramid-text p{color:var(--ink-2);margin-bottom:18px;font-size:17px}
+.pyramid-text .note{
+  font-family:var(--sans);font-size:13px;color:var(--ink-3);
+  border-left:3px solid var(--green);padding:8px 16px;background:var(--green-bg);
+  margin-top:20px;
+}
+
+/* SVG pyramid */
+.pyramid-svg{width:100%;height:auto}
+.layer{cursor:pointer;transition:opacity .2s,transform .2s;transform-origin:center}
+.layer:hover{opacity:.85}
+.layer-text{
+  font-family:var(--sans);
+  fill:#fff;
+  font-weight:600;
+  pointer-events:none;
+  text-anchor:middle;
+  dominant-baseline:middle;
+}
+.layer-text-en{
+  font-family:var(--latin);font-style:italic;
+  fill:rgba(255,255,255,.7);font-size:11px;font-weight:400;
+}
+.pyramid-arrow{
+  font-family:var(--sans);font-size:11px;
+  fill:var(--ink-3);letter-spacing:.2em;
+}
+
+/* TOC */
+.toc{
+  max-width:980px;margin:0 auto;padding:100px 28px 60px;
+}
+.toc-title{
+  font-family:var(--serif);font-weight:300;font-size:14px;letter-spacing:.4em;
+  color:var(--ink-3);text-align:center;margin-bottom:50px;
+}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.toc-list a{
+  display:grid;grid-template-columns:60px 1fr 100px;gap:24px;align-items:baseline;
+  text-decoration:none;color:var(--ink);
+  padding:20px 0;border-bottom:1px solid var(--line);
+  transition:transform .2s,border-color .2s,padding .2s;
+}
+.toc-list a:hover{border-color:var(--green);transform:translateX(8px)}
+.toc-num{font-family:var(--latin);font-size:32px;font-style:italic;color:var(--green);font-weight:500}
+.toc-text{font-family:var(--serif);font-size:22px;font-weight:600}
+.toc-text small{display:block;font-family:var(--sans);font-size:13px;color:var(--ink-3);font-weight:400;margin-top:4px;letter-spacing:.05em}
+.toc-pages{font-family:var(--sans);font-size:11px;color:var(--ink-3);text-align:right;letter-spacing:.2em}
+@media(max-width:680px){
+  .toc-list a{grid-template-columns:48px 1fr;gap:16px}
+  .toc-pages{display:none}
+  .toc-num{font-size:24px}
+  .toc-text{font-size:18px}
+}
+
+/* chapter */
+.chapter{
+  max-width:760px;margin:0 auto;padding:120px 28px;
+  position:relative;
+}
+.chapter-num{
+  font-family:var(--latin);font-style:italic;font-size:14px;
+  color:var(--green);letter-spacing:.3em;margin-bottom:18px;
+  text-transform:uppercase;
+}
+.chapter-title{
+  font-family:var(--serif);font-weight:900;
+  font-size:clamp(36px,5vw,56px);line-height:1.15;
+  margin-bottom:14px;letter-spacing:-.01em;
+}
+.chapter-title em{font-style:normal;color:var(--green)}
+.chapter-sub{
+  font-family:var(--serif);font-size:18px;font-weight:400;font-style:italic;
+  color:var(--ink-3);margin-bottom:60px;letter-spacing:.05em;
+}
+.opening-quote{
+  font-family:var(--serif);font-size:22px;line-height:1.6;
+  font-style:italic;color:var(--ink-2);
+  border-left:4px solid var(--green);padding:14px 0 14px 28px;
+  margin:50px 0 50px;font-weight:400;
+}
+.opening-quote cite{
+  display:block;margin-top:14px;font-style:normal;
+  font-family:var(--sans);font-size:13px;font-weight:500;color:var(--ink-3);
+  letter-spacing:.05em;
+}
+.opening-quote cite::before{content:"— ";color:var(--green)}
+
+.chapter h3{
+  font-family:var(--serif);font-weight:700;
+  font-size:24px;margin:60px 0 18px;
+  letter-spacing:.02em;
+  position:relative;padding-left:18px;
+}
+.chapter h3::before{
+  content:"";position:absolute;left:0;top:.55em;
+  width:6px;height:6px;background:var(--green);border-radius:50%;
+}
+.chapter h4{
+  font-family:var(--sans);font-weight:600;font-size:15px;
+  letter-spacing:.06em;color:var(--ink-2);
+  margin:36px 0 14px;text-transform:uppercase;
+}
+.chapter p{margin-bottom:1.4em;text-align:justify}
+.chapter p strong{color:var(--ink);background:linear-gradient(transparent 60%, var(--green-bg) 60%);padding:0 2px}
+.chapter ul,.chapter ol{margin:0 0 1.4em 1.6em;padding:0}
+.chapter ul li,.chapter ol li{margin-bottom:.5em;line-height:1.7}
+.chapter ul li::marker{color:var(--green)}
+.chapter blockquote{
+  margin:36px 0;padding:22px 28px;
+  background:var(--paper-2);
+  border-left:3px solid var(--ink-3);
+  font-style:italic;color:var(--ink-2);
+  font-size:17px;line-height:1.7;
+}
+.chapter blockquote cite{
+  display:block;margin-top:10px;font-style:normal;
+  font-family:var(--sans);font-size:12px;color:var(--ink-3);letter-spacing:.05em;
+}
+
+/* citation badge */
+.cite{
+  display:inline;font-family:var(--sans);font-size:.78em;
+  color:var(--green);font-weight:600;
+  vertical-align:super;line-height:0;margin-left:1px;
+  text-decoration:none;cursor:pointer;
+}
+.cite:hover{color:var(--green-2);text-decoration:underline}
+
+/* pull quote */
+.pull{
+  font-family:var(--serif);font-weight:600;
+  font-size:clamp(22px,3vw,30px);line-height:1.4;
+  text-align:center;color:var(--ink);
+  margin:60px -20px;padding:50px 0;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  letter-spacing:.01em;
+}
+.pull em{font-style:normal;color:var(--green)}
+
+/* takeaway box */
+.takeaway{
+  margin:50px 0;padding:32px;
+  background:var(--paper-2);
+  border:1px solid var(--line);
+  border-radius:2px;
+  position:relative;
+}
+.takeaway::before{
+  content:"落点";position:absolute;top:-10px;left:24px;
+  background:var(--paper);padding:0 10px;
+  font-family:var(--sans);font-size:11px;letter-spacing:.3em;color:var(--green);
+}
+.takeaway h4{margin-top:0}
+.takeaway ol{margin-bottom:0}
+
+/* critique box */
+.critique{
+  margin:50px 0;padding:32px;
+  background:rgba(180,64,48,0.04);
+  border:1px solid rgba(180,64,48,0.2);
+  border-left:4px solid var(--red);
+  border-radius:2px;
+  position:relative;
+}
+.critique::before{
+  content:"批判性";position:absolute;top:-10px;left:24px;
+  background:var(--paper);padding:0 10px;
+  font-family:var(--sans);font-size:11px;letter-spacing:.3em;color:var(--red);
+}
+.critique p:last-child{margin-bottom:0}
+
+/* divider */
+.divider{
+  text-align:center;margin:80px auto;
+  font-family:var(--latin);font-size:24px;color:var(--ink-3);letter-spacing:1em;
+}
+
+/* epilogue special */
+.epilogue{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.epilogue .chapter-title{color:var(--ink)}
+.epilogue .chapter-title em{color:var(--green)}
+
+/* bibliography */
+.biblio{
+  max-width:980px;margin:0 auto;padding:100px 28px;
+}
+.biblio h2{
+  font-family:var(--serif);font-weight:900;font-size:36px;margin-bottom:14px;
+}
+.biblio-intro{font-family:var(--sans);font-size:14px;color:var(--ink-3);margin-bottom:50px;letter-spacing:.05em}
+.biblio-group{margin-bottom:50px}
+.biblio-group h3{
+  font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.3em;
+  color:var(--green);margin-bottom:24px;text-transform:uppercase;
+  border-bottom:1px solid var(--line);padding-bottom:10px;
+}
+.biblio-list{list-style:none;counter-reset:bibcount}
+.biblio-list li{
+  font-family:var(--serif);font-size:15px;line-height:1.7;
+  padding:14px 0 14px 50px;border-bottom:1px dashed var(--line);
+  position:relative;color:var(--ink-2);
+}
+.biblio-list li::before{
+  counter-increment:bibcount;
+  content:counter(bibcount, decimal-leading-zero);
+  position:absolute;left:0;top:14px;
+  font-family:var(--latin);font-style:italic;font-size:14px;color:var(--green);font-weight:600;
+}
+.biblio-list li b{color:var(--ink);font-weight:600}
+.biblio-list li i{color:var(--ink-3);font-style:italic}
+
+/* footer */
+.footer{
+  text-align:center;padding:80px 28px 60px;
+  font-family:var(--sans);font-size:12px;color:var(--ink-3);
+  letter-spacing:.1em;
+}
+.footer p{margin:8px 0}
+.footer .sig{font-family:var(--latin);font-style:italic;font-size:18px;color:var(--green);margin-bottom:16px;letter-spacing:.05em}
+.footer a{color:var(--green);text-decoration:none}
+.footer a:hover{text-decoration:underline}
+
+/* tooltip on pyramid */
+.tooltip{
+  position:fixed;pointer-events:none;
+  background:var(--ink);color:var(--paper);
+  padding:8px 14px;border-radius:4px;
+  font-family:var(--sans);font-size:12px;letter-spacing:.05em;
+  opacity:0;transition:opacity .15s;z-index:300;
+  white-space:nowrap;
+}
+
+/* Inline figure diagrams (A1-A5) */
+.fig-wrap{margin:50px auto 40px;max-width:560px}
+.fig-svg{display:block;width:100%;height:auto}
+.fig-cap{
+  font-family:var(--sans);font-size:12px;letter-spacing:.2em;
+  color:var(--ink-3);text-align:center;margin-top:14px;line-height:1.7;
+}
+.fig-cap strong{color:var(--ink-2);font-weight:600;letter-spacing:.15em}
+.fig-svg text{font-family:var(--sans)}
+.fig-svg .fig-title{fill:var(--ink);font-size:14px;font-weight:600;letter-spacing:.15em}
+.fig-svg .fig-label{fill:var(--ink-2);font-size:14px;font-weight:600}
+.fig-svg .fig-label-w{fill:#fff;font-size:14px;font-weight:600}
+.fig-svg .fig-sub{fill:var(--ink-3);font-size:11px;letter-spacing:.2em}
+.fig-svg .fig-sub-w{fill:rgba(255,255,255,.78);font-size:11px;letter-spacing:.2em}
+.fig-svg .fig-en{font-family:var(--latin);font-style:italic;fill:var(--ink-3);font-size:12px}
+.fig-svg .fig-en-w{font-family:var(--latin);font-style:italic;fill:rgba(255,255,255,.7);font-size:11px}
+.fig-svg .fig-accent{fill:var(--green)}
+.fig-svg .fig-gold{fill:var(--gold)}
+.fig-svg .fig-arrow{stroke:var(--ink-3);stroke-width:1.4;fill:none;stroke-linecap:round}
+.fig-svg .fig-arrow-green{stroke:var(--green);stroke-width:1.8;fill:none;stroke-linecap:round}
+.fig-svg .fig-ring{fill:none;stroke:var(--line);stroke-width:1.4}
+.fig-svg .fig-ring-strong{fill:none;stroke:var(--ink-3);stroke-width:1.4}
+
+@media(max-width:680px){
+  body{font-size:16px}
+  .chapter{padding:80px 22px}
+  .opening-quote{font-size:18px;padding-left:20px}
+  .pull{margin:40px 0;padding:34px 0}
+  .fig-wrap{margin:36px auto 28px}
+}
+</style>
+<script src="./思维之上 — AI时代的元问题_files/widget.js" defer="" data-wwei-injected="1"></script><style type="text/css">
+  @font-face {
+    font-family: CuboxInter;
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("chrome-extension://bflmgpechpeohjfomgfdkkfcbhfcjohl/fonts/InterVariable.woff2") format("woff2");
+  }
+  #cubox-react-root {
+    z-index: 999999999999999999999;
+  }
+  </style><link rel="stylesheet" href="chrome-extension://bflmgpechpeohjfomgfdkkfcbhfcjohl/css/globalHighlightStyles.css"></head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="brand">思维<span>之上</span></div>
+    <div class="nav-links">
+      <a href="https://siwei-zhishang.wwei.ai/#prologue">序章</a>
+      <a href="https://siwei-zhishang.wwei.ai/#ch1">第一章</a>
+      <a href="https://siwei-zhishang.wwei.ai/#ch2">第二章</a>
+      <a href="https://siwei-zhishang.wwei.ai/#ch3">第三章</a>
+      <a href="https://siwei-zhishang.wwei.ai/#ch4">第四章</a>
+      <a href="https://siwei-zhishang.wwei.ai/#ch5">第五章</a>
+      <a href="https://siwei-zhishang.wwei.ai/#ch6">第六章</a>
+      <a href="https://siwei-zhishang.wwei.ai/#epilogue">结语</a>
+      <a href="https://siwei-zhishang.wwei.ai/#biblio">参考文献</a>
+    </div>
+    <div class="nav-cta">思维之上</div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-tag">Wayne&amp;Claude · 著</div>
+  <h1 class="hero-title">思维<em>之上</em></h1>
+  <div class="hero-sub">Above the Mindset</div>
+  <div class="hero-sub-cn">AI 时代的元问题：从工具崇拜，回到愿景觉醒</div>
+  <div class="hero-meta"><span>共 六 章</span><span>·</span><span>金字塔 + 闭环</span></div>
+  <div class="scroll-cue">SCROLL</div>
+</header>
+
+<!-- THESIS -->
+<section class="thesis">
+  <div class="thesis-eyebrow">中心论点</div>
+  <h2 class="thesis-h">真正解决问题的万能钥匙不是 <s>工具</s>，<br>而是 <em>思维</em>；而思维之上，<br>还有 <em>愿景、使命、价值观</em>。</h2>
+  <p class="thesis-sub">这是一本写给 AI 时代的小书。它从最顶层开始，沿着五层金字塔向下贯通——从"为什么"到"用什么"，每一层都是一道关。</p>
+</section>
+
+<!-- PYRAMID -->
+<section class="pyramid-section">
+  <div class="pyramid-wrap">
+    <div class="pyramid-text">
+      <h2>五层金字塔：<br>从 <em>为什么</em> 到 <em>用什么</em></h2>
+      <p>这本书的结构本身就是一个金字塔——既是论证结构，也是世界观本身。</p>
+      <p>越往上越稀缺，越往下越内卷。AI 让金字塔的底部以前所未有的速度民主化，但也让顶部的差距被指数级放大。</p>
+      <div class="note">麦肯锡金字塔原理：表达时自上而下，思考时自下而上。但人生与事业的方向恰好相反——必须先在最顶层想清楚，再向下贯通。</div>
+    </div>
+    <div>
+      <svg class="pyramid-svg" viewBox="0 0 600 570" xmlns="http://www.w3.org/2000/svg" style="opacity: 0; transform: translateY(20px); transition: opacity 0.8s, transform 0.8s;">
+        <defs>
+          <lineargradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00B277"></stop><stop offset="100%" stop-color="#008C5E"></stop></lineargradient>
+          <lineargradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1E8E63"></stop><stop offset="100%" stop-color="#16704C"></stop></lineargradient>
+          <lineargradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3A6B53"></stop><stop offset="100%" stop-color="#2A4F3D"></stop></lineargradient>
+          <lineargradient id="g4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#52524A"></stop><stop offset="100%" stop-color="#3A3936"></stop></lineargradient>
+          <lineargradient id="g5" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#7B7770"></stop><stop offset="100%" stop-color="#5C5953"></stop></lineargradient>
+        </defs>
+
+        <!-- side labels -->
+        <text class="pyramid-arrow" text-anchor="middle" x="24" y="110" transform="rotate(-90 24 110)">越 往 上 越 稀 缺</text>
+        <text class="pyramid-arrow" text-anchor="middle" x="576" y="470" transform="rotate(-90 576 470)">越 往 下 越 内 卷</text>
+
+        <!-- L1 vision (top) — taller to fit 3 lines + English -->
+        <a href="#ch1" class="layer">
+          <polygon fill="url(#g1)" points="300,20 390,180 210,180"></polygon>
+          <text class="layer-text" x="300" y="106" font-size="16">愿景</text>
+          <text class="layer-text" x="300" y="128" font-size="16">使命</text>
+          <text class="layer-text" x="300" y="150" font-size="16">价值观</text>
+          <text class="layer-text layer-text-en" x="300" y="170" font-size="10">Vision · Mission · Values</text>
+        </a>
+
+        <!-- L2 mindset -->
+        <a href="#ch2" class="layer">
+          <polygon fill="url(#g2)" points="210,180 390,180 429,250 171,250"></polygon>
+          <text class="layer-text" x="300" y="212" font-size="18">思维</text>
+          <text class="layer-text layer-text-en" x="300" y="234">Mindset</text>
+        </a>
+
+        <!-- L3 methodology -->
+        <a href="#ch3" class="layer">
+          <polygon fill="url(#g3)" points="171,250 429,250 479,340 121,340"></polygon>
+          <text class="layer-text" x="300" y="290" font-size="18">方法论 / 框架</text>
+          <text class="layer-text layer-text-en" x="300" y="315">Methodology &amp; Frameworks</text>
+        </a>
+
+        <!-- L4 method -->
+        <a href="#ch4" class="layer">
+          <polygon fill="url(#g4)" points="121,340 479,340 530,430 70,430"></polygon>
+          <text class="layer-text" x="300" y="382" font-size="18">方法</text>
+          <text class="layer-text layer-text-en" x="300" y="406">Methods</text>
+        </a>
+
+        <!-- L5 tools -->
+        <a href="#ch5" class="layer">
+          <polygon fill="url(#g5)" points="70,430 530,430 580,520 20,520"></polygon>
+          <text class="layer-text" x="300" y="472" font-size="18">工具 · 技能</text>
+          <text class="layer-text layer-text-en" x="300" y="496">Tools &amp; Skills</text>
+        </a>
+
+        <!-- AI label -->
+        <text class="pyramid-arrow" x="300" y="552" text-anchor="middle" fill="#00B277" font-weight="600">AI 让这一层在指数级民主化 ↓</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- TOC -->
+<section class="toc">
+  <div class="toc-title">目  录   ·   T A B L E   O F   C O N T E N T S</div>
+  <ul class="toc-list">
+    <li><a href="https://siwei-zhishang.wwei.ai/#prologue" style="opacity: 0; transform: translateY(20px); transition: opacity 0.8s, transform 0.8s;"><span class="toc-num">00</span><span class="toc-text">当工具泛滥，问题仍在<small>序章 / 为什么需要这本书</small></span><span class="toc-pages">P R O L O G U E</span></a></li>
+    <li><a href="https://siwei-zhishang.wwei.ai/#ch1" style="opacity: 0; transform: translateY(20px); transition: opacity 0.8s, transform 0.8s;"><span class="toc-num">01</span><span class="toc-text">愿景、使命、价值观<small>一切之上的"道"</small></span><span class="toc-pages">L A Y E R · I</span></a></li>
+    <li><a href="https://siwei-zhishang.wwei.ai/#ch2" style="opacity: 0; transform: translateY(20px); transition: opacity 0.8s, transform 0.8s;"><span class="toc-num">02</span><span class="toc-text">思维<small>破局的万能钥匙</small></span><span class="toc-pages">L A Y E R · II</span></a></li>
+    <li><a href="https://siwei-zhishang.wwei.ai/#ch3" style="opacity: 0; transform: translateY(20px); transition: opacity 0.8s, transform 0.8s;"><span class="toc-num">03</span><span class="toc-text">方法论与框架<small>把思维落地的脚手架</small></span><span class="toc-pages">L A Y E R · III</span></a></li>
+    <li><a href="https://siwei-zhishang.wwei.ai/#ch4" style="opacity: 0; transform: translateY(20px); transition: opacity 0.8s, transform 0.8s;"><span class="toc-num">04</span><span class="toc-text">方法<small>把框架变成动作</small></span><span class="toc-pages">L A Y E R · IV</span></a></li>
+    <li><a href="https://siwei-zhishang.wwei.ai/#ch5" style="opacity: 0; transform: translateY(20px); transition: opacity 0.8s, transform 0.8s;"><span class="toc-num">05</span><span class="toc-text">工具与技能<small>AI时代的杠杆</small></span><span class="toc-pages">L A Y E R · V</span></a></li>
+    <li><a href="https://siwei-zhishang.wwei.ai/#epilogue" style="opacity: 0; transform: translateY(20px); transition: opacity 0.8s, transform 0.8s;"><span class="toc-num">06</span><span class="toc-text">金字塔的逆向逻辑<small>结语 / 留给读者的一个问题</small></span><span class="toc-pages">E P I L O G U E</span></a></li>
+    <li><a href="https://siwei-zhishang.wwei.ai/#biblio" style="opacity: 0; transform: translateY(20px); transition: opacity 0.8s, transform 0.8s;"><span class="toc-num">∞</span><span class="toc-text">参考文献<small>56 部经典 / 经济学 · 社会学 · 工商管理 · 哲学</small></span><span class="toc-pages">R E F</span></a></li>
+  </ul>
+</section>
+
+<!-- PROLOGUE -->
+<article class="chapter" id="prologue" style="opacity: 0; transform: translateY(20px); transition: opacity 0.8s, transform 0.8s;">
+  <div class="chapter-num">P R O L O G U E ・ 序 章</div>
+  <h2 class="chapter-title">当工具泛滥，<br>问题仍在</h2>
+  <div class="chapter-sub">Why this book, and why now</div>
+
+  <p>2026 年的春天，几乎每一个职场人手机里都装着至少三个 AI 产品。Prompt 工程教程在 B 站破亿播放，企业把"AI 转型"写进董事会议程。可是奇怪的事情发生了——焦虑没有消失，反而被放大了。</p>
+
+  <p>工具变多，并没有让我们更接近答案。它只是让"<strong>问错的问题</strong>"变得更高效。</p>
+
+  <p>这是一种新的内卷。过去我们卷信息差，今天我们卷 prompt；过去我们卷加班时长，今天我们卷一天用了多少 token。如果我们从未停下来问一句"我们究竟在解决什么"，那么再快的工具，也只是在原地打转。</p>
+
+  <div class="pull">真正解决问题的万能钥匙不是工具，是<em>思维</em>；<br>而思维之上，还有<em>愿景、使命、价值观</em>。</div>
+
+  <p>我把这层关系画成一座五层金字塔——它既是这本书的章节顺序，也是我多年来做产品、带团队、看世界的世界观底层。</p>
+
+  <p>金字塔的趣味在于它的逆向性：</p>
+
+  <ul>
+    <li>麦肯锡金字塔原理告诉我们："表达时自上而下，思考时自下而上"<a href="https://siwei-zhishang.wwei.ai/#bib-minto" class="cite">[01]</a>——这是沟通的高效。</li>
+    <li>但人生与事业的方向<strong>恰恰相反</strong>：你必须先在最顶层（愿景）想清楚，再让力量沿着思维、方法论、方法、工具一层层向下贯通。</li>
+  </ul>
+
+  <p>AI 时代有一个残酷而清晰的事实：工具的民主化让金字塔底部前所未有地趋同——同样的模型、同样的 prompt、同样的产出范式。但与此同时，<strong>金字塔顶部的差距被指数级放大</strong>。</p>
+
+  <blockquote>一个有愿景、会思考的人，借助 AI 能做出十倍的产出。<br>一个没有愿景、不会思考的人，借助 AI 也只能做出十倍的废话。</blockquote>
+
+  <p>这本书很短，每一章对应一层。每一章我都尽量做到三件事：第一，给一个清晰的核心论点（金字塔顶部）；第二，引经据典，从经济学、社会学、工商管理与哲学的经典中找到证据；第三，给到一个可以马上做的"落点"。</p>
+
+  <p>现在，让我们从最顶层开始。</p>
+</article>
+
+<div class="divider">· · ·</div>
+
+<!-- CHAPTER 1 -->
+<article class="chapter" id="ch1" style="opacity: 0; transform: translateY(20px); transition: opacity 0.8s, transform 0.8s;">
+  <div class="chapter-num">L A Y E R   I ・ 第 一 章</div>
+  <h2 class="chapter-title">愿景、使命、<em>价值观</em></h2>
+  <div class="chapter-sub">一切之上的"道"</div>
+
+  <blockquote class="opening-quote">
+    一个知道自己为什么而活的人，几乎能忍受任何一种生活。
+    <cite>弗里德里希·尼采，《偶像的黄昏》（1889）<a href="https://siwei-zhishang.wwei.ai/#bib-nietzsche" class="cite">[02]</a></cite>
+  </blockquote>
+
+  <h3>核心论点</h3>
+  <p>愿景、使命、价值观不是写在墙上的标语，而是一种"<strong>先行因</strong>"——它决定你如何识别问题、如何分配注意力、如何定义"成功"。它无法被流程化、无法被外包，是 AI 唯一无法替你完成的那一层。</p>
+
+  <h3>为什么"为什么"是顶层</h3>
+
+  <h4>01 · 西蒙·斯涅克的黄金圈</h4>
+  <p>西蒙·斯涅克在《从"为什么"开始》中提出 Golden Circle：<strong>Why → How → What</strong><a href="https://siwei-zhishang.wwei.ai/#bib-sinek" class="cite">[03]</a>。绝大多数公司是从外向内说话——先讲产品（What），再讲流程（How），最后才（如果还有时间的话）讲信念（Why）。极少数伟大的公司——苹果、特斯拉、西南航空——反过来，先讲 Why。</p>
+  <p>斯涅克的洞察来自神经生物学：大脑皮层负责语言与理性（What 与 How），但决策与情感由更深的边缘系统处理（Why）。<strong>"人们不会买你做什么，他们买你为什么这么做。"</strong></p>
+
+  <div class="fig-wrap">
+    <svg class="fig-svg" viewBox="0 0 600 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="黄金圈：Why How What 三层同心结构">
+      <!-- WHAT outer ring -->
+      <circle cx="300" cy="230" r="200" class="fig-ring"></circle>
+      <!-- HOW middle ring -->
+      <circle cx="300" cy="230" r="130" class="fig-ring-strong"></circle>
+      <!-- WHY inner filled -->
+      <circle cx="300" cy="230" r="65" class="fig-accent"></circle>
+
+      <!-- WHY center label -->
+      <text x="300" y="226" text-anchor="middle" class="fig-label-w">WHY</text>
+      <text x="300" y="250" text-anchor="middle" class="fig-sub-w">为 什 么</text>
+
+      <!-- HOW (top of middle ring) -->
+      <text x="300" y="125" text-anchor="middle" class="fig-label">HOW</text>
+      <text x="300" y="143" text-anchor="middle" class="fig-sub">怎 么 做</text>
+
+      <!-- WHAT (top of outer ring) -->
+      <text x="300" y="58" text-anchor="middle" class="fig-label">WHAT</text>
+      <text x="300" y="76" text-anchor="middle" class="fig-sub">做 什 么</text>
+
+      <!-- bottom directional annotations -->
+      <text x="170" y="430" text-anchor="middle" class="fig-sub">普 通 公 司</text>
+      <text x="170" y="448" text-anchor="middle" class="fig-en">From What to Why</text>
+
+      <text x="430" y="430" text-anchor="middle" class="fig-sub" fill="#00B277">伟 大 公 司</text>
+      <text x="430" y="448" text-anchor="middle" class="fig-en" fill="#00B277">From Why to What</text>
+    </svg>
+    <div class="fig-cap"><strong>图 1 · 黄金圈</strong>　普通公司从外向内说话，伟大公司从内向外</div>
+  </div>
+
+  <h4>02 · 弗兰克尔的意义疗法</h4>
+  <p>维克多·弗兰克尔从奥斯维辛集中营幸存归来后写下《活出生命的意义》<a href="https://siwei-zhishang.wwei.ai/#bib-frankl" class="cite">[04]</a>。他发现一个极端环境下的稳定规律：那些能讲出"我活下去是为了……"的人，存活率远高于其他人。他后来创立的"意义疗法"（Logotherapy）认为，<strong>人寻求的不是快乐，而是意义</strong>——快乐是意义的副产品。</p>
+  <p>这个洞察对企业管理同样成立：能持续穿越周期的组织，不是奖金最高的，而是意义最清晰的。</p>
+
+  <h4>03 · 圣吉的共同愿景</h4>
+  <p>彼得·圣吉在《第五项修炼》中将"共同愿景"列为学习型组织的五项修炼之一<a href="https://siwei-zhishang.wwei.ai/#bib-senge" class="cite">[05]</a>。他强调：</p>
+  <blockquote>共同愿景不是一个想法。它是一种力量，存在于人们心中。<cite>彼得·圣吉</cite></blockquote>
+  <p>"被宣布的"愿景没有力量，"被点燃的"愿景才是。这二者的区别在于：员工能不能在愿景里看到自己的影子。</p>
+
+  <h4>04 · 柯林斯的核心理念</h4>
+  <p>吉姆·柯林斯与杰里·波勒斯花了六年研究 18 家"高瞻远瞩公司"，写成《基业长青》<a href="https://siwei-zhishang.wwei.ai/#bib-collins" class="cite">[06]</a>。他们的发现是：百年公司都有一个"<strong>核心理念</strong>"（Core Ideology），由两部分构成——<strong>核心价值观</strong>（Core Values，永不改变）+ <strong>核心目的</strong>（Core Purpose，存在的根本理由）。在核心理念之外，再叠加可变的"<strong>进取目标</strong>"（BHAG: Big Hairy Audacious Goal）。</p>
+  <p>"保留核心，刺激进步。"这是他们对 18 家公司的浓缩。核心是顶层，永远不变；进步是动作，永远在变。</p>
+
+  <h4>05 · 韦伯的资本主义精神</h4>
+  <p>马克斯·韦伯在《新教伦理与资本主义精神》中提出了一个反庸俗马克思主义的论点<a href="https://siwei-zhishang.wwei.ai/#bib-weber" class="cite">[07]</a>：不是经济结构决定了价值观，而是<strong>价值观（新教伦理中的勤奋、节俭、天职感）塑造了资本主义的运行模式</strong>。</p>
+  <p>这是一个百年前的社会学命题，但在今天读来依然锋利：组织的运行方式，归根到底是组织成员所信之物的外在投影。你信什么，你就会变成什么。</p>
+
+  <h4>06 · 稻盛和夫的"动机至善"</h4>
+  <p>稻盛和夫在《活法》《干法》中反复讲一句话：<strong>"动机至善，私心了无。"</strong><a href="https://siwei-zhishang.wwei.ai/#bib-inamori" class="cite">[08]</a> 京瓷有一本《京瓷哲学手册》，把价值观写到操作层面——"作为人，何谓正确"是首条。2010 年他临危受命挽救日航，做的第一件事不是砍成本，而是把所有干部召集起来重写哲学手册。一年后，日航扭亏为盈。</p>
+
+  <div class="critique">
+    <p>愿景也可能是"<strong>自我欺骗的高级形式</strong>"。公司喊得最响的"使命"，往往就是它最不在乎的事。"以客户为中心"贴在每家公司的电梯里，但裁员时第一个被牺牲的常常是客户体验团队。</p>
+    <p>克里斯·阿吉里斯在管理学经典中区分了两种理论<a href="https://siwei-zhishang.wwei.ai/#bib-argyris" class="cite">[09]</a>——<strong>"宣称的理论"（Espoused Theory）</strong> 和 <strong>"实践中的理论"（Theory-in-Use）</strong>。组织真正的价值观不在墙上，而在<strong>危机时刻的选择</strong>里。</p>
+  </div>
+
+  <div class="takeaway">
+    <h4>给读者的落点</h4>
+    <ol>
+      <li>区分"宣称的价值观"与"实践中的价值观"——这两者的差距，就是组织的虚伪指数。</li>
+      <li>给自己写一份"<strong>危机决策清单</strong>"：当短期利益和价值观冲突时，你会怎么选？提前写下来，临场就不会被情绪劫持。</li>
+      <li>问自己德鲁克晚年的那个问题：<em>"你想被记住为什么样的人？"</em>（What do you want to be remembered for?）<a href="https://siwei-zhishang.wwei.ai/#bib-drucker" class="cite">[10]</a></li>
+    </ol>
+  </div>
+</article>
+
+<div class="divider">· · ·</div>
+
+<!-- CHAPTER 2 -->
+<article class="chapter" id="ch2" style="opacity: 0; transform: translateY(20px); transition: opacity 0.8s, transform 0.8s;">
+  <div class="chapter-num">L A Y E R   I I ・ 第 二 章</div>
+  <h2 class="chapter-title">思<em>维</em></h2>
+  <div class="chapter-sub">破局的万能钥匙</div>
+
+  <blockquote class="opening-quote">
+    我们不能用制造问题时的思维方式，去解决那个问题。
+    <cite>阿尔伯特·爱因斯坦</cite>
+  </blockquote>
+
+  <h3>核心论点</h3>
+  <p>思维不是"知识的总和"，而是"<strong>看世界的方式</strong>"。同样的事实，不同的思维框架会得出不同的结论、不同的行动。AI 可以帮你处理信息，但思维方式必须由你自己拥有——它是你和 AI 协作时唯一的"主体性"。</p>
+
+  <h3>六个值得当作"出厂设置"的思维</h3>
+
+  <h4>01 · 多元思维模型（芒格）</h4>
+  <p>查理·芒格在《穷查理宝典》中讲过一个比喻：<strong>"在手里只有锤子的人眼里，所有问题都像钉子。"</strong><a href="https://siwei-zhishang.wwei.ai/#bib-munger" class="cite">[11]</a> 他主张拥有一个"多元思维模型工具箱"，横跨数学、物理、生物、心理、经济、历史等学科，约 80–100 个核心模型。</p>
+  <p>更关键的是芒格的"<strong>反向思维</strong>"（Invert, always invert）：要找到怎么成功，先研究怎么失败。要让组织变好，先列出能让组织变烂的所有方式，再一一避开。</p>
+
+  <h4>02 · 系统1 vs 系统2（卡尼曼）</h4>
+  <p>丹尼尔·卡尼曼在《思考，快与慢》<a href="https://siwei-zhishang.wwei.ai/#bib-kahneman" class="cite">[12]</a> 中区分了两套系统：<strong>系统 1</strong>（快、直觉、情绪、自动）与 <strong>系统 2</strong>（慢、推理、努力、可控）。日常 95% 的决策由系统 1 完成，但系统 1 充满认知偏差——锚定效应、可得性启发、确认偏差、损失厌恶。</p>
+  <p>他与阿莫斯·特沃斯基提出的"<strong>前景理论</strong>"（Prospect Theory）颠覆了经典经济学的"理性人假设"<a href="https://siwei-zhishang.wwei.ai/#bib-prospect" class="cite">[13]</a>：人对损失的痛苦大约是同等收益快乐的两倍。这一发现让卡尼曼拿到了 2002 年诺贝尔经济学奖（虽然他是个心理学家）。</p>
+
+  <h4>03 · 第一性原理</h4>
+  <p>第一性原理来自亚里士多德《形而上学》："任何系统都存在第一原理，是最基本的命题或假设，不能被省略，也不能被违反。"<a href="https://siwei-zhishang.wwei.ai/#bib-aristotle" class="cite">[14]</a></p>
+  <p>马斯克最常被引用的案例是电池成本：<em>类比思维</em>认为"电池一直是 600 美元/kWh，所以电动车很贵"；<em>第一性原理</em>把电池拆解成钴、镍、铝、碳、隔膜等原材料，按伦敦金属交易所价格重新加总——发现理论成本只有 80 美元/kWh<a href="https://siwei-zhishang.wwei.ai/#bib-musk" class="cite">[15]</a>。</p>
+  <p>第一性原理的难点不是"原理"，而是"<strong>第一</strong>"——剥到不能再剥的那一层。</p>
+
+  <h4>04 · 成长型思维（德韦克）</h4>
+  <p>卡罗尔·德韦克在《终身成长》<a href="https://siwei-zhishang.wwei.ai/#bib-dweck" class="cite">[16]</a> 中区分了 <strong>固定型思维</strong>（"我天生就是这样"）和 <strong>成长型思维</strong>（"我能学会"）。在 AI 时代这个区分被放大——技能的半衰期可能不到三年，但有成长型思维的人会把"学不会"翻译成"我还没学会"。</p>
+
+  <h4>05 · 系统思考（圣吉、梅多斯）</h4>
+  <p>唐内拉·梅多斯在《系统之美》<a href="https://siwei-zhishang.wwei.ai/#bib-meadows" class="cite">[17]</a> 中提出：任何系统都由"库存—流量—反馈环"构成，真正的杠杆点往往不是最显眼的地方。她列出了系统改造的 12 个杠杆点，最强的不是参数，而是<strong>目标</strong>，最强的还在<strong>目标之上</strong>，是<strong>范式</strong>本身。</p>
+  <p>圣吉则强调系统思考的反模式："<strong>转移负担</strong>"（shifting the burden）——用治标的方案应付掉症状，让人误以为问题解决了，结果根因恶化。今天的 AI 工具，最容易帮我们干的就是这件事：用快速产出掩盖思维懒惰。</p>
+
+  <h4>06 · 麦肯锡金字塔原理（明托）</h4>
+  <p>巴巴拉·明托的《金字塔原理》<a href="https://siwei-zhishang.wwei.ai/#bib-minto" class="cite">[01]</a> 也是这本书的结构母版：</p>
+  <ul>
+    <li><strong>结论先行</strong>，再分层论证；</li>
+    <li><strong>SCQA</strong>：Situation（情境）→ Complication（冲突）→ Question（问题）→ Answer（答案）；</li>
+    <li><strong>MECE</strong>：相互独立，完全穷尽；</li>
+    <li><strong>表达时自上而下，思考时自下而上</strong>。</li>
+  </ul>
+  <p>金字塔原理被许多人误读为"演讲技巧"。它其实是一种<strong>思维约束</strong>——它强迫你先得出结论再去找证据，而不是堆完证据让听众自己拼。</p>
+
+  <h4>+ 影响力六原则（西奥迪尼）</h4>
+  <p>罗伯特·西奥迪尼在《影响力》<a href="https://siwei-zhishang.wwei.ai/#bib-cialdini" class="cite">[18]</a> 中总结了六个社会心理武器：互惠、承诺与一致、社会认同、喜好、权威、稀缺。这不是话术，是一套关于"人如何被影响"的社会学模型。理解它，才能在 AI 充斥内容的时代，分辨什么是真观点，什么是被设计的 nudge。</p>
+
+  <div class="critique">
+    <p>思维框架越多，"<strong>框架收藏家陷阱</strong>"越深——知道一切，不做任何事。芒格自己说过一句话作为对冲：</p>
+    <blockquote>我不允许自己持有一个观点，除非我能比反对它的人更好地反驳它。<cite>查理·芒格</cite></blockquote>
+    <p>真正拥有一个思维模型，是能用它反驳自己。</p>
+  </div>
+
+  <div class="takeaway">
+    <h4>给读者的落点</h4>
+    <ol>
+      <li>选 3–5 个核心思维模型作为"出厂设置"——其他作为可调用工具，不必每个都常驻。</li>
+      <li>每次重大决策后做一次"<strong>归因复盘</strong>"：我当时用的是哪个模型？这个模型在哪里失效？</li>
+      <li>训练"<strong>反向思考</strong>"肌肉：每周给一个正在做的事，反着列一遍"怎么把它做砸"，再回头看你正在做的事是不是其中一种。</li>
+    </ol>
+  </div>
+</article>
+
+<div class="divider">· · ·</div>
+
+<!-- CHAPTER 3 -->
+<article class="chapter" id="ch3" style="opacity: 0; transform: translateY(20px); transition: opacity 0.8s, transform 0.8s;">
+  <div class="chapter-num">L A Y E R   I I I ・ 第 三 章</div>
+  <h2 class="chapter-title">方法论与<em>框架</em></h2>
+  <div class="chapter-sub">把思维落地的脚手架</div>
+
+  <blockquote class="opening-quote">
+    管理是一种实践，其本质不在于"知"，而在于"行"。
+    <cite>彼得·德鲁克，《管理的实践》（1954）<a href="https://siwei-zhishang.wwei.ai/#bib-druckermgmt" class="cite">[19]</a></cite>
+  </blockquote>
+
+  <h3>核心论点</h3>
+  <p>方法论 = <strong>思维 + 上下文</strong>。它把抽象的思维约束在具体场景里，让团队能协作、让动作能复用。<strong>框架的价值不在于框架本身，而在于它把对的思维变得可教、可传、可执行</strong>。</p>
+
+  <h3>四类经典方法论</h3>
+
+  <h4>01 · 战略层</h4>
+  <ul>
+    <li><strong>波特五力 + 三大通用战略</strong>（迈克尔·波特，《竞争战略》1980）<a href="https://siwei-zhishang.wwei.ai/#bib-porter" class="cite">[20]</a>——产业结构决定企业利润空间。三大战略：成本领先、差异化、聚焦。</li>
+    <li><strong>蓝海战略</strong>（W.钱·金 &amp; 勒妮·莫博涅，2005）<a href="https://siwei-zhishang.wwei.ai/#bib-blueocean" class="cite">[21]</a>——不要在红海里更卷，去开辟没人争的新空间。"价值创新"是核心：同时做到差异化和低成本。</li>
+    <li><strong>跨越鸿沟</strong>（杰弗里·摩尔，1991）<a href="https://siwei-zhishang.wwei.ai/#bib-chasm" class="cite">[22]</a>——技术采纳生命周期里有一个鸿沟，把早期采纳者和早期主流市场分开。绝大多数创新公司死在鸿沟里。</li>
+    <li><strong>第二曲线</strong>（查尔斯·汉迪，1994）<a href="https://siwei-zhishang.wwei.ai/#bib-handy" class="cite">[23]</a>——必须在第一曲线巅峰<strong>之前</strong>启动第二曲线，等到衰退再启动就晚了。</li>
+    <li><strong>颠覆式创新 vs 维持性创新</strong>（克莱顿·克里斯坦森，《创新者的窘境》1997）<a href="https://siwei-zhishang.wwei.ai/#bib-clay" class="cite">[24]</a>——为什么优秀公司会失败？因为它们做对了所有"维持性"的事，却被低端市场的颠覆者超越。</li>
+  </ul>
+
+  <h4>02 · 组织管理层</h4>
+  <ul>
+    <li><strong>OKR</strong>（安迪·葛洛夫在英特尔提出，约翰·杜尔传播<a href="https://siwei-zhishang.wwei.ai/#bib-okr" class="cite">[25]</a>）——Objective 给方向，Key Results 给度量。OKR 不是 KPI，KPI 是承诺，OKR 是延展性目标。</li>
+    <li><strong>《执行》三个核心流程</strong>（拉里·博西迪 &amp; 拉姆·查兰）<a href="https://siwei-zhishang.wwei.ai/#bib-execution" class="cite">[26]</a>——人员流程、战略流程、运营流程，缺一个就不会有真正的执行。</li>
+    <li><strong>团队五大障碍</strong>（帕特里克·兰西奥尼）<a href="https://siwei-zhishang.wwei.ai/#bib-five" class="cite">[27]</a>——缺乏信任 → 惧怕冲突 → 缺乏承诺 → 逃避问责 → 忽视成果。一层之上累着另一层。</li>
+  </ul>
+
+  <h4>03 · 创新方法论</h4>
+  <ul>
+    <li><strong>精益创业</strong>（埃里克·莱斯，2011）<a href="https://siwei-zhishang.wwei.ai/#bib-lean" class="cite">[28]</a>——MVP（最小可行产品）→ Build-Measure-Learn 循环 → Pivot（关键转向）。"经过验证的认知"才是最有价值的产出，不是产品本身。</li>
+    <li><strong>设计思维</strong>（蒂姆·布朗 / IDEO，《设计改变一切》2009）<a href="https://siwei-zhishang.wwei.ai/#bib-ideo" class="cite">[29]</a>——共情 → 定义 → 构思 → 原型 → 测试。它把"用户为中心"从口号变成了一套动作。</li>
+    <li><strong>《跨越创新鸿沟》× 《精益创业》</strong>——前者讲"过鸿沟"的市场逻辑，后者讲"鸿沟前"的产品验证逻辑。配合使用更有用。</li>
+  </ul>
+
+  <h4>04 · 经济学与社会学的"框架基座"</h4>
+  <p>这一类不是直接用的"方法论"，但它们塑造了所有方法论的底层假设。</p>
+  <ul>
+    <li><strong>科斯：交易成本理论</strong>（《企业的性质》1937）<a href="https://siwei-zhishang.wwei.ai/#bib-coase" class="cite">[30]</a>——企业为什么存在？因为市场交易有成本，把交易内化进组织能省掉一部分。这个理论解释了所有"自营 vs 外包"的决策。AI 正在重写交易成本曲线。</li>
+    <li><strong>哈耶克：分散知识</strong>（《知识在社会中的运用》1945）<a href="https://siwei-zhishang.wwei.ai/#bib-hayek" class="cite">[31]</a>——任何中心都不可能掌握所有信息，价格机制是最有效的信息聚合器。这条思路对今天的"中心化决策 vs 分布式决策"依然适用。</li>
+    <li><strong>格兰诺维特：弱关系的力量</strong>（1973）<a href="https://siwei-zhishang.wwei.ai/#bib-granovetter" class="cite">[32]</a>——人在找工作时，强关系（家人朋友）的帮助远不如弱关系（熟人）。原因：弱关系连接的是不同的信息圈。组织里有没有"<strong>弱关系桥</strong>"，决定了创新能否发生。</li>
+    <li><strong>普特南：社会资本</strong>（《独自打保龄》2000）<a href="https://siwei-zhishang.wwei.ai/#bib-putnam" class="cite">[33]</a>——一个社会的健康程度，取决于它的"社会资本"：信任、互惠、网络。把这个概念翻译到组织：信任崩了，再多流程都没用。</li>
+  </ul>
+
+  <div class="critique">
+    <p>方法论最大的风险是"<strong>工具化</strong>"——脱离上层思维使用方法论，等于操作一个空壳。</p>
+    <ul>
+      <li>SWOT 做了一万次还是不知道做什么——因为缺上层思维（缺"视角"）。</li>
+      <li>OKR 抄过来变 KPI——因为缺愿景（缺"O"的灵魂）。</li>
+      <li>设计思维做成 workshop 流水线——因为缺共情（缺"为谁而做"）。</li>
+    </ul>
+    <p>方法论是把思维写下来给别人用的工具。<strong>没有思维的人用方法论，会变成形式主义</strong>。</p>
+  </div>
+
+  <div class="takeaway">
+    <h4>给读者的落点</h4>
+    <ol>
+      <li>每个方法论都要写一份"<strong>使用前提清单</strong>"——这个方法论假设了什么？什么场景失效？</li>
+      <li>用方法论之前先问：我的问题属于这个方法论解决的那一类吗？不是的话，换一个，或者别用。</li>
+      <li>组织里推行任何方法论之前，先用一句话回答："<strong>它打通了我们的哪两层</strong>？"——讲不清就是为推而推。</li>
+    </ol>
+  </div>
+</article>
+
+<div class="divider">· · ·</div>
+
+<!-- CHAPTER 4 -->
+<article class="chapter" id="ch4" style="opacity: 0; transform: translateY(20px); transition: opacity 0.8s, transform 0.8s;">
+  <div class="chapter-num">L A Y E R   I V ・ 第 四 章</div>
+  <h2 class="chapter-title">方<em>法</em></h2>
+  <div class="chapter-sub">把框架变成动作</div>
+
+  <blockquote class="opening-quote">
+    战略最终要落到一连串可执行的动作上。否则它只是一份精美的 PPT。
+    <cite>拉里·博西迪 &amp; 拉姆·查兰，《执行》<a href="https://siwei-zhishang.wwei.ai/#bib-execution" class="cite">[26]</a></cite>
+  </blockquote>
+
+  <h3>核心论点</h3>
+  <p>方法是金字塔里最容易被掌握、也最容易被误用的一层。它是"<strong>动作单位</strong>"——能不能在 30 秒内说清楚一个方法包含哪几步、产出什么、由谁验收，决定了它有没有用。</p>
+
+  <h3>八个值得熟练的"动作"</h3>
+
+  <h4>01 · MECE 与议题树</h4>
+  <p>MECE = Mutually Exclusive, Collectively Exhaustive，相互独立，完全穷尽<a href="https://siwei-zhishang.wwei.ai/#bib-minto" class="cite">[01]</a>。它是麦肯锡解决问题的根本动作——把一个大问题切成不重不漏的子问题，画成"<strong>议题树</strong>"（Issue Tree），再向下钻取到可调研的颗粒度。</p>
+
+  <h4>02 · SMART 目标</h4>
+  <p>乔治·多兰 1981 年在 <em>Management Review</em> 上首次提出 <strong>SMART</strong><a href="https://siwei-zhishang.wwei.ai/#bib-smart" class="cite">[34]</a>：Specific（具体）、Measurable（可度量）、Achievable（可达成）、Relevant（相关）、Time-bound（有时限）。OKR 中的 KR 本质上就是 SMART 化的。</p>
+
+  <h4>03 · PDCA / 戴明环</h4>
+  <p>爱德华·戴明在《转危为安》<a href="https://siwei-zhishang.wwei.ai/#bib-deming" class="cite">[35]</a> 中推广 Plan-Do-Check-Act 循环。这是日本制造业崛起的方法论根基。它的精髓不在"做"，在"<strong>检查与调整</strong>"——让每一次循环都比上一次稍微好一点。</p>
+
+  <h4>04 · 5 Whys（连问五个为什么）</h4>
+  <p>大野耐一在丰田生产方式中推广 <strong>5 Whys</strong><a href="https://siwei-zhishang.wwei.ai/#bib-toyota" class="cite">[36]</a>。一台机器停了——为什么？保险丝烧了。为什么烧？轴承负荷过大。为什么过大？润滑不足。为什么润滑不足？油泵没工作。为什么没工作？……第五次"为什么"通常才到根因。</p>
+
+  <h4>05 · 复盘四步法（柳传志体系）</h4>
+  <ol>
+    <li><strong>回顾目标</strong>——当初设定的目标是什么？</li>
+    <li><strong>评估结果</strong>——实际做到什么程度？</li>
+    <li><strong>分析原因</strong>——为什么是这个结果？</li>
+    <li><strong>总结规律</strong>——下次再遇到怎么做？</li>
+  </ol>
+  <p>看起来朴素，难在最后一步——大多数复盘止步于"分析原因"，没有抽到"规律"。柳传志说："失败不可怕，可怕的是没复盘。"<a href="https://siwei-zhishang.wwei.ai/#bib-liu" class="cite">[37]</a></p>
+
+  <h4>06 · A/B 测试与对照实验</h4>
+  <p>对照实验最早系统化于罗纳德·费雪的《实验设计》（1935）<a href="https://siwei-zhishang.wwei.ai/#bib-fisher" class="cite">[38]</a>，今天它被互联网公司演化成"<strong>实验文化</strong>"——Booking.com 一年跑 25,000 次实验，亚马逊用实验决定首页布局。<strong>关键不在跑实验本身，在于敢把决策权让渡给数据</strong>。</p>
+
+  <h4>07 · 用户访谈与"妈妈测试"</h4>
+  <p>罗伯·菲茨帕特里克在《妈妈测试》<a href="https://siwei-zhishang.wwei.ai/#bib-mom" class="cite">[39]</a> 中提供了一组反范式：不要问"你会不会用我的产品"——所有人都会客气地说"会"。要问<strong>"过去是怎么做的"</strong>——具体行为不会撒谎。这是市场调研里最被低估的方法。</p>
+
+  <h4>08 · 日清日结、晨会、看板</h4>
+  <p>张瑞敏的"<strong>日事日毕，日清日高</strong>"是中国制造业最朴素的节律方法<a href="https://siwei-zhishang.wwei.ai/#bib-haier" class="cite">[40]</a>。丰田 Kanban、Scrum 站会、敏捷的 daily standup——本质上都是"<strong>把节律外化</strong>"，让人从依赖自律变成依赖结构。</p>
+
+  <div class="critique">
+    <p>方法的最大陷阱是"<strong>流程崇拜</strong>"——动作做完了，问题没解决。</p>
+    <ul>
+      <li>复盘走过场——因为没追问"如果重来一次怎么做"。</li>
+      <li>OKR 写了又写——因为没人在 KR 不达成时被问责。</li>
+      <li>A/B 测试做了十次——因为没问"我们到底要从这个实验里学到什么"。</li>
+    </ul>
+    <p>方法不该越来越多，应该越来越少。<strong>能淘汰一个低效方法，比新学十个还有价值</strong>。</p>
+  </div>
+
+  <div class="takeaway">
+    <h4>给读者的落点</h4>
+    <ol>
+      <li>每个常用方法写一张"动作卡"：三步 + 验收标准 + 失效场景。</li>
+      <li>每季度<strong>主动淘汰</strong>一个低效方法——和新增方法一样重要。</li>
+      <li>判断一个方法是否还活着：找最近一次用它的人，问"上次它帮你避开了什么"——答不上来，就该淘汰了。</li>
+    </ol>
+  </div>
+</article>
+
+<div class="divider">· · ·</div>
+
+<!-- CHAPTER 5 -->
+<article class="chapter" id="ch5" style="opacity: 0; transform: translateY(20px); transition: opacity 0.8s, transform 0.8s;">
+  <div class="chapter-num">L A Y E R   V ・ 第 五 章</div>
+  <h2 class="chapter-title">工具与<em>技能</em></h2>
+  <div class="chapter-sub">AI 时代的杠杆</div>
+
+  <blockquote class="opening-quote">
+    我们塑造了工具，工具反过来塑造了我们。
+    <cite>马歇尔·麦克卢汉，《理解媒介》（1964）<a href="https://siwei-zhishang.wwei.ai/#bib-mcluhan" class="cite">[41]</a></cite>
+  </blockquote>
+
+  <h3>核心论点</h3>
+  <p>工具是杠杆，不是答案。AI 让杠杆从 100 倍跳到 10000 倍，<strong>但杠杆放大的方向，由顶层决定</strong>。同样一把放大镜，对着真问题就照见本质，对着伪问题就放大噪声。</p>
+
+  <h3>工具的三层进化</h3>
+  <ul>
+    <li><strong>体力工具</strong>：杠杆、马车、蒸汽机——延伸肌肉。</li>
+    <li><strong>智力工具</strong>：印刷术、计算器、搜索引擎——延伸记忆与计算。</li>
+    <li><strong>AI 工具</strong>：第一次，工具能"<strong>自己思考</strong>"——延伸判断本身。</li>
+  </ul>
+  <p>AI 让我们第一次面对"工具具备主动性"的局面。这不只是效率跃迁，是关系的重构。</p>
+
+  <div class="fig-wrap">
+    <svg class="fig-svg" viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="工具的三层进化：体力工具、智力工具、AI 工具">
+      <!-- baseline -->
+      <line x1="20" y1="300" x2="580" y2="300" stroke="#D9D2C2" stroke-width="1"></line>
+
+      <!-- Step 1: 体力工具 (low / grey) -->
+      <rect x="50" y="225" width="140" height="75" rx="2" fill="#7B7770"></rect>
+      <text x="120" y="255" text-anchor="middle" class="fig-label-w" font-size="14">体 力 工 具</text>
+      <text x="120" y="278" text-anchor="middle" class="fig-sub-w">延 伸 肌 肉</text>
+      <text x="120" y="328" text-anchor="middle" class="fig-en">Lever · Steam</text>
+
+      <!-- Step 2: 智力工具 (mid / dark green) -->
+      <rect x="230" y="170" width="140" height="130" rx="2" fill="#3A6B53"></rect>
+      <text x="300" y="220" text-anchor="middle" class="fig-label-w" font-size="14">智 力 工 具</text>
+      <text x="300" y="243" text-anchor="middle" class="fig-sub-w">延 伸 记 忆</text>
+      <text x="300" y="261" text-anchor="middle" class="fig-sub-w">与 计 算</text>
+      <text x="300" y="328" text-anchor="middle" class="fig-en">Print · Search</text>
+
+      <!-- Step 3: AI 工具 (high / brand green) -->
+      <rect x="410" y="100" width="140" height="200" rx="2" fill="#00B277"></rect>
+      <text x="480" y="160" text-anchor="middle" class="fig-label-w" font-size="14">A I  工 具</text>
+      <text x="480" y="184" text-anchor="middle" class="fig-sub-w">延 伸 判 断</text>
+      <text x="480" y="222" text-anchor="middle" class="fig-sub-w">— 工 具 自 己 思 考 —</text>
+      <text x="480" y="328" text-anchor="middle" class="fig-en" fill="#00B277">GPT · Claude</text>
+
+      <!-- top trajectory arrow -->
+      <path d="M 60,70 Q 300,30 540,55" class="fig-arrow-green" marker-end="url(#arr-evo)"></path>
+      <text x="300" y="20" text-anchor="middle" class="fig-sub" fill="#00B277">— 工 具 的 主 动 性 越 来 越 强 —</text>
+
+      <defs>
+        <marker id="arr-evo" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+          <path d="M0,0 L10,5 L0,10 Z" fill="#00B277"></path>
+        </marker>
+      </defs>
+    </svg>
+    <div class="fig-cap"><strong>图 2 · 工具的三层进化</strong>　第一次有了"会自己思考"的工具——这不是效率跃迁，是关系重构</div>
+  </div>
+
+  <h3>工具如何反向塑造思维</h3>
+  <p>麦克卢汉的核心命题：<strong>媒介即讯息</strong>。媒介本身比内容更深刻地塑造人。<strong>电视改变了我们的注意力结构，互联网改变了我们的耐心，AI 正在改变我们的"思考意愿"</strong>。</p>
+  <p>尼古拉斯·卡尔在《浅薄》<a href="https://siwei-zhishang.wwei.ai/#bib-shallows" class="cite">[42]</a> 中论证：互联网把我们从"深读者"变成了"扫读者"，神经可塑性把这种习惯固化为大脑结构。AI 时代有一个新的危险——<strong>我们正在用 ChatGPT 替我们思考</strong>。</p>
+  <p>这不是危言耸听。一项 2024 年的研究表明，长期依赖生成式 AI 完成认知任务的人，元认知能力（也就是"知道自己不知道"的能力）出现下降<a href="https://siwei-zhishang.wwei.ai/#bib-aimind" class="cite">[43]</a>。</p>
+
+  <h3>经济学视角：工具与生产函数</h3>
+  <p>罗伯特·索洛 1957 年的开创性研究证明：长期经济增长的主要来源不是资本与劳动的累加，而是"<strong>技术进步</strong>"——他称之为<strong>全要素生产率</strong>（TFP）<a href="https://siwei-zhishang.wwei.ai/#bib-solow" class="cite">[44]</a>。这个发现给他赢得了 1987 年诺贝尔经济学奖。</p>
+  <p>但 TFP 的提升不会自动转化为价值。索洛 1987 年还讲过一句著名的话——<strong>"索洛悖论"</strong>：</p>
+  <blockquote>计算机时代随处可见，唯独不见于生产率统计中。<cite>Robert Solow, 1987</cite></blockquote>
+  <p>类似的悖论今天正在 AI 上重演。<strong>工具有了，生产率没动——因为顶层四层没动</strong>。</p>
+
+  <h3>AI 工具的三个层级</h3>
+  <ul>
+    <li><strong>替代手工</strong>（写邮件、做 PPT、抠图）——工具替代。</li>
+    <li><strong>放大判断</strong>（写策略、读报告、做研究）——工具增强。</li>
+    <li><strong>探索新问题</strong>（构建系统、模拟方案、压力测试想法）——工具协作。</li>
+  </ul>
+  <p>越往上走，越依赖顶层四层。<strong>没有愿景与思维的人，AI 只能停在第一层；只有顶层强的人，才能爬到第三层</strong>。</p>
+
+  <div class="fig-wrap">
+    <svg class="fig-svg" viewBox="0 0 600 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AI 工具的三个层级">
+      <!-- Tier 3 (top) - exploration -->
+      <rect x="120" y="50" width="360" height="80" rx="2" fill="#00B277"></rect>
+      <text x="300" y="86" text-anchor="middle" class="fig-label-w" font-size="15">探 索 新 问 题</text>
+      <text x="300" y="108" text-anchor="middle" class="fig-sub-w">— 工 具 协 作 —</text>
+
+      <!-- Tier 2 (middle) - augmentation -->
+      <rect x="120" y="160" width="360" height="80" rx="2" fill="#3A6B53"></rect>
+      <text x="300" y="196" text-anchor="middle" class="fig-label-w" font-size="15">放 大 判 断</text>
+      <text x="300" y="218" text-anchor="middle" class="fig-sub-w">— 工 具 增 强 —</text>
+
+      <!-- Tier 1 (bottom) - substitution -->
+      <rect x="120" y="270" width="360" height="80" rx="2" fill="#7B7770"></rect>
+      <text x="300" y="306" text-anchor="middle" class="fig-label-w" font-size="15">替 代 手 工</text>
+      <text x="300" y="328" text-anchor="middle" class="fig-sub-w">— 工 具 替 代 —</text>
+
+      <!-- Right-side ascending arrow + label -->
+      <line x1="525" y1="350" x2="525" y2="50" class="fig-arrow-green" marker-end="url(#arr-tier)"></line>
+      <text x="557" y="200" text-anchor="middle" class="fig-sub" fill="#00B277" transform="rotate(90 557 200)">越 往 上 · 越 依 赖 顶 层 四 层</text>
+
+      <!-- Left-side annotations -->
+      <text x="65" y="93" text-anchor="middle" class="fig-sub" transform="rotate(-90 65 93)">顶 层 强 · 爬 到 第 三 层</text>
+      <text x="65" y="313" text-anchor="middle" class="fig-sub" transform="rotate(-90 65 313)">顶 层 弱 · 卡 在 第 一 层</text>
+
+      <!-- Bottom caption -->
+      <text x="300" y="400" text-anchor="middle" class="fig-en">Same Tool · Three Outcomes</text>
+
+      <defs>
+        <marker id="arr-tier" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+          <path d="M0,0 L10,5 L0,10 Z" fill="#00B277"></path>
+        </marker>
+      </defs>
+    </svg>
+    <div class="fig-cap"><strong>图 3 · AI 工具的三个层级</strong>　同一个 ChatGPT，差距不在 prompt 工程——差距在 prompt 之外的所有东西</div>
+  </div>
+
+  <h3>同样的工具，结果天差地别</h3>
+  <p>同一个 ChatGPT：</p>
+  <ul>
+    <li>有人用它写水文、洗稿、刷量。</li>
+    <li>有人用它做严肃研究、构建系统、生成可执行的策略。</li>
+  </ul>
+  <p>差距不在 prompt 工程，差距在 prompt 之外的所有东西——你的愿景、你的思维、你提的问题、你能识别的胡说八道。<strong>AI 不会让平庸的人变好，AI 让顶层强的人变强，让顶层弱的人显得更弱</strong>。</p>
+
+  <h3>凯文·凯利的预言</h3>
+  <p>凯文·凯利在《必然》<a href="https://siwei-zhishang.wwei.ai/#bib-kk" class="cite">[45]</a> 中描述了 12 个不可逆趋势，其中一个是 <strong>"认知化"（Cognifying）</strong>：智能将像电力一样普及，"一切都将被注入智能"。</p>
+  <blockquote>电力的价值，不取决于电本身，而取决于你想用电做什么。<cite>凯文·凯利</cite></blockquote>
+  <p>智能也是一样。这就是为什么这本书的最后一章不能止于工具——必须回到顶层。</p>
+
+  <div class="critique">
+    <p>技能学得越快，过期越快。</p>
+    <ul>
+      <li>提示工程的半衰期可能不到 18 个月。</li>
+      <li>某个 AI 工具今年的"<strong>护城河功能</strong>"，明年可能成为模型自带能力。</li>
+      <li>工具的更替不可预测，但顶层四层（愿景、思维、方法论、方法）的稳定性强得多。</li>
+    </ul>
+    <p>学技能没错，但不能<strong>停在</strong>技能层。</p>
+  </div>
+
+  <div class="takeaway">
+    <h4>给读者的落点</h4>
+    <ol>
+      <li>学习时反向：先问"<strong>我要解决什么问题</strong>"，再选工具。不要被"AI 新功能"牵着走。</li>
+      <li>给自己设一条"<strong>认知健身底线</strong>"——每周至少有一次完全不依赖 AI 的深度思考时段。</li>
+      <li>评估一个工具值不值得学：问它能不能放大你顶层的杠杆。如果它只是替代了一个本来就该外包的动作，价值有限。</li>
+    </ol>
+  </div>
+</article>
+
+<!-- CHAPTER 6 -->
+<article class="chapter" id="ch6" style="opacity: 0; transform: translateY(20px); transition: opacity 0.8s, transform 0.8s;">
+  <div class="chapter-num">L A Y E R   V I ・ 第 六 章</div>
+  <h2 class="chapter-title">闭<em>环</em></h2>
+  <div class="chapter-sub">让金字塔活起来的发动机</div>
+
+  <blockquote class="opening-quote">
+    我没有什么特别的天赋。我只有一种近乎热情的好奇心。
+    <cite>阿尔伯特·爱因斯坦，致 Carl Seelig 的信，1952<a href="https://siwei-zhishang.wwei.ai/#bib-einstein" class="cite">[46]</a></cite>
+  </blockquote>
+
+  <h3>核心论点</h3>
+  <p>金字塔是<strong>静态</strong>结构——五层从下到上立起来，是一张图。但人不是图，人是一台不断在转的机器。让金字塔从纸上立起来、活起来的，是另一套东西：<strong>好奇心、创造力，以及它们驱动的自我闭环</strong>。</p>
+  <p>愿景告诉你"为什么"，思维告诉你"怎么想"，方法告诉你"怎么做"，工具放大你"怎么交付"。但如果没有<strong>持续转动</strong>这五层的发动机，最完美的金字塔也只是博物馆里的展品。AI 时代真正的元能力，就是这台发动机——它有两个汽缸：好奇心、创造力；和一根传动轴：自驱学习与公开实践。</p>
+
+  <h3>元能力之一：好奇心</h3>
+  <p>好奇心不是性格，是<strong>认知姿态</strong>。一个失去好奇心的人，不是不能学，是不愿意进入未知。米哈里·契克森米哈赖在《创造力》<a href="https://siwei-zhishang.wwei.ai/#bib-csiks" class="cite">[47]</a> 里追踪了 91 位顶尖创造者，结论近乎残酷：他们的智商、出身、机遇都各异，但有一个共同点——<strong>对世界保留一种近乎孩童的提问能力</strong>。</p>
+  <p>AI 时代有一个反向考验：当答案变得几乎免费，<strong>提问的能力变得稀缺</strong>。一个不好奇的人面对 AI，只会问"帮我写一封邮件"；一个好奇的人会问"这件事能不能从根本上不做"。前者是工具的使用者，后者是问题的拥有者。</p>
+
+  <h3>元能力之二：创造力</h3>
+  <p>创造力不是"想出新点子"，是<strong>把不相关的东西连起来</strong>的能力。乔布斯说 "creativity is just connecting things"——这不是修辞，是机制。学过的东西如果不能在新场景里被调用，就没有真正学会。AI 也能记忆，但它的连接是统计意义上的高频路径；人的创造力来自经验、情感、身体、偏见、愿景的<strong>非典型组合</strong>——这是 AI 短期内仍然学不会的东西。</p>
+
+  <h3>认知体系：审查 AI 的标尺</h3>
+  <p>有了好奇心和创造力作为发动机，你才会持续输入；有了思维和方法论作为齿轮，输入才会被压缩成你自己的<strong>认知与知识体系</strong>。这套体系在 AI 时代最重要的用途，<strong>不是再生产知识，而是审查 AI</strong>。</p>
+  <p>AI 的输出永远在水准的中位数附近——它能写得像，但写不到顶。<strong>真正用到 AI 能力边界的人，不是给 AI 更多 prompt 的人，是审查能力顶级的人</strong>——他能在 30 秒内闻到一段 AI 文案的塑料味，能在一份 AI 战略里挑出三处似是而非的引用，能识别一张 AI 图为什么"漂亮但俗气"。</p>
+  <p>审美能力和审丑能力是同一种能力的两面。判断"好"必然意味着能判断"坏"。一个没有审丑能力的人，也注定没有真正的审美能力——他只能跟着趋势走，而 AI 是趋势的最大放大器。<strong>审查能力，是认知体系在 AI 时代的最终输出形态</strong>。</p>
+
+  <h3>闭环：输入 — 消化 — 输出</h3>
+  <p>真正在 AI 时代领先的人，都跑同一个闭环：</p>
+  <ul>
+    <li><strong>输入｜自驱学习</strong>：好奇心驱动持续阅读、提问、跨界。这一阶段是<strong>泛化吸收</strong>——大量、杂、不带目的。约翰·杜威 <a href="https://siwei-zhishang.wwei.ai/#bib-dewey" class="cite">[48]</a> 早在 1938 年就指出：经验本身不是学习，<strong>对经验的反思才是</strong>。</li>
+    <li><strong>消化｜认知压缩</strong>：用思维和方法论把杂乱输入压缩成结构化的认知体系。这是<strong>升维</strong>——把 100 个具体故事抽象成 1 个原理，能跨场景复用。</li>
+    <li><strong>输出｜审查实践</strong>：把认知用来做判断、做产品、做内容、做决策。这一阶段是<strong>降维</strong>——把抽象再翻译回具体，并在真实世界里被检验。</li>
+  </ul>
+  <p>三个阶段缺一不可。只输入不输出的人，是<strong>知识囤积者</strong>；只输出不输入的人，是<strong>过期专家</strong>；输入输出齐全但缺乏消化的人，是<strong>勤奋的搬运工</strong>。<strong>AI 时代加剧了这三种病——它让囤积更廉价、过期更快、搬运更隐形</strong>。</p>
+
+  <div class="fig-wrap">
+    <svg class="fig-svg" viewBox="0 0 600 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="自驱循环：输入、消化、输出三段闭环">
+      <!-- Center label -->
+      <text x="300" y="232" text-anchor="middle" class="fig-title">自 驱 循 环</text>
+      <text x="300" y="258" text-anchor="middle" class="fig-en">Self-Driven Loop</text>
+
+      <!-- arc arrows (clockwise: 输入 → 消化 → 输出 → 输入) -->
+      <!-- 输入(top) → 消化(bottom-right) -->
+      <path d="M 358,118 Q 480,165 470,300" class="fig-arrow-green" marker-end="url(#arr-loop)"></path>
+      <!-- 消化(bottom-right) → 输出(bottom-left) -->
+      <path d="M 405,388 Q 300,440 195,388" class="fig-arrow-green" marker-end="url(#arr-loop)"></path>
+      <!-- 输出(bottom-left) → 输入(top) -->
+      <path d="M 130,300 Q 120,165 242,118" class="fig-arrow-green" marker-end="url(#arr-loop)"></path>
+
+      <!-- Node 1: 输入 (top) -->
+      <circle cx="300" cy="80" r="62" fill="#00B277"></circle>
+      <text x="300" y="76" text-anchor="middle" class="fig-label-w" font-size="15">输 入</text>
+      <text x="300" y="98" text-anchor="middle" class="fig-sub-w">泛 化 吸 收</text>
+      <text x="300" y="14" text-anchor="middle" class="fig-en">Curiosity · Input</text>
+
+      <!-- Node 2: 消化 (bottom-right) -->
+      <circle cx="450" cy="340" r="62" fill="#1E8E63"></circle>
+      <text x="450" y="336" text-anchor="middle" class="fig-label-w" font-size="15">消 化</text>
+      <text x="450" y="358" text-anchor="middle" class="fig-sub-w">压 缩 升 维</text>
+      <text x="450" y="438" text-anchor="middle" class="fig-en">Mindset · Digest</text>
+
+      <!-- Node 3: 输出 (bottom-left) -->
+      <circle cx="150" cy="340" r="62" fill="#3A6B53"></circle>
+      <text x="150" y="336" text-anchor="middle" class="fig-label-w" font-size="15">输 出</text>
+      <text x="150" y="358" text-anchor="middle" class="fig-sub-w">分 享 降 维</text>
+      <text x="150" y="438" text-anchor="middle" class="fig-en">Practice · Output</text>
+
+      <defs>
+        <marker id="arr-loop" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+          <path d="M0,0 L10,5 L0,10 Z" fill="#00B277"></path>
+        </marker>
+      </defs>
+    </svg>
+    <div class="fig-cap"><strong>图 4 · 自驱闭环</strong>　好奇心驱动输入，认知体系完成消化，公开实践完成输出——三段缺一不可</div>
+  </div>
+
+  <h3>Learn in Public：闭环的最高形态</h3>
+  <p>2018 年，程序员 Shawn Wang（Swyx）写过一篇影响深远的短文 <i>Learn in Public</i><a href="https://siwei-zhishang.wwei.ai/#bib-swyx" class="cite">[49]</a>。核心论点很简单：<strong>把你学的东西公开发出来——哪怕不完美，哪怕被嘲笑</strong>。</p>
+  <p>为什么这是闭环的最高形态？因为公开输出会强迫你做三件事：</p>
+  <ul>
+    <li>必须把<strong>模糊的认知</strong>整理成<strong>清晰的语言</strong>——这本身就是消化。</li>
+    <li>必须接受<strong>外部反馈</strong>——错误会被指出，盲点会被照亮。</li>
+    <li>必须建立<strong>个人公开复利</strong>——你的输出会被看见、被引用、被链接，最终变成机会本身。</li>
+  </ul>
+  <p>Build in Public 是 Learn in Public 的工程版——把产品的开发过程同步公开。Pieter Levels、David Perell 这些 AI 时代的"个体奇才"，都是这条路径的样本。<strong>他们的优势不在更聪明，在闭环转得更快、更公开</strong>。</p>
+
+  <h3>为什么这是 AI 时代的核心素养</h3>
+  <p>过去，闭环是少数人的"额外动作"；AI 时代，闭环是<strong>区分线</strong>。</p>
+  <ul>
+    <li>不闭环的人：被 AI 取代——因为 AI 把"知识获取 + 中等水平生产"压成接近 0 成本。</li>
+    <li>闭环但不公开的人：被时代忽略——你的认知再好，世界不知道。</li>
+    <li>闭环且公开的人：复利累加——每一次输出都在喂养下一次输入。</li>
+  </ul>
+  <p>丹尼尔·平克在《驱动力》<a href="https://siwei-zhishang.wwei.ai/#bib-pink" class="cite">[50]</a> 里论证：21 世纪的核心动机不再是金钱与惩罚，而是<strong>自主、专精、目的</strong>——这三件事，恰好是闭环的三种燃料。<strong>没有它们，金字塔立得起来，但转不起来</strong>。</p>
+
+  <div class="fig-wrap" style="max-width:620px">
+    <svg class="fig-svg" viewBox="0 0 620 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="完整模型：金字塔结构 + 闭环动力">
+      <!-- Outer orbit ellipse -->
+      <ellipse cx="310" cy="290" rx="270" ry="230" fill="none" stroke="#00B277" stroke-width="1.4" stroke-dasharray="3 7" opacity="0.6"></ellipse>
+
+      <!-- Inner pyramid (compressed 5-layer) -->
+      <polygon points="310,200 350,275 270,275" fill="#00B277"></polygon>
+      <text x="310" y="248" text-anchor="middle" class="fig-label-w" font-size="11">愿景</text>
+
+      <polygon points="270,275 350,275 372,316 248,316" fill="#1E8E63"></polygon>
+      <text x="310" y="301" text-anchor="middle" class="fig-label-w" font-size="11">思维</text>
+
+      <polygon points="248,316 372,316 394,357 226,357" fill="#3A6B53"></polygon>
+      <text x="310" y="342" text-anchor="middle" class="fig-label-w" font-size="11">方法论</text>
+
+      <polygon points="226,357 394,357 416,398 204,398" fill="#52524A"></polygon>
+      <text x="310" y="383" text-anchor="middle" class="fig-label-w" font-size="11">方法</text>
+
+      <polygon points="204,398 416,398 438,439 182,439" fill="#7B7770"></polygon>
+      <text x="310" y="424" text-anchor="middle" class="fig-label-w" font-size="11">工具</text>
+
+      <!-- Three orbit stations -->
+      <!-- Top: 输入 / 好奇心 -->
+      <circle cx="310" cy="60" r="42" fill="#FAF7F0" stroke="#00B277" stroke-width="2"></circle>
+      <text x="310" y="56" text-anchor="middle" class="fig-label" fill="#00B277" font-size="13">输 入</text>
+      <text x="310" y="74" text-anchor="middle" class="fig-sub">好 奇 心</text>
+
+      <!-- Bottom-right: 消化 / 认知 -->
+      <circle cx="540" cy="400" r="42" fill="#FAF7F0" stroke="#00B277" stroke-width="2"></circle>
+      <text x="540" y="396" text-anchor="middle" class="fig-label" fill="#00B277" font-size="13">消 化</text>
+      <text x="540" y="414" text-anchor="middle" class="fig-sub">认 知 体 系</text>
+
+      <!-- Bottom-left: 输出 / 审查实践 -->
+      <circle cx="80" cy="400" r="42" fill="#FAF7F0" stroke="#00B277" stroke-width="2"></circle>
+      <text x="80" y="396" text-anchor="middle" class="fig-label" fill="#00B277" font-size="13">输 出</text>
+      <text x="80" y="414" text-anchor="middle" class="fig-sub">审 查 实 践</text>
+
+      <!-- Direction arrowheads on orbit (clockwise) -->
+      <!-- between top and bottom-right at ~2 o'clock -->
+      <polygon points="540,165 558,148 565,178" fill="#00B277" transform="rotate(40 552 163)"></polygon>
+      <!-- between bottom-right and bottom-left at ~6 o'clock (right of bottom) -->
+      <polygon points="370,510 350,524 348,496" fill="#00B277"></polygon>
+      <!-- between bottom-left and top at ~10 o'clock -->
+      <polygon points="80,165 62,148 55,178" fill="#00B277" transform="rotate(-40 68 163)"></polygon>
+
+      <!-- Bottom caption inside SVG -->
+      <text x="310" y="494" text-anchor="middle" class="fig-en" fill="#00B277">Pyramid stands · Loop turns</text>
+      <text x="310" y="528" text-anchor="middle" class="fig-sub">— 结 构 + 动 力 —</text>
+    </svg>
+    <div class="fig-cap"><strong>图 5 · 完整模型</strong>　金字塔提供结构，闭环提供动力。结构立得稳，动力转得快——AI 时代真正的能力素养是两者的乘积</div>
+  </div>
+
+  <div class="critique">
+    <p>闭环最大的敌人不是懒惰，是<strong>装专家</strong>。</p>
+    <ul>
+      <li>装专家的人不再敢输入——因为输入意味着承认不懂。</li>
+      <li>装专家的人不再敢公开输出——因为公开意味着接受被纠错。</li>
+      <li>AI 时代加剧了这个陷阱——AI 让你看上去懂得更多，但容易让你<strong>真懂得更少</strong>。</li>
+    </ul>
+    <p>对治的方法是<strong>主动暴露未完成态</strong>——刻意发出"我还不确定"的信号，把"全知者"人设拆掉。</p>
+  </div>
+
+  <div class="takeaway">
+    <h4>给读者的落点</h4>
+    <ol>
+      <li>每周设一个<strong>"AI 审查时刻"</strong>——拿出一段 AI 输出，逐字判断哪里好、哪里塑料、哪里在胡说。审查能力是练出来的，不是天生的。</li>
+      <li>建一个<strong>公开输出阵地</strong>——博客、Newsletter、X、视频，任何一个都行。重点不是关注度，是给自己一个"必须把模糊变清晰"的强制装置。</li>
+      <li>每个月挑一个跨界主题——不为工作、不为目的，<strong>纯粹因为好奇</strong>而学一遍。这是给发动机加油，不是奢侈品。</li>
+    </ol>
+  </div>
+</article>
+
+<!-- EPILOGUE -->
+<section class="epilogue">
+<article class="chapter" id="epilogue" style="opacity: 0; transform: translateY(20px); transition: opacity 0.8s, transform 0.8s;">
+  <div class="chapter-num">E P I L O G U E ・ 结 语</div>
+  <h2 class="chapter-title">金字塔的<em>逆向逻辑</em></h2>
+  <div class="chapter-sub">留给读者的一个问题</div>
+
+  <p>金字塔立起来了，发动机装上了。回到最初的问题——这台机器要往哪里转？</p>
+
+  <p>麦肯锡金字塔原理告诉我们：表达时自上而下，思考时自下而上。</p>
+  <p>但人生与事业要做的事，<strong>恰好相反</strong>——</p>
+
+  <div class="pull">你必须先在最顶层<em>想清楚</em>，<br>再让力量沿着思维、方法论、方法、工具，<br>一层一层向下<em>贯通</em>。</div>
+
+  <p>为什么？因为：</p>
+  <ul>
+    <li>工具会过时；</li>
+    <li>方法会失效；</li>
+    <li>框架会被颠覆；</li>
+    <li>思维会被挑战；</li>
+    <li>但<strong>愿景</strong>，是穿越所有变化的引力源。</li>
+  </ul>
+
+  <p>AI 时代的残酷真相是：工具的民主化让底层趋同，顶层的差距却被指数级放大。这不是 AI 的问题，是人的问题。</p>
+
+  <p>写到这里，我忽然想到德鲁克晚年那个著名的问题——他喜欢在课堂上让中年学生回答它，因为它能照出一个人是否真的活过：</p>
+
+  <blockquote>你想被记住为什么样的人？<cite>彼得·德鲁克<a href="https://siwei-zhishang.wwei.ai/#bib-drucker" class="cite">[10]</a></cite></blockquote>
+
+  <p>这是金字塔最顶层的问题。也是这本书想留给你的问题。</p>
+
+  <p style="margin-top:50px;text-align:center;font-family:var(--latin);font-style:italic;font-size:18px;color:var(--ink-3)">— Wayne&amp;Claude / Shanghai —</p>
+</article>
+</section>
+
+<!-- BIBLIOGRAPHY -->
+<section class="biblio" id="biblio">
+  <h2>参考文献</h2>
+  <p class="biblio-intro">本书引用 45 部经典著作，涵盖经济学、社会学、工商管理与哲学四大领域。年代从亚里士多德到凯文·凯利，跨越两千年。所有引用力求注明原始出处，便于读者回到一手文献。</p>
+
+  <div class="biblio-group">
+    <h3>工 商 管 理 · M A N A G E M E N T</h3>
+    <ol class="biblio-list">
+      <li id="bib-minto"><b>Barbara Minto</b>, <i>The Pyramid Principle: Logic in Writing and Thinking</i>, 1987. 中译《金字塔原理》。</li>
+      <li id="bib-sinek"><b>Simon Sinek</b>, <i>Start With Why: How Great Leaders Inspire Everyone to Take Action</i>, 2009. 中译《从"为什么"开始》。</li>
+      <li id="bib-senge"><b>Peter Senge</b>, <i>The Fifth Discipline: The Art &amp; Practice of The Learning Organization</i>, 1990. 中译《第五项修炼》。</li>
+      <li id="bib-collins"><b>Jim Collins &amp; Jerry Porras</b>, <i>Built to Last: Successful Habits of Visionary Companies</i>, 1994. 中译《基业长青》。</li>
+      <li id="bib-inamori"><b>稻盛和夫</b>，《活法》《干法》, 2004 / 2009. 中信出版社。</li>
+      <li id="bib-argyris"><b>Chris Argyris &amp; Donald Schön</b>, <i>Theory in Practice: Increasing Professional Effectiveness</i>, 1974. (Espoused Theory vs Theory-in-Use)</li>
+      <li id="bib-drucker"><b>Peter F. Drucker</b>, <i>Managing Oneself</i>, Harvard Business Review, 1999. 包含 "What do you want to be remembered for?" 一节。</li>
+      <li id="bib-druckermgmt"><b>Peter F. Drucker</b>, <i>The Practice of Management</i>, 1954. 中译《管理的实践》。</li>
+      <li id="bib-porter"><b>Michael E. Porter</b>, <i>Competitive Strategy: Techniques for Analyzing Industries and Competitors</i>, 1980. 中译《竞争战略》。</li>
+      <li id="bib-blueocean"><b>W. Chan Kim &amp; Renée Mauborgne</b>, <i>Blue Ocean Strategy</i>, 2005. 中译《蓝海战略》。</li>
+      <li id="bib-chasm"><b>Geoffrey A. Moore</b>, <i>Crossing the Chasm</i>, 1991. 中译《跨越鸿沟》。</li>
+      <li id="bib-handy"><b>Charles Handy</b>, <i>The Empty Raincoat / The Age of Paradox</i>, 1994. 第二曲线 (Second Curve) 概念出处。</li>
+      <li id="bib-clay"><b>Clayton M. Christensen</b>, <i>The Innovator's Dilemma</i>, 1997. 中译《创新者的窘境》。</li>
+      <li id="bib-okr"><b>John Doerr</b>, <i>Measure What Matters</i>, 2018. 中译《这就是 OKR》。OKR 起源于英特尔，安迪·葛洛夫所创。</li>
+      <li id="bib-execution"><b>Larry Bossidy &amp; Ram Charan</b>, <i>Execution: The Discipline of Getting Things Done</i>, 2002. 中译《执行》。</li>
+      <li id="bib-five"><b>Patrick Lencioni</b>, <i>The Five Dysfunctions of a Team</i>, 2002. 中译《团队协作的五大障碍》。</li>
+      <li id="bib-lean"><b>Eric Ries</b>, <i>The Lean Startup</i>, 2011. 中译《精益创业》。</li>
+      <li id="bib-ideo"><b>Tim Brown</b>, <i>Change by Design</i>, 2009. 中译《IDEO，设计改变一切》。</li>
+      <li id="bib-deming"><b>W. Edwards Deming</b>, <i>Out of the Crisis</i>, 1986. 中译《转危为安》。PDCA 循环系统化推广者。</li>
+      <li id="bib-toyota"><b>大野耐一</b>，《丰田生产方式》, 1978. 中文版多次再版。5 Whys 出处。</li>
+      <li id="bib-liu"><b>柳传志</b> 等口述 / 联想控股 整理：《复盘 +》《柳传志管理三要素》。</li>
+      <li id="bib-mom"><b>Rob Fitzpatrick</b>, <i>The Mom Test</i>, 2013. 中译《妈妈测试：如何跟客户做用户访谈》。</li>
+      <li id="bib-haier"><b>张瑞敏</b>，海尔"日事日毕，日清日高"管理哲学。</li>
+      <li id="bib-smart"><b>George T. Doran</b>, "There's a S.M.A.R.T. way to write management's goals and objectives," <i>Management Review</i>, Nov 1981.</li>
+    </ol>
+  </div>
+
+  <div class="biblio-group">
+    <h3>经 济 学 · E C O N O M I C S</h3>
+    <ol class="biblio-list">
+      <li id="bib-coase"><b>Ronald H. Coase</b>, <i>The Nature of the Firm</i>, Economica, 1937. 交易成本理论奠基。1991 年诺贝尔经济学奖得主。</li>
+      <li id="bib-hayek"><b>Friedrich A. Hayek</b>, <i>The Use of Knowledge in Society</i>, American Economic Review, 1945. 中译《知识在社会中的运用》。</li>
+      <li id="bib-prospect"><b>Daniel Kahneman &amp; Amos Tversky</b>, <i>Prospect Theory: An Analysis of Decision under Risk</i>, Econometrica, 1979. 前景理论奠基。</li>
+      <li id="bib-solow"><b>Robert M. Solow</b>, <i>Technical Change and the Aggregate Production Function</i>, Review of Economics and Statistics, 1957. 全要素生产率。1987 年诺贝尔经济学奖。</li>
+    </ol>
+  </div>
+
+  <div class="biblio-group">
+    <h3>社 会 学 · S O C I O L O G Y</h3>
+    <ol class="biblio-list">
+      <li id="bib-weber"><b>Max Weber</b>, <i>Die protestantische Ethik und der Geist des Kapitalismus</i>, 1904–1905. 中译《新教伦理与资本主义精神》。</li>
+      <li id="bib-granovetter"><b>Mark S. Granovetter</b>, <i>The Strength of Weak Ties</i>, American Journal of Sociology, 1973.</li>
+      <li id="bib-putnam"><b>Robert D. Putnam</b>, <i>Bowling Alone: The Collapse and Revival of American Community</i>, 2000. 中译《独自打保龄》。</li>
+      <li id="bib-mcluhan"><b>Marshall McLuhan</b>, <i>Understanding Media: The Extensions of Man</i>, 1964. 中译《理解媒介：论人的延伸》。</li>
+      <li id="bib-cialdini"><b>Robert B. Cialdini</b>, <i>Influence: The Psychology of Persuasion</i>, 1984. 中译《影响力》。</li>
+    </ol>
+  </div>
+
+  <div class="biblio-group">
+    <h3>思 维 · 心 理 · 哲 学 · M I N D &amp; P H I L O S O P H Y</h3>
+    <ol class="biblio-list">
+      <li id="bib-nietzsche"><b>Friedrich Nietzsche</b>, <i>Götzen-Dämmerung</i> (Twilight of the Idols), 1889. 名句："He who has a why to live for can bear almost any how."</li>
+      <li id="bib-frankl"><b>Viktor E. Frankl</b>, <i>Man's Search for Meaning</i>, 1946. 中译《活出生命的意义》。</li>
+      <li id="bib-munger"><b>Peter Kaufman (ed.)</b>, <i>Poor Charlie's Almanack</i>, 2005. 中译《穷查理宝典》。多元思维模型与反向思维出处。</li>
+      <li id="bib-kahneman"><b>Daniel Kahneman</b>, <i>Thinking, Fast and Slow</i>, 2011. 中译《思考，快与慢》。</li>
+      <li id="bib-aristotle"><b>Aristotle</b>, <i>Metaphysics</i>, c. 350 BCE. 中译《形而上学》。第一性原理 (First Principles) 概念出处。</li>
+      <li id="bib-musk"><b>Ashlee Vance</b>, <i>Elon Musk: Tesla, SpaceX, and the Quest for a Fantastic Future</i>, 2015. 第一性原理在电池成本上的应用案例。</li>
+      <li id="bib-dweck"><b>Carol S. Dweck</b>, <i>Mindset: The New Psychology of Success</i>, 2006. 中译《终身成长》。</li>
+      <li id="bib-meadows"><b>Donella H. Meadows</b>, <i>Thinking in Systems: A Primer</i>, 2008. 中译《系统之美》。</li>
+      <li id="bib-fisher"><b>Ronald A. Fisher</b>, <i>The Design of Experiments</i>, 1935. 现代实验设计 / A/B 测试方法论奠基。</li>
+      <li id="bib-shallows"><b>Nicholas Carr</b>, <i>The Shallows: What the Internet Is Doing to Our Brains</i>, 2010. 中译《浅薄：互联网如何毒化了我们的大脑》。</li>
+      <li id="bib-aimind"><b>Microsoft Research / Carnegie Mellon</b>, <i>The Impact of Generative AI on Critical Thinking</i> (working papers, 2024–2025). 关于 AI 依赖与元认知下降的若干研究。</li>
+      <li id="bib-kk"><b>Kevin Kelly</b>, <i>The Inevitable: Understanding the 12 Technological Forces That Will Shape Our Future</i>, 2016. 中译《必然》。</li>
+      <li id="bib-einstein"><b>Albert Einstein</b>, letter to Carl Seelig, March 11, 1952. 名句："I have no special talents. I am only passionately curious."</li>
+      <li id="bib-csiks"><b>Mihaly Csikszentmihalyi</b>, <i>Creativity: Flow and the Psychology of Discovery and Invention</i>, 1996. 中译《创造力》。基于对 91 位顶尖创造者的访谈研究。</li>
+      <li id="bib-dewey"><b>John Dewey</b>, <i>Experience and Education</i>, 1938. 中译《经验与教育》。"经验本身不是学习，对经验的反思才是"思想出处。</li>
+      <li id="bib-swyx"><b>Shawn "Swyx" Wang</b>, <i>Learn in Public: The fastest way to learn</i>, 2018. 公开学习方法论的奠基性短文。</li>
+      <li id="bib-pink"><b>Daniel H. Pink</b>, <i>Drive: The Surprising Truth About What Motivates Us</i>, 2009. 中译《驱动力》。提出"自主、专精、目的"三要素。</li>
+    </ol>
+  </div>
+
+  <p style="margin-top:60px;text-align:center;font-family:var(--sans);font-size:12px;color:var(--ink-3);letter-spacing:.1em">凡引用之处力求溯源至原始出处。如发现错漏，欢迎指正——任何一本经典都值得被严谨引用。</p>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p class="sig">Above the Mindset</p>
+  <p>《思维之上》—— AI 时代的元问题</p>
+  <p>Wayne&amp;Claude · 著</p>
+  <p style="margin-top:24px">部署于 <a href="https://wwei.ai/">wwei.ai</a></p>
+  <p style="margin-top:12px;font-size:11px;letter-spacing:.2em">愿景 · 思维 · 方法论 · 方法 · 工具 — 道在术之上</p>
+</footer>
+
+<div class="tooltip" id="tip"></div>
+
+<script>
+// progress bar
+const progress = document.getElementById('progress');
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const scrolled = h.scrollTop / (h.scrollHeight - h.clientHeight);
+  progress.style.width = (scrolled * 100) + '%';
+}, {passive: true});
+
+// pyramid tooltip
+const tip = document.getElementById('tip');
+const layers = document.querySelectorAll('.layer');
+const labels = ['第一章 · 愿景 / 使命 / 价值观','第二章 · 思维','第三章 · 方法论 / 框架','第四章 · 方法','第五章 · 工具 / 技能'];
+layers.forEach((layer, i) => {
+  layer.addEventListener('mouseenter', () => {
+    tip.textContent = labels[i] + ' →';
+    tip.style.opacity = '1';
+  });
+  layer.addEventListener('mousemove', e => {
+    tip.style.left = (e.clientX + 14) + 'px';
+    tip.style.top = (e.clientY - 14) + 'px';
+  });
+  layer.addEventListener('mouseleave', () => { tip.style.opacity = '0'; });
+});
+
+// fade-in observer
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+    }
+  });
+}, {threshold: 0.1});
+document.querySelectorAll('.chapter, .pyramid-svg, .toc-list a').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity .8s ease, transform .8s ease';
+  io.observe(el);
+});
+</script>
+<script defer="" src="./思维之上 — AI时代的元问题_files/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;73a749ca3ace4b2abd6813f039000869&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+<div id="wwei-auth-widget" style="position: fixed; top: 16px; right: 16px; z-index: 2147483647;"><template shadowrootmode="open"><style>
+      :host { all: initial; }
+      * { box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif; }
+      .wrap { position: relative; }
+      .avatar {
+        width: 36px; height: 36px; border-radius: 50%; padding: 0; cursor: pointer; position: relative;
+        border: 2px solid rgba(255,255,255,0.15); background: #111214; color: #f0f0f2;
+        display: flex; align-items: center; justify-content: center; overflow: hidden;
+        transition: all .2s; box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      }
+      .avatar:hover { transform: scale(1.05); border-color: rgba(255,255,255,0.3); }
+      .avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+      .avatar .fallback { font-weight: 600; font-size: 14px; }
+      .avatar.loading { animation: pulse 1.4s infinite; cursor: default; }
+      @keyframes pulse { 0%,100% { opacity: 0.5; } 50% { opacity: 0.9; } }
+      .dot {
+        position: absolute; bottom: -2px; right: -2px; width: 12px; height: 12px;
+        border-radius: 50%; border: 2px solid #111214;
+      }
+      .login-btn {
+        display: inline-block; padding: 7px 16px; border-radius: 100px;
+        background: rgba(110, 231, 183, 0.95); color: #08090a; font-size: 13px; font-weight: 500;
+        text-decoration: none; transition: all .2s; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        border: 1px solid rgba(110, 231, 183, 0.3);
+      }
+      .login-btn:hover { background: #6ee7b7; transform: translateY(-1px); }
+      .dropdown {
+        position: absolute; top: 44px; right: 0; min-width: 260px;
+        background: #111214; border: 1px solid #1e2024; border-radius: 12px;
+        padding: 16px; opacity: 0; transform: translateY(-6px) scale(0.96);
+        pointer-events: none; transition: all .18s cubic-bezier(.4,0,.2,1);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.4); color: #f0f0f2;
+      }
+      .dropdown.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+      .dropdown-head { display: flex; gap: 12px; align-items: center; }
+      .dropdown-avatar { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; flex-shrink: 0; background: #1e2024; display: flex; align-items: center; justify-content: center; }
+      .dropdown-avatar img { width: 100%; height: 100%; object-fit: cover; }
+      .dropdown-info { flex: 1; min-width: 0; }
+      .dropdown-name { font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .dropdown-email { font-size: 11px; color: #a0a3ab; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .dropdown-level {
+        display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px;
+        font-size: 10px; font-weight: 600; letter-spacing: 0.05em;
+        border: 1px solid;
+      }
+      .dropdown-divider { height: 1px; background: #1e2024; margin: 14px 0; }
+      .dropdown-item {
+        display: block; padding: 8px 12px; font-size: 13px; color: #f0f0f2;
+        text-decoration: none; border-radius: 6px; transition: background .15s;
+      }
+      .dropdown-item:hover { background: #1e2024; }
+    </style>
+        <div class="wrap">
+          <button class="avatar" id="avatar" aria-label="user menu" title="yiyixiao920@gmail.com · ADMIN">
+            <img src="https://lh3.googleusercontent.com/a/ACg8ocKu-yjD3iu0mgzG7jWbJHAxSpl7HBx0GqADxeh6y8jMFDEhpA=s96-c" referrerpolicy="no-referrer" alt="">
+            <span class="dot" style="background:#f87171" title="ADMIN"></span>
+          </button>
+          <div class="dropdown" id="dropdown">
+            <div class="dropdown-head">
+              <div class="dropdown-avatar"><img src="https://lh3.googleusercontent.com/a/ACg8ocKu-yjD3iu0mgzG7jWbJHAxSpl7HBx0GqADxeh6y8jMFDEhpA=s96-c" referrerpolicy="no-referrer" alt=""></div>
+              <div class="dropdown-info">
+                <div class="dropdown-name">姚伊笑</div>
+                <div class="dropdown-email">yiyixiao920@gmail.com</div>
+                <div class="dropdown-level" style="color:#f87171;border-color:#f8717140">ADMIN</div>
+              </div>
+            </div>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="https://admin.wwei.ai/">管理后台 →</a>
+            <a class="dropdown-item" href="https://auth.wwei.ai/logout?next=https%3A%2F%2Fsiwei-zhishang.wwei.ai%2F">退出登录</a>
+          </div>
+        </div>
+      </template></div><div id="cubox-react-root"><template shadowrootmode="open"><link rel="stylesheet" href="chrome-extension://bflmgpechpeohjfomgfdkkfcbhfcjohl/css/content.css"><div><div style="z-index: 2147483647;"></div></div></template></div><a id="colorPickerDivHidden"><img src="chrome-extension://njolgcnddhepjpplfifbmagdgkidikpj/logo.png" data-cubox-image-id="ae8686952839c0b69466b05216a82003" data-cubox-image-index="0" data-cubox-image-load="false"></a></body><plasmo-csui id="aitdk-csui"><template shadowrootmode="open"><style>*,:before,:after{box-sizing:border-box;border:0 solid #e5e7eb}:before,:after{--tw-content:""}html{-webkit-text-size-adjust:100%;tab-size:4;font-feature-settings:normal;font-variation-settings:normal;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}body{line-height:inherit;margin:0}hr{color:inherit;border-top-width:1px;height:0}abbr:where([title]){text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em}small{font-size:80%}sub,sup{vertical-align:baseline;font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-feature-settings:inherit;font-variation-settings:inherit;font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,[type=button],[type=reset],[type=submit]{-webkit-appearance:button;background-color:#0000;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button{height:auto}::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dl,dd,h1,h2,h3,h4,h5,h6,hr,figure,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}ol,ul,menu{margin:0;padding:0;list-style:none}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}button,[role=button]{cursor:pointer}:disabled{cursor:default}img,svg,video,canvas,audio,iframe,embed,object{vertical-align:middle;display:block}img,video{max-width:100%;height:auto}[hidden]{display:none}:host,:root{--background:0 0% 100%;--foreground:224 71.4% 4.1%;--card:0 0% 100%;--card-foreground:224 71.4% 4.1%;--popover:0 0% 100%;--popover-foreground:224 71.4% 4.1%;--primary:262.1 83.3% 57.8%;--primary-foreground:210 20% 98%;--secondary:220 14.3% 95.9%;--secondary-foreground:220.9 39.3% 11%;--muted:220 14.3% 95.9%;--muted-foreground:220 8.9% 46.1%;--accent:220 14.3% 95.9%;--accent-foreground:220.9 39.3% 11%;--destructive:0 84.2% 60.2%;--destructive-foreground:210 20% 98%;--border:220 13% 91%;--input:220 13% 91%;--ring:262.1 83.3% 57.8%;--radius:4.2px;z-index:2147483647}.dark{--background:224 71.4% 4.1%;--foreground:210 20% 98%;--card:224 71.4% 4.1%;--card-foreground:210 20% 98%;--popover:224 71.4% 4.1%;--popover-foreground:210 20% 98%;--primary:263.4 70% 50.4%;--primary-foreground:210 20% 98%;--secondary:215 27.9% 16.9%;--secondary-foreground:210 20% 98%;--muted:215 27.9% 16.9%;--muted-foreground:217.9 10.6% 64.9%;--accent:215 27.9% 16.9%;--accent-foreground:210 20% 98%;--destructive:0 62.8% 30.6%;--destructive-foreground:210 20% 98%;--border:215 27.9% 16.9%;--input:215 27.9% 16.9%;--ring:263.4 70% 50.4%}*{border-color:hsl(var(--border))}html{font-size:14px}body{background-color:hsl(var(--background));color:hsl(var(--foreground));font-feature-settings:"rlig" 1,"calt" 1;font-size:14px}*,:before,:after,::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:#3b82f680;--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }.container{width:100%;margin-left:auto;margin-right:auto;padding-left:28px;padding-right:28px}@media (width>=1400px){.container{max-width:1400px}}.visible{visibility:visible}.invisible{visibility:hidden}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.bottom-0{bottom:0}.left-1\/2{left:50%}.right-0{right:0}.right-2{right:7px}.top-0{top:0}.top-1\/2{top:50%}.top-2{top:7px}.-z-\[1\]{z-index:-1}.z-\[1\]{z-index:1}.z-\[2147483647\]{z-index:2147483647}.mx-auto{margin-left:auto;margin-right:auto}.-ml-\[13px\]{margin-left:-13px}.-mt-\[13px\]{margin-top:-13px}.mt-3{margin-top:10.5px}.mt-5{margin-top:17.5px}.block{display:block}.flex{display:flex}.hidden{display:none}.h-full{height:100%}.w-\[420px\]{width:420px}.w-\[520px\]{width:520px}.w-full{width:100%}@keyframes spin{to{transform:rotate(360deg)}}.animate-spin{animation:1s linear infinite spin}.cursor-pointer{cursor:pointer}.items-center{align-items:center}.justify-center{justify-content:center}.gap-x-2{column-gap:7px}.rounded{border-radius:3.5px}.bg-\[\#635bff\]{--tw-bg-opacity:1;background-color:rgb(99 91 255/var(--tw-bg-opacity))}.bg-\[\#635bff\]\/10{background-color:#635bff1a}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity))}.p-1{padding:3.5px}.p-6{padding:21px}.px-4{padding-left:14px;padding-right:14px}.py-2{padding-top:7px;padding-bottom:7px}.py-2\.5{padding-top:8.75px;padding-bottom:8.75px}.text-\[14px\]{font-size:14px}.text-xl{font-size:17.5px;line-height:24.5px}.font-medium{font-weight:500}.leading-6{line-height:21px}.text-black{--tw-text-opacity:1;color:rgb(0 0 0/var(--tw-text-opacity))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175/var(--tw-text-opacity))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128/var(--tw-text-opacity))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55/var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity))}.shadow-2xl{--tw-shadow:0 25px 50px -12px #00000040;--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.outline{outline-style:solid}.filter{filter:var(--tw-blur)var(--tw-brightness)var(--tw-contrast)var(--tw-grayscale)var(--tw-hue-rotate)var(--tw-invert)var(--tw-saturate)var(--tw-sepia)var(--tw-drop-shadow)}.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-duration:.15s;transition-timing-function:cubic-bezier(.4,0,.2,1)}@keyframes enter{0%{opacity:var(--tw-enter-opacity,1);transform:translate3d(var(--tw-enter-translate-x,0),var(--tw-enter-translate-y,0),0)scale3d(var(--tw-enter-scale,1),var(--tw-enter-scale,1),var(--tw-enter-scale,1))rotate(var(--tw-enter-rotate,0))}}@keyframes exit{to{opacity:var(--tw-exit-opacity,1);transform:translate3d(var(--tw-exit-translate-x,0),var(--tw-exit-translate-y,0),0)scale3d(var(--tw-exit-scale,1),var(--tw-exit-scale,1),var(--tw-exit-scale,1))rotate(var(--tw-exit-rotate,0))}}.hover\:bg-\[\#635bff\]\/90:hover{background-color:#635bffe6}</style><div id="plasmo-shadow-container" style="z-index: 2147483647; position: relative;"><div id="plasmo-inline" class="plasmo-csui-container" style="display: flex; position: relative; top: 0px; left: 0px;"><div class="aitdk-extension shadow-2xl flex fixed w-[520px] top-0 right-0 bottom-0 bg-white hidden"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x absolute right-2 top-2 z-[1] p-1 cursor-pointer text-gray-500"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-loader-circle animate-spin text-gray-400 absolute top-1/2 left-1/2 -ml-[13px] -mt-[13px] -z-[1]"><path d="M21 12a9 9 0 1 1-6.219-8.56"></path></svg></div></div></div></template></plasmo-csui><div id="immersive-translate-browser-popup" style="all: initial"><template shadowrootmode="open"><style>/** 基础色阶定义 **/
+:root,
+#mount[data-theme="light"],
+#mount:not([data-theme="dark"]) {
+  /* 中性灰阶（light） */
+  --c-00: #000000;
+  --c-22: #222222;
+  --c-33: #333333;
+  --c-66: #666666;
+  --c-83: #838383;
+  --c-99: #999999;
+  --c-c7: #c7c7c7;
+  --c-cc: #cccccc;
+  --c-e6: #e6e6e6;
+  --c-f5: #f5f5f5;
+  --c-ff: #ffffff;
+  /* 品牌主色阶（light） */
+  --p-main: #ea4c89;
+  --p-hover: #ec5e95;
+  --p-active: #e34a85;
+  --p-special: #ee71a2;
+  --p-disabled: #f4a5c4;
+  --p-text-disabled: #f9c9dc;
+  --p-weak: #fdedf3;
+  /* Surface 层级（light，TC 填充-1） */
+  --s-1: #f3f5f6;
+  --s-1-hover: #f6f8f9;
+  --s-1-active: #edf1f2;
+  --s-1-weak: #fafbfb;
+  /* 输入/边框（light，TC 填充-2） */
+  --input-bg-base: #fafbfc;
+  --input-border: #ecf0f7;
+  --input-border-strong: #e0e0e6;
+  --input-bg-strong: #fafdff;
+}
+
+:root[data-theme="dark"],
+[data-theme="dark"] {
+  /* 中性灰阶（dark） */
+  --c-00: #ffffff;
+  --c-22: #dbdbdb;
+  --c-33: #dbdbdb;
+  --c-66: #b3b3b3;
+  --c-83: #838383;
+  --c-99: #707070;
+  --c-c7: #666666;
+  --c-cc: #5c5c5c;
+  --c-e6: #3b3b3b;
+  --c-f5: #262626;
+  --c-ff: #222222;
+  /* 品牌主色阶（dark） */
+  --p-main: #e23c7c;
+  --p-hover: #ea4c89;
+  --p-active: #d5467d;
+  --p-special: #a93a65;
+  --p-disabled: #7e2f4d;
+  --p-text-disabled: #522335;
+  --p-weak: #26171d;
+  /* Surface 层级（dark，TC 填充-1） */
+  --s-1: #2d2e2f;
+  --s-1-hover: #323434;
+  --s-1-active: #202121;
+  --s-1-weak: #262627;
+  /* 输入/边框（dark，TC 填充-2） */
+  --input-bg-base: #2b2d30;
+  --input-border: #3e434b;
+  --input-border-strong: #43474b;
+  --input-bg-strong: #1f2123;
+}
+
+:root,
+#mount [data-theme] {
+  /* 业务/通用变量引用色阶（全局可见，含 Shadow DOM） */
+  --primary: var(--p-main);
+  --primary-hover: var(--p-hover);
+  --primary-inverse: #fff;
+  --modal-background: var(--s-1);
+  --modal-border: var(--input-border);
+  --modal-text: var(--c-22);
+  --modal-text-secondary: var(--c-66);
+  --modal-error: var(--p-main);
+  --modal-required: #f53f3f;
+  --modal-success: #68cd52;
+  --modal-button-background: var(--p-main);
+  --modal-button-text: var(--c-ff);
+  --modal-input-background: var(--input-bg-base);
+  --modal-check-color: var(--p-main);
+  --background-color: var(--c-ff);
+  --background-light-green: var(--s-1-weak, #f5f7f9);
+  --text-black-2: var(--c-22);
+  --text-gray-2: var(--c-22);
+  --text-gray-6: var(--c-66);
+  --text-gray-9: var(--c-99);
+  --text-gray-c2: var(--c-c7);
+  --switch-background-color: var(--c-c7, hsl(205deg, 16%, 77%));
+  --float-ball-more-button-border-color: var(--c-f5, #f6f6f6);
+  --float-ball-more-button-background-color: var(--c-ff);
+  --float-ball-more-button-hover-color: var(--p-weak);
+  --float-ball-more-button-svg-color: #6c6f73;
+  --service-bg-hover: var(--s-1-hover, #f7faff);
+  --service-bg: var(--s-1-weak, #fafbfb);
+}
+
+#mount {
+  --font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
+    "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  /* PC/H5 兼容的字号、间距、圆角、阴影变量 */
+  --f-12: 12px;
+  --f-14: 14px;
+  --f-15: 15px;
+  --f-16: 16px;
+  --f-18: 18px;
+  --f-20: 20px;
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-18: 18px;
+  --space-24: 24px;
+  --radius-8: 8px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --control-height-lg: 44px;
+  --width-28: 28px;
+  --width-24: 24px;
+  --width-20: 20px;
+  --width-18: 18px;
+  --width-16: 16px;
+  --width-label-md: 56px;
+  --shadow-lg: 0 18px 48px rgba(0, 0, 0, 0.12);
+
+  /* 常规变量 */
+  --line-height: 1.5;
+  --font-weight: 400;
+  --font-size: 16px;
+  --border-radius: 4px;
+  --border-width: 2px;
+  --outline-width: 3px;
+  --spacing: 16px;
+  --typography-spacing-vertical: 24px;
+  --block-spacing-vertical: calc(var(--spacing) * 2);
+  --block-spacing-horizontal: var(--spacing);
+  --grid-spacing-vertical: 0;
+  --grid-spacing-horizontal: var(--spacing);
+  --form-element-spacing-vertical: 12px;
+  --form-element-spacing-horizontal: 16px;
+  --nav-element-spacing-vertical: 16px;
+  --nav-element-spacing-horizontal: 8px;
+  --nav-link-spacing-vertical: 8px;
+  --nav-link-spacing-horizontal: 8px;
+  --form-label-font-weight: var(--font-weight);
+  --transition: 0.2s ease-in-out;
+  --modal-overlay-backdrop-filter: blur(4px);
+  --switch-color: var(--primary-inverse);
+  --switch-checked-background-color: var(--primary);
+  --icon-xia: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgaWQ9IkZyYW1lIj4KPHBhdGggaWQ9IlZlY3RvciIgZD0iTTguMDAyOTEgOS42Nzk4M0wzLjgzMzM5IDUuNTEyMjFMMy4wMjUzOSA2LjMxOTgzTDguMDAzMjkgMTEuMjk1MUwxMi45NzYyIDYuMzE5ODNMMTIuMTY3OSA1LjUxMjIxTDguMDAyOTEgOS42Nzk4M1oiIGZpbGw9IiM4MzgzODMiLz4KPC9nPgo8L3N2Zz4K");
+  /* 兼容旧变量：主色直接引用品牌主色阶 */
+  --primary: var(--p-main);
+  --primary-hover: var(--p-hover);
+  --primary-inverse: #fff;
+  /* Modal 业务变量引用色阶 */
+  --modal-background: var(--s-1);
+  --modal-border: var(--input-border);
+  --modal-text: var(--c-22);
+  --modal-text-secondary: var(--c-66);
+  --modal-error: var(--p-main);
+  --modal-required: #f53f3f;
+  --modal-success: #68cd52;
+  --modal-button-background: var(--p-main);
+  --modal-button-text: var(--c-ff);
+  --modal-input-background: var(--input-bg-base);
+  --modal-check-color: var(--p-main);
+  --background-color: var(--c-ff);
+  --background-light-green: var(--s-1-weak, #f5f7f9);
+  --text-black-2: var(--c-22);
+  --text-gray-2: var(--c-22);
+  --text-gray-6: var(--c-66);
+  --text-gray-9: var(--c-99);
+  --text-gray-c2: var(--c-c7);
+  --switch-background-color: var(--c-c7, hsl(205deg, 16%, 77%));
+  --float-ball-more-button-border-color: var(--c-f5, #f6f6f6);
+  --float-ball-more-button-background-color: var(--c-ff);
+  --float-ball-more-button-hover-color: var(--p-weak);
+  --float-ball-more-button-svg-color: #6c6f73;
+  --service-bg-hover: var(--s-1-hover, #f7faff);
+  --service-bg: var(--s-1-weak, #fafbfb);
+  line-height: var(--line-height);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+}
+
+@media (max-width: 480px) {
+  :root,
+  #mount {
+    --f-12: 10px;
+    --f-14: 12px;
+    --f-15: 13px;
+    --f-16: 14px;
+    --f-18: 16px;
+    --f-20: 18px;
+    --space-4: 4px;
+    --space-6: 4px;
+    --space-8: 6px;
+    --space-12: 8px;
+    --space-16: 12px;
+    --space-18: 14px;
+    --space-24: 18px;
+    --radius-8: 6px;
+    --radius-12: 10px;
+    --radius-16: 12px;
+    --control-height-lg: 38px;
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.1);
+    --width-28: 24px;
+    --width-24: 20px;
+    --width-20: 16px;
+    --width-18: 14px;
+    --width-16: 12px;
+    --width-label-md: 52px;
+  }
+}
+
+#mount * {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+:where(#mount) a,
+:where(#mount) [role="link"] {
+  --color: var(--primary);
+  --background-color: transparent;
+  outline: none;
+  background-color: var(--background-color);
+  color: var(--color);
+  -webkit-text-decoration: var(--text-decoration);
+  text-decoration: var(--text-decoration);
+  transition: background-color var(--transition), color var(--transition),
+    box-shadow var(--transition), -webkit-text-decoration var(--transition);
+  transition: background-color var(--transition), color var(--transition),
+    text-decoration var(--transition), box-shadow var(--transition);
+  transition: background-color var(--transition), color var(--transition),
+    text-decoration var(--transition), box-shadow var(--transition),
+    -webkit-text-decoration var(--transition);
+}
+:where(#mount) a:is([aria-current], :hover, :active, :focus),
+:where(#mount) [role="link"]:is([aria-current], :hover, :active, :focus) {
+  --color: var(--primary-hover);
+  --text-decoration: underline;
+}
+
+:where(#mount) label {
+  font-size: 13px;
+  line-height: 1.3;
+  color: var(--text-gray-2, #222222);
+}
+
+:where(#mount) button {
+  width: 100%;
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.3;
+  min-height: 44px;
+  border-radius: 12px;
+  padding: 0 14px;
+  border: none;
+  background-color: var(--primary, #ea4c89);
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+:where(#mount) button:hover {
+  background-color: var(--primary-hover, #f082ac);
+}
+
+:where(#mount) button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+:where(#mount) select,
+:where(#mount) input,
+:where(#mount) textarea {
+  font-family: inherit;
+  color: var(--text-gray-2, #222222);
+}
+
+:where(#mount) select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: inherit;
+  color: var(--text-gray-2, inherit);
+  font-size: 13px;
+  line-height: 1.3;
+  outline: none;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--popup-item-background-color, transparent);
+  background-image: var(--icon-xia, none);
+  background-repeat: no-repeat;
+  background-position: center right 12px;
+  background-size: 16px auto;
+  cursor: pointer;
+}
+
+:where(#mount) input[type="checkbox"] {
+  accent-color: var(--primary, #ea4c89);
+}
+
+[type="checkbox"],
+[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 1.25em;
+  height: 1.25em;
+  margin-top: -0.125em;
+  margin-right: 0.375em;
+  margin-left: 0;
+  -webkit-margin-start: 0;
+  margin-inline-start: 0;
+  -webkit-margin-end: 0.375em;
+  margin-inline-end: 0.375em;
+  border-width: var(--border-width);
+  font-size: inherit;
+  vertical-align: middle;
+  cursor: pointer;
+}
+[type="checkbox"]::-ms-check,
+[type="radio"]::-ms-check {
+  display: none;
+}
+[type="checkbox"]:checked,
+[type="checkbox"]:checked:active,
+[type="checkbox"]:checked:focus,
+[type="radio"]:checked,
+[type="radio"]:checked:active,
+[type="radio"]:checked:focus {
+  --background-color: var(--primary);
+  --border-color: var(--primary);
+  background-image: var(--icon-checkbox);
+  background-position: center;
+  background-size: 0.75em auto;
+  background-repeat: no-repeat;
+}
+[type="checkbox"] ~ label,
+[type="radio"] ~ label {
+  display: inline-block;
+  margin-right: 0.375em;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+[type="checkbox"]:indeterminate {
+  --background-color: var(--primary);
+  --border-color: var(--primary);
+  background-image: var(--icon-minus);
+  background-position: center;
+  background-size: 0.75em auto;
+  background-repeat: no-repeat;
+}
+
+[type="radio"] {
+  border-radius: 50%;
+}
+[type="radio"]:checked,
+[type="radio"]:checked:active,
+[type="radio"]:checked:focus {
+  --background-color: var(--primary-inverse);
+  border-width: 0.35em;
+  background-image: none;
+}
+
+:where(#mount) [type="checkbox"][role="switch"] {
+  --background-color: var(--switch-background-color);
+  --border-color: var(--switch-background-color);
+  --color: var(--switch-color);
+  width: 2.25em;
+  height: 1.25em;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 1.25em;
+  background-color: var(--background-color);
+  line-height: 1.25em;
+}
+:where(#mount) [type="checkbox"][role="switch"]:focus {
+  --background-color: var(--switch-background-color);
+  --border-color: var(--switch-background-color);
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked {
+  --background-color: var(--switch-checked-background-color);
+  --border-color: var(--switch-checked-background-color);
+}
+:where(#mount) [type="checkbox"][role="switch"]:before {
+  display: block;
+  width: calc(1.25em - (var(--border-width) * 2));
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--color);
+  content: "";
+  transition: margin 0.1s ease-in-out;
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked {
+  background-image: none;
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked::before {
+  margin-left: calc(1.125em - var(--border-width));
+  -webkit-margin-start: calc(1.125em - var(--border-width));
+  margin-inline-start: calc(1.125em - var(--border-width));
+}
+
+:where(#mount) [type="checkbox"][aria-invalid="false"],
+:where(#mount) [type="checkbox"]:checked[aria-invalid="false"],
+:where(#mount) [type="radio"][aria-invalid="false"],
+:where(#mount) [type="radio"]:checked[aria-invalid="false"],
+:where(#mount) [type="checkbox"][role="switch"][aria-invalid="false"],
+:where(#mount) [type="checkbox"][role="switch"]:checked[aria-invalid="false"] {
+  --border-color: var(--form-element-valid-border-color);
+}
+:where(#mount) [type="checkbox"][aria-invalid="true"],
+:where(#mount) [type="checkbox"]:checked[aria-invalid="true"],
+:where(#mount) [type="radio"][aria-invalid="true"],
+:where(#mount) [type="radio"]:checked[aria-invalid="true"],
+:where(#mount) [type="checkbox"][role="switch"][aria-invalid="true"],
+:where(#mount) [type="checkbox"][role="switch"]:checked[aria-invalid="true"] {
+  --border-color: var(--form-element-invalid-border-color);
+}
+
+.text-black {
+  color: var(--text-black-2);
+}
+
+.text-gray-2 {
+  color: var(--text-gray-2);
+}
+
+.text-gray-6 {
+  color: var(--text-gray-6);
+}
+
+.text-gray-9 {
+  color: var(--text-gray-9);
+}
+
+.text-gray-c2 {
+  color: var(--text-gray-c2);
+}
+
+.pt-4 {
+  padding-top: 16px;
+}
+
+.p-2 {
+  padding: 8px;
+}
+
+.pl-5 {
+  padding-left: 48px;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.pl-2 {
+  padding-left: 8px;
+}
+
+.pl-4 {
+  padding-left: 24px;
+}
+
+.pt-2 {
+  padding-top: 8px;
+}
+
+.pb-2 {
+  padding-bottom: 8px;
+}
+
+.pb-4 {
+  padding-bottom: 16px;
+}
+
+.pb-5 {
+  padding-bottom: 20px;
+}
+
+.pr-5 {
+  padding-right: 48px;
+}
+
+.text-sm {
+  font-size: 13px;
+}
+
+.text-base {
+  font-size: 16px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.mb-0 {
+  margin-bottom: 0px;
+}
+
+.mb-2 {
+  margin-bottom: 8px;
+}
+
+.mb-4 {
+  margin-bottom: 16px;
+}
+
+.mb-3 {
+  margin-bottom: 12px;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.py-2 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.py-2-5 {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mt-2 {
+  margin-top: 8px;
+}
+
+.mt-3 {
+  margin-top: 12px;
+}
+
+.mt-4 {
+  margin-top: 16px;
+}
+
+.mt-5 {
+  margin-top: 20px;
+}
+
+.mt-6 {
+  margin-top: 24px;
+}
+
+.mb-1 {
+  margin-bottom: 4px;
+}
+
+.ml-4 {
+  margin-left: 24px;
+}
+
+.ml-3 {
+  margin-left: 16px;
+}
+
+.ml-2 {
+  margin-left: 8px;
+}
+
+.ml-1 {
+  margin-left: 4px;
+}
+
+.mr-1 {
+  margin-right: 4px;
+}
+
+.mr-2 {
+  margin-right: 8px;
+}
+
+.mr-3 {
+  margin-right: 16px;
+}
+
+.mx-2 {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.pl-3 {
+  padding-left: 12px;
+}
+
+.pr-3 {
+  padding-right: 12px;
+}
+
+.p-3 {
+  padding: 12px;
+}
+
+.px-1 {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.px-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.pt-3 {
+  padding-top: 12px;
+}
+
+.px-6 {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.px-4 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.pt-6 {
+  padding-top: 20px;
+}
+
+.py-3 {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.py-0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.left-auto {
+  left: auto !important;
+}
+
+.max-h-28 {
+  max-height: 112px;
+}
+
+.max-h-30 {
+  max-height: 120px;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
+.text-xs {
+  font-size: 12px;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-3 {
+  flex: 3;
+}
+
+.flex-4 {
+  flex: 4;
+}
+
+.flex-2 {
+  flex: 2;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.max-content {
+  width: max-content;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-baseline {
+  align-items: baseline;
+}
+
+.my-5 {
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+.my-4 {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.my-3 {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.pt-3 {
+  padding-top: 12px;
+}
+
+.px-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.pt-2 {
+  padding-top: 8px;
+}
+
+.px-2 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.pt-1 {
+  padding-top: 4px;
+}
+
+.px-1 {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.pb-2 {
+  padding-bottom: 8px;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.shrink-0 {
+  flex-shrink: 0;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.close {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  background-image: var(--icon-close);
+  background-position: center;
+  background-size: auto 1rem;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  transition: opacity var(--transition);
+}
+
+.padding-two-column {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.muted {
+  color: #999;
+}
+
+.text-label {
+  color: #666;
+}
+
+.display-none {
+  display: none;
+}
+
+/* dark use #18232c */
+@media (prefers-color-scheme: dark) {
+  .text-label {
+    color: #9ca3af;
+  }
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.text-decoration-none:is([aria-current], :hover, :active, :focus),
+[role="link"]:is([aria-current], :hover, :active, :focus) {
+  --text-decoration: none !important;
+  background-color: transparent !important;
+}
+
+.text-overflow-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.max-w-20 {
+  max-width: 180px;
+  white-space: nowrap;
+}
+
+[data-theme="light"],
+#mount:not([data-theme="dark"]) {
+  --popup-footer-background-color: #e8eaeb;
+  --popup-content-background-color: #ffffff;
+  --popup-item-background-color: #f3f5f6;
+  --popup-item-hover-background-color: #eaeced;
+  --popup-trial-pro-background-color: #f9fbfc;
+  --service-select-content-shadow: 0px 2px 12px 0px rgba(75, 76, 77, 0.2);
+  --service-select-border-color: #fafafa;
+  --service-select-selected-background-color: #f3f5f6;
+  --download-app-background: #f3f5f6;
+  --translate-language-background-color: #f3f5f6;
+  --translate-language-icon-color: #666666;
+  --translate-language-text-color: #222222;
+  --translate-language-hover-background-color: #fdedf3;
+  --translate-language-hover-icon-color: #e95d93;
+  --error-bg: #fdedf3;
+  --error-text: #222;
+  --error-link: #ea4c89;
+}
+
+[data-theme="dark"] {
+  --popup-footer-background-color: #0d0d0d;
+  --popup-content-background-color: #191919;
+  --popup-item-background-color: #272727;
+  --popup-item-hover-background-color: #333333;
+  --popup-trial-pro-background-color: #222222;
+  --service-select-content-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.9);
+  --service-select-border-color: #2c2c2c;
+  --service-select-selected-background-color: #333333;
+  --download-app-background: #333;
+  --translate-language-background-color: #2d2e2f;
+  --translate-language-icon-color: #b3b3b3;
+  --translate-language-text-color: #b3b3b3;
+  --translate-language-hover-background-color: #a97b8c;
+  --translate-language-hover-icon-color: rgba(255, 255, 255, 0.9);
+  --error-bg: #26171d;
+  --error-text: #dbdbdb;
+  --error-link: #ea4c89;
+}
+
+#mount {
+  min-width: 268px;
+}
+
+body {
+  padding: 0;
+  margin: 0 auto;
+  min-width: 268px;
+  border-radius: 10px;
+}
+
+.popup-container {
+  font-size: 16px;
+  --font-size: 16px;
+  color: #666;
+  background-color: var(--popup-footer-background-color);
+  width: 316px;
+  min-width: 316px;
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-content {
+  background-color: var(--popup-content-background-color);
+  border-radius: 0px 0px 12px 12px;
+  padding: 16px 20px;
+}
+
+.popup-userscript-three-feature-layout {
+  background-color: var(--popup-footer-background-color);
+  width: 350px;
+  min-width: 350px;
+}
+
+.popup-userscript-three-feature-layout .popup-content {
+  padding-bottom: 20px;
+  border-radius: 0 0 12px 12px;
+}
+
+.popup-userscript-three-feature-layout .popup-footer {
+  border-radius: 0;
+}
+
+.immersive-translate-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  touch-action: none;
+}
+
+.immersive-translate-popup-wrapper {
+  background: var(--background-color);
+  border-radius: 10px;
+  border: 1px solid var(--muted-border-color);
+}
+
+.main-button {
+  font-size: 16px;
+  font-weight: 700;
+  vertical-align: middle;
+  border-radius: 12px;
+  padding: unset;
+  height: 48px;
+  line-height: 48px;
+  flex: 1;
+}
+
+select.translate-service,
+select.min-select {
+  --form-element-spacing-horizontal: 0;
+  margin-bottom: 0px;
+  max-width: unset;
+  flex: 1;
+  overflow: hidden;
+  font-size: 13px;
+  border: none;
+  border-radius: 8px;
+  padding-right: 30px;
+  padding-left: 0px;
+  background-position: center right 12px;
+  background-size: 16px auto;
+  background-image: var(--icon-xia);
+  text-overflow: ellipsis;
+  color: var(--text-gray-2);
+  background-color: transparent;
+  box-shadow: unset !important;
+  cursor: pointer;
+}
+
+select.more {
+  background-position: center right;
+  padding-right: 20px;
+}
+
+select.translate-service {
+  color: var(--text-black-2);
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSI4IiB2aWV3Qm94PSIwIDAgOCA4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIG9wYWNpdHk9IjAuOCI+PHBhdGggZD0iTTMuNDc5NzMgNi4zODY0M0wwLjcyOTI5NyAzLjMyMjE2QzAuNjE2ODggMy4xOTY5NCAwLjU1NDY5NSAzLjAzNDU5IDAuNTU0Njg4IDIuODY2M0MwLjU1NDY4OCAyLjQ4OTI0IDAuODYwNTQ3IDIuMTgzNTkgMS4yMzc4NCAyLjE4MzU5SDYuNzM4NzFDNi45MDcwNyAyLjE4MzU4IDcuMDY5NTEgMi4yNDU3MiA3LjE5NDg4IDIuMzU4MDlDNy40NzU3NCAyLjYwOTg2IDcuNDk5MTkgMy4wNDE0OCA3LjI0NzI2IDMuMzIyMTZMNC40OTY4MiA2LjM4NjQ0QzQuNDgwMzIgNi40MDQ4MiA0LjQ2MjgzIDYuNDIyMjkgNC40NDQ0NCA2LjQzODc4QzQuMTYzNTggNi42OTA1NSAzLjczMTY2IDYuNjY3MTEgMy40Nzk3MyA2LjM4NjQzWiIgZmlsbD0iIzk5OTk5OSIvPjwvZz48L3N2Zz4K");
+  background-size: 8px auto;
+}
+
+.min-select-container.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.popup-footer {
+  background-color: var(--popup-footer-background-color);
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+/* Footer 三栏布局样式 */
+.footer-link-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  min-width: 72px;
+}
+
+.footer-icon-btn {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-icon-btn svg {
+  color: #999999;
+}
+
+[data-theme="dark"] .footer-icon-btn svg {
+  color: #707070;
+}
+
+.footer-link-text {
+  font-size: 12px;
+  line-height: 18px;
+  color: #666666;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .footer-link-text {
+  color: #b3b3b3;
+}
+
+.footer-link-btn-right {
+  justify-content: flex-end;
+}
+
+.footer-center-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #999999;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.footer-center-text.is-overflowing {
+  justify-content: flex-start;
+}
+
+.footer-center-text.is-overflowing .footer-center-content {
+  animation: footer-scroll-text 12s linear infinite;
+}
+
+@keyframes footer-scroll-text {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.footer-center-content {
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-scroll-gap {
+  display: inline-block;
+  width: 80px;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .footer-center-text {
+  color: #707070;
+}
+
+.footer-text-content {
+  display: inline-block;
+}
+
+.footer-privacy-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-version-inline-text {
+  font-size: 12px;
+  color: #999999;
+  line-height: 1;
+  border-bottom: 1px solid transparent;
+}
+
+[data-theme="dark"] .footer-version-inline-text {
+  color: #707070;
+}
+
+.footer-version-inline-text:hover {
+  border-bottom-color: #999999;
+}
+
+[data-theme="dark"] .footer-version-inline-text:hover {
+  border-bottom-color: #707070;
+}
+
+.translate-language-row {
+  gap: 4px;
+}
+
+.translate-language-exchange {
+  width: 36px;
+  height: 48px;
+  background-color: var(--translate-language-background-color);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--translate-language-icon-color);
+  flex-shrink: 0;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.translate-language-exchange:hover {
+  color: var(--translate-language-hover-icon-color);
+}
+
+.translate-language-exchange-active {
+  background-color: var(--translate-language-hover-background-color);
+  color: var(--translate-language-hover-icon-color);
+}
+
+.translate-language-exchange-active:hover {
+  background-color: var(--translate-language-hover-background-color);
+  color: var(--translate-language-hover-icon-color);
+}
+
+.translate-language-arrow {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+}
+
+.translation-service-container {
+  background-color: var(--popup-item-background-color);
+  border-radius: 12px;
+}
+
+.translation-service-primary-field {
+  position: relative;
+}
+
+.translation-service-guide-hitbox {
+  position: absolute;
+  right: 46px;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: auto;
+}
+
+.min-select-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 44px;
+  background-color: var(--popup-item-background-color);
+  padding-left: 16px;
+}
+
+.min-select-container:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.min-select-container:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.min-select-container:only-child {
+  border-radius: 10px;
+}
+
+.popup-ai-context-label {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+  min-width: 60px;
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+.popup-ai-context-switch {
+  align-self: center;
+  margin: 0;
+  margin-inline-end: 12px;
+}
+
+.translate-mode {
+  width: 36px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: var(--translate-language-background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  color: var(--translate-language-text-color);
+  margin-right: 8px;
+}
+
+/* 快捷操作设置标题栏 */
+.widgets-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 4px;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.widgets-header-title {
+  color: #999999;
+}
+
+.widgets-header-action {
+  color: #999999;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.widgets-header-action:hover {
+  color: #666666;
+}
+
+.widgets-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+  gap: 8px;
+}
+
+.popup-userscript-three-feature-layout .widgets-container-compact-monkey {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 12px;
+}
+
+.widgets-container.widgets-single-item {
+  grid-template-columns: minmax(0, 1fr);
+  margin-top: 12px;
+}
+
+.widgets-container.widgets-single-item .widget-item {
+  max-width: none;
+}
+
+/* 当只有两个小组件时的样式优化 */
+.widgets-container.widgets-two-items {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.widgets-container.widgets-two-items .widget-item {
+  max-width: none;
+}
+
+.widget-item {
+  display: flex;
+  width: 100%;
+  min-height: 44px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 1px solid #eef0f2;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  padding: 0 14px;
+  text-align: left;
+  gap: 6px;
+}
+
+.widget-item.widget-item-single {
+  flex: 1 1 auto;
+  flex-direction: row;
+  justify-content: center;
+  border: 1px solid #eef0f2;
+  border-radius: 16px;
+  padding: 0 14px;
+  background: transparent;
+}
+
+.popup-userscript-three-feature-layout .widget-item-compact {
+  min-height: 60px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  padding: 8px 12px;
+}
+
+.widget-item svg {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+}
+
+.widget-icon-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--c-66, #666666);
+  font-size: 14px;
+  line-height: 21px;
+  text-align: left;
+  word-break: keep-all;
+}
+
+.popup-userscript-three-feature-layout .widget-item-compact .widget-icon-text {
+  white-space: nowrap;
+  overflow: visible;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.widget-item.widget-item-single .widget-icon-text {
+  white-space: nowrap;
+  text-align: left;
+  color: var(--c-66, #666666);
+}
+
+[data-theme="dark"] .widget-item,
+[data-theme="dark"] .widget-item.widget-item-single {
+  border-color: #2e2e2e;
+}
+
+[data-theme="dark"] .widget-icon-text,
+[data-theme="dark"] .widget-item.widget-item-single .widget-icon-text {
+  color: var(--c-66, #666666);
+}
+
+[data-theme="dark"] .more-settings-icon {
+  fill: #191919;
+}
+
+.share-button-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 2px 3px 0 8px;
+}
+
+.share-button-container svg {
+  fill: var(--text-gray-9);
+}
+
+.min-select-container:hover,
+.widget-item:hover {
+  background-color: var(--popup-item-hover-background-color);
+}
+
+.main-button:hover {
+  background-color: #f5508f;
+}
+
+.share-button-container:hover {
+  background-color: var(--popup-item-background-color);
+  border-radius: 6px;
+}
+
+.error-boundary {
+  background: #fff2f0;
+  border: 1px solid #ffccc7;
+  display: flex;
+  padding: 12px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.88);
+  word-break: break-all;
+  margin: 12px;
+  border-radius: 12px;
+  flex-direction: column;
+}
+
+.upgrade-pro {
+  border-radius: 11px;
+  background: linear-gradient(57deg, #272727 19.8%, #696969 82.2%);
+  padding: 2px 8px;
+  transform: scale(0.85);
+}
+
+.upgrade-pro span {
+  background: linear-gradient(180deg, #ffeab4 17.65%, #f8c235 85.29%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+.upgrade-pro svg {
+  margin-top: -2px;
+}
+
+.upgrade-pro:hover {
+  background: linear-gradient(57deg, #3d3d3d 19.8%, #949494 82.2%);
+}
+
+.border-bottom-radius-0 {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.trial-pro-container {
+  border-radius: 0px 0px 12px 12px;
+  background: var(--popup-trial-pro-background-color);
+  display: flex;
+  align-items: center;
+  height: 44px;
+  padding-left: 16px;
+  padding-right: 12px;
+  font-size: 12px;
+}
+
+.trial-pro-container label {
+  line-height: 13px;
+  color: var(--text-black-2);
+}
+
+.trial-pro-container img {
+  margin-left: 5px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.upgrade-pro-discount-act {
+  height: 25px;
+  display: flex;
+  padding: 0 4px;
+  align-items: center;
+  border-radius: 15px;
+  background: linear-gradient(
+    90deg,
+    #cefbfa 11.33%,
+    #d7f56f 63.75%,
+    #fccd5e 100%
+  );
+  transform: scale(0.9);
+  box-shadow: 0px 1.8px 3.6px 0px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.upgrade-pro-discount-act span {
+  font-size: 12px;
+  font-weight: 700;
+  margin-left: 4px;
+  color: #222222;
+}
+
+.upgrade-pro-discount-act:hover {
+  text-decoration: unset;
+  background: linear-gradient(
+    90deg,
+    #e2fffe 11.33%,
+    #e6ff91 63.75%,
+    #ffdf93 100%
+  );
+}
+
+.custom-select-container {
+  width: 200px;
+  position: relative;
+  flex: 1;
+}
+
+#translation-service-select {
+  padding-right: 12px;
+}
+
+.custom-select-content {
+  border-radius: 12px;
+  background: var(--popup-content-background-color);
+  box-shadow: var(--service-select-content-shadow);
+  border: 1px solid var(--service-select-border-color);
+  padding: 8px;
+  position: absolute;
+  left: -68px;
+  right: 0;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.custom-select-item.default {
+  width: 100%;
+  padding: 0;
+}
+
+.custom-select-item {
+  font-size: 14px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--text-black-2);
+  width: auto;
+  overflow: hidden;
+  height: 30px;
+  line-height: 30px;
+}
+
+.custom-select-item-img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .custom-select-item-img {
+    margin-right: 6px;
+  }
+}
+
+.custom-select-content .custom-select-item.selected,
+.custom-select-content .custom-select-item:hover {
+  background: var(--service-select-selected-background-color);
+}
+
+.custom-select-item > span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.custom-select-item-pro {
+  font-size: 12px;
+  margin-left: 6px;
+  display: flex;
+}
+
+.custom-select-item-pro img {
+  margin: 0 3px;
+  width: 20px;
+  flex-shrink: 0;
+}
+
+.service-select-inline-sponsor-container {
+  width: 50px;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.service-select-inline-sponsor-marquee {
+  min-width: max-content;
+  display: inline-flex;
+  align-items: center;
+  column-gap: 12px;
+  animation: service-select-inline-sponsor-scroll 10s linear infinite;
+}
+
+.service-select-inline-sponsor-track {
+  min-width: max-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+@keyframes service-select-inline-sponsor-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 6px));
+  }
+}
+
+.custom-select-group-header {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-gray-9);
+  padding: 8px 8px 6px;
+  margin-top: 2px;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.custom-select-group-header--recommendation {
+  color: #beb3a0;
+  font-weight: 400;
+  letter-spacing: 0;
+  padding-top: 4px;
+}
+
+.custom-select-group-header-tip {
+  display: inline-flex;
+  align-items: center;
+  color: #bcbcbc;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.more-container {
+  position: relative;
+}
+
+.new-menu-indicator {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #ef3434;
+  border-radius: 50%;
+  right: 18px;
+  top: 4px;
+}
+
+.download-app {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px;
+  background: var(--download-app-background);
+  padding: 4px 8px;
+  color: var(--text-gray-6);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Popup 动画效果 */
+@keyframes popup-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes popup-fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+}
+
+.popup-generic-content {
+  animation: popup-fade-in 0.2s ease-out;
+}
+
+.popup-generic-content.hiding {
+  animation: popup-fade-out 0.15s ease-in;
+}
+
+select.min-select {
+  --form-element-spacing-horizontal: 0;
+  max-width: 128px;
+  overflow: hidden;
+  color: var(--primary);
+  font-size: 13px;
+  border: none;
+  padding: 0;
+  padding-right: 20px;
+  text-overflow: ellipsis;
+  color: var(--color);
+}
+select.min-select-secondary {
+  color: var(--color);
+}
+select.min-select:focus {
+  outline: none;
+  border: none;
+  --box-shadow: none;
+}
+
+select.min-select-left {
+  padding-right: 0px;
+  /* padding-left: 24px; */
+  /* background-position: center left 0; */
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+select.transform-padding-left {
+  padding-left: 12px;
+  transform: translateX(-12px);
+  background-position: center right 0px;
+}
+
+select.text-gray-6 {
+  color: var(--text-gray-6);
+}
+
+/* dark use black, for windows */
+@media (prefers-color-scheme: dark) {
+  select.translate-service option,
+  select.min-select option {
+    background-color: #666666;
+  }
+}
+
+select.min-select-no-arrow {
+  background-image: none;
+  padding-right: 0;
+}
+
+.activity-tips {
+  border-radius: 8px;
+  padding: 0px 8px;
+  height: 26px;
+  background: linear-gradient(
+    83deg,
+    #faccde -0.87%,
+    #fce7ef 43.13%,
+    #fbd6e4 72.08%,
+    #ffb3d1 96.34%
+  );
+  color: #333;
+  cursor: pointer;
+  gap: 4px;
+  font-size: 12px;
+}
+
+.activity-tips-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.countdown-container {
+  min-width: 50px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.01em;
+}
+
+.activity-tips-text {
+  font-weight: 600;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 非会员升级提示 */
+.upgrade-tips {
+  padding: 0px 6px 0px 4px;
+  height: 18px;
+  color: #ea4c89;
+  cursor: pointer;
+  gap: 6px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.upgrade-tips svg:first-child {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  filter: drop-shadow(0px 4px 4px rgba(236, 76, 140, 0.2));
+}
+
+.upgrade-tips-text {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.upgrade-tips-switch {
+  position: relative;
+  width: 30px;
+  height: 18px;
+  border-radius: 24px;
+  background: #cccccc;
+  flex-shrink: 0;
+}
+
+.upgrade-tips-switch-thumb {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+/* 抽屉组件样式 */
+.drawer-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+
+.drawer-overlay.drawer-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.drawer-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ffffff;
+  border-radius: 12px 12px 0 0;
+  z-index: 101;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-visible .drawer-panel {
+  transform: translateY(0);
+}
+
+[data-theme="dark"] .drawer-panel {
+  background: #222222;
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  flex-shrink: 0;
+}
+
+.drawer-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333333;
+}
+
+[data-theme="dark"] .drawer-title {
+  color: #e0e0e0;
+}
+
+.drawer-close {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999999;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.drawer-close:hover {
+  background-color: #f3f5f6;
+}
+
+[data-theme="dark"] .drawer-close:hover {
+  background-color: #333333;
+}
+
+.drawer-body {
+  padding: 16px 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.drawer-body.drawer-body-hover {
+  padding: 0 20px 20px 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.drawer-body.drawer-body-more-settings {
+  padding-top: 0;
+}
+
+.drawer-footer {
+  padding: 12px 20px;
+  border-top: 1px solid #eef0f2;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+[data-theme="dark"] .drawer-footer {
+  border-top: 1px solid #2e2e2e;
+}
+
+.drawer-footer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.drawer-footer-actions-single {
+  justify-content: center;
+}
+
+.drawer-footer-text {
+  font-size: 12px;
+  cursor: pointer;
+  color: #999999;
+  text-decoration: none;
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.drawer-footer-actions-single .drawer-footer-text {
+  flex: 0 1 auto;
+  max-width: 100%;
+}
+
+.drawer-footer-text:hover {
+  text-decoration: underline;
+}
+
+/* 抽屉内容区域样式 */
+.drawer-section {
+  margin-bottom: 16px;
+}
+
+.drawer-section:last-child {
+  margin-bottom: 0;
+}
+
+.drawer-section-highlight {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+[data-theme="dark"] .drawer-section-highlight {
+  background-color: #2a2a2a;
+}
+
+.drawer-section-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #666666;
+  margin-bottom: 12px;
+}
+
+[data-theme="dark"] .drawer-section-title {
+  color: #999999;
+}
+
+.drawer-section-divider {
+  height: 1px;
+  background-color: #eef0f2;
+  margin: 16px 0;
+}
+
+/* ========== 通用抽屉组件样式 ========== */
+.popup-drawer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.popup-drawer-card {
+  background: #f3f5f6;
+  border-radius: 12px;
+  padding: 12px 12px 16px;
+}
+
+[data-theme="dark"] .popup-drawer-card {
+  background: #2a2a2a;
+}
+
+.popup-drawer-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 21px;
+  gap: 12px;
+}
+
+.popup-drawer-card-header input[type="checkbox"][role="switch"] {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.popup-drawer-card-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #222222;
+  line-height: 21px;
+}
+
+[data-theme="dark"] .popup-drawer-card-title {
+  color: #e0e0e0;
+}
+
+.popup-drawer-card-divider {
+  height: 1px;
+  width: calc(100% + 24px);
+  background-color: #ffffff;
+  margin: 12px -12px 16px;
+}
+
+[data-theme="dark"] .popup-drawer-card-divider {
+  background-color: #333333;
+}
+
+.popup-drawer-demo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.popup-drawer-demo-region-fixed {
+  height: 51px;
+  max-height: 51px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-region-min {
+  min-height: 51px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-selection {
+  width: 100%;
+  min-width: 0;
+  flex-wrap: nowrap;
+}
+
+.popup-drawer-demo-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-plus,
+.popup-drawer-demo-equal {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  color: #333333;
+}
+
+[data-theme="dark"] .popup-drawer-demo-plus,
+[data-theme="dark"] .popup-drawer-demo-equal {
+  color: #e0e0e0;
+}
+
+.popup-drawer-demo-logo {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-logo img {
+  width: 28px;
+  height: 28px;
+  display: block;
+  filter: drop-shadow(0 4px 12px rgba(255, 166, 201, 0.5));
+}
+
+.popup-drawer-demo-result {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #333333;
+}
+
+.popup-drawer-demo-result-ellipsis {
+  min-width: 0;
+  max-width: calc(100% - 72px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .popup-drawer-demo-result {
+  color: #e0e0e0;
+}
+
+.popup-drawer-trigger {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.popup-drawer-trigger-label {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #999999;
+  padding-left: 4px;
+}
+
+.popup-drawer-trigger-options {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.popup-drawer-trigger-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #333333;
+  background: #ffffff;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.popup-drawer-trigger-option-disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.popup-drawer-trigger-option:not(.popup-drawer-trigger-option-selected):hover {
+  border-color: #d0d3d6;
+}
+
+.popup-drawer-trigger-option-selected {
+  border: 0.5px solid #ea4c89;
+  background: #fdedf3;
+  box-shadow: 0px 4px 12px rgba(255, 166, 201, 0.5);
+}
+
+[data-theme="dark"] .popup-drawer-trigger-option {
+  background: #1f1f1f;
+  border-color: #333333;
+  color: #e0e0e0;
+}
+
+[data-theme="dark"]
+  .popup-drawer-trigger-option:not(
+    .popup-drawer-trigger-option-selected
+  ):hover {
+  border-color: #444444;
+}
+
+[data-theme="dark"] .popup-drawer-trigger-option-selected {
+  background: rgba(233, 76, 137, 0.2);
+  border-color: #ea4c89;
+  box-shadow: 0 4px 12px 0 rgba(255, 166, 201, 0.3);
+}
+
+.popup-drawer-trigger-option-with-icon {
+  gap: 8px;
+}
+
+/* ========== 通用抽屉演示区域样式 ========== */
+/* 键帽样式 */
+.popup-drawer-demo-keycap {
+  min-width: 72px;
+  padding: 9px;
+  height: auto;
+  box-sizing: border-box;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  color: #ffffff;
+  background:
+    radial-gradient(
+      60px 36px at 85% 100%,
+      rgba(208, 208, 208, 0.2),
+      rgba(255, 255, 255, 0)
+    ),
+    radial-gradient(72px 36px at 50% 0%, #101010 0%, #242424 100%);
+  box-shadow:
+    2px 2px 3.5px rgba(0, 0, 0, 0.4),
+    inset 0.5px 0.7px 0.4px rgba(255, 255, 255, 0.5),
+    inset -0.5px -0.5px 0.2px rgba(0, 0, 0, 0.6);
+}
+
+.popup-drawer-demo-keycap-text {
+  max-width: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 小圆点样式 */
+.popup-drawer-demo-mini-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ea4c89;
+  flex-shrink: 0;
+  align-self: center;
+  box-shadow: 0 4px 12px rgba(255, 166, 201, 0.5);
+}
+
+[data-theme="dark"] .drawer-section-divider {
+  background-color: #333333;
+}
+
+/* 开关行 */
+.drawer-switch-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.drawer-switch-row.drawer-row-border {
+  border-bottom: 1px solid #eef0f2;
+  margin-bottom: 8px;
+  padding-bottom: 12px;
+}
+
+[data-theme="dark"] .drawer-switch-row.drawer-row-border {
+  border-bottom-color: #333333;
+}
+
+.drawer-switch-label {
+  font-size: 14px;
+  color: #222222;
+}
+
+[data-theme="dark"] .drawer-switch-label {
+  color: #e0e0e0;
+}
+
+/* 链接行 */
+.drawer-link-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  cursor: pointer;
+  border-bottom: 1px solid #eef0f2;
+  font-size: 14px;
+  color: #222222;
+}
+
+.drawer-link-row:last-child {
+  border-bottom: none;
+}
+
+[data-theme="dark"] .drawer-link-row {
+  border-bottom-color: #333333;
+  color: #e0e0e0;
+}
+
+.drawer-link-row:hover {
+  color: #ea4c89;
+}
+
+/* 演示区域 */
+.drawer-demo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 0;
+}
+
+.drawer-demo-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+}
+
+[data-theme="dark"] .drawer-demo-icon {
+  background-color: #333333;
+  border-color: #444444;
+}
+
+.drawer-demo-plus,
+.drawer-demo-equal {
+  font-size: 16px;
+  color: #999999;
+}
+
+.drawer-demo-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.drawer-demo-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.drawer-demo-result {
+  font-size: 14px;
+  color: #222222;
+  padding: 8px 12px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+}
+
+[data-theme="dark"] .drawer-demo-result {
+  background-color: #333333;
+  border-color: #444444;
+  color: #e0e0e0;
+}
+
+/* 触发方式选项 */
+.drawer-options {
+  display: flex;
+  gap: 8px;
+}
+
+.drawer-options-wrap {
+  flex-wrap: wrap;
+}
+
+.drawer-option {
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #666666;
+  background-color: #f3f5f6;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+[data-theme="dark"] .drawer-option {
+  background-color: #333333;
+  color: #b3b3b3;
+}
+
+.drawer-option:hover {
+  background-color: #eaeced;
+}
+
+[data-theme="dark"] .drawer-option:hover {
+  background-color: #3a3a3a;
+}
+
+.drawer-option-selected {
+  border-color: #ea4c89;
+  background-color: #fdedf3;
+  color: #ea4c89;
+  box-shadow: 0px 4px 12px rgba(255, 166, 201, 0.5);
+}
+
+[data-theme="dark"] .drawer-option-selected {
+  background-color: rgba(234, 76, 137, 0.2);
+}
+
+.drawer-body.drawer-body-selection {
+  padding: 0 20px 20px 20px;
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+
+/* ========== 更多设置抽屉样式 ========== */
+.more-settings-drawer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.more-settings-quick-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.more-settings-feature-card {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 40px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: #f3f5f6;
+  transition: background-color 0.2s ease;
+}
+
+.more-settings-feature-card:hover {
+  background-color: #e8eaec;
+}
+
+.more-settings-feature-card:active {
+  background-color: #dde0e2;
+}
+
+.more-settings-feature-card-label {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #666666;
+  white-space: nowrap;
+}
+
+.more-settings-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.more-settings-switch-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 21px;
+  gap: 12px;
+}
+
+.more-settings-switch-label {
+  flex: 1;
+  min-width: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #222222;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.more-settings-switch-row input[type="checkbox"] {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+[data-theme="dark"] .more-settings-switch-label {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .more-settings-feature-card {
+  background-color: #2a2a2a;
+}
+
+[data-theme="dark"] .more-settings-feature-card:hover {
+  background-color: #333333;
+}
+
+[data-theme="dark"] .more-settings-feature-card:active {
+  background-color: #3a3a3a;
+}
+
+[data-theme="dark"] .more-settings-feature-card-label {
+  color: #e0e0e0;
+}
+
+/* 动作按钮样式 */
+.more-settings-action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 12px;
+  color: #222222;
+  background-color: #f3f5f6;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.more-settings-action-button:hover {
+  background-color: #e8eaec;
+}
+
+.more-settings-action-button:active {
+  background-color: #dde0e2;
+}
+
+.more-settings-action-button-label {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  color: inherit;
+  text-align: center;
+}
+
+[data-theme="dark"] .more-settings-action-button {
+  color: #e0e0e0;
+  background-color: #2a2a2a;
+}
+
+[data-theme="dark"] .more-settings-action-button:hover {
+  background-color: #333333;
+}
+
+[data-theme="dark"] .more-settings-action-button:active {
+  background-color: #3a3a3a;
+}
+
+[data-theme="dark"] .more-settings-action-button-label {
+  color: #e0e0e0;
+}
+
+/* 错误消息组件样式 */
+.error-message-container {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 16px;
+  margin-top: 6px;
+  margin-bottom: -14px;
+  border: 1px solid #f53f3f;
+  border-radius: 12px;
+  background-color: var(--error-bg);
+}
+
+.error-message-icon-wrapper {
+  width: 21px;
+  height: 21px;
+  min-width: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4px;
+}
+
+.error-message-icon {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #f53f3f;
+}
+
+.error-message-text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: var(--error-text);
+}
+
+.error-message-text a {
+  color: var(--error-link);
+  text-decoration: underline;
+}
+
+.ad-banner-container {
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+
+html {
+  font-size: 17px;
+}
+
+@media print {
+  .imt-fb-container {
+    display: none !important;
+  }
+}
+
+#mount {
+  position: absolute;
+  display: none;
+  min-width: 250px;
+  height: auto;
+  --font-size: 17px;
+  font-size: 17px;
+}
+
+/* float-ball */
+.imt-fb-container {
+  position: fixed;
+  padding: 0;
+  top: 335px;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  display: none;
+  direction: ltr;
+  background-color: transparent !important;
+}
+
+.imt-fb-container:hover .imt-manga-button {
+  opacity: 1;
+}
+
+.imt-fb-container.left {
+  align-items: flex-start;
+  left: 0;
+}
+
+.imt-fb-container.right {
+  align-items: flex-end;
+  right: 0;
+}
+
+.imt-fb-btn {
+  cursor: pointer;
+  background: var(--float-ball-more-button-background-color);
+  height: 36px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+}
+
+.imt-fb-btn.left {
+  border-top-right-radius: 36px;
+  border-bottom-right-radius: 36px;
+  padding-left: 3px;
+}
+
+.imt-fb-btn.right {
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+  padding-right: 3px;
+}
+
+.imt-fb-btn.mini.left {
+  transform: translateX(-22px);
+}
+
+.imt-fb-btn.mini.right {
+  transform: translateX(22px);
+}
+
+.imt-fb-btn.mini.active {
+  transform: translateX(0);
+}
+
+.imt-fb-btn div {
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+.imt-fb-btn .imt-fb-hit-area {
+  position: absolute;
+  top: 0;
+  height: 36px;
+  bottom: -6px;
+  left: -6px;
+  right: -6px;
+  background: transparent;
+}
+
+.imt-fb-btn.mini.right .imt-fb-hit-area {
+  left: -10px;
+}
+
+.imt-fb-btn.mini.left .imt-fb-hit-area {
+  right: -10px;
+}
+
+.imt-fb-btn.left div {
+  border-top-right-radius: 34px;
+  border-bottom-right-radius: 34px;
+  justify-content: flex-end;
+}
+
+.imt-fb-btn.right div {
+  border-top-left-radius: 34px;
+  border-bottom-left-radius: 34px;
+}
+
+.imt-fb-logo-img {
+  width: 20px;
+  height: 20px;
+  margin: 0 10px;
+}
+
+.imt-fb-logo-img-big-bg {
+  width: 28px;
+  height: 28px;
+  margin: 0;
+  background-color: #ed6d8f;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.imt-float-ball-translated {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  bottom: 4px;
+  right: 4px;
+}
+
+.btn-animate {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform ease-out 250ms;
+  transition: -webkit-transform ease-out 250ms;
+  transition: transform ease-out 250ms;
+  transition: transform ease-out 250ms, -webkit-transform ease-out 250ms;
+}
+
+.imt-fb-setting-btn {
+  margin-right: 18px;
+  width: 28px;
+  height: 28px;
+}
+
+.immersive-translate-popup-wrapper {
+  background: var(--background-color);
+  border-radius: 20px;
+  box-shadow: 2px 10px 24px 0px #0e121614;
+  border: none;
+}
+
+.popup-container {
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-content {
+  border-radius: 20px 20px 12px 12px;
+}
+.popup-footer {
+  border-radius: 20px;
+}
+
+.popup-userscript-three-feature-layout {
+  border-radius: 20px;
+}
+
+.popup-userscript-three-feature-layout .popup-content {
+  border-radius: 20px 20px 12px 12px;
+}
+
+.popup-userscript-three-feature-layout .popup-footer {
+  border-radius: 0;
+}
+
+.imt-fb-close-button {
+  cursor: pointer;
+  position: absolute;
+  left: -10px;
+  bottom: -20px;
+}
+.imt-fb-container.left .imt-fb-close-button {
+  left: auto;
+  right: -10px;
+}
+
+.imt-fb-close-content {
+  padding: 22px;
+  width: 320px;
+  pointer-events: all;
+}
+
+.imt-fb-close-title {
+  font-weight: 500;
+  color: var(--text-black-2);
+}
+
+.imt-fb-close-radio-content {
+  background-color: var(--background-light-green);
+  padding: 8px 20px;
+}
+
+.imt-fb-radio-sel,
+.imt-fb-radio-nor {
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.imt-fb-radio-sel {
+  border: 2px solid var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imt-fb-radio-sel div {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: var(--primary);
+}
+
+.imt-fb-radio-nor {
+  border: 2px solid var(--input-border-strong);
+}
+
+.imt-fb-primary-btn {
+  background-color: var(--primary);
+  width: 72px;
+  height: 32px;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 32px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.imt-fb-default-btn {
+  border: 1px solid var(--primary);
+  width: 72px;
+  height: 32px;
+  border-radius: 8px;
+  color: var(--primary);
+  line-height: 32px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.imt-fb-guide-container {
+  width: 312px;
+  transform: translateY(-45%);
+}
+
+.imt-fb-guide-bg {
+  position: absolute;
+  left: 30px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  height: 100%;
+  width: 90%;
+}
+
+.imt-fb-guide-bg.left {
+  transform: scaleX(-1);
+}
+
+.imt-fb-guide-content {
+  margin: 16px -30px 80px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imt-fb-guide-content.left {
+  margin: 16px 21px 60px 32px;
+}
+
+.imt-fb-guide-img {
+  width: 220px;
+  height: 112px;
+}
+
+.imt-fb-guide-message {
+  font-size: 14px;
+  line-height: 28px;
+  color: #333333;
+  white-space: pre-wrap;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.imt-manga-guide-message {
+  font-size: 16px;
+  line-height: 24px;
+  color: #333333;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.imt-fb-guide-button {
+  margin-top: 16px;
+  line-height: 40px;
+  height: 40px;
+  padding: 0 20px;
+  width: unset;
+}
+
+.imt-fb-side {
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: all;
+  position: relative;
+}
+
+.imt-fb-side {
+  margin: 10px 0;
+}
+
+.imt-fb-side::before,
+.imt-manga-button::before,
+.imt-fb-round-button::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  left: 2px;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color 0.15s ease;
+}
+
+.imt-fb-side:hover::before,
+.imt-manga-button:hover::before,
+.imt-fb-round-button:hover::before {
+  background-color: var(--float-ball-more-button-hover-color);
+}
+
+.imt-fb-new-badge {
+  width: 26px;
+  height: 14px;
+  padding: 3px;
+  background-color: #f53f3f;
+  border-radius: 4px;
+  position: absolute;
+  top: -5px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imt-fb-side * {
+  pointer-events: all;
+}
+
+.imt-fb-pin-icon {
+  position: absolute;
+  left: -16px;
+  bottom: -12px;
+  opacity: 0;
+  cursor: pointer;
+}
+.imt-fb-container.left .imt-fb-pin-icon {
+  left: auto;
+  right: -16px;
+}
+
+.imt-fb-side:hover .imt-fb-pin-icon {
+  opacity: 1;
+}
+
+.imt-fb-more-button {
+  width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+/* Sheet.css */
+.immersive-translate-sheet {
+  position: fixed;
+  transform: translateY(100%);
+  /* Start off screen */
+  left: 0;
+  right: 0;
+  background-color: var(--background-color);
+  transition: transform 0.3s ease-out;
+  /* Smooth slide transition */
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+  /* Ensure it's above other content */
+  bottom: 0;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  overflow: hidden;
+}
+
+.immersive-translate-sheet.visible {
+  transform: translateY(0);
+}
+
+.immersive-translate-sheet-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.immersive-translate-sheet-backdrop.visible {
+  opacity: 1;
+}
+
+.popup-container-sheet {
+  max-width: 100vw;
+  width: 100vw;
+}
+
+.imt-no-events svg * {
+  pointer-events: none !important;
+}
+
+.imt-manga-button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: all;
+  margin: 0 0 10px 0;
+  background-color: var(--float-ball-more-button-background-color);
+  border-radius: 50%;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.08);
+  right: 8px;
+}
+
+.imt-manga-feedback {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.imt-fb-round-button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: var(--float-ball-more-button-background-color);
+  border-radius: 50%;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.imt-fb-round-button > svg {
+  z-index: 1;
+}
+
+.imt-fb-upgrade-button {
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.imt-fb-power-user-card {
+  position: absolute;
+  bottom: -130px;
+  width: 266px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 2px 10px 24px 0 rgba(14, 18, 22, 0.08);
+  border: 1px solid rgba(250, 251, 251, 1);
+  pointer-events: all;
+  z-index: 2;
+  background: linear-gradient(172deg, rgba(255, 255, 255, 0.30) 4.36%, #FFF 35.98%), linear-gradient(0deg, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.40) 100%), radial-gradient(39.95% 47.41% at -0.53% 55.22%, #E0C4F7 0%, rgba(224, 196, 247, 0.00) 100%), radial-gradient(56.37% 54.27% at 86.17% 0%, #E0C4F6 0%, rgba(224, 196, 246, 0.00) 100%), radial-gradient(42.04% 37.43% at -0.53% 3.75%, #AED5FF 0%, rgba(174, 213, 255, 0.00) 100%), radial-gradient(66.88% 52.09% at 36.81% 19.55%, #757ED8 0%, #6B6AC0 100%), #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imt-fb-power-user-card.right {
+  right: 60px;
+}
+
+.imt-fb-power-user-card.right::after {
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: 130px;
+  border-width: 10px 0 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent #fff;
+  filter: drop-shadow(2px 0 2px rgba(14, 18, 22, 0.06));
+}
+
+.imt-fb-power-user-card.left {
+  left: 60px;
+}
+
+.imt-fb-power-user-card.left::after {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 130px;
+  border-width: 10px 10px 10px 0;
+  border-style: solid;
+  border-color: transparent #fff transparent transparent;
+  filter: drop-shadow(-2px 0 2px rgba(14, 18, 22, 0.06));
+}
+
+.imt-fb-power-user-card-banner {
+  display: block;
+  width: 128px;
+  height: auto;
+  margin-top: 8px;
+  border-radius: 8px 8px 0 0;
+}
+
+.imt-fb-power-user-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 16px 24px 0;
+  box-sizing: border-box;
+}
+
+.imt-fb-power-user-card-title {
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+}
+
+.imt-fb-power-user-card-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.imt-fb-power-user-card-body {
+  padding: 12px 24px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.imt-fb-power-user-card-desc {
+  color: #333;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+}
+
+.imt-fb-power-user-card-primary {
+  margin-top: 16px;
+  height: 37px;
+  border-radius: 8px;
+  background: linear-gradient(110deg, #F497BC 17.37%, #EC4C8C 89.68%);
+  color: var(--ZX-FFFFFF, #FFF);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px; /* 150% */
+  display: flex;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  flex: 1 0 0;
+}
+
+.imt-manga-translated {
+  position: absolute;
+  left: 24px;
+  top: 20px;
+}
+
+.imt-float-ball-loading {
+  animation: imt-loading-animation 0.6s infinite linear !important;
+}
+
+.imt-manga-guide-bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  transform: translateY(-50%);
+}
+.imt-manga-guide-content {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  margin: 0 40px 0;
+}
+
+.img-manga-guide-button {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.img-manga-close {
+  position: absolute;
+  bottom: -200px;
+  width: 32px;
+  height: 32px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  cursor: pointer;
+}
+
+.imt-fb-container.dragging .imt-manga-button,
+.imt-fb-container.dragging .btn-animate:not(.imt-fb-btn) {
+  display: none !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn {
+  border-radius: 50% !important;
+  width: 36px !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  cursor: move !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn div {
+  border-radius: 50% !important;
+  width: 36px !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn.left,
+.imt-fb-container.dragging .imt-fb-btn.right {
+  border-radius: 50% !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn.left div,
+.imt-fb-container.dragging .imt-fb-btn.right div {
+  border-radius: 50% !important;
+}
+
+.imt-fb-container.dragging .imt-fb-logo-img {
+  margin: 0 !important;
+}
+
+.imt-fb-container.dragging .imt-float-ball-translated {
+  right: 2px !important;
+  bottom: 2px !important;
+}
+
+@-webkit-keyframes imt-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes imt-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.imt-fb-icon {
+  color: #666666;
+}
+
+[data-theme="dark"] .imt-fb-icon {
+  color: #b3b3b3;
+}
+
+[data-theme="light"] .imt-fb-icon {
+  color: #666666;
+}
+
+/* 悬浮球设置弹窗样式 */
+.imt-fb-setting-wrapper {
+  border-radius: 12px;
+  box-shadow: 2px 10px 24px 0px rgba(0, 0, 0, 0.06);
+}
+
+.imt-fb-setting-content {
+  padding: 16px;
+  width: 350px;
+  pointer-events: all;
+}
+
+.imt-fb-setting-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--text-black-2);
+}
+
+.imt-fb-setting-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px 0;
+}
+
+.imt-fb-preview-wrapper {
+  display: flex;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.imt-fb-preview-item {
+  width: 99px;
+  height: 57px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+}
+
+.imt-fb-preview-item.light {
+  background-color: #f3f5f6;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.imt-fb-preview-item.dark {
+  background-color: #444;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.imt-fb-preview-ball {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.imt-fb-preview-ball.light {
+  background-color: #fff;
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+}
+
+.imt-fb-preview-ball.dark {
+  background-color: #111;
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+}
+
+.imt-fb-preview-ball.full {
+  width: 41px;
+  justify-content: center;
+}
+
+.imt-fb-preview-ball.mini {
+  width: 41px;
+  justify-content: center;
+  transform: translateX(21px);
+}
+
+.imt-fb-preview-ball .imt-fb-preview-logo {
+  flex-shrink: 0;
+}
+
+/* 选项区域 */
+.imt-fb-setting-options {
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.imt-fb-setting-option-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4px;
+}
+
+.imt-fb-setting-option-label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: var(--text-black-2);
+}
+
+/* Toggle 开关样式 */
+.imt-fb-toggle {
+  width: 30px;
+  height: 18px;
+  background-color: var(--switch-background-color);
+  border-radius: 24px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.imt-fb-toggle.checked {
+  background-color: var(--primary);
+}
+
+.imt-fb-toggle.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.imt-fb-toggle-thumb {
+  width: 14px;
+  height: 14px;
+  background-color: var(--switch-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s ease;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+}
+
+.imt-fb-toggle.checked .imt-fb-toggle-thumb {
+  transform: translateX(12px);
+}
+
+.imt-fb-setting-hide-options {
+  background-color: var(--background-light-green);
+  padding: 8px 20px;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.imt-fb-setting-save-btn {
+  background-color: var(--primary);
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 45px;
+  height: 45px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: opacity 0.2s ease;
+}
+
+.imt-fb-setting-save-btn:hover {
+  opacity: 0.9;
+}
+
+.imt-fb-setting-save-btn:active {
+  opacity: 0.8;
+}
+</style><div id="mount" style="display: block;"><div hidden="" id="immersive-translate-popup-overlay" class="immersive-translate-popup-overlay" style="z-index: 2147483647; background-color: rgba(0, 0, 0, 0.5);"><div class="immersive-translate-popup-wrapper" style="position: fixed; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);"></div></div></div></template></div></html>

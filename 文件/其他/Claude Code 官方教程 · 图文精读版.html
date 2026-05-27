@@ -1,0 +1,4540 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)https://cctut.wwei.ai/ -->
+<html lang="zh-CN" data-immersive-translate-page-theme="light"><plasmo-csui><template shadowrootmode="open"><div id="plasmo-shadow-container" style="z-index: 2147483647; position: relative;"><div id="plasmo-overlay-0" class="plasmo-csui-container" style="display: flex; position: absolute; top: 0px; left: 0px;"></div></div></template></plasmo-csui><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude Code 官方教程 · 图文精读版</title>
+<meta name="description" content="Anthropic 官方《Claude Code 101》9 集视频教程的中文图文精读版 —— 逐字稿 + 真实画面截图 + 命令速查。">
+<style>
+  :root{
+    --paper:#f4efe6; --card:#fffdf8; --ink:#1c1a16; --muted:#6f6757;
+    --terra:#c96442; --terra-d:#a44d30; --terra-soft:#f3e2d8;
+    --line:#e4dccd; --code-bg:#23201b; --code-ink:#ece4d6; --green:#3f7d52;
+    --maxw:920px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft Yahei",system-ui,sans-serif;
+    line-height:1.75;-webkit-font-smoothing:antialiased}
+  code,pre,kbd{font-family:"SF Mono",ui-monospace,"JetBrains Mono",Menlo,Consolas,monospace}
+  a{color:var(--terra-d);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* top nav */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(244,239,230,.92);
+    -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+    box-shadow:0 8px 20px -18px rgba(80,50,35,.5)}
+  .nav-in{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;
+    gap:9px;padding:16px 20px;overflow-x:auto;scrollbar-width:none}
+  .nav-in::-webkit-scrollbar{display:none}
+  .brand{font-weight:800;font-size:15px;white-space:nowrap;letter-spacing:-.2px;
+    flex:0 0 auto;margin-right:6px;display:inline-flex;align-items:center;gap:9px}
+  .brand b{color:var(--terra)}
+  .brand .logo{width:26px;height:26px;flex:0 0 auto;display:block;
+    background:var(--terra-soft);border-radius:7px;padding:3px}
+  .nav a{flex:0 0 auto;padding:8px 14px;border-radius:10px;font-size:13px;
+    font-weight:700;color:var(--muted);background:#eadfce;white-space:nowrap;
+    transition:.15s;line-height:1.1}
+  .nav a:hover{background:var(--terra);color:#fff;text-decoration:none}
+  .nav a.on{background:var(--terra);color:#fff}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+
+  /* hero */
+  header{padding:30px 20px 40px;text-align:center}
+  .kick{display:inline-block;font-size:12px;font-weight:700;letter-spacing:2px;
+    color:var(--terra);background:var(--terra-soft);padding:6px 14px;border-radius:999px;margin-bottom:20px}
+  h1{font-size:38px;line-height:1.25;letter-spacing:-1px;margin-bottom:14px}
+  .sub{font-size:17px;color:var(--muted);max-width:600px;margin:0 auto 26px}
+  .meta-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+  .pill{background:var(--card);border:1px solid var(--line);padding:6px 14px;border-radius:999px}
+
+  /* toc */
+  .toc{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+    gap:12px;margin:34px 0 10px}
+  .toc a{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:15px 17px;display:flex;gap:13px;align-items:flex-start;transition:.16s}
+  .toc a:hover{border-color:var(--terra);transform:translateY(-2px);text-decoration:none;
+    box-shadow:0 8px 22px -14px rgba(160,77,48,.5)}
+  .toc .n{flex:0 0 30px;height:30px;border-radius:9px;background:var(--terra);color:#fff;
+    font-weight:800;display:grid;place-items:center;font-size:14px}
+  .toc a>span:last-child{display:flex;flex-direction:column}
+  .toc .tt{display:block;font-weight:700;font-size:15px;color:var(--ink);line-height:1.4}
+  .toc .te{display:block;font-size:12px;color:var(--muted);margin-top:2px}
+
+  /* lesson */
+  .lesson{padding:64px 0 14px;border-top:1px solid var(--line);margin-top:46px;
+    scroll-margin-top:90px}
+  .lesson:first-of-type{border-top:none;padding-top:30px}
+  .l-head{position:relative;overflow:hidden;display:flex;gap:16px;
+    align-items:flex-start;margin-bottom:6px;padding:26px 26px 24px;
+    border:1px solid var(--line);border-radius:18px;
+    background:radial-gradient(125% 145% at 100% 0,#f8e6d7 0,#f1e7d5 42%,var(--paper) 80%)}
+  .l-head::after{content:attr(data-n);position:absolute;right:6px;top:-26px;
+    font-weight:800;font-size:128px;line-height:1;color:var(--terra);
+    opacity:.10;letter-spacing:-6px;pointer-events:none}
+  .l-head::before{content:"";position:absolute;right:22px;bottom:15px;
+    width:52px;height:39px;opacity:.45;pointer-events:none;
+    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 24'%3E%3Cg fill='%23c96442'%3E%3Crect x='6' y='3' width='4' height='4'/%3E%3Crect x='15' y='3' width='4' height='4'/%3E%3Crect x='4' y='6' width='18' height='13' rx='3'/%3E%3Crect x='1' y='10' width='4' height='6' rx='1'/%3E%3Crect x='6' y='18' width='3' height='5'/%3E%3Crect x='12' y='18' width='3' height='5'/%3E%3Crect x='18' y='18' width='3' height='5'/%3E%3C/g%3E%3Cg fill='%231c1a16'%3E%3Crect x='9' y='9' width='2.4' height='3'/%3E%3Crect x='16' y='9' width='2.4' height='3'/%3E%3C/g%3E%3C/svg%3E") no-repeat center/contain}
+  .l-head>*{position:relative;z-index:1}
+  .l-num{flex:0 0 46px;height:46px;border-radius:13px;
+    background:linear-gradient(135deg,var(--terra),var(--terra-d));
+    color:#fff;font-weight:800;font-size:20px;display:grid;place-items:center;
+    box-shadow:0 6px 16px -8px rgba(160,77,48,.6)}
+  .l-title{font-size:25px;letter-spacing:-.4px;line-height:1.3}
+  .l-en{font-size:13.5px;color:var(--muted);margin-top:3px;font-weight:500}
+  .l-dur{font-size:12px;color:var(--muted);margin-top:5px}
+
+  .hero-img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;
+    border:1px solid var(--line);margin:18px 0 8px;background:#23201b;
+    box-shadow:0 14px 34px -22px rgba(80,50,35,.55)}
+
+  .tldr{background:var(--terra-soft);border-left:4px solid var(--terra);
+    border-radius:0 12px 12px 0;padding:15px 20px;margin:20px 0;font-size:15.5px}
+  .tldr b{color:var(--terra-d)}
+
+  .blk{margin:30px 0}
+  .ts{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;
+    color:var(--terra-d);background:var(--terra-soft);padding:4px 11px;border-radius:7px;
+    margin-bottom:12px;font-family:"SF Mono",monospace}
+  .blk h4{font-size:18px;margin-bottom:9px;letter-spacing:-.3px}
+  .blk p{margin:9px 0;color:#33302a;font-size:15.5px}
+  .frame{width:100%;border-radius:13px;border:1px solid var(--line);margin:16px 0 6px;
+    display:block;background:#23201b}
+  .cap{font-size:12px;color:var(--muted);margin:-1px 0 4px;text-align:center}
+
+  pre{background:var(--code-bg);color:var(--code-ink);padding:16px 18px;border-radius:12px;
+    overflow-x:auto;font-size:13.5px;line-height:1.7;margin:14px 0}
+  pre .c{color:#9c917c}
+  code:not(pre code){background:#eadfce;color:var(--terra-d);padding:2px 7px;
+    border-radius:6px;font-size:.88em;font-weight:600}
+  kbd{background:#33302a;color:#f4efe6;padding:2px 8px;border-radius:6px;font-size:.82em;
+    border-bottom:2px solid #000;font-weight:600}
+
+  .note{display:flex;gap:11px;background:var(--card);border:1px solid var(--line);
+    border-radius:12px;padding:14px 17px;margin:16px 0;font-size:14.5px}
+  .note .i{flex:0 0 auto;font-weight:800;color:var(--terra)}
+
+  .ref{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:6px 22px;margin:22px 0}
+  .ref summary{cursor:pointer;font-weight:700;padding:14px 0;font-size:14.5px;list-style:none;
+    display:flex;justify-content:space-between;align-items:center;color:var(--muted)}
+  .ref summary::-webkit-details-marker{display:none}
+  .ref summary::after{content:"展开 ▾";font-size:12px;color:var(--terra-d);font-weight:600}
+  .ref[open] summary::after{content:"收起 ▴"}
+  .ref .body{padding:6px 0 20px;font-size:13.5px;color:var(--muted);
+    border-top:1px dashed var(--line);line-height:1.85}
+  .ref .body p{margin:10px 0}
+  .ref .body em{color:var(--terra-d);font-style:normal;font-weight:600;
+    font-family:"SF Mono",monospace;font-size:.92em}
+  .tr-switch{display:inline-flex;gap:0;background:#eadfce;border-radius:9px;
+    padding:3px;margin:6px 0 14px}
+  .ts-btn{border:0;background:transparent;color:var(--muted);font:inherit;
+    font-size:13px;font-weight:700;padding:6px 18px;border-radius:7px;cursor:pointer;
+    transition:.15s}
+  .ts-btn.on{background:var(--card);color:var(--terra-d);
+    box-shadow:0 1px 4px rgba(0,0,0,.09)}
+  .tr[hidden]{display:none}
+  .tr.zh p{color:#33302a}
+
+  .watch{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;
+    padding:10px 18px;border-radius:10px;font-size:14px;font-weight:600;margin:18px 0 6px}
+  .watch:hover{background:var(--terra-d);text-decoration:none}
+
+  footer{margin-top:60px;border-top:1px solid var(--line);background:var(--card);
+    padding:40px 20px 60px}
+  .foot{max-width:var(--maxw);margin:0 auto;font-size:13.5px;color:var(--muted);line-height:1.9}
+  .foot h3{color:var(--ink);font-size:15px;margin-bottom:10px}
+  .foot a{font-weight:600}
+  .top{position:fixed;right:22px;bottom:22px;width:44px;height:44px;border-radius:50%;
+    background:var(--terra);color:#fff;display:grid;place-items:center;font-size:20px;
+    box-shadow:0 8px 20px -6px rgba(160,77,48,.6);opacity:0;pointer-events:none;transition:.25s}
+  .top.on{opacity:1;pointer-events:auto}
+  @media(max-width:680px){
+    h1{font-size:28px}.l-title{font-size:21px}.wrap{padding:0 16px}
+    header{padding:44px 16px 30px}
+    .l-head{padding:20px 18px}
+    .l-head::after{font-size:90px;top:-16px}
+    .l-head::before{width:40px;height:30px;right:14px;bottom:12px}
+  }
+</style>
+<script src="./Claude Code 官方教程 · 图文精读版_files/widget.js" defer="" data-wwei-injected="1"></script><style type="text/css">
+  @font-face {
+    font-family: CuboxInter;
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("chrome-extension://bflmgpechpeohjfomgfdkkfcbhfcjohl/fonts/InterVariable.woff2") format("woff2");
+  }
+  #cubox-react-root {
+    z-index: 999999999999999999999;
+  }
+  </style><link rel="stylesheet" href="chrome-extension://bflmgpechpeohjfomgfdkkfcbhfcjohl/css/globalHighlightStyles.css"></head>
+<body>
+
+<div class="nav"><div class="nav-in">
+  <span class="brand"><svg class="logo" viewBox="0 0 32 24" aria-hidden="true"><g fill="#c96442"><rect x="6" y="3" width="4" height="4"></rect><rect x="15" y="3" width="4" height="4"></rect><rect x="4" y="6" width="18" height="13" rx="3"></rect><rect x="1" y="10" width="4" height="6" rx="1"></rect><rect x="6" y="18" width="3" height="5"></rect><rect x="12" y="18" width="3" height="5"></rect><rect x="18" y="18" width="3" height="5"></rect></g><g fill="#1c1a16"><rect x="9" y="9" width="2.4" height="3"></rect><rect x="16" y="9" width="2.4" height="3"></rect></g></svg><span><b>Claude Code</b> 图文精读</span></span>
+  <a href="https://cctut.wwei.ai/#l1" class="on">1 · 什么是 Claude Code</a><a href="https://cctut.wwei.ai/#l2">2 · 安装 Claude Code</a><a href="https://cctut.wwei.ai/#l3">3 · 它是怎么工作的</a><a href="https://cctut.wwei.ai/#l4">4 · 你的第一个提示词</a><a href="https://cctut.wwei.ai/#l5">5 · CLAUDE.md 记忆文件</a><a href="https://cctut.wwei.ai/#l6">6 · 探索→计划→编码→提交</a><a href="https://cctut.wwei.ai/#l7">7 · 上下文管理</a><a href="https://cctut.wwei.ai/#l8">8 · MCP 外部工具</a><a href="https://cctut.wwei.ai/#l9">9 · Hooks 钩子</a>
+</div></div>
+
+<header>
+  <span class="kick">ANTHROPIC 官方 · CLAUDE CODE 101</span>
+  <h1>Claude Code 官方教程<br>图文精读版</h1>
+  <p class="sub">把 Anthropic 官方《Claude Code 101》9 集视频，拆成可一眼读完的中文图文教程：每集一句话抓重点、分段讲解、配真实画面截图、附命令速查与英文原文。</p>
+  <div class="meta-row">
+    <span class="pill">9 集 · 约 28 分钟</span>
+    <span class="pill">中文精讲 + 英文原文</span>
+    <span class="pill">画面取自原视频</span>
+  </div>
+
+  <div class="wrap"><div class="toc">
+    <a href="https://cctut.wwei.ai/#l1"><span class="n">1</span><span><span class="tt">什么是 Claude Code</span><span class="te">What is Claude Code?</span></span></a>
+    <a href="https://cctut.wwei.ai/#l2"><span class="n">2</span><span><span class="tt">安装 Claude Code</span><span class="te">Installing Claude Code</span></span></a>
+    <a href="https://cctut.wwei.ai/#l3"><span class="n">3</span><span><span class="tt">它是怎么工作的</span><span class="te">How Claude Code Works</span></span></a>
+    <a href="https://cctut.wwei.ai/#l4"><span class="n">4</span><span><span class="tt">你的第一个提示词</span><span class="te">Your first prompt</span></span></a>
+    <a href="https://cctut.wwei.ai/#l5"><span class="n">5</span><span><span class="tt">CLAUDE.md 记忆文件</span><span class="te">The CLAUDE.md file</span></span></a>
+    <a href="https://cctut.wwei.ai/#l6"><span class="n">6</span><span><span class="tt">探索→计划→编码→提交</span><span class="te">Explore→Plan→Code→Commit</span></span></a>
+    <a href="https://cctut.wwei.ai/#l7"><span class="n">7</span><span><span class="tt">上下文管理</span><span class="te">Context Management</span></span></a>
+    <a href="https://cctut.wwei.ai/#l8"><span class="n">8</span><span><span class="tt">MCP 外部工具</span><span class="te">MCP in Claude Code</span></span></a>
+    <a href="https://cctut.wwei.ai/#l9"><span class="n">9</span><span><span class="tt">Hooks 钩子</span><span class="te">Hooks in Claude Code</span></span></a>
+  </div></div>
+</header>
+
+<main class="wrap">
+
+<!-- ============ L1 ============ -->
+<section class="lesson" id="l1">
+  <div class="l-head" data-n="01">
+    <div class="l-num">1</div>
+    <div><div class="l-title">什么是 Claude Code</div>
+      <div class="l-en">What is Claude Code?</div>
+      <div class="l-dur">⏱ 2:55</div></div>
+  </div>
+  <img class="hero-img" src="./Claude Code 官方教程 · 图文精读版_files/v01_maxresdefault.jpg" alt="What is Claude Code" data-cubox-image-id="9ae267eb0ad1ad81dbb937c5d779e94c" data-cubox-image-index="0" data-cubox-image-load="false">
+
+  <div class="tldr"><b>一句话：</b>Claude Code 不是聊天机器人，而是一个住在你终端里的「AI 智能体」——它能直接读你的代码库、改文件、跑命令，自己把活干完，而不用你来回复制粘贴。</div>
+
+  <div class="blk">
+    <span class="ts">◷ 00:04 它是什么</span>
+    <h4>一个能动手的编码工具</h4>
+    <p>Claude Code 能理解你的整个代码库、编辑文件、运行命令，并和你已有的开发工具打通，帮你把事情更快做完。它可以用在：<b>终端</b>、<b>VS Code</b>、<b>Claude 桌面端</b>、<b>网页版</b>、以及 <b>JetBrains 系列 IDE</b>。本系列演示都在终端里进行。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v01_s1.jpg" alt="Claude Code 终端界面" data-cubox-image-id="ae938253f41859a9427ebc7f8b9286e8" data-cubox-image-index="1" data-cubox-image-load="false">
+    <p class="cap">视频画面：Claude Code 在终端中工作</p>
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 00:41 和 Claude 网页版有啥不同</span>
+    <h4>关键区别：它是「Agent（智能体）」</h4>
+    <p>和 Claude.ai 网页版不同，Claude Code <b>直接拥有你终端和代码库的访问权</b>，不用你把代码复制来复制去，它自己进去把活干了。所谓 AI 智能体，就是一个能感知环境、并主动采取行动去完成既定目标的软件——最朴素的形态，就是「让一个大模型在一个实时循环里不停跑」。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v01_s2.jpg" alt="智能体概念" data-cubox-image-id="e26eebafea3604928b941160c450442f" data-cubox-image-index="2" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 01:13 它能做什么</span>
+    <h4>三个典型能力</h4>
+    <p>① <b>读懂代码库</b>：让它解释某个功能、或顺着代码追一个 bug；② <b>跑命令</b>：执行构建脚本、跑测试、装依赖，并根据输出决定下一步；③ <b>查网络</b>：需要某个最新 API 文档时，它能自己去查。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v01_s3.jpg" alt="Claude Code 能力演示" data-cubox-image-id="cd8a41344f0e52063e6be523ad0c76ac" data-cubox-image-index="3" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 01:44 必须知道的三个概念</span>
+    <h4>用好它之前，先记住这 3 点</h4>
+    <p><b>① 上下文窗口（Context Window）</b>：相当于 Claude 的「工作记忆」，能装很多，但装不下一切——所以它会用策略性的方式在代码库里找答案，而不是把整个代码库塞进记忆。</p>
+    <p><b>② 它会先问你</b>：默认情况下，运行命令或改动代码前，Claude Code 都会征求你同意，控制权始终在你手里——你可以选择更亲力亲为，也可以更放手。</p>
+    <p><b>③ 它会犯错</b>：和任何工具一样它不完美，可能误解你的意图、引入新 bug、或把方案过度设计。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v01_s4.jpg" alt="核心概念" data-cubox-image-id="6a313a5c3a706ad04da657083b28faf1" data-cubox-image-index="4" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 02:17 小结</span>
+    <p>Claude Code 是一个能动手的编码智能体：读代码库、改文件、跑命令、连外部工具，帮你更快交付。今天就能在终端、VS Code、JetBrains、Claude 桌面端用上它。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v01_s5.jpg" alt="小结" data-cubox-image-id="69f512f3c2a88c6d9ffa51a66410f00c" data-cubox-image-index="5" data-cubox-image-load="false">
+  </div>
+
+  <a class="watch" href="https://www.youtube.com/watch?v=fl1DSmwQKKY" target="_blank" rel="noopener">▶ 看原视频（YouTube）</a>
+
+  <details class="ref"><summary>逐字稿原文 · 中文 / English</summary>
+  <div class="body">
+    <div class="tr-switch"><button class="ts-btn on" data-lang="zh">中文</button><button class="ts-btn" data-lang="en">English</button></div>
+    <div class="tr zh">
+      <p><em>00:04</em> Claude Code 是一个能动手的编码工具，它理解你的代码库、编辑你的文件、运行命令，并和你已有的开发工具集成，帮你更快把事情做完。它可以在终端、Visual Studio Code、Claude 桌面应用、网页端和 JetBrains 系列 IDE 中使用。不过本视频里我们会在终端中使用它。</p>
+      <p><em>00:41</em> 和 Claude AI 不同，Claude Code 直接拥有你终端中文件和整个代码库的访问权。所以它不用把代码来回复制粘贴，而是自己进去把活全干了。最容易区分的一点是：Claude Code 以 AI 智能体的方式工作——一种能与环境交互、并采取行动来完成既定目标的软件。</p>
+      <p><em>01:13</em> 它能读懂你的代码库、执行构建脚本、跑测试、安装依赖包，并用输出结果决定下一步做什么。如果需要最新的 API 参考文档，Claude Code 还能搜索网络。</p>
+      <p><em>01:44</em> 第一是上下文窗口——Claude 的工作记忆。第二，它在运行命令或做改动前会征求许可。第三，它会犯错——可能误解你的意图、引入新 bug、或把方案过度设计。</p>
+      <p><em>02:17</em> 快速回顾：Claude Code 是一个能动手的编码智能体。它读你的代码库、编辑文件、运行命令、连接外部工具，帮你更快交付。</p>
+    </div>
+    <div class="tr en" hidden="">
+      <p><em>00:04</em> Claude Code is an agentic coding tool that understands your code base, edits your files, runs commands, and integrates with your existing developer tools to help you get things done faster. It's available in your terminal, Visual Studio Code, the Claude desktop app, on the web, and JetBrains IDEs. But we'll be using it in the terminal for this video.</p>
+      <p><em>00:41</em> Unlike Claude AI, Claude Code has direct access to your files in your terminal and your entire code base. So instead of copying and pasting code back and forth, it can go in and do all the work itself. The easiest differentiator is that Claude Code works as an AI agent — software that can interact with its environment and perform actions to complete a defined goal.</p>
+      <p><em>01:13</em> It can read and understand your code base, execute your build script, run your tests, install packages, and use the output to decide what to do next. Claude Code can search the web if it needs documentation on the latest API references.</p>
+      <p><em>01:44</em> First is the context window — Claude's working memory. Second, it asks for permission before running commands or making changes. Third, it can make mistakes — it might misunderstand your intent, introduce a new bug, or over-engineer a solution.</p>
+      <p><em>02:17</em> Quick recap: Claude Code is an agentic coding tool. It reads your code base, edits your files, runs commands, and connects to external tools to help you ship faster.</p>
+    </div>
+  </div></details>
+</section>
+
+<!-- ============ L2 ============ -->
+<section class="lesson" id="l2">
+  <div class="l-head" data-n="02">
+    <div class="l-num">2</div>
+    <div><div class="l-title">安装 Claude Code</div>
+      <div class="l-en">Installing Claude Code</div>
+      <div class="l-dur">⏱ 3:02</div></div>
+  </div>
+  <img class="hero-img" src="./Claude Code 官方教程 · 图文精读版_files/v02_maxresdefault.jpg" alt="Installing Claude Code" data-cubox-image-id="db554784f79b0fbdea6e3f057cc77f8d" data-cubox-image-index="6" data-cubox-image-load="false">
+
+  <div class="tldr"><b>一句话：</b>一条命令装好，进项目目录敲 <code>claude</code> 就能用；终端、VS Code、JetBrains、桌面端、网页版五种入口任选，<b>终端版更新最快、功能最全</b>。</div>
+
+  <div class="blk">
+    <span class="ts">◷ 00:04 各平台安装命令</span>
+    <h4>按你的系统选一条</h4>
+    <pre><span class="c"># macOS / Linux / WSL —— 一条 curl 搞定</span>
+curl -fsSL https://claude.ai/install.sh | bash
+
+<span class="c"># 或用 Homebrew（注意：brew 装的不会自动更新）</span>
+brew install --cask claude-code
+
+<span class="c"># Windows · PowerShell</span>
+irm https://claude.ai/install.ps1 | iex
+
+<span class="c"># Windows · CMD（curl）或 winget（winget 同样不自动更新）</span>
+winget install Anthropic.ClaudeCode</pre>
+    <div class="note"><span class="i">!</span><span>Homebrew 和 winget 装的版本<b>没有自动更新能力</b>，想一直用最新版，优先用官方 curl/irm 脚本。</span></div>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v02_s1.jpg" alt="安装命令" data-cubox-image-id="7e94edf994379de5fb595f4fa6ca04b0" data-cubox-image-index="7" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 00:35 首次运行</span>
+    <h4>进目录，敲 <code>claude</code></h4>
+    <p>进入你的项目目录运行 <code>claude</code>，会有初始化引导：选配色主题、用 Claude 账号登录（Pro / Max / Enterprise 都行）或填 API Key。组织有 Claude Enterprise 账号的话记得选企业选项。<b>注意：你在哪个目录运行 claude，它就拥有那个目录及其所有子目录的访问权。</b></p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v02_s2.jpg" alt="首次运行引导" data-cubox-image-id="c9fd5078fdf26c290a512ad5d5f8af24" data-cubox-image-index="8" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 01:05 VS Code 集成</span>
+    <h4>装官方扩展</h4>
+    <p>打开扩展面板搜 “Claude Code”，认准 <b>Anthropic 出品 + 蓝色对勾</b>，安装后可能要重启 VS Code。之后用 <kbd>Ctrl/Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> 打开命令面板搜 Claude Code 开新标签；文件打开时点 Claude 图标也行。也可以在设置里关掉 UI，只用纯终端体验。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v02_s3.jpg" alt="VS Code 扩展" data-cubox-image-id="ffd9719c9dec21198c3d86767e975340" data-cubox-image-index="9" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 01:34 JetBrains / 桌面端</span>
+    <h4>JetBrains 与 Claude 桌面端</h4>
+    <p><b>JetBrains</b>：从 Marketplace 装 Claude Code 插件，重启 IDE 后会看到 Claude 图标，打开是一个和你并肩工作的终端面板。<b>Claude 桌面端</b>：装好登录后，顶部有个 “Code” 开关，观感像 Claude 聊天，但能锁定具体文件夹、改权限，甚至在云端环境里干活。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v02_s4.jpg" alt="JetBrains 与桌面端" data-cubox-image-id="9acc821a2350fb7d4f3caa936b422ced" data-cubox-image-index="10" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 02:10 网页版 &amp; 怎么选</span>
+    <h4>claude.ai/code，以及如何取舍</h4>
+    <p>网页版去 <code>claude.ai/code</code>，体验接近桌面端，但<b>只能操作 GitHub 仓库</b>。取舍：想第一时间用上新功能 → <b>终端版</b>（更新最快）；想和编辑器深度融合 → IDE 集成；想让 Claude 在后台跑、你同时干别的 → 桌面端；想远程改 GitHub 项目或并行多会话 → 网页版。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v02_s5.jpg" alt="网页版与选择" data-cubox-image-id="4ef2cb63e591595da76dda6c81eb6a4d" data-cubox-image-index="11" data-cubox-image-load="false">
+  </div>
+
+  <a class="watch" href="https://www.youtube.com/watch?v=0kILa02vKuI" target="_blank" rel="noopener">▶ 看原视频（YouTube）</a>
+
+  <details class="ref"><summary>逐字稿原文 · 中文 / English</summary>
+  <div class="body">
+    <div class="tr-switch"><button class="ts-btn on" data-lang="zh">中文</button><button class="ts-btn" data-lang="en">English</button></div>
+    <div class="tr zh">
+      <p><em>00:04</em> 如果你用 macOS、Linux 或 WSL，用这条 curl 命令一步装好。如果你偏好 Homebrew，可以用 brew install，但注意它没有自动更新。Windows 上用 PowerShell 的 Invoke-RestMethod 命令、CMD 里的 curl 命令、或 winget 命令。</p>
+      <p><em>00:35</em> 进入你的项目目录，运行 <em>claude</em>。会经过一些初始引导，比如选择主题、用 Claude 账号（Pro、Max 或 Enterprise）或 API Key 登录。不管你在哪个目录运行 claude，它就拥有那个目录及其所有子目录的访问权。</p>
+      <p><em>01:05</em> 在 VS Code 中，打开扩展面板搜索 Claude Code——认准 Anthropic 出品、带蓝色对勾的那个扩展。重启 VS Code，然后用 Ctrl/Cmd+Shift+P 打开命令面板。你也可以在设置文件里关掉 UI、直接用终端。</p>
+      <p><em>01:34</em> 对于 JetBrains 系列 IDE，从 Marketplace 安装 Claude Code 插件并重启。在 Claude 桌面端，安装并登录后，顶部会出现一个 Code 开关——它让你能在特定文件夹工作、修改权限，甚至在云端环境工作。</p>
+      <p><em>02:10</em> 网页端访问 claude.ai/code——和桌面端类似，但仅限 GitHub 仓库。想保持最新，终端是最佳选择，功能在那里上线最快。桌面端适合后台工作；网页端适合远程操作 GitHub 或并行多个会话。</p>
+    </div>
+    <div class="tr en" hidden="">
+      <p><em>00:04</em> If you're on macOS, Linux, or WSL, use this curl command to install it in one go. If you prefer Homebrew, you can use brew install, but note this doesn't have auto-update. For Windows, use the PowerShell Invoke-RestMethod command, a curl command in CMD, or a winget command.</p>
+      <p><em>00:35</em> Go to your project directory and run <em>claude</em>. You go through initial instructions like choosing your theme and signing in with your Claude account (Pro, Max, or Enterprise) or an API key. Whatever directory you run claude in, it has access to that directory and all its subfolders.</p>
+      <p><em>01:05</em> In VS Code, open the extensions panel and search Claude Code — the extension by Anthropic with the blue check. Restart VS Code, then open the command palette with Ctrl/Cmd+Shift+P. You can also opt out of the UI and use the terminal directly in your settings file.</p>
+      <p><em>01:34</em> For JetBrains IDEs, install the Claude Code plugin from the Marketplace and restart. On Claude Desktop, after install and sign-in you'll see a Code toggle at the top — it lets you work in a specific folder, change permissions, even work in a cloud environment.</p>
+      <p><em>02:10</em> On the web, go to claude.ai/code — similar to desktop but restricted to GitHub repositories only. The terminal is the best bet to stay up to date; features ship there fastest. Desktop is great for background work; web is great for remote GitHub work or parallel sessions.</p>
+    </div>
+  </div></details>
+</section>
+
+<!-- ============ L3 ============ -->
+<section class="lesson" id="l3">
+  <div class="l-head" data-n="03">
+    <div class="l-num">3</div>
+    <div><div class="l-title">Claude Code 是怎么工作的</div>
+      <div class="l-en">How Claude Code Works</div>
+      <div class="l-dur">⏱ 2:51</div></div>
+  </div>
+  <img class="hero-img" src="./Claude Code 官方教程 · 图文精读版_files/v03_maxresdefault.jpg" alt="How Claude Code Works" data-cubox-image-id="8cbc84c73602a96009fd1ed704ee0514" data-cubox-image-index="12" data-cubox-image-load="false">
+
+  <div class="tldr"><b>一句话：</b>它的核心是一个「智能体循环」——收集上下文 → 调模型 → 采取行动 → 验证结果，没达标就再循环，直到结果可验证为止。</div>
+
+  <div class="blk">
+    <span class="ts">◷ 00:04 智能体循环</span>
+    <h4>Agentic Loop（智能体循环）</h4>
+    <p>你输入提示词 → Claude Code 收集完成任务所需的<b>上下文</b> → 调用模型，模型返回文本或一个<b>工具调用</b> → Claude Code 执行这个动作（比如改文件、跑命令）→ 最后<b>验证结果</b>是否达成你最初的目标。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v03_s1.jpg" alt="智能体循环" data-cubox-image-id="1777442b2009ab26865a432c297ddef9" data-cubox-image-index="13" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 00:41 循环 + 你的介入</span>
+    <h4>没达标就再来一遍</h4>
+    <p>达标了，Claude 结束并等你下一条指令；没达标，它回到循环里继续跑，直到结果完整且<b>可验证</b>。整个过程里你都能随时<b>补充上下文、打断、或引导</b>它往你的目标走。上下文窗口决定它能记住、回看多少对话/文件/命令输出。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v03_s2.jpg" alt="循环与介入" data-cubox-image-id="ab3638ed2704e70ea5a3d0b74d1656d6" data-cubox-image-index="14" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 01:14 压缩 &amp; 工具</span>
+    <h4>上下文压缩 与「工具」</h4>
+    <p>到达上下文上限时，Claude Code 会<b>压缩（compact）</b>对话：自动判断哪些能丢、哪些能总结，把占用降下来。「工具」是智能体的骨架——普通 AI 只能输入文本、输出文本，中间什么都做不了；工具让 Claude Code 能在恰当时机去执行代码逼近目标，比如「读文件工具」「网页搜索工具」。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v03_s3.jpg" alt="压缩与工具" data-cubox-image-id="b7386773891fd97fd52a2952055e6d3a" data-cubox-image-index="15" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 01:47 权限模式</span>
+    <h4>三种权限模式（<kbd>Shift</kbd>+<kbd>Tab</kbd> 切换）</h4>
+    <p><b>默认</b>：改文件或跑 shell 命令前必须显式征得同意。<b>Auto-accept</b>：自动接受文件改动，但命令仍要问你。<b>Plan 计划模式</b>：只用只读工具，先研究并产出一份行动计划，再开始动手。跳过权限要谨慎——给 Claude Code 全权跑命令，意味着错误在发生前更难拦住。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v03_s4.jpg" alt="权限模式" data-cubox-image-id="248f27ad7f9d37c9e7a9533f2946906d" data-cubox-image-index="16" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 02:18 小结</span>
+    <p>Claude Code = 智能体循环 + 受管理的上下文窗口 + 工具 + 可配置的权限，全在你的终端里。它能读代码库、采取行动、自我验证——这正是它和聊天窗口的本质区别。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v03_s5.jpg" alt="小结" data-cubox-image-id="8438f9b8e34261bf2b879a44562e33e6" data-cubox-image-index="17" data-cubox-image-load="false">
+  </div>
+
+  <a class="watch" href="https://www.youtube.com/watch?v=6bs5b4FltCU" target="_blank" rel="noopener">▶ 看原视频（YouTube）</a>
+
+  <details class="ref"><summary>逐字稿原文 · 中文 / English</summary>
+  <div class="body">
+    <div class="tr-switch"><button class="ts-btn on" data-lang="zh">中文</button><button class="ts-btn" data-lang="en">English</button></div>
+    <div class="tr zh">
+      <p><em>00:04</em> Claude Code 最好通过「智能体循环」来理解。你输入提示词；Claude Code 收集上下文，与模型交互，模型返回文本或一个工具调用，然后采取行动（编辑文件或运行命令），最后验证这些结果。</p>
+      <p><em>00:41</em> 如果达成了目标，Claude 结束并等待；如果没有，它再跑一遍循环，直到结果完整且可验证。整个过程中，你可以补充上下文、打断、或引导模型。</p>
+      <p><em>01:14</em> 一旦到达上限，Claude Code 会压缩你的对话。工具是智能体工作方式的骨架——它们让 Claude Code 执行代码以更接近任务，比如读文件工具或网页搜索工具。</p>
+      <p><em>01:47</em> Claude Code 有权限模式。默认会请求显式许可。自动接受会不询问就编辑文件，但仍会就命令询问你。计划模式用只读工具来编出一份计划。跳过权限时要谨慎。</p>
+      <p><em>02:18</em> Claude Code 把智能体循环、受管理的上下文窗口、工具、可配置的权限组合进你的终端——这与聊天窗口有本质区别。</p>
+    </div>
+    <div class="tr en" hidden="">
+      <p><em>00:04</em> Claude Code is best explained through the agentic loop. You enter a prompt; Claude Code gathers context, interacts with the model which returns text or a tool call, takes action (editing a file or running a command), then verifies those results.</p>
+      <p><em>00:41</em> If they achieve the goal, Claude finishes and waits; if not, it runs the loop again until results are complete and verifiable. Throughout, you can add context, interrupt, or steer the model.</p>
+      <p><em>01:14</em> Once you reach the limit, Claude Code compacts your conversation. Tools are the backbone of how agents work — they let Claude Code execute code to get closer to a task, e.g. a read-file tool or search-web tool.</p>
+      <p><em>01:47</em> Claude Code has permission modes. Default asks explicit permission. Auto-accept edits files without asking but still asks for commands. Plan mode uses read-only tools to compile a plan. Be cautious when skipping permissions.</p>
+      <p><em>02:18</em> Claude Code combines an agentic loop, a managed context window, tools, and configurable permissions into your terminal — fundamentally different from a chat window.</p>
+    </div>
+  </div></details>
+</section>
+
+<!-- ============ L4 ============ -->
+<section class="lesson" id="l4">
+  <div class="l-head" data-n="04">
+    <div class="l-num">4</div>
+    <div><div class="l-title">你的第一个 Claude Code 提示词</div>
+      <div class="l-en">Your first Claude Code prompt</div>
+      <div class="l-dur">⏱ 2:27</div></div>
+  </div>
+  <img class="hero-img" src="./Claude Code 官方教程 · 图文精读版_files/v04_maxresdefault.jpg" alt="Your first Claude Code prompt" data-cubox-image-id="533dee110b82d924a3807f5acfb58f0d" data-cubox-image-index="18" data-cubox-image-load="false">
+
+  <div class="tldr"><b>一句话：</b>像跟人说话一样给它提需求；复杂的多步任务，先用 <kbd>Shift</kbd>+<kbd>Tab</kbd> 进「计划模式」让它先出方案——这是<b>动代码前最好的纠偏时机</b>。</div>
+
+  <div class="blk">
+    <span class="ts">◷ 00:04 两种权限节奏</span>
+    <h4>自动接受 vs 每次问你</h4>
+    <p>你可以选 Claude 自动接受每个文件改动，或每次都要你显式批准，用 <kbd>Shift</kbd>+<kbd>Tab</kbd> 在两种模式间循环。自动接受模式下，它会自动批准文件的编辑/创建，但<b>运行命令仍会问你</b>。没有对错，选你最自在的方式。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v04_s1.jpg" alt="权限节奏" data-cubox-image-id="b5d3b96e8f17f7ef2265387f34ae8e4a" data-cubox-image-index="19" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 00:34 计划模式</span>
+    <h4>Plan Mode 擅长什么</h4>
+    <p>计划模式接到你的提示后，用<b>只读工具</b>分析代码库、研究你建议的实现方式，还会就需要澄清的点反问你，最后给你一份详细的可执行计划。它特别适合<b>规划复杂改动</b>或做一次<b>安全的代码审查</b>。大多数时候你让 Claude 做的都是面向某功能的多步实现——这正是计划模式的强项。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v04_s2.jpg" alt="计划模式" data-cubox-image-id="391455c0993312c6ab42c8492a110ce4" data-cubox-image-index="20" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 01:04 实战：加暗色模式</span>
+    <h4>一个真实例子</h4>
+    <p>视频里有个 app 急需暗色模式开关。在项目根目录，连按几次 <kbd>Shift</kbd>+<kbd>Tab</kbd> 进入计划模式，然后写提示词：</p>
+    <pre>My app needs a dark mode implemented across the entire app.
+Can you create a toggle switch on the header that allows the
+user to toggle between light mode and dark mode? I need you
+to find a good contrast color that works based on my existing
+light theme.</pre>
+    <p>让 Claude 把方案规划出来。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v04_s3.jpg" alt="暗色模式实战" data-cubox-image-id="06d8df0a26a326c446427215b4d97832" data-cubox-image-index="21" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 01:32 复盘 + 要点</span>
+    <h4>结束后能看清它怎么想的</h4>
+    <p>审查后觉得方案不错就让它执行。全部结束时，能<b>清楚看到 Claude 做了什么、怎么得出结论</b>，暗色模式效果也不错。要点：提示词尽量<b>描述得具体</b>；想全程掌控就用计划模式，让 Claude 在执行前把要达成的目标抠得更细。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v04_s4.jpg" alt="复盘" data-cubox-image-id="ec3362bee596acaffc9174e7cd5428da" data-cubox-image-index="22" data-cubox-image-load="false">
+  </div>
+
+  <a class="watch" href="https://www.youtube.com/watch?v=gbetp6D7J_Q" target="_blank" rel="noopener">▶ 看原视频（YouTube）</a>
+
+  <details class="ref"><summary>逐字稿原文 · 中文 / English</summary>
+  <div class="body">
+    <div class="tr-switch"><button class="ts-btn on" data-lang="zh">中文</button><button class="ts-btn" data-lang="en">English</button></div>
+    <div class="tr zh">
+      <p><em>00:04</em> 你像跟任何 AI 助手说话一样跟 Claude Code 说话。你可以选择让 Claude 自动接受每个文件改动，还是每次都要显式许可。用 Shift+Tab 在两种模式间循环。自动接受模式下它会自动批准文件编辑，但运行命令仍会请求许可。</p>
+      <p><em>00:34</em> Shift+Tab 菜单里有计划模式。它用只读工具分析你的代码库、提出澄清问题、返回一份长而详细的计划。非常适合规划复杂改动或做安全的代码审查。</p>
+      <p><em>01:04</em> 我有一个 app 需要一个暗色模式开关。在根目录我按 Shift+Tab 进入计划模式，写下提示词：「我的 app 需要在整个应用里实现暗色模式。你能不能在头部做一个切换开关……基于我现有的浅色主题找一个对比度合适的颜色。」</p>
+      <p><em>01:32</em> 审查之后，看起来不错。最后你能明确看到 Claude 做了什么、它是怎么得出结论的。尽量描述得具体一些；用计划模式在执行前把细节抠清楚。</p>
+    </div>
+    <div class="tr en" hidden="">
+      <p><em>00:04</em> You talk to Claude Code like any AI assistant. You can choose whether Claude auto-accepts every file change or requires explicit permission each time. With Shift+Tab you cycle between modes. In auto-accept mode it auto-approves file edits but asks permission to run commands.</p>
+      <p><em>00:34</em> Within the Shift+Tab menu is plan mode. It uses read-only tools to analyze your code base, asks clarifying questions, and returns a long detailed plan. Great for planning complex changes or a safe code review.</p>
+      <p><em>01:04</em> I have an app that needs a dark mode toggle. In the root directory I hit Shift+Tab into plan mode and write the prompt: "My app needs a dark mode implemented across the entire app. Can you create a toggle switch on the header… find a good contrast color based on my existing light theme."</p>
+      <p><em>01:32</em> After reviewing, it looks good. At the end you see explicitly what Claude did and how it reached its conclusion. Try to be as descriptive as possible; use plan mode to get into the nitty-gritty before executing.</p>
+    </div>
+  </div></details>
+</section>
+
+<!-- ============ L5 ============ -->
+<section class="lesson" id="l5">
+  <div class="l-head" data-n="05">
+    <div class="l-num">5</div>
+    <div><div class="l-title">CLAUDE.md 记忆文件</div>
+      <div class="l-en">The CLAUDE.md file</div>
+      <div class="l-dur">⏱ 3:01</div></div>
+  </div>
+  <img class="hero-img" src="./Claude Code 官方教程 · 图文精读版_files/v05_maxresdefault.jpg" alt="The CLAUDE.md file" data-cubox-image-id="bcbd4ac88b2c3c690b8033857f57f45f" data-cubox-image-index="23" data-cubox-image-load="false">
+
+  <div class="tldr"><b>一句话：</b>CLAUDE.md 是项目的「入职说明书」——放在根目录，每次开会话自动读取，内容会拼接到你的提示词前，让 Claude 不用每次重新摸索代码库。</div>
+
+  <div class="blk">
+    <span class="ts">◷ 00:02 为什么需要它</span>
+    <h4>没有它，每次都要从零摸索</h4>
+    <p>没有 CLAUDE.md 时，Claude Code 每次都像第一次来：重新探索代码库、搞清依赖、搞清已有功能，有时还得靠猜——猜就更难往正确方向引导。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v05_s1.jpg" alt="为什么需要" data-cubox-image-id="b1c914208b65d0967cbc96e45335e21e" data-cubox-image-index="24" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 00:32 它是什么 / 怎么生成</span>
+    <h4>一个会被自动读取的 Markdown</h4>
+    <p>它是放在项目根目录的 markdown 文件，每次开会话 Claude Code 自动读，相当于代码库的「入职脚本」——本质上它的内容会被<b>拼接到你自己的提示词前面</b>。可以跑 <code>/init</code> 命令让 Claude 基于你的代码库自动生成一份。</p>
+    <pre><span class="c"># 在项目里让 Claude 自动生成 CLAUDE.md</span>
+/init</pre>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v05_s2.jpg" alt="/init 生成" data-cubox-image-id="42dc5f1e4921bf8366396f684f9db9aa" data-cubox-image-index="25" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 01:02 里面写什么</span>
+    <h4>技术栈 + 命令 + 代码风格</h4>
+    <p>示例（一个用 App Router、Tailwind、Drizzle ORM 的 Next.js 15 应用）：</p>
+    <pre><span class="c"># 技术栈</span>
+Next.js 15 (App Router) · Tailwind · Drizzle ORM
+
+<span class="c"># 命令</span>
+dev server · run tests · lint
+
+<span class="c"># 代码风格</span>
+- 两空格缩进
+- 优先具名导出 (named exports)
+- 所有 API 路由放 app/api
+- 能用 server actions 就别用 API routes</pre>
+    <p>有了它，你让 Claude 建 React 组件时，它一上来就知道用 Tailwind（或你用的任何框架）来写。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v05_s3.jpg" alt="CLAUDE.md 内容" data-cubox-image-id="9e8c7af6e4593d3e65e1a72f20eaa9c3" data-cubox-image-index="26" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 01:38 记忆文件的层级</span>
+    <h4>项目级 vs 用户级</h4>
+    <p><b>项目级 CLAUDE.md</b>：在项目根目录，提交进版本控制给团队共用。<b>用户级 CLAUDE.md</b>：在你的配置目录，只属于你、跨所有项目生效——放个人偏好，比如你怎么写代码注释。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v05_s4.jpg" alt="记忆层级" data-cubox-image-id="ed62db5532807a131cfa6e51ffb9f59e" data-cubox-image-index="27" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 02:05 三个实用建议</span>
+    <h4>怎么把它养好</h4>
+    <p><b>① 让它记住纠正</b>：当你不得不纠正 Claude（比如「永远用 server actions 而不是 API routes」），就明确叫它把这条<b>存进 memory</b>，下次回到项目它就一直记得。</p>
+    <p><b>② 引用文档用 @</b>：项目里有想让 Claude 参考的文档，直接用 <code>@</code> + 文件路径。</p>
+    <p><b>③ 先别急着建</b>：建议项目一开始<b>先不要</b> CLAUDE.md，先观察你需要在哪些地方反复纠正模型——这样能让文件保持精简、只留必要信息。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v05_s5.jpg" alt="实用建议" data-cubox-image-id="3cbcc2cef7c8100f31de5dcf234edff3" data-cubox-image-index="28" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 02:34 小结</span>
+    <p>一次糟糕的会话和一次高效会话，差别就在「上下文」，而 CLAUDE.md 就是你提供上下文的方式：从技术栈、个人偏好、再到命令，随用随补、逐步长出来。</p>
+  </div>
+
+  <a class="watch" href="https://www.youtube.com/watch?v=O0FGCxkHM-U" target="_blank" rel="noopener">▶ 看原视频（YouTube）</a>
+
+  <details class="ref"><summary>逐字稿原文 · 中文 / English</summary>
+  <div class="body">
+    <div class="tr-switch"><button class="ts-btn on" data-lang="zh">中文</button><button class="ts-btn" data-lang="en">English</button></div>
+    <div class="tr zh">
+      <p><em>00:02</em> 最有用的部分之一就是 CLAUDE.md 文件——关于你项目的持久记忆。没有它，Claude 每次都得从零开始、重新探索代码库、并做出各种假设。</p>
+      <p><em>00:32</em> 它是放在项目根目录的 markdown 文件；Claude Code 每个会话都会自动读它——就像一份入职脚本。它的内容会被拼接到你的提示词上。运行 /init 让 Claude 根据你的代码库生成一份。</p>
+      <p><em>01:02</em> 示例：一个用 app router、Tailwind、Drizzle ORM 的 Next.js 15 应用。命令：开发服务器、跑测试、lint。代码风格：两空格缩进、具名导出、API 路由放 app/api、优先用 server actions。</p>
+      <p><em>01:38</em> 有一个层级：项目级 CLAUDE.md 放在根目录（通过版本控制共享），用户级 CLAUDE.md 放在你的配置目录，只属于你、跨所有项目——把个人偏好放那里。</p>
+      <p><em>02:05</em> 如果你纠正了 Claude，明确叫它保存进 memory。用 @ 符号加文件路径来引用文档。我们建议一开始先不要 CLAUDE.md，这样你能看清在哪些地方必须纠偏，保持它精简。</p>
+      <p><em>02:34</em> 一次令人沮丧的会话和一次高效会话的差别就在于上下文——CLAUDE.md 文件就是你提供上下文的方式。从技术栈、偏好开始，然后是命令。</p>
+    </div>
+    <div class="tr en" hidden="">
+      <p><em>00:02</em> One of the most useful parts is the CLAUDE.md file — persistent memory about your project. Without it, Claude has to start fresh, re-explore the code base, and make assumptions.</p>
+      <p><em>00:32</em> It's a markdown file at the root of your project; Claude Code reads it automatically every session — like an onboarding script. Its contents are appended to your prompt. Run /init to make Claude generate one from your code base.</p>
+      <p><em>01:02</em> Example: a Next.js 15 app using the app router, Tailwind, Drizzle ORM. Commands: dev server, run tests, lint. Code style: two-space indentation, named exports, API routes in app/api, prefer server actions.</p>
+      <p><em>01:38</em> There's a hierarchy: a project-level CLAUDE.md in the root (shared via version control), and a user-level CLAUDE.md in your config folder, just for you across all projects — put personal preferences there.</p>
+      <p><em>02:05</em> If you correct Claude, explicitly ask it to save to memory. Reference docs with the @ symbol and a file path. We recommend starting without a CLAUDE.md so you see where you must course-correct, keeping it compact.</p>
+      <p><em>02:34</em> The difference between a frustrating session and a productive one comes down to context — the CLAUDE.md file is how you provide it. Start with your stack, preferences, then commands.</p>
+    </div>
+  </div></details>
+</section>
+
+<!-- ============ L6 ============ -->
+<section class="lesson" id="l6">
+  <div class="l-head" data-n="06">
+    <div class="l-num">6</div>
+    <div><div class="l-title">探索 → 计划 → 编码 → 提交</div>
+      <div class="l-en">The Explore → Plan → Code → Commit workflow</div>
+      <div class="l-dur">⏱ 3:12</div></div>
+  </div>
+  <img class="hero-img" src="./Claude Code 官方教程 · 图文精读版_files/v06_maxresdefault.jpg" alt="Explore Plan Code Commit" data-cubox-image-id="551f32f1d8d09424b541513e80d1d4b2" data-cubox-image-index="29" data-cubox-image-load="false">
+
+  <div class="tldr"><b>一句话：</b>如果只记住一件事，就记住这个工作流——探索、计划、编码、提交。别一上来就让它写代码，那只会让你后面花更多时间纠偏。</div>
+
+  <div class="blk">
+    <span class="ts">◷ 00:04 用计划模式吃掉前两步</span>
+    <h4>探索 + 计划</h4>
+    <p>处理「探索」「计划」最快的方式就是计划模式。计划模式下 Claude<b>不能改文件</b>，只读文件做研究。按 <kbd>Shift</kbd>+<kbd>Tab</kbd> 直到文本框下方出现 plan mode。示例提示词：</p>
+    <pre>I need to add WebP conversion to our image upload pipeline.
+Figure out where in the pipeline it should happen, whether
+we need new dependencies, and how to approach it.</pre>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v06_s1.jpg" alt="探索与计划" data-cubox-image-id="5a475c7cd1461832746c72764c749dfb" data-cubox-image-index="30" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 00:38 审查计划</span>
+    <h4>动代码前的最佳纠偏点</h4>
+    <p>Claude 会读相关文件、做网页搜索、给你一份行动计划。<b>务必审查</b>它是否符合你的标准，不行就让它补充或修订。这里是<b>最适合纠偏的地方，因为还没写任何代码</b>。不进计划模式时，也可以直接让 Claude「探索一下代码库」。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v06_s2.jpg" alt="审查计划" data-cubox-image-id="b80e2e9961ea5aa7b873b49c047aceac" data-cubox-image-index="31" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 01:08 批准并执行</span>
+    <h4>编码阶段</h4>
+    <p>计划满意后选 approve，让 Claude 逐条勾掉清单项。你可以决定让它自动接受文件改动还是每次都问。Claude 会尽力在认定计划完成前自查代码库，但有时仍需你纠偏——这正是计划模式的好处：计划完成后，我们还保留了「它是怎么一步步得到结果的」这层上下文来指导下一步决策。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v06_s3.jpg" alt="批准执行" data-cubox-image-id="e86b5356a4b4e149afecb8258eb67edf" data-cubox-image-index="32" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 01:35 让它对结果有把握</span>
+    <h4>给它判断「对」的标准和工具</h4>
+    <p>要让 Claude 对结果有信心，它必须清楚什么算「正确」——写计划时<b>把这点写明确</b>。给它能完成目标的工具能省掉大量来回：比如做 Web UI，装上 <b>Claude in Chrome 扩展</b>，Claude Code 就能控制一个标签页、在认定完成前实测 UI。项目里也要有一套测试集让它持续校验。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v06_s4.jpg" alt="标准与工具" data-cubox-image-id="4a39213bc2513da200e91e1bb456be1b" data-cubox-image-index="33" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 02:06 测试 + 提交前</span>
+    <h4>测试是「真理来源」</h4>
+    <p>Claude 能帮你写测试，但交给它之前，确保测试对你和团队是<b>可信的真理来源</b>，避免假阳性。小技巧：Claude 老是踩同一个坑，就让它把解决办法<b>存进 CLAUDE.md</b>。你自测满意后，就该推代码了——提交前先跑一个<b>子智能体代码审查员（sub-agent code reviewer）</b>过一遍。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v06_s5.jpg" alt="测试与提交前" data-cubox-image-id="7c0e4a80d579459d002b806b41c23a0a" data-cubox-image-index="34" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 02:35 提交 &amp; 小结</span>
+    <h4>循环往复</h4>
+    <p>然后让 Claude 按你的风格生成提交信息，如此往复。<b>探索</b>给 Claude 项目所需的相关上下文；<b>计划</b>产出 Claude 用来判断成功与否的行动方案；<b>编码</b>是你和 Claude 在敲定最终结果前的来回；<b>提交</b>帮你审查并推送代码，好开始下一个功能。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v06_s6.jpg" alt="提交与小结" data-cubox-image-id="76b71b8d08ac606884f7a03fa3528597" data-cubox-image-index="35" data-cubox-image-load="false">
+  </div>
+
+  <a class="watch" href="https://www.youtube.com/watch?v=xJQuF02NAK8" target="_blank" rel="noopener">▶ 看原视频（YouTube）</a>
+
+  <details class="ref"><summary>逐字稿原文 · 中文 / English</summary>
+  <div class="body">
+    <div class="tr-switch"><button class="ts-btn on" data-lang="zh">中文</button><button class="ts-btn" data-lang="en">English</button></div>
+    <div class="tr zh">
+      <p><em>00:04</em> 如果你只带走一样东西，就让它是这个工作流：探索、计划、编码、提交。处理前两步最快的方式是计划模式——Claude 不能编辑文件，只读取以收集研究。一直按 Shift+Tab 直到看到计划模式。</p>
+      <p><em>00:38</em> Claude 读取相关文件、做网页搜索、给出一份计划。审查它；这是最适合纠偏的地方，因为还没写任何代码。不进计划模式时，你也可以直接让 Claude 探索你的代码库。</p>
+      <p><em>01:08</em> 计划看起来不错后，选择批准，让 Claude 逐条勾掉清单项。计划完成后，我们保留了「它是怎么得到结果的」这层上下文，用来指导它下一步的决策。</p>
+      <p><em>01:35</em> 要让 Claude 有信心，它必须清楚什么算正确——把这点写明确。添加工具：做 Web UI 时，Claude in Chrome 扩展让 Claude Code 能控制一个标签页并测试 UI。提供一套它能据以校验的测试集。</p>
+      <p><em>02:06</em> 让测试成为真理来源，避免假阳性。如果 Claude 老是撞同一个问题，让它把解决方案保存进它的 CLAUDE.md。提交之前，跑一个子智能体代码审查员。</p>
+      <p><em>02:35</em> 然后让 Claude 按你的风格生成提交信息。如此循环往复。探索给出上下文，计划创建行动方案，编码是来回打磨，提交审查并推送你的代码。</p>
+    </div>
+    <div class="tr en" hidden="">
+      <p><em>00:04</em> If you take one thing away, let it be this workflow: Explore, Plan, Code, Commit. The fastest way to handle steps one and two is plan mode — Claude can't edit files, just reads to gather research. Hit Shift+Tab until you see plan mode.</p>
+      <p><em>00:38</em> Claude reads relevant files, does web searches, gives a plan. Review it; this is the best place to course-correct because it's before any code is written. You can also use explore without plan mode by asking Claude to explore your code base.</p>
+      <p><em>01:08</em> Once the plan looks good, select approve and let Claude toggle through the list items. After the plan is finished we have the context of how it got to the results to guide its next decision.</p>
+      <p><em>01:35</em> For Claude to be confident, it must be clear on what it deems correct — make this explicit. Add tools: for web UIs, the Claude in Chrome extension lets Claude Code control a tab and test the UI. Include a test suite it can validate on.</p>
+      <p><em>02:06</em> Make tests a source of truth to avoid false positives. If Claude keeps running into the same issues, ask it to save the solution to its CLAUDE.md. Before you commit, run a sub-agent code reviewer.</p>
+      <p><em>02:35</em> Then get Claude to generate a commit message in your style. Rinse and repeat. Explore gives context, Plan creates the action plan, Code is the back-and-forth, Commit reviews and pushes your code.</p>
+    </div>
+  </div></details>
+</section>
+
+<!-- ============ L7 ============ -->
+<section class="lesson" id="l7">
+  <div class="l-head" data-n="07">
+    <div class="l-num">7</div>
+    <div><div class="l-title">上下文管理</div>
+      <div class="l-en">Context Management in Claude Code</div>
+      <div class="l-dur">⏱ 3:52</div></div>
+  </div>
+  <img class="hero-img" src="./Claude Code 官方教程 · 图文精读版_files/v07_maxresdefault.jpg" alt="Context Management" data-cubox-image-id="83c2d22c2e324e4520d8f24ce08f3dd0" data-cubox-image-index="36" data-cubox-image-load="false">
+
+  <div class="tldr"><b>一句话：</b>上下文 = Claude 的工作记忆，且<b>有限</b>。学会用 <code>/compact</code>、<code>/clear</code>、<code>/context</code> 管理它，并用「具体的提示词」和「子智能体」来省着花。</div>
+
+  <div class="blk">
+    <span class="ts">◷ 00:00 上下文是什么</span>
+    <h4>每个动作都在占空间</h4>
+    <p>你发的每条消息、它读的每个文件、跑的每条命令、每个工具调用结果，都会加进上下文窗口。空间有限，所以尽可能优化它极其重要。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v07_s1.jpg" alt="上下文是什么" data-cubox-image-id="ccf5e9d74c5bd6b17599141a5119a2ce" data-cubox-image-index="37" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 00:39 自动 &amp; 手动压缩</span>
+    <h4><code>/compact</code></h4>
+    <p>接近上限时会<b>自动压缩</b>：总结要点、移除不必要的工具调用结果、腾出大量空间（注意可能丢失之前对话的细节）。也能手动 <code>/compact</code>，把目前为止做的都压缩掉——既清出空间，又保留对之前工作的记忆。</p>
+    <pre>/compact   <span class="c"># 总结并压缩当前会话，保留记忆</span></pre>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v07_s2.jpg" alt="compact" data-cubox-image-id="bde33d16d47677a18cf97ba2fa6d6f17" data-cubox-image-index="38" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 01:08 清空 &amp; 查看</span>
+    <h4><code>/clear</code> 与 <code>/context</code></h4>
+    <p>想彻底从零开始、不要之前记忆，用 <code>/clear</code>。想看上下文状态，用 <code>/context</code>：能看到上下文有多大、哪些类别占得最多，还有一张可视化图。</p>
+    <pre>/clear     <span class="c"># 清空一切，从零开始</span>
+/context   <span class="c"># 查看上下文占用全景图</span></pre>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v07_s3.jpg" alt="clear 与 context" data-cubox-image-id="60b0481a40f2d2e802305794a2211210" data-cubox-image-index="39" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 01:37 何时 compact、何时 clear</span>
+    <h4>经验法则</h4>
+    <p>正在做某个功能、上下文要满了但还得继续 → <b>compact</b>（保留该功能相关上下文很重要）。一个计划做完、要开新功能 → <b>clear</b>（别让旧对话给新东西带偏）。想让 Claude 跨会话记住的，写进 <b>CLAUDE.md</b>，省得它每次重新发现。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v07_s4.jpg" alt="经验法则" data-cubox-image-id="0afb58fd9e91a12bc9e2b40f802fb593" data-cubox-image-index="40" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 02:04 具体一点反而省</span>
+    <h4>短提示词的反讽</h4>
+    <p>写得越短，长远反而越费上下文：不说清楚，Claude 就被迫在代码库里到处翻、自己猜，这比你多写一两句把话讲清楚要费多得多的上下文空间。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v07_s5.jpg" alt="具体提示词" data-cubox-image-id="67b535d5ea1fc66462ad2358fce45126" data-cubox-image-index="41" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 02:36 MCP / 技能 / 子智能体</span>
+    <h4>三个省上下文的杠杆</h4>
+    <p><b>MCP 服务器</b>默认会把所有可用工具都加载进上下文，和项目无关的可以关掉。<b>技能（skills）</b>和 MCP 类似但不会把整个东西塞进上下文，更省空间。<b>子智能体</b>与主智能体并行、有完全独立的上下文窗口——对那种「只要答案、不要过程」的任务（比如「认证端点在哪」），让子智能体去做，只把摘要返回给主智能体。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v07_s6.jpg" alt="MCP 技能 子智能体" data-cubox-image-id="2a836dd85ac424b5d568fa10742b91b7" data-cubox-image-index="42" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 03:09 小结</span>
+    <p>管理上下文至关重要：用 <code>/compact</code> 总结长会话、<code>/clear</code> 重新开始；提示词要具体；查清楚当前上下文被谁占用；用子智能体去接那些「你只要结果」的任务。</p>
+  </div>
+
+  <a class="watch" href="https://www.youtube.com/watch?v=eW3oTyfeWZ0" target="_blank" rel="noopener">▶ 看原视频（YouTube）</a>
+
+  <details class="ref"><summary>逐字稿原文 · 中文 / English</summary>
+  <div class="body">
+    <div class="tr-switch"><button class="ts-btn on" data-lang="zh">中文</button><button class="ts-btn" data-lang="en">English</button></div>
+    <div class="tr zh">
+      <p><em>00:00</em> 上下文是 Claude 的工作记忆。它读的每个文件、跑的每条命令、你发的每条消息，都占用上下文窗口的空间。它是有限的，所以优化它极其重要。</p>
+      <p><em>00:39</em> 接近上限时，上下文窗口会自动压缩——它总结并移除不必要的工具调用结果（可能丢失细节）。手动运行 /compact，把到目前为止的内容压缩，同时保留记忆。</p>
+      <p><em>01:08</em> 想完全从零开始，运行 /clear。想查看状态，运行 /context——展示你上下文大小的全景，以及哪些类别占得最多。</p>
+      <p><em>01:37</em> 经验法则：在做某功能、超出但需要继续 → compact。一个计划做完、要开新的 → clear。需要跨会话记住的，写进 CLAUDE.md。</p>
+      <p><em>02:04</em> 短提示词的反讽：长远看它反而更耗上下文。不说清楚，Claude 会在你代码库里翻得更多、自己思考更多——比多写清楚一两句话耗费多得多的上下文。</p>
+      <p><em>02:36</em> MCP 服务器默认把所有工具加载进上下文——把无关的关掉。技能的工作方式类似，但不会把整个东西塞进上下文。子智能体并行运行、有独立的上下文窗口；对只要答案的任务，只返回一份摘要。</p>
+      <p><em>03:09</em> 长会话用 /compact，重新开始用 /clear。要具体。查清楚是谁在占用上下文。用子智能体去接那些只要答案的任务。</p>
+    </div>
+    <div class="tr en" hidden="">
+      <p><em>00:00</em> Context is Claude's working memory. Every file it reads, command it runs, message you send takes up space in the context window. It's finite, so optimizing it is extremely important.</p>
+      <p><em>00:39</em> When you approach the limit, the context window is automatically compacted — it summarizes and removes unnecessary tool call results (may lose details). Run /compact manually to compact up to that point while keeping memory.</p>
+      <p><em>01:08</em> To start completely fresh, run /clear. To check state, run /context — a big picture of your context size and what categories take the most.</p>
+      <p><em>01:37</em> Rule of thumb: working a feature and going over but need to continue → compact. Finished a plan and starting new → clear. For things to remember across sessions, put it in CLAUDE.md.</p>
+      <p><em>02:04</em> The irony of a smaller prompt: long-run it takes more context. Without being explicit, Claude looks around your codebase more and does its own thinking — far more context than a clearer sentence or two.</p>
+      <p><em>02:36</em> MCP servers load all tools into context by default — turn off unrelated ones. Skills work similarly but don't put the whole thing into context. Sub-agents run in parallel with a separate context window; for answer-only tasks, return just a summary.</p>
+      <p><em>03:09</em> Use /compact for long sessions and /clear to start fresh. Be specific. Check what's using context. Use sub-agents to delegate answer-only tasks.</p>
+    </div>
+  </div></details>
+</section>
+
+<!-- ============ L8 ============ -->
+<section class="lesson" id="l8">
+  <div class="l-head" data-n="08">
+    <div class="l-num">8</div>
+    <div><div class="l-title">MCP：连接外部工具与数据</div>
+      <div class="l-en">MCP in Claude Code</div>
+      <div class="l-dur">⏱ 3:37</div></div>
+  </div>
+  <img class="hero-img" src="./Claude Code 官方教程 · 图文精读版_files/v08_maxresdefault.jpg" alt="MCP in Claude Code" data-cubox-image-id="9cceca0a76fe27f7fd6d45da962f9bee" data-cubox-image-index="43" data-cubox-image-load="false">
+
+  <div class="tldr"><b>一句话：</b>MCP（模型上下文协议）是开放标准，让 Claude Code 连上 Linear、Context7 等外部工具和数据源；用 <code>claude mcp add</code> 添加，用 <code>.mcp.json</code> 让团队自动共享，并留意它对上下文的占用。</div>
+
+  <div class="blk">
+    <span class="ts">◷ 00:03 MCP 是什么</span>
+    <h4>Model Context Protocol</h4>
+    <p>一个开放标准，让 Claude Code 连接外部工具和数据源。你提问时，Claude 会自动判断何时该用这些工具来更好地理解你的需求。你的很多上下文其实在别处——数据库、效率工具、公开仓库——MCP 就是把它们接进来。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v08_s1.jpg" alt="MCP 是什么" data-cubox-image-id="04c5325fe883486baaf393c9d44a9863" data-cubox-image-index="44" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 00:37 工具的概念</span>
+    <h4>用例：Linear、Context7</h4>
+    <p>「工具」让 Claude Code 这类智能体能执行动作去更好完成任务（普通 AI 通常只回你一段文本）。例如团队用 Linear 做项目管理，就加个 Linear MCP 把具体 issue 详情带进来；想拿某依赖的最新文档，<b>Context7</b> MCP 能提供给 Claude Code。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v08_s2.jpg" alt="工具用例" data-cubox-image-id="84799cc70f449cb2be7755189a591585" data-cubox-image-index="45" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 01:06 添加与两种类型</span>
+    <h4><code>claude mcp add</code> · HTTP vs STDIO</h4>
+    <p>更多连接器见 <code>claude.com/connectors</code>。用 <code>claude mcp add</code> 添加。两种主要类型：<b>HTTP 服务器</b>用于远程服务，由服务方托管、走网络连接；<b>STDIO 服务器</b>用于跑在你本机的本地进程。会话里用 <code>/mcp</code> 查看连了哪些、状态、并禁用不想要的。</p>
+    <pre>claude mcp add ...   <span class="c"># 添加一个 MCP 服务器</span>
+/mcp                 <span class="c"># 会话内查看 / 管理已连服务器</span></pre>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v08_s3.jpg" alt="添加 MCP" data-cubox-image-id="272a258f884268c8055ee433b1678f9b" data-cubox-image-index="46" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 01:40 三种作用域</span>
+    <h4>local / user / project</h4>
+    <p><b>local</b>：只在当前项目、只对你可用。<b>user</b>：对你所有项目可用。<b>project</b>：用一个提交进版本控制的 <code>.mcp.json</code> 文件，<b>任何在这代码库工作的人都自动得到完全相同的服务器</b>。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v08_s4.jpg" alt="作用域" data-cubox-image-id="c81d180779592f887db4ff6903c23a2e" data-cubox-image-index="47" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 02:12 当心上下文占用</span>
+    <h4>没用也占空间</h4>
+    <p>MCP 服务器即使你没用，也会把工具定义加进上下文窗口。配多了就吃掉可用上下文。用 <code>/mcp</code> 看连了什么，禁用不在用的。若某工具有 CLI 等价物（如 GitHub 用 <code>gh</code>、AWS 用 <code>aws</code>），<b>CLI 更省上下文</b>，因为它不加常驻工具定义。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v08_s5.jpg" alt="上下文占用" data-cubox-image-id="d198eb0281831ed7c108ced5aeae408f" data-cubox-image-index="48" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 02:45 技能 &amp; 工具搜索 &amp; 小结</span>
+    <h4>超 10% 自动切「工具搜索」</h4>
+    <p>这种场景也可以用<b>技能（skill）</b>：技能只把名字和描述加载进上下文，当 Claude 觉得需要时才把它载入——CLI 工具就可以放进技能里。如果 MCP 工具超过上下文窗口的 <b>10%</b>，Claude Code 会自动切到<b>工具搜索模式</b>，按需发现工具（但因为不在上下文里，效果可能没那么好）。小结：<code>claude mcp add</code> 添加、用 <code>.mcp.json</code> 让团队自动获得、靠禁用不用的服务器看住上下文。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v08_s6.jpg" alt="技能与小结" data-cubox-image-id="289ae2924e78bb17344dadc6e048eaea" data-cubox-image-index="49" data-cubox-image-load="false">
+  </div>
+
+  <a class="watch" href="https://www.youtube.com/watch?v=kkBFmwkDzdo" target="_blank" rel="noopener">▶ 看原视频（YouTube）</a>
+
+  <details class="ref"><summary>逐字稿原文 · 中文 / English</summary>
+  <div class="body">
+    <div class="tr-switch"><button class="ts-btn on" data-lang="zh">中文</button><button class="ts-btn" data-lang="en">English</button></div>
+    <div class="tr zh">
+      <p><em>00:03</em> 模型上下文协议（MCP）是一个开放标准，让 Claude Code 连接外部工具和数据源。你的很多上下文在别处——数据库、效率工具、公开仓库。这正是 MCP 的用武之地。</p>
+      <p><em>00:37</em> 工具赋予智能体执行动作的能力。如果你团队用 Linear，加一个 Linear MCP 服务器把 issue 详情带进来。要拿最新的依赖文档，Context7 MCP 服务器能提供。</p>
+      <p><em>01:06</em> claude.com/connectors 上有数百个连接器。用 claude mcp add 命令添加。HTTP 服务器用于远程服务；STDIO 服务器用于本地进程。会话里用 /mcp 查看连了什么。</p>
+      <p><em>01:40</em> 三种作用域：local（当前项目、你自己）、user（你所有项目）、project（提交进版本控制的 .mcp.json，整个团队自动得到相同服务器）。</p>
+      <p><em>02:12</em> MCP 服务器即使没用也会把工具定义加进上下文。运行 /mcp 把没用的禁用。如果某工具有 CLI 等价物（gh、aws），CLI 更省上下文。</p>
+      <p><em>02:45</em> 技能只把名字和描述加载进上下文，需要时才完整载入。如果 MCP 工具超过你上下文窗口的 10%，Claude Code 会切到工具搜索模式。回顾：用 claude mcp add 添加、用 .mcp.json 设作用域、靠禁用没用的服务器看住上下文。</p>
+    </div>
+    <div class="tr en" hidden="">
+      <p><em>00:03</em> Model Context Protocol is an open standard that lets Claude Code connect to external tools and data sources. A lot of your context lives elsewhere — databases, productivity apps, public repositories. This is where MCP comes in.</p>
+      <p><em>00:37</em> Tools give agents the ability to perform actions. If your team uses Linear, add a Linear MCP server to bring in issue details. For up-to-date dependency docs, the Context7 MCP server provides that.</p>
+      <p><em>01:06</em> Hundreds of connectors at claude.com/connectors. Add with the claude mcp add command. HTTP servers are for remote services; STDIO servers for local processes. Use /mcp inside a session to see what's connected.</p>
+      <p><em>01:40</em> Scoped three ways: local (current project, you), user (all your projects), project (a .mcp.json checked into version control so the whole team gets the same servers automatically).</p>
+      <p><em>02:12</em> MCP servers add tool definitions to context even when unused. Run /mcp and disable unused ones. If a tool has a CLI equivalent (gh, aws), the CLI is more context-efficient.</p>
+      <p><em>02:45</em> A skill loads just a name and description into context, loaded fully only when needed. If MCP tools exceed 10% of your context window, Claude Code switches to tool search mode. Recap: add with claude mcp add, scope with .mcp.json, watch context by disabling unused servers.</p>
+    </div>
+  </div></details>
+</section>
+
+<!-- ============ L9 ============ -->
+<section class="lesson" id="l9">
+  <div class="l-head" data-n="09">
+    <div class="l-num">9</div>
+    <div><div class="l-title">Hooks：确定性地控制行为</div>
+      <div class="l-en">Hooks in Claude Code</div>
+      <div class="l-dur">⏱ 3:22</div></div>
+  </div>
+  <img class="hero-img" src="./Claude Code 官方教程 · 图文精读版_files/v09_maxresdefault.jpg" alt="Hooks in Claude Code" data-cubox-image-id="fb3205c7ae97a2418d5d23c19b648d62" data-cubox-image-index="50" data-cubox-image-load="false">
+
+  <div class="tldr"><b>一句话：</b>Hooks 让你在 Claude Code 生命周期的特定时点跑命令——和别的都不同，它<b>确定性、必然执行</b>。「必须每次都发生、不能有例外」的事，别写进提示词，写成 hook。</div>
+
+  <div class="blk">
+    <span class="ts">◷ 00:03 为什么用 Hooks</span>
+    <h4>提示词「大概率」，Hook「百分百」</h4>
+    <p>你在 CLAUDE.md 里写「每次改文件后跑 Prettier」，大多数时候它会做，但偶尔不做——不完美。而 hook 让这件事<b>每一次、无例外</b>都发生。常见用途：编辑后自动格式化、为合规记录所有执行过的命令、拦截危险操作（如改生产文件）、Claude 完成任务时给自己发通知。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v09_s1.jpg" alt="为什么用 hooks" data-cubox-image-id="ab4e0cb10fb037ece8abcf8824cb9c6d" data-cubox-image-index="51" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 00:42 配置与事件</span>
+    <h4>在 settings.json 里配</h4>
+    <p>选一个<b>事件</b>，可选地为「哪个工具」设 matcher，再给一条要跑的<b>命令</b>。事件包括：</p>
+    <pre><span class="c"># 五个生命周期事件</span>
+UserPromptSubmit  你提交提示词、Claude 处理前
+PreToolUse        某个工具调用前
+PostToolUse       某个工具调用完成后
+Notification      Claude 发通知时
+Stop              Claude 结束响应时</pre>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v09_s2.jpg" alt="事件" data-cubox-image-id="9498435258f0cf157222a957f37bc93c" data-cubox-image-index="52" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 01:16 最常用：自动格式化</span>
+    <h4>PostToolUse + matcher</h4>
+    <p>最常见的 hook 就是「编辑后自动格式化」：设一个 <b>PostToolUse</b> hook，matcher 设为 <code>Edit</code> 或 <code>MultiEdit</code>，这样 Claude 一改文件就触发。命令里判断文件扩展名跑对应格式化器——TypeScript 用 Prettier、Go 用 gofmt、Python 用 Ruff，看你项目用什么。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v09_s3.jpg" alt="自动格式化 hook" data-cubox-image-id="a351b80b79e130dd7bba5f2e05aa7f41" data-cubox-image-index="53" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 01:55 用 PreToolUse 拦截</span>
+    <h4>退出码 0 放行 / 2 拦截</h4>
+    <p>PreToolUse hook 能在工具调用执行前拦下它。你的 hook 从 stdin 收到 JSON 格式的工具名和输入：<b>退出码 0 = 放行；退出码 2 = 拦截</b>，并把 stderr 的信息反馈给 Claude，让它知道为何被拦、好做调整。这就是怎么落地硬规则：禁止写生产配置目录、禁止含 <code>rm -rf</code> 的 bash 命令、禁止提交到 main——凡是团队要的是「保证」而非「建议」的。</p>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v09_s4.jpg" alt="PreToolUse 拦截" data-cubox-image-id="b82bbaaa5fbb80453cf22e695a737a82" data-cubox-image-index="54" data-cubox-image-load="false">
+  </div>
+
+  <div class="blk">
+    <span class="ts">◷ 02:31 项目级 &amp; 小结</span>
+    <h4>提交进仓库，全队共享</h4>
+    <p>配在 <code>.claude/settings.json</code> 的 hooks 是项目级、能提交进仓库，整个团队自动获得相同 hooks。命令里用环境变量 <code>CLAUDE_PROJECT_DIR</code> 引用项目内脚本，这样无论 Claude 当前工作目录在哪都能用。小结：用 PostToolUse 做自动格式化和日志，用 PreToolUse 拦危险操作，在 <code>/hooks</code> 菜单或 settings.json 里配置并提交进仓库。<b>要每次都发生、不能失败的事，别放进提示词——放进 hook。</b></p>
+    <pre><span class="c"># 项目级，提交进版本控制，全队共享</span>
+.claude/settings.json
+<span class="c"># 命令里引用项目脚本</span>
+$CLAUDE_PROJECT_DIR/scripts/format.sh
+<span class="c"># 也可在会话里用菜单配置</span>
+/hooks</pre>
+    <img class="frame" src="./Claude Code 官方教程 · 图文精读版_files/v09_s5.jpg" alt="项目级与小结" data-cubox-image-id="b35737be4d2da3b03d8e661e030ae893" data-cubox-image-index="55" data-cubox-image-load="false">
+  </div>
+
+  <a class="watch" href="https://www.youtube.com/watch?v=IkaPHiMDazM" target="_blank" rel="noopener">▶ 看原视频（YouTube）</a>
+
+  <details class="ref"><summary>逐字稿原文 · 中文 / English</summary>
+  <div class="body">
+    <div class="tr-switch"><button class="ts-btn on" data-lang="zh">中文</button><button class="ts-btn" data-lang="en">English</button></div>
+    <div class="tr zh">
+      <p><em>00:03</em> Hooks 让你在 Claude Code 生命周期的不同时点运行命令。和其它一切不同，hooks 是确定性的——它们总会运行。CLAUDE.md 里的指令大多数时候被遵守但并非总是；hook 让它每一次都发生。</p>
+      <p><em>00:42</em> Hooks 在你的 settings.json 里配置。选一个事件，可选地为「哪个工具」设 matcher，再给一条命令。事件有：UserPromptSubmit、PreToolUse、PostToolUse、Notification、Stop。</p>
+      <p><em>01:16</em> 最常见的 hook：编辑后自动格式化——一个 PostToolUse hook，matcher 设为 Edit 或 MultiEdit。命令检查文件扩展名并运行格式化器（TS 用 Prettier、Go 用 gofmt、Python 用 Ruff）。</p>
+      <p><em>01:55</em> PreToolUse hooks 能拦截工具调用。hook 从 stdin 收到 JSON 格式的工具名和输入。退出码 0 表示放行；退出码 2 表示拦截，并把 stderr 反馈给 Claude。可用来拦截写生产配置、rm -rf、提交到 main。</p>
+      <p><em>02:31</em> .claude/settings.json 里的 hooks 是项目级的，能提交进仓库，让整个团队都获得。用 CLAUDE_PROJECT_DIR 环境变量引用项目脚本。如果某件事必须每次都发生、不能失败，把它放进 hook，而不是提示词。</p>
+    </div>
+    <div class="tr en" hidden="">
+      <p><em>00:03</em> Hooks let you run commands at different points in Claude Code's life cycle. Unlike everything else, hooks are deterministic — they always run. A CLAUDE.md instruction is followed most of the time but not always; a hook makes it happen every single time.</p>
+      <p><em>00:42</em> Hooks are configured in your settings.json. Pick an event, optionally a matcher for which tool, and a command. Events: UserPromptSubmit, PreToolUse, PostToolUse, Notification, Stop.</p>
+      <p><em>01:16</em> The most common hook: auto-formatting after edits — a PostToolUse hook with a matcher of Edit or MultiEdit. The command checks the file extension and runs the formatter (Prettier for TS, gofmt for Go, Ruff for Python).</p>
+      <p><em>01:55</em> PreToolUse hooks can block tool calls. The hook gets the tool name and input as JSON on stdin. Exit code 0 means proceed; exit code 2 means block, and stderr is fed back to Claude. Block prod config writes, rm -rf, commits to main.</p>
+      <p><em>02:31</em> Hooks in .claude/settings.json are project-level and can be checked into your repo so the whole team gets them. Use the CLAUDE_PROJECT_DIR env var to reference project scripts. If it needs to happen every time without fail, put it in a hook, not a prompt.</p>
+    </div>
+  </div></details>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot">
+    <h3>关于这份图文版</h3>
+    <p>内容来源：Anthropic 官方 YouTube 频道 <a href="https://www.youtube.com/playlist?list=PLmWCw1CzcFilebjK89WLb5cAvM8K0cLB3" target="_blank" rel="noopener">《Claude Code 101》播放列表</a>（共 9 集）。中文为编者基于官方英文字幕的精读重述（非逐字直译），英文原文逐字稿可在每集底部展开核对；配图为对应时点的真实视频画面。本页用于个人学习，所有视频版权归 Anthropic 所有，请支持观看官方原片。</p>
+    <p style="margin-top:14px">制作：把视频字幕按章节抓取整理 → 中文重述 + 命令提炼 → 配真实画面 → 单页交付。如发现重述与原意有出入，<b>以英文原文与原视频为准</b>。</p>
+  </div>
+</footer>
+
+<a href="https://cctut.wwei.ai/#" class="top" id="top" aria-label="回到顶部">↑</a>
+<script>
+  var t=document.getElementById('top');
+  var navIn=document.querySelector('.nav-in');
+  var navLinks=[].slice.call(document.querySelectorAll('.nav a'));
+  var secs=navLinks.map(function(a){return document.querySelector(a.getAttribute('href'));});
+  function spy(){
+    t.classList.toggle('on',scrollY>600);
+    var y=scrollY+120,idx=0;
+    for(var i=0;i<secs.length;i++){if(secs[i]&&secs[i].offsetTop<=y)idx=i;}
+    navLinks.forEach(function(a,i){a.classList.toggle('on',i===idx);});
+    var a=navLinks[idx];
+    if(a){var L=a.offsetLeft,R=L+a.offsetWidth;
+      if(L<navIn.scrollLeft+60||R>navIn.scrollLeft+navIn.clientWidth)
+        navIn.scrollTo({left:L-90,behavior:'smooth'});}
+  }
+  addEventListener('scroll',spy,{passive:true});spy();
+  document.addEventListener('click',function(e){
+    var b=e.target.closest('.ts-btn');if(!b)return;
+    var box=b.closest('.body');var lang=b.dataset.lang;
+    box.querySelectorAll('.ts-btn').forEach(function(x){x.classList.toggle('on',x===b)});
+    box.querySelectorAll('.tr').forEach(function(x){x.hidden=!x.classList.contains(lang)});
+  });
+</script>
+<script defer="" src="./Claude Code 官方教程 · 图文精读版_files/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;73a749ca3ace4b2abd6813f039000869&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+<div id="wwei-auth-widget" style="position: fixed; top: 16px; right: 16px; z-index: 2147483647;"><template shadowrootmode="open"><style>
+      :host { all: initial; }
+      * { box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif; }
+      .wrap { position: relative; }
+      .avatar {
+        width: 36px; height: 36px; border-radius: 50%; padding: 0; cursor: pointer; position: relative;
+        border: 2px solid rgba(255,255,255,0.15); background: #111214; color: #f0f0f2;
+        display: flex; align-items: center; justify-content: center; overflow: hidden;
+        transition: all .2s; box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      }
+      .avatar:hover { transform: scale(1.05); border-color: rgba(255,255,255,0.3); }
+      .avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+      .avatar .fallback { font-weight: 600; font-size: 14px; }
+      .avatar.loading { animation: pulse 1.4s infinite; cursor: default; }
+      @keyframes pulse { 0%,100% { opacity: 0.5; } 50% { opacity: 0.9; } }
+      .dot {
+        position: absolute; bottom: -2px; right: -2px; width: 12px; height: 12px;
+        border-radius: 50%; border: 2px solid #111214;
+      }
+      .login-btn {
+        display: inline-block; padding: 7px 16px; border-radius: 100px;
+        background: rgba(110, 231, 183, 0.95); color: #08090a; font-size: 13px; font-weight: 500;
+        text-decoration: none; transition: all .2s; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        border: 1px solid rgba(110, 231, 183, 0.3);
+      }
+      .login-btn:hover { background: #6ee7b7; transform: translateY(-1px); }
+      .dropdown {
+        position: absolute; top: 44px; right: 0; min-width: 260px;
+        background: #111214; border: 1px solid #1e2024; border-radius: 12px;
+        padding: 16px; opacity: 0; transform: translateY(-6px) scale(0.96);
+        pointer-events: none; transition: all .18s cubic-bezier(.4,0,.2,1);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.4); color: #f0f0f2;
+      }
+      .dropdown.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+      .dropdown-head { display: flex; gap: 12px; align-items: center; }
+      .dropdown-avatar { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; flex-shrink: 0; background: #1e2024; display: flex; align-items: center; justify-content: center; }
+      .dropdown-avatar img { width: 100%; height: 100%; object-fit: cover; }
+      .dropdown-info { flex: 1; min-width: 0; }
+      .dropdown-name { font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .dropdown-email { font-size: 11px; color: #a0a3ab; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .dropdown-level {
+        display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px;
+        font-size: 10px; font-weight: 600; letter-spacing: 0.05em;
+        border: 1px solid;
+      }
+      .dropdown-divider { height: 1px; background: #1e2024; margin: 14px 0; }
+      .dropdown-item {
+        display: block; padding: 8px 12px; font-size: 13px; color: #f0f0f2;
+        text-decoration: none; border-radius: 6px; transition: background .15s;
+      }
+      .dropdown-item:hover { background: #1e2024; }
+    </style>
+        <div class="wrap">
+          <button class="avatar" id="avatar" aria-label="user menu" title="yiyixiao920@gmail.com · ADMIN">
+            <img src="https://lh3.googleusercontent.com/a/ACg8ocKu-yjD3iu0mgzG7jWbJHAxSpl7HBx0GqADxeh6y8jMFDEhpA=s96-c" referrerpolicy="no-referrer" alt="">
+            <span class="dot" style="background:#f87171" title="ADMIN"></span>
+          </button>
+          <div class="dropdown" id="dropdown">
+            <div class="dropdown-head">
+              <div class="dropdown-avatar"><img src="https://lh3.googleusercontent.com/a/ACg8ocKu-yjD3iu0mgzG7jWbJHAxSpl7HBx0GqADxeh6y8jMFDEhpA=s96-c" referrerpolicy="no-referrer" alt=""></div>
+              <div class="dropdown-info">
+                <div class="dropdown-name">姚伊笑</div>
+                <div class="dropdown-email">yiyixiao920@gmail.com</div>
+                <div class="dropdown-level" style="color:#f87171;border-color:#f8717140">ADMIN</div>
+              </div>
+            </div>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="https://admin.wwei.ai/">管理后台 →</a>
+            <a class="dropdown-item" href="https://auth.wwei.ai/logout?next=https%3A%2F%2Fcctut.wwei.ai%2F">退出登录</a>
+          </div>
+        </div>
+      </template></div><div id="cubox-react-root"><template shadowrootmode="open"><link rel="stylesheet" href="chrome-extension://bflmgpechpeohjfomgfdkkfcbhfcjohl/css/content.css"><div><div style="z-index: 2147483647;"></div></div></template></div><a id="colorPickerDivHidden"><img src="chrome-extension://njolgcnddhepjpplfifbmagdgkidikpj/logo.png" data-cubox-image-id="ae8686952839c0b69466b05216a82003" data-cubox-image-index="56" data-cubox-image-load="false"></a></body><plasmo-csui id="aitdk-csui"><template shadowrootmode="open"><style>*,:before,:after{box-sizing:border-box;border:0 solid #e5e7eb}:before,:after{--tw-content:""}html{-webkit-text-size-adjust:100%;tab-size:4;font-feature-settings:normal;font-variation-settings:normal;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}body{line-height:inherit;margin:0}hr{color:inherit;border-top-width:1px;height:0}abbr:where([title]){text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em}small{font-size:80%}sub,sup{vertical-align:baseline;font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-feature-settings:inherit;font-variation-settings:inherit;font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,[type=button],[type=reset],[type=submit]{-webkit-appearance:button;background-color:#0000;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button{height:auto}::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dl,dd,h1,h2,h3,h4,h5,h6,hr,figure,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}ol,ul,menu{margin:0;padding:0;list-style:none}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}button,[role=button]{cursor:pointer}:disabled{cursor:default}img,svg,video,canvas,audio,iframe,embed,object{vertical-align:middle;display:block}img,video{max-width:100%;height:auto}[hidden]{display:none}:host,:root{--background:0 0% 100%;--foreground:224 71.4% 4.1%;--card:0 0% 100%;--card-foreground:224 71.4% 4.1%;--popover:0 0% 100%;--popover-foreground:224 71.4% 4.1%;--primary:262.1 83.3% 57.8%;--primary-foreground:210 20% 98%;--secondary:220 14.3% 95.9%;--secondary-foreground:220.9 39.3% 11%;--muted:220 14.3% 95.9%;--muted-foreground:220 8.9% 46.1%;--accent:220 14.3% 95.9%;--accent-foreground:220.9 39.3% 11%;--destructive:0 84.2% 60.2%;--destructive-foreground:210 20% 98%;--border:220 13% 91%;--input:220 13% 91%;--ring:262.1 83.3% 57.8%;--radius:4.2px;z-index:2147483647}.dark{--background:224 71.4% 4.1%;--foreground:210 20% 98%;--card:224 71.4% 4.1%;--card-foreground:210 20% 98%;--popover:224 71.4% 4.1%;--popover-foreground:210 20% 98%;--primary:263.4 70% 50.4%;--primary-foreground:210 20% 98%;--secondary:215 27.9% 16.9%;--secondary-foreground:210 20% 98%;--muted:215 27.9% 16.9%;--muted-foreground:217.9 10.6% 64.9%;--accent:215 27.9% 16.9%;--accent-foreground:210 20% 98%;--destructive:0 62.8% 30.6%;--destructive-foreground:210 20% 98%;--border:215 27.9% 16.9%;--input:215 27.9% 16.9%;--ring:263.4 70% 50.4%}*{border-color:hsl(var(--border))}html{font-size:14px}body{background-color:hsl(var(--background));color:hsl(var(--foreground));font-feature-settings:"rlig" 1,"calt" 1;font-size:14px}*,:before,:after,::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:#3b82f680;--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }.container{width:100%;margin-left:auto;margin-right:auto;padding-left:28px;padding-right:28px}@media (width>=1400px){.container{max-width:1400px}}.visible{visibility:visible}.invisible{visibility:hidden}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.bottom-0{bottom:0}.left-1\/2{left:50%}.right-0{right:0}.right-2{right:7px}.top-0{top:0}.top-1\/2{top:50%}.top-2{top:7px}.-z-\[1\]{z-index:-1}.z-\[1\]{z-index:1}.z-\[2147483647\]{z-index:2147483647}.mx-auto{margin-left:auto;margin-right:auto}.-ml-\[13px\]{margin-left:-13px}.-mt-\[13px\]{margin-top:-13px}.mt-3{margin-top:10.5px}.mt-5{margin-top:17.5px}.block{display:block}.flex{display:flex}.hidden{display:none}.h-full{height:100%}.w-\[420px\]{width:420px}.w-\[520px\]{width:520px}.w-full{width:100%}@keyframes spin{to{transform:rotate(360deg)}}.animate-spin{animation:1s linear infinite spin}.cursor-pointer{cursor:pointer}.items-center{align-items:center}.justify-center{justify-content:center}.gap-x-2{column-gap:7px}.rounded{border-radius:3.5px}.bg-\[\#635bff\]{--tw-bg-opacity:1;background-color:rgb(99 91 255/var(--tw-bg-opacity))}.bg-\[\#635bff\]\/10{background-color:#635bff1a}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity))}.p-1{padding:3.5px}.p-6{padding:21px}.px-4{padding-left:14px;padding-right:14px}.py-2{padding-top:7px;padding-bottom:7px}.py-2\.5{padding-top:8.75px;padding-bottom:8.75px}.text-\[14px\]{font-size:14px}.text-xl{font-size:17.5px;line-height:24.5px}.font-medium{font-weight:500}.leading-6{line-height:21px}.text-black{--tw-text-opacity:1;color:rgb(0 0 0/var(--tw-text-opacity))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175/var(--tw-text-opacity))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128/var(--tw-text-opacity))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55/var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity))}.shadow-2xl{--tw-shadow:0 25px 50px -12px #00000040;--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.outline{outline-style:solid}.filter{filter:var(--tw-blur)var(--tw-brightness)var(--tw-contrast)var(--tw-grayscale)var(--tw-hue-rotate)var(--tw-invert)var(--tw-saturate)var(--tw-sepia)var(--tw-drop-shadow)}.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-duration:.15s;transition-timing-function:cubic-bezier(.4,0,.2,1)}@keyframes enter{0%{opacity:var(--tw-enter-opacity,1);transform:translate3d(var(--tw-enter-translate-x,0),var(--tw-enter-translate-y,0),0)scale3d(var(--tw-enter-scale,1),var(--tw-enter-scale,1),var(--tw-enter-scale,1))rotate(var(--tw-enter-rotate,0))}}@keyframes exit{to{opacity:var(--tw-exit-opacity,1);transform:translate3d(var(--tw-exit-translate-x,0),var(--tw-exit-translate-y,0),0)scale3d(var(--tw-exit-scale,1),var(--tw-exit-scale,1),var(--tw-exit-scale,1))rotate(var(--tw-exit-rotate,0))}}.hover\:bg-\[\#635bff\]\/90:hover{background-color:#635bffe6}</style><div id="plasmo-shadow-container" style="z-index: 2147483647; position: relative;"><div id="plasmo-inline" class="plasmo-csui-container" style="display: flex; position: relative; top: 0px; left: 0px;"><div class="aitdk-extension shadow-2xl flex fixed w-[520px] top-0 right-0 bottom-0 bg-white hidden"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x absolute right-2 top-2 z-[1] p-1 cursor-pointer text-gray-500"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-loader-circle animate-spin text-gray-400 absolute top-1/2 left-1/2 -ml-[13px] -mt-[13px] -z-[1]"><path d="M21 12a9 9 0 1 1-6.219-8.56"></path></svg></div></div></div></template></plasmo-csui><div id="immersive-translate-browser-popup" style="all: initial"><template shadowrootmode="open"><style>/** 基础色阶定义 **/
+:root,
+#mount[data-theme="light"],
+#mount:not([data-theme="dark"]) {
+  /* 中性灰阶（light） */
+  --c-00: #000000;
+  --c-22: #222222;
+  --c-33: #333333;
+  --c-66: #666666;
+  --c-83: #838383;
+  --c-99: #999999;
+  --c-c7: #c7c7c7;
+  --c-cc: #cccccc;
+  --c-e6: #e6e6e6;
+  --c-f5: #f5f5f5;
+  --c-ff: #ffffff;
+  /* 品牌主色阶（light） */
+  --p-main: #ea4c89;
+  --p-hover: #ec5e95;
+  --p-active: #e34a85;
+  --p-special: #ee71a2;
+  --p-disabled: #f4a5c4;
+  --p-text-disabled: #f9c9dc;
+  --p-weak: #fdedf3;
+  /* Surface 层级（light，TC 填充-1） */
+  --s-1: #f3f5f6;
+  --s-1-hover: #f6f8f9;
+  --s-1-active: #edf1f2;
+  --s-1-weak: #fafbfb;
+  /* 输入/边框（light，TC 填充-2） */
+  --input-bg-base: #fafbfc;
+  --input-border: #ecf0f7;
+  --input-border-strong: #e0e0e6;
+  --input-bg-strong: #fafdff;
+}
+
+:root[data-theme="dark"],
+[data-theme="dark"] {
+  /* 中性灰阶（dark） */
+  --c-00: #ffffff;
+  --c-22: #dbdbdb;
+  --c-33: #dbdbdb;
+  --c-66: #b3b3b3;
+  --c-83: #838383;
+  --c-99: #707070;
+  --c-c7: #666666;
+  --c-cc: #5c5c5c;
+  --c-e6: #3b3b3b;
+  --c-f5: #262626;
+  --c-ff: #222222;
+  /* 品牌主色阶（dark） */
+  --p-main: #e23c7c;
+  --p-hover: #ea4c89;
+  --p-active: #d5467d;
+  --p-special: #a93a65;
+  --p-disabled: #7e2f4d;
+  --p-text-disabled: #522335;
+  --p-weak: #26171d;
+  /* Surface 层级（dark，TC 填充-1） */
+  --s-1: #2d2e2f;
+  --s-1-hover: #323434;
+  --s-1-active: #202121;
+  --s-1-weak: #262627;
+  /* 输入/边框（dark，TC 填充-2） */
+  --input-bg-base: #2b2d30;
+  --input-border: #3e434b;
+  --input-border-strong: #43474b;
+  --input-bg-strong: #1f2123;
+}
+
+:root,
+#mount [data-theme] {
+  /* 业务/通用变量引用色阶（全局可见，含 Shadow DOM） */
+  --primary: var(--p-main);
+  --primary-hover: var(--p-hover);
+  --primary-inverse: #fff;
+  --modal-background: var(--s-1);
+  --modal-border: var(--input-border);
+  --modal-text: var(--c-22);
+  --modal-text-secondary: var(--c-66);
+  --modal-error: var(--p-main);
+  --modal-required: #f53f3f;
+  --modal-success: #68cd52;
+  --modal-button-background: var(--p-main);
+  --modal-button-text: var(--c-ff);
+  --modal-input-background: var(--input-bg-base);
+  --modal-check-color: var(--p-main);
+  --background-color: var(--c-ff);
+  --background-light-green: var(--s-1-weak, #f5f7f9);
+  --text-black-2: var(--c-22);
+  --text-gray-2: var(--c-22);
+  --text-gray-6: var(--c-66);
+  --text-gray-9: var(--c-99);
+  --text-gray-c2: var(--c-c7);
+  --switch-background-color: var(--c-c7, hsl(205deg, 16%, 77%));
+  --float-ball-more-button-border-color: var(--c-f5, #f6f6f6);
+  --float-ball-more-button-background-color: var(--c-ff);
+  --float-ball-more-button-hover-color: var(--p-weak);
+  --float-ball-more-button-svg-color: #6c6f73;
+  --service-bg-hover: var(--s-1-hover, #f7faff);
+  --service-bg: var(--s-1-weak, #fafbfb);
+}
+
+#mount {
+  --font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
+    "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  /* PC/H5 兼容的字号、间距、圆角、阴影变量 */
+  --f-12: 12px;
+  --f-14: 14px;
+  --f-15: 15px;
+  --f-16: 16px;
+  --f-18: 18px;
+  --f-20: 20px;
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-18: 18px;
+  --space-24: 24px;
+  --radius-8: 8px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --control-height-lg: 44px;
+  --width-28: 28px;
+  --width-24: 24px;
+  --width-20: 20px;
+  --width-18: 18px;
+  --width-16: 16px;
+  --width-label-md: 56px;
+  --shadow-lg: 0 18px 48px rgba(0, 0, 0, 0.12);
+
+  /* 常规变量 */
+  --line-height: 1.5;
+  --font-weight: 400;
+  --font-size: 16px;
+  --border-radius: 4px;
+  --border-width: 2px;
+  --outline-width: 3px;
+  --spacing: 16px;
+  --typography-spacing-vertical: 24px;
+  --block-spacing-vertical: calc(var(--spacing) * 2);
+  --block-spacing-horizontal: var(--spacing);
+  --grid-spacing-vertical: 0;
+  --grid-spacing-horizontal: var(--spacing);
+  --form-element-spacing-vertical: 12px;
+  --form-element-spacing-horizontal: 16px;
+  --nav-element-spacing-vertical: 16px;
+  --nav-element-spacing-horizontal: 8px;
+  --nav-link-spacing-vertical: 8px;
+  --nav-link-spacing-horizontal: 8px;
+  --form-label-font-weight: var(--font-weight);
+  --transition: 0.2s ease-in-out;
+  --modal-overlay-backdrop-filter: blur(4px);
+  --switch-color: var(--primary-inverse);
+  --switch-checked-background-color: var(--primary);
+  --icon-xia: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgaWQ9IkZyYW1lIj4KPHBhdGggaWQ9IlZlY3RvciIgZD0iTTguMDAyOTEgOS42Nzk4M0wzLjgzMzM5IDUuNTEyMjFMMy4wMjUzOSA2LjMxOTgzTDguMDAzMjkgMTEuMjk1MUwxMi45NzYyIDYuMzE5ODNMMTIuMTY3OSA1LjUxMjIxTDguMDAyOTEgOS42Nzk4M1oiIGZpbGw9IiM4MzgzODMiLz4KPC9nPgo8L3N2Zz4K");
+  /* 兼容旧变量：主色直接引用品牌主色阶 */
+  --primary: var(--p-main);
+  --primary-hover: var(--p-hover);
+  --primary-inverse: #fff;
+  /* Modal 业务变量引用色阶 */
+  --modal-background: var(--s-1);
+  --modal-border: var(--input-border);
+  --modal-text: var(--c-22);
+  --modal-text-secondary: var(--c-66);
+  --modal-error: var(--p-main);
+  --modal-required: #f53f3f;
+  --modal-success: #68cd52;
+  --modal-button-background: var(--p-main);
+  --modal-button-text: var(--c-ff);
+  --modal-input-background: var(--input-bg-base);
+  --modal-check-color: var(--p-main);
+  --background-color: var(--c-ff);
+  --background-light-green: var(--s-1-weak, #f5f7f9);
+  --text-black-2: var(--c-22);
+  --text-gray-2: var(--c-22);
+  --text-gray-6: var(--c-66);
+  --text-gray-9: var(--c-99);
+  --text-gray-c2: var(--c-c7);
+  --switch-background-color: var(--c-c7, hsl(205deg, 16%, 77%));
+  --float-ball-more-button-border-color: var(--c-f5, #f6f6f6);
+  --float-ball-more-button-background-color: var(--c-ff);
+  --float-ball-more-button-hover-color: var(--p-weak);
+  --float-ball-more-button-svg-color: #6c6f73;
+  --service-bg-hover: var(--s-1-hover, #f7faff);
+  --service-bg: var(--s-1-weak, #fafbfb);
+  line-height: var(--line-height);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+}
+
+@media (max-width: 480px) {
+  :root,
+  #mount {
+    --f-12: 10px;
+    --f-14: 12px;
+    --f-15: 13px;
+    --f-16: 14px;
+    --f-18: 16px;
+    --f-20: 18px;
+    --space-4: 4px;
+    --space-6: 4px;
+    --space-8: 6px;
+    --space-12: 8px;
+    --space-16: 12px;
+    --space-18: 14px;
+    --space-24: 18px;
+    --radius-8: 6px;
+    --radius-12: 10px;
+    --radius-16: 12px;
+    --control-height-lg: 38px;
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.1);
+    --width-28: 24px;
+    --width-24: 20px;
+    --width-20: 16px;
+    --width-18: 14px;
+    --width-16: 12px;
+    --width-label-md: 52px;
+  }
+}
+
+#mount * {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+:where(#mount) a,
+:where(#mount) [role="link"] {
+  --color: var(--primary);
+  --background-color: transparent;
+  outline: none;
+  background-color: var(--background-color);
+  color: var(--color);
+  -webkit-text-decoration: var(--text-decoration);
+  text-decoration: var(--text-decoration);
+  transition: background-color var(--transition), color var(--transition),
+    box-shadow var(--transition), -webkit-text-decoration var(--transition);
+  transition: background-color var(--transition), color var(--transition),
+    text-decoration var(--transition), box-shadow var(--transition);
+  transition: background-color var(--transition), color var(--transition),
+    text-decoration var(--transition), box-shadow var(--transition),
+    -webkit-text-decoration var(--transition);
+}
+:where(#mount) a:is([aria-current], :hover, :active, :focus),
+:where(#mount) [role="link"]:is([aria-current], :hover, :active, :focus) {
+  --color: var(--primary-hover);
+  --text-decoration: underline;
+}
+
+:where(#mount) label {
+  font-size: 13px;
+  line-height: 1.3;
+  color: var(--text-gray-2, #222222);
+}
+
+:where(#mount) button {
+  width: 100%;
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.3;
+  min-height: 44px;
+  border-radius: 12px;
+  padding: 0 14px;
+  border: none;
+  background-color: var(--primary, #ea4c89);
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+:where(#mount) button:hover {
+  background-color: var(--primary-hover, #f082ac);
+}
+
+:where(#mount) button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+:where(#mount) select,
+:where(#mount) input,
+:where(#mount) textarea {
+  font-family: inherit;
+  color: var(--text-gray-2, #222222);
+}
+
+:where(#mount) select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: inherit;
+  color: var(--text-gray-2, inherit);
+  font-size: 13px;
+  line-height: 1.3;
+  outline: none;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--popup-item-background-color, transparent);
+  background-image: var(--icon-xia, none);
+  background-repeat: no-repeat;
+  background-position: center right 12px;
+  background-size: 16px auto;
+  cursor: pointer;
+}
+
+:where(#mount) input[type="checkbox"] {
+  accent-color: var(--primary, #ea4c89);
+}
+
+[type="checkbox"],
+[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 1.25em;
+  height: 1.25em;
+  margin-top: -0.125em;
+  margin-right: 0.375em;
+  margin-left: 0;
+  -webkit-margin-start: 0;
+  margin-inline-start: 0;
+  -webkit-margin-end: 0.375em;
+  margin-inline-end: 0.375em;
+  border-width: var(--border-width);
+  font-size: inherit;
+  vertical-align: middle;
+  cursor: pointer;
+}
+[type="checkbox"]::-ms-check,
+[type="radio"]::-ms-check {
+  display: none;
+}
+[type="checkbox"]:checked,
+[type="checkbox"]:checked:active,
+[type="checkbox"]:checked:focus,
+[type="radio"]:checked,
+[type="radio"]:checked:active,
+[type="radio"]:checked:focus {
+  --background-color: var(--primary);
+  --border-color: var(--primary);
+  background-image: var(--icon-checkbox);
+  background-position: center;
+  background-size: 0.75em auto;
+  background-repeat: no-repeat;
+}
+[type="checkbox"] ~ label,
+[type="radio"] ~ label {
+  display: inline-block;
+  margin-right: 0.375em;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+[type="checkbox"]:indeterminate {
+  --background-color: var(--primary);
+  --border-color: var(--primary);
+  background-image: var(--icon-minus);
+  background-position: center;
+  background-size: 0.75em auto;
+  background-repeat: no-repeat;
+}
+
+[type="radio"] {
+  border-radius: 50%;
+}
+[type="radio"]:checked,
+[type="radio"]:checked:active,
+[type="radio"]:checked:focus {
+  --background-color: var(--primary-inverse);
+  border-width: 0.35em;
+  background-image: none;
+}
+
+:where(#mount) [type="checkbox"][role="switch"] {
+  --background-color: var(--switch-background-color);
+  --border-color: var(--switch-background-color);
+  --color: var(--switch-color);
+  width: 2.25em;
+  height: 1.25em;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 1.25em;
+  background-color: var(--background-color);
+  line-height: 1.25em;
+}
+:where(#mount) [type="checkbox"][role="switch"]:focus {
+  --background-color: var(--switch-background-color);
+  --border-color: var(--switch-background-color);
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked {
+  --background-color: var(--switch-checked-background-color);
+  --border-color: var(--switch-checked-background-color);
+}
+:where(#mount) [type="checkbox"][role="switch"]:before {
+  display: block;
+  width: calc(1.25em - (var(--border-width) * 2));
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--color);
+  content: "";
+  transition: margin 0.1s ease-in-out;
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked {
+  background-image: none;
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked::before {
+  margin-left: calc(1.125em - var(--border-width));
+  -webkit-margin-start: calc(1.125em - var(--border-width));
+  margin-inline-start: calc(1.125em - var(--border-width));
+}
+
+:where(#mount) [type="checkbox"][aria-invalid="false"],
+:where(#mount) [type="checkbox"]:checked[aria-invalid="false"],
+:where(#mount) [type="radio"][aria-invalid="false"],
+:where(#mount) [type="radio"]:checked[aria-invalid="false"],
+:where(#mount) [type="checkbox"][role="switch"][aria-invalid="false"],
+:where(#mount) [type="checkbox"][role="switch"]:checked[aria-invalid="false"] {
+  --border-color: var(--form-element-valid-border-color);
+}
+:where(#mount) [type="checkbox"][aria-invalid="true"],
+:where(#mount) [type="checkbox"]:checked[aria-invalid="true"],
+:where(#mount) [type="radio"][aria-invalid="true"],
+:where(#mount) [type="radio"]:checked[aria-invalid="true"],
+:where(#mount) [type="checkbox"][role="switch"][aria-invalid="true"],
+:where(#mount) [type="checkbox"][role="switch"]:checked[aria-invalid="true"] {
+  --border-color: var(--form-element-invalid-border-color);
+}
+
+.text-black {
+  color: var(--text-black-2);
+}
+
+.text-gray-2 {
+  color: var(--text-gray-2);
+}
+
+.text-gray-6 {
+  color: var(--text-gray-6);
+}
+
+.text-gray-9 {
+  color: var(--text-gray-9);
+}
+
+.text-gray-c2 {
+  color: var(--text-gray-c2);
+}
+
+.pt-4 {
+  padding-top: 16px;
+}
+
+.p-2 {
+  padding: 8px;
+}
+
+.pl-5 {
+  padding-left: 48px;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.pl-2 {
+  padding-left: 8px;
+}
+
+.pl-4 {
+  padding-left: 24px;
+}
+
+.pt-2 {
+  padding-top: 8px;
+}
+
+.pb-2 {
+  padding-bottom: 8px;
+}
+
+.pb-4 {
+  padding-bottom: 16px;
+}
+
+.pb-5 {
+  padding-bottom: 20px;
+}
+
+.pr-5 {
+  padding-right: 48px;
+}
+
+.text-sm {
+  font-size: 13px;
+}
+
+.text-base {
+  font-size: 16px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.mb-0 {
+  margin-bottom: 0px;
+}
+
+.mb-2 {
+  margin-bottom: 8px;
+}
+
+.mb-4 {
+  margin-bottom: 16px;
+}
+
+.mb-3 {
+  margin-bottom: 12px;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.py-2 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.py-2-5 {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mt-2 {
+  margin-top: 8px;
+}
+
+.mt-3 {
+  margin-top: 12px;
+}
+
+.mt-4 {
+  margin-top: 16px;
+}
+
+.mt-5 {
+  margin-top: 20px;
+}
+
+.mt-6 {
+  margin-top: 24px;
+}
+
+.mb-1 {
+  margin-bottom: 4px;
+}
+
+.ml-4 {
+  margin-left: 24px;
+}
+
+.ml-3 {
+  margin-left: 16px;
+}
+
+.ml-2 {
+  margin-left: 8px;
+}
+
+.ml-1 {
+  margin-left: 4px;
+}
+
+.mr-1 {
+  margin-right: 4px;
+}
+
+.mr-2 {
+  margin-right: 8px;
+}
+
+.mr-3 {
+  margin-right: 16px;
+}
+
+.mx-2 {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.pl-3 {
+  padding-left: 12px;
+}
+
+.pr-3 {
+  padding-right: 12px;
+}
+
+.p-3 {
+  padding: 12px;
+}
+
+.px-1 {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.px-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.pt-3 {
+  padding-top: 12px;
+}
+
+.px-6 {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.px-4 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.pt-6 {
+  padding-top: 20px;
+}
+
+.py-3 {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.py-0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.left-auto {
+  left: auto !important;
+}
+
+.max-h-28 {
+  max-height: 112px;
+}
+
+.max-h-30 {
+  max-height: 120px;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
+.text-xs {
+  font-size: 12px;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-3 {
+  flex: 3;
+}
+
+.flex-4 {
+  flex: 4;
+}
+
+.flex-2 {
+  flex: 2;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.max-content {
+  width: max-content;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-baseline {
+  align-items: baseline;
+}
+
+.my-5 {
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+.my-4 {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.my-3 {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.pt-3 {
+  padding-top: 12px;
+}
+
+.px-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.pt-2 {
+  padding-top: 8px;
+}
+
+.px-2 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.pt-1 {
+  padding-top: 4px;
+}
+
+.px-1 {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.pb-2 {
+  padding-bottom: 8px;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.shrink-0 {
+  flex-shrink: 0;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.close {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  background-image: var(--icon-close);
+  background-position: center;
+  background-size: auto 1rem;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  transition: opacity var(--transition);
+}
+
+.padding-two-column {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.muted {
+  color: #999;
+}
+
+.text-label {
+  color: #666;
+}
+
+.display-none {
+  display: none;
+}
+
+/* dark use #18232c */
+@media (prefers-color-scheme: dark) {
+  .text-label {
+    color: #9ca3af;
+  }
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.text-decoration-none:is([aria-current], :hover, :active, :focus),
+[role="link"]:is([aria-current], :hover, :active, :focus) {
+  --text-decoration: none !important;
+  background-color: transparent !important;
+}
+
+.text-overflow-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.max-w-20 {
+  max-width: 180px;
+  white-space: nowrap;
+}
+
+[data-theme="light"],
+#mount:not([data-theme="dark"]) {
+  --popup-footer-background-color: #e8eaeb;
+  --popup-content-background-color: #ffffff;
+  --popup-item-background-color: #f3f5f6;
+  --popup-item-hover-background-color: #eaeced;
+  --popup-trial-pro-background-color: #f9fbfc;
+  --service-select-content-shadow: 0px 2px 12px 0px rgba(75, 76, 77, 0.2);
+  --service-select-border-color: #fafafa;
+  --service-select-selected-background-color: #f3f5f6;
+  --download-app-background: #f3f5f6;
+  --translate-language-background-color: #f3f5f6;
+  --translate-language-icon-color: #666666;
+  --translate-language-text-color: #222222;
+  --translate-language-hover-background-color: #fdedf3;
+  --translate-language-hover-icon-color: #e95d93;
+  --error-bg: #fdedf3;
+  --error-text: #222;
+  --error-link: #ea4c89;
+}
+
+[data-theme="dark"] {
+  --popup-footer-background-color: #0d0d0d;
+  --popup-content-background-color: #191919;
+  --popup-item-background-color: #272727;
+  --popup-item-hover-background-color: #333333;
+  --popup-trial-pro-background-color: #222222;
+  --service-select-content-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.9);
+  --service-select-border-color: #2c2c2c;
+  --service-select-selected-background-color: #333333;
+  --download-app-background: #333;
+  --translate-language-background-color: #2d2e2f;
+  --translate-language-icon-color: #b3b3b3;
+  --translate-language-text-color: #b3b3b3;
+  --translate-language-hover-background-color: #a97b8c;
+  --translate-language-hover-icon-color: rgba(255, 255, 255, 0.9);
+  --error-bg: #26171d;
+  --error-text: #dbdbdb;
+  --error-link: #ea4c89;
+}
+
+#mount {
+  min-width: 268px;
+}
+
+body {
+  padding: 0;
+  margin: 0 auto;
+  min-width: 268px;
+  border-radius: 10px;
+}
+
+.popup-container {
+  font-size: 16px;
+  --font-size: 16px;
+  color: #666;
+  background-color: var(--popup-footer-background-color);
+  width: 316px;
+  min-width: 316px;
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-content {
+  background-color: var(--popup-content-background-color);
+  border-radius: 0px 0px 12px 12px;
+  padding: 16px 20px;
+}
+
+.popup-userscript-three-feature-layout {
+  background-color: var(--popup-footer-background-color);
+  width: 350px;
+  min-width: 350px;
+}
+
+.popup-userscript-three-feature-layout .popup-content {
+  padding-bottom: 20px;
+  border-radius: 0 0 12px 12px;
+}
+
+.popup-userscript-three-feature-layout .popup-footer {
+  border-radius: 0;
+}
+
+.immersive-translate-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  touch-action: none;
+}
+
+.immersive-translate-popup-wrapper {
+  background: var(--background-color);
+  border-radius: 10px;
+  border: 1px solid var(--muted-border-color);
+}
+
+.main-button {
+  font-size: 16px;
+  font-weight: 700;
+  vertical-align: middle;
+  border-radius: 12px;
+  padding: unset;
+  height: 48px;
+  line-height: 48px;
+  flex: 1;
+}
+
+select.translate-service,
+select.min-select {
+  --form-element-spacing-horizontal: 0;
+  margin-bottom: 0px;
+  max-width: unset;
+  flex: 1;
+  overflow: hidden;
+  font-size: 13px;
+  border: none;
+  border-radius: 8px;
+  padding-right: 30px;
+  padding-left: 0px;
+  background-position: center right 12px;
+  background-size: 16px auto;
+  background-image: var(--icon-xia);
+  text-overflow: ellipsis;
+  color: var(--text-gray-2);
+  background-color: transparent;
+  box-shadow: unset !important;
+  cursor: pointer;
+}
+
+select.more {
+  background-position: center right;
+  padding-right: 20px;
+}
+
+select.translate-service {
+  color: var(--text-black-2);
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSI4IiB2aWV3Qm94PSIwIDAgOCA4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIG9wYWNpdHk9IjAuOCI+PHBhdGggZD0iTTMuNDc5NzMgNi4zODY0M0wwLjcyOTI5NyAzLjMyMjE2QzAuNjE2ODggMy4xOTY5NCAwLjU1NDY5NSAzLjAzNDU5IDAuNTU0Njg4IDIuODY2M0MwLjU1NDY4OCAyLjQ4OTI0IDAuODYwNTQ3IDIuMTgzNTkgMS4yMzc4NCAyLjE4MzU5SDYuNzM4NzFDNi45MDcwNyAyLjE4MzU4IDcuMDY5NTEgMi4yNDU3MiA3LjE5NDg4IDIuMzU4MDlDNy40NzU3NCAyLjYwOTg2IDcuNDk5MTkgMy4wNDE0OCA3LjI0NzI2IDMuMzIyMTZMNC40OTY4MiA2LjM4NjQ0QzQuNDgwMzIgNi40MDQ4MiA0LjQ2MjgzIDYuNDIyMjkgNC40NDQ0NCA2LjQzODc4QzQuMTYzNTggNi42OTA1NSAzLjczMTY2IDYuNjY3MTEgMy40Nzk3MyA2LjM4NjQzWiIgZmlsbD0iIzk5OTk5OSIvPjwvZz48L3N2Zz4K");
+  background-size: 8px auto;
+}
+
+.min-select-container.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.popup-footer {
+  background-color: var(--popup-footer-background-color);
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+/* Footer 三栏布局样式 */
+.footer-link-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  min-width: 72px;
+}
+
+.footer-icon-btn {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-icon-btn svg {
+  color: #999999;
+}
+
+[data-theme="dark"] .footer-icon-btn svg {
+  color: #707070;
+}
+
+.footer-link-text {
+  font-size: 12px;
+  line-height: 18px;
+  color: #666666;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .footer-link-text {
+  color: #b3b3b3;
+}
+
+.footer-link-btn-right {
+  justify-content: flex-end;
+}
+
+.footer-center-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #999999;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.footer-center-text.is-overflowing {
+  justify-content: flex-start;
+}
+
+.footer-center-text.is-overflowing .footer-center-content {
+  animation: footer-scroll-text 12s linear infinite;
+}
+
+@keyframes footer-scroll-text {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.footer-center-content {
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-scroll-gap {
+  display: inline-block;
+  width: 80px;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .footer-center-text {
+  color: #707070;
+}
+
+.footer-text-content {
+  display: inline-block;
+}
+
+.footer-privacy-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-version-inline-text {
+  font-size: 12px;
+  color: #999999;
+  line-height: 1;
+  border-bottom: 1px solid transparent;
+}
+
+[data-theme="dark"] .footer-version-inline-text {
+  color: #707070;
+}
+
+.footer-version-inline-text:hover {
+  border-bottom-color: #999999;
+}
+
+[data-theme="dark"] .footer-version-inline-text:hover {
+  border-bottom-color: #707070;
+}
+
+.translate-language-row {
+  gap: 4px;
+}
+
+.translate-language-exchange {
+  width: 36px;
+  height: 48px;
+  background-color: var(--translate-language-background-color);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--translate-language-icon-color);
+  flex-shrink: 0;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.translate-language-exchange:hover {
+  color: var(--translate-language-hover-icon-color);
+}
+
+.translate-language-exchange-active {
+  background-color: var(--translate-language-hover-background-color);
+  color: var(--translate-language-hover-icon-color);
+}
+
+.translate-language-exchange-active:hover {
+  background-color: var(--translate-language-hover-background-color);
+  color: var(--translate-language-hover-icon-color);
+}
+
+.translate-language-arrow {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+}
+
+.translation-service-container {
+  background-color: var(--popup-item-background-color);
+  border-radius: 12px;
+}
+
+.translation-service-primary-field {
+  position: relative;
+}
+
+.translation-service-guide-hitbox {
+  position: absolute;
+  right: 46px;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: auto;
+}
+
+.min-select-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 44px;
+  background-color: var(--popup-item-background-color);
+  padding-left: 16px;
+}
+
+.min-select-container:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.min-select-container:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.min-select-container:only-child {
+  border-radius: 10px;
+}
+
+.popup-ai-context-label {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+  min-width: 60px;
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+.popup-ai-context-switch {
+  align-self: center;
+  margin: 0;
+  margin-inline-end: 12px;
+}
+
+.translate-mode {
+  width: 36px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: var(--translate-language-background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  color: var(--translate-language-text-color);
+  margin-right: 8px;
+}
+
+/* 快捷操作设置标题栏 */
+.widgets-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 4px;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.widgets-header-title {
+  color: #999999;
+}
+
+.widgets-header-action {
+  color: #999999;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.widgets-header-action:hover {
+  color: #666666;
+}
+
+.widgets-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+  gap: 8px;
+}
+
+.popup-userscript-three-feature-layout .widgets-container-compact-monkey {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 12px;
+}
+
+.widgets-container.widgets-single-item {
+  grid-template-columns: minmax(0, 1fr);
+  margin-top: 12px;
+}
+
+.widgets-container.widgets-single-item .widget-item {
+  max-width: none;
+}
+
+/* 当只有两个小组件时的样式优化 */
+.widgets-container.widgets-two-items {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.widgets-container.widgets-two-items .widget-item {
+  max-width: none;
+}
+
+.widget-item {
+  display: flex;
+  width: 100%;
+  min-height: 44px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 1px solid #eef0f2;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  padding: 0 14px;
+  text-align: left;
+  gap: 6px;
+}
+
+.widget-item.widget-item-single {
+  flex: 1 1 auto;
+  flex-direction: row;
+  justify-content: center;
+  border: 1px solid #eef0f2;
+  border-radius: 16px;
+  padding: 0 14px;
+  background: transparent;
+}
+
+.popup-userscript-three-feature-layout .widget-item-compact {
+  min-height: 60px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  padding: 8px 12px;
+}
+
+.widget-item svg {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+}
+
+.widget-icon-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--c-66, #666666);
+  font-size: 14px;
+  line-height: 21px;
+  text-align: left;
+  word-break: keep-all;
+}
+
+.popup-userscript-three-feature-layout .widget-item-compact .widget-icon-text {
+  white-space: nowrap;
+  overflow: visible;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.widget-item.widget-item-single .widget-icon-text {
+  white-space: nowrap;
+  text-align: left;
+  color: var(--c-66, #666666);
+}
+
+[data-theme="dark"] .widget-item,
+[data-theme="dark"] .widget-item.widget-item-single {
+  border-color: #2e2e2e;
+}
+
+[data-theme="dark"] .widget-icon-text,
+[data-theme="dark"] .widget-item.widget-item-single .widget-icon-text {
+  color: var(--c-66, #666666);
+}
+
+[data-theme="dark"] .more-settings-icon {
+  fill: #191919;
+}
+
+.share-button-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 2px 3px 0 8px;
+}
+
+.share-button-container svg {
+  fill: var(--text-gray-9);
+}
+
+.min-select-container:hover,
+.widget-item:hover {
+  background-color: var(--popup-item-hover-background-color);
+}
+
+.main-button:hover {
+  background-color: #f5508f;
+}
+
+.share-button-container:hover {
+  background-color: var(--popup-item-background-color);
+  border-radius: 6px;
+}
+
+.error-boundary {
+  background: #fff2f0;
+  border: 1px solid #ffccc7;
+  display: flex;
+  padding: 12px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.88);
+  word-break: break-all;
+  margin: 12px;
+  border-radius: 12px;
+  flex-direction: column;
+}
+
+.upgrade-pro {
+  border-radius: 11px;
+  background: linear-gradient(57deg, #272727 19.8%, #696969 82.2%);
+  padding: 2px 8px;
+  transform: scale(0.85);
+}
+
+.upgrade-pro span {
+  background: linear-gradient(180deg, #ffeab4 17.65%, #f8c235 85.29%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+.upgrade-pro svg {
+  margin-top: -2px;
+}
+
+.upgrade-pro:hover {
+  background: linear-gradient(57deg, #3d3d3d 19.8%, #949494 82.2%);
+}
+
+.border-bottom-radius-0 {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.trial-pro-container {
+  border-radius: 0px 0px 12px 12px;
+  background: var(--popup-trial-pro-background-color);
+  display: flex;
+  align-items: center;
+  height: 44px;
+  padding-left: 16px;
+  padding-right: 12px;
+  font-size: 12px;
+}
+
+.trial-pro-container label {
+  line-height: 13px;
+  color: var(--text-black-2);
+}
+
+.trial-pro-container img {
+  margin-left: 5px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.upgrade-pro-discount-act {
+  height: 25px;
+  display: flex;
+  padding: 0 4px;
+  align-items: center;
+  border-radius: 15px;
+  background: linear-gradient(
+    90deg,
+    #cefbfa 11.33%,
+    #d7f56f 63.75%,
+    #fccd5e 100%
+  );
+  transform: scale(0.9);
+  box-shadow: 0px 1.8px 3.6px 0px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.upgrade-pro-discount-act span {
+  font-size: 12px;
+  font-weight: 700;
+  margin-left: 4px;
+  color: #222222;
+}
+
+.upgrade-pro-discount-act:hover {
+  text-decoration: unset;
+  background: linear-gradient(
+    90deg,
+    #e2fffe 11.33%,
+    #e6ff91 63.75%,
+    #ffdf93 100%
+  );
+}
+
+.custom-select-container {
+  width: 200px;
+  position: relative;
+  flex: 1;
+}
+
+#translation-service-select {
+  padding-right: 12px;
+}
+
+.custom-select-content {
+  border-radius: 12px;
+  background: var(--popup-content-background-color);
+  box-shadow: var(--service-select-content-shadow);
+  border: 1px solid var(--service-select-border-color);
+  padding: 8px;
+  position: absolute;
+  left: -68px;
+  right: 0;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.custom-select-item.default {
+  width: 100%;
+  padding: 0;
+}
+
+.custom-select-item {
+  font-size: 14px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--text-black-2);
+  width: auto;
+  overflow: hidden;
+  height: 30px;
+  line-height: 30px;
+}
+
+.custom-select-item-img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .custom-select-item-img {
+    margin-right: 6px;
+  }
+}
+
+.custom-select-content .custom-select-item.selected,
+.custom-select-content .custom-select-item:hover {
+  background: var(--service-select-selected-background-color);
+}
+
+.custom-select-item > span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.custom-select-item-pro {
+  font-size: 12px;
+  margin-left: 6px;
+  display: flex;
+}
+
+.custom-select-item-pro img {
+  margin: 0 3px;
+  width: 20px;
+  flex-shrink: 0;
+}
+
+.service-select-inline-sponsor-container {
+  width: 50px;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.service-select-inline-sponsor-marquee {
+  min-width: max-content;
+  display: inline-flex;
+  align-items: center;
+  column-gap: 12px;
+  animation: service-select-inline-sponsor-scroll 10s linear infinite;
+}
+
+.service-select-inline-sponsor-track {
+  min-width: max-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+@keyframes service-select-inline-sponsor-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 6px));
+  }
+}
+
+.custom-select-group-header {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-gray-9);
+  padding: 8px 8px 6px;
+  margin-top: 2px;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.custom-select-group-header--recommendation {
+  color: #beb3a0;
+  font-weight: 400;
+  letter-spacing: 0;
+  padding-top: 4px;
+}
+
+.custom-select-group-header-tip {
+  display: inline-flex;
+  align-items: center;
+  color: #bcbcbc;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.more-container {
+  position: relative;
+}
+
+.new-menu-indicator {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #ef3434;
+  border-radius: 50%;
+  right: 18px;
+  top: 4px;
+}
+
+.download-app {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px;
+  background: var(--download-app-background);
+  padding: 4px 8px;
+  color: var(--text-gray-6);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Popup 动画效果 */
+@keyframes popup-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes popup-fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+}
+
+.popup-generic-content {
+  animation: popup-fade-in 0.2s ease-out;
+}
+
+.popup-generic-content.hiding {
+  animation: popup-fade-out 0.15s ease-in;
+}
+
+select.min-select {
+  --form-element-spacing-horizontal: 0;
+  max-width: 128px;
+  overflow: hidden;
+  color: var(--primary);
+  font-size: 13px;
+  border: none;
+  padding: 0;
+  padding-right: 20px;
+  text-overflow: ellipsis;
+  color: var(--color);
+}
+select.min-select-secondary {
+  color: var(--color);
+}
+select.min-select:focus {
+  outline: none;
+  border: none;
+  --box-shadow: none;
+}
+
+select.min-select-left {
+  padding-right: 0px;
+  /* padding-left: 24px; */
+  /* background-position: center left 0; */
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+select.transform-padding-left {
+  padding-left: 12px;
+  transform: translateX(-12px);
+  background-position: center right 0px;
+}
+
+select.text-gray-6 {
+  color: var(--text-gray-6);
+}
+
+/* dark use black, for windows */
+@media (prefers-color-scheme: dark) {
+  select.translate-service option,
+  select.min-select option {
+    background-color: #666666;
+  }
+}
+
+select.min-select-no-arrow {
+  background-image: none;
+  padding-right: 0;
+}
+
+.activity-tips {
+  border-radius: 8px;
+  padding: 0px 8px;
+  height: 26px;
+  background: linear-gradient(
+    83deg,
+    #faccde -0.87%,
+    #fce7ef 43.13%,
+    #fbd6e4 72.08%,
+    #ffb3d1 96.34%
+  );
+  color: #333;
+  cursor: pointer;
+  gap: 4px;
+  font-size: 12px;
+}
+
+.activity-tips-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.countdown-container {
+  min-width: 50px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.01em;
+}
+
+.activity-tips-text {
+  font-weight: 600;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 非会员升级提示 */
+.upgrade-tips {
+  padding: 0px 6px 0px 4px;
+  height: 18px;
+  color: #ea4c89;
+  cursor: pointer;
+  gap: 6px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.upgrade-tips svg:first-child {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  filter: drop-shadow(0px 4px 4px rgba(236, 76, 140, 0.2));
+}
+
+.upgrade-tips-text {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.upgrade-tips-switch {
+  position: relative;
+  width: 30px;
+  height: 18px;
+  border-radius: 24px;
+  background: #cccccc;
+  flex-shrink: 0;
+}
+
+.upgrade-tips-switch-thumb {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+/* 抽屉组件样式 */
+.drawer-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+
+.drawer-overlay.drawer-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.drawer-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ffffff;
+  border-radius: 12px 12px 0 0;
+  z-index: 101;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-visible .drawer-panel {
+  transform: translateY(0);
+}
+
+[data-theme="dark"] .drawer-panel {
+  background: #222222;
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  flex-shrink: 0;
+}
+
+.drawer-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333333;
+}
+
+[data-theme="dark"] .drawer-title {
+  color: #e0e0e0;
+}
+
+.drawer-close {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999999;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.drawer-close:hover {
+  background-color: #f3f5f6;
+}
+
+[data-theme="dark"] .drawer-close:hover {
+  background-color: #333333;
+}
+
+.drawer-body {
+  padding: 16px 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.drawer-body.drawer-body-hover {
+  padding: 0 20px 20px 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.drawer-body.drawer-body-more-settings {
+  padding-top: 0;
+}
+
+.drawer-footer {
+  padding: 12px 20px;
+  border-top: 1px solid #eef0f2;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+[data-theme="dark"] .drawer-footer {
+  border-top: 1px solid #2e2e2e;
+}
+
+.drawer-footer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.drawer-footer-actions-single {
+  justify-content: center;
+}
+
+.drawer-footer-text {
+  font-size: 12px;
+  cursor: pointer;
+  color: #999999;
+  text-decoration: none;
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.drawer-footer-actions-single .drawer-footer-text {
+  flex: 0 1 auto;
+  max-width: 100%;
+}
+
+.drawer-footer-text:hover {
+  text-decoration: underline;
+}
+
+/* 抽屉内容区域样式 */
+.drawer-section {
+  margin-bottom: 16px;
+}
+
+.drawer-section:last-child {
+  margin-bottom: 0;
+}
+
+.drawer-section-highlight {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+[data-theme="dark"] .drawer-section-highlight {
+  background-color: #2a2a2a;
+}
+
+.drawer-section-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #666666;
+  margin-bottom: 12px;
+}
+
+[data-theme="dark"] .drawer-section-title {
+  color: #999999;
+}
+
+.drawer-section-divider {
+  height: 1px;
+  background-color: #eef0f2;
+  margin: 16px 0;
+}
+
+/* ========== 通用抽屉组件样式 ========== */
+.popup-drawer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.popup-drawer-card {
+  background: #f3f5f6;
+  border-radius: 12px;
+  padding: 12px 12px 16px;
+}
+
+[data-theme="dark"] .popup-drawer-card {
+  background: #2a2a2a;
+}
+
+.popup-drawer-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 21px;
+  gap: 12px;
+}
+
+.popup-drawer-card-header input[type="checkbox"][role="switch"] {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.popup-drawer-card-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #222222;
+  line-height: 21px;
+}
+
+[data-theme="dark"] .popup-drawer-card-title {
+  color: #e0e0e0;
+}
+
+.popup-drawer-card-divider {
+  height: 1px;
+  width: calc(100% + 24px);
+  background-color: #ffffff;
+  margin: 12px -12px 16px;
+}
+
+[data-theme="dark"] .popup-drawer-card-divider {
+  background-color: #333333;
+}
+
+.popup-drawer-demo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.popup-drawer-demo-region-fixed {
+  height: 51px;
+  max-height: 51px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-region-min {
+  min-height: 51px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-selection {
+  width: 100%;
+  min-width: 0;
+  flex-wrap: nowrap;
+}
+
+.popup-drawer-demo-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-plus,
+.popup-drawer-demo-equal {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  color: #333333;
+}
+
+[data-theme="dark"] .popup-drawer-demo-plus,
+[data-theme="dark"] .popup-drawer-demo-equal {
+  color: #e0e0e0;
+}
+
+.popup-drawer-demo-logo {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-logo img {
+  width: 28px;
+  height: 28px;
+  display: block;
+  filter: drop-shadow(0 4px 12px rgba(255, 166, 201, 0.5));
+}
+
+.popup-drawer-demo-result {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #333333;
+}
+
+.popup-drawer-demo-result-ellipsis {
+  min-width: 0;
+  max-width: calc(100% - 72px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .popup-drawer-demo-result {
+  color: #e0e0e0;
+}
+
+.popup-drawer-trigger {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.popup-drawer-trigger-label {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #999999;
+  padding-left: 4px;
+}
+
+.popup-drawer-trigger-options {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.popup-drawer-trigger-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #333333;
+  background: #ffffff;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.popup-drawer-trigger-option-disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.popup-drawer-trigger-option:not(.popup-drawer-trigger-option-selected):hover {
+  border-color: #d0d3d6;
+}
+
+.popup-drawer-trigger-option-selected {
+  border: 0.5px solid #ea4c89;
+  background: #fdedf3;
+  box-shadow: 0px 4px 12px rgba(255, 166, 201, 0.5);
+}
+
+[data-theme="dark"] .popup-drawer-trigger-option {
+  background: #1f1f1f;
+  border-color: #333333;
+  color: #e0e0e0;
+}
+
+[data-theme="dark"]
+  .popup-drawer-trigger-option:not(
+    .popup-drawer-trigger-option-selected
+  ):hover {
+  border-color: #444444;
+}
+
+[data-theme="dark"] .popup-drawer-trigger-option-selected {
+  background: rgba(233, 76, 137, 0.2);
+  border-color: #ea4c89;
+  box-shadow: 0 4px 12px 0 rgba(255, 166, 201, 0.3);
+}
+
+.popup-drawer-trigger-option-with-icon {
+  gap: 8px;
+}
+
+/* ========== 通用抽屉演示区域样式 ========== */
+/* 键帽样式 */
+.popup-drawer-demo-keycap {
+  min-width: 72px;
+  padding: 9px;
+  height: auto;
+  box-sizing: border-box;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  color: #ffffff;
+  background:
+    radial-gradient(
+      60px 36px at 85% 100%,
+      rgba(208, 208, 208, 0.2),
+      rgba(255, 255, 255, 0)
+    ),
+    radial-gradient(72px 36px at 50% 0%, #101010 0%, #242424 100%);
+  box-shadow:
+    2px 2px 3.5px rgba(0, 0, 0, 0.4),
+    inset 0.5px 0.7px 0.4px rgba(255, 255, 255, 0.5),
+    inset -0.5px -0.5px 0.2px rgba(0, 0, 0, 0.6);
+}
+
+.popup-drawer-demo-keycap-text {
+  max-width: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 小圆点样式 */
+.popup-drawer-demo-mini-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ea4c89;
+  flex-shrink: 0;
+  align-self: center;
+  box-shadow: 0 4px 12px rgba(255, 166, 201, 0.5);
+}
+
+[data-theme="dark"] .drawer-section-divider {
+  background-color: #333333;
+}
+
+/* 开关行 */
+.drawer-switch-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.drawer-switch-row.drawer-row-border {
+  border-bottom: 1px solid #eef0f2;
+  margin-bottom: 8px;
+  padding-bottom: 12px;
+}
+
+[data-theme="dark"] .drawer-switch-row.drawer-row-border {
+  border-bottom-color: #333333;
+}
+
+.drawer-switch-label {
+  font-size: 14px;
+  color: #222222;
+}
+
+[data-theme="dark"] .drawer-switch-label {
+  color: #e0e0e0;
+}
+
+/* 链接行 */
+.drawer-link-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  cursor: pointer;
+  border-bottom: 1px solid #eef0f2;
+  font-size: 14px;
+  color: #222222;
+}
+
+.drawer-link-row:last-child {
+  border-bottom: none;
+}
+
+[data-theme="dark"] .drawer-link-row {
+  border-bottom-color: #333333;
+  color: #e0e0e0;
+}
+
+.drawer-link-row:hover {
+  color: #ea4c89;
+}
+
+/* 演示区域 */
+.drawer-demo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 0;
+}
+
+.drawer-demo-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+}
+
+[data-theme="dark"] .drawer-demo-icon {
+  background-color: #333333;
+  border-color: #444444;
+}
+
+.drawer-demo-plus,
+.drawer-demo-equal {
+  font-size: 16px;
+  color: #999999;
+}
+
+.drawer-demo-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.drawer-demo-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.drawer-demo-result {
+  font-size: 14px;
+  color: #222222;
+  padding: 8px 12px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+}
+
+[data-theme="dark"] .drawer-demo-result {
+  background-color: #333333;
+  border-color: #444444;
+  color: #e0e0e0;
+}
+
+/* 触发方式选项 */
+.drawer-options {
+  display: flex;
+  gap: 8px;
+}
+
+.drawer-options-wrap {
+  flex-wrap: wrap;
+}
+
+.drawer-option {
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #666666;
+  background-color: #f3f5f6;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+[data-theme="dark"] .drawer-option {
+  background-color: #333333;
+  color: #b3b3b3;
+}
+
+.drawer-option:hover {
+  background-color: #eaeced;
+}
+
+[data-theme="dark"] .drawer-option:hover {
+  background-color: #3a3a3a;
+}
+
+.drawer-option-selected {
+  border-color: #ea4c89;
+  background-color: #fdedf3;
+  color: #ea4c89;
+  box-shadow: 0px 4px 12px rgba(255, 166, 201, 0.5);
+}
+
+[data-theme="dark"] .drawer-option-selected {
+  background-color: rgba(234, 76, 137, 0.2);
+}
+
+.drawer-body.drawer-body-selection {
+  padding: 0 20px 20px 20px;
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+
+/* ========== 更多设置抽屉样式 ========== */
+.more-settings-drawer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.more-settings-quick-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.more-settings-feature-card {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 40px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: #f3f5f6;
+  transition: background-color 0.2s ease;
+}
+
+.more-settings-feature-card:hover {
+  background-color: #e8eaec;
+}
+
+.more-settings-feature-card:active {
+  background-color: #dde0e2;
+}
+
+.more-settings-feature-card-label {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #666666;
+  white-space: nowrap;
+}
+
+.more-settings-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.more-settings-switch-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 21px;
+  gap: 12px;
+}
+
+.more-settings-switch-label {
+  flex: 1;
+  min-width: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #222222;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.more-settings-switch-row input[type="checkbox"] {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+[data-theme="dark"] .more-settings-switch-label {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .more-settings-feature-card {
+  background-color: #2a2a2a;
+}
+
+[data-theme="dark"] .more-settings-feature-card:hover {
+  background-color: #333333;
+}
+
+[data-theme="dark"] .more-settings-feature-card:active {
+  background-color: #3a3a3a;
+}
+
+[data-theme="dark"] .more-settings-feature-card-label {
+  color: #e0e0e0;
+}
+
+/* 动作按钮样式 */
+.more-settings-action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 12px;
+  color: #222222;
+  background-color: #f3f5f6;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.more-settings-action-button:hover {
+  background-color: #e8eaec;
+}
+
+.more-settings-action-button:active {
+  background-color: #dde0e2;
+}
+
+.more-settings-action-button-label {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  color: inherit;
+  text-align: center;
+}
+
+[data-theme="dark"] .more-settings-action-button {
+  color: #e0e0e0;
+  background-color: #2a2a2a;
+}
+
+[data-theme="dark"] .more-settings-action-button:hover {
+  background-color: #333333;
+}
+
+[data-theme="dark"] .more-settings-action-button:active {
+  background-color: #3a3a3a;
+}
+
+[data-theme="dark"] .more-settings-action-button-label {
+  color: #e0e0e0;
+}
+
+/* 错误消息组件样式 */
+.error-message-container {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 16px;
+  margin-top: 6px;
+  margin-bottom: -14px;
+  border: 1px solid #f53f3f;
+  border-radius: 12px;
+  background-color: var(--error-bg);
+}
+
+.error-message-icon-wrapper {
+  width: 21px;
+  height: 21px;
+  min-width: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4px;
+}
+
+.error-message-icon {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #f53f3f;
+}
+
+.error-message-text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: var(--error-text);
+}
+
+.error-message-text a {
+  color: var(--error-link);
+  text-decoration: underline;
+}
+
+.ad-banner-container {
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+
+html {
+  font-size: 17px;
+}
+
+@media print {
+  .imt-fb-container {
+    display: none !important;
+  }
+}
+
+#mount {
+  position: absolute;
+  display: none;
+  min-width: 250px;
+  height: auto;
+  --font-size: 17px;
+  font-size: 17px;
+}
+
+/* float-ball */
+.imt-fb-container {
+  position: fixed;
+  padding: 0;
+  top: 335px;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  display: none;
+  direction: ltr;
+  background-color: transparent !important;
+}
+
+.imt-fb-container:hover .imt-manga-button {
+  opacity: 1;
+}
+
+.imt-fb-container.left {
+  align-items: flex-start;
+  left: 0;
+}
+
+.imt-fb-container.right {
+  align-items: flex-end;
+  right: 0;
+}
+
+.imt-fb-btn {
+  cursor: pointer;
+  background: var(--float-ball-more-button-background-color);
+  height: 36px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+}
+
+.imt-fb-btn.left {
+  border-top-right-radius: 36px;
+  border-bottom-right-radius: 36px;
+  padding-left: 3px;
+}
+
+.imt-fb-btn.right {
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+  padding-right: 3px;
+}
+
+.imt-fb-btn.mini.left {
+  transform: translateX(-22px);
+}
+
+.imt-fb-btn.mini.right {
+  transform: translateX(22px);
+}
+
+.imt-fb-btn.mini.active {
+  transform: translateX(0);
+}
+
+.imt-fb-btn div {
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+.imt-fb-btn .imt-fb-hit-area {
+  position: absolute;
+  top: 0;
+  height: 36px;
+  bottom: -6px;
+  left: -6px;
+  right: -6px;
+  background: transparent;
+}
+
+.imt-fb-btn.mini.right .imt-fb-hit-area {
+  left: -10px;
+}
+
+.imt-fb-btn.mini.left .imt-fb-hit-area {
+  right: -10px;
+}
+
+.imt-fb-btn.left div {
+  border-top-right-radius: 34px;
+  border-bottom-right-radius: 34px;
+  justify-content: flex-end;
+}
+
+.imt-fb-btn.right div {
+  border-top-left-radius: 34px;
+  border-bottom-left-radius: 34px;
+}
+
+.imt-fb-logo-img {
+  width: 20px;
+  height: 20px;
+  margin: 0 10px;
+}
+
+.imt-fb-logo-img-big-bg {
+  width: 28px;
+  height: 28px;
+  margin: 0;
+  background-color: #ed6d8f;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.imt-float-ball-translated {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  bottom: 4px;
+  right: 4px;
+}
+
+.btn-animate {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform ease-out 250ms;
+  transition: -webkit-transform ease-out 250ms;
+  transition: transform ease-out 250ms;
+  transition: transform ease-out 250ms, -webkit-transform ease-out 250ms;
+}
+
+.imt-fb-setting-btn {
+  margin-right: 18px;
+  width: 28px;
+  height: 28px;
+}
+
+.immersive-translate-popup-wrapper {
+  background: var(--background-color);
+  border-radius: 20px;
+  box-shadow: 2px 10px 24px 0px #0e121614;
+  border: none;
+}
+
+.popup-container {
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-content {
+  border-radius: 20px 20px 12px 12px;
+}
+.popup-footer {
+  border-radius: 20px;
+}
+
+.popup-userscript-three-feature-layout {
+  border-radius: 20px;
+}
+
+.popup-userscript-three-feature-layout .popup-content {
+  border-radius: 20px 20px 12px 12px;
+}
+
+.popup-userscript-three-feature-layout .popup-footer {
+  border-radius: 0;
+}
+
+.imt-fb-close-button {
+  cursor: pointer;
+  position: absolute;
+  left: -10px;
+  bottom: -20px;
+}
+.imt-fb-container.left .imt-fb-close-button {
+  left: auto;
+  right: -10px;
+}
+
+.imt-fb-close-content {
+  padding: 22px;
+  width: 320px;
+  pointer-events: all;
+}
+
+.imt-fb-close-title {
+  font-weight: 500;
+  color: var(--text-black-2);
+}
+
+.imt-fb-close-radio-content {
+  background-color: var(--background-light-green);
+  padding: 8px 20px;
+}
+
+.imt-fb-radio-sel,
+.imt-fb-radio-nor {
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.imt-fb-radio-sel {
+  border: 2px solid var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imt-fb-radio-sel div {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: var(--primary);
+}
+
+.imt-fb-radio-nor {
+  border: 2px solid var(--input-border-strong);
+}
+
+.imt-fb-primary-btn {
+  background-color: var(--primary);
+  width: 72px;
+  height: 32px;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 32px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.imt-fb-default-btn {
+  border: 1px solid var(--primary);
+  width: 72px;
+  height: 32px;
+  border-radius: 8px;
+  color: var(--primary);
+  line-height: 32px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.imt-fb-guide-container {
+  width: 312px;
+  transform: translateY(-45%);
+}
+
+.imt-fb-guide-bg {
+  position: absolute;
+  left: 30px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  height: 100%;
+  width: 90%;
+}
+
+.imt-fb-guide-bg.left {
+  transform: scaleX(-1);
+}
+
+.imt-fb-guide-content {
+  margin: 16px -30px 80px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imt-fb-guide-content.left {
+  margin: 16px 21px 60px 32px;
+}
+
+.imt-fb-guide-img {
+  width: 220px;
+  height: 112px;
+}
+
+.imt-fb-guide-message {
+  font-size: 14px;
+  line-height: 28px;
+  color: #333333;
+  white-space: pre-wrap;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.imt-manga-guide-message {
+  font-size: 16px;
+  line-height: 24px;
+  color: #333333;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.imt-fb-guide-button {
+  margin-top: 16px;
+  line-height: 40px;
+  height: 40px;
+  padding: 0 20px;
+  width: unset;
+}
+
+.imt-fb-side {
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: all;
+  position: relative;
+}
+
+.imt-fb-side {
+  margin: 10px 0;
+}
+
+.imt-fb-side::before,
+.imt-manga-button::before,
+.imt-fb-round-button::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  left: 2px;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color 0.15s ease;
+}
+
+.imt-fb-side:hover::before,
+.imt-manga-button:hover::before,
+.imt-fb-round-button:hover::before {
+  background-color: var(--float-ball-more-button-hover-color);
+}
+
+.imt-fb-new-badge {
+  width: 26px;
+  height: 14px;
+  padding: 3px;
+  background-color: #f53f3f;
+  border-radius: 4px;
+  position: absolute;
+  top: -5px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imt-fb-side * {
+  pointer-events: all;
+}
+
+.imt-fb-pin-icon {
+  position: absolute;
+  left: -16px;
+  bottom: -12px;
+  opacity: 0;
+  cursor: pointer;
+}
+.imt-fb-container.left .imt-fb-pin-icon {
+  left: auto;
+  right: -16px;
+}
+
+.imt-fb-side:hover .imt-fb-pin-icon {
+  opacity: 1;
+}
+
+.imt-fb-more-button {
+  width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+/* Sheet.css */
+.immersive-translate-sheet {
+  position: fixed;
+  transform: translateY(100%);
+  /* Start off screen */
+  left: 0;
+  right: 0;
+  background-color: var(--background-color);
+  transition: transform 0.3s ease-out;
+  /* Smooth slide transition */
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+  /* Ensure it's above other content */
+  bottom: 0;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  overflow: hidden;
+}
+
+.immersive-translate-sheet.visible {
+  transform: translateY(0);
+}
+
+.immersive-translate-sheet-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.immersive-translate-sheet-backdrop.visible {
+  opacity: 1;
+}
+
+.popup-container-sheet {
+  max-width: 100vw;
+  width: 100vw;
+}
+
+.imt-no-events svg * {
+  pointer-events: none !important;
+}
+
+.imt-manga-button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: all;
+  margin: 0 0 10px 0;
+  background-color: var(--float-ball-more-button-background-color);
+  border-radius: 50%;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.08);
+  right: 8px;
+}
+
+.imt-manga-feedback {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.imt-fb-round-button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: var(--float-ball-more-button-background-color);
+  border-radius: 50%;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.imt-fb-round-button > svg {
+  z-index: 1;
+}
+
+.imt-fb-upgrade-button {
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.imt-fb-power-user-card {
+  position: absolute;
+  bottom: -130px;
+  width: 266px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 2px 10px 24px 0 rgba(14, 18, 22, 0.08);
+  border: 1px solid rgba(250, 251, 251, 1);
+  pointer-events: all;
+  z-index: 2;
+  background: linear-gradient(172deg, rgba(255, 255, 255, 0.30) 4.36%, #FFF 35.98%), linear-gradient(0deg, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.40) 100%), radial-gradient(39.95% 47.41% at -0.53% 55.22%, #E0C4F7 0%, rgba(224, 196, 247, 0.00) 100%), radial-gradient(56.37% 54.27% at 86.17% 0%, #E0C4F6 0%, rgba(224, 196, 246, 0.00) 100%), radial-gradient(42.04% 37.43% at -0.53% 3.75%, #AED5FF 0%, rgba(174, 213, 255, 0.00) 100%), radial-gradient(66.88% 52.09% at 36.81% 19.55%, #757ED8 0%, #6B6AC0 100%), #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imt-fb-power-user-card.right {
+  right: 60px;
+}
+
+.imt-fb-power-user-card.right::after {
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: 130px;
+  border-width: 10px 0 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent #fff;
+  filter: drop-shadow(2px 0 2px rgba(14, 18, 22, 0.06));
+}
+
+.imt-fb-power-user-card.left {
+  left: 60px;
+}
+
+.imt-fb-power-user-card.left::after {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 130px;
+  border-width: 10px 10px 10px 0;
+  border-style: solid;
+  border-color: transparent #fff transparent transparent;
+  filter: drop-shadow(-2px 0 2px rgba(14, 18, 22, 0.06));
+}
+
+.imt-fb-power-user-card-banner {
+  display: block;
+  width: 128px;
+  height: auto;
+  margin-top: 8px;
+  border-radius: 8px 8px 0 0;
+}
+
+.imt-fb-power-user-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 16px 24px 0;
+  box-sizing: border-box;
+}
+
+.imt-fb-power-user-card-title {
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+}
+
+.imt-fb-power-user-card-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.imt-fb-power-user-card-body {
+  padding: 12px 24px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.imt-fb-power-user-card-desc {
+  color: #333;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+}
+
+.imt-fb-power-user-card-primary {
+  margin-top: 16px;
+  height: 37px;
+  border-radius: 8px;
+  background: linear-gradient(110deg, #F497BC 17.37%, #EC4C8C 89.68%);
+  color: var(--ZX-FFFFFF, #FFF);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px; /* 150% */
+  display: flex;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  flex: 1 0 0;
+}
+
+.imt-manga-translated {
+  position: absolute;
+  left: 24px;
+  top: 20px;
+}
+
+.imt-float-ball-loading {
+  animation: imt-loading-animation 0.6s infinite linear !important;
+}
+
+.imt-manga-guide-bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  transform: translateY(-50%);
+}
+.imt-manga-guide-content {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  margin: 0 40px 0;
+}
+
+.img-manga-guide-button {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.img-manga-close {
+  position: absolute;
+  bottom: -200px;
+  width: 32px;
+  height: 32px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  cursor: pointer;
+}
+
+.imt-fb-container.dragging .imt-manga-button,
+.imt-fb-container.dragging .btn-animate:not(.imt-fb-btn) {
+  display: none !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn {
+  border-radius: 50% !important;
+  width: 36px !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  cursor: move !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn div {
+  border-radius: 50% !important;
+  width: 36px !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn.left,
+.imt-fb-container.dragging .imt-fb-btn.right {
+  border-radius: 50% !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn.left div,
+.imt-fb-container.dragging .imt-fb-btn.right div {
+  border-radius: 50% !important;
+}
+
+.imt-fb-container.dragging .imt-fb-logo-img {
+  margin: 0 !important;
+}
+
+.imt-fb-container.dragging .imt-float-ball-translated {
+  right: 2px !important;
+  bottom: 2px !important;
+}
+
+@-webkit-keyframes imt-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes imt-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.imt-fb-icon {
+  color: #666666;
+}
+
+[data-theme="dark"] .imt-fb-icon {
+  color: #b3b3b3;
+}
+
+[data-theme="light"] .imt-fb-icon {
+  color: #666666;
+}
+
+/* 悬浮球设置弹窗样式 */
+.imt-fb-setting-wrapper {
+  border-radius: 12px;
+  box-shadow: 2px 10px 24px 0px rgba(0, 0, 0, 0.06);
+}
+
+.imt-fb-setting-content {
+  padding: 16px;
+  width: 350px;
+  pointer-events: all;
+}
+
+.imt-fb-setting-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--text-black-2);
+}
+
+.imt-fb-setting-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px 0;
+}
+
+.imt-fb-preview-wrapper {
+  display: flex;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.imt-fb-preview-item {
+  width: 99px;
+  height: 57px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+}
+
+.imt-fb-preview-item.light {
+  background-color: #f3f5f6;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.imt-fb-preview-item.dark {
+  background-color: #444;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.imt-fb-preview-ball {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.imt-fb-preview-ball.light {
+  background-color: #fff;
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+}
+
+.imt-fb-preview-ball.dark {
+  background-color: #111;
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+}
+
+.imt-fb-preview-ball.full {
+  width: 41px;
+  justify-content: center;
+}
+
+.imt-fb-preview-ball.mini {
+  width: 41px;
+  justify-content: center;
+  transform: translateX(21px);
+}
+
+.imt-fb-preview-ball .imt-fb-preview-logo {
+  flex-shrink: 0;
+}
+
+/* 选项区域 */
+.imt-fb-setting-options {
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.imt-fb-setting-option-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4px;
+}
+
+.imt-fb-setting-option-label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: var(--text-black-2);
+}
+
+/* Toggle 开关样式 */
+.imt-fb-toggle {
+  width: 30px;
+  height: 18px;
+  background-color: var(--switch-background-color);
+  border-radius: 24px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.imt-fb-toggle.checked {
+  background-color: var(--primary);
+}
+
+.imt-fb-toggle.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.imt-fb-toggle-thumb {
+  width: 14px;
+  height: 14px;
+  background-color: var(--switch-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s ease;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+}
+
+.imt-fb-toggle.checked .imt-fb-toggle-thumb {
+  transform: translateX(12px);
+}
+
+.imt-fb-setting-hide-options {
+  background-color: var(--background-light-green);
+  padding: 8px 20px;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.imt-fb-setting-save-btn {
+  background-color: var(--primary);
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 45px;
+  height: 45px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: opacity 0.2s ease;
+}
+
+.imt-fb-setting-save-btn:hover {
+  opacity: 0.9;
+}
+
+.imt-fb-setting-save-btn:active {
+  opacity: 0.8;
+}
+</style><div id="mount" style="display: block;"><div hidden="" id="immersive-translate-popup-overlay" class="immersive-translate-popup-overlay" style="z-index: 2147483647; background-color: rgba(0, 0, 0, 0.5);"><div class="immersive-translate-popup-wrapper" style="position: fixed; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);"></div></div></div></template></div></html>

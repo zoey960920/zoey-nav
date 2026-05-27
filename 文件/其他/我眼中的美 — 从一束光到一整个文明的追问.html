@@ -1,0 +1,4611 @@
+<!DOCTYPE html>
+<!-- saved from url=(0023)https://meiyan.wwei.ai/ -->
+<html lang="zh-CN" data-immersive-translate-page-theme="light"><plasmo-csui><template shadowrootmode="open"><div id="plasmo-shadow-container" style="z-index: 2147483647; position: relative;"><div id="plasmo-overlay-0" class="plasmo-csui-container" style="display: flex; position: absolute; top: 0px; left: 0px;"></div></div></template></plasmo-csui><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我眼中的美 — 从一束光到一整个文明的追问</title>
+<meta name="description" content="把哲学、逻辑学、美学、文学、文艺理论、艺术史、设计、时尚八个看似散乱的学科，重新串成一条河。一本写给被术语劝退过的普通读者的网页书。">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./我眼中的美 — 从一束光到一整个文明的追问_files/css2" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf7f2;
+    --bg-deep: #f0ebe1;
+    --ink: #1a1a1a;
+    --ink-soft: #4a4a4a;
+    --ink-faint: #8a8378;
+    --accent: #a83c2b;
+    --gold: #c9a86a;
+    --line: #d8cfbf;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.85;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  /* 顶部进度条 */
+  .progress {
+    position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+    background: var(--accent); z-index: 999; transition: width .1s linear;
+  }
+  /* 浮动目录 */
+  .toc {
+    position: fixed; top: 50%; right: 24px; transform: translateY(-50%);
+    z-index: 100; background: rgba(250,247,242,0.92);
+    border: 1px solid var(--line); padding: 14px 16px; border-radius: 2px;
+    font-size: 12px; line-height: 1.9; letter-spacing: .04em;
+    backdrop-filter: blur(6px); max-width: 160px;
+  }
+  .toc a { display: block; color: var(--ink-faint); text-decoration: none; transition: color .2s; }
+  .toc a:hover, .toc a.active { color: var(--accent); }
+  .toc-title { font-weight: 700; color: var(--ink); margin-bottom: 6px;
+    font-family: "Cormorant Garamond", serif; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; }
+  @media (max-width: 900px) { .toc { display: none; } }
+
+  /* 容器 */
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 28px; }
+  .wrap-wide { max-width: 1040px; margin: 0 auto; padding: 0 28px; }
+
+  /* 封面 */
+  .hero {
+    min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    position: relative; padding: 80px 28px 60px;
+    background:
+      linear-gradient(180deg, rgba(250,247,242,0.55) 0%, rgba(250,247,242,0.72) 40%, rgba(250,247,242,0.92) 100%),
+      url('images/11-wanderer.jpg') center 20% / cover no-repeat,
+      var(--bg);
+    text-align: center;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at center, transparent 30%, var(--bg) 100%);
+    pointer-events: none;
+  }
+  .hero > * { position: relative; z-index: 1; }
+  .hero-meta {
+    font-family: "Cormorant Garamond", serif; font-style: italic;
+    color: var(--ink-faint); letter-spacing: .3em; font-size: 14px; margin-bottom: 36px;
+  }
+  .hero-credit {
+    position: absolute; bottom: 12px; right: 16px; z-index: 2;
+    font-family: "Cormorant Garamond", serif; font-style: italic;
+    color: var(--ink-faint); font-size: 11px; letter-spacing: .12em; opacity: .7;
+  }
+  .hero h1 {
+    font-size: clamp(48px, 9vw, 96px); font-weight: 900; letter-spacing: .04em;
+    line-height: 1.1; margin-bottom: 28px; color: var(--ink);
+  }
+  .hero h1 .accent { color: var(--accent); }
+  .hero-sub {
+    font-family: "Cormorant Garamond", serif; font-style: italic;
+    color: var(--ink-soft); font-size: clamp(18px, 2.2vw, 24px); margin-bottom: 56px;
+    letter-spacing: .05em;
+  }
+  .hero-divider {
+    width: 60px; height: 1px; background: var(--gold); margin: 0 auto 36px;
+  }
+  .hero-tag {
+    font-size: 14px; color: var(--ink-faint); letter-spacing: .2em;
+  }
+  .hero-scroll {
+    position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
+    font-family: "Cormorant Garamond", serif; font-style: italic;
+    color: var(--ink-faint); font-size: 13px; letter-spacing: .2em;
+    animation: bob 2s ease-in-out infinite;
+  }
+  @keyframes bob { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
+
+  /* 章节封面 */
+  section.chapter { padding: 120px 0 80px; position: relative; }
+  section.chapter:nth-child(even) { background: var(--bg-deep); }
+  .ch-number {
+    font-family: "Cormorant Garamond", serif; font-style: italic;
+    color: var(--accent); font-size: 14px; letter-spacing: .4em; margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+  .ch-title {
+    font-size: clamp(36px, 6vw, 56px); font-weight: 700; letter-spacing: .03em;
+    line-height: 1.2; margin-bottom: 16px;
+  }
+  .ch-subtitle {
+    font-family: "Cormorant Garamond", serif; font-style: italic;
+    color: var(--ink-soft); font-size: clamp(18px, 2vw, 22px); margin-bottom: 48px;
+  }
+  .ch-divider {
+    width: 40px; height: 2px; background: var(--gold); margin: 0 0 48px;
+  }
+
+  /* 正文 */
+  p { margin: 1em 0; }
+  p.lead {
+    font-size: 22px; line-height: 1.7; color: var(--ink); margin-bottom: 32px;
+    font-weight: 300;
+  }
+  p.lead::first-letter {
+    font-size: 3.2em; float: left; line-height: .85; margin: 6px 12px 0 0;
+    color: var(--accent); font-weight: 700;
+  }
+  h3 {
+    font-size: 24px; margin: 56px 0 16px; font-weight: 700;
+    letter-spacing: .02em; color: var(--ink);
+  }
+  h3::before {
+    content: ""; display: inline-block; width: 18px; height: 2px;
+    background: var(--accent); margin-right: 12px; vertical-align: middle;
+  }
+
+  /* 案例卡片 */
+  .case {
+    margin: 48px 0; padding: 32px 36px;
+    background: var(--bg); border-left: 3px solid var(--accent);
+    box-shadow: 0 1px 0 var(--line);
+  }
+  section.chapter:nth-child(even) .case { background: var(--bg); }
+  .case-label {
+    font-family: "Cormorant Garamond", serif; font-style: italic;
+    color: var(--accent); font-size: 13px; letter-spacing: .3em;
+    text-transform: uppercase; margin-bottom: 12px;
+  }
+  .case-title { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+
+  /* 图片 */
+  figure { margin: 56px 0; }
+  figure img {
+    width: 100%; display: block; background: var(--bg-deep);
+  }
+  figcaption {
+    font-family: "Cormorant Garamond", serif; font-style: italic;
+    color: var(--ink-faint); font-size: 14px; margin-top: 14px;
+    text-align: center; line-height: 1.6;
+  }
+  figcaption strong { color: var(--ink-soft); font-style: normal; font-family: "Noto Serif SC", serif; }
+
+  /* 全宽图 */
+  figure.bleed { margin: 80px -28px; }
+  @media (min-width: 720px) { figure.bleed { margin: 80px calc(50% - 50vw); max-width: 100vw; } }
+
+  /* 引文 */
+  blockquote {
+    margin: 48px 0; padding: 24px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    font-family: "Cormorant Garamond", "Noto Serif SC", serif; font-style: italic;
+    font-size: 22px; line-height: 1.6; color: var(--ink-soft); text-align: center;
+  }
+  blockquote cite {
+    display: block; font-style: normal; font-family: "Noto Serif SC", serif;
+    font-size: 13px; letter-spacing: .15em; color: var(--ink-faint); margin-top: 12px;
+  }
+
+  /* 误解破除 */
+  .myth {
+    display: grid; grid-template-columns: 1fr; gap: 0; margin: 48px 0;
+    border: 1px solid var(--line);
+  }
+  .myth-row { display: grid; grid-template-columns: 1fr 1fr; }
+  .myth-row:not(:last-child) { border-bottom: 1px solid var(--line); }
+  .myth-cell { padding: 24px 28px; }
+  .myth-wrong { background: rgba(168,60,43,0.04); border-right: 1px solid var(--line); }
+  .myth-right { background: rgba(201,168,106,0.05); }
+  .myth-label {
+    font-family: "Cormorant Garamond", serif; font-style: italic;
+    font-size: 12px; letter-spacing: .25em; text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .myth-wrong .myth-label { color: var(--accent); }
+  .myth-right .myth-label { color: #6b5a2b; }
+  .myth-content { font-size: 16px; line-height: 1.7; }
+  @media (max-width: 600px) { .myth-row { grid-template-columns: 1fr; } .myth-wrong { border-right: 0; border-bottom: 1px solid var(--line); } }
+
+  /* 品牌美学卡片 */
+  .brand-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+    margin: 48px 0;
+  }
+  @media (max-width: 600px) { .brand-grid { grid-template-columns: 1fr; } }
+  .brand-card {
+    padding: 22px 22px 18px; position: relative;
+    display: flex; flex-direction: column; gap: 10px;
+    min-height: 260px;
+    border: 1px solid currentColor;
+  }
+  .brand-card .b-mark {
+    font-family: "Cormorant Garamond", serif; font-weight: 600;
+    font-size: 24px; letter-spacing: .18em; text-transform: uppercase;
+    line-height: 1;
+  }
+  .brand-card .b-cn {
+    font-family: "Noto Serif SC", serif; font-size: 14px;
+    letter-spacing: .1em; opacity: .72;
+    margin-top: -4px;
+  }
+  .brand-card .b-formula {
+    font-size: 16px; line-height: 1.5; font-weight: 500;
+    margin-top: 6px; padding-top: 12px; border-top: 1px solid currentColor;
+    opacity: .96;
+  }
+  .brand-card .b-tags {
+    font-family: "Cormorant Garamond", serif; font-style: italic;
+    font-size: 12px; letter-spacing: .12em; opacity: .68; margin-top: auto;
+  }
+  .brand-card .b-echo {
+    font-size: 12px; padding-top: 10px; border-top: 1px dashed currentColor;
+    opacity: .55; line-height: 1.55;
+  }
+  .brand-card .b-echo strong { font-style: normal; opacity: .8; }
+  /* 各品牌色系 */
+  .bc-margiela { background: #fff; color: #1a1a1a; }
+  .bc-margiela .b-mark::after {
+    content: ""; position: absolute; top: 0; right: 0; width: 36px; height: 36px;
+    background: repeating-linear-gradient(45deg, #1a1a1a 0 2px, transparent 2px 6px);
+    opacity: .12;
+  }
+  .bc-balenciaga { background: #1a1a1a; color: #faf7f2; }
+  .bc-lv { background: #5a3a1f; color: #f5e7c8; }
+  .bc-chanel { background: #0f0f0f; color: #faf7f2; }
+  .bc-cdg { background: #faf7f2; color: #c11; border-color: #c11; }
+  .bc-yohji { background: #0a0a0a; color: #b8b3a8; }
+  .bc-prada { background: #3e4530; color: #e8e5d8; }
+  .bc-miyake { background: #d8d4cb; color: #2a2a2a; }
+  .bc-hermes { background: #d9651b; color: #faf3e6; }
+  .bc-dior { background: #f5f1ea; color: #2a2a2a; border-color: #b39556; }
+
+  /* 树状图 */
+  .tree {
+    margin: 64px auto; max-width: 680px; padding: 32px;
+    background: var(--bg); border: 1px solid var(--line);
+  }
+  .tree-title { text-align: center; font-size: 18px; font-weight: 700; margin-bottom: 24px; color: var(--accent); }
+  .tree-node { text-align: center; padding: 8px 0; position: relative; }
+  .tree-l0 { font-size: 24px; font-weight: 900; color: var(--ink); }
+  .tree-l1 { font-size: 18px; color: var(--ink); margin-top: 16px; }
+  .tree-l2 { font-size: 15px; color: var(--ink-soft); }
+  .tree-line { width: 1px; height: 24px; background: var(--line); margin: 0 auto; }
+  .tree-row { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
+
+  /* 尾声 */
+  .outro {
+    padding: 0 0 80px; text-align: center; background: var(--ink); color: var(--bg);
+  }
+  .outro-figure { margin: 0 0 64px; }
+  .outro-figure img {
+    width: 100%; display: block; max-height: 70vh; object-fit: cover;
+    filter: brightness(0.85) contrast(1.05);
+  }
+  .outro-figure figcaption {
+    color: rgba(250,247,242,0.55); font-family: "Cormorant Garamond", serif; font-style: italic;
+    font-size: 13px; padding: 16px 28px 0; text-align: center;
+  }
+  .outro-figure figcaption strong {
+    color: rgba(250,247,242,0.75); font-style: normal; font-family: "Noto Serif SC", serif;
+  }
+  .outro > h2, .outro > p, .outro > .sig { padding-left: 28px; padding-right: 28px; }
+  .outro h2 {
+    font-size: clamp(32px, 5vw, 48px); font-weight: 700; margin-bottom: 24px; letter-spacing: .04em;
+    margin-top: 32px;
+  }
+  .outro p { max-width: 600px; margin: 16px auto; color: var(--bg-deep); }
+  .outro .sig {
+    font-family: "Cormorant Garamond", serif; font-style: italic;
+    color: var(--gold); margin-top: 48px; letter-spacing: .15em;
+  }
+  .outro a { color: var(--gold); }
+
+  /* 边角装饰 */
+  .ornament { text-align: center; color: var(--gold); margin: 48px 0; letter-spacing: .8em; font-size: 14px; }
+</style>
+<script src="./我眼中的美 — 从一束光到一整个文明的追问_files/widget.js" defer="" data-wwei-injected="1"></script><style type="text/css">
+  @font-face {
+    font-family: CuboxInter;
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("chrome-extension://bflmgpechpeohjfomgfdkkfcbhfcjohl/fonts/InterVariable.woff2") format("woff2");
+  }
+  #cubox-react-root {
+    z-index: 999999999999999999999;
+  }
+  </style><link rel="stylesheet" href="chrome-extension://bflmgpechpeohjfomgfdkkfcbhfcjohl/css/globalHighlightStyles.css"></head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<nav class="toc" aria-label="目录">
+  <div class="toc-title">Chapters</div>
+  <a href="https://meiyan.wwei.ai/#prologue">序 · 美的误会</a>
+  <a href="https://meiyan.wwei.ai/#philosophy">壹 · 哲学</a>
+  <a href="https://meiyan.wwei.ai/#logic">贰 · 逻辑</a>
+  <a href="https://meiyan.wwei.ai/#aesthetics">叁 · 美学</a>
+  <a href="https://meiyan.wwei.ai/#literature">肆 · 文学</a>
+  <a href="https://meiyan.wwei.ai/#theory">伍 · 文艺理论</a>
+  <a href="https://meiyan.wwei.ai/#arthistory">陆 · 艺术史</a>
+  <a href="https://meiyan.wwei.ai/#design">柒 · 设计</a>
+  <a href="https://meiyan.wwei.ai/#fashion">捌 · 时尚</a>
+  <a href="https://meiyan.wwei.ai/#unity">玖 · 万象归一</a>
+  <a href="https://meiyan.wwei.ai/#epilogue">尾 · 给读者</a>
+</nav>
+
+<!-- 封面 -->
+<header class="hero">
+  <div class="hero-meta">A WEBBOOK · 2026</div>
+  <h1>我眼中的<span class="accent">美</span></h1>
+  <div class="hero-sub">从一束光，到一整个文明的追问</div>
+  <div class="hero-divider"></div>
+  <div class="hero-tag">哲学 · 逻辑 · 美学 · 文学 · 文艺理论 · 艺术史 · 设计 · 时尚</div>
+  <div class="hero-scroll">向下翻阅 ↓</div>
+  <div class="hero-credit">底图 · 弗里德里希《雾海上的漫游者》1818</div>
+</header>
+
+<!-- 序章 -->
+<section class="chapter" id="prologue">
+  <div class="wrap">
+    <div class="ch-number">Prologue · 序</div>
+    <h1 class="ch-title">我们对"美"的三大误会</h1>
+    <div class="ch-subtitle">在开始之前，先放下你以为你已经懂了的</div>
+    <div class="ch-divider"></div>
+
+    <p class="lead">当一个人说"这朵花真美"，他到底在说什么？是花本身的属性？是他眼睛里的化学反应？是从小被教会的"应该觉得美"？还是他刚好心情不错？——这是一个看上去很矫情、其实两千五百年没人答完的问题。</p>
+
+    <figure>
+      <img src="./我眼中的美 — 从一束光到一整个文明的追问_files/12-pearl.jpg" alt="戴珍珠耳环的少女" data-cubox-image-id="3dd1cad8eaa85d3c5acb62fefe9b9513" data-cubox-image-index="0" data-cubox-image-load="false">
+      <figcaption><strong>维米尔《戴珍珠耳环的少女》（约1665）</strong>　这幅画为什么让全世界停下来看一秒？是少女的回眸？是珍珠那一点光？是黑色背景的安静？还是——你自己当下的某种心情？同样的画，同样的眼睛，<em>每个人看到的"美"都不是同一种东西</em>。这就是我们要追问的起点。</figcaption>
+    </figure>
+
+    <p>这本小书想做一件事：把哲学、逻辑学、美学、文学、文艺理论、艺术史、设计、时尚这八个听起来高冷的词，从神坛上请下来，放回它们本来的家——一条河里。河源是哲学，河水流过逻辑这块石头，分出美学的支流，再灌溉出文学、艺术、设计、时尚的田。</p>
+
+    <p>但在出发前，我们必须先把三块挡路的石头搬开。</p>
+
+    <div class="myth">
+      <div class="myth-row">
+        <div class="myth-cell myth-wrong">
+          <div class="myth-label">Myth 01 — 误解</div>
+          <div class="myth-content"><strong>美 = 好看。</strong>美就是漂亮、悦目、让人想多看一眼的东西。</div>
+        </div>
+        <div class="myth-cell myth-right">
+          <div class="myth-label">Truth — 真相</div>
+          <div class="myth-content"><strong>美是一种判断。</strong>同一片落叶，环卫工眼里是垃圾，画家眼里是秋天。美不在物里，也不只在眼里，而在"判断"发生的那一瞬。</div>
+        </div>
+      </div>
+      <div class="myth-row">
+        <div class="myth-cell myth-wrong">
+          <div class="myth-label">Myth 02 — 误解</div>
+          <div class="myth-content"><strong>艺术 = 天赋。</strong>没那个天分，再怎么努力也成不了艺术家。</div>
+        </div>
+        <div class="myth-cell myth-right">
+          <div class="myth-label">Truth — 真相</div>
+          <div class="myth-content"><strong>艺术是历史的产物。</strong>梵高在世时只卖出一幅画。"艺术家"这个身份，是被后世的展览、批评、市场和理论共同追授的。天赋只是入场券，不是判决书。</div>
+        </div>
+      </div>
+      <div class="myth-row">
+        <div class="myth-cell myth-wrong">
+          <div class="myth-label">Myth 03 — 误解</div>
+          <div class="myth-content"><strong>美学 = 鉴赏课。</strong>就是教人怎么看画、听音乐、品酒。</div>
+        </div>
+        <div class="myth-cell myth-right">
+          <div class="myth-label">Truth — 真相</div>
+          <div class="myth-content"><strong>美学是哲学的分支。</strong>它不教你"觉得什么美"，它问"觉得美这件事是怎么回事"。前者是品味课，后者是脑科手术。</div>
+        </div>
+      </div>
+    </div>
+
+    <p>把这三块石头搬开之后，我们才有资格开始走第一步：去看看一切的源头——哲学。</p>
+
+    <div class="ornament">✦ ✦ ✦</div>
+  </div>
+</section>
+
+<!-- 哲学 -->
+<section class="chapter" id="philosophy">
+  <div class="wrap">
+    <div class="ch-number">Chapter 01</div>
+    <h1 class="ch-title">哲学：一切的起点是"提问"</h1>
+    <div class="ch-subtitle">Philosophy — the love of wisdom</div>
+    <div class="ch-divider"></div>
+
+    <p class="lead">哲学不是答案学，是问题学。它的根本动作只有一个：<em>追问</em>。一片落叶让你停顿三秒，普通人会感叹"真美"，哲学家会追问"我为什么会觉得它美"，再追问"我是谁、凭什么有这种感觉"，再追问"宇宙为什么允许这种感觉存在"。一直问到没法再问为止。</p>
+
+    <figure>
+      <img src="./我眼中的美 — 从一束光到一整个文明的追问_files/01-socrates.jpg" alt="苏格拉底之死" data-cubox-image-id="20b30476b8323e2ff962c137228cb67a" data-cubox-image-index="1" data-cubox-image-load="false">
+      <figcaption><strong>雅克-路易·大卫《苏格拉底之死》（1787）</strong>　苏格拉底在被判死刑后仍在追问真理。哲学的起点不是"我知道"，而是"我只知道我什么都不知道"。</figcaption>
+    </figure>
+
+    <h3>哲学问什么</h3>
+    <p>哲学的问题总结起来只有三个，再多都是变奏：</p>
+    <p><strong>是什么</strong>（本体论 / Ontology）——世界的本质是什么？我是什么？美是什么？<br>
+    <strong>为什么</strong>（认识论 / Epistemology）——我是怎么知道的？我能信任我的感官吗？<br>
+    <strong>应该如何</strong>（伦理学 / Ethics &amp; 美学 / Aesthetics）——什么是好？什么是美？我该怎么活？</p>
+
+    <p>注意最后一个：<em>美学就是哲学三大问题之一的回答</em>。它不是哲学的附庸或装饰，它是哲学站立的三条腿之一。</p>
+
+    <h3>东方也有哲学，只是不叫哲学</h3>
+    <p>柏拉图说理念世界，老子说"道可道，非常道"——一个用逻辑攀登，一个用沉默指引；一个像数学题，一个像水。但他们干的都是同一件事：在追问"这一切是怎么回事"。中国的"礼乐"、印度的"梵我"、希腊的"逻各斯"，都是同一种追问的不同口音。</p>
+
+    <div class="case">
+      <div class="case-label">Case — 案例</div>
+      <div class="case-title">一片落叶为什么让你停顿三秒？</div>
+      <p>看到落叶的那一刻，你的大脑同时启动了四个回路：感官（看见）、记忆（想起某年秋天）、判断（这很美）、情绪（轻微的怅惘）。哲学想知道的不是"这片叶子有多美"，而是"这四个回路如何在 0.3 秒内合作产生了'美'这个感觉"——以及，凭什么我相信这个感觉不是幻觉？</p>
+      <p>这就是哲学的工作：把日常生活里被你跳过的那 0.3 秒，慢动作回放两千五百年。</p>
+    </div>
+
+    <figure class="bleed">
+      <img src="./我眼中的美 — 从一束光到一整个文明的追问_files/02-athens.jpg" alt="雅典学院" data-cubox-image-id="79367c432f028af8cc53aa333f510dbc" data-cubox-image-index="2" data-cubox-image-load="false">
+      <figcaption><strong>拉斐尔《雅典学院》（1509-1511）</strong>　画面中央，柏拉图（手指天）与亚里士多德（手指地）。一个相信美在彼岸的理念世界，一个相信美在此地的具体事物之中。后世所有关于美的争论，都是这两根手指的延长线。</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 逻辑学 -->
+<section class="chapter" id="logic">
+  <div class="wrap">
+    <div class="ch-number">Chapter 02</div>
+    <h1 class="ch-title">逻辑学：思考的语法</h1>
+    <div class="ch-subtitle">Logic — the grammar of thinking</div>
+    <div class="ch-divider"></div>
+
+    <p class="lead">如果哲学是"问问题"，逻辑学就是"问得讲究"。它不告诉你答案对不对，它告诉你你的<em>推理</em>对不对。一句话可以错得离谱却符合逻辑，也可以听上去顺耳但逻辑稀碎。逻辑学的工作，是把这两种情况分清楚。</p>
+
+    <figure>
+      <img src="./我眼中的美 — 从一束光到一整个文明的追问_files/13-melencolia.jpg" alt="丢勒《忧郁I》" data-cubox-image-id="689739845293664c30f6b5dbce7d3b64" data-cubox-image-index="3" data-cubox-image-load="false">
+      <figcaption><strong>丢勒《忧郁 I》（1514）</strong>　画面里堆满了思考的工具：圆规、天平、沙漏、几何体、魔方阵——但人物却低头垂眉，无法真正"想清楚"。丢勒想说的是：拥有最全的工具，不等于拥有真理。逻辑学是工具箱，不是答案本身。</figcaption>
+    </figure>
+
+    <h3>三条最古老的法则</h3>
+    <p>亚里士多德给出了思考的三条公理，两千多年没被推翻：</p>
+    <p><strong>同一律</strong>：A 就是 A。你说的"美"和我说的"美"必须是同一个东西，否则我们只是在隔空喊话。<br>
+    <strong>矛盾律</strong>：A 不能同时是 A 又不是 A。一幅画不能"同时既美又不美"——除非你能把"美"拆成两层意思。<br>
+    <strong>排中律</strong>：A 要么是 A，要么不是 A，没有中间地带。</p>
+
+    <p>这三条听起来像废话，但人类 90% 的争论之所以变成口水仗，都是因为有人偷偷违反了它们。</p>
+
+    <h3>它和美有什么关系？</h3>
+    <p>当你说"莫奈比毕加索画得美"，你在做一个<em>判断</em>。这个判断要站得住，得满足：</p>
+    <p>① 你和我对"美"的定义一致（同一律）<br>
+    ② 你不能下一句又说"其实毕加索更美"（矛盾律）<br>
+    ③ 你得能比较他们，不能含糊地说"看心情"（排中律）</p>
+
+    <p>所以——逻辑学不直接告诉你什么是美，但它告诉你：<em>你说一件东西美的时候，话能不能立住</em>。美的判断需要逻辑骨架，否则就是情绪的浪花，浪过即散。</p>
+
+    <div class="case">
+      <div class="case-label">Case — 案例</div>
+      <div class="case-title">"萝卜青菜各有所爱" 是逻辑还是逃避？</div>
+      <p>这句话听上去宽容，其实是逻辑上的滑坡。它把"美的判断"等同于"个人偏好"，等同于"舌头喜好"——这是混淆了三个层次：</p>
+      <p>偏好（"我喜欢吃辣"）：纯主观，无需辩护。<br>
+      判断（"这首诗写得好"）：主观但需要理由，理由可以被检验。<br>
+      事实（"这首诗写于 1923 年"）：客观，可以被证实或证伪。</p>
+      <p>美的判断处在中间。它不是事实，但也不是纯偏好。它是"<strong>带理由的主观</strong>"——理由可以错，但必须给。说不出理由的"我觉得美"，在逻辑上等于没说。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 美学 -->
+<section class="chapter" id="aesthetics">
+  <div class="wrap">
+    <div class="ch-number">Chapter 03</div>
+    <h1 class="ch-title">美学：哲学之眼凝视美本身</h1>
+    <div class="ch-subtitle">Aesthetics — when philosophy looks at beauty</div>
+    <div class="ch-divider"></div>
+
+    <p class="lead">"美学"这个词，1750 年才正式诞生。德国哲学家鲍姆嘉通（Baumgarten）写了一本叫《Aesthetica》的书，意思是"感性认识的学问"。在此之前的两千年，哲学家们当然也在谈美，但没把它单独划出来；在此之后，美学才正式拥有了自己的工作台。</p>
+
+    <figure>
+      <img src="./我眼中的美 — 从一束光到一整个文明的追问_files/03-venus.jpg" alt="维纳斯的诞生" data-cubox-image-id="2ed8ed11f3b46f856bd7ee3173bfbb57" data-cubox-image-index="4" data-cubox-image-load="false">
+      <figcaption><strong>波提切利《维纳斯的诞生》（约1485）</strong>　文艺复兴把"美"从神学的附庸里解放出来。维纳斯诞生于贝壳，象征美从自然涌现——但她身体的比例严格遵循古希腊的数学黄金分割。美既是感官的，也是结构的。</figcaption>
+    </figure>
+
+    <h3>美学想搞清楚四件事</h3>
+    <p><strong>美是什么</strong>——它是物的属性？人的反应？还是物与人之间发生的事件？<br>
+    <strong>美怎么被感知</strong>——为什么有人看见就掉眼泪，有人毫无感觉？<br>
+    <strong>美和善、真有什么关系</strong>——一个坏人画出的画能否真正美？纳粹的电影呢？<br>
+    <strong>艺术为什么是艺术</strong>——一块石头放在博物馆和放在路边，区别在哪？</p>
+
+    <h3>三个绕不开的名字</h3>
+    <p><strong>康德</strong>（1724-1804）说：美是"无目的的合目的性"。听起来绕，意思其实简单——你看一朵花美，不是因为它对你有用（无目的），而是因为它看起来好像"应该长成这样"（合目的）。美是一种<em>不功利的恰当感</em>。</p>
+    <p><strong>黑格尔</strong>（1770-1831）说：美是"理念的感性显现"。也就是说，美是看不见的"道"通过看得见的"形"露出来。山水画里你看到的是山，但感受到的是天地。</p>
+    <p><strong>王国维</strong>（1877-1927）说：境界。一句词的好坏不在词藻，在"境界"——情和景的合一程度。"昨夜西风凋碧树，独上高楼，望尽天涯路"为什么动人？因为景里有情，情里有命。</p>
+
+    <blockquote>
+      "美是无目的的合目的性。"
+      <cite>—— 康德 《判断力批判》</cite>
+    </blockquote>
+
+    <div class="case">
+      <div class="case-label">Case — 案例</div>
+      <div class="case-title">你说一幅画"美"时，到底在说什么？</div>
+      <p>同样是说"这幅画美"，可能在说五种不同的事：</p>
+      <p>① 它<strong>悦目</strong>（感官层：颜色舒服、构图均衡）<br>
+      ② 它<strong>巧妙</strong>（技术层：笔触/光影处理高明）<br>
+      ③ 它<strong>动人</strong>（情感层：唤起了某种情绪）<br>
+      ④ 它<strong>深刻</strong>（意义层：让你看到了某种真相）<br>
+      ⑤ 它<strong>重要</strong>（历史层：改变了艺术的走向）</p>
+      <p>大部分日常使用的"美"停在 ①②；专业的美学讨论一直在 ③④⑤ 之间穿梭。当一个艺术评论家说毕加索的《亚维农少女》美时，他几乎不在说 ①——因为那幅画看着不算悦目——他在说 ⑤：它撕开了西方绘画几百年的写实传统。这就是为什么"专家"和"普通人"看画时常常话不投机。他们说的"美"根本不是同一个词。</p>
+    </div>
+
+    <figure>
+      <img src="./我眼中的美 — 从一束光到一整个文明的追问_files/04-vitruve.jpg" alt="维特鲁威人" data-cubox-image-id="1a230fd8406cbad33bd845d770905703" data-cubox-image-index="5" data-cubox-image-load="false">
+      <figcaption><strong>达·芬奇《维特鲁威人》（约1490）</strong>　把人体放进圆与方，是西方对"美 = 比例 = 真理"的执念。这种观念从毕达哥拉斯传到达·芬奇，再传到包豪斯，是西方美学最长的一条暗线。</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 文学 -->
+<section class="chapter" id="literature">
+  <div class="wrap">
+    <div class="ch-number">Chapter 04</div>
+    <h1 class="ch-title">文学：美在语言中安家</h1>
+    <div class="ch-subtitle">Literature — beauty made of words</div>
+    <div class="ch-divider"></div>
+
+    <p class="lead">人类发明的所有材料里，最便宜也最难驾驭的是<em>语言</em>。一块石头是石头，雕成像后才是石头加意义；一个词从出生那一刻就拖着千年的意义尾巴。文学的工作，是把这条沉重的尾巴变成翅膀。</p>
+
+    <figure class="bleed">
+      <img src="./我眼中的美 — 从一束光到一整个文明的追问_files/14-lanting.jpg" alt="兰亭序" data-cubox-image-id="e03cad58bc105c1a727ce5ab3c688ba5" data-cubox-image-index="6" data-cubox-image-load="false">
+      <figcaption><strong>王羲之《兰亭序》（353，唐冯承素摹本）</strong>　东晋永和九年，王羲之与友人在会稽兰亭饮酒赋诗，写下这 324 字。汉字的字形、笔意、节奏全在这里达到一个临界点——它既是文字，也是图画，也是音乐。文学和书法在汉字里从未真正分家。</figcaption>
+    </figure>
+
+    <h3>什么是文学</h3>
+    <p>文学不是"用文字写的东西"，否则说明书也算文学。文学是"<em>用语言追求语言本身能去到最远的地方</em>"——它要让"床前明月光"这五个字，承载比 5000 字说明文更大的世界。</p>
+
+    <p>怎么做到？中国古人很早就总结出三招：</p>
+    <p><strong>赋</strong>——直说。"关关雎鸠，在河之洲。"白描，但白描里藏着节奏。<br>
+    <strong>比</strong>——打比方。"问君能有几多愁？恰似一江春水向东流。" 愁是抽象的，江水是具体的，一比，愁有了体积。<br>
+    <strong>兴</strong>——借景起兴。先说一物，再带出真正想说的。这是文学最微妙的地方——用一个不相干的画面，唤起一种相干的情绪。</p>
+
+    <h3>李白凭什么千年不死</h3>
+    <p>"床前明月光，疑是地上霜。举头望明月，低头思故乡。"——20 个字，没有一个生僻字，幼儿园都能背。但这首诗为什么活了一千三百年？</p>
+    <p>因为它做对了三件事：① 用最少的字制造了一个最普遍的处境（夜里、独处、想家）；② 用"疑"字偷偷植入一个微小的认知错误（月光误以为霜），让读者跟着主角清醒过来；③ "举头—低头"是一个完整的身体动作，读者读到这里时，身体会不自觉地模仿。</p>
+    <p>这就是文学的魔法：不是告诉你"我很孤独"，而是让你<em>做出孤独的动作</em>。</p>
+
+    <blockquote>
+      文学是把"我知道"变成"我感受到"的炼金术。
+    </blockquote>
+
+    <div class="case">
+      <div class="case-label">Case — 案例</div>
+      <div class="case-title">"翻译" 是文学最大的悖论</div>
+      <p>"To be, or not to be" 翻译成"生存还是毁灭"，意思保住了，节奏和回声全没了。"床前明月光"翻译成 "Moonlight before my bed" 是对的，但任何一个中国人都知道，原句里的那个"光"字含着寒气、寂静、和某种淡淡的甜，全部蒸发了。</p>
+      <p>这告诉我们：文学的"美"不只在意义里，还在<strong>声音的形状、字的重量、停顿的呼吸</strong>里。这些东西无法被翻译，只能被重写。所以每一种语言都拥有一种"只属于这种语言的美"——这是文学送给文明的礼物，也是它的诅咒。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 文艺理论 -->
+<section class="chapter" id="theory">
+  <div class="wrap">
+    <div class="ch-number">Chapter 05</div>
+    <h1 class="ch-title">文艺理论：解码作品的工具箱</h1>
+    <div class="ch-subtitle">Literary &amp; art theory — the toolbox for decoding</div>
+    <div class="ch-divider"></div>
+
+    <p class="lead">你看完一部电影感觉"很好看"，但说不出哪里好；你看完另一部觉得"假"，也说不出哪里假。文艺理论的工作，就是把这种"说不出"变成"说得清"。它不是高于作品的裁判，而是借给你一副眼镜——戴上之后，你能看见作品里被你跳过的东西。</p>
+
+    <h3>七副不同的眼镜</h3>
+    <p>过去两千年，主要有七种理论框架，每种都像一副眼镜，看到的世界不一样：</p>
+
+    <p><strong>① 模仿论</strong>（亚里士多德起）：艺术是对现实的模仿。判断一件作品好不好，看它"像不像"。这副眼镜统治了西方两千年。</p>
+    <p><strong>② 表现论</strong>（浪漫主义起）：艺术是艺术家情感的表达。判断标准不是"像不像"，而是"真不真诚"。梵高的麦田不像真麦田，但比真麦田更"真"。</p>
+    <p><strong>③ 形式主义</strong>（20 世纪初）：作品的好坏只看作品本身——结构、节奏、对比、张力。作者的生平和动机都不重要。什克洛夫斯基提出"陌生化"：好作品让你重新看见你以为熟悉的东西。</p>
+    <p><strong>④ 接受美学</strong>（1960年代）：作品的意义不在作者，也不在文本，而在<em>读者</em>身上。一千个读者就有一千个哈姆雷特——但每个哈姆雷特都是真的。</p>
+    <p><strong>⑤ 结构主义 / 符号学</strong>：作品是一套符号系统。红色在中国是喜庆，在西方是危险——同一个符号在不同结构里意义相反。</p>
+    <p><strong>⑥ 后现代 / 解构</strong>：没有唯一的意义，没有固定的中心。一切都可以被重读、戏仿、拼贴。</p>
+    <p><strong>⑦ 后殖民 / 性别 / 文化研究</strong>：作品永远嵌在权力关系里。"经典"是谁选的？"美"的标准是谁定的？这些问题本身就是答案。</p>
+
+    <figure>
+      <img src="./我眼中的美 — 从一束光到一整个文明的追问_files/05-fountain.jpg" alt="杜尚《泉》" data-cubox-image-id="534acbff283870aebb012767e55b3fd3" data-cubox-image-index="7" data-cubox-image-load="false">
+      <figcaption><strong>杜尚《泉》（1917）</strong>　一只签了名的小便池。它推翻了"艺术是手艺"的两千年共识，逼迫所有人重新回答："什么让一件东西成为艺术？"——答案是：艺术家说它是、观众相信它是、博物馆愿意展它。艺术不再是"东西"，而是"语境"。</figcaption>
+    </figure>
+
+    <div class="case">
+      <div class="case-label">Case — 案例</div>
+      <div class="case-title">杜尚《泉》凭什么是艺术？</div>
+      <p>用七副眼镜分别看：</p>
+      <p><strong>模仿论</strong>：它什么也没模仿，所以不是艺术。<br>
+      <strong>表现论</strong>：它表达了对艺术体制的嘲讽，所以是艺术。<br>
+      <strong>形式主义</strong>：它的形式很简洁，但"陌生化"程度极高——这就是艺术。<br>
+      <strong>接受美学</strong>：观众一旦认真讨论它，它就成了艺术。<br>
+      <strong>结构主义</strong>：它把"小便池"从"卫生间"语境搬到"美术馆"语境，重新定义了符号——这本身就是艺术。<br>
+      <strong>后现代</strong>：它本来就是要破坏"艺术 vs 非艺术"的边界，所以它的"是不是艺术"问题本身就是它的作品。<br>
+      <strong>后殖民</strong>：它是白人男性精英在欧美体制里的玩笑，能否成立取决于这个体制的权威。</p>
+      <p>七副眼镜没有谁对谁错——它们看到的是不同的东西。文艺理论的真正价值，不是给你一个答案，而是<em>让你意识到你正在用某种眼镜</em>。摘下来换一副，世界完全不一样。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 艺术史 -->
+<section class="chapter" id="arthistory">
+  <div class="wrap">
+    <div class="ch-number">Chapter 06</div>
+    <h1 class="ch-title">艺术史：美在时间上的演化树</h1>
+    <div class="ch-subtitle">Art history — beauty unfolding through time</div>
+    <div class="ch-divider"></div>
+
+    <p class="lead">艺术史不是"一串名画的清单"，而是一棵活的树：每一根枝条都从前一根长出来，又被风、被时代、被几个想法不一样的人扭出新方向。看艺术史不是为了记住谁画了什么，而是为了看见——人类对"美"的定义，是如何一次次被重新写下。</p>
+
+    <figure class="bleed">
+      <img src="./我眼中的美 — 从一束光到一整个文明的追问_files/06-lascaux.jpg" alt="拉斯科洞穴壁画" data-cubox-image-id="5ced1bb819f471423e89028e4556b6a2" data-cubox-image-index="8" data-cubox-image-load="false">
+      <figcaption><strong>拉斯科洞穴壁画（约公元前 17000 年）</strong>　艺术比文字早了一万年。在我们学会读写之前，已经在洞壁上画下野牛。这意味着"创造形象"是比"记录意义"更原始的需求。</figcaption>
+    </figure>
+
+    <h3>西方那一支（极简版）</h3>
+    <p><strong>洞穴</strong>（公元前 17000）——艺术为了巫术、生存、记忆。<br>
+    <strong>古希腊</strong>（公元前 5 世纪）——艺术为了模仿"理想的人"，发明黄金比例。<br>
+    <strong>中世纪</strong>（5-15 世纪）——艺术为了神。人物没有透视，因为透视会让神显得渺小。<br>
+    <strong>文艺复兴</strong>（14-16 世纪）——人被重新发明。透视诞生，达·芬奇、米开朗琪罗把人放回画面中心。<br>
+    <strong>巴洛克</strong>（17 世纪）——戏剧性、动感、情绪。卡拉瓦乔用强烈明暗对比把宗教故事变成舞台。<br>
+    <strong>新古典 → 浪漫</strong>（18-19 世纪）——一边歌颂理性，一边歌颂激情，两条线并行。<br>
+    <strong>印象派</strong>（1870s）——画家走出画室，第一次把"光本身"作为主角。<br>
+    <strong>现代主义</strong>（20 世纪初）——立体、抽象、表现，"像不像"被彻底放弃。<br>
+    <strong>当代艺术</strong>（1960s 至今）——观念、装置、影像、AI 生成，"什么算艺术"变成永久开放的问题。</p>
+
+    <figure>
+      <img src="./我眼中的美 — 从一束光到一整个文明的追问_files/07-monet.jpg" alt="日出·印象" data-cubox-image-id="65c727c8fde2d3c4bc5f52c5706a8a46" data-cubox-image-index="9" data-cubox-image-load="false">
+      <figcaption><strong>莫奈《日出·印象》（1872）</strong>　这幅画当年被讥讽为"还没画完的草稿"。批评家用"印象派"这个词嘲笑它，结果整代画家把这个嘲笑接了下来，骄傲地戴上了。从此，艺术史被改写：画的目的不再是"还原对象"，而是"还原看见对象那一瞬的感觉"。</figcaption>
+    </figure>
+
+    <h3>东方那一支（同样极简）</h3>
+    <p>中国艺术走了一条几乎相反的路。当西方在追求"看得像"的时候，中国早早转向了"<em>意境</em>"。山水画从一开始就不是为了还原山，而是为了"卧游"——让看画的人在屋里也能心游万仞。文人画把书法、诗、画合为一体，重要的从来不是画得像不像山，而是<em>画里有没有那个人</em>。</p>
+
+    <figure class="bleed">
+      <img src="./我眼中的美 — 从一束光到一整个文明的追问_files/08-early-spring.jpg" alt="郭熙 早春图" data-cubox-image-id="272e84a18b791ac286204c98cee7d9dd" data-cubox-image-index="10" data-cubox-image-load="false">
+      <figcaption><strong>郭熙《早春图》（1072）</strong>　北宋山水画的代表作。它不是"画了什么"，而是"过了什么"——一座山在春天解冻、云气升起、人在山中行走。中国艺术的"美"始终带着时间和呼吸，是"久"的美。</figcaption>
+    </figure>
+
+    <h3>一个反复出现的规律</h3>
+    <p>每隔一两百年，艺术家就会发现：上一代视为"美的标准"的东西，开始变得僵硬、虚假、令人作呕。于是他们造反、被骂、被嘲笑、然后成为下一代的标准——再被下下一代造反。</p>
+    <p>所以艺术史最深的一课是：<em>所有"自然的美"都是被建构的，所有被建构的都会被打破</em>。今天觉得"当然美"的东西，一百年前可能没人觉得美，一百年后也未必。</p>
+
+    <figure>
+      <img src="./我眼中的美 — 从一束光到一整个文明的追问_files/09-starry.jpg" alt="星夜" data-cubox-image-id="aee9b41ba646f1548b05791b68114596" data-cubox-image-index="11" data-cubox-image-load="false">
+      <figcaption><strong>梵高《星夜》（1889）</strong>　梵高一生只卖出一幅画。今天博物馆门口为这幅画排队的人，没有一个人在他活着的时候为他鼓掌。这就是艺术史的残忍：它给所有人都迟到一百年。</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 设计 -->
+<section class="chapter" id="design">
+  <div class="wrap">
+    <div class="ch-number">Chapter 07</div>
+    <h1 class="ch-title">设计：美走进每个人的口袋</h1>
+    <div class="ch-subtitle">Design — beauty for everyone, every day</div>
+    <div class="ch-divider"></div>
+
+    <p class="lead">如果说艺术是"为美而美"的奢侈品，设计就是"美进入日常"的革命。一把椅子、一张地铁图、一个 App 的图标——设计的存在意义是让美可以被使用，而不只是被仰望。设计是当代美学的最大战场，因为它每天都在影响 80 亿人的眼睛、手、和情绪。</p>
+
+    <h3>包豪斯：现代设计的子宫</h3>
+    <p>1919 年，德国魏玛，一所叫包豪斯（Bauhaus）的学校开学了。它只活了 14 年，但奠定了之后一百年的设计逻辑：</p>
+    <p>① <strong>形式追随功能</strong>——一件东西的样子应该由它的用途决定，而不是相反。<br>
+    ② <strong>艺术与工艺合一</strong>——设计师必须既会想又会做。<br>
+    ③ <strong>为大众而非贵族</strong>——好的设计应该能被批量生产、被普通人买得起。</p>
+    <p>从你家的宜家家具到你手里的 iPhone，背后都是包豪斯的幽灵。</p>
+
+    <figure>
+      <img src="./我眼中的美 — 从一束光到一整个文明的追问_files/10-bauhaus.jpg" alt="包豪斯德绍校舍" data-cubox-image-id="ad417c16cc4f6c7424a8cd94aa94d4d9" data-cubox-image-index="12" data-cubox-image-load="false">
+      <figcaption><strong>包豪斯德绍校舍（1926，格罗皮乌斯设计）</strong>　玻璃幕墙、白色立面、几何切割。它告诉世界：建筑不需要装饰，"功能本身就是美"。</figcaption>
+    </figure>
+
+    <h3>迪特·拉姆斯的十诫</h3>
+    <p>1970 年代，德国设计师拉姆斯（Dieter Rams）写下"好设计的十条原则"。这套原则直接影响了 Jony Ive，进而塑造了 iPhone。值得每个做产品的人背一遍：</p>
+    <p>1. 好设计是<strong>创新的</strong>。<br>
+    2. 好设计让产品<strong>有用</strong>。<br>
+    3. 好设计是<strong>美的</strong>。<br>
+    4. 好设计让产品<strong>易懂</strong>。<br>
+    5. 好设计是<strong>克制的</strong>（unobtrusive）。<br>
+    6. 好设计是<strong>诚实的</strong>。<br>
+    7. 好设计是<strong>耐久的</strong>。<br>
+    8. 好设计<strong>关注每一个细节</strong>。<br>
+    9. 好设计是<strong>环境友好的</strong>。<br>
+    10. 好设计是<strong>尽可能少的设计</strong>（Less, but better）。</p>
+
+    <blockquote>
+      "好设计是尽可能少的设计。"
+      <cite>—— 迪特·拉姆斯</cite>
+    </blockquote>
+
+    <h3>东方的另一种现代</h3>
+    <p>在西方追求"少即是多"的时候，日本走出了一条平行的路：<strong>侘寂</strong>（wabi-sabi）。它不是少，是"<em>不完整、不永久、不完美</em>"——一只裂过又用金漆补好的茶碗，比一只完美无瑕的茶碗更动人。因为前者承认了时间的重量，承认了美永远是过程而不是结果。</p>
+    <p>这两条路（包豪斯的"少而精确" vs 侘寂的"残而真诚"）今天还在拉锯——你看每一个 App 的视觉风格，要么在前者里，要么在后者里，要么在两者之间的某个点上摇摆。</p>
+
+    <div class="case">
+      <div class="case-label">Case — 案例</div>
+      <div class="case-title">iPhone 为什么是当代美学的最大公约数？</div>
+      <p>从纽约到拉各斯，从孟买到深圳，几十亿人手里拿着同一种形状的东西，并且都觉得它"还挺好看的"。这在人类历史上从未发生过。为什么是它？</p>
+      <p>因为它同时满足了几条互相打架的需求：① 包豪斯的克制（一块玻璃、一颗按键）；② 拉姆斯的"少即是多"（接口砍到只剩必要的）；③ 侘寂式的手感（铝合金温润、磨砂玻璃微涩）；④ 文艺复兴的比例（黄金分割比的屏幕）；⑤ 每个民族的可塑性（同一个壳子在不同 App 生态里变成不同的东西）。</p>
+      <p>它不是某一种美的胜利，是它<em>用一种最干净的形式包容了多种美</em>。这就是当代设计的最高境界——不强加任何一种美，而是给所有的美让出位置。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 服装与时尚 -->
+<section class="chapter" id="fashion">
+  <div class="wrap">
+    <div class="ch-number">Chapter 08</div>
+    <h1 class="ch-title">服装与时尚：穿在身上的美</h1>
+    <div class="ch-subtitle">Fashion — beauty you can wear</div>
+    <div class="ch-divider"></div>
+
+    <p class="lead">设计的载体是物——一把椅子、一个 App 图标。服装的载体是人——一个会走、会变老、会有心情的人。这一字之差，让"服装"无法被收编进任何已有的设计学，它必须有自己的章节。因为它处理的，是美学里最贴身、最人格化、最分秒变化的那一面。</p>
+
+    <figure class="bleed">
+      <img src="./我眼中的美 — 从一束光到一整个文明的追问_files/18-paris.jpg" alt="巴黎街道·雨天" data-cubox-image-id="f88fae52d8975aa1e98a5e3a4d38acc2" data-cubox-image-index="13" data-cubox-image-load="false">
+      <figcaption><strong>卡耶博特《巴黎街道，雨天》（1877）</strong>　这不是一张时装画，但它是 19 世纪欧洲时尚的全景照。礼帽、礼服大衣、长裙、雨伞、皮鞋——画里的每一个细节都在公开声明穿戴者的阶级、行业、礼仪、和"该如何被看见"。<em>当时尚被画进艺术，它就不只是衣服，是一整个社会的语法。</em></figcaption>
+    </figure>
+
+    <h3>服装为什么不能被"设计"章节吞掉</h3>
+    <p>它和家具、建筑、产品设计共享"形式追随功能"的部分逻辑，但有三条独有的法则，让它必须独立成科：</p>
+    <p>① <strong>循环时间</strong>。产品设计的逻辑是"进步"——新一代手机要比上一代更好。服装的逻辑是"轮回"——90 年代的牛仔裤会在 30 年后被重新崇拜，70 年代的喇叭裤每隔 15 年回来一次。它没有进步的方向，只有不断回头的方向。<br>
+    ② <strong>身体载体</strong>。设计的对象是静物，服装的对象是活物。它必须跟随呼吸、跟随骨骼、跟随汗水。再美的衣服，挂在衣架上和穿在人身上，是两件事。<br>
+    ③ <strong>身份焊接</strong>。一把椅子不会公开声明主人的政治立场或社会阶层（除非贵到惊人），一件衣服会。你穿什么，等于你在公开宣告"我是谁、我属于谁、我反对谁"。这种焊接是其他设计门类很少承担的负重。</p>
+
+    <h3>一条简史的两条主线</h3>
+    <p><strong>西方</strong>从中世纪宗教化的身体遮蔽，到 19 世纪 Worth 把"裁缝"升级为"设计师品牌"——时装第一次拥有了作者；20 世纪 20 年代 Chanel 用一件运动针织衫把女人从束身衣里解放出来；1947 年 Dior 的 New Look 用窄腰宽裙重写战后女性曲线；80 年代川久保玲、山本耀司把"破洞、不对称、黑色"扔进巴黎，撕开了"美 = 端庄"的旧合约。<strong>东方</strong>则有唐代《簪花仕女图》的雍容、宋代的克制清雅、明清的缠足残酷、民国旗袍的曲线宣言。每一次潮流革命，背后都是一次哲学的小型政变。</p>
+
+    <figure>
+      <img src="./我眼中的美 — 从一束光到一整个文明的追问_files/19-tang.jpg" alt="周昉 簪花仕女图" data-cubox-image-id="4a359aaab0f46bc8a7e339beee3d0531" data-cubox-image-index="14" data-cubox-image-load="false">
+      <figcaption><strong>周昉《簪花仕女图》（唐，8 世纪）</strong>　大袖薄衫、宽眉高髻、簪花扑蝶。这是中国服饰史上最自信、最丰腴、最不掩饰女性身体的时期。它告诉我们：所谓"中国传统美学含蓄保守"是一种误解，那只是某些朝代的某种偏好。</figcaption>
+    </figure>
+
+    <h3>当品牌成为一种哲学</h3>
+    <p>这里要扔出本章最重要的一句话：<strong>品牌不是 logo，是一种世界观的实体化</strong>。</p>
+    <p>当你说"这是 Margiela 风格"或"这看着很 Balenciaga"，你说的不是布料或剪裁，是一整套关于美、关于身体、关于商业、关于自己想成为什么样的人的哲学姿态——只不过这个姿态被压缩成了几个可穿戴的视觉元素而已。</p>
+    <p>读懂十个品牌的美学，等于读懂十种当代哲学姿势。下面这张表，是我眼里时尚最不能跳过的十个名字。它们不是为了消费，是为了<em>分类思考</em>。</p>
+
+    <div class="brand-grid">
+
+      <div class="brand-card bc-margiela">
+        <div class="b-mark">Margiela</div>
+        <div class="b-cn">马吉拉 · 1988</div>
+        <div class="b-formula">"匿名 = 最高的诚实。"</div>
+        <div class="b-tags">解构 / 白标四角钉 / 拒签名</div>
+        <div class="b-echo">衣服内侧只缝四颗白线，外面不见 logo。Martin Margiela 本人从不接受拍照，模特蒙脸走秀。它把"设计师崇拜"颠倒过来：作品本身的张力比作者重要得多。<br><strong>呼应：</strong>第伍章 · 后现代解构</div>
+      </div>
+
+      <div class="brand-card bc-balenciaga">
+        <div class="b-mark">Balenciaga</div>
+        <div class="b-cn">巴黎世家 · 1917→ Demna</div>
+        <div class="b-formula">"丑得理直气壮，就是一种新的美。"</div>
+        <div class="b-tags">扭曲 / 戏仿 / 网络梗</div>
+        <div class="b-echo">老爹鞋、宜家蓝袋、过大卫衣——Demna 时代的 Balenciaga 把"丑、廉价、反时尚"装进十几万元的标签里。它做的是后现代的最大胆实验：颠倒贵与贱的符号。<br><strong>呼应：</strong>第伍章 · 戏仿与反美学</div>
+      </div>
+
+      <div class="brand-card bc-lv">
+        <div class="b-mark">Louis Vuitton</div>
+        <div class="b-cn">路易威登 · 1854</div>
+        <div class="b-formula">"身份是可以被印刷的。"</div>
+        <div class="b-tags">老花 / 旅行 / 符号殖民</div>
+        <div class="b-echo">1896 年 Georges Vuitton 把父亲名字缩写 + 花朵 + 四角星拼成 Monogram，把签名变成可量产的图案。今天它印在地球每个机场。这是品牌时代的符号学胜利：一个图案 = 一种身份系统。<br><strong>呼应：</strong>第伍章 · 结构主义与符号</div>
+      </div>
+
+      <div class="brand-card bc-chanel">
+        <div class="b-mark">Chanel</div>
+        <div class="b-cn">香奈儿 · 1909</div>
+        <div class="b-formula">"少一点，再少一点。"</div>
+        <div class="b-tags">黑白 / 解放女体 / 极简</div>
+        <div class="b-echo">小黑裙、菱格包、双 C、山茶花、人造珍珠——Chanel 用最克制的视觉词汇做最大胆的社会工程：把女人从束身衣里解放出来。这是包豪斯精神在女装上的完美对应。<br><strong>呼应：</strong>第柒章 · 包豪斯的"少即是多"</div>
+      </div>
+
+      <div class="brand-card bc-cdg">
+        <div class="b-mark">Comme des Garçons</div>
+        <div class="b-cn">川久保玲 · 1969</div>
+        <div class="b-formula">"破坏即创造。"</div>
+        <div class="b-tags">不对称 / 残缺 / 鼓包</div>
+        <div class="b-echo">1997 年 "Lumps and Bumps" 系列在裙子内塞鼓包，把女体审美强行拆解。川久保玲做的是一件极哲学的事：让人重新看见"什么是身体"，而不是"什么是好看的身体"。<br><strong>呼应：</strong>第柒章 · 日本侘寂 + 第叁章 · 美学的"陌生化"</div>
+      </div>
+
+      <div class="brand-card bc-yohji">
+        <div class="b-mark">Yohji Yamamoto</div>
+        <div class="b-cn">山本耀司 · 1981</div>
+        <div class="b-formula">"黑色是一切颜色的总和。"</div>
+        <div class="b-tags">黑色 / 流动 / 老去之美</div>
+        <div class="b-echo">"黑色谦逊又傲慢；黑色是不被人看见的轮廓。"——山本耀司的廓形宽大、皱褶不修、永远不取悦身体。他用黑色和不修边幅讲了一种东方水墨式的"久"美学。<br><strong>呼应：</strong>第陆章 · 东方艺术史"久的美"</div>
+      </div>
+
+      <div class="brand-card bc-prada">
+        <div class="b-mark">Prada</div>
+        <div class="b-cn">普拉达 · Miuccia</div>
+        <div class="b-formula">"知识分子的丑。"</div>
+        <div class="b-tags">故意笨拙 / 反潮流 / 学者气</div>
+        <div class="b-echo">Miuccia Prada 是学过政治学的女性主义者。她偏爱那种"看上去土一点、却让人想多看一眼"的廓形——尼龙降落伞包、丑卡其大衣、夹脚的方头鞋。她做的是用时装表达智识的姿态。<br><strong>呼应：</strong>第伍章 · 形式主义"陌生化"</div>
+      </div>
+
+      <div class="brand-card bc-miyake">
+        <div class="b-mark">Issey Miyake</div>
+        <div class="b-cn">三宅一生 · 1971</div>
+        <div class="b-formula">"一块布的所有可能。"</div>
+        <div class="b-tags">折叠 / 几何 / A-POC</div>
+        <div class="b-echo">Pleats Please 把面料压成永久褶皱、Bao Bao 把布料折成几何块——三宅一生不画"穿在人身上的衣服"，他研究"布本身能变成什么形状"。这是道家的"自然之道"在面料上的实践。<br><strong>呼应：</strong>第壹章 · 东方哲学 + 第柒章 · 极简</div>
+      </div>
+
+      <div class="brand-card bc-hermes">
+        <div class="b-mark">Hermès</div>
+        <div class="b-cn">爱马仕 · 1837</div>
+        <div class="b-formula">"时间的工艺。"</div>
+        <div class="b-tags">马具传统 / 手工 / 永恒</div>
+        <div class="b-echo">一只 Birkin 包由单一匠人耗时 18-24 小时缝制完成，皮料分等级，金属件实金电镀。Hermès 是包豪斯的反面——工业的对面是手工，速度的对面是时间。它的美学是"反速度"。<br><strong>呼应：</strong>第柒章 · 包豪斯的反命题</div>
+      </div>
+
+      <div class="brand-card bc-dior">
+        <div class="b-mark">Dior</div>
+        <div class="b-cn">迪奥 · 1947</div>
+        <div class="b-formula">"花朵就是女性。"</div>
+        <div class="b-tags">New Look / 窄腰宽裙 / 古典</div>
+        <div class="b-echo">1947 年 Christian Dior 的 New Look 用窄腰宽裙重新画了女性身体的轮廓——一种战后对古典浪漫的集体回望。Dior 是西方古典对称美学在 20 世纪的最优雅延续。<br><strong>呼应：</strong>第叁章 · 黄金分割与古典比例</div>
+      </div>
+
+    </div>
+
+    <p>把这十张卡片连起来看，你会发现一件事：<em>所谓"品牌"不是钱包大小的问题，是世界观的差异</em>。Margiela 与 LV 的对立，是后现代解构 vs 符号学崇拜；Chanel 与 Hermès 的对立，是机器极简 vs 手工永恒；川久保玲与 Dior 的对立，是破坏美学 vs 古典美学。十个品牌，十种回答"什么算美"的方式。</p>
+
+    <h3>三个最容易搞混的词</h3>
+    <p><strong>风格 (Style)</strong>——你这个人长期稳定的视觉表达，几十年不变。乔布斯一辈子黑高领+牛仔裤，是风格。<br>
+    <strong>潮流 (Trend)</strong>——3 个月到 3 年内会变的集体偏好。今年大家都穿芭比粉，是潮流。<br>
+    <strong>经典 (Classic)</strong>——穿过多次潮流而幸存下来的东西。小黑裙、白衬衫、Levi's 501、Converse 帆布鞋，都是经典。</p>
+    <p>这三个词的关系是：<em>潮流是水，经典是石，风格是河床</em>。混淆它们，是大部分人买错衣服的根本原因——把潮流当经典买，下一季就过时；把风格当潮流追，永远找不到自己。</p>
+
+    <figure>
+      <img src="./我眼中的美 — 从一束光到一整个文明的追问_files/17-madamex.jpg" alt="Madame X" data-cubox-image-id="b5cdbd92a5d1ba68383c0808a5d9f359" data-cubox-image-index="15" data-cubox-image-load="false">
+      <figcaption><strong>萨金特《X 夫人》（1884）</strong>　这幅画在 1884 年的巴黎沙龙引发巨大丑闻——一件黑色低胸礼服 + 一条原本滑落的肩带（萨金特后来被迫改高）让整个上流社会觉得"伤风败俗"。今天看，它再普通不过。<em>所谓"得体的衣着"从来不是绝对标准，它是某一时刻社会集体心理的快照。</em></figcaption>
+    </figure>
+
+    <div class="case">
+      <div class="case-label">Case — 案例</div>
+      <div class="case-title">黑色小礼服凭什么活了一百年？</div>
+      <p>1926 年，Chanel 在 Vogue 上发表了一张极简黑色连衣裙的草图，编辑预言它将成为"时尚界的福特 T 型车"。当时社会震惊——黑色在西方原本只用于服丧。Chanel 做的事不是"设计一条裙子"，而是<strong>重新定义了一种颜色</strong>：从哀悼之色变为日常优雅。</p>
+      <p>一百年后，从奥黛丽·赫本到 K-pop 偶像，所有人都还在穿它的变种。它为什么经典？</p>
+      <p>① 它把社会禁忌转化为日常选择（哀色 → 雅色）；<br>
+      ② 它用最少的形式承载最多的场合（葬礼/晚宴/约会通杀）；<br>
+      ③ 它隐藏个性，反而让穿它的人显得更有个性——衣服越简，人越突出。</p>
+      <p>这是设计的最高悖论：<em>不强加风格的衣服，让所有风格都能附着</em>。和上一章 iPhone 的逻辑完全一致——好设计是不强迫任何一种美的设计。</p>
+    </div>
+
+    <h3>当代：每个人都是自己的品牌</h3>
+
+    <figure>
+      <img src="./我眼中的美 — 从一束光到一整个文明的追问_files/20-moulin.jpg" alt="红磨坊舞会" data-cubox-image-id="5cde4da06b027525e14c3102063639cf" data-cubox-image-index="16" data-cubox-image-load="false">
+      <figcaption><strong>雷诺阿《红磨坊街的舞会》（1876）</strong>　一百四十年前，巴黎周末舞会上人们穿什么，由整个社会的礼仪规范、阶级、性别、宗教共同决定。今天，你穿什么由你昨晚刷到的一段视频决定。时尚的"发布权"经历了一次彻底的去中心化。</figcaption>
+    </figure>
+
+    <p>社交媒体让每个普通人都拥有了一件过去只有 Margiela、LV、Chanel 才有的东西：<strong>一个面向公众的视觉身份</strong>。你在朋友圈/小红书/Instagram 发的每一张穿搭，都是一次"品牌发布"——你不再只是消费者，你同时是自己美学的策展人、设计师、模特、和受众。</p>
+    <p>这件事的哲学含义是：时尚史第一次变成了全民参与的实时美学实验。但它也带来一个新焦虑——当美的标准每 90 天就刷新一次，"美"还有意义吗？回到第叁章康德的"无目的的合目的性"：真正的美不需要追潮流，而是在快速变化中找到那个对你而言"应该长成这样"的瞬间。<em>追潮流是焦虑，建立自己的品牌是哲学</em>。</p>
+    <p>所以下一次你站在衣柜前，记得问自己一个问题：今天我要穿出"我是谁"的哪一面？——这就是哲学，这就是美学，这就是穿在身上的"我眼中的美"。</p>
+
+    <blockquote>
+      "时尚不只是衣服。时尚在天空里，在街道上；时尚关乎我们的想法、我们的生活方式、关乎正在发生的事情。"
+      <cite>—— 可可·香奈儿</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- 万象归一 -->
+<section class="chapter" id="unity">
+  <div class="wrap">
+    <div class="ch-number">Chapter 09</div>
+    <h1 class="ch-title">万象归一：哲学是所有美的根</h1>
+    <div class="ch-subtitle">All rivers, one source</div>
+    <div class="ch-divider"></div>
+
+    <p class="lead">现在我们回到序章的那个问题：当一个人说"这朵花真美"，他到底在说什么？走过前面八章，你应该有一个隐约的答案——他在说的，不只是这朵花，是他<em>整个对世界的态度</em>。</p>
+
+    <figure class="bleed">
+      <img src="./我眼中的美 — 从一束光到一整个文明的追问_files/15-wave.jpg" alt="神奈川冲浪里" data-cubox-image-id="f9385c3a02637eefcb492dbb915d4d68" data-cubox-image-index="17" data-cubox-image-load="false">
+      <figcaption><strong>葛饰北斋《神奈川冲浪里》（1831）</strong>　一朵浪、几条船、远处一座富士山。东方哲学、西方透视、浮世绘的木刻技术、对自然力量的敬畏——全部压缩在这一张构图里。它单独看是设计，是艺术；放回历史是文学；追问它"为什么打动人"是美学；问"为什么我们觉得它打动人"是哲学。万象，归一。</figcaption>
+    </figure>
+
+    <div class="tree">
+      <div class="tree-title">八学科的根系图</div>
+      <div class="tree-node tree-l0">哲学</div>
+      <div class="tree-node tree-l2">追问"是什么 / 为什么 / 应该如何"</div>
+      <div class="tree-line"></div>
+      <div class="tree-row">
+        <div>
+          <div class="tree-node tree-l1">逻辑学</div>
+          <div class="tree-node tree-l2">思考的工具</div>
+        </div>
+        <div>
+          <div class="tree-node tree-l1">美学</div>
+          <div class="tree-node tree-l2">追问"什么是美"</div>
+        </div>
+      </div>
+      <div class="tree-line"></div>
+      <div class="tree-node tree-l1">文艺理论</div>
+      <div class="tree-node tree-l2">解码作品的方法论</div>
+      <div class="tree-line"></div>
+      <div class="tree-row">
+        <div>
+          <div class="tree-node tree-l1">文学</div>
+          <div class="tree-node tree-l2">美在语言中</div>
+        </div>
+        <div>
+          <div class="tree-node tree-l1">艺术</div>
+          <div class="tree-node tree-l2">美在形象中</div>
+        </div>
+        <div>
+          <div class="tree-node tree-l1">设计</div>
+          <div class="tree-node tree-l2">美在日常中</div>
+        </div>
+        <div>
+          <div class="tree-node tree-l1">时尚</div>
+          <div class="tree-node tree-l2">美在身体上</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>三个层次</h3>
+    <p>把这八个学科按"离日常生活的远近"重新排一下，会更清楚：</p>
+    <p><strong>地基层（思考）</strong>：哲学 + 逻辑学。它们不直接产出任何"美"，但它们决定了你能不能<em>清楚地谈论</em>美。<br>
+    <strong>中间层（追问美本身）</strong>：美学 + 文艺理论。它们是"关于美的学问"，研究美是什么、怎么发生、怎么解读。<br>
+    <strong>表现层（创造美）</strong>：文学 + 艺术（含艺术史）+ 设计 + 时尚。它们是"具体的美的实践"——用语言、用形象、用器物、用身体把美做出来。</p>
+
+    <p>这三层之间不是单向的——表现层的作品会反过来改写中间层的理论，中间层的理论会逼迫地基层重新提问。三层互相搅动，构成了人类两千五百年的"美的对话"。</p>
+
+    <h3>那么，什么是"美"</h3>
+    <p>走到这里，我可以给你一个我自己的答案——但你完全可以不同意，事实上不同意才是对的。</p>
+    <p>美，是<strong>一个有限的生命对无限的瞬间的认领</strong>。<br>
+    它发生在你和某个事物之间，发生在判断成立的那 0.3 秒。<br>
+    它来自感官，但不止于感官；它需要训练，但不能被算计；<br>
+    它指向某个比你大得多的东西——无论你管那东西叫"真"、"善"、"道"、"理念"，还是干脆不命名。</p>
+
+    <p>而哲学，就是<em>给这 0.3 秒慢动作回放并取一个名字</em>的努力。</p>
+
+    <blockquote>
+      你眼中的美，就是你站在世界面前的样子。
+    </blockquote>
+
+    <p>所以——你今天看见的那朵花，那片云，那个让你停了三秒的瞬间，不是无意义的小事。它是哲学的现场，是美学的样本，是文学和艺术之所以存在的理由，是设计想要服务的对象。</p>
+    <p>这本小书写到这里，没有给你结论，因为没有结论可给。它只想做一件事：让你下次再说"真美"的时候，知道自己说出口的，是一根从你嘴边一直伸到柏拉图脚下的、连续了两千五百年的线。</p>
+
+    <div class="ornament">✦ ✦ ✦</div>
+  </div>
+</section>
+
+<!-- 尾声 -->
+<section class="outro" id="epilogue">
+  <figure class="outro-figure">
+    <img src="./我眼中的美 — 从一束光到一整个文明的追问_files/16-monk.jpg" alt="海边的僧侣" data-cubox-image-id="2371274bae251179a832014d455223c7" data-cubox-image-index="18" data-cubox-image-load="false">
+    <figcaption><strong>弗里德里希《海边的僧侣》（1808–1810）</strong>　一个人站在海与天之间。书读到这里，剩下的就是你自己面对那片海。</figcaption>
+  </figure>
+  <h2>给读者</h2>
+  <p>如果这本小书让你想继续往里走，三本入门书可以接力：</p>
+  <p style="margin-top: 24px;">
+    <strong>《艺术的故事》</strong> · 贡布里希 —— 写给孩子的艺术史，比许多专业教材都好<br>
+    <strong>《谈美》</strong> · 朱光潜 —— 1932 年的小书，今天读仍然清亮<br>
+    <strong>《理想国》</strong> · 柏拉图 —— 一切关于美的争论都从这里出发
+  </p>
+  <p style="margin-top: 32px;">三件可以今天就做的事：</p>
+  <p>
+    在地铁上抬头看一次广告牌的字体。<br>
+    挑一首背过的诗，把它大声念出来，听字落下的声音。<br>
+    下次说"真美"之前，停三秒，问自己——"我说的是哪一种美？"
+  </p>
+  <div class="sig">— 我眼中的美 · A WebBook · 2026 ·</div>
+  <p style="margin-top: 16px; font-size: 13px; color: var(--ink-faint);">本文图片来源：Wikimedia Commons（公有领域名作）</p>
+</section>
+
+<script>
+  // 进度条
+  const progress = document.getElementById('progress');
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    const scrolled = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+    progress.style.width = scrolled + '%';
+  }, { passive: true });
+
+  // TOC active
+  const sections = document.querySelectorAll('section.chapter, section.outro');
+  const links = document.querySelectorAll('.toc a');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const id = e.target.id;
+        links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + id));
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  sections.forEach(s => obs.observe(s));
+
+  // 图片加载失败 fallback — 仅真正失败时显示暖灰占位
+  document.querySelectorAll('figure img').forEach(img => {
+    img.addEventListener('error', () => {
+      img.style.background = '#e8e2d4';
+      img.style.minHeight = '180px';
+    });
+  });
+</script>
+<script defer="" src="./我眼中的美 — 从一束光到一整个文明的追问_files/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;73a749ca3ace4b2abd6813f039000869&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+<div id="wwei-auth-widget" style="position: fixed; top: 16px; right: 16px; z-index: 2147483647;"><template shadowrootmode="open"><style>
+      :host { all: initial; }
+      * { box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif; }
+      .wrap { position: relative; }
+      .avatar {
+        width: 36px; height: 36px; border-radius: 50%; padding: 0; cursor: pointer; position: relative;
+        border: 2px solid rgba(255,255,255,0.15); background: #111214; color: #f0f0f2;
+        display: flex; align-items: center; justify-content: center; overflow: hidden;
+        transition: all .2s; box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      }
+      .avatar:hover { transform: scale(1.05); border-color: rgba(255,255,255,0.3); }
+      .avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+      .avatar .fallback { font-weight: 600; font-size: 14px; }
+      .avatar.loading { animation: pulse 1.4s infinite; cursor: default; }
+      @keyframes pulse { 0%,100% { opacity: 0.5; } 50% { opacity: 0.9; } }
+      .dot {
+        position: absolute; bottom: -2px; right: -2px; width: 12px; height: 12px;
+        border-radius: 50%; border: 2px solid #111214;
+      }
+      .login-btn {
+        display: inline-block; padding: 7px 16px; border-radius: 100px;
+        background: rgba(110, 231, 183, 0.95); color: #08090a; font-size: 13px; font-weight: 500;
+        text-decoration: none; transition: all .2s; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        border: 1px solid rgba(110, 231, 183, 0.3);
+      }
+      .login-btn:hover { background: #6ee7b7; transform: translateY(-1px); }
+      .dropdown {
+        position: absolute; top: 44px; right: 0; min-width: 260px;
+        background: #111214; border: 1px solid #1e2024; border-radius: 12px;
+        padding: 16px; opacity: 0; transform: translateY(-6px) scale(0.96);
+        pointer-events: none; transition: all .18s cubic-bezier(.4,0,.2,1);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.4); color: #f0f0f2;
+      }
+      .dropdown.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+      .dropdown-head { display: flex; gap: 12px; align-items: center; }
+      .dropdown-avatar { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; flex-shrink: 0; background: #1e2024; display: flex; align-items: center; justify-content: center; }
+      .dropdown-avatar img { width: 100%; height: 100%; object-fit: cover; }
+      .dropdown-info { flex: 1; min-width: 0; }
+      .dropdown-name { font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .dropdown-email { font-size: 11px; color: #a0a3ab; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .dropdown-level {
+        display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px;
+        font-size: 10px; font-weight: 600; letter-spacing: 0.05em;
+        border: 1px solid;
+      }
+      .dropdown-divider { height: 1px; background: #1e2024; margin: 14px 0; }
+      .dropdown-item {
+        display: block; padding: 8px 12px; font-size: 13px; color: #f0f0f2;
+        text-decoration: none; border-radius: 6px; transition: background .15s;
+      }
+      .dropdown-item:hover { background: #1e2024; }
+    </style>
+        <div class="wrap">
+          <button class="avatar" id="avatar" aria-label="user menu" title="yiyixiao920@gmail.com · ADMIN">
+            <img src="https://lh3.googleusercontent.com/a/ACg8ocKu-yjD3iu0mgzG7jWbJHAxSpl7HBx0GqADxeh6y8jMFDEhpA=s96-c" referrerpolicy="no-referrer" alt="">
+            <span class="dot" style="background:#f87171" title="ADMIN"></span>
+          </button>
+          <div class="dropdown" id="dropdown">
+            <div class="dropdown-head">
+              <div class="dropdown-avatar"><img src="https://lh3.googleusercontent.com/a/ACg8ocKu-yjD3iu0mgzG7jWbJHAxSpl7HBx0GqADxeh6y8jMFDEhpA=s96-c" referrerpolicy="no-referrer" alt=""></div>
+              <div class="dropdown-info">
+                <div class="dropdown-name">姚伊笑</div>
+                <div class="dropdown-email">yiyixiao920@gmail.com</div>
+                <div class="dropdown-level" style="color:#f87171;border-color:#f8717140">ADMIN</div>
+              </div>
+            </div>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="https://admin.wwei.ai/">管理后台 →</a>
+            <a class="dropdown-item" href="https://auth.wwei.ai/logout?next=https%3A%2F%2Fmeiyan.wwei.ai%2F">退出登录</a>
+          </div>
+        </div>
+      </template></div><div id="cubox-react-root"><template shadowrootmode="open"><link rel="stylesheet" href="chrome-extension://bflmgpechpeohjfomgfdkkfcbhfcjohl/css/content.css"><div><div style="z-index: 2147483647;"></div></div></template></div><a id="colorPickerDivHidden"><img src="chrome-extension://njolgcnddhepjpplfifbmagdgkidikpj/logo.png" data-cubox-image-id="ae8686952839c0b69466b05216a82003" data-cubox-image-index="19" data-cubox-image-load="false"></a></body><plasmo-csui id="aitdk-csui"><template shadowrootmode="open"><style>*,:before,:after{box-sizing:border-box;border:0 solid #e5e7eb}:before,:after{--tw-content:""}html{-webkit-text-size-adjust:100%;tab-size:4;font-feature-settings:normal;font-variation-settings:normal;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}body{line-height:inherit;margin:0}hr{color:inherit;border-top-width:1px;height:0}abbr:where([title]){text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em}small{font-size:80%}sub,sup{vertical-align:baseline;font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-feature-settings:inherit;font-variation-settings:inherit;font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,[type=button],[type=reset],[type=submit]{-webkit-appearance:button;background-color:#0000;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button{height:auto}::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dl,dd,h1,h2,h3,h4,h5,h6,hr,figure,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}ol,ul,menu{margin:0;padding:0;list-style:none}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}button,[role=button]{cursor:pointer}:disabled{cursor:default}img,svg,video,canvas,audio,iframe,embed,object{vertical-align:middle;display:block}img,video{max-width:100%;height:auto}[hidden]{display:none}:host,:root{--background:0 0% 100%;--foreground:224 71.4% 4.1%;--card:0 0% 100%;--card-foreground:224 71.4% 4.1%;--popover:0 0% 100%;--popover-foreground:224 71.4% 4.1%;--primary:262.1 83.3% 57.8%;--primary-foreground:210 20% 98%;--secondary:220 14.3% 95.9%;--secondary-foreground:220.9 39.3% 11%;--muted:220 14.3% 95.9%;--muted-foreground:220 8.9% 46.1%;--accent:220 14.3% 95.9%;--accent-foreground:220.9 39.3% 11%;--destructive:0 84.2% 60.2%;--destructive-foreground:210 20% 98%;--border:220 13% 91%;--input:220 13% 91%;--ring:262.1 83.3% 57.8%;--radius:4.2px;z-index:2147483647}.dark{--background:224 71.4% 4.1%;--foreground:210 20% 98%;--card:224 71.4% 4.1%;--card-foreground:210 20% 98%;--popover:224 71.4% 4.1%;--popover-foreground:210 20% 98%;--primary:263.4 70% 50.4%;--primary-foreground:210 20% 98%;--secondary:215 27.9% 16.9%;--secondary-foreground:210 20% 98%;--muted:215 27.9% 16.9%;--muted-foreground:217.9 10.6% 64.9%;--accent:215 27.9% 16.9%;--accent-foreground:210 20% 98%;--destructive:0 62.8% 30.6%;--destructive-foreground:210 20% 98%;--border:215 27.9% 16.9%;--input:215 27.9% 16.9%;--ring:263.4 70% 50.4%}*{border-color:hsl(var(--border))}html{font-size:14px}body{background-color:hsl(var(--background));color:hsl(var(--foreground));font-feature-settings:"rlig" 1,"calt" 1;font-size:14px}*,:before,:after,::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:#3b82f680;--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }.container{width:100%;margin-left:auto;margin-right:auto;padding-left:28px;padding-right:28px}@media (width>=1400px){.container{max-width:1400px}}.visible{visibility:visible}.invisible{visibility:hidden}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.bottom-0{bottom:0}.left-1\/2{left:50%}.right-0{right:0}.right-2{right:7px}.top-0{top:0}.top-1\/2{top:50%}.top-2{top:7px}.-z-\[1\]{z-index:-1}.z-\[1\]{z-index:1}.z-\[2147483647\]{z-index:2147483647}.mx-auto{margin-left:auto;margin-right:auto}.-ml-\[13px\]{margin-left:-13px}.-mt-\[13px\]{margin-top:-13px}.mt-3{margin-top:10.5px}.mt-5{margin-top:17.5px}.block{display:block}.flex{display:flex}.hidden{display:none}.h-full{height:100%}.w-\[420px\]{width:420px}.w-\[520px\]{width:520px}.w-full{width:100%}@keyframes spin{to{transform:rotate(360deg)}}.animate-spin{animation:1s linear infinite spin}.cursor-pointer{cursor:pointer}.items-center{align-items:center}.justify-center{justify-content:center}.gap-x-2{column-gap:7px}.rounded{border-radius:3.5px}.bg-\[\#635bff\]{--tw-bg-opacity:1;background-color:rgb(99 91 255/var(--tw-bg-opacity))}.bg-\[\#635bff\]\/10{background-color:#635bff1a}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity))}.p-1{padding:3.5px}.p-6{padding:21px}.px-4{padding-left:14px;padding-right:14px}.py-2{padding-top:7px;padding-bottom:7px}.py-2\.5{padding-top:8.75px;padding-bottom:8.75px}.text-\[14px\]{font-size:14px}.text-xl{font-size:17.5px;line-height:24.5px}.font-medium{font-weight:500}.leading-6{line-height:21px}.text-black{--tw-text-opacity:1;color:rgb(0 0 0/var(--tw-text-opacity))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175/var(--tw-text-opacity))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128/var(--tw-text-opacity))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55/var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity))}.shadow-2xl{--tw-shadow:0 25px 50px -12px #00000040;--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.outline{outline-style:solid}.filter{filter:var(--tw-blur)var(--tw-brightness)var(--tw-contrast)var(--tw-grayscale)var(--tw-hue-rotate)var(--tw-invert)var(--tw-saturate)var(--tw-sepia)var(--tw-drop-shadow)}.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-duration:.15s;transition-timing-function:cubic-bezier(.4,0,.2,1)}@keyframes enter{0%{opacity:var(--tw-enter-opacity,1);transform:translate3d(var(--tw-enter-translate-x,0),var(--tw-enter-translate-y,0),0)scale3d(var(--tw-enter-scale,1),var(--tw-enter-scale,1),var(--tw-enter-scale,1))rotate(var(--tw-enter-rotate,0))}}@keyframes exit{to{opacity:var(--tw-exit-opacity,1);transform:translate3d(var(--tw-exit-translate-x,0),var(--tw-exit-translate-y,0),0)scale3d(var(--tw-exit-scale,1),var(--tw-exit-scale,1),var(--tw-exit-scale,1))rotate(var(--tw-exit-rotate,0))}}.hover\:bg-\[\#635bff\]\/90:hover{background-color:#635bffe6}</style><div id="plasmo-shadow-container" style="z-index: 2147483647; position: relative;"><div id="plasmo-inline" class="plasmo-csui-container" style="display: flex; position: relative; top: 0px; left: 0px;"><div class="aitdk-extension shadow-2xl flex fixed w-[520px] top-0 right-0 bottom-0 bg-white hidden"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x absolute right-2 top-2 z-[1] p-1 cursor-pointer text-gray-500"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-loader-circle animate-spin text-gray-400 absolute top-1/2 left-1/2 -ml-[13px] -mt-[13px] -z-[1]"><path d="M21 12a9 9 0 1 1-6.219-8.56"></path></svg></div></div></div></template></plasmo-csui><div id="immersive-translate-browser-popup" style="all: initial"><template shadowrootmode="open"><style>/** 基础色阶定义 **/
+:root,
+#mount[data-theme="light"],
+#mount:not([data-theme="dark"]) {
+  /* 中性灰阶（light） */
+  --c-00: #000000;
+  --c-22: #222222;
+  --c-33: #333333;
+  --c-66: #666666;
+  --c-83: #838383;
+  --c-99: #999999;
+  --c-c7: #c7c7c7;
+  --c-cc: #cccccc;
+  --c-e6: #e6e6e6;
+  --c-f5: #f5f5f5;
+  --c-ff: #ffffff;
+  /* 品牌主色阶（light） */
+  --p-main: #ea4c89;
+  --p-hover: #ec5e95;
+  --p-active: #e34a85;
+  --p-special: #ee71a2;
+  --p-disabled: #f4a5c4;
+  --p-text-disabled: #f9c9dc;
+  --p-weak: #fdedf3;
+  /* Surface 层级（light，TC 填充-1） */
+  --s-1: #f3f5f6;
+  --s-1-hover: #f6f8f9;
+  --s-1-active: #edf1f2;
+  --s-1-weak: #fafbfb;
+  /* 输入/边框（light，TC 填充-2） */
+  --input-bg-base: #fafbfc;
+  --input-border: #ecf0f7;
+  --input-border-strong: #e0e0e6;
+  --input-bg-strong: #fafdff;
+}
+
+:root[data-theme="dark"],
+[data-theme="dark"] {
+  /* 中性灰阶（dark） */
+  --c-00: #ffffff;
+  --c-22: #dbdbdb;
+  --c-33: #dbdbdb;
+  --c-66: #b3b3b3;
+  --c-83: #838383;
+  --c-99: #707070;
+  --c-c7: #666666;
+  --c-cc: #5c5c5c;
+  --c-e6: #3b3b3b;
+  --c-f5: #262626;
+  --c-ff: #222222;
+  /* 品牌主色阶（dark） */
+  --p-main: #e23c7c;
+  --p-hover: #ea4c89;
+  --p-active: #d5467d;
+  --p-special: #a93a65;
+  --p-disabled: #7e2f4d;
+  --p-text-disabled: #522335;
+  --p-weak: #26171d;
+  /* Surface 层级（dark，TC 填充-1） */
+  --s-1: #2d2e2f;
+  --s-1-hover: #323434;
+  --s-1-active: #202121;
+  --s-1-weak: #262627;
+  /* 输入/边框（dark，TC 填充-2） */
+  --input-bg-base: #2b2d30;
+  --input-border: #3e434b;
+  --input-border-strong: #43474b;
+  --input-bg-strong: #1f2123;
+}
+
+:root,
+#mount [data-theme] {
+  /* 业务/通用变量引用色阶（全局可见，含 Shadow DOM） */
+  --primary: var(--p-main);
+  --primary-hover: var(--p-hover);
+  --primary-inverse: #fff;
+  --modal-background: var(--s-1);
+  --modal-border: var(--input-border);
+  --modal-text: var(--c-22);
+  --modal-text-secondary: var(--c-66);
+  --modal-error: var(--p-main);
+  --modal-required: #f53f3f;
+  --modal-success: #68cd52;
+  --modal-button-background: var(--p-main);
+  --modal-button-text: var(--c-ff);
+  --modal-input-background: var(--input-bg-base);
+  --modal-check-color: var(--p-main);
+  --background-color: var(--c-ff);
+  --background-light-green: var(--s-1-weak, #f5f7f9);
+  --text-black-2: var(--c-22);
+  --text-gray-2: var(--c-22);
+  --text-gray-6: var(--c-66);
+  --text-gray-9: var(--c-99);
+  --text-gray-c2: var(--c-c7);
+  --switch-background-color: var(--c-c7, hsl(205deg, 16%, 77%));
+  --float-ball-more-button-border-color: var(--c-f5, #f6f6f6);
+  --float-ball-more-button-background-color: var(--c-ff);
+  --float-ball-more-button-hover-color: var(--p-weak);
+  --float-ball-more-button-svg-color: #6c6f73;
+  --service-bg-hover: var(--s-1-hover, #f7faff);
+  --service-bg: var(--s-1-weak, #fafbfb);
+}
+
+#mount {
+  --font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
+    "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  /* PC/H5 兼容的字号、间距、圆角、阴影变量 */
+  --f-12: 12px;
+  --f-14: 14px;
+  --f-15: 15px;
+  --f-16: 16px;
+  --f-18: 18px;
+  --f-20: 20px;
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-18: 18px;
+  --space-24: 24px;
+  --radius-8: 8px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --control-height-lg: 44px;
+  --width-28: 28px;
+  --width-24: 24px;
+  --width-20: 20px;
+  --width-18: 18px;
+  --width-16: 16px;
+  --width-label-md: 56px;
+  --shadow-lg: 0 18px 48px rgba(0, 0, 0, 0.12);
+
+  /* 常规变量 */
+  --line-height: 1.5;
+  --font-weight: 400;
+  --font-size: 16px;
+  --border-radius: 4px;
+  --border-width: 2px;
+  --outline-width: 3px;
+  --spacing: 16px;
+  --typography-spacing-vertical: 24px;
+  --block-spacing-vertical: calc(var(--spacing) * 2);
+  --block-spacing-horizontal: var(--spacing);
+  --grid-spacing-vertical: 0;
+  --grid-spacing-horizontal: var(--spacing);
+  --form-element-spacing-vertical: 12px;
+  --form-element-spacing-horizontal: 16px;
+  --nav-element-spacing-vertical: 16px;
+  --nav-element-spacing-horizontal: 8px;
+  --nav-link-spacing-vertical: 8px;
+  --nav-link-spacing-horizontal: 8px;
+  --form-label-font-weight: var(--font-weight);
+  --transition: 0.2s ease-in-out;
+  --modal-overlay-backdrop-filter: blur(4px);
+  --switch-color: var(--primary-inverse);
+  --switch-checked-background-color: var(--primary);
+  --icon-xia: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgaWQ9IkZyYW1lIj4KPHBhdGggaWQ9IlZlY3RvciIgZD0iTTguMDAyOTEgOS42Nzk4M0wzLjgzMzM5IDUuNTEyMjFMMy4wMjUzOSA2LjMxOTgzTDguMDAzMjkgMTEuMjk1MUwxMi45NzYyIDYuMzE5ODNMMTIuMTY3OSA1LjUxMjIxTDguMDAyOTEgOS42Nzk4M1oiIGZpbGw9IiM4MzgzODMiLz4KPC9nPgo8L3N2Zz4K");
+  /* 兼容旧变量：主色直接引用品牌主色阶 */
+  --primary: var(--p-main);
+  --primary-hover: var(--p-hover);
+  --primary-inverse: #fff;
+  /* Modal 业务变量引用色阶 */
+  --modal-background: var(--s-1);
+  --modal-border: var(--input-border);
+  --modal-text: var(--c-22);
+  --modal-text-secondary: var(--c-66);
+  --modal-error: var(--p-main);
+  --modal-required: #f53f3f;
+  --modal-success: #68cd52;
+  --modal-button-background: var(--p-main);
+  --modal-button-text: var(--c-ff);
+  --modal-input-background: var(--input-bg-base);
+  --modal-check-color: var(--p-main);
+  --background-color: var(--c-ff);
+  --background-light-green: var(--s-1-weak, #f5f7f9);
+  --text-black-2: var(--c-22);
+  --text-gray-2: var(--c-22);
+  --text-gray-6: var(--c-66);
+  --text-gray-9: var(--c-99);
+  --text-gray-c2: var(--c-c7);
+  --switch-background-color: var(--c-c7, hsl(205deg, 16%, 77%));
+  --float-ball-more-button-border-color: var(--c-f5, #f6f6f6);
+  --float-ball-more-button-background-color: var(--c-ff);
+  --float-ball-more-button-hover-color: var(--p-weak);
+  --float-ball-more-button-svg-color: #6c6f73;
+  --service-bg-hover: var(--s-1-hover, #f7faff);
+  --service-bg: var(--s-1-weak, #fafbfb);
+  line-height: var(--line-height);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+}
+
+@media (max-width: 480px) {
+  :root,
+  #mount {
+    --f-12: 10px;
+    --f-14: 12px;
+    --f-15: 13px;
+    --f-16: 14px;
+    --f-18: 16px;
+    --f-20: 18px;
+    --space-4: 4px;
+    --space-6: 4px;
+    --space-8: 6px;
+    --space-12: 8px;
+    --space-16: 12px;
+    --space-18: 14px;
+    --space-24: 18px;
+    --radius-8: 6px;
+    --radius-12: 10px;
+    --radius-16: 12px;
+    --control-height-lg: 38px;
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.1);
+    --width-28: 24px;
+    --width-24: 20px;
+    --width-20: 16px;
+    --width-18: 14px;
+    --width-16: 12px;
+    --width-label-md: 52px;
+  }
+}
+
+#mount * {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+:where(#mount) a,
+:where(#mount) [role="link"] {
+  --color: var(--primary);
+  --background-color: transparent;
+  outline: none;
+  background-color: var(--background-color);
+  color: var(--color);
+  -webkit-text-decoration: var(--text-decoration);
+  text-decoration: var(--text-decoration);
+  transition: background-color var(--transition), color var(--transition),
+    box-shadow var(--transition), -webkit-text-decoration var(--transition);
+  transition: background-color var(--transition), color var(--transition),
+    text-decoration var(--transition), box-shadow var(--transition);
+  transition: background-color var(--transition), color var(--transition),
+    text-decoration var(--transition), box-shadow var(--transition),
+    -webkit-text-decoration var(--transition);
+}
+:where(#mount) a:is([aria-current], :hover, :active, :focus),
+:where(#mount) [role="link"]:is([aria-current], :hover, :active, :focus) {
+  --color: var(--primary-hover);
+  --text-decoration: underline;
+}
+
+:where(#mount) label {
+  font-size: 13px;
+  line-height: 1.3;
+  color: var(--text-gray-2, #222222);
+}
+
+:where(#mount) button {
+  width: 100%;
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.3;
+  min-height: 44px;
+  border-radius: 12px;
+  padding: 0 14px;
+  border: none;
+  background-color: var(--primary, #ea4c89);
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+:where(#mount) button:hover {
+  background-color: var(--primary-hover, #f082ac);
+}
+
+:where(#mount) button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+:where(#mount) select,
+:where(#mount) input,
+:where(#mount) textarea {
+  font-family: inherit;
+  color: var(--text-gray-2, #222222);
+}
+
+:where(#mount) select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: inherit;
+  color: var(--text-gray-2, inherit);
+  font-size: 13px;
+  line-height: 1.3;
+  outline: none;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--popup-item-background-color, transparent);
+  background-image: var(--icon-xia, none);
+  background-repeat: no-repeat;
+  background-position: center right 12px;
+  background-size: 16px auto;
+  cursor: pointer;
+}
+
+:where(#mount) input[type="checkbox"] {
+  accent-color: var(--primary, #ea4c89);
+}
+
+[type="checkbox"],
+[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 1.25em;
+  height: 1.25em;
+  margin-top: -0.125em;
+  margin-right: 0.375em;
+  margin-left: 0;
+  -webkit-margin-start: 0;
+  margin-inline-start: 0;
+  -webkit-margin-end: 0.375em;
+  margin-inline-end: 0.375em;
+  border-width: var(--border-width);
+  font-size: inherit;
+  vertical-align: middle;
+  cursor: pointer;
+}
+[type="checkbox"]::-ms-check,
+[type="radio"]::-ms-check {
+  display: none;
+}
+[type="checkbox"]:checked,
+[type="checkbox"]:checked:active,
+[type="checkbox"]:checked:focus,
+[type="radio"]:checked,
+[type="radio"]:checked:active,
+[type="radio"]:checked:focus {
+  --background-color: var(--primary);
+  --border-color: var(--primary);
+  background-image: var(--icon-checkbox);
+  background-position: center;
+  background-size: 0.75em auto;
+  background-repeat: no-repeat;
+}
+[type="checkbox"] ~ label,
+[type="radio"] ~ label {
+  display: inline-block;
+  margin-right: 0.375em;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+[type="checkbox"]:indeterminate {
+  --background-color: var(--primary);
+  --border-color: var(--primary);
+  background-image: var(--icon-minus);
+  background-position: center;
+  background-size: 0.75em auto;
+  background-repeat: no-repeat;
+}
+
+[type="radio"] {
+  border-radius: 50%;
+}
+[type="radio"]:checked,
+[type="radio"]:checked:active,
+[type="radio"]:checked:focus {
+  --background-color: var(--primary-inverse);
+  border-width: 0.35em;
+  background-image: none;
+}
+
+:where(#mount) [type="checkbox"][role="switch"] {
+  --background-color: var(--switch-background-color);
+  --border-color: var(--switch-background-color);
+  --color: var(--switch-color);
+  width: 2.25em;
+  height: 1.25em;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 1.25em;
+  background-color: var(--background-color);
+  line-height: 1.25em;
+}
+:where(#mount) [type="checkbox"][role="switch"]:focus {
+  --background-color: var(--switch-background-color);
+  --border-color: var(--switch-background-color);
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked {
+  --background-color: var(--switch-checked-background-color);
+  --border-color: var(--switch-checked-background-color);
+}
+:where(#mount) [type="checkbox"][role="switch"]:before {
+  display: block;
+  width: calc(1.25em - (var(--border-width) * 2));
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--color);
+  content: "";
+  transition: margin 0.1s ease-in-out;
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked {
+  background-image: none;
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked::before {
+  margin-left: calc(1.125em - var(--border-width));
+  -webkit-margin-start: calc(1.125em - var(--border-width));
+  margin-inline-start: calc(1.125em - var(--border-width));
+}
+
+:where(#mount) [type="checkbox"][aria-invalid="false"],
+:where(#mount) [type="checkbox"]:checked[aria-invalid="false"],
+:where(#mount) [type="radio"][aria-invalid="false"],
+:where(#mount) [type="radio"]:checked[aria-invalid="false"],
+:where(#mount) [type="checkbox"][role="switch"][aria-invalid="false"],
+:where(#mount) [type="checkbox"][role="switch"]:checked[aria-invalid="false"] {
+  --border-color: var(--form-element-valid-border-color);
+}
+:where(#mount) [type="checkbox"][aria-invalid="true"],
+:where(#mount) [type="checkbox"]:checked[aria-invalid="true"],
+:where(#mount) [type="radio"][aria-invalid="true"],
+:where(#mount) [type="radio"]:checked[aria-invalid="true"],
+:where(#mount) [type="checkbox"][role="switch"][aria-invalid="true"],
+:where(#mount) [type="checkbox"][role="switch"]:checked[aria-invalid="true"] {
+  --border-color: var(--form-element-invalid-border-color);
+}
+
+.text-black {
+  color: var(--text-black-2);
+}
+
+.text-gray-2 {
+  color: var(--text-gray-2);
+}
+
+.text-gray-6 {
+  color: var(--text-gray-6);
+}
+
+.text-gray-9 {
+  color: var(--text-gray-9);
+}
+
+.text-gray-c2 {
+  color: var(--text-gray-c2);
+}
+
+.pt-4 {
+  padding-top: 16px;
+}
+
+.p-2 {
+  padding: 8px;
+}
+
+.pl-5 {
+  padding-left: 48px;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.pl-2 {
+  padding-left: 8px;
+}
+
+.pl-4 {
+  padding-left: 24px;
+}
+
+.pt-2 {
+  padding-top: 8px;
+}
+
+.pb-2 {
+  padding-bottom: 8px;
+}
+
+.pb-4 {
+  padding-bottom: 16px;
+}
+
+.pb-5 {
+  padding-bottom: 20px;
+}
+
+.pr-5 {
+  padding-right: 48px;
+}
+
+.text-sm {
+  font-size: 13px;
+}
+
+.text-base {
+  font-size: 16px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.mb-0 {
+  margin-bottom: 0px;
+}
+
+.mb-2 {
+  margin-bottom: 8px;
+}
+
+.mb-4 {
+  margin-bottom: 16px;
+}
+
+.mb-3 {
+  margin-bottom: 12px;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.py-2 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.py-2-5 {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mt-2 {
+  margin-top: 8px;
+}
+
+.mt-3 {
+  margin-top: 12px;
+}
+
+.mt-4 {
+  margin-top: 16px;
+}
+
+.mt-5 {
+  margin-top: 20px;
+}
+
+.mt-6 {
+  margin-top: 24px;
+}
+
+.mb-1 {
+  margin-bottom: 4px;
+}
+
+.ml-4 {
+  margin-left: 24px;
+}
+
+.ml-3 {
+  margin-left: 16px;
+}
+
+.ml-2 {
+  margin-left: 8px;
+}
+
+.ml-1 {
+  margin-left: 4px;
+}
+
+.mr-1 {
+  margin-right: 4px;
+}
+
+.mr-2 {
+  margin-right: 8px;
+}
+
+.mr-3 {
+  margin-right: 16px;
+}
+
+.mx-2 {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.pl-3 {
+  padding-left: 12px;
+}
+
+.pr-3 {
+  padding-right: 12px;
+}
+
+.p-3 {
+  padding: 12px;
+}
+
+.px-1 {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.px-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.pt-3 {
+  padding-top: 12px;
+}
+
+.px-6 {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.px-4 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.pt-6 {
+  padding-top: 20px;
+}
+
+.py-3 {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.py-0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.left-auto {
+  left: auto !important;
+}
+
+.max-h-28 {
+  max-height: 112px;
+}
+
+.max-h-30 {
+  max-height: 120px;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
+.text-xs {
+  font-size: 12px;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-3 {
+  flex: 3;
+}
+
+.flex-4 {
+  flex: 4;
+}
+
+.flex-2 {
+  flex: 2;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.max-content {
+  width: max-content;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-baseline {
+  align-items: baseline;
+}
+
+.my-5 {
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+.my-4 {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.my-3 {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.pt-3 {
+  padding-top: 12px;
+}
+
+.px-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.pt-2 {
+  padding-top: 8px;
+}
+
+.px-2 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.pt-1 {
+  padding-top: 4px;
+}
+
+.px-1 {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.pb-2 {
+  padding-bottom: 8px;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.shrink-0 {
+  flex-shrink: 0;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.close {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  background-image: var(--icon-close);
+  background-position: center;
+  background-size: auto 1rem;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  transition: opacity var(--transition);
+}
+
+.padding-two-column {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.muted {
+  color: #999;
+}
+
+.text-label {
+  color: #666;
+}
+
+.display-none {
+  display: none;
+}
+
+/* dark use #18232c */
+@media (prefers-color-scheme: dark) {
+  .text-label {
+    color: #9ca3af;
+  }
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.text-decoration-none:is([aria-current], :hover, :active, :focus),
+[role="link"]:is([aria-current], :hover, :active, :focus) {
+  --text-decoration: none !important;
+  background-color: transparent !important;
+}
+
+.text-overflow-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.max-w-20 {
+  max-width: 180px;
+  white-space: nowrap;
+}
+
+[data-theme="light"],
+#mount:not([data-theme="dark"]) {
+  --popup-footer-background-color: #e8eaeb;
+  --popup-content-background-color: #ffffff;
+  --popup-item-background-color: #f3f5f6;
+  --popup-item-hover-background-color: #eaeced;
+  --popup-trial-pro-background-color: #f9fbfc;
+  --service-select-content-shadow: 0px 2px 12px 0px rgba(75, 76, 77, 0.2);
+  --service-select-border-color: #fafafa;
+  --service-select-selected-background-color: #f3f5f6;
+  --download-app-background: #f3f5f6;
+  --translate-language-background-color: #f3f5f6;
+  --translate-language-icon-color: #666666;
+  --translate-language-text-color: #222222;
+  --translate-language-hover-background-color: #fdedf3;
+  --translate-language-hover-icon-color: #e95d93;
+  --error-bg: #fdedf3;
+  --error-text: #222;
+  --error-link: #ea4c89;
+}
+
+[data-theme="dark"] {
+  --popup-footer-background-color: #0d0d0d;
+  --popup-content-background-color: #191919;
+  --popup-item-background-color: #272727;
+  --popup-item-hover-background-color: #333333;
+  --popup-trial-pro-background-color: #222222;
+  --service-select-content-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.9);
+  --service-select-border-color: #2c2c2c;
+  --service-select-selected-background-color: #333333;
+  --download-app-background: #333;
+  --translate-language-background-color: #2d2e2f;
+  --translate-language-icon-color: #b3b3b3;
+  --translate-language-text-color: #b3b3b3;
+  --translate-language-hover-background-color: #a97b8c;
+  --translate-language-hover-icon-color: rgba(255, 255, 255, 0.9);
+  --error-bg: #26171d;
+  --error-text: #dbdbdb;
+  --error-link: #ea4c89;
+}
+
+#mount {
+  min-width: 268px;
+}
+
+body {
+  padding: 0;
+  margin: 0 auto;
+  min-width: 268px;
+  border-radius: 10px;
+}
+
+.popup-container {
+  font-size: 16px;
+  --font-size: 16px;
+  color: #666;
+  background-color: var(--popup-footer-background-color);
+  width: 316px;
+  min-width: 316px;
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-content {
+  background-color: var(--popup-content-background-color);
+  border-radius: 0px 0px 12px 12px;
+  padding: 16px 20px;
+}
+
+.popup-userscript-three-feature-layout {
+  background-color: var(--popup-footer-background-color);
+  width: 350px;
+  min-width: 350px;
+}
+
+.popup-userscript-three-feature-layout .popup-content {
+  padding-bottom: 20px;
+  border-radius: 0 0 12px 12px;
+}
+
+.popup-userscript-three-feature-layout .popup-footer {
+  border-radius: 0;
+}
+
+.immersive-translate-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  touch-action: none;
+}
+
+.immersive-translate-popup-wrapper {
+  background: var(--background-color);
+  border-radius: 10px;
+  border: 1px solid var(--muted-border-color);
+}
+
+.main-button {
+  font-size: 16px;
+  font-weight: 700;
+  vertical-align: middle;
+  border-radius: 12px;
+  padding: unset;
+  height: 48px;
+  line-height: 48px;
+  flex: 1;
+}
+
+select.translate-service,
+select.min-select {
+  --form-element-spacing-horizontal: 0;
+  margin-bottom: 0px;
+  max-width: unset;
+  flex: 1;
+  overflow: hidden;
+  font-size: 13px;
+  border: none;
+  border-radius: 8px;
+  padding-right: 30px;
+  padding-left: 0px;
+  background-position: center right 12px;
+  background-size: 16px auto;
+  background-image: var(--icon-xia);
+  text-overflow: ellipsis;
+  color: var(--text-gray-2);
+  background-color: transparent;
+  box-shadow: unset !important;
+  cursor: pointer;
+}
+
+select.more {
+  background-position: center right;
+  padding-right: 20px;
+}
+
+select.translate-service {
+  color: var(--text-black-2);
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSI4IiB2aWV3Qm94PSIwIDAgOCA4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIG9wYWNpdHk9IjAuOCI+PHBhdGggZD0iTTMuNDc5NzMgNi4zODY0M0wwLjcyOTI5NyAzLjMyMjE2QzAuNjE2ODggMy4xOTY5NCAwLjU1NDY5NSAzLjAzNDU5IDAuNTU0Njg4IDIuODY2M0MwLjU1NDY4OCAyLjQ4OTI0IDAuODYwNTQ3IDIuMTgzNTkgMS4yMzc4NCAyLjE4MzU5SDYuNzM4NzFDNi45MDcwNyAyLjE4MzU4IDcuMDY5NTEgMi4yNDU3MiA3LjE5NDg4IDIuMzU4MDlDNy40NzU3NCAyLjYwOTg2IDcuNDk5MTkgMy4wNDE0OCA3LjI0NzI2IDMuMzIyMTZMNC40OTY4MiA2LjM4NjQ0QzQuNDgwMzIgNi40MDQ4MiA0LjQ2MjgzIDYuNDIyMjkgNC40NDQ0NCA2LjQzODc4QzQuMTYzNTggNi42OTA1NSAzLjczMTY2IDYuNjY3MTEgMy40Nzk3MyA2LjM4NjQzWiIgZmlsbD0iIzk5OTk5OSIvPjwvZz48L3N2Zz4K");
+  background-size: 8px auto;
+}
+
+.min-select-container.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.popup-footer {
+  background-color: var(--popup-footer-background-color);
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+/* Footer 三栏布局样式 */
+.footer-link-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  min-width: 72px;
+}
+
+.footer-icon-btn {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-icon-btn svg {
+  color: #999999;
+}
+
+[data-theme="dark"] .footer-icon-btn svg {
+  color: #707070;
+}
+
+.footer-link-text {
+  font-size: 12px;
+  line-height: 18px;
+  color: #666666;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .footer-link-text {
+  color: #b3b3b3;
+}
+
+.footer-link-btn-right {
+  justify-content: flex-end;
+}
+
+.footer-center-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #999999;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.footer-center-text.is-overflowing {
+  justify-content: flex-start;
+}
+
+.footer-center-text.is-overflowing .footer-center-content {
+  animation: footer-scroll-text 12s linear infinite;
+}
+
+@keyframes footer-scroll-text {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.footer-center-content {
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-scroll-gap {
+  display: inline-block;
+  width: 80px;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .footer-center-text {
+  color: #707070;
+}
+
+.footer-text-content {
+  display: inline-block;
+}
+
+.footer-privacy-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-version-inline-text {
+  font-size: 12px;
+  color: #999999;
+  line-height: 1;
+  border-bottom: 1px solid transparent;
+}
+
+[data-theme="dark"] .footer-version-inline-text {
+  color: #707070;
+}
+
+.footer-version-inline-text:hover {
+  border-bottom-color: #999999;
+}
+
+[data-theme="dark"] .footer-version-inline-text:hover {
+  border-bottom-color: #707070;
+}
+
+.translate-language-row {
+  gap: 4px;
+}
+
+.translate-language-exchange {
+  width: 36px;
+  height: 48px;
+  background-color: var(--translate-language-background-color);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--translate-language-icon-color);
+  flex-shrink: 0;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.translate-language-exchange:hover {
+  color: var(--translate-language-hover-icon-color);
+}
+
+.translate-language-exchange-active {
+  background-color: var(--translate-language-hover-background-color);
+  color: var(--translate-language-hover-icon-color);
+}
+
+.translate-language-exchange-active:hover {
+  background-color: var(--translate-language-hover-background-color);
+  color: var(--translate-language-hover-icon-color);
+}
+
+.translate-language-arrow {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+}
+
+.translation-service-container {
+  background-color: var(--popup-item-background-color);
+  border-radius: 12px;
+}
+
+.translation-service-primary-field {
+  position: relative;
+}
+
+.translation-service-guide-hitbox {
+  position: absolute;
+  right: 46px;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: auto;
+}
+
+.min-select-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 44px;
+  background-color: var(--popup-item-background-color);
+  padding-left: 16px;
+}
+
+.min-select-container:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.min-select-container:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.min-select-container:only-child {
+  border-radius: 10px;
+}
+
+.popup-ai-context-label {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+  min-width: 60px;
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+.popup-ai-context-switch {
+  align-self: center;
+  margin: 0;
+  margin-inline-end: 12px;
+}
+
+.translate-mode {
+  width: 36px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: var(--translate-language-background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  color: var(--translate-language-text-color);
+  margin-right: 8px;
+}
+
+/* 快捷操作设置标题栏 */
+.widgets-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 4px;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.widgets-header-title {
+  color: #999999;
+}
+
+.widgets-header-action {
+  color: #999999;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.widgets-header-action:hover {
+  color: #666666;
+}
+
+.widgets-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+  gap: 8px;
+}
+
+.popup-userscript-three-feature-layout .widgets-container-compact-monkey {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 12px;
+}
+
+.widgets-container.widgets-single-item {
+  grid-template-columns: minmax(0, 1fr);
+  margin-top: 12px;
+}
+
+.widgets-container.widgets-single-item .widget-item {
+  max-width: none;
+}
+
+/* 当只有两个小组件时的样式优化 */
+.widgets-container.widgets-two-items {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.widgets-container.widgets-two-items .widget-item {
+  max-width: none;
+}
+
+.widget-item {
+  display: flex;
+  width: 100%;
+  min-height: 44px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 1px solid #eef0f2;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  padding: 0 14px;
+  text-align: left;
+  gap: 6px;
+}
+
+.widget-item.widget-item-single {
+  flex: 1 1 auto;
+  flex-direction: row;
+  justify-content: center;
+  border: 1px solid #eef0f2;
+  border-radius: 16px;
+  padding: 0 14px;
+  background: transparent;
+}
+
+.popup-userscript-three-feature-layout .widget-item-compact {
+  min-height: 60px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  padding: 8px 12px;
+}
+
+.widget-item svg {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+}
+
+.widget-icon-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--c-66, #666666);
+  font-size: 14px;
+  line-height: 21px;
+  text-align: left;
+  word-break: keep-all;
+}
+
+.popup-userscript-three-feature-layout .widget-item-compact .widget-icon-text {
+  white-space: nowrap;
+  overflow: visible;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.widget-item.widget-item-single .widget-icon-text {
+  white-space: nowrap;
+  text-align: left;
+  color: var(--c-66, #666666);
+}
+
+[data-theme="dark"] .widget-item,
+[data-theme="dark"] .widget-item.widget-item-single {
+  border-color: #2e2e2e;
+}
+
+[data-theme="dark"] .widget-icon-text,
+[data-theme="dark"] .widget-item.widget-item-single .widget-icon-text {
+  color: var(--c-66, #666666);
+}
+
+[data-theme="dark"] .more-settings-icon {
+  fill: #191919;
+}
+
+.share-button-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 2px 3px 0 8px;
+}
+
+.share-button-container svg {
+  fill: var(--text-gray-9);
+}
+
+.min-select-container:hover,
+.widget-item:hover {
+  background-color: var(--popup-item-hover-background-color);
+}
+
+.main-button:hover {
+  background-color: #f5508f;
+}
+
+.share-button-container:hover {
+  background-color: var(--popup-item-background-color);
+  border-radius: 6px;
+}
+
+.error-boundary {
+  background: #fff2f0;
+  border: 1px solid #ffccc7;
+  display: flex;
+  padding: 12px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.88);
+  word-break: break-all;
+  margin: 12px;
+  border-radius: 12px;
+  flex-direction: column;
+}
+
+.upgrade-pro {
+  border-radius: 11px;
+  background: linear-gradient(57deg, #272727 19.8%, #696969 82.2%);
+  padding: 2px 8px;
+  transform: scale(0.85);
+}
+
+.upgrade-pro span {
+  background: linear-gradient(180deg, #ffeab4 17.65%, #f8c235 85.29%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+.upgrade-pro svg {
+  margin-top: -2px;
+}
+
+.upgrade-pro:hover {
+  background: linear-gradient(57deg, #3d3d3d 19.8%, #949494 82.2%);
+}
+
+.border-bottom-radius-0 {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.trial-pro-container {
+  border-radius: 0px 0px 12px 12px;
+  background: var(--popup-trial-pro-background-color);
+  display: flex;
+  align-items: center;
+  height: 44px;
+  padding-left: 16px;
+  padding-right: 12px;
+  font-size: 12px;
+}
+
+.trial-pro-container label {
+  line-height: 13px;
+  color: var(--text-black-2);
+}
+
+.trial-pro-container img {
+  margin-left: 5px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.upgrade-pro-discount-act {
+  height: 25px;
+  display: flex;
+  padding: 0 4px;
+  align-items: center;
+  border-radius: 15px;
+  background: linear-gradient(
+    90deg,
+    #cefbfa 11.33%,
+    #d7f56f 63.75%,
+    #fccd5e 100%
+  );
+  transform: scale(0.9);
+  box-shadow: 0px 1.8px 3.6px 0px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.upgrade-pro-discount-act span {
+  font-size: 12px;
+  font-weight: 700;
+  margin-left: 4px;
+  color: #222222;
+}
+
+.upgrade-pro-discount-act:hover {
+  text-decoration: unset;
+  background: linear-gradient(
+    90deg,
+    #e2fffe 11.33%,
+    #e6ff91 63.75%,
+    #ffdf93 100%
+  );
+}
+
+.custom-select-container {
+  width: 200px;
+  position: relative;
+  flex: 1;
+}
+
+#translation-service-select {
+  padding-right: 12px;
+}
+
+.custom-select-content {
+  border-radius: 12px;
+  background: var(--popup-content-background-color);
+  box-shadow: var(--service-select-content-shadow);
+  border: 1px solid var(--service-select-border-color);
+  padding: 8px;
+  position: absolute;
+  left: -68px;
+  right: 0;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.custom-select-item.default {
+  width: 100%;
+  padding: 0;
+}
+
+.custom-select-item {
+  font-size: 14px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--text-black-2);
+  width: auto;
+  overflow: hidden;
+  height: 30px;
+  line-height: 30px;
+}
+
+.custom-select-item-img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .custom-select-item-img {
+    margin-right: 6px;
+  }
+}
+
+.custom-select-content .custom-select-item.selected,
+.custom-select-content .custom-select-item:hover {
+  background: var(--service-select-selected-background-color);
+}
+
+.custom-select-item > span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.custom-select-item-pro {
+  font-size: 12px;
+  margin-left: 6px;
+  display: flex;
+}
+
+.custom-select-item-pro img {
+  margin: 0 3px;
+  width: 20px;
+  flex-shrink: 0;
+}
+
+.service-select-inline-sponsor-container {
+  width: 50px;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.service-select-inline-sponsor-marquee {
+  min-width: max-content;
+  display: inline-flex;
+  align-items: center;
+  column-gap: 12px;
+  animation: service-select-inline-sponsor-scroll 10s linear infinite;
+}
+
+.service-select-inline-sponsor-track {
+  min-width: max-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+@keyframes service-select-inline-sponsor-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 6px));
+  }
+}
+
+.custom-select-group-header {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-gray-9);
+  padding: 8px 8px 6px;
+  margin-top: 2px;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.custom-select-group-header--recommendation {
+  color: #beb3a0;
+  font-weight: 400;
+  letter-spacing: 0;
+  padding-top: 4px;
+}
+
+.custom-select-group-header-tip {
+  display: inline-flex;
+  align-items: center;
+  color: #bcbcbc;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.more-container {
+  position: relative;
+}
+
+.new-menu-indicator {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #ef3434;
+  border-radius: 50%;
+  right: 18px;
+  top: 4px;
+}
+
+.download-app {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px;
+  background: var(--download-app-background);
+  padding: 4px 8px;
+  color: var(--text-gray-6);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Popup 动画效果 */
+@keyframes popup-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes popup-fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+}
+
+.popup-generic-content {
+  animation: popup-fade-in 0.2s ease-out;
+}
+
+.popup-generic-content.hiding {
+  animation: popup-fade-out 0.15s ease-in;
+}
+
+select.min-select {
+  --form-element-spacing-horizontal: 0;
+  max-width: 128px;
+  overflow: hidden;
+  color: var(--primary);
+  font-size: 13px;
+  border: none;
+  padding: 0;
+  padding-right: 20px;
+  text-overflow: ellipsis;
+  color: var(--color);
+}
+select.min-select-secondary {
+  color: var(--color);
+}
+select.min-select:focus {
+  outline: none;
+  border: none;
+  --box-shadow: none;
+}
+
+select.min-select-left {
+  padding-right: 0px;
+  /* padding-left: 24px; */
+  /* background-position: center left 0; */
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+select.transform-padding-left {
+  padding-left: 12px;
+  transform: translateX(-12px);
+  background-position: center right 0px;
+}
+
+select.text-gray-6 {
+  color: var(--text-gray-6);
+}
+
+/* dark use black, for windows */
+@media (prefers-color-scheme: dark) {
+  select.translate-service option,
+  select.min-select option {
+    background-color: #666666;
+  }
+}
+
+select.min-select-no-arrow {
+  background-image: none;
+  padding-right: 0;
+}
+
+.activity-tips {
+  border-radius: 8px;
+  padding: 0px 8px;
+  height: 26px;
+  background: linear-gradient(
+    83deg,
+    #faccde -0.87%,
+    #fce7ef 43.13%,
+    #fbd6e4 72.08%,
+    #ffb3d1 96.34%
+  );
+  color: #333;
+  cursor: pointer;
+  gap: 4px;
+  font-size: 12px;
+}
+
+.activity-tips-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.countdown-container {
+  min-width: 50px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.01em;
+}
+
+.activity-tips-text {
+  font-weight: 600;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 非会员升级提示 */
+.upgrade-tips {
+  padding: 0px 6px 0px 4px;
+  height: 18px;
+  color: #ea4c89;
+  cursor: pointer;
+  gap: 6px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.upgrade-tips svg:first-child {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  filter: drop-shadow(0px 4px 4px rgba(236, 76, 140, 0.2));
+}
+
+.upgrade-tips-text {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.upgrade-tips-switch {
+  position: relative;
+  width: 30px;
+  height: 18px;
+  border-radius: 24px;
+  background: #cccccc;
+  flex-shrink: 0;
+}
+
+.upgrade-tips-switch-thumb {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+/* 抽屉组件样式 */
+.drawer-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+
+.drawer-overlay.drawer-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.drawer-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ffffff;
+  border-radius: 12px 12px 0 0;
+  z-index: 101;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-visible .drawer-panel {
+  transform: translateY(0);
+}
+
+[data-theme="dark"] .drawer-panel {
+  background: #222222;
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  flex-shrink: 0;
+}
+
+.drawer-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333333;
+}
+
+[data-theme="dark"] .drawer-title {
+  color: #e0e0e0;
+}
+
+.drawer-close {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999999;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.drawer-close:hover {
+  background-color: #f3f5f6;
+}
+
+[data-theme="dark"] .drawer-close:hover {
+  background-color: #333333;
+}
+
+.drawer-body {
+  padding: 16px 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.drawer-body.drawer-body-hover {
+  padding: 0 20px 20px 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.drawer-body.drawer-body-more-settings {
+  padding-top: 0;
+}
+
+.drawer-footer {
+  padding: 12px 20px;
+  border-top: 1px solid #eef0f2;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+[data-theme="dark"] .drawer-footer {
+  border-top: 1px solid #2e2e2e;
+}
+
+.drawer-footer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.drawer-footer-actions-single {
+  justify-content: center;
+}
+
+.drawer-footer-text {
+  font-size: 12px;
+  cursor: pointer;
+  color: #999999;
+  text-decoration: none;
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.drawer-footer-actions-single .drawer-footer-text {
+  flex: 0 1 auto;
+  max-width: 100%;
+}
+
+.drawer-footer-text:hover {
+  text-decoration: underline;
+}
+
+/* 抽屉内容区域样式 */
+.drawer-section {
+  margin-bottom: 16px;
+}
+
+.drawer-section:last-child {
+  margin-bottom: 0;
+}
+
+.drawer-section-highlight {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+[data-theme="dark"] .drawer-section-highlight {
+  background-color: #2a2a2a;
+}
+
+.drawer-section-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #666666;
+  margin-bottom: 12px;
+}
+
+[data-theme="dark"] .drawer-section-title {
+  color: #999999;
+}
+
+.drawer-section-divider {
+  height: 1px;
+  background-color: #eef0f2;
+  margin: 16px 0;
+}
+
+/* ========== 通用抽屉组件样式 ========== */
+.popup-drawer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.popup-drawer-card {
+  background: #f3f5f6;
+  border-radius: 12px;
+  padding: 12px 12px 16px;
+}
+
+[data-theme="dark"] .popup-drawer-card {
+  background: #2a2a2a;
+}
+
+.popup-drawer-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 21px;
+  gap: 12px;
+}
+
+.popup-drawer-card-header input[type="checkbox"][role="switch"] {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.popup-drawer-card-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #222222;
+  line-height: 21px;
+}
+
+[data-theme="dark"] .popup-drawer-card-title {
+  color: #e0e0e0;
+}
+
+.popup-drawer-card-divider {
+  height: 1px;
+  width: calc(100% + 24px);
+  background-color: #ffffff;
+  margin: 12px -12px 16px;
+}
+
+[data-theme="dark"] .popup-drawer-card-divider {
+  background-color: #333333;
+}
+
+.popup-drawer-demo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.popup-drawer-demo-region-fixed {
+  height: 51px;
+  max-height: 51px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-region-min {
+  min-height: 51px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-selection {
+  width: 100%;
+  min-width: 0;
+  flex-wrap: nowrap;
+}
+
+.popup-drawer-demo-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-plus,
+.popup-drawer-demo-equal {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  color: #333333;
+}
+
+[data-theme="dark"] .popup-drawer-demo-plus,
+[data-theme="dark"] .popup-drawer-demo-equal {
+  color: #e0e0e0;
+}
+
+.popup-drawer-demo-logo {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-logo img {
+  width: 28px;
+  height: 28px;
+  display: block;
+  filter: drop-shadow(0 4px 12px rgba(255, 166, 201, 0.5));
+}
+
+.popup-drawer-demo-result {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #333333;
+}
+
+.popup-drawer-demo-result-ellipsis {
+  min-width: 0;
+  max-width: calc(100% - 72px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .popup-drawer-demo-result {
+  color: #e0e0e0;
+}
+
+.popup-drawer-trigger {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.popup-drawer-trigger-label {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #999999;
+  padding-left: 4px;
+}
+
+.popup-drawer-trigger-options {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.popup-drawer-trigger-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #333333;
+  background: #ffffff;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.popup-drawer-trigger-option-disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.popup-drawer-trigger-option:not(.popup-drawer-trigger-option-selected):hover {
+  border-color: #d0d3d6;
+}
+
+.popup-drawer-trigger-option-selected {
+  border: 0.5px solid #ea4c89;
+  background: #fdedf3;
+  box-shadow: 0px 4px 12px rgba(255, 166, 201, 0.5);
+}
+
+[data-theme="dark"] .popup-drawer-trigger-option {
+  background: #1f1f1f;
+  border-color: #333333;
+  color: #e0e0e0;
+}
+
+[data-theme="dark"]
+  .popup-drawer-trigger-option:not(
+    .popup-drawer-trigger-option-selected
+  ):hover {
+  border-color: #444444;
+}
+
+[data-theme="dark"] .popup-drawer-trigger-option-selected {
+  background: rgba(233, 76, 137, 0.2);
+  border-color: #ea4c89;
+  box-shadow: 0 4px 12px 0 rgba(255, 166, 201, 0.3);
+}
+
+.popup-drawer-trigger-option-with-icon {
+  gap: 8px;
+}
+
+/* ========== 通用抽屉演示区域样式 ========== */
+/* 键帽样式 */
+.popup-drawer-demo-keycap {
+  min-width: 72px;
+  padding: 9px;
+  height: auto;
+  box-sizing: border-box;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  color: #ffffff;
+  background:
+    radial-gradient(
+      60px 36px at 85% 100%,
+      rgba(208, 208, 208, 0.2),
+      rgba(255, 255, 255, 0)
+    ),
+    radial-gradient(72px 36px at 50% 0%, #101010 0%, #242424 100%);
+  box-shadow:
+    2px 2px 3.5px rgba(0, 0, 0, 0.4),
+    inset 0.5px 0.7px 0.4px rgba(255, 255, 255, 0.5),
+    inset -0.5px -0.5px 0.2px rgba(0, 0, 0, 0.6);
+}
+
+.popup-drawer-demo-keycap-text {
+  max-width: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 小圆点样式 */
+.popup-drawer-demo-mini-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ea4c89;
+  flex-shrink: 0;
+  align-self: center;
+  box-shadow: 0 4px 12px rgba(255, 166, 201, 0.5);
+}
+
+[data-theme="dark"] .drawer-section-divider {
+  background-color: #333333;
+}
+
+/* 开关行 */
+.drawer-switch-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.drawer-switch-row.drawer-row-border {
+  border-bottom: 1px solid #eef0f2;
+  margin-bottom: 8px;
+  padding-bottom: 12px;
+}
+
+[data-theme="dark"] .drawer-switch-row.drawer-row-border {
+  border-bottom-color: #333333;
+}
+
+.drawer-switch-label {
+  font-size: 14px;
+  color: #222222;
+}
+
+[data-theme="dark"] .drawer-switch-label {
+  color: #e0e0e0;
+}
+
+/* 链接行 */
+.drawer-link-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  cursor: pointer;
+  border-bottom: 1px solid #eef0f2;
+  font-size: 14px;
+  color: #222222;
+}
+
+.drawer-link-row:last-child {
+  border-bottom: none;
+}
+
+[data-theme="dark"] .drawer-link-row {
+  border-bottom-color: #333333;
+  color: #e0e0e0;
+}
+
+.drawer-link-row:hover {
+  color: #ea4c89;
+}
+
+/* 演示区域 */
+.drawer-demo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 0;
+}
+
+.drawer-demo-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+}
+
+[data-theme="dark"] .drawer-demo-icon {
+  background-color: #333333;
+  border-color: #444444;
+}
+
+.drawer-demo-plus,
+.drawer-demo-equal {
+  font-size: 16px;
+  color: #999999;
+}
+
+.drawer-demo-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.drawer-demo-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.drawer-demo-result {
+  font-size: 14px;
+  color: #222222;
+  padding: 8px 12px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+}
+
+[data-theme="dark"] .drawer-demo-result {
+  background-color: #333333;
+  border-color: #444444;
+  color: #e0e0e0;
+}
+
+/* 触发方式选项 */
+.drawer-options {
+  display: flex;
+  gap: 8px;
+}
+
+.drawer-options-wrap {
+  flex-wrap: wrap;
+}
+
+.drawer-option {
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #666666;
+  background-color: #f3f5f6;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+[data-theme="dark"] .drawer-option {
+  background-color: #333333;
+  color: #b3b3b3;
+}
+
+.drawer-option:hover {
+  background-color: #eaeced;
+}
+
+[data-theme="dark"] .drawer-option:hover {
+  background-color: #3a3a3a;
+}
+
+.drawer-option-selected {
+  border-color: #ea4c89;
+  background-color: #fdedf3;
+  color: #ea4c89;
+  box-shadow: 0px 4px 12px rgba(255, 166, 201, 0.5);
+}
+
+[data-theme="dark"] .drawer-option-selected {
+  background-color: rgba(234, 76, 137, 0.2);
+}
+
+.drawer-body.drawer-body-selection {
+  padding: 0 20px 20px 20px;
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+
+/* ========== 更多设置抽屉样式 ========== */
+.more-settings-drawer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.more-settings-quick-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.more-settings-feature-card {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 40px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: #f3f5f6;
+  transition: background-color 0.2s ease;
+}
+
+.more-settings-feature-card:hover {
+  background-color: #e8eaec;
+}
+
+.more-settings-feature-card:active {
+  background-color: #dde0e2;
+}
+
+.more-settings-feature-card-label {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #666666;
+  white-space: nowrap;
+}
+
+.more-settings-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.more-settings-switch-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 21px;
+  gap: 12px;
+}
+
+.more-settings-switch-label {
+  flex: 1;
+  min-width: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #222222;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.more-settings-switch-row input[type="checkbox"] {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+[data-theme="dark"] .more-settings-switch-label {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .more-settings-feature-card {
+  background-color: #2a2a2a;
+}
+
+[data-theme="dark"] .more-settings-feature-card:hover {
+  background-color: #333333;
+}
+
+[data-theme="dark"] .more-settings-feature-card:active {
+  background-color: #3a3a3a;
+}
+
+[data-theme="dark"] .more-settings-feature-card-label {
+  color: #e0e0e0;
+}
+
+/* 动作按钮样式 */
+.more-settings-action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 12px;
+  color: #222222;
+  background-color: #f3f5f6;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.more-settings-action-button:hover {
+  background-color: #e8eaec;
+}
+
+.more-settings-action-button:active {
+  background-color: #dde0e2;
+}
+
+.more-settings-action-button-label {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  color: inherit;
+  text-align: center;
+}
+
+[data-theme="dark"] .more-settings-action-button {
+  color: #e0e0e0;
+  background-color: #2a2a2a;
+}
+
+[data-theme="dark"] .more-settings-action-button:hover {
+  background-color: #333333;
+}
+
+[data-theme="dark"] .more-settings-action-button:active {
+  background-color: #3a3a3a;
+}
+
+[data-theme="dark"] .more-settings-action-button-label {
+  color: #e0e0e0;
+}
+
+/* 错误消息组件样式 */
+.error-message-container {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 16px;
+  margin-top: 6px;
+  margin-bottom: -14px;
+  border: 1px solid #f53f3f;
+  border-radius: 12px;
+  background-color: var(--error-bg);
+}
+
+.error-message-icon-wrapper {
+  width: 21px;
+  height: 21px;
+  min-width: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4px;
+}
+
+.error-message-icon {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #f53f3f;
+}
+
+.error-message-text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: var(--error-text);
+}
+
+.error-message-text a {
+  color: var(--error-link);
+  text-decoration: underline;
+}
+
+.ad-banner-container {
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+
+html {
+  font-size: 17px;
+}
+
+@media print {
+  .imt-fb-container {
+    display: none !important;
+  }
+}
+
+#mount {
+  position: absolute;
+  display: none;
+  min-width: 250px;
+  height: auto;
+  --font-size: 17px;
+  font-size: 17px;
+}
+
+/* float-ball */
+.imt-fb-container {
+  position: fixed;
+  padding: 0;
+  top: 335px;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  display: none;
+  direction: ltr;
+  background-color: transparent !important;
+}
+
+.imt-fb-container:hover .imt-manga-button {
+  opacity: 1;
+}
+
+.imt-fb-container.left {
+  align-items: flex-start;
+  left: 0;
+}
+
+.imt-fb-container.right {
+  align-items: flex-end;
+  right: 0;
+}
+
+.imt-fb-btn {
+  cursor: pointer;
+  background: var(--float-ball-more-button-background-color);
+  height: 36px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+}
+
+.imt-fb-btn.left {
+  border-top-right-radius: 36px;
+  border-bottom-right-radius: 36px;
+  padding-left: 3px;
+}
+
+.imt-fb-btn.right {
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+  padding-right: 3px;
+}
+
+.imt-fb-btn.mini.left {
+  transform: translateX(-22px);
+}
+
+.imt-fb-btn.mini.right {
+  transform: translateX(22px);
+}
+
+.imt-fb-btn.mini.active {
+  transform: translateX(0);
+}
+
+.imt-fb-btn div {
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+.imt-fb-btn .imt-fb-hit-area {
+  position: absolute;
+  top: 0;
+  height: 36px;
+  bottom: -6px;
+  left: -6px;
+  right: -6px;
+  background: transparent;
+}
+
+.imt-fb-btn.mini.right .imt-fb-hit-area {
+  left: -10px;
+}
+
+.imt-fb-btn.mini.left .imt-fb-hit-area {
+  right: -10px;
+}
+
+.imt-fb-btn.left div {
+  border-top-right-radius: 34px;
+  border-bottom-right-radius: 34px;
+  justify-content: flex-end;
+}
+
+.imt-fb-btn.right div {
+  border-top-left-radius: 34px;
+  border-bottom-left-radius: 34px;
+}
+
+.imt-fb-logo-img {
+  width: 20px;
+  height: 20px;
+  margin: 0 10px;
+}
+
+.imt-fb-logo-img-big-bg {
+  width: 28px;
+  height: 28px;
+  margin: 0;
+  background-color: #ed6d8f;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.imt-float-ball-translated {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  bottom: 4px;
+  right: 4px;
+}
+
+.btn-animate {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform ease-out 250ms;
+  transition: -webkit-transform ease-out 250ms;
+  transition: transform ease-out 250ms;
+  transition: transform ease-out 250ms, -webkit-transform ease-out 250ms;
+}
+
+.imt-fb-setting-btn {
+  margin-right: 18px;
+  width: 28px;
+  height: 28px;
+}
+
+.immersive-translate-popup-wrapper {
+  background: var(--background-color);
+  border-radius: 20px;
+  box-shadow: 2px 10px 24px 0px #0e121614;
+  border: none;
+}
+
+.popup-container {
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-content {
+  border-radius: 20px 20px 12px 12px;
+}
+.popup-footer {
+  border-radius: 20px;
+}
+
+.popup-userscript-three-feature-layout {
+  border-radius: 20px;
+}
+
+.popup-userscript-three-feature-layout .popup-content {
+  border-radius: 20px 20px 12px 12px;
+}
+
+.popup-userscript-three-feature-layout .popup-footer {
+  border-radius: 0;
+}
+
+.imt-fb-close-button {
+  cursor: pointer;
+  position: absolute;
+  left: -10px;
+  bottom: -20px;
+}
+.imt-fb-container.left .imt-fb-close-button {
+  left: auto;
+  right: -10px;
+}
+
+.imt-fb-close-content {
+  padding: 22px;
+  width: 320px;
+  pointer-events: all;
+}
+
+.imt-fb-close-title {
+  font-weight: 500;
+  color: var(--text-black-2);
+}
+
+.imt-fb-close-radio-content {
+  background-color: var(--background-light-green);
+  padding: 8px 20px;
+}
+
+.imt-fb-radio-sel,
+.imt-fb-radio-nor {
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.imt-fb-radio-sel {
+  border: 2px solid var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imt-fb-radio-sel div {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: var(--primary);
+}
+
+.imt-fb-radio-nor {
+  border: 2px solid var(--input-border-strong);
+}
+
+.imt-fb-primary-btn {
+  background-color: var(--primary);
+  width: 72px;
+  height: 32px;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 32px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.imt-fb-default-btn {
+  border: 1px solid var(--primary);
+  width: 72px;
+  height: 32px;
+  border-radius: 8px;
+  color: var(--primary);
+  line-height: 32px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.imt-fb-guide-container {
+  width: 312px;
+  transform: translateY(-45%);
+}
+
+.imt-fb-guide-bg {
+  position: absolute;
+  left: 30px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  height: 100%;
+  width: 90%;
+}
+
+.imt-fb-guide-bg.left {
+  transform: scaleX(-1);
+}
+
+.imt-fb-guide-content {
+  margin: 16px -30px 80px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imt-fb-guide-content.left {
+  margin: 16px 21px 60px 32px;
+}
+
+.imt-fb-guide-img {
+  width: 220px;
+  height: 112px;
+}
+
+.imt-fb-guide-message {
+  font-size: 14px;
+  line-height: 28px;
+  color: #333333;
+  white-space: pre-wrap;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.imt-manga-guide-message {
+  font-size: 16px;
+  line-height: 24px;
+  color: #333333;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.imt-fb-guide-button {
+  margin-top: 16px;
+  line-height: 40px;
+  height: 40px;
+  padding: 0 20px;
+  width: unset;
+}
+
+.imt-fb-side {
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: all;
+  position: relative;
+}
+
+.imt-fb-side {
+  margin: 10px 0;
+}
+
+.imt-fb-side::before,
+.imt-manga-button::before,
+.imt-fb-round-button::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  left: 2px;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color 0.15s ease;
+}
+
+.imt-fb-side:hover::before,
+.imt-manga-button:hover::before,
+.imt-fb-round-button:hover::before {
+  background-color: var(--float-ball-more-button-hover-color);
+}
+
+.imt-fb-new-badge {
+  width: 26px;
+  height: 14px;
+  padding: 3px;
+  background-color: #f53f3f;
+  border-radius: 4px;
+  position: absolute;
+  top: -5px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imt-fb-side * {
+  pointer-events: all;
+}
+
+.imt-fb-pin-icon {
+  position: absolute;
+  left: -16px;
+  bottom: -12px;
+  opacity: 0;
+  cursor: pointer;
+}
+.imt-fb-container.left .imt-fb-pin-icon {
+  left: auto;
+  right: -16px;
+}
+
+.imt-fb-side:hover .imt-fb-pin-icon {
+  opacity: 1;
+}
+
+.imt-fb-more-button {
+  width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+/* Sheet.css */
+.immersive-translate-sheet {
+  position: fixed;
+  transform: translateY(100%);
+  /* Start off screen */
+  left: 0;
+  right: 0;
+  background-color: var(--background-color);
+  transition: transform 0.3s ease-out;
+  /* Smooth slide transition */
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+  /* Ensure it's above other content */
+  bottom: 0;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  overflow: hidden;
+}
+
+.immersive-translate-sheet.visible {
+  transform: translateY(0);
+}
+
+.immersive-translate-sheet-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.immersive-translate-sheet-backdrop.visible {
+  opacity: 1;
+}
+
+.popup-container-sheet {
+  max-width: 100vw;
+  width: 100vw;
+}
+
+.imt-no-events svg * {
+  pointer-events: none !important;
+}
+
+.imt-manga-button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: all;
+  margin: 0 0 10px 0;
+  background-color: var(--float-ball-more-button-background-color);
+  border-radius: 50%;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.08);
+  right: 8px;
+}
+
+.imt-manga-feedback {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.imt-fb-round-button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: var(--float-ball-more-button-background-color);
+  border-radius: 50%;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.imt-fb-round-button > svg {
+  z-index: 1;
+}
+
+.imt-fb-upgrade-button {
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.imt-fb-power-user-card {
+  position: absolute;
+  bottom: -130px;
+  width: 266px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 2px 10px 24px 0 rgba(14, 18, 22, 0.08);
+  border: 1px solid rgba(250, 251, 251, 1);
+  pointer-events: all;
+  z-index: 2;
+  background: linear-gradient(172deg, rgba(255, 255, 255, 0.30) 4.36%, #FFF 35.98%), linear-gradient(0deg, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.40) 100%), radial-gradient(39.95% 47.41% at -0.53% 55.22%, #E0C4F7 0%, rgba(224, 196, 247, 0.00) 100%), radial-gradient(56.37% 54.27% at 86.17% 0%, #E0C4F6 0%, rgba(224, 196, 246, 0.00) 100%), radial-gradient(42.04% 37.43% at -0.53% 3.75%, #AED5FF 0%, rgba(174, 213, 255, 0.00) 100%), radial-gradient(66.88% 52.09% at 36.81% 19.55%, #757ED8 0%, #6B6AC0 100%), #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imt-fb-power-user-card.right {
+  right: 60px;
+}
+
+.imt-fb-power-user-card.right::after {
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: 130px;
+  border-width: 10px 0 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent #fff;
+  filter: drop-shadow(2px 0 2px rgba(14, 18, 22, 0.06));
+}
+
+.imt-fb-power-user-card.left {
+  left: 60px;
+}
+
+.imt-fb-power-user-card.left::after {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 130px;
+  border-width: 10px 10px 10px 0;
+  border-style: solid;
+  border-color: transparent #fff transparent transparent;
+  filter: drop-shadow(-2px 0 2px rgba(14, 18, 22, 0.06));
+}
+
+.imt-fb-power-user-card-banner {
+  display: block;
+  width: 128px;
+  height: auto;
+  margin-top: 8px;
+  border-radius: 8px 8px 0 0;
+}
+
+.imt-fb-power-user-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 16px 24px 0;
+  box-sizing: border-box;
+}
+
+.imt-fb-power-user-card-title {
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+}
+
+.imt-fb-power-user-card-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.imt-fb-power-user-card-body {
+  padding: 12px 24px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.imt-fb-power-user-card-desc {
+  color: #333;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+}
+
+.imt-fb-power-user-card-primary {
+  margin-top: 16px;
+  height: 37px;
+  border-radius: 8px;
+  background: linear-gradient(110deg, #F497BC 17.37%, #EC4C8C 89.68%);
+  color: var(--ZX-FFFFFF, #FFF);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px; /* 150% */
+  display: flex;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  flex: 1 0 0;
+}
+
+.imt-manga-translated {
+  position: absolute;
+  left: 24px;
+  top: 20px;
+}
+
+.imt-float-ball-loading {
+  animation: imt-loading-animation 0.6s infinite linear !important;
+}
+
+.imt-manga-guide-bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  transform: translateY(-50%);
+}
+.imt-manga-guide-content {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  margin: 0 40px 0;
+}
+
+.img-manga-guide-button {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.img-manga-close {
+  position: absolute;
+  bottom: -200px;
+  width: 32px;
+  height: 32px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  cursor: pointer;
+}
+
+.imt-fb-container.dragging .imt-manga-button,
+.imt-fb-container.dragging .btn-animate:not(.imt-fb-btn) {
+  display: none !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn {
+  border-radius: 50% !important;
+  width: 36px !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  cursor: move !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn div {
+  border-radius: 50% !important;
+  width: 36px !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn.left,
+.imt-fb-container.dragging .imt-fb-btn.right {
+  border-radius: 50% !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn.left div,
+.imt-fb-container.dragging .imt-fb-btn.right div {
+  border-radius: 50% !important;
+}
+
+.imt-fb-container.dragging .imt-fb-logo-img {
+  margin: 0 !important;
+}
+
+.imt-fb-container.dragging .imt-float-ball-translated {
+  right: 2px !important;
+  bottom: 2px !important;
+}
+
+@-webkit-keyframes imt-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes imt-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.imt-fb-icon {
+  color: #666666;
+}
+
+[data-theme="dark"] .imt-fb-icon {
+  color: #b3b3b3;
+}
+
+[data-theme="light"] .imt-fb-icon {
+  color: #666666;
+}
+
+/* 悬浮球设置弹窗样式 */
+.imt-fb-setting-wrapper {
+  border-radius: 12px;
+  box-shadow: 2px 10px 24px 0px rgba(0, 0, 0, 0.06);
+}
+
+.imt-fb-setting-content {
+  padding: 16px;
+  width: 350px;
+  pointer-events: all;
+}
+
+.imt-fb-setting-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--text-black-2);
+}
+
+.imt-fb-setting-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px 0;
+}
+
+.imt-fb-preview-wrapper {
+  display: flex;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.imt-fb-preview-item {
+  width: 99px;
+  height: 57px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+}
+
+.imt-fb-preview-item.light {
+  background-color: #f3f5f6;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.imt-fb-preview-item.dark {
+  background-color: #444;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.imt-fb-preview-ball {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.imt-fb-preview-ball.light {
+  background-color: #fff;
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+}
+
+.imt-fb-preview-ball.dark {
+  background-color: #111;
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+}
+
+.imt-fb-preview-ball.full {
+  width: 41px;
+  justify-content: center;
+}
+
+.imt-fb-preview-ball.mini {
+  width: 41px;
+  justify-content: center;
+  transform: translateX(21px);
+}
+
+.imt-fb-preview-ball .imt-fb-preview-logo {
+  flex-shrink: 0;
+}
+
+/* 选项区域 */
+.imt-fb-setting-options {
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.imt-fb-setting-option-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4px;
+}
+
+.imt-fb-setting-option-label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: var(--text-black-2);
+}
+
+/* Toggle 开关样式 */
+.imt-fb-toggle {
+  width: 30px;
+  height: 18px;
+  background-color: var(--switch-background-color);
+  border-radius: 24px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.imt-fb-toggle.checked {
+  background-color: var(--primary);
+}
+
+.imt-fb-toggle.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.imt-fb-toggle-thumb {
+  width: 14px;
+  height: 14px;
+  background-color: var(--switch-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s ease;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+}
+
+.imt-fb-toggle.checked .imt-fb-toggle-thumb {
+  transform: translateX(12px);
+}
+
+.imt-fb-setting-hide-options {
+  background-color: var(--background-light-green);
+  padding: 8px 20px;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.imt-fb-setting-save-btn {
+  background-color: var(--primary);
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 45px;
+  height: 45px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: opacity 0.2s ease;
+}
+
+.imt-fb-setting-save-btn:hover {
+  opacity: 0.9;
+}
+
+.imt-fb-setting-save-btn:active {
+  opacity: 0.8;
+}
+</style><div id="mount" style="display: block;"><div hidden="" id="immersive-translate-popup-overlay" class="immersive-translate-popup-overlay" style="z-index: 2147483647; background-color: rgba(0, 0, 0, 0.5);"><div class="immersive-translate-popup-wrapper" style="position: fixed; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);"></div></div></div></template></div></html>

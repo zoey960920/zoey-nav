@@ -1,0 +1,5331 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)https://israel-tech.wwei.ai/ -->
+<html lang="zh-CN" data-immersive-translate-page-theme="dark"><plasmo-csui><template shadowrootmode="open"><div id="plasmo-shadow-container" style="z-index: 2147483647; position: relative;"><div id="plasmo-overlay-0" class="plasmo-csui-container" style="display: flex; position: absolute; top: 0px; left: 0px;"></div></div></template></plasmo-csui><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以色列AI科技图谱 | 创业国度的全景报告</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./以色列AI科技图谱 _ 创业国度的全景报告_files/css2" rel="stylesheet">
+<style>
+/* === 主题变量 === */
+:root {
+  --bg-primary: #0A0F1E;
+  --bg-secondary: #0F1628;
+  --bg-card: #111827;
+  --bg-card-hover: #1a2540;
+  --text-primary: #F0F4FF;
+  --text-secondary: #8B9CC8;
+  --text-muted: #4A5578;
+  --mint: #2DFFC0;
+  --mint-dim: rgba(45,255,192,0.15);
+  --mint-glow: rgba(45,255,192,0.4);
+  --amber: #FFB240;
+  --amber-dim: rgba(255,178,64,0.15);
+  --amber-glow: rgba(255,178,64,0.4);
+  --red: #FF5A5A;
+  --blue: #4F8CFF;
+  --purple: #A78BFA;
+  --border: rgba(45,255,192,0.12);
+  --font-display: 'Sora', sans-serif;
+  --font-body: 'Noto Serif SC', serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --title-size: clamp(2.2rem, 5.5vw, 5rem);
+  --h2-size: clamp(1.5rem, 3.2vw, 2.8rem);
+  --h3-size: clamp(1.1rem, 2vw, 1.6rem);
+  --body-size: clamp(0.85rem, 1.25vw, 1.05rem);
+  --small-size: clamp(0.75rem, 1.1vw, 0.9rem);
+  --slide-padding: clamp(1.2rem, 3.5vw, 4rem);
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* === viewport-base.css 注入 === */
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; scroll-behavior:smooth; scroll-snap-type:y mandatory; }
+body { font-family:var(--font-body); background:var(--bg-primary); color:var(--text-primary); }
+*, *::before, *::after { box-sizing:border-box; }
+.slide { position:relative; width:100%; height:100vh; height:100dvh; overflow:hidden; scroll-snap-align:start; display:grid; align-content:center; padding:var(--slide-padding); }
+.slide-content { width:min(1280px,100%); max-height:88vh; max-height:88dvh; margin:0 auto; overflow:hidden; display:grid; gap:clamp(0.75rem,1.8vw,1.5rem); }
+.slide h1,.slide h2,.slide h3 { margin:0; font-family:var(--font-display); line-height:1.1; letter-spacing:-0.02em; }
+.slide p,.slide li { margin:0; line-height:1.6; font-size:var(--body-size); }
+.slide img { max-width:100%; max-height:min(50vh,400px); object-fit:contain; }
+.progress-bar { position:fixed; left:0; top:0; width:0; height:3px; z-index:9999; background:linear-gradient(90deg,var(--mint),var(--amber)); transition:width 0.25s linear; }
+.nav-dots { position:fixed; right:clamp(0.6rem,1.5vw,1.2rem); top:50%; transform:translateY(-50%); display:grid; gap:0.5rem; z-index:9998; }
+.nav-dots button { width:7px; height:7px; border-radius:999px; border:0; background:rgba(255,255,255,0.2); cursor:pointer; transition:all 0.3s; }
+.nav-dots button.active { background:var(--mint); box-shadow:0 0 8px var(--mint-glow); transform:scale(1.3); }
+@media (prefers-reduced-motion:reduce) { *{animation:none!important;transition:none!important;} html,body{scroll-behavior:auto;} }
+@media (max-height:700px) { .slide{padding:clamp(0.8rem,2vw,1.5rem);} .slide-content{max-height:84vh;gap:clamp(0.5rem,1vw,0.85rem);} }
+@media (max-height:600px) { .slide-content{max-height:82vh;} .slide p,.slide li{font-size:clamp(0.78rem,1.1vw,0.9rem);} }
+@media (max-height:500px) { .slide{padding:clamp(0.5rem,1.2vw,0.8rem);} .slide-content{max-height:80vh;} }
+
+/* === 进入动画 === */
+.reveal { opacity:0; transform:translateY(28px); transition:opacity 0.65s var(--ease-expo), transform 0.65s var(--ease-expo); }
+.slide.visible .reveal { opacity:1; transform:translateY(0); }
+.reveal:nth-child(1){transition-delay:0.06s}
+.reveal:nth-child(2){transition-delay:0.14s}
+.reveal:nth-child(3){transition-delay:0.22s}
+.reveal:nth-child(4){transition-delay:0.30s}
+.reveal:nth-child(5){transition-delay:0.38s}
+.reveal:nth-child(6){transition-delay:0.46s}
+.reveal-fast { opacity:0; transform:translateY(16px); transition:opacity 0.45s var(--ease-expo), transform 0.45s var(--ease-expo); }
+.slide.visible .reveal-fast { opacity:1; transform:translateY(0); }
+
+/* === 网格背景纹理 === */
+.bg-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(45,255,192,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(45,255,192,0.03) 1px,transparent 1px); background-size:60px 60px; pointer-events:none; }
+.bg-glow-mint { position:absolute; border-radius:50%; background:radial-gradient(circle,rgba(45,255,192,0.12) 0%,transparent 70%); pointer-events:none; }
+.bg-glow-amber { position:absolute; border-radius:50%; background:radial-gradient(circle,rgba(255,178,64,0.1) 0%,transparent 70%); pointer-events:none; }
+
+/* === 通用组件 === */
+.label { font-family:var(--font-display); font-size:clamp(0.6rem,0.9vw,0.75rem); font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--mint); }
+.label-amber { color:var(--amber); }
+.divider { width:3rem; height:2px; background:linear-gradient(90deg,var(--mint),transparent); border:none; margin:0; }
+.tag { display:inline-block; padding:0.2em 0.7em; border-radius:4px; font-family:var(--font-display); font-size:clamp(0.6rem,0.85vw,0.72rem); font-weight:600; letter-spacing:0.08em; }
+.tag-mint { background:var(--mint-dim); color:var(--mint); border:1px solid rgba(45,255,192,0.2); }
+.tag-amber { background:var(--amber-dim); color:var(--amber); border:1px solid rgba(255,178,64,0.2); }
+.tag-red { background:rgba(255,90,90,0.12); color:var(--red); border:1px solid rgba(255,90,90,0.2); }
+.tag-blue { background:rgba(79,140,255,0.12); color:var(--blue); border:1px solid rgba(79,140,255,0.2); }
+.tag-purple { background:rgba(167,139,250,0.12); color:var(--purple); border:1px solid rgba(167,139,250,0.2); }
+
+/* === 卡片 === */
+.card { background:var(--bg-card); border:1px solid var(--border); border-radius:12px; padding:clamp(0.8rem,1.5vw,1.5rem); transition:border-color 0.3s,background 0.3s; }
+.card:hover { border-color:rgba(45,255,192,0.3); background:var(--bg-card-hover); }
+.card-amber { border-color:rgba(255,178,64,0.15); }
+.card-amber:hover { border-color:rgba(255,178,64,0.35); }
+
+/* === 数据高亮 === */
+.stat-big { font-family:var(--font-display); font-weight:800; color:var(--mint); line-height:1; }
+.stat-amber { color:var(--amber); }
+.stat-desc { font-size:var(--small-size); color:var(--text-secondary); margin-top:0.3em; }
+
+/* === 公司条目 === */
+.company-row { display:grid; grid-template-columns:1fr auto; align-items:start; gap:0.5rem; padding:0.6rem 0; border-bottom:1px solid rgba(255,255,255,0.05); }
+.company-row:last-child { border-bottom:none; }
+.company-name { font-family:var(--font-display); font-weight:700; font-size:clamp(0.85rem,1.2vw,1rem); color:var(--text-primary); }
+.company-meta { font-size:var(--small-size); color:var(--text-secondary); margin-top:0.15em; }
+.company-val { font-family:var(--font-display); font-weight:700; font-size:clamp(0.8rem,1.1vw,0.95rem); color:var(--mint); text-align:right; white-space:nowrap; }
+
+/* === 进度条 === */
+.bar-track { background:rgba(255,255,255,0.06); border-radius:999px; height:6px; overflow:hidden; }
+.bar-fill { height:100%; border-radius:999px; background:linear-gradient(90deg,var(--mint),var(--blue)); }
+.bar-fill-amber { background:linear-gradient(90deg,var(--amber),var(--red)); }
+
+/* === 时间线 === */
+.timeline-item { display:grid; grid-template-columns:auto 1fr; gap:1rem; align-items:start; }
+.timeline-dot { width:10px; height:10px; border-radius:50%; background:var(--mint); margin-top:0.35em; flex-shrink:0; box-shadow:0 0 8px var(--mint-glow); }
+.timeline-dot-amber { background:var(--amber); box-shadow:0 0 8px var(--amber-glow); }
+
+/* === Chapter Header === */
+.ch-header { display:flex; align-items:center; gap:1rem; }
+.ch-num { font-family:var(--font-display); font-weight:800; font-size:clamp(3rem,6vw,6rem); color:rgba(45,255,192,0.08); line-height:1; }
+
+/* === 导航栏 === */
+.top-nav { position:fixed; top:0; left:0; right:0; z-index:9997; display:flex; align-items:center; justify-content:space-between; padding:0.7rem clamp(1rem,3vw,3rem); background:rgba(10,15,30,0.85); backdrop-filter:blur(12px); border-bottom:1px solid rgba(45,255,192,0.08); }
+.top-nav-logo { font-family:var(--font-display); font-weight:700; font-size:0.85rem; color:var(--mint); letter-spacing:0.05em; }
+.top-nav-chapters { display:flex; gap:1.5rem; }
+.top-nav-chapters a { font-family:var(--font-display); font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted); text-decoration:none; transition:color 0.3s; cursor:pointer; }
+.top-nav-chapters a:hover, .top-nav-chapters a.active { color:var(--mint); }
+
+/* === 操作提示 === */
+.hint-overlay { position:fixed; bottom:2rem; left:50%; transform:translateX(-50%); z-index:9996; background:rgba(10,15,30,0.9); border:1px solid var(--border); border-radius:8px; padding:0.6rem 1.2rem; font-family:var(--font-display); font-size:0.7rem; color:var(--text-secondary); display:flex; align-items:center; gap:0.8rem; backdrop-filter:blur(8px); transition:opacity 0.5s; }
+.hint-key { background:rgba(45,255,192,0.1); border:1px solid rgba(45,255,192,0.2); border-radius:4px; padding:0.1em 0.4em; color:var(--mint); font-weight:600; }
+</style>
+<script src="./以色列AI科技图谱 _ 创业国度的全景报告_files/widget.js" defer="" data-wwei-injected="1"></script><style type="text/css">
+  @font-face {
+    font-family: CuboxInter;
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("chrome-extension://bflmgpechpeohjfomgfdkkfcbhfcjohl/fonts/InterVariable.woff2") format("woff2");
+  }
+  #cubox-react-root {
+    z-index: 999999999999999999999;
+  }
+  </style><link rel="stylesheet" href="chrome-extension://bflmgpechpeohjfomgfdkkfcbhfcjohl/css/globalHighlightStyles.css"></head>
+<body>
+<div class="progress-bar" id="progressBar" style="width: 0%;"></div>
+<nav class="nav-dots" id="navDots" aria-label="页面导航"><button aria-label="第 1 页" class="active"></button><button aria-label="第 2 页"></button><button aria-label="第 3 页"></button><button aria-label="第 4 页"></button><button aria-label="第 5 页"></button><button aria-label="第 6 页"></button><button aria-label="第 7 页"></button><button aria-label="第 8 页"></button><button aria-label="第 9 页"></button><button aria-label="第 10 页"></button><button aria-label="第 11 页"></button><button aria-label="第 12 页"></button><button aria-label="第 13 页"></button><button aria-label="第 14 页"></button><button aria-label="第 15 页"></button><button aria-label="第 16 页"></button><button aria-label="第 17 页"></button><button aria-label="第 18 页"></button></nav>
+
+<!-- 顶部导航 -->
+<nav class="top-nav">
+  <span class="top-nav-logo">🇮🇱 IL TECH ATLAS</span>
+  <div class="top-nav-chapters">
+    <a onclick="deck.goToSlide(0)" class="active">概况</a>
+    <a onclick="deck.goToSlide(4)">网络安全</a>
+    <a onclick="deck.goToSlide(9)">AI/ML</a>
+    <a onclick="deck.goToSlide(13)">SaaS &amp; 芯片</a>
+    <a onclick="deck.goToSlide(16)">趋势</a>
+  </div>
+</nav>
+
+<!-- 操作提示 -->
+<div class="hint-overlay" id="hintOverlay" style="opacity: 0; display: none;">
+  <span class="hint-key">↑↓</span><span>翻页</span>
+  <span class="hint-key">Space</span><span>下一页</span>
+  <span style="opacity:0.5">· 点击导航点跳转</span>
+</div>
+
+<!-- ============================= SLIDE 01 封面 ============================= -->
+<section class="slide visible" id="s0" style="background:var(--bg-primary);">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-mint" style="width:600px;height:600px;top:-150px;right:-100px;"></div>
+  <div class="bg-glow-amber" style="width:400px;height:400px;bottom:-100px;left:-50px;"></div>
+
+  <div class="slide-content" style="justify-items:start;gap:1.5rem;">
+    <div class="reveal" style="display:flex;align-items:center;gap:0.8rem;">
+      <span class="label">Research Report · 2026.05</span>
+      <span style="color:var(--text-muted);font-size:0.75rem;">｜</span>
+      <span class="label label-amber">by Wayne / wwei.ai</span>
+    </div>
+
+    <h1 class="reveal" style="font-size:var(--title-size);font-family:var(--font-display);font-weight:800;max-width:14ch;line-height:1.05;">
+      以色列<br><span style="color:var(--mint);">AI科技</span><br>图谱
+    </h1>
+
+    <p class="reveal" style="font-size:clamp(1rem,1.8vw,1.35rem);color:var(--text-secondary);max-width:40ch;line-height:1.6;font-family:var(--font-display);">
+      从 Unit 8200 到 $32B Wiz——<br>解码「创业国度」的科技基因
+    </p>
+
+    <hr class="divider reveal">
+
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(4,auto);gap:2.5rem;margin-top:0.5rem;">
+      <div>
+        <div class="stat-big" style="font-size:clamp(1.8rem,3.5vw,3rem);">42+</div>
+        <div class="stat-desc">独角兽企业</div>
+      </div>
+      <div>
+        <div class="stat-big" style="font-size:clamp(1.8rem,3.5vw,3rem);">$15.6B</div>
+        <div class="stat-desc">2025年融资额</div>
+      </div>
+      <div>
+        <div class="stat-big stat-amber" style="font-size:clamp(1.8rem,3.5vw,3rem);">$32B</div>
+        <div class="stat-desc">Wiz史上最大退出</div>
+      </div>
+      <div>
+        <div class="stat-big" style="font-size:clamp(1.8rem,3.5vw,3rem);">2300+</div>
+        <div class="stat-desc">活跃AI创业公司</div>
+      </div>
+    </div>
+
+    <div class="reveal" style="display:flex;gap:0.6rem;flex-wrap:wrap;margin-top:0.3rem;">
+      <span class="tag tag-mint">网络安全</span>
+      <span class="tag tag-amber">自动驾驶</span>
+      <span class="tag tag-blue">大语言模型</span>
+      <span class="tag tag-purple">医疗AI</span>
+      <span class="tag tag-mint">企业SaaS</span>
+      <span class="tag tag-amber">芯片设计</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= SLIDE 02 核心数据 ============================= -->
+<section class="slide" id="s1">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-mint" style="width:500px;height:500px;top:-80px;left:-100px;"></div>
+  <div class="slide-content" style="gap:1.2rem;">
+    <div class="reveal">
+      <span class="label">Chapter 01</span>
+      <h2 style="font-size:var(--h2-size);margin-top:0.3rem;">创业国度<span style="color:var(--mint);">核心数据</span></h2>
+    </div>
+    <hr class="divider reveal">
+
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;">
+      <div class="card" style="text-align:center;padding:1.2rem;">
+        <div class="stat-big" style="font-size:clamp(2rem,4vw,3.5rem);">90+</div>
+        <div style="color:var(--text-secondary);font-size:var(--small-size);margin-top:0.4rem;">纳斯达克上市<br>以色列公司数量</div>
+        <div style="font-size:0.65rem;color:var(--text-muted);margin-top:0.3rem;">全球非美最多之一</div>
+      </div>
+      <div class="card" style="text-align:center;padding:1.2rem;">
+        <div class="stat-big" style="font-size:clamp(2rem,4vw,3.5rem);">5.4%</div>
+        <div style="color:var(--text-secondary);font-size:var(--small-size);margin-top:0.4rem;">GDP占科研投入<br>比例</div>
+        <div style="font-size:0.65rem;color:var(--text-muted);margin-top:0.3rem;">全球第一（OECD数据）</div>
+      </div>
+      <div class="card" style="text-align:center;padding:1.2rem;">
+        <div class="stat-big stat-amber" style="font-size:clamp(2rem,4vw,3.5rem);">$177B</div>
+        <div style="color:var(--text-secondary);font-size:var(--small-size);margin-top:0.4rem;">私有深科技企业<br>累计估值</div>
+        <div style="font-size:0.65rem;color:var(--text-muted);margin-top:0.3rem;">西方国家美国外最高</div>
+      </div>
+    </div>
+
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;">
+      <div class="card" style="text-align:center;padding:1.2rem;">
+        <div class="stat-big" style="font-size:clamp(2rem,4vw,3.5rem);">21,900+</div>
+        <div style="color:var(--text-secondary);font-size:var(--small-size);margin-top:0.4rem;">活跃创业公司</div>
+        <div style="font-size:0.65rem;color:var(--text-muted);margin-top:0.3rem;">2025年11月数据</div>
+      </div>
+      <div class="card" style="text-align:center;padding:1.2rem;">
+        <div class="stat-big" style="font-size:clamp(2rem,4vw,3.5rem);">$94.2B</div>
+        <div style="color:var(--text-secondary);font-size:var(--small-size);margin-top:0.4rem;">累计风投募资</div>
+        <div style="font-size:0.65rem;color:var(--text-muted);margin-top:0.3rem;">VC+PE合计</div>
+      </div>
+      <div class="card" style="text-align:center;padding:1.2rem;">
+        <div class="stat-big stat-amber" style="font-size:clamp(2rem,4vw,3.5rem);">$74B</div>
+        <div style="color:var(--text-secondary);font-size:var(--small-size);margin-top:0.4rem;">2025年退出总额</div>
+        <div style="font-size:0.65rem;color:var(--text-muted);margin-top:0.3rem;">含Wiz $32B</div>
+      </div>
+    </div>
+
+    <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+      <div>
+        <div style="font-size:var(--small-size);color:var(--text-secondary);margin-bottom:0.4rem;">2025年融资行业分布</div>
+        <div style="display:grid;gap:0.5rem;">
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:var(--small-size);margin-bottom:0.2rem;">
+              <span>网络安全</span><span style="color:var(--mint);">$4.1B</span>
+            </div>
+            <div class="bar-track"><div class="bar-fill" style="width:72%"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:var(--small-size);margin-bottom:0.2rem;">
+              <span>企业软件/AI</span><span style="color:var(--mint);">$4.5B</span>
+            </div>
+            <div class="bar-track"><div class="bar-fill" style="width:80%"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:var(--small-size);margin-bottom:0.2rem;">
+              <span>深科技</span><span style="color:var(--amber);">$28B+（累计）</span>
+            </div>
+            <div class="bar-track"><div class="bar-fill bar-fill-amber" style="width:55%"></div></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:var(--small-size);color:var(--text-secondary);margin-bottom:0.4rem;">科技集群</div>
+        <div style="display:grid;gap:0.4rem;">
+          <div class="card" style="padding:0.5rem 0.8rem;display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-family:var(--font-display);font-size:var(--small-size);font-weight:600;">🏙 特拉维夫 Silicon Wadi</span>
+            <span class="tag tag-mint" style="font-size:0.6rem;">核心</span>
+          </div>
+          <div class="card" style="padding:0.5rem 0.8rem;display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-family:var(--font-display);font-size:var(--small-size);font-weight:600;">🎓 海法 · Technion园区</span>
+            <span class="tag tag-blue" style="font-size:0.6rem;">工程/芯片</span>
+          </div>
+          <div class="card" style="padding:0.5rem 0.8rem;display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-family:var(--font-display);font-size:var(--small-size);font-weight:600;">🔬 雷霍沃特 · 魏兹曼</span>
+            <span class="tag tag-purple" style="font-size:0.6rem;">生命科学</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= SLIDE 03 创业国度原因 ============================= -->
+<section class="slide" id="s2">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-amber" style="width:500px;height:500px;bottom:-100px;right:-80px;"></div>
+  <div class="slide-content" style="gap:1.2rem;">
+    <div class="reveal">
+      <span class="label">Chapter 01</span>
+      <h2 style="font-size:var(--h2-size);margin-top:0.3rem;">为什么是以色列？<span style="color:var(--mint);">结构性因素</span></h2>
+    </div>
+    <hr class="divider reveal">
+
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;">
+      <div class="card" style="padding:1.2rem;">
+        <div style="font-size:1.8rem;margin-bottom:0.6rem;">⚔️</div>
+        <div style="font-family:var(--font-display);font-weight:700;font-size:clamp(0.9rem,1.3vw,1.1rem);color:var(--mint);margin-bottom:0.5rem;">军事技术培训体系</div>
+        <p style="color:var(--text-secondary);font-size:var(--small-size);line-height:1.65;">
+          义务兵役制（男3年/女2年）将数万年轻人送入精英技术单位。Unit 8200（信号情报）、Unit 81（技术侦察）等单位是世界顶级AI/网络安全人才摇篮。退役后直接创业，形成强大的「创始人网络」。
+        </p>
+      </div>
+      <div class="card" style="padding:1.2rem;">
+        <div style="font-size:1.8rem;margin-bottom:0.6rem;">🎓</div>
+        <div style="font-family:var(--font-display);font-weight:700;font-size:clamp(0.9rem,1.3vw,1.1rem);color:var(--amber);margin-bottom:0.5rem;">顶尖高等教育</div>
+        <p style="color:var(--text-secondary);font-size:var(--small-size);line-height:1.65;">
+          Technion（以色列理工）全球排名前30，培育了Intel、微软、Google等在以研发中心的核心人才。希伯来大学计算机系、魏兹曼研究所在AI/生命科学领域具全球影响力。人均博士数全球居前。
+        </p>
+      </div>
+      <div class="card" style="padding:1.2rem;">
+        <div style="font-size:1.8rem;margin-bottom:0.6rem;">💰</div>
+        <div style="font-family:var(--font-display);font-weight:700;font-size:clamp(0.9rem,1.3vw,1.1rem);color:var(--blue);margin-bottom:0.5rem;">成熟创投生态</div>
+        <p style="color:var(--text-secondary);font-size:var(--small-size);line-height:1.65;">
+          以色列政府设立Yozma计划（1993年）引入外资VC，创造了政府主导创业生态的范式。全球顶级VC（a16z、Sequoia、Bessemer）均在特拉维夫设立分支。连续创业文化盛行，失败被视为宝贵经验。
+        </p>
+      </div>
+    </div>
+
+    <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+      <div class="card card-amber" style="padding:1rem 1.2rem;">
+        <div style="font-family:var(--font-display);font-weight:700;font-size:var(--small-size);color:var(--amber);margin-bottom:0.5rem;">🌐 离散网络（Diaspora Effect）</div>
+        <p style="color:var(--text-secondary);font-size:var(--small-size);line-height:1.6;">全球犹太移民网络提供资本、市场、人才的强连接。硅谷-特拉维夫走廊是最活跃的跨境创业通道。</p>
+      </div>
+      <div class="card" style="padding:1rem 1.2rem;">
+        <div style="font-family:var(--font-display);font-weight:700;font-size:var(--small-size);color:var(--mint);margin-bottom:0.5rem;">🔒 安全威胁倒逼创新</div>
+        <p style="color:var(--text-secondary);font-size:var(--small-size);line-height:1.6;">长期处于安全威胁环境，催生了网络安全、无人机、反无人机等领域的超前研发需求，形成「需求驱动创新」飞轮。</p>
+      </div>
+    </div>
+
+    <div class="reveal" style="background:var(--mint-dim);border:1px solid rgba(45,255,192,0.2);border-radius:8px;padding:0.8rem 1.2rem;">
+      <p style="font-family:var(--font-display);font-size:var(--small-size);color:var(--text-primary);line-height:1.6;">
+        <span style="color:var(--mint);font-weight:700;">本质：</span>以色列的科技优势不是偶然，是军事体系、高教精英化、政府政策、地缘压力四重结构共振的结果。
+        Dan Senor &amp; Saul Singer 在《Start-Up Nation》（2009）中首次系统性阐述这一现象，此后「创业国度」成为以色列科技生态的标志性标签。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= SLIDE 04 Unit 8200 ============================= -->
+<section class="slide" id="s3">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-mint" style="width:600px;height:600px;top:-200px;right:-150px;opacity:0.7;"></div>
+  <div class="slide-content" style="gap:1.2rem;">
+    <div class="reveal">
+      <span class="label">Chapter 01</span>
+      <h2 style="font-size:var(--h2-size);margin-top:0.3rem;"><span style="color:var(--mint);">Unit 8200</span> · 人才输出引擎</h2>
+    </div>
+    <hr class="divider reveal">
+
+    <div class="reveal" style="display:grid;grid-template-columns:1fr 1.6fr;gap:1.2rem;">
+      <div>
+        <div class="card" style="padding:1.2rem;height:100%;">
+          <div style="font-family:var(--font-display);font-weight:700;color:var(--mint);margin-bottom:0.8rem;font-size:clamp(0.85rem,1.2vw,1rem);">什么是 Unit 8200？</div>
+          <p style="color:var(--text-secondary);font-size:var(--small-size);line-height:1.7;margin-bottom:0.7rem;">
+            以色列国防军（IDF）信号情报与网络部队，相当于美国NSA的以色列版本。
+          </p>
+          <p style="color:var(--text-secondary);font-size:var(--small-size);line-height:1.7;margin-bottom:0.7rem;">
+            每年招募数百名顶尖数学/CS高中生，接受世界级的网络攻防、密码学、AI训练。
+          </p>
+          <p style="color:var(--text-secondary);font-size:var(--small-size);line-height:1.7;">
+            退役平均年龄 <span style="color:var(--mint);font-weight:700;">21-23岁</span>，携带绝顶技能进入创业市场。
+          </p>
+          <div style="margin-top:0.8rem;padding:0.6rem;background:var(--mint-dim);border-radius:6px;">
+            <div style="font-family:var(--font-display);font-size:0.68rem;color:var(--mint);font-weight:700;margin-bottom:0.2rem;">别称</div>
+            <div style="font-size:0.7rem;color:var(--text-secondary);">「以色列硅谷的西点军校」</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:var(--font-display);font-size:var(--small-size);color:var(--text-secondary);margin-bottom:0.5rem;">Unit 8200 校友创立的代表企业</div>
+        <div style="display:grid;gap:0.4rem;">
+          <div class="company-row">
+            <div><div class="company-name">Wiz</div><div class="company-meta">云安全 · 2020年创立</div></div>
+            <div class="company-val">$32B EXIT</div>
+          </div>
+          <div class="company-row">
+            <div><div class="company-name">Check Point Software</div><div class="company-meta">网络安全鼻祖 · 1993年</div></div>
+            <div class="company-val">$16B+市值</div>
+          </div>
+          <div class="company-row">
+            <div><div class="company-name">CyberArk</div><div class="company-meta">身份安全 · 1999年</div></div>
+            <div class="company-val">NASDAQ上市</div>
+          </div>
+          <div class="company-row">
+            <div><div class="company-name">Palo Alto Networks</div><div class="company-meta">美国纳斯达克 · 2005年</div></div>
+            <div class="company-val">$100B+市值</div>
+          </div>
+          <div class="company-row">
+            <div><div class="company-name">NICE Systems</div><div class="company-meta">企业AI/分析 · 1986年</div></div>
+            <div class="company-val">NASDAQ上市</div>
+          </div>
+          <div class="company-row">
+            <div><div class="company-name">Sygnia · Noname Security · Varonis</div><div class="company-meta">新生代安全公司</div></div>
+            <div class="company-val">独角兽级</div>
+          </div>
+        </div>
+        <div style="margin-top:0.7rem;padding:0.6rem 0.8rem;background:var(--amber-dim);border-radius:6px;border:1px solid rgba(255,178,64,0.15);">
+          <p style="font-size:0.7rem;color:var(--text-secondary);line-height:1.6;">
+            <span style="color:var(--amber);font-weight:700;">观点：</span>Unit 8200 本质上是政府资助的「顶尖创业人才预训练计划」——提供世界级技术训练，结业即创业资本，形成独特的军转商路径。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(4,1fr);gap:0.8rem;">
+      <div class="card" style="padding:0.7rem;text-align:center;">
+        <div class="stat-big" style="font-size:1.8rem;">1000+</div>
+        <div style="font-size:0.65rem;color:var(--text-muted);">每年毕业学员</div>
+      </div>
+      <div class="card" style="padding:0.7rem;text-align:center;">
+        <div class="stat-big stat-amber" style="font-size:1.8rem;">50+</div>
+        <div style="font-size:0.65rem;color:var(--text-muted);">校友创立的独角兽</div>
+      </div>
+      <div class="card" style="padding:0.7rem;text-align:center;">
+        <div class="stat-big" style="font-size:1.8rem;">$100B+</div>
+        <div style="font-size:0.65rem;color:var(--text-muted);">校友企业总估值</div>
+      </div>
+      <div class="card" style="padding:0.7rem;text-align:center;">
+        <div class="stat-big stat-amber" style="font-size:1.8rem;">60%+</div>
+        <div style="font-size:0.65rem;color:var(--text-muted);">以色列独角兽创始人<br>有军队技术经历</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= SLIDE 05 网络安全概览 ============================= -->
+<section class="slide" id="s4">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-amber" style="width:550px;height:550px;top:-100px;right:-120px;opacity:0.6;"></div>
+  <div class="slide-content" style="gap:1.2rem;">
+    <div class="reveal">
+      <span class="label label-amber">Chapter 02</span>
+      <h2 style="font-size:var(--h2-size);margin-top:0.3rem;">🛡 网络安全<span style="color:var(--amber);">· 全球制高点</span></h2>
+    </div>
+    <hr class="divider reveal" style="background:linear-gradient(90deg,var(--amber),transparent);">
+
+    <div class="reveal" style="background:var(--amber-dim);border:1px solid rgba(255,178,64,0.2);border-radius:8px;padding:0.7rem 1.2rem;">
+      <p style="font-family:var(--font-display);font-size:var(--small-size);color:var(--text-primary);">
+        以色列网络安全产业占全球私募网络安全融资的 <span style="color:var(--amber);font-weight:700;">约10-15%</span>，以不足 0.1% 的全球人口贡献了全球顶级安全产品的重要份额。2025年网络安全融资达 <span style="color:var(--amber);font-weight:700;">$4.1B</span>，是仅次于美国的全球第二大网安创业地。
+      </p>
+    </div>
+
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(5,1fr);gap:0.7rem;">
+      <div class="card card-amber" style="padding:0.9rem;text-align:center;">
+        <div style="font-size:1.4rem;margin-bottom:0.3rem;">🏛</div>
+        <div style="font-family:var(--font-display);font-weight:700;font-size:0.8rem;color:var(--amber);">Check Point</div>
+        <div style="font-size:0.62rem;color:var(--text-muted);margin-top:0.2rem;">1993 · 鼻祖</div>
+        <div style="font-size:0.7rem;color:var(--text-secondary);margin-top:0.3rem;">$16B+市值</div>
+      </div>
+      <div class="card card-amber" style="padding:0.9rem;text-align:center;">
+        <div style="font-size:1.4rem;margin-bottom:0.3rem;">🔐</div>
+        <div style="font-family:var(--font-display);font-weight:700;font-size:0.8rem;color:var(--amber);">CyberArk</div>
+        <div style="font-size:0.62rem;color:var(--text-muted);margin-top:0.2rem;">1999 · 特权身份</div>
+        <div style="font-size:0.7rem;color:var(--text-secondary);margin-top:0.3rem;">NASDAQ上市</div>
+      </div>
+      <div class="card" style="padding:0.9rem;text-align:center;border-color:rgba(45,255,192,0.25);">
+        <div style="font-size:1.4rem;margin-bottom:0.3rem;">☁️</div>
+        <div style="font-family:var(--font-display);font-weight:700;font-size:0.8rem;color:var(--mint);">Wiz</div>
+        <div style="font-size:0.62rem;color:var(--text-muted);margin-top:0.2rem;">2020 · 云安全</div>
+        <div style="font-size:0.7rem;color:var(--mint);margin-top:0.3rem;font-weight:700;">$32B → Google</div>
+      </div>
+      <div class="card card-amber" style="padding:0.9rem;text-align:center;">
+        <div style="font-size:1.4rem;margin-bottom:0.3rem;">🏭</div>
+        <div style="font-family:var(--font-display);font-weight:700;font-size:0.8rem;color:var(--amber);">Claroty</div>
+        <div style="font-size:0.62rem;color:var(--text-muted);margin-top:0.2rem;">2015 · OT/IoT安全</div>
+        <div style="font-size:0.7rem;color:var(--text-secondary);margin-top:0.3rem;">独角兽</div>
+      </div>
+      <div class="card card-amber" style="padding:0.9rem;text-align:center;">
+        <div style="font-size:1.4rem;margin-bottom:0.3rem;">📡</div>
+        <div style="font-family:var(--font-display);font-weight:700;font-size:0.8rem;color:var(--amber);">Armis</div>
+        <div style="font-size:0.62rem;color:var(--text-muted);margin-top:0.2rem;">2015 · 资产情报</div>
+        <div style="font-size:0.7rem;color:var(--text-secondary);margin-top:0.3rem;">$4.2B估值</div>
+      </div>
+    </div>
+
+    <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+      <div>
+        <div style="font-size:var(--small-size);color:var(--text-secondary);margin-bottom:0.5rem;">为何以色列主导网络安全？</div>
+        <div style="display:grid;gap:0.35rem;">
+          <div class="timeline-item">
+            <div class="timeline-dot timeline-dot-amber"></div>
+            <div style="font-size:var(--small-size);color:var(--text-secondary);">Unit 8200 输出实战级网络攻防人才</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot timeline-dot-amber"></div>
+            <div style="font-size:var(--small-size);color:var(--text-secondary);">长期面临真实网络威胁（真实战场经验）</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot timeline-dot-amber"></div>
+            <div style="font-size:var(--small-size);color:var(--text-secondary);">政府采购为早期产品提供验证市场</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot timeline-dot-amber"></div>
+            <div style="font-size:var(--small-size);color:var(--text-secondary);">校友网络提供快速客户/融资通道</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:var(--small-size);color:var(--text-secondary);margin-bottom:0.5rem;">2025年重大融资</div>
+        <div style="display:grid;gap:0.35rem;">
+          <div class="company-row">
+            <div><div class="company-name" style="font-size:0.82rem;">Cyera</div><div class="company-meta">数据安全</div></div>
+            <div class="company-val">$940M</div>
+          </div>
+          <div class="company-row">
+            <div><div class="company-name" style="font-size:0.82rem;">Cato Networks</div><div class="company-meta">SASE平台</div></div>
+            <div class="company-val">$400M+</div>
+          </div>
+          <div class="company-row">
+            <div><div class="company-name" style="font-size:0.82rem;">Torq</div><div class="company-meta">安全自动化</div></div>
+            <div class="company-val">$200M+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= SLIDE 06 Check Point & CyberArk ============================= -->
+<section class="slide" id="s5">
+  <div class="bg-grid"></div>
+  <div class="slide-content" style="gap:1rem;">
+    <div class="reveal">
+      <span class="label label-amber">Chapter 02 · 网络安全</span>
+      <h2 style="font-size:var(--h2-size);margin-top:0.3rem;">Check Point &amp; <span style="color:var(--amber);">CyberArk</span></h2>
+    </div>
+    <hr class="divider reveal" style="background:linear-gradient(90deg,var(--amber),transparent);">
+
+    <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;">
+      <div class="card card-amber" style="padding:1.2rem;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.8rem;">
+          <div>
+            <div style="font-family:var(--font-display);font-weight:800;font-size:clamp(1rem,1.6vw,1.3rem);">Check Point Software</div>
+            <div style="font-size:var(--small-size);color:var(--text-muted);">1993 · 特拉维夫 · NASDAQ: CHKP</div>
+          </div>
+          <span class="tag tag-amber">鼻祖级</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:0.8rem;">
+          <div style="text-align:center;padding:0.5rem;background:rgba(0,0,0,0.3);border-radius:6px;">
+            <div class="stat-big stat-amber" style="font-size:1.5rem;">$16B+</div>
+            <div style="font-size:0.62rem;color:var(--text-muted);">市值（2025）</div>
+          </div>
+          <div style="text-align:center;padding:0.5rem;background:rgba(0,0,0,0.3);border-radius:6px;">
+            <div class="stat-big" style="font-size:1.5rem;">~6K</div>
+            <div style="font-size:0.62rem;color:var(--text-muted);">企业客户数</div>
+          </div>
+        </div>
+        <div style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.65;margin-bottom:0.6rem;">
+          <strong style="color:var(--text-primary);">创始人：</strong>Gil Shwed（Unit 8200 校友）— 1992年在军队服役时构思了防火墙概念。
+        </div>
+        <div style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.65;margin-bottom:0.6rem;">
+          <strong style="color:var(--text-primary);">核心业务：</strong>企业级防火墙、网络安全平台（Infinity架构）、云安全、端点保护。发明了商业防火墙（1993年），是现代网络安全行业的奠基者。
+        </div>
+        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+          <span class="tag tag-amber" style="font-size:0.6rem;">防火墙</span>
+          <span class="tag tag-amber" style="font-size:0.6rem;">云安全</span>
+          <span class="tag tag-amber" style="font-size:0.6rem;">威胁防护</span>
+          <span class="tag tag-amber" style="font-size:0.6rem;">零信任</span>
+        </div>
+      </div>
+
+      <div class="card card-amber" style="padding:1.2rem;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.8rem;">
+          <div>
+            <div style="font-family:var(--font-display);font-weight:800;font-size:clamp(1rem,1.6vw,1.3rem);">CyberArk</div>
+            <div style="font-size:var(--small-size);color:var(--text-muted);">1999 · 特拉维夫/牛顿 · NASDAQ: CYBR</div>
+          </div>
+          <span class="tag tag-mint">特权身份</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:0.8rem;">
+          <div style="text-align:center;padding:0.5rem;background:rgba(0,0,0,0.3);border-radius:6px;">
+            <div class="stat-big stat-amber" style="font-size:1.5rem;">$12B+</div>
+            <div style="font-size:0.62rem;color:var(--text-muted);">市值</div>
+          </div>
+          <div style="text-align:center;padding:0.5rem;background:rgba(0,0,0,0.3);border-radius:6px;">
+            <div class="stat-big" style="font-size:1.5rem;">8000+</div>
+            <div style="font-size:0.62rem;color:var(--text-muted);">全球客户</div>
+          </div>
+        </div>
+        <div style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.65;margin-bottom:0.6rem;">
+          <strong style="color:var(--text-primary);">核心业务：</strong>特权访问管理（PAM）、身份安全平台。Fortune 500中超过50%是其客户，被Gartner评为PAM领域持续领导者。
+        </div>
+        <div style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.65;margin-bottom:0.6rem;">
+          <strong style="color:var(--text-primary);">代表产品：</strong>CyberArk Privilege Cloud、Endpoint Privilege Manager、Identity Security Platform。
+        </div>
+        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+          <span class="tag tag-amber" style="font-size:0.6rem;">PAM</span>
+          <span class="tag tag-amber" style="font-size:0.6rem;">身份安全</span>
+          <span class="tag tag-blue" style="font-size:0.6rem;">零信任</span>
+          <span class="tag tag-amber" style="font-size:0.6rem;">SaaS</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+      <div class="card" style="padding:0.8rem 1rem;">
+        <div style="font-family:var(--font-display);font-size:var(--small-size);font-weight:700;color:var(--mint);margin-bottom:0.4rem;">Claroty（2015）</div>
+        <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">OT/IoT/医疗设备安全领导者。专注工业控制系统（ICS）和关键基础设施保护。获Rockwell Automation、Schneider Electric战略投资，估值达独角兽级别。Medigate产品线专攻医疗IoT安全。</p>
+      </div>
+      <div class="card" style="padding:0.8rem 1rem;">
+        <div style="font-family:var(--font-display);font-size:var(--small-size);font-weight:700;color:var(--amber);margin-bottom:0.4rem;">Armis（2015）</div>
+        <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">无代理资产情报与安全平台，专注企业级非托管设备可见性。2023年估值$4.2B，由Brookfield支持。核心技术：AI驱动的设备行为分析，已覆盖全球数十亿设备资产追踪。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= SLIDE 07 Wiz ============================= -->
+<section class="slide" id="s6">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-mint" style="width:700px;height:700px;top:-200px;right:-200px;opacity:0.8;"></div>
+  <div class="slide-content" style="gap:1.2rem;">
+    <div class="reveal" style="display:flex;align-items:center;gap:1rem;">
+      <span class="label">Chapter 02 · 史上最大退出</span>
+    </div>
+    <div class="reveal" style="display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap;">
+      <h2 style="font-size:var(--h2-size);">Wiz</h2>
+      <span style="font-family:var(--font-display);font-size:clamp(1.5rem,3vw,2.5rem);font-weight:800;color:var(--mint);">$32,000,000,000</span>
+    </div>
+    <hr class="divider reveal">
+
+    <div class="reveal" style="display:grid;grid-template-columns:1.2fr 1fr;gap:1.2rem;">
+      <div style="display:grid;gap:0.8rem;">
+        <div class="card" style="padding:1rem 1.2rem;border-color:rgba(45,255,192,0.25);">
+          <div style="font-family:var(--font-display);font-weight:700;font-size:var(--small-size);color:var(--mint);margin-bottom:0.4rem;">公司档案</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;font-size:var(--small-size);">
+            <div><span style="color:var(--text-muted);">成立：</span><span>2020年</span></div>
+            <div><span style="color:var(--text-muted);">创始人：</span><span>Assaf Rappaport 等4人</span></div>
+            <div><span style="color:var(--text-muted);">总部：</span><span>纽约（以色列创立）</span></div>
+            <div><span style="color:var(--text-muted);">背景：</span><span>Unit 8200 校友</span></div>
+          </div>
+        </div>
+        <div class="card" style="padding:1rem 1.2rem;">
+          <div style="font-family:var(--font-display);font-weight:700;font-size:var(--small-size);color:var(--text-primary);margin-bottom:0.4rem;">核心技术</div>
+          <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.65;">
+            云原生安全平台（CNAPP），可在数分钟内扫描AWS/Azure/GCP全量云环境，识别跨资源的攻击路径。无需部署Agent，最短时间获得完整可见性。
+          </p>
+        </div>
+        <div class="card" style="padding:1rem 1.2rem;border-color:rgba(45,255,192,0.25);">
+          <div style="font-family:var(--font-display);font-weight:700;font-size:var(--small-size);color:var(--mint);margin-bottom:0.4rem;">增长速度（事实）</div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.5rem;text-align:center;">
+            <div><div class="stat-big" style="font-size:1.3rem;">2020</div><div style="font-size:0.6rem;color:var(--text-muted);">成立</div></div>
+            <div><div class="stat-big" style="font-size:1.3rem;">$100M</div><div style="font-size:0.6rem;color:var(--text-muted);">ARR（18个月）</div></div>
+            <div><div class="stat-big" style="font-size:1.3rem;">$500M+</div><div style="font-size:0.6rem;color:var(--text-muted);">ARR（2025）</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:grid;gap:0.7rem;">
+        <div style="font-family:var(--font-display);font-size:var(--small-size);font-weight:600;color:var(--text-secondary);">收购时间线</div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div>
+            <div style="font-family:var(--font-display);font-size:0.78rem;font-weight:700;">2024年 · Google首次接触</div>
+            <div style="font-size:0.68rem;color:var(--text-muted);margin-top:0.1em;">出价 $23B，Wiz 拒绝</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot timeline-dot-amber"></div>
+          <div>
+            <div style="font-family:var(--font-display);font-size:0.78rem;font-weight:700;">2025年3月 · 重启谈判</div>
+            <div style="font-size:0.68rem;color:var(--text-muted);margin-top:0.1em;">Google 宣布以 $32B 收购</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div>
+            <div style="font-family:var(--font-display);font-size:0.78rem;font-weight:700;">2025年11月 · 美国批准</div>
+            <div style="font-size:0.68rem;color:var(--text-muted);margin-top:0.1em;">DOJ 反垄断审查通过</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot timeline-dot-amber"></div>
+          <div>
+            <div style="font-family:var(--font-display);font-size:0.78rem;font-weight:700;">2026年2月 · 欧盟批准</div>
+            <div style="font-size:0.68rem;color:var(--text-muted);margin-top:0.1em;">EU 反垄断审查通过</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot" style="background:var(--mint);box-shadow:0 0 12px var(--mint-glow);"></div>
+          <div>
+            <div style="font-family:var(--font-display);font-size:0.78rem;font-weight:700;color:var(--mint);">2026年3月 · 交割完成</div>
+            <div style="font-size:0.68rem;color:var(--text-muted);margin-top:0.1em;">Google 史上最大收购，以色列史上最大科技退出</div>
+          </div>
+        </div>
+
+        <div style="padding:0.7rem 0.8rem;background:var(--mint-dim);border-radius:6px;border:1px solid rgba(45,255,192,0.2);margin-top:0.2rem;">
+          <p style="font-size:0.68rem;color:var(--text-secondary);line-height:1.6;">
+            <span style="color:var(--mint);font-weight:700;">意义：</span>Wiz 从0到$32B仅用5年，是SaaS史上最快增长路径之一，也是Unit 8200军转商模式的极致验证。创始人当初拒绝$23B被称为「以色列科技史上最大豪赌」。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= SLIDE 08 AI/ML 概览 ============================= -->
+<section class="slide" id="s7">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-mint" style="width:500px;height:500px;bottom:-150px;left:-100px;opacity:0.6;"></div>
+  <div class="slide-content" style="gap:1.2rem;">
+    <div class="reveal">
+      <span class="label">Chapter 03</span>
+      <h2 style="font-size:var(--h2-size);margin-top:0.3rem;">🤖 AI / 机器学习<span style="color:var(--mint);">· 全景</span></h2>
+    </div>
+    <hr class="divider reveal">
+
+    <div class="reveal" style="background:var(--mint-dim);border:1px solid rgba(45,255,192,0.15);border-radius:8px;padding:0.6rem 1.2rem;">
+      <p style="font-size:var(--small-size);color:var(--text-primary);font-family:var(--font-display);">
+        以色列拥有 <span style="color:var(--mint);font-weight:700;">2300+ 活跃AI创业公司</span>，覆盖自动驾驶、生成式AI、计算机视觉、医疗AI等全领域。2025年AI主导以色列融资领域，占全融资额约 <span style="color:var(--mint);font-weight:700;">70%</span>（含网络安全中AI应用）。
+      </p>
+    </div>
+
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;">
+      <div class="card" style="padding:1.2rem;border-color:rgba(45,255,192,0.2);">
+        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:0.6rem;">
+          <div>
+            <div style="font-family:var(--font-display);font-weight:800;font-size:clamp(0.95rem,1.4vw,1.1rem);">Mobileye</div>
+            <div style="font-size:var(--small-size);color:var(--text-muted);">1999 · 耶路撒冷 · NASDAQ: MBLY</div>
+          </div>
+          <span class="tag tag-mint">自动驾驶</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:0.4rem;margin-bottom:0.6rem;">
+          <div style="padding:0.4rem;background:rgba(0,0,0,0.3);border-radius:5px;text-align:center;">
+            <div class="stat-big" style="font-size:1.1rem;">$15B+</div>
+            <div style="font-size:0.58rem;color:var(--text-muted);">市值</div>
+          </div>
+          <div style="padding:0.4rem;background:rgba(0,0,0,0.3);border-radius:5px;text-align:center;">
+            <div class="stat-big" style="font-size:1.1rem;">1B+</div>
+            <div style="font-size:0.58rem;color:var(--text-muted);">装载设备数</div>
+          </div>
+        </div>
+        <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.65;">全球最大自动驾驶辅助系统（ADAS）供应商，2017年英特尔以$153亿收购，2022年重新IPO。核心产品EyeQ芯片已成汽车标配，服务宝马、福特、大众等全球主流车厂。</p>
+      </div>
+
+      <div class="card" style="padding:1.2rem;">
+        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:0.6rem;">
+          <div>
+            <div style="font-family:var(--font-display);font-weight:800;font-size:clamp(0.95rem,1.4vw,1.1rem);">OrCam Technologies</div>
+            <div style="font-size:var(--small-size);color:var(--text-muted);">2010 · 耶路撒冷</div>
+          </div>
+          <span class="tag tag-purple">AI辅助视觉</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:0.4rem;margin-bottom:0.6rem;">
+          <div style="padding:0.4rem;background:rgba(0,0,0,0.3);border-radius:5px;text-align:center;">
+            <div class="stat-big" style="font-size:1.1rem;">$1B+</div>
+            <div style="font-size:0.58rem;color:var(--text-muted);">估值</div>
+          </div>
+          <div style="padding:0.4rem;background:rgba(0,0,0,0.3);border-radius:5px;text-align:center;">
+            <div class="stat-big" style="font-size:1.1rem;">100+</div>
+            <div style="font-size:0.58rem;color:var(--text-muted);">国家/地区覆盖</div>
+          </div>
+        </div>
+        <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.65;">Mobileye创始人Amnon Shashua联合创立。OrCam MyEye：可穿戴AI设备，实时朗读文字、识别人脸/产品，帮助视障及阅读障碍人士。OrCam Hear：助听辅助AI。社会影响力极强。</p>
+      </div>
+    </div>
+
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;">
+      <div class="card" style="padding:1.2rem;border-color:rgba(79,140,255,0.2);">
+        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:0.6rem;">
+          <div>
+            <div style="font-family:var(--font-display);font-weight:800;font-size:clamp(0.95rem,1.4vw,1.1rem);">AI21 Labs</div>
+            <div style="font-size:var(--small-size);color:var(--text-muted);">2017 · 特拉维夫</div>
+          </div>
+          <span class="tag tag-blue">大语言模型</span>
+        </div>
+        <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.65;">以色列LLM领军企业，创始人包括Yoav Shoham（斯坦福AI教授）。旗舰模型 Jamba（MoE架构）&amp; Jurassic系列，B2B企业AI平台。已融资超$600M，投资方含Google、Nvidia、a16z。</p>
+      </div>
+
+      <div class="card" style="padding:1.2rem;border-color:rgba(167,139,250,0.2);">
+        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:0.6rem;">
+          <div>
+            <div style="font-family:var(--font-display);font-weight:800;font-size:clamp(0.95rem,1.4vw,1.1rem);">Lightricks</div>
+            <div style="font-size:var(--small-size);color:var(--text-muted);">2013 · 耶路撒冷</div>
+          </div>
+          <span class="tag tag-purple">AI创意工具</span>
+        </div>
+        <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.65;">消费级AI创意工具独角兽（$1.8B+估值）。旗下产品Facetune、Videoleap全球下载量超 5亿次。2025年推出LTX-Video开源视频生成模型，对标Sora。近期转向B2B AI创意平台。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= SLIDE 09 医疗AI ============================= -->
+<section class="slide" id="s8">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-amber" style="width:400px;height:400px;top:-80px;right:-80px;opacity:0.5;"></div>
+  <div class="slide-content" style="gap:1.2rem;">
+    <div class="reveal">
+      <span class="label">Chapter 04</span>
+      <h2 style="font-size:var(--h2-size);margin-top:0.3rem;">🏥 医疗AI<span style="color:var(--amber);">· 影像与诊断</span></h2>
+    </div>
+    <hr class="divider reveal" style="background:linear-gradient(90deg,var(--amber),transparent);">
+
+    <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;">
+      <div class="card card-amber" style="padding:1.2rem;">
+        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:0.7rem;">
+          <div>
+            <div style="font-family:var(--font-display);font-weight:800;font-size:clamp(0.95rem,1.4vw,1.15rem);">Zebra Medical Vision</div>
+            <div style="font-size:var(--small-size);color:var(--text-muted);">2014 · 以色列（现并入Nanox）</div>
+          </div>
+          <span class="tag tag-amber">影像AI</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.4rem;margin-bottom:0.7rem;">
+          <div style="text-align:center;padding:0.4rem;background:rgba(0,0,0,0.3);border-radius:5px;">
+            <div class="stat-big stat-amber" style="font-size:1.1rem;">1M+</div>
+            <div style="font-size:0.58rem;color:var(--text-muted);">分析影像数</div>
+          </div>
+          <div style="text-align:center;padding:0.4rem;background:rgba(0,0,0,0.3);border-radius:5px;">
+            <div class="stat-big" style="font-size:1.1rem;">30+</div>
+            <div style="font-size:0.58rem;color:var(--text-muted);">AI分析模型</div>
+          </div>
+          <div style="text-align:center;padding:0.4rem;background:rgba(0,0,0,0.3);border-radius:5px;">
+            <div class="stat-big stat-amber" style="font-size:1.1rem;">FDA</div>
+            <div style="font-size:0.58rem;color:var(--text-muted);">认证产品</div>
+          </div>
+        </div>
+        <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.65;margin-bottom:0.5rem;">
+          医疗影像AI先驱，训练于超过百万张CT/X-Ray影像。可检测骨质疏松、心血管疾病、肺结节、脂肪肝等多种疾病。2021年被医疗科技公司 Nanox 以$200M收购，整合进其AI影像生态。
+        </p>
+        <div style="display:flex;gap:0.4rem;flex-wrap:wrap;">
+          <span class="tag tag-amber" style="font-size:0.6rem;">CT影像</span>
+          <span class="tag tag-amber" style="font-size:0.6rem;">骨密度</span>
+          <span class="tag tag-amber" style="font-size:0.6rem;">心血管</span>
+          <span class="tag tag-amber" style="font-size:0.6rem;">肺癌筛查</span>
+        </div>
+      </div>
+
+      <div class="card" style="padding:1.2rem;border-color:rgba(79,140,255,0.2);">
+        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:0.7rem;">
+          <div>
+            <div style="font-family:var(--font-display);font-weight:800;font-size:clamp(0.95rem,1.4vw,1.15rem);">Sight Diagnostics</div>
+            <div style="font-size:var(--small-size);color:var(--text-muted);">2011 · 特拉维夫</div>
+          </div>
+          <span class="tag tag-blue">即时诊断</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.4rem;margin-bottom:0.7rem;">
+          <div style="text-align:center;padding:0.4rem;background:rgba(0,0,0,0.3);border-radius:5px;">
+            <div class="stat-big" style="font-size:1.1rem;">$100M+</div>
+            <div style="font-size:0.58rem;color:var(--text-muted);">融资额</div>
+          </div>
+          <div style="text-align:center;padding:0.4rem;background:rgba(0,0,0,0.3);border-radius:5px;">
+            <div class="stat-big" style="font-size:1.1rem;">FDA/CE</div>
+            <div style="font-size:0.58rem;color:var(--text-muted);">双认证</div>
+          </div>
+          <div style="text-align:center;padding:0.4rem;background:rgba(0,0,0,0.3);border-radius:5px;">
+            <div class="stat-big" style="font-size:1.1rem;">5min</div>
+            <div style="font-size:0.58rem;color:var(--text-muted);">出结果</div>
+          </div>
+        </div>
+        <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.65;margin-bottom:0.5rem;">
+          旗舰产品 OLO：指尖采血，5分钟内完成40项血常规检测，AI分析准确率媲美传统实验室。已获强生、礼来等战略投资。核心技术：计算机视觉 + 微流控芯片，使诊断脱离大型医院。
+        </p>
+        <div style="display:flex;gap:0.4rem;flex-wrap:wrap;">
+          <span class="tag tag-blue" style="font-size:0.6rem;">血常规</span>
+          <span class="tag tag-blue" style="font-size:0.6rem;">即时检测</span>
+          <span class="tag tag-blue" style="font-size:0.6rem;">计算机视觉</span>
+          <span class="tag tag-blue" style="font-size:0.6rem;">PoC诊断</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.8rem;">
+      <div class="card" style="padding:0.8rem;">
+        <div style="font-family:var(--font-display);font-size:var(--small-size);font-weight:700;color:var(--mint);margin-bottom:0.4rem;">为何医疗AI在以色列崛起？</div>
+        <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">以色列拥有全国统一电子健康档案系统（全球少有），Clalit Health Services管理超500万人口的完整医疗数据，是AI训练的天然金矿。</p>
+      </div>
+      <div class="card" style="padding:0.8rem;">
+        <div style="font-family:var(--font-display);font-size:var(--small-size);font-weight:700;color:var(--amber);margin-bottom:0.4rem;">学术支撑</div>
+        <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">魏兹曼研究所（生命科学）、希伯来大学医学院与理工学院，在计算生物学、医学影像领域深度产学合作。</p>
+      </div>
+      <div class="card" style="padding:0.8rem;">
+        <div style="font-family:var(--font-display);font-size:var(--small-size);font-weight:700;color:var(--blue);margin-bottom:0.4rem;">其他值得关注的医疗AI</div>
+        <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">
+          • <strong>Nanox</strong> — 颠覆式X射线成像<br>
+          • <strong>Biobeat</strong> — 无袖带血压AI监测<br>
+          • <strong>Cardialytics</strong> — 心脏AI分析
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= SLIDE 10 企业SaaS ============================= -->
+<section class="slide" id="s9">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-mint" style="width:500px;height:500px;bottom:-100px;right:-80px;opacity:0.5;"></div>
+  <div class="slide-content" style="gap:1rem;">
+    <div class="reveal">
+      <span class="label">Chapter 05</span>
+      <h2 style="font-size:var(--h2-size);margin-top:0.3rem;">💼 企业SaaS<span style="color:var(--mint);">· 三巨头</span></h2>
+    </div>
+    <hr class="divider reveal">
+
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;">
+      <div class="card" style="padding:1.1rem;border-color:rgba(45,255,192,0.2);">
+        <div style="margin-bottom:0.6rem;">
+          <div style="font-family:var(--font-display);font-weight:800;font-size:clamp(1rem,1.5vw,1.2rem);">Monday.com</div>
+          <div style="font-size:var(--small-size);color:var(--text-muted);">2012 · 特拉维夫 · NASDAQ: MNDY</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.4rem;margin-bottom:0.6rem;">
+          <div style="padding:0.4rem;background:rgba(0,0,0,0.3);border-radius:5px;text-align:center;">
+            <div class="stat-big" style="font-size:1.1rem;">$8B+</div>
+            <div style="font-size:0.58rem;color:var(--text-muted);">市值</div>
+          </div>
+          <div style="padding:0.4rem;background:rgba(0,0,0,0.3);border-radius:5px;text-align:center;">
+            <div class="stat-big" style="font-size:1.1rem;">260K+</div>
+            <div style="font-size:0.58rem;color:var(--text-muted);">企业客户</div>
+          </div>
+        </div>
+        <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.65;margin-bottom:0.5rem;">
+          Work OS 平台，覆盖项目管理、CRM、开发、营销全场景。2021年 IPO，市值一度超$15B。2024年推出 AI驱动的 Monday AI，实现自动化工作流程。年营收超 $900M，增速稳健。
+        </p>
+        <div style="display:flex;gap:0.4rem;flex-wrap:wrap;">
+          <span class="tag tag-mint" style="font-size:0.6rem;">Work OS</span>
+          <span class="tag tag-mint" style="font-size:0.6rem;">项目管理</span>
+          <span class="tag tag-blue" style="font-size:0.6rem;">AI自动化</span>
+        </div>
+      </div>
+
+      <div class="card" style="padding:1.1rem;">
+        <div style="margin-bottom:0.6rem;">
+          <div style="font-family:var(--font-display);font-weight:800;font-size:clamp(1rem,1.5vw,1.2rem);">WalkMe</div>
+          <div style="font-size:var(--small-size);color:var(--text-muted);">2011 · 特拉维夫（已被SAP收购）</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.4rem;margin-bottom:0.6rem;">
+          <div style="padding:0.4rem;background:rgba(0,0,0,0.3);border-radius:5px;text-align:center;">
+            <div class="stat-big stat-amber" style="font-size:1.1rem;">$1.5B</div>
+            <div style="font-size:0.58rem;color:var(--text-muted);">SAP收购价</div>
+          </div>
+          <div style="padding:0.4rem;background:rgba(0,0,0,0.3);border-radius:5px;text-align:center;">
+            <div class="stat-big" style="font-size:1.1rem;">2024</div>
+            <div style="font-size:0.58rem;color:var(--text-muted);">收购完成年</div>
+          </div>
+        </div>
+        <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.65;margin-bottom:0.5rem;">
+          数字采用平台（DAP）先驱，帮助企业员工快速上手复杂软件（SAP、Salesforce等）。核心技术：实时屏幕覆盖引导 + AI行为分析。SAP收购后整合进 SuccessFactors 产品线。
+        </p>
+        <div style="display:flex;gap:0.4rem;flex-wrap:wrap;">
+          <span class="tag tag-amber" style="font-size:0.6rem;">DAP</span>
+          <span class="tag tag-amber" style="font-size:0.6rem;">用户引导</span>
+          <span class="tag tag-amber" style="font-size:0.6rem;">企业培训</span>
+        </div>
+      </div>
+
+      <div class="card" style="padding:1.1rem;border-color:rgba(79,140,255,0.15);">
+        <div style="margin-bottom:0.6rem;">
+          <div style="font-family:var(--font-display);font-weight:800;font-size:clamp(1rem,1.5vw,1.2rem);">Fiverr</div>
+          <div style="font-size:var(--small-size);color:var(--text-muted);">2010 · 特拉维夫 · NYSE: FVRR</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.4rem;margin-bottom:0.6rem;">
+          <div style="padding:0.4rem;background:rgba(0,0,0,0.3);border-radius:5px;text-align:center;">
+            <div class="stat-big" style="font-size:1.1rem;">$700M+</div>
+            <div style="font-size:0.58rem;color:var(--text-muted);">年营收（2024）</div>
+          </div>
+          <div style="padding:0.4rem;background:rgba(0,0,0,0.3);border-radius:5px;text-align:center;">
+            <div class="stat-big" style="font-size:1.1rem;">4M+</div>
+            <div style="font-size:0.58rem;color:var(--text-muted);">注册卖家</div>
+          </div>
+        </div>
+        <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.65;margin-bottom:0.5rem;">
+          全球最大自由职业者平台之一，开创「$5起步」服务市场模式。2021年IPO，近年积极布局AI：Fiverr AI服务分类、AI赋能的Fiverr Pro，将平台从人力中介转向AI+人力协同。
+        </p>
+        <div style="display:flex;gap:0.4rem;flex-wrap:wrap;">
+          <span class="tag tag-blue" style="font-size:0.6rem;">自由职业</span>
+          <span class="tag tag-blue" style="font-size:0.6rem;">平台经济</span>
+          <span class="tag tag-blue" style="font-size:0.6rem;">AI服务</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+      <div style="padding:0.7rem 0.9rem;background:var(--mint-dim);border-radius:8px;border:1px solid rgba(45,255,192,0.15);">
+        <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">
+          <span style="color:var(--mint);font-weight:700;">以色列SaaS共性：</span>天生全球化（本土市场太小），创始期即锁定美国/欧洲客户，产品力优先于销售力，工程文化驱动。Monday.com 是最典型的「以色列建、美国卖」范式。
+        </p>
+      </div>
+      <div style="padding:0.7rem 0.9rem;background:var(--amber-dim);border-radius:8px;border:1px solid rgba(255,178,64,0.15);">
+        <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">
+          <span style="color:var(--amber);font-weight:700;">其他值得关注：</span>Similarweb（数字情报，NYSE上市）、Varonis（数据安全/SaaS）、LivePerson（AI对话商务）、Taboola（原生广告，NASDAQ）。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= SLIDE 11 芯片/硬件 ============================= -->
+<section class="slide" id="s10">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-mint" style="width:500px;height:500px;top:-150px;left:-100px;opacity:0.6;"></div>
+  <div class="slide-content" style="gap:1rem;">
+    <div class="reveal">
+      <span class="label">Chapter 06</span>
+      <h2 style="font-size:var(--h2-size);margin-top:0.3rem;">💻 芯片 / 硬件<span style="color:var(--mint);">· 全球CPU中枢</span></h2>
+    </div>
+    <hr class="divider reveal">
+
+    <div class="reveal" style="background:var(--mint-dim);border:1px solid rgba(45,255,192,0.15);border-radius:8px;padding:0.6rem 1.2rem;">
+      <p style="font-size:var(--small-size);color:var(--text-primary);font-family:var(--font-display);">
+        以色列是全球芯片设计的隐形心脏：Intel多代 CPU 架构在海法研发，NVIDIA/英特尔合计在以色列拥有 <span style="color:var(--mint);font-weight:700;">超15,000名工程师</span>，多个改变行业的芯片IP诞生于此。
+      </p>
+    </div>
+
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;">
+      <div class="card" style="padding:1.1rem;border-color:rgba(45,255,192,0.2);">
+        <div style="display:flex;justify-content:space-between;margin-bottom:0.5rem;">
+          <div>
+            <div style="font-family:var(--font-display);font-weight:800;font-size:clamp(0.9rem,1.3vw,1.05rem);">Intel 以色列研发中心</div>
+            <div style="font-size:var(--small-size);color:var(--text-muted);">1974年进入以色列 · 海法</div>
+          </div>
+          <span class="tag tag-mint" style="font-size:0.6rem;">代工+研发</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.4rem;margin-bottom:0.6rem;">
+          <div style="padding:0.4rem;background:rgba(0,0,0,0.3);border-radius:5px;text-align:center;">
+            <div class="stat-big" style="font-size:1rem;">11,000+</div>
+            <div style="font-size:0.58rem;color:var(--text-muted);">以色列员工</div>
+          </div>
+          <div style="padding:0.4rem;background:rgba(0,0,0,0.3);border-radius:5px;text-align:center;">
+            <div class="stat-big" style="font-size:1rem;">$10B+</div>
+            <div style="font-size:0.58rem;color:var(--text-muted);">累计投资额</div>
+          </div>
+        </div>
+        <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.65;margin-bottom:0.4rem;">
+          以色列团队主导研发了Pentium MMX、Core 2 Duo、Core i系列架构——即现代PC CPU的基础。Intel在以色列最大外资雇主，基什雄工厂生产全球顶级CPU。
+        </p>
+        <div style="display:flex;gap:0.4rem;flex-wrap:wrap;">
+          <span class="tag tag-mint" style="font-size:0.6rem;">Core架构</span>
+          <span class="tag tag-mint" style="font-size:0.6rem;">AI加速</span>
+          <span class="tag tag-mint" style="font-size:0.6rem;">Gaudi芯片</span>
+        </div>
+      </div>
+
+      <div class="card" style="padding:1.1rem;border-color:rgba(255,178,64,0.2);">
+        <div style="display:flex;justify-content:space-between;margin-bottom:0.5rem;">
+          <div>
+            <div style="font-family:var(--font-display);font-weight:800;font-size:clamp(0.9rem,1.3vw,1.05rem);">Mellanox Technologies</div>
+            <div style="font-size:var(--small-size);color:var(--text-muted);">1999 · 以色列 → NVIDIA收购</div>
+          </div>
+          <span class="tag tag-amber">InfiniBand</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.4rem;margin-bottom:0.6rem;">
+          <div style="padding:0.4rem;background:rgba(0,0,0,0.3);border-radius:5px;text-align:center;">
+            <div class="stat-big stat-amber" style="font-size:1rem;">$6.9B</div>
+            <div style="font-size:0.58rem;color:var(--text-muted);">NVIDIA收购价（2020）</div>
+          </div>
+          <div style="padding:0.4rem;background:rgba(0,0,0,0.3);border-radius:5px;text-align:center;">
+            <div class="stat-big" style="font-size:1rem;">#1</div>
+            <div style="font-size:0.58rem;color:var(--text-muted);">数据中心网络</div>
+          </div>
+        </div>
+        <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.65;margin-bottom:0.4rem;">
+          全球InfiniBand高速网络芯片领导者，是数据中心与超算的核心互联技术。NVIDIA 2020年以 $6.9B 完成收购，Mellanox 技术成为 NVIDIA AI 算力集群（DGX）的关键组件，直接支撑现代AI训练基础设施。
+        </p>
+        <div style="display:flex;gap:0.4rem;flex-wrap:wrap;">
+          <span class="tag tag-amber" style="font-size:0.6rem;">InfiniBand</span>
+          <span class="tag tag-amber" style="font-size:0.6rem;">数据中心</span>
+          <span class="tag tag-amber" style="font-size:0.6rem;">AI互联</span>
+        </div>
+      </div>
+
+      <div class="card" style="padding:1.1rem;border-color:rgba(167,139,250,0.2);">
+        <div style="display:flex;justify-content:space-between;margin-bottom:0.5rem;">
+          <div>
+            <div style="font-family:var(--font-display);font-weight:800;font-size:clamp(0.9rem,1.3vw,1.05rem);">Habana Labs</div>
+            <div style="font-size:var(--small-size);color:var(--text-muted);">2016 · 以色列 → Intel收购</div>
+          </div>
+          <span class="tag tag-purple">AI训练芯片</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.4rem;margin-bottom:0.6rem;">
+          <div style="padding:0.4rem;background:rgba(0,0,0,0.3);border-radius:5px;text-align:center;">
+            <div class="stat-big" style="font-size:1rem;">$2B</div>
+            <div style="font-size:0.58rem;color:var(--text-muted);">Intel收购价（2019）</div>
+          </div>
+          <div style="padding:0.4rem;background:rgba(0,0,0,0.3);border-radius:5px;text-align:center;">
+            <div class="stat-big" style="font-size:1rem;">Gaudi</div>
+            <div style="font-size:0.58rem;color:var(--text-muted);">产品系列</div>
+          </div>
+        </div>
+        <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.65;margin-bottom:0.4rem;">
+          深度学习训练芯片（DL1/Gaudi系列），目标挑战NVIDIA A100。Intel以$2B完成收购，是当时以色列最大芯片类并购。Gaudi 3（2024）在LLM训练性能上具备竞争力，被AWS采用。
+        </p>
+        <div style="display:flex;gap:0.4rem;flex-wrap:wrap;">
+          <span class="tag tag-purple" style="font-size:0.6rem;">AI加速器</span>
+          <span class="tag tag-purple" style="font-size:0.6rem;">LLM训练</span>
+          <span class="tag tag-purple" style="font-size:0.6rem;">Gaudi</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="padding:0.7rem 1rem;background:rgba(45,255,192,0.06);border-radius:8px;border:1px solid rgba(45,255,192,0.12);">
+      <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">
+        <span style="color:var(--mint);font-weight:700;">芯片地图延伸：</span>Google在海法设「Google Brain Israel」（Blavatnik计算机科学研究所旁）；Apple、Microsoft、Amazon在以色列均设AI/芯片研发中心。
+        Mobileye EyeQ 系列自动驾驶芯片全球装车量超过1亿颗。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= SLIDE 12 军事/情报 ============================= -->
+<section class="slide" id="s11">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-amber" style="width:450px;height:450px;top:-100px;right:-100px;opacity:0.5;"></div>
+  <div class="slide-content" style="gap:1.2rem;">
+    <div class="reveal">
+      <span class="label label-amber">Chapter 07</span>
+      <h2 style="font-size:var(--h2-size);margin-top:0.3rem;">⚔ 军事 / 情报技术<span style="color:var(--amber);">· 争议与现实</span></h2>
+    </div>
+    <hr class="divider reveal" style="background:linear-gradient(90deg,var(--amber),transparent);">
+
+    <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;">
+      <div class="card card-amber" style="padding:1.2rem;">
+        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:0.7rem;">
+          <div>
+            <div style="font-family:var(--font-display);font-weight:800;font-size:clamp(0.95rem,1.4vw,1.15rem);">NSO Group</div>
+            <div style="font-size:var(--small-size);color:var(--text-muted);">2010 · 以色列</div>
+          </div>
+          <span class="tag tag-red">高争议</span>
+        </div>
+        <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.65;margin-bottom:0.6rem;">
+          <strong style="color:var(--text-primary);">旗舰产品：Pegasus</strong> — 全球最先进的移动端间谍软件，可无感染入侵iOS/Android设备，监控通话/消息/摄像头。仅授权给政府客户用于「合法监控」。
+        </p>
+        <div style="padding:0.6rem;background:rgba(255,90,90,0.1);border:1px solid rgba(255,90,90,0.2);border-radius:6px;margin-bottom:0.6rem;">
+          <p style="font-size:0.68rem;color:var(--red);line-height:1.6;">
+            <strong>争议：</strong>Citizen Lab等机构报告显示Pegasus被多国政府用于监控异见人士、记者、活动人士。2021年被美国商务部列入实体清单（Entity List），苹果/WhatsApp对其提起诉讼。
+          </p>
+        </div>
+        <div style="display:flex;gap:0.4rem;flex-wrap:wrap;">
+          <span class="tag tag-red" style="font-size:0.6rem;">间谍软件</span>
+          <span class="tag tag-red" style="font-size:0.6rem;">移动渗透</span>
+          <span class="tag tag-amber" style="font-size:0.6rem;">政府授权</span>
+        </div>
+      </div>
+
+      <div class="card" style="padding:1.2rem;border-color:rgba(79,140,255,0.2);">
+        <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:0.7rem;">
+          <div>
+            <div style="font-family:var(--font-display);font-weight:800;font-size:clamp(0.95rem,1.4vw,1.15rem);">Elbit Systems</div>
+            <div style="font-size:var(--small-size);color:var(--text-muted);">1966 · 海法 · NASDAQ: ESLT</div>
+          </div>
+          <span class="tag tag-blue">国防科技</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.4rem;margin-bottom:0.6rem;">
+          <div style="padding:0.4rem;background:rgba(0,0,0,0.3);border-radius:5px;text-align:center;">
+            <div class="stat-big" style="font-size:1rem;">$8B+</div>
+            <div style="font-size:0.58rem;color:var(--text-muted);">市值</div>
+          </div>
+          <div style="padding:0.4rem;background:rgba(0,0,0,0.3);border-radius:5px;text-align:center;">
+            <div class="stat-big" style="font-size:1rem;">60+</div>
+            <div style="font-size:0.58rem;color:var(--text-muted);">国家客户</div>
+          </div>
+        </div>
+        <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.65;margin-bottom:0.5rem;">
+          以色列最大民营国防科技公司。产品线：无人机（赫尔墨斯系列）、头盔显示系统、AI战场管理、装甲车电子系统、海军战斗管理。技术广泛出口至美国、欧洲、印度、巴西等。
+        </p>
+        <div style="display:flex;gap:0.4rem;flex-wrap:wrap;">
+          <span class="tag tag-blue" style="font-size:0.6rem;">无人机</span>
+          <span class="tag tag-blue" style="font-size:0.6rem;">战场AI</span>
+          <span class="tag tag-blue" style="font-size:0.6rem;">航空电子</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+      <div style="padding:0.7rem 1rem;background:rgba(255,90,90,0.08);border-radius:6px;border:1px solid rgba(255,90,90,0.15);">
+        <div style="font-family:var(--font-display);font-size:var(--small-size);font-weight:700;color:var(--red);margin-bottom:0.3rem;">伦理边界问题</div>
+        <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">军事AI与商业AI的边界在以色列天然模糊。「军转民」是核心优势，但也带来出口监管、技术滥用的系统性风险。以色列政府通过国防出口许可证制度管控，但执行标准受到国际批评。</p>
+      </div>
+      <div style="padding:0.7rem 1rem;background:rgba(79,140,255,0.08);border-radius:6px;border:1px solid rgba(79,140,255,0.15);">
+        <div style="font-family:var(--font-display);font-size:var(--small-size);font-weight:700;color:var(--blue);margin-bottom:0.3rem;">战场验证的商业价值</div>
+        <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">Elbit、Rafael的技术在实战环境中验证，这是许多防务采购方最重视的「产品信用」。反无人机系统、网络防御产品在多个冲突中的表现，直接转化为全球市场竞争力。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= SLIDE 13 学术生态 ============================= -->
+<section class="slide" id="s12">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-mint" style="width:500px;height:500px;bottom:-120px;left:-80px;opacity:0.6;"></div>
+  <div class="slide-content" style="gap:1.1rem;">
+    <div class="reveal">
+      <span class="label">Chapter 08</span>
+      <h2 style="font-size:var(--h2-size);margin-top:0.3rem;">🎓 顶尖学术机构<span style="color:var(--mint);">· 科研底座</span></h2>
+    </div>
+    <hr class="divider reveal">
+
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;">
+      <div class="card" style="padding:1.1rem;border-color:rgba(45,255,192,0.2);">
+        <div style="font-size:1.5rem;margin-bottom:0.4rem;">🔧</div>
+        <div style="font-family:var(--font-display);font-weight:800;font-size:clamp(0.9rem,1.3vw,1.05rem);color:var(--mint);margin-bottom:0.3rem;">Technion</div>
+        <div style="font-size:var(--small-size);color:var(--text-muted);margin-bottom:0.5rem;">以色列理工学院 · 海法 · 1912年</div>
+        <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.65;margin-bottom:0.5rem;">
+          全球排名前30工科院校，3位图灵奖得主，2位诺贝尔化学奖。以色列Intel/Nvidia/Google研发中心均与其深度合作。近年AI、量子计算、生物技术突破密集，是以色列芯片+AI人才最主要来源。
+        </p>
+        <div style="display:flex;gap:0.4rem;flex-wrap:wrap;">
+          <span class="tag tag-mint" style="font-size:0.6rem;">工程</span>
+          <span class="tag tag-mint" style="font-size:0.6rem;">CS/AI</span>
+          <span class="tag tag-mint" style="font-size:0.6rem;">量子</span>
+        </div>
+      </div>
+
+      <div class="card" style="padding:1.1rem;">
+        <div style="font-size:1.5rem;margin-bottom:0.4rem;">📜</div>
+        <div style="font-family:var(--font-display);font-weight:800;font-size:clamp(0.9rem,1.3vw,1.05rem);color:var(--amber);margin-bottom:0.3rem;">希伯来大学</div>
+        <div style="font-size:var(--small-size);color:var(--text-muted);margin-bottom:0.5rem;">Hebrew University · 耶路撒冷 · 1918年</div>
+        <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.65;margin-bottom:0.5rem;">
+          爱因斯坦联合创办，全球研究型大学前150。AI21 Labs创始人Yoav Shoham的知识图谱研究源于此。医学、自然语言处理、数学逻辑领域有显著贡献，Mobileye创始人Amnon Shashua是其教授。
+        </p>
+        <div style="display:flex;gap:0.4rem;flex-wrap:wrap;">
+          <span class="tag tag-amber" style="font-size:0.6rem;">NLP</span>
+          <span class="tag tag-amber" style="font-size:0.6rem;">医学</span>
+          <span class="tag tag-amber" style="font-size:0.6rem;">数学</span>
+        </div>
+      </div>
+
+      <div class="card" style="padding:1.1rem;border-color:rgba(167,139,250,0.2);">
+        <div style="font-size:1.5rem;margin-bottom:0.4rem;">🔬</div>
+        <div style="font-family:var(--font-display);font-weight:800;font-size:clamp(0.9rem,1.3vw,1.05rem);color:var(--purple);margin-bottom:0.3rem;">魏兹曼研究所</div>
+        <div style="font-size:var(--small-size);color:var(--text-muted);margin-bottom:0.5rem;">Weizmann Institute · 雷霍沃特 · 1934年</div>
+        <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.65;margin-bottom:0.5rem;">
+          纯研究机构，全球基础科学领域排名极高。计算生物学、蛋白质结构、神经科学、AI基础理论。Yann LeCun曾多次与其合作。孵化了多家生命科学独角兽（如BiondVax）。
+        </p>
+        <div style="display:flex;gap:0.4rem;flex-wrap:wrap;">
+          <span class="tag tag-purple" style="font-size:0.6rem;">生命科学</span>
+          <span class="tag tag-purple" style="font-size:0.6rem;">基础AI</span>
+          <span class="tag tag-purple" style="font-size:0.6rem;">蛋白质</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;">
+      <div class="card" style="padding:0.8rem;">
+        <div style="font-family:var(--font-display);font-size:var(--small-size);font-weight:700;color:var(--text-primary);margin-bottom:0.4rem;">Tel Aviv University（特拉维夫大学）</div>
+        <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">以色列最大综合性大学，计算机科学学院世界前50，深度学习、NLP、计算机视觉研究活跃。与以色列科技行业产学联系最为紧密。</p>
+      </div>
+      <div style="padding:0.8rem;background:var(--mint-dim);border-radius:8px;border:1px solid rgba(45,255,192,0.12);">
+        <div style="font-family:var(--font-display);font-size:var(--small-size);font-weight:700;color:var(--mint);margin-bottom:0.4rem;">知识转化机制</div>
+        <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">
+          以色列大学技术转化率全球领先：<br>
+          · Technion → 超过150家公司从中诞生<br>
+          · 魏兹曼 → Yeda Research &amp; Development专属转化机构<br>
+          · 政府基金 OCS（创新局）补贴大学-产业合作项目
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= SLIDE 14 重大并购 ============================= -->
+<section class="slide" id="s13">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-amber" style="width:600px;height:600px;top:-200px;right:-150px;opacity:0.5;"></div>
+  <div class="slide-content" style="gap:1.1rem;">
+    <div class="reveal">
+      <span class="label label-amber">Chapter 09</span>
+      <h2 style="font-size:var(--h2-size);margin-top:0.3rem;">📈 重大并购<span style="color:var(--amber);">· 科技退出图谱</span></h2>
+    </div>
+    <hr class="divider reveal" style="background:linear-gradient(90deg,var(--amber),transparent);">
+
+    <div class="reveal" style="display:grid;gap:0.6rem;">
+      <div class="company-row" style="padding:0.7rem 1rem;background:var(--bg-card);border-radius:8px;border:1px solid rgba(45,255,192,0.2);">
+        <div>
+          <div class="company-name" style="font-size:clamp(0.85rem,1.2vw,1rem);">Wiz → Google（Alphabet）</div>
+          <div class="company-meta">云网络安全 · 2026年3月完成 · 以色列史上最大单笔退出</div>
+        </div>
+        <div class="company-val" style="font-size:clamp(0.9rem,1.3vw,1.1rem);">$32,000M</div>
+      </div>
+      <div class="company-row" style="padding:0.7rem 1rem;background:var(--bg-card);border-radius:8px;border:1px solid rgba(255,178,64,0.2);">
+        <div>
+          <div class="company-name" style="font-size:clamp(0.85rem,1.2vw,1rem);">Mobileye → Intel（再IPO）</div>
+          <div class="company-meta">自动驾驶ADAS · 2017年收购 · 2022年重新NASDAQ IPO</div>
+        </div>
+        <div class="company-val stat-amber" style="font-size:clamp(0.9rem,1.3vw,1.1rem);">$15,300M</div>
+      </div>
+      <div class="company-row" style="padding:0.7rem 1rem;background:var(--bg-card);border-radius:8px;">
+        <div>
+          <div class="company-name" style="font-size:clamp(0.85rem,1.2vw,1rem);">Mellanox → NVIDIA</div>
+          <div class="company-meta">InfiniBand网络芯片 · 2020年 · 支撑NVIDIA AI算力基础设施</div>
+        </div>
+        <div class="company-val" style="font-size:clamp(0.9rem,1.3vw,1.1rem);">$6,900M</div>
+      </div>
+      <div class="company-row" style="padding:0.7rem 1rem;background:var(--bg-card);border-radius:8px;">
+        <div>
+          <div class="company-name" style="font-size:clamp(0.85rem,1.2vw,1rem);">Habana Labs → Intel</div>
+          <div class="company-meta">AI训练芯片（Gaudi系列）· 2019年 · 当时以色列最大芯片类并购</div>
+        </div>
+        <div class="company-val" style="font-size:clamp(0.9rem,1.3vw,1.1rem);">$2,000M</div>
+      </div>
+      <div class="company-row" style="padding:0.7rem 1rem;background:var(--bg-card);border-radius:8px;">
+        <div>
+          <div class="company-name" style="font-size:clamp(0.85rem,1.2vw,1rem);">WalkMe → SAP</div>
+          <div class="company-meta">数字采用平台（DAP）· 2024年 · 整合进SAP SuccessFactors</div>
+        </div>
+        <div class="company-val" style="font-size:clamp(0.9rem,1.3vw,1.1rem);">$1,500M</div>
+      </div>
+      <div class="company-row" style="padding:0.7rem 1rem;background:var(--bg-card);border-radius:8px;">
+        <div>
+          <div class="company-name" style="font-size:clamp(0.85rem,1.2vw,1rem);">Zebra Medical Vision → Nanox</div>
+          <div class="company-meta">医疗影像AI · 2021年 · 整合进Nanox医疗AI生态</div>
+        </div>
+        <div class="company-val" style="font-size:clamp(0.9rem,1.3vw,1.1rem);">$200M</div>
+      </div>
+    </div>
+
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.8rem;">
+      <div style="padding:0.6rem 0.8rem;background:var(--mint-dim);border-radius:6px;text-align:center;">
+        <div class="stat-big" style="font-size:1.5rem;">$74B</div>
+        <div style="font-size:0.65rem;color:var(--text-muted);">2025年以色列科技<br>退出总额</div>
+      </div>
+      <div style="padding:0.6rem 0.8rem;background:var(--amber-dim);border-radius:6px;text-align:center;">
+        <div class="stat-big stat-amber" style="font-size:1.5rem;">5</div>
+        <div style="font-size:0.65rem;color:var(--text-muted);">2019-2026年<br>$1B+并购案</div>
+      </div>
+      <div style="padding:0.6rem 0.8rem;background:rgba(79,140,255,0.1);border-radius:6px;text-align:center;">
+        <div class="stat-big" style="font-size:1.5rem;color:var(--blue);">+380%</div>
+        <div style="font-size:0.65rem;color:var(--text-muted);">2020-2026年<br>并购规模增幅</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= SLIDE 15 地缘风险与韧性 ============================= -->
+<section class="slide" id="s14">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-mint" style="width:500px;height:500px;bottom:-100px;right:-100px;opacity:0.6;"></div>
+  <div class="slide-content" style="gap:1.2rem;">
+    <div class="reveal">
+      <span class="label">Chapter 10</span>
+      <h2 style="font-size:var(--h2-size);margin-top:0.3rem;">地缘风险 &amp;<span style="color:var(--mint);">科技韧性</span></h2>
+    </div>
+    <hr class="divider reveal">
+
+    <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;">
+      <div>
+        <div style="font-family:var(--font-display);font-size:var(--small-size);font-weight:600;color:var(--red);margin-bottom:0.6rem;">⚠ 核心风险</div>
+        <div style="display:grid;gap:0.5rem;">
+          <div class="card" style="padding:0.8rem;border-color:rgba(255,90,90,0.15);">
+            <div style="font-family:var(--font-display);font-weight:700;font-size:var(--small-size);color:var(--red);margin-bottom:0.2rem;">持续冲突风险</div>
+            <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">2023年10月哈马斯袭击引发新一轮加沙战争，预备役召集影响部分科技公司人力；2024年与黎巴嫩、伊朗直接对抗升级，外资短暂撤出情绪出现。</p>
+          </div>
+          <div class="card" style="padding:0.8rem;border-color:rgba(255,90,90,0.15);">
+            <div style="font-family:var(--font-display);font-weight:700;font-size:var(--small-size);color:var(--red);margin-bottom:0.2rem;">司法改革内部撕裂（2023）</div>
+            <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">尼坦亚胡政府推司法改革引发科技界大规模抗议，部分企业宣布迁出资产/账户，Sequoia等VC公开表态担忧民主法治倒退，构成系统性不确定性。</p>
+          </div>
+          <div class="card" style="padding:0.8rem;border-color:rgba(255,178,64,0.15);">
+            <div style="font-family:var(--font-display);font-weight:700;font-size:var(--small-size);color:var(--amber);margin-bottom:0.2rem;">人才流失风险</div>
+            <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">部分高薪工程师已迁往柏林、葡萄牙、迪拜。长期征兵制度与科技公司扩张之间存在人力结构性矛盾。</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-family:var(--font-display);font-size:var(--small-size);font-weight:600;color:var(--mint);margin-bottom:0.6rem;">✓ 韧性证据</div>
+        <div style="display:grid;gap:0.5rem;">
+          <div class="card" style="padding:0.8rem;border-color:rgba(45,255,192,0.15);">
+            <div style="font-family:var(--font-display);font-weight:700;font-size:var(--small-size);color:var(--mint);margin-bottom:0.2rem;">战时融资不降反升</div>
+            <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">2024年以色列科技融资$13.7B，2025年回升至$15.6B——创业国度在战争状态下依然保持全球前五融资规模，验证生态韧性。</p>
+          </div>
+          <div class="card" style="padding:0.8rem;border-color:rgba(45,255,192,0.15);">
+            <div style="font-family:var(--font-display);font-weight:700;font-size:var(--small-size);color:var(--mint);margin-bottom:0.2rem;">全球分布式经营</div>
+            <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">大多数成熟以色列科技公司（Monday、CyberArk、Check Point）全球双总部，研发在以色列，商业在美国/欧洲，风险天然分散。</p>
+          </div>
+          <div class="card" style="padding:0.8rem;border-color:rgba(45,255,192,0.15);">
+            <div style="font-family:var(--font-display);font-weight:700;font-size:var(--small-size);color:var(--mint);margin-bottom:0.2rem;">战略不可替代性</div>
+            <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">美国、欧盟在网络安全、半导体、AI领域对以色列技术高度依赖，地缘政治上形成「战略护城河」，大国不愿其科技生态受损。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="padding:0.7rem 1.2rem;background:linear-gradient(90deg,rgba(45,255,192,0.06),rgba(255,178,64,0.06));border-radius:8px;border:1px solid rgba(45,255,192,0.1);">
+      <p style="font-size:var(--small-size);color:var(--text-primary);font-family:var(--font-display);line-height:1.65;">
+        <span style="color:var(--mint);font-weight:700;">结论（观点）：</span>以色列科技业已将地缘压力内化为制度基因。危机不是异常，而是常态的一部分。
+        短期冲击影响融资情绪，但不影响技术积累；根本风险是司法/民主倒退对高端人才吸引力的长期侵蚀。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= SLIDE 16 技术合作竞争 ============================= -->
+<section class="slide" id="s15">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-amber" style="width:500px;height:500px;top:-100px;left:-80px;opacity:0.5;"></div>
+  <div class="slide-content" style="gap:1.2rem;">
+    <div class="reveal">
+      <span class="label label-amber">Chapter 11</span>
+      <h2 style="font-size:var(--h2-size);margin-top:0.3rem;">合作 / 竞争<span style="color:var(--amber);">· 技术关系图</span></h2>
+    </div>
+    <hr class="divider reveal" style="background:linear-gradient(90deg,var(--amber),transparent);">
+
+    <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;">
+      <div class="card" style="padding:1rem;border-color:rgba(45,255,192,0.2);">
+        <div style="font-family:var(--font-display);font-weight:700;color:var(--mint);font-size:var(--small-size);margin-bottom:0.5rem;">🇺🇸 以色列 ↔ 美国</div>
+        <div style="display:grid;gap:0.4rem;">
+          <div class="timeline-item">
+            <div class="timeline-dot" style="width:6px;height:6px;"></div>
+            <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">Intel/NVIDIA/Google/Apple/Microsoft 在以色列均设核心研发中心</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="width:6px;height:6px;"></div>
+            <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">风投资本双向流动，以色列独角兽90%在纳斯达克上市</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="width:6px;height:6px;"></div>
+            <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">军事-情报技术共享，Stuxnet等行动展示技术协作深度</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="padding:1rem;border-color:rgba(255,178,64,0.2);">
+        <div style="font-family:var(--font-display);font-weight:700;color:var(--amber);font-size:var(--small-size);margin-bottom:0.5rem;">🇪🇺 以色列 ↔ 欧洲</div>
+        <div style="display:grid;gap:0.4rem;">
+          <div class="timeline-item">
+            <div class="timeline-dot timeline-dot-amber" style="width:6px;height:6px;"></div>
+            <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">加入欧盟Horizon科研框架（准成员），获欧盟研究资金支持</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot timeline-dot-amber" style="width:6px;height:6px;"></div>
+            <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">网络安全产品大量出口欧洲政府和企业</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot timeline-dot-amber" style="width:6px;height:6px;"></div>
+            <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">加沙战争期间部分欧盟成员暂停防务合作，产生摩擦</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="padding:1rem;border-color:rgba(167,139,250,0.2);">
+        <div style="font-family:var(--font-display);font-weight:700;color:var(--purple);font-size:var(--small-size);margin-bottom:0.5rem;">🌏 亚洲市场</div>
+        <div style="display:grid;gap:0.4rem;">
+          <div class="timeline-item">
+            <div class="timeline-dot" style="width:6px;height:6px;background:var(--purple);box-shadow:0 0 6px rgba(167,139,250,0.4);"></div>
+            <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">印度是以色列防务技术最大买家，无人机技术合作深入</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="width:6px;height:6px;background:var(--purple);"></div>
+            <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">韩国/日本半导体技术交流，医疗AI共同研发</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="width:6px;height:6px;background:var(--purple);"></div>
+            <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">中国：亚伯拉罕协议前有技术交流，当前受美国压力严格管控</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+      <div style="padding:0.8rem 1rem;background:rgba(45,255,192,0.05);border-radius:8px;border:1px solid rgba(45,255,192,0.12);">
+        <div style="font-family:var(--font-display);font-weight:700;font-size:var(--small-size);color:var(--mint);margin-bottom:0.3rem;">结构性竞争优势</div>
+        <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">在网络安全领域，以色列与美国不是竞争而是互补：以色列研发产品，美国商业化销售。全球70%的独立网络安全产品可追溯到以色列技术基因。</p>
+      </div>
+      <div style="padding:0.8rem 1rem;background:rgba(255,178,64,0.05);border-radius:8px;border:1px solid rgba(255,178,64,0.12);">
+        <div style="font-family:var(--font-display);font-weight:700;font-size:var(--small-size);color:var(--amber);margin-bottom:0.3rem;">技术出口管控压力</div>
+        <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">NSO Pegasus事件后，美国CHIPS/出口管制法推动对以色列AI/安全技术出口的重审。以色列技术出口许可证制度面临来自盟友和人权组织的双重压力。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= SLIDE 17 趋势展望 ============================= -->
+<section class="slide" id="s16">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-mint" style="width:600px;height:600px;bottom:-200px;right:-150px;opacity:0.5;"></div>
+  <div class="slide-content" style="gap:1.2rem;">
+    <div class="reveal">
+      <span class="label">Chapter 12</span>
+      <h2 style="font-size:var(--h2-size);margin-top:0.3rem;">趋势<span style="color:var(--mint);">与展望</span></h2>
+    </div>
+    <hr class="divider reveal">
+
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.8rem;">
+      <div class="card" style="padding:0.9rem;border-color:rgba(45,255,192,0.2);">
+        <div style="font-size:1.2rem;margin-bottom:0.3rem;">🚀</div>
+        <div style="font-family:var(--font-display);font-weight:700;font-size:var(--small-size);color:var(--mint);margin-bottom:0.3rem;">生成式AI大爆发</div>
+        <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">AI21 Labs、Tabnine、Cohere（加拿大/以裔）等主导企业AI。以色列军队已测试AI决策辅助（争议极大）。2025-2026年GenAI应用层创业最密集。</p>
+      </div>
+      <div class="card" style="padding:0.9rem;">
+        <div style="font-size:1.2rem;margin-bottom:0.3rem;">🔐</div>
+        <div style="font-family:var(--font-display);font-weight:700;font-size:var(--small-size);color:var(--amber);margin-bottom:0.3rem;">AI+安全融合</div>
+        <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">Cyera（$3B估值）、Torq等将AI原生融入安全工作流。下一代CNAPP将从「可见性」转向「AI自主响应」。以色列在AI-native安全上领先2-3年。</p>
+      </div>
+      <div class="card" style="padding:0.9rem;border-color:rgba(79,140,255,0.15);">
+        <div style="font-size:1.2rem;margin-bottom:0.3rem;">⚡</div>
+        <div style="font-family:var(--font-display);font-weight:700;font-size:var(--small-size);color:var(--blue);margin-bottom:0.3rem;">量子计算布局</div>
+        <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">以色列国家量子计划投入$60M。Technion、希伯来大学均有量子实验室。Quantum Machines（量子控制系统，$450M估值）是全球量子基础设施领导者。</p>
+      </div>
+    </div>
+
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.8rem;">
+      <div class="card" style="padding:0.9rem;border-color:rgba(167,139,250,0.15);">
+        <div style="font-size:1.2rem;margin-bottom:0.3rem;">🏥</div>
+        <div style="font-family:var(--font-display);font-weight:700;font-size:var(--small-size);color:var(--purple);margin-bottom:0.3rem;">医疗AI规模化</div>
+        <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">Clalit Health数据+AI模型，使以色列成为全球人口级医疗AI验证首选地。FDA批准的以色列医疗AI产品数量持续增加。</p>
+      </div>
+      <div class="card" style="padding:0.9rem;border-color:rgba(45,255,192,0.15);">
+        <div style="font-size:1.2rem;margin-bottom:0.3rem;">🚗</div>
+        <div style="font-family:var(--font-display);font-weight:700;font-size:var(--small-size);color:var(--mint);margin-bottom:0.3rem;">自动驾驶下一章</div>
+        <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">Mobileye EyeQ 6芯片支持L3+自动驾驶；Innoviz（激光雷达）、REE Automotive（电动底盘）代表以色列在全栈自动驾驶的系统性布局。</p>
+      </div>
+      <div class="card" style="padding:0.9rem;border-color:rgba(255,178,64,0.15);">
+        <div style="font-size:1.2rem;margin-bottom:0.3rem;">🌐</div>
+        <div style="font-family:var(--font-display);font-weight:700;font-size:var(--small-size);color:var(--amber);margin-bottom:0.3rem;">全球化加速</div>
+        <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">亚伯拉罕协议后海湾国家市场开放；印度成新型战略市场；美国AI政策变化推动以色列进一步嵌入西方技术供应链。</p>
+      </div>
+    </div>
+
+    <div class="reveal" style="padding:0.7rem 1.2rem;background:linear-gradient(90deg,var(--mint-dim),transparent);border-radius:8px;border-left:3px solid var(--mint);">
+      <p style="font-size:var(--small-size);color:var(--text-primary);font-family:var(--font-display);line-height:1.65;">
+        <span style="color:var(--mint);font-weight:700;">核心判断：</span>以色列科技的下一个十年，决定性赛道是「AI×安全」+「医疗AI」+「AI芯片」。
+        这三个领域恰好是其军事-学术-创业三元体系最擅长的。风险是人才稀释和政治环境——但以色列已无数次证明，压力转化为创新，是其最稳定的竞争逻辑。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= SLIDE 18 结语 ============================= -->
+<section class="slide" id="s17">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-mint" style="width:700px;height:700px;top:-200px;right:-200px;opacity:0.7;"></div>
+  <div class="bg-glow-amber" style="width:400px;height:400px;bottom:-100px;left:-50px;opacity:0.5;"></div>
+
+  <div class="slide-content" style="justify-items:start;gap:1.5rem;">
+    <div class="reveal">
+      <span class="label">Conclusion</span>
+    </div>
+
+    <h2 class="reveal" style="font-size:var(--h2-size);max-width:16ch;line-height:1.15;">
+      创业国度的<br><span style="color:var(--mint);">底层逻辑</span>
+    </h2>
+
+    <hr class="divider reveal">
+
+    <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;width:100%;">
+      <div style="display:grid;gap:0.7rem;">
+        <div style="padding:0.8rem 1rem;background:var(--bg-card);border-radius:8px;border-left:3px solid var(--mint);">
+          <div style="font-family:var(--font-display);font-weight:700;color:var(--mint);font-size:var(--small-size);margin-bottom:0.3rem;">军队 = 最强创业预科</div>
+          <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">Unit 8200 是政府资助的顶尖技术预训练+创业网络，这一模式难以复制，也难以追赶。</p>
+        </div>
+        <div style="padding:0.8rem 1rem;background:var(--bg-card);border-radius:8px;border-left:3px solid var(--amber);">
+          <div style="font-family:var(--font-display);font-weight:700;color:var(--amber);font-size:var(--small-size);margin-bottom:0.3rem;">危机 = 创新催化剂</div>
+          <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">战争中融资不降反升，印证了「压力转化动力」不是口号，而是以色列科技生态的基本定律。</p>
+        </div>
+        <div style="padding:0.8rem 1rem;background:var(--bg-card);border-radius:8px;border-left:3px solid var(--blue);">
+          <div style="font-family:var(--font-display);font-weight:700;color:var(--blue);font-size:var(--small-size);margin-bottom:0.3rem;">小国 = 强迫出海</div>
+          <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">本土市场900万人，迫使每家创业公司从第一天就以全球为市场，天然养成了产品力优先于营销的文化。</p>
+        </div>
+      </div>
+
+      <div style="display:grid;gap:1rem;">
+        <div style="padding:1rem;background:var(--mint-dim);border:1px solid rgba(45,255,192,0.2);border-radius:10px;">
+          <div style="font-family:var(--font-display);font-weight:700;color:var(--mint);margin-bottom:0.6rem;font-size:var(--small-size);">关键数字回顾</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;">
+            <div style="text-align:center;padding:0.4rem;background:rgba(0,0,0,0.2);border-radius:5px;">
+              <div class="stat-big" style="font-size:1.2rem;">$32B</div><div style="font-size:0.6rem;color:var(--text-muted);">Wiz退出纪录</div>
+            </div>
+            <div style="text-align:center;padding:0.4rem;background:rgba(0,0,0,0.2);border-radius:5px;">
+              <div class="stat-big" style="font-size:1.2rem;">42+</div><div style="font-size:0.6rem;color:var(--text-muted);">独角兽企业</div>
+            </div>
+            <div style="text-align:center;padding:0.4rem;background:rgba(0,0,0,0.2);border-radius:5px;">
+              <div class="stat-big" style="font-size:1.2rem;">2300+</div><div style="font-size:0.6rem;color:var(--text-muted);">活跃AI公司</div>
+            </div>
+            <div style="text-align:center;padding:0.4rem;background:rgba(0,0,0,0.2);border-radius:5px;">
+              <div class="stat-big" style="font-size:1.2rem;">$15.6B</div><div style="font-size:0.6rem;color:var(--text-muted);">2025融资</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="padding:0.8rem 1rem;background:rgba(255,90,90,0.06);border:1px solid rgba(255,90,90,0.15);border-radius:8px;">
+          <div style="font-family:var(--font-display);font-weight:700;font-size:var(--small-size);color:var(--red);margin-bottom:0.3rem;">最大风险</div>
+          <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.6;">司法体系与民主法治若持续受侵蚀，将从根本上动摇对顶级人才和外资的吸引力——这是比地缘冲突更深层的长期威胁。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center;">
+      <div style="font-family:var(--font-display);font-size:var(--small-size);color:var(--text-muted);">来源：</div>
+      <span class="tag tag-mint" style="font-size:0.6rem;">CTech / Calcalist</span>
+      <span class="tag tag-amber" style="font-size:0.6rem;">Israel Innovation Authority 2025</span>
+      <span class="tag tag-blue" style="font-size:0.6rem;">TechCrunch / Times of Israel</span>
+      <span class="tag tag-mint" style="font-size:0.6rem;">Tracxn / Beinsure</span>
+      <span class="tag tag-purple" style="font-size:0.6rem;">Google Cloud Blog</span>
+      <span style="font-family:var(--font-display);font-size:0.65rem;color:var(--text-muted);margin-left:auto;">wwei.ai · 2026.05</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= JS 控制器 ============================= -->
+<script>
+/* === 演示控制器 === */
+class DeckController {
+  constructor() {
+    this.slides = [...document.querySelectorAll('.slide')];
+    this.current = 0;
+    this.locked = false;
+    this.init();
+  }
+
+  init() {
+    this.setupIntersectionObserver();
+    this.setupKeyboard();
+    this.setupWheel();
+    this.setupTouch();
+    this.setupProgress();
+    this.buildNavDots();
+    this.updateNavChapters();
+    this.hideHintAfterDelay();
+    setTimeout(() => this.slides[0] && this.slides[0].classList.add('visible'), 100);
+  }
+
+  setupIntersectionObserver() {
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          const idx = this.slides.indexOf(e.target);
+          if (idx !== -1) {
+            this.current = idx;
+            this.updateProgress();
+            this.updateDots();
+            this.updateNavChapters();
+          }
+        }
+      });
+    }, { threshold: 0.6 });
+    this.slides.forEach(s => obs.observe(s));
+  }
+
+  goToSlide(idx) {
+    const n = Math.max(0, Math.min(idx, this.slides.length - 1));
+    this.current = n;
+    this.slides[n].scrollIntoView({ behavior: 'smooth', block: 'start' });
+    this.updateProgress();
+    this.updateDots();
+    this.updateNavChapters();
+  }
+
+  setupKeyboard() {
+    document.addEventListener('keydown', e => {
+      if (['ArrowDown','PageDown',' '].includes(e.key)) { e.preventDefault(); this.goToSlide(this.current+1); }
+      if (['ArrowUp','PageUp'].includes(e.key)) { e.preventDefault(); this.goToSlide(this.current-1); }
+    });
+  }
+
+  setupWheel() {
+    document.addEventListener('wheel', e => {
+      if (this.locked) return;
+      this.locked = true;
+      if (e.deltaY > 0) this.goToSlide(this.current+1);
+      else this.goToSlide(this.current-1);
+      setTimeout(() => this.locked = false, 400);
+    }, { passive: true });
+  }
+
+  setupTouch() {
+    let sy = 0;
+    document.addEventListener('touchstart', e => { sy = e.touches[0].clientY; }, { passive: true });
+    document.addEventListener('touchend', e => {
+      const dy = sy - e.changedTouches[0].clientY;
+      if (Math.abs(dy) < 40) return;
+      if (dy > 0) this.goToSlide(this.current+1);
+      else this.goToSlide(this.current-1);
+    }, { passive: true });
+  }
+
+  setupProgress() {
+    this.progressBar = document.getElementById('progressBar');
+    this.updateProgress();
+  }
+
+  buildNavDots() {
+    const nav = document.getElementById('navDots');
+    nav.innerHTML = '';
+    this.slides.forEach((_, i) => {
+      const btn = document.createElement('button');
+      btn.setAttribute('aria-label', `第 ${i+1} 页`);
+      btn.addEventListener('click', () => this.goToSlide(i));
+      nav.appendChild(btn);
+    });
+    this.updateDots();
+  }
+
+  updateProgress() {
+    if (!this.progressBar) return;
+    const r = this.slides.length <= 1 ? 1 : this.current / (this.slides.length - 1);
+    this.progressBar.style.width = `${Math.round(r * 100)}%`;
+  }
+
+  updateDots() {
+    document.querySelectorAll('#navDots button').forEach((b,i) => b.classList.toggle('active', i === this.current));
+  }
+
+  updateNavChapters() {
+    const links = document.querySelectorAll('.top-nav-chapters a');
+    const chapters = [0, 4, 7, 9, 13];
+    links.forEach((a, i) => {
+      const start = chapters[i];
+      const end = chapters[i+1] ?? this.slides.length;
+      a.classList.toggle('active', this.current >= start && this.current < end);
+    });
+  }
+
+  hideHintAfterDelay() {
+    const hint = document.getElementById('hintOverlay');
+    if (!hint) return;
+    setTimeout(() => { hint.style.opacity = '0'; setTimeout(() => hint.style.display='none', 500); }, 4000);
+  }
+}
+
+const deck = new DeckController();
+</script>
+<script defer="" src="./以色列AI科技图谱 _ 创业国度的全景报告_files/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;73a749ca3ace4b2abd6813f039000869&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+<div id="wwei-auth-widget" style="position: fixed; top: 16px; right: 16px; z-index: 2147483647;"><template shadowrootmode="open"><style>
+      :host { all: initial; }
+      * { box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif; }
+      .wrap { position: relative; }
+      .avatar {
+        width: 36px; height: 36px; border-radius: 50%; padding: 0; cursor: pointer; position: relative;
+        border: 2px solid rgba(255,255,255,0.15); background: #111214; color: #f0f0f2;
+        display: flex; align-items: center; justify-content: center; overflow: hidden;
+        transition: all .2s; box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      }
+      .avatar:hover { transform: scale(1.05); border-color: rgba(255,255,255,0.3); }
+      .avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+      .avatar .fallback { font-weight: 600; font-size: 14px; }
+      .avatar.loading { animation: pulse 1.4s infinite; cursor: default; }
+      @keyframes pulse { 0%,100% { opacity: 0.5; } 50% { opacity: 0.9; } }
+      .dot {
+        position: absolute; bottom: -2px; right: -2px; width: 12px; height: 12px;
+        border-radius: 50%; border: 2px solid #111214;
+      }
+      .login-btn {
+        display: inline-block; padding: 7px 16px; border-radius: 100px;
+        background: rgba(110, 231, 183, 0.95); color: #08090a; font-size: 13px; font-weight: 500;
+        text-decoration: none; transition: all .2s; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        border: 1px solid rgba(110, 231, 183, 0.3);
+      }
+      .login-btn:hover { background: #6ee7b7; transform: translateY(-1px); }
+      .dropdown {
+        position: absolute; top: 44px; right: 0; min-width: 260px;
+        background: #111214; border: 1px solid #1e2024; border-radius: 12px;
+        padding: 16px; opacity: 0; transform: translateY(-6px) scale(0.96);
+        pointer-events: none; transition: all .18s cubic-bezier(.4,0,.2,1);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.4); color: #f0f0f2;
+      }
+      .dropdown.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+      .dropdown-head { display: flex; gap: 12px; align-items: center; }
+      .dropdown-avatar { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; flex-shrink: 0; background: #1e2024; display: flex; align-items: center; justify-content: center; }
+      .dropdown-avatar img { width: 100%; height: 100%; object-fit: cover; }
+      .dropdown-info { flex: 1; min-width: 0; }
+      .dropdown-name { font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .dropdown-email { font-size: 11px; color: #a0a3ab; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .dropdown-level {
+        display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px;
+        font-size: 10px; font-weight: 600; letter-spacing: 0.05em;
+        border: 1px solid;
+      }
+      .dropdown-divider { height: 1px; background: #1e2024; margin: 14px 0; }
+      .dropdown-item {
+        display: block; padding: 8px 12px; font-size: 13px; color: #f0f0f2;
+        text-decoration: none; border-radius: 6px; transition: background .15s;
+      }
+      .dropdown-item:hover { background: #1e2024; }
+    </style>
+        <div class="wrap">
+          <button class="avatar" id="avatar" aria-label="user menu" title="yiyixiao920@gmail.com · ADMIN">
+            <img src="https://lh3.googleusercontent.com/a/ACg8ocKu-yjD3iu0mgzG7jWbJHAxSpl7HBx0GqADxeh6y8jMFDEhpA=s96-c" referrerpolicy="no-referrer" alt="">
+            <span class="dot" style="background:#f87171" title="ADMIN"></span>
+          </button>
+          <div class="dropdown" id="dropdown">
+            <div class="dropdown-head">
+              <div class="dropdown-avatar"><img src="https://lh3.googleusercontent.com/a/ACg8ocKu-yjD3iu0mgzG7jWbJHAxSpl7HBx0GqADxeh6y8jMFDEhpA=s96-c" referrerpolicy="no-referrer" alt=""></div>
+              <div class="dropdown-info">
+                <div class="dropdown-name">姚伊笑</div>
+                <div class="dropdown-email">yiyixiao920@gmail.com</div>
+                <div class="dropdown-level" style="color:#f87171;border-color:#f8717140">ADMIN</div>
+              </div>
+            </div>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="https://admin.wwei.ai/">管理后台 →</a>
+            <a class="dropdown-item" href="https://auth.wwei.ai/logout?next=https%3A%2F%2Fisrael-tech.wwei.ai%2F">退出登录</a>
+          </div>
+        </div>
+      </template></div><div id="cubox-react-root"><template shadowrootmode="open"><link rel="stylesheet" href="chrome-extension://bflmgpechpeohjfomgfdkkfcbhfcjohl/css/content.css"><div><div style="z-index: 2147483647;"></div></div></template></div><a id="colorPickerDivHidden"><img src="chrome-extension://njolgcnddhepjpplfifbmagdgkidikpj/logo.png" data-cubox-image-id="ae8686952839c0b69466b05216a82003" data-cubox-image-index="0" data-cubox-image-load="false"></a></body><plasmo-csui id="aitdk-csui"><template shadowrootmode="open"><style>*,:before,:after{box-sizing:border-box;border:0 solid #e5e7eb}:before,:after{--tw-content:""}html{-webkit-text-size-adjust:100%;tab-size:4;font-feature-settings:normal;font-variation-settings:normal;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}body{line-height:inherit;margin:0}hr{color:inherit;border-top-width:1px;height:0}abbr:where([title]){text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em}small{font-size:80%}sub,sup{vertical-align:baseline;font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-feature-settings:inherit;font-variation-settings:inherit;font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,[type=button],[type=reset],[type=submit]{-webkit-appearance:button;background-color:#0000;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button{height:auto}::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dl,dd,h1,h2,h3,h4,h5,h6,hr,figure,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}ol,ul,menu{margin:0;padding:0;list-style:none}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}button,[role=button]{cursor:pointer}:disabled{cursor:default}img,svg,video,canvas,audio,iframe,embed,object{vertical-align:middle;display:block}img,video{max-width:100%;height:auto}[hidden]{display:none}:host,:root{--background:0 0% 100%;--foreground:224 71.4% 4.1%;--card:0 0% 100%;--card-foreground:224 71.4% 4.1%;--popover:0 0% 100%;--popover-foreground:224 71.4% 4.1%;--primary:262.1 83.3% 57.8%;--primary-foreground:210 20% 98%;--secondary:220 14.3% 95.9%;--secondary-foreground:220.9 39.3% 11%;--muted:220 14.3% 95.9%;--muted-foreground:220 8.9% 46.1%;--accent:220 14.3% 95.9%;--accent-foreground:220.9 39.3% 11%;--destructive:0 84.2% 60.2%;--destructive-foreground:210 20% 98%;--border:220 13% 91%;--input:220 13% 91%;--ring:262.1 83.3% 57.8%;--radius:4.2px;z-index:2147483647}.dark{--background:224 71.4% 4.1%;--foreground:210 20% 98%;--card:224 71.4% 4.1%;--card-foreground:210 20% 98%;--popover:224 71.4% 4.1%;--popover-foreground:210 20% 98%;--primary:263.4 70% 50.4%;--primary-foreground:210 20% 98%;--secondary:215 27.9% 16.9%;--secondary-foreground:210 20% 98%;--muted:215 27.9% 16.9%;--muted-foreground:217.9 10.6% 64.9%;--accent:215 27.9% 16.9%;--accent-foreground:210 20% 98%;--destructive:0 62.8% 30.6%;--destructive-foreground:210 20% 98%;--border:215 27.9% 16.9%;--input:215 27.9% 16.9%;--ring:263.4 70% 50.4%}*{border-color:hsl(var(--border))}html{font-size:14px}body{background-color:hsl(var(--background));color:hsl(var(--foreground));font-feature-settings:"rlig" 1,"calt" 1;font-size:14px}*,:before,:after,::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:#3b82f680;--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }.container{width:100%;margin-left:auto;margin-right:auto;padding-left:28px;padding-right:28px}@media (width>=1400px){.container{max-width:1400px}}.visible{visibility:visible}.invisible{visibility:hidden}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.bottom-0{bottom:0}.left-1\/2{left:50%}.right-0{right:0}.right-2{right:7px}.top-0{top:0}.top-1\/2{top:50%}.top-2{top:7px}.-z-\[1\]{z-index:-1}.z-\[1\]{z-index:1}.z-\[2147483647\]{z-index:2147483647}.mx-auto{margin-left:auto;margin-right:auto}.-ml-\[13px\]{margin-left:-13px}.-mt-\[13px\]{margin-top:-13px}.mt-3{margin-top:10.5px}.mt-5{margin-top:17.5px}.block{display:block}.flex{display:flex}.hidden{display:none}.h-full{height:100%}.w-\[420px\]{width:420px}.w-\[520px\]{width:520px}.w-full{width:100%}@keyframes spin{to{transform:rotate(360deg)}}.animate-spin{animation:1s linear infinite spin}.cursor-pointer{cursor:pointer}.items-center{align-items:center}.justify-center{justify-content:center}.gap-x-2{column-gap:7px}.rounded{border-radius:3.5px}.bg-\[\#635bff\]{--tw-bg-opacity:1;background-color:rgb(99 91 255/var(--tw-bg-opacity))}.bg-\[\#635bff\]\/10{background-color:#635bff1a}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity))}.p-1{padding:3.5px}.p-6{padding:21px}.px-4{padding-left:14px;padding-right:14px}.py-2{padding-top:7px;padding-bottom:7px}.py-2\.5{padding-top:8.75px;padding-bottom:8.75px}.text-\[14px\]{font-size:14px}.text-xl{font-size:17.5px;line-height:24.5px}.font-medium{font-weight:500}.leading-6{line-height:21px}.text-black{--tw-text-opacity:1;color:rgb(0 0 0/var(--tw-text-opacity))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175/var(--tw-text-opacity))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128/var(--tw-text-opacity))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55/var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity))}.shadow-2xl{--tw-shadow:0 25px 50px -12px #00000040;--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.outline{outline-style:solid}.filter{filter:var(--tw-blur)var(--tw-brightness)var(--tw-contrast)var(--tw-grayscale)var(--tw-hue-rotate)var(--tw-invert)var(--tw-saturate)var(--tw-sepia)var(--tw-drop-shadow)}.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-duration:.15s;transition-timing-function:cubic-bezier(.4,0,.2,1)}@keyframes enter{0%{opacity:var(--tw-enter-opacity,1);transform:translate3d(var(--tw-enter-translate-x,0),var(--tw-enter-translate-y,0),0)scale3d(var(--tw-enter-scale,1),var(--tw-enter-scale,1),var(--tw-enter-scale,1))rotate(var(--tw-enter-rotate,0))}}@keyframes exit{to{opacity:var(--tw-exit-opacity,1);transform:translate3d(var(--tw-exit-translate-x,0),var(--tw-exit-translate-y,0),0)scale3d(var(--tw-exit-scale,1),var(--tw-exit-scale,1),var(--tw-exit-scale,1))rotate(var(--tw-exit-rotate,0))}}.hover\:bg-\[\#635bff\]\/90:hover{background-color:#635bffe6}</style><div id="plasmo-shadow-container" style="z-index: 2147483647; position: relative;"><div id="plasmo-inline" class="plasmo-csui-container" style="display: flex; position: relative; top: 0px; left: 0px;"><div class="aitdk-extension shadow-2xl flex fixed w-[520px] top-0 right-0 bottom-0 bg-white hidden"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x absolute right-2 top-2 z-[1] p-1 cursor-pointer text-gray-500"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-loader-circle animate-spin text-gray-400 absolute top-1/2 left-1/2 -ml-[13px] -mt-[13px] -z-[1]"><path d="M21 12a9 9 0 1 1-6.219-8.56"></path></svg></div></div></div></template></plasmo-csui><div id="immersive-translate-browser-popup" style="all: initial"><template shadowrootmode="open"><style>/** 基础色阶定义 **/
+:root,
+#mount[data-theme="light"],
+#mount:not([data-theme="dark"]) {
+  /* 中性灰阶（light） */
+  --c-00: #000000;
+  --c-22: #222222;
+  --c-33: #333333;
+  --c-66: #666666;
+  --c-83: #838383;
+  --c-99: #999999;
+  --c-c7: #c7c7c7;
+  --c-cc: #cccccc;
+  --c-e6: #e6e6e6;
+  --c-f5: #f5f5f5;
+  --c-ff: #ffffff;
+  /* 品牌主色阶（light） */
+  --p-main: #ea4c89;
+  --p-hover: #ec5e95;
+  --p-active: #e34a85;
+  --p-special: #ee71a2;
+  --p-disabled: #f4a5c4;
+  --p-text-disabled: #f9c9dc;
+  --p-weak: #fdedf3;
+  /* Surface 层级（light，TC 填充-1） */
+  --s-1: #f3f5f6;
+  --s-1-hover: #f6f8f9;
+  --s-1-active: #edf1f2;
+  --s-1-weak: #fafbfb;
+  /* 输入/边框（light，TC 填充-2） */
+  --input-bg-base: #fafbfc;
+  --input-border: #ecf0f7;
+  --input-border-strong: #e0e0e6;
+  --input-bg-strong: #fafdff;
+}
+
+:root[data-theme="dark"],
+[data-theme="dark"] {
+  /* 中性灰阶（dark） */
+  --c-00: #ffffff;
+  --c-22: #dbdbdb;
+  --c-33: #dbdbdb;
+  --c-66: #b3b3b3;
+  --c-83: #838383;
+  --c-99: #707070;
+  --c-c7: #666666;
+  --c-cc: #5c5c5c;
+  --c-e6: #3b3b3b;
+  --c-f5: #262626;
+  --c-ff: #222222;
+  /* 品牌主色阶（dark） */
+  --p-main: #e23c7c;
+  --p-hover: #ea4c89;
+  --p-active: #d5467d;
+  --p-special: #a93a65;
+  --p-disabled: #7e2f4d;
+  --p-text-disabled: #522335;
+  --p-weak: #26171d;
+  /* Surface 层级（dark，TC 填充-1） */
+  --s-1: #2d2e2f;
+  --s-1-hover: #323434;
+  --s-1-active: #202121;
+  --s-1-weak: #262627;
+  /* 输入/边框（dark，TC 填充-2） */
+  --input-bg-base: #2b2d30;
+  --input-border: #3e434b;
+  --input-border-strong: #43474b;
+  --input-bg-strong: #1f2123;
+}
+
+:root,
+#mount [data-theme] {
+  /* 业务/通用变量引用色阶（全局可见，含 Shadow DOM） */
+  --primary: var(--p-main);
+  --primary-hover: var(--p-hover);
+  --primary-inverse: #fff;
+  --modal-background: var(--s-1);
+  --modal-border: var(--input-border);
+  --modal-text: var(--c-22);
+  --modal-text-secondary: var(--c-66);
+  --modal-error: var(--p-main);
+  --modal-required: #f53f3f;
+  --modal-success: #68cd52;
+  --modal-button-background: var(--p-main);
+  --modal-button-text: var(--c-ff);
+  --modal-input-background: var(--input-bg-base);
+  --modal-check-color: var(--p-main);
+  --background-color: var(--c-ff);
+  --background-light-green: var(--s-1-weak, #f5f7f9);
+  --text-black-2: var(--c-22);
+  --text-gray-2: var(--c-22);
+  --text-gray-6: var(--c-66);
+  --text-gray-9: var(--c-99);
+  --text-gray-c2: var(--c-c7);
+  --switch-background-color: var(--c-c7, hsl(205deg, 16%, 77%));
+  --float-ball-more-button-border-color: var(--c-f5, #f6f6f6);
+  --float-ball-more-button-background-color: var(--c-ff);
+  --float-ball-more-button-hover-color: var(--p-weak);
+  --float-ball-more-button-svg-color: #6c6f73;
+  --service-bg-hover: var(--s-1-hover, #f7faff);
+  --service-bg: var(--s-1-weak, #fafbfb);
+}
+
+#mount {
+  --font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
+    "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  /* PC/H5 兼容的字号、间距、圆角、阴影变量 */
+  --f-12: 12px;
+  --f-14: 14px;
+  --f-15: 15px;
+  --f-16: 16px;
+  --f-18: 18px;
+  --f-20: 20px;
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-18: 18px;
+  --space-24: 24px;
+  --radius-8: 8px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --control-height-lg: 44px;
+  --width-28: 28px;
+  --width-24: 24px;
+  --width-20: 20px;
+  --width-18: 18px;
+  --width-16: 16px;
+  --width-label-md: 56px;
+  --shadow-lg: 0 18px 48px rgba(0, 0, 0, 0.12);
+
+  /* 常规变量 */
+  --line-height: 1.5;
+  --font-weight: 400;
+  --font-size: 16px;
+  --border-radius: 4px;
+  --border-width: 2px;
+  --outline-width: 3px;
+  --spacing: 16px;
+  --typography-spacing-vertical: 24px;
+  --block-spacing-vertical: calc(var(--spacing) * 2);
+  --block-spacing-horizontal: var(--spacing);
+  --grid-spacing-vertical: 0;
+  --grid-spacing-horizontal: var(--spacing);
+  --form-element-spacing-vertical: 12px;
+  --form-element-spacing-horizontal: 16px;
+  --nav-element-spacing-vertical: 16px;
+  --nav-element-spacing-horizontal: 8px;
+  --nav-link-spacing-vertical: 8px;
+  --nav-link-spacing-horizontal: 8px;
+  --form-label-font-weight: var(--font-weight);
+  --transition: 0.2s ease-in-out;
+  --modal-overlay-backdrop-filter: blur(4px);
+  --switch-color: var(--primary-inverse);
+  --switch-checked-background-color: var(--primary);
+  --icon-xia: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgaWQ9IkZyYW1lIj4KPHBhdGggaWQ9IlZlY3RvciIgZD0iTTguMDAyOTEgOS42Nzk4M0wzLjgzMzM5IDUuNTEyMjFMMy4wMjUzOSA2LjMxOTgzTDguMDAzMjkgMTEuMjk1MUwxMi45NzYyIDYuMzE5ODNMMTIuMTY3OSA1LjUxMjIxTDguMDAyOTEgOS42Nzk4M1oiIGZpbGw9IiM4MzgzODMiLz4KPC9nPgo8L3N2Zz4K");
+  /* 兼容旧变量：主色直接引用品牌主色阶 */
+  --primary: var(--p-main);
+  --primary-hover: var(--p-hover);
+  --primary-inverse: #fff;
+  /* Modal 业务变量引用色阶 */
+  --modal-background: var(--s-1);
+  --modal-border: var(--input-border);
+  --modal-text: var(--c-22);
+  --modal-text-secondary: var(--c-66);
+  --modal-error: var(--p-main);
+  --modal-required: #f53f3f;
+  --modal-success: #68cd52;
+  --modal-button-background: var(--p-main);
+  --modal-button-text: var(--c-ff);
+  --modal-input-background: var(--input-bg-base);
+  --modal-check-color: var(--p-main);
+  --background-color: var(--c-ff);
+  --background-light-green: var(--s-1-weak, #f5f7f9);
+  --text-black-2: var(--c-22);
+  --text-gray-2: var(--c-22);
+  --text-gray-6: var(--c-66);
+  --text-gray-9: var(--c-99);
+  --text-gray-c2: var(--c-c7);
+  --switch-background-color: var(--c-c7, hsl(205deg, 16%, 77%));
+  --float-ball-more-button-border-color: var(--c-f5, #f6f6f6);
+  --float-ball-more-button-background-color: var(--c-ff);
+  --float-ball-more-button-hover-color: var(--p-weak);
+  --float-ball-more-button-svg-color: #6c6f73;
+  --service-bg-hover: var(--s-1-hover, #f7faff);
+  --service-bg: var(--s-1-weak, #fafbfb);
+  line-height: var(--line-height);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+}
+
+@media (max-width: 480px) {
+  :root,
+  #mount {
+    --f-12: 10px;
+    --f-14: 12px;
+    --f-15: 13px;
+    --f-16: 14px;
+    --f-18: 16px;
+    --f-20: 18px;
+    --space-4: 4px;
+    --space-6: 4px;
+    --space-8: 6px;
+    --space-12: 8px;
+    --space-16: 12px;
+    --space-18: 14px;
+    --space-24: 18px;
+    --radius-8: 6px;
+    --radius-12: 10px;
+    --radius-16: 12px;
+    --control-height-lg: 38px;
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.1);
+    --width-28: 24px;
+    --width-24: 20px;
+    --width-20: 16px;
+    --width-18: 14px;
+    --width-16: 12px;
+    --width-label-md: 52px;
+  }
+}
+
+#mount * {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+:where(#mount) a,
+:where(#mount) [role="link"] {
+  --color: var(--primary);
+  --background-color: transparent;
+  outline: none;
+  background-color: var(--background-color);
+  color: var(--color);
+  -webkit-text-decoration: var(--text-decoration);
+  text-decoration: var(--text-decoration);
+  transition: background-color var(--transition), color var(--transition),
+    box-shadow var(--transition), -webkit-text-decoration var(--transition);
+  transition: background-color var(--transition), color var(--transition),
+    text-decoration var(--transition), box-shadow var(--transition);
+  transition: background-color var(--transition), color var(--transition),
+    text-decoration var(--transition), box-shadow var(--transition),
+    -webkit-text-decoration var(--transition);
+}
+:where(#mount) a:is([aria-current], :hover, :active, :focus),
+:where(#mount) [role="link"]:is([aria-current], :hover, :active, :focus) {
+  --color: var(--primary-hover);
+  --text-decoration: underline;
+}
+
+:where(#mount) label {
+  font-size: 13px;
+  line-height: 1.3;
+  color: var(--text-gray-2, #222222);
+}
+
+:where(#mount) button {
+  width: 100%;
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.3;
+  min-height: 44px;
+  border-radius: 12px;
+  padding: 0 14px;
+  border: none;
+  background-color: var(--primary, #ea4c89);
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+:where(#mount) button:hover {
+  background-color: var(--primary-hover, #f082ac);
+}
+
+:where(#mount) button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+:where(#mount) select,
+:where(#mount) input,
+:where(#mount) textarea {
+  font-family: inherit;
+  color: var(--text-gray-2, #222222);
+}
+
+:where(#mount) select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: inherit;
+  color: var(--text-gray-2, inherit);
+  font-size: 13px;
+  line-height: 1.3;
+  outline: none;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--popup-item-background-color, transparent);
+  background-image: var(--icon-xia, none);
+  background-repeat: no-repeat;
+  background-position: center right 12px;
+  background-size: 16px auto;
+  cursor: pointer;
+}
+
+:where(#mount) input[type="checkbox"] {
+  accent-color: var(--primary, #ea4c89);
+}
+
+[type="checkbox"],
+[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 1.25em;
+  height: 1.25em;
+  margin-top: -0.125em;
+  margin-right: 0.375em;
+  margin-left: 0;
+  -webkit-margin-start: 0;
+  margin-inline-start: 0;
+  -webkit-margin-end: 0.375em;
+  margin-inline-end: 0.375em;
+  border-width: var(--border-width);
+  font-size: inherit;
+  vertical-align: middle;
+  cursor: pointer;
+}
+[type="checkbox"]::-ms-check,
+[type="radio"]::-ms-check {
+  display: none;
+}
+[type="checkbox"]:checked,
+[type="checkbox"]:checked:active,
+[type="checkbox"]:checked:focus,
+[type="radio"]:checked,
+[type="radio"]:checked:active,
+[type="radio"]:checked:focus {
+  --background-color: var(--primary);
+  --border-color: var(--primary);
+  background-image: var(--icon-checkbox);
+  background-position: center;
+  background-size: 0.75em auto;
+  background-repeat: no-repeat;
+}
+[type="checkbox"] ~ label,
+[type="radio"] ~ label {
+  display: inline-block;
+  margin-right: 0.375em;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+[type="checkbox"]:indeterminate {
+  --background-color: var(--primary);
+  --border-color: var(--primary);
+  background-image: var(--icon-minus);
+  background-position: center;
+  background-size: 0.75em auto;
+  background-repeat: no-repeat;
+}
+
+[type="radio"] {
+  border-radius: 50%;
+}
+[type="radio"]:checked,
+[type="radio"]:checked:active,
+[type="radio"]:checked:focus {
+  --background-color: var(--primary-inverse);
+  border-width: 0.35em;
+  background-image: none;
+}
+
+:where(#mount) [type="checkbox"][role="switch"] {
+  --background-color: var(--switch-background-color);
+  --border-color: var(--switch-background-color);
+  --color: var(--switch-color);
+  width: 2.25em;
+  height: 1.25em;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 1.25em;
+  background-color: var(--background-color);
+  line-height: 1.25em;
+}
+:where(#mount) [type="checkbox"][role="switch"]:focus {
+  --background-color: var(--switch-background-color);
+  --border-color: var(--switch-background-color);
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked {
+  --background-color: var(--switch-checked-background-color);
+  --border-color: var(--switch-checked-background-color);
+}
+:where(#mount) [type="checkbox"][role="switch"]:before {
+  display: block;
+  width: calc(1.25em - (var(--border-width) * 2));
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--color);
+  content: "";
+  transition: margin 0.1s ease-in-out;
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked {
+  background-image: none;
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked::before {
+  margin-left: calc(1.125em - var(--border-width));
+  -webkit-margin-start: calc(1.125em - var(--border-width));
+  margin-inline-start: calc(1.125em - var(--border-width));
+}
+
+:where(#mount) [type="checkbox"][aria-invalid="false"],
+:where(#mount) [type="checkbox"]:checked[aria-invalid="false"],
+:where(#mount) [type="radio"][aria-invalid="false"],
+:where(#mount) [type="radio"]:checked[aria-invalid="false"],
+:where(#mount) [type="checkbox"][role="switch"][aria-invalid="false"],
+:where(#mount) [type="checkbox"][role="switch"]:checked[aria-invalid="false"] {
+  --border-color: var(--form-element-valid-border-color);
+}
+:where(#mount) [type="checkbox"][aria-invalid="true"],
+:where(#mount) [type="checkbox"]:checked[aria-invalid="true"],
+:where(#mount) [type="radio"][aria-invalid="true"],
+:where(#mount) [type="radio"]:checked[aria-invalid="true"],
+:where(#mount) [type="checkbox"][role="switch"][aria-invalid="true"],
+:where(#mount) [type="checkbox"][role="switch"]:checked[aria-invalid="true"] {
+  --border-color: var(--form-element-invalid-border-color);
+}
+
+.text-black {
+  color: var(--text-black-2);
+}
+
+.text-gray-2 {
+  color: var(--text-gray-2);
+}
+
+.text-gray-6 {
+  color: var(--text-gray-6);
+}
+
+.text-gray-9 {
+  color: var(--text-gray-9);
+}
+
+.text-gray-c2 {
+  color: var(--text-gray-c2);
+}
+
+.pt-4 {
+  padding-top: 16px;
+}
+
+.p-2 {
+  padding: 8px;
+}
+
+.pl-5 {
+  padding-left: 48px;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.pl-2 {
+  padding-left: 8px;
+}
+
+.pl-4 {
+  padding-left: 24px;
+}
+
+.pt-2 {
+  padding-top: 8px;
+}
+
+.pb-2 {
+  padding-bottom: 8px;
+}
+
+.pb-4 {
+  padding-bottom: 16px;
+}
+
+.pb-5 {
+  padding-bottom: 20px;
+}
+
+.pr-5 {
+  padding-right: 48px;
+}
+
+.text-sm {
+  font-size: 13px;
+}
+
+.text-base {
+  font-size: 16px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.mb-0 {
+  margin-bottom: 0px;
+}
+
+.mb-2 {
+  margin-bottom: 8px;
+}
+
+.mb-4 {
+  margin-bottom: 16px;
+}
+
+.mb-3 {
+  margin-bottom: 12px;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.py-2 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.py-2-5 {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mt-2 {
+  margin-top: 8px;
+}
+
+.mt-3 {
+  margin-top: 12px;
+}
+
+.mt-4 {
+  margin-top: 16px;
+}
+
+.mt-5 {
+  margin-top: 20px;
+}
+
+.mt-6 {
+  margin-top: 24px;
+}
+
+.mb-1 {
+  margin-bottom: 4px;
+}
+
+.ml-4 {
+  margin-left: 24px;
+}
+
+.ml-3 {
+  margin-left: 16px;
+}
+
+.ml-2 {
+  margin-left: 8px;
+}
+
+.ml-1 {
+  margin-left: 4px;
+}
+
+.mr-1 {
+  margin-right: 4px;
+}
+
+.mr-2 {
+  margin-right: 8px;
+}
+
+.mr-3 {
+  margin-right: 16px;
+}
+
+.mx-2 {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.pl-3 {
+  padding-left: 12px;
+}
+
+.pr-3 {
+  padding-right: 12px;
+}
+
+.p-3 {
+  padding: 12px;
+}
+
+.px-1 {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.px-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.pt-3 {
+  padding-top: 12px;
+}
+
+.px-6 {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.px-4 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.pt-6 {
+  padding-top: 20px;
+}
+
+.py-3 {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.py-0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.left-auto {
+  left: auto !important;
+}
+
+.max-h-28 {
+  max-height: 112px;
+}
+
+.max-h-30 {
+  max-height: 120px;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
+.text-xs {
+  font-size: 12px;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-3 {
+  flex: 3;
+}
+
+.flex-4 {
+  flex: 4;
+}
+
+.flex-2 {
+  flex: 2;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.max-content {
+  width: max-content;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-baseline {
+  align-items: baseline;
+}
+
+.my-5 {
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+.my-4 {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.my-3 {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.pt-3 {
+  padding-top: 12px;
+}
+
+.px-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.pt-2 {
+  padding-top: 8px;
+}
+
+.px-2 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.pt-1 {
+  padding-top: 4px;
+}
+
+.px-1 {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.pb-2 {
+  padding-bottom: 8px;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.shrink-0 {
+  flex-shrink: 0;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.close {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  background-image: var(--icon-close);
+  background-position: center;
+  background-size: auto 1rem;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  transition: opacity var(--transition);
+}
+
+.padding-two-column {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.muted {
+  color: #999;
+}
+
+.text-label {
+  color: #666;
+}
+
+.display-none {
+  display: none;
+}
+
+/* dark use #18232c */
+@media (prefers-color-scheme: dark) {
+  .text-label {
+    color: #9ca3af;
+  }
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.text-decoration-none:is([aria-current], :hover, :active, :focus),
+[role="link"]:is([aria-current], :hover, :active, :focus) {
+  --text-decoration: none !important;
+  background-color: transparent !important;
+}
+
+.text-overflow-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.max-w-20 {
+  max-width: 180px;
+  white-space: nowrap;
+}
+
+[data-theme="light"],
+#mount:not([data-theme="dark"]) {
+  --popup-footer-background-color: #e8eaeb;
+  --popup-content-background-color: #ffffff;
+  --popup-item-background-color: #f3f5f6;
+  --popup-item-hover-background-color: #eaeced;
+  --popup-trial-pro-background-color: #f9fbfc;
+  --service-select-content-shadow: 0px 2px 12px 0px rgba(75, 76, 77, 0.2);
+  --service-select-border-color: #fafafa;
+  --service-select-selected-background-color: #f3f5f6;
+  --download-app-background: #f3f5f6;
+  --translate-language-background-color: #f3f5f6;
+  --translate-language-icon-color: #666666;
+  --translate-language-text-color: #222222;
+  --translate-language-hover-background-color: #fdedf3;
+  --translate-language-hover-icon-color: #e95d93;
+  --error-bg: #fdedf3;
+  --error-text: #222;
+  --error-link: #ea4c89;
+}
+
+[data-theme="dark"] {
+  --popup-footer-background-color: #0d0d0d;
+  --popup-content-background-color: #191919;
+  --popup-item-background-color: #272727;
+  --popup-item-hover-background-color: #333333;
+  --popup-trial-pro-background-color: #222222;
+  --service-select-content-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.9);
+  --service-select-border-color: #2c2c2c;
+  --service-select-selected-background-color: #333333;
+  --download-app-background: #333;
+  --translate-language-background-color: #2d2e2f;
+  --translate-language-icon-color: #b3b3b3;
+  --translate-language-text-color: #b3b3b3;
+  --translate-language-hover-background-color: #a97b8c;
+  --translate-language-hover-icon-color: rgba(255, 255, 255, 0.9);
+  --error-bg: #26171d;
+  --error-text: #dbdbdb;
+  --error-link: #ea4c89;
+}
+
+#mount {
+  min-width: 268px;
+}
+
+body {
+  padding: 0;
+  margin: 0 auto;
+  min-width: 268px;
+  border-radius: 10px;
+}
+
+.popup-container {
+  font-size: 16px;
+  --font-size: 16px;
+  color: #666;
+  background-color: var(--popup-footer-background-color);
+  width: 316px;
+  min-width: 316px;
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-content {
+  background-color: var(--popup-content-background-color);
+  border-radius: 0px 0px 12px 12px;
+  padding: 16px 20px;
+}
+
+.popup-userscript-three-feature-layout {
+  background-color: var(--popup-footer-background-color);
+  width: 350px;
+  min-width: 350px;
+}
+
+.popup-userscript-three-feature-layout .popup-content {
+  padding-bottom: 20px;
+  border-radius: 0 0 12px 12px;
+}
+
+.popup-userscript-three-feature-layout .popup-footer {
+  border-radius: 0;
+}
+
+.immersive-translate-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  touch-action: none;
+}
+
+.immersive-translate-popup-wrapper {
+  background: var(--background-color);
+  border-radius: 10px;
+  border: 1px solid var(--muted-border-color);
+}
+
+.main-button {
+  font-size: 16px;
+  font-weight: 700;
+  vertical-align: middle;
+  border-radius: 12px;
+  padding: unset;
+  height: 48px;
+  line-height: 48px;
+  flex: 1;
+}
+
+select.translate-service,
+select.min-select {
+  --form-element-spacing-horizontal: 0;
+  margin-bottom: 0px;
+  max-width: unset;
+  flex: 1;
+  overflow: hidden;
+  font-size: 13px;
+  border: none;
+  border-radius: 8px;
+  padding-right: 30px;
+  padding-left: 0px;
+  background-position: center right 12px;
+  background-size: 16px auto;
+  background-image: var(--icon-xia);
+  text-overflow: ellipsis;
+  color: var(--text-gray-2);
+  background-color: transparent;
+  box-shadow: unset !important;
+  cursor: pointer;
+}
+
+select.more {
+  background-position: center right;
+  padding-right: 20px;
+}
+
+select.translate-service {
+  color: var(--text-black-2);
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSI4IiB2aWV3Qm94PSIwIDAgOCA4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIG9wYWNpdHk9IjAuOCI+PHBhdGggZD0iTTMuNDc5NzMgNi4zODY0M0wwLjcyOTI5NyAzLjMyMjE2QzAuNjE2ODggMy4xOTY5NCAwLjU1NDY5NSAzLjAzNDU5IDAuNTU0Njg4IDIuODY2M0MwLjU1NDY4OCAyLjQ4OTI0IDAuODYwNTQ3IDIuMTgzNTkgMS4yMzc4NCAyLjE4MzU5SDYuNzM4NzFDNi45MDcwNyAyLjE4MzU4IDcuMDY5NTEgMi4yNDU3MiA3LjE5NDg4IDIuMzU4MDlDNy40NzU3NCAyLjYwOTg2IDcuNDk5MTkgMy4wNDE0OCA3LjI0NzI2IDMuMzIyMTZMNC40OTY4MiA2LjM4NjQ0QzQuNDgwMzIgNi40MDQ4MiA0LjQ2MjgzIDYuNDIyMjkgNC40NDQ0NCA2LjQzODc4QzQuMTYzNTggNi42OTA1NSAzLjczMTY2IDYuNjY3MTEgMy40Nzk3MyA2LjM4NjQzWiIgZmlsbD0iIzk5OTk5OSIvPjwvZz48L3N2Zz4K");
+  background-size: 8px auto;
+}
+
+.min-select-container.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.popup-footer {
+  background-color: var(--popup-footer-background-color);
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+/* Footer 三栏布局样式 */
+.footer-link-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  min-width: 72px;
+}
+
+.footer-icon-btn {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-icon-btn svg {
+  color: #999999;
+}
+
+[data-theme="dark"] .footer-icon-btn svg {
+  color: #707070;
+}
+
+.footer-link-text {
+  font-size: 12px;
+  line-height: 18px;
+  color: #666666;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .footer-link-text {
+  color: #b3b3b3;
+}
+
+.footer-link-btn-right {
+  justify-content: flex-end;
+}
+
+.footer-center-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #999999;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.footer-center-text.is-overflowing {
+  justify-content: flex-start;
+}
+
+.footer-center-text.is-overflowing .footer-center-content {
+  animation: footer-scroll-text 12s linear infinite;
+}
+
+@keyframes footer-scroll-text {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.footer-center-content {
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-scroll-gap {
+  display: inline-block;
+  width: 80px;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .footer-center-text {
+  color: #707070;
+}
+
+.footer-text-content {
+  display: inline-block;
+}
+
+.footer-privacy-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-version-inline-text {
+  font-size: 12px;
+  color: #999999;
+  line-height: 1;
+  border-bottom: 1px solid transparent;
+}
+
+[data-theme="dark"] .footer-version-inline-text {
+  color: #707070;
+}
+
+.footer-version-inline-text:hover {
+  border-bottom-color: #999999;
+}
+
+[data-theme="dark"] .footer-version-inline-text:hover {
+  border-bottom-color: #707070;
+}
+
+.translate-language-row {
+  gap: 4px;
+}
+
+.translate-language-exchange {
+  width: 36px;
+  height: 48px;
+  background-color: var(--translate-language-background-color);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--translate-language-icon-color);
+  flex-shrink: 0;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.translate-language-exchange:hover {
+  color: var(--translate-language-hover-icon-color);
+}
+
+.translate-language-exchange-active {
+  background-color: var(--translate-language-hover-background-color);
+  color: var(--translate-language-hover-icon-color);
+}
+
+.translate-language-exchange-active:hover {
+  background-color: var(--translate-language-hover-background-color);
+  color: var(--translate-language-hover-icon-color);
+}
+
+.translate-language-arrow {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+}
+
+.translation-service-container {
+  background-color: var(--popup-item-background-color);
+  border-radius: 12px;
+}
+
+.translation-service-primary-field {
+  position: relative;
+}
+
+.translation-service-guide-hitbox {
+  position: absolute;
+  right: 46px;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: auto;
+}
+
+.min-select-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 44px;
+  background-color: var(--popup-item-background-color);
+  padding-left: 16px;
+}
+
+.min-select-container:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.min-select-container:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.min-select-container:only-child {
+  border-radius: 10px;
+}
+
+.popup-ai-context-label {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+  min-width: 60px;
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+.popup-ai-context-switch {
+  align-self: center;
+  margin: 0;
+  margin-inline-end: 12px;
+}
+
+.translate-mode {
+  width: 36px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: var(--translate-language-background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  color: var(--translate-language-text-color);
+  margin-right: 8px;
+}
+
+/* 快捷操作设置标题栏 */
+.widgets-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 4px;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.widgets-header-title {
+  color: #999999;
+}
+
+.widgets-header-action {
+  color: #999999;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.widgets-header-action:hover {
+  color: #666666;
+}
+
+.widgets-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+  gap: 8px;
+}
+
+.popup-userscript-three-feature-layout .widgets-container-compact-monkey {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 12px;
+}
+
+.widgets-container.widgets-single-item {
+  grid-template-columns: minmax(0, 1fr);
+  margin-top: 12px;
+}
+
+.widgets-container.widgets-single-item .widget-item {
+  max-width: none;
+}
+
+/* 当只有两个小组件时的样式优化 */
+.widgets-container.widgets-two-items {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.widgets-container.widgets-two-items .widget-item {
+  max-width: none;
+}
+
+.widget-item {
+  display: flex;
+  width: 100%;
+  min-height: 44px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 1px solid #eef0f2;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  padding: 0 14px;
+  text-align: left;
+  gap: 6px;
+}
+
+.widget-item.widget-item-single {
+  flex: 1 1 auto;
+  flex-direction: row;
+  justify-content: center;
+  border: 1px solid #eef0f2;
+  border-radius: 16px;
+  padding: 0 14px;
+  background: transparent;
+}
+
+.popup-userscript-three-feature-layout .widget-item-compact {
+  min-height: 60px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  padding: 8px 12px;
+}
+
+.widget-item svg {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+}
+
+.widget-icon-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--c-66, #666666);
+  font-size: 14px;
+  line-height: 21px;
+  text-align: left;
+  word-break: keep-all;
+}
+
+.popup-userscript-three-feature-layout .widget-item-compact .widget-icon-text {
+  white-space: nowrap;
+  overflow: visible;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.widget-item.widget-item-single .widget-icon-text {
+  white-space: nowrap;
+  text-align: left;
+  color: var(--c-66, #666666);
+}
+
+[data-theme="dark"] .widget-item,
+[data-theme="dark"] .widget-item.widget-item-single {
+  border-color: #2e2e2e;
+}
+
+[data-theme="dark"] .widget-icon-text,
+[data-theme="dark"] .widget-item.widget-item-single .widget-icon-text {
+  color: var(--c-66, #666666);
+}
+
+[data-theme="dark"] .more-settings-icon {
+  fill: #191919;
+}
+
+.share-button-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 2px 3px 0 8px;
+}
+
+.share-button-container svg {
+  fill: var(--text-gray-9);
+}
+
+.min-select-container:hover,
+.widget-item:hover {
+  background-color: var(--popup-item-hover-background-color);
+}
+
+.main-button:hover {
+  background-color: #f5508f;
+}
+
+.share-button-container:hover {
+  background-color: var(--popup-item-background-color);
+  border-radius: 6px;
+}
+
+.error-boundary {
+  background: #fff2f0;
+  border: 1px solid #ffccc7;
+  display: flex;
+  padding: 12px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.88);
+  word-break: break-all;
+  margin: 12px;
+  border-radius: 12px;
+  flex-direction: column;
+}
+
+.upgrade-pro {
+  border-radius: 11px;
+  background: linear-gradient(57deg, #272727 19.8%, #696969 82.2%);
+  padding: 2px 8px;
+  transform: scale(0.85);
+}
+
+.upgrade-pro span {
+  background: linear-gradient(180deg, #ffeab4 17.65%, #f8c235 85.29%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+.upgrade-pro svg {
+  margin-top: -2px;
+}
+
+.upgrade-pro:hover {
+  background: linear-gradient(57deg, #3d3d3d 19.8%, #949494 82.2%);
+}
+
+.border-bottom-radius-0 {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.trial-pro-container {
+  border-radius: 0px 0px 12px 12px;
+  background: var(--popup-trial-pro-background-color);
+  display: flex;
+  align-items: center;
+  height: 44px;
+  padding-left: 16px;
+  padding-right: 12px;
+  font-size: 12px;
+}
+
+.trial-pro-container label {
+  line-height: 13px;
+  color: var(--text-black-2);
+}
+
+.trial-pro-container img {
+  margin-left: 5px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.upgrade-pro-discount-act {
+  height: 25px;
+  display: flex;
+  padding: 0 4px;
+  align-items: center;
+  border-radius: 15px;
+  background: linear-gradient(
+    90deg,
+    #cefbfa 11.33%,
+    #d7f56f 63.75%,
+    #fccd5e 100%
+  );
+  transform: scale(0.9);
+  box-shadow: 0px 1.8px 3.6px 0px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.upgrade-pro-discount-act span {
+  font-size: 12px;
+  font-weight: 700;
+  margin-left: 4px;
+  color: #222222;
+}
+
+.upgrade-pro-discount-act:hover {
+  text-decoration: unset;
+  background: linear-gradient(
+    90deg,
+    #e2fffe 11.33%,
+    #e6ff91 63.75%,
+    #ffdf93 100%
+  );
+}
+
+.custom-select-container {
+  width: 200px;
+  position: relative;
+  flex: 1;
+}
+
+#translation-service-select {
+  padding-right: 12px;
+}
+
+.custom-select-content {
+  border-radius: 12px;
+  background: var(--popup-content-background-color);
+  box-shadow: var(--service-select-content-shadow);
+  border: 1px solid var(--service-select-border-color);
+  padding: 8px;
+  position: absolute;
+  left: -68px;
+  right: 0;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.custom-select-item.default {
+  width: 100%;
+  padding: 0;
+}
+
+.custom-select-item {
+  font-size: 14px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--text-black-2);
+  width: auto;
+  overflow: hidden;
+  height: 30px;
+  line-height: 30px;
+}
+
+.custom-select-item-img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .custom-select-item-img {
+    margin-right: 6px;
+  }
+}
+
+.custom-select-content .custom-select-item.selected,
+.custom-select-content .custom-select-item:hover {
+  background: var(--service-select-selected-background-color);
+}
+
+.custom-select-item > span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.custom-select-item-pro {
+  font-size: 12px;
+  margin-left: 6px;
+  display: flex;
+}
+
+.custom-select-item-pro img {
+  margin: 0 3px;
+  width: 20px;
+  flex-shrink: 0;
+}
+
+.service-select-inline-sponsor-container {
+  width: 50px;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.service-select-inline-sponsor-marquee {
+  min-width: max-content;
+  display: inline-flex;
+  align-items: center;
+  column-gap: 12px;
+  animation: service-select-inline-sponsor-scroll 10s linear infinite;
+}
+
+.service-select-inline-sponsor-track {
+  min-width: max-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+@keyframes service-select-inline-sponsor-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 6px));
+  }
+}
+
+.custom-select-group-header {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-gray-9);
+  padding: 8px 8px 6px;
+  margin-top: 2px;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.custom-select-group-header--recommendation {
+  color: #beb3a0;
+  font-weight: 400;
+  letter-spacing: 0;
+  padding-top: 4px;
+}
+
+.custom-select-group-header-tip {
+  display: inline-flex;
+  align-items: center;
+  color: #bcbcbc;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.more-container {
+  position: relative;
+}
+
+.new-menu-indicator {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #ef3434;
+  border-radius: 50%;
+  right: 18px;
+  top: 4px;
+}
+
+.download-app {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px;
+  background: var(--download-app-background);
+  padding: 4px 8px;
+  color: var(--text-gray-6);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Popup 动画效果 */
+@keyframes popup-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes popup-fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+}
+
+.popup-generic-content {
+  animation: popup-fade-in 0.2s ease-out;
+}
+
+.popup-generic-content.hiding {
+  animation: popup-fade-out 0.15s ease-in;
+}
+
+select.min-select {
+  --form-element-spacing-horizontal: 0;
+  max-width: 128px;
+  overflow: hidden;
+  color: var(--primary);
+  font-size: 13px;
+  border: none;
+  padding: 0;
+  padding-right: 20px;
+  text-overflow: ellipsis;
+  color: var(--color);
+}
+select.min-select-secondary {
+  color: var(--color);
+}
+select.min-select:focus {
+  outline: none;
+  border: none;
+  --box-shadow: none;
+}
+
+select.min-select-left {
+  padding-right: 0px;
+  /* padding-left: 24px; */
+  /* background-position: center left 0; */
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+select.transform-padding-left {
+  padding-left: 12px;
+  transform: translateX(-12px);
+  background-position: center right 0px;
+}
+
+select.text-gray-6 {
+  color: var(--text-gray-6);
+}
+
+/* dark use black, for windows */
+@media (prefers-color-scheme: dark) {
+  select.translate-service option,
+  select.min-select option {
+    background-color: #666666;
+  }
+}
+
+select.min-select-no-arrow {
+  background-image: none;
+  padding-right: 0;
+}
+
+.activity-tips {
+  border-radius: 8px;
+  padding: 0px 8px;
+  height: 26px;
+  background: linear-gradient(
+    83deg,
+    #faccde -0.87%,
+    #fce7ef 43.13%,
+    #fbd6e4 72.08%,
+    #ffb3d1 96.34%
+  );
+  color: #333;
+  cursor: pointer;
+  gap: 4px;
+  font-size: 12px;
+}
+
+.activity-tips-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.countdown-container {
+  min-width: 50px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.01em;
+}
+
+.activity-tips-text {
+  font-weight: 600;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 非会员升级提示 */
+.upgrade-tips {
+  padding: 0px 6px 0px 4px;
+  height: 18px;
+  color: #ea4c89;
+  cursor: pointer;
+  gap: 6px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.upgrade-tips svg:first-child {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  filter: drop-shadow(0px 4px 4px rgba(236, 76, 140, 0.2));
+}
+
+.upgrade-tips-text {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.upgrade-tips-switch {
+  position: relative;
+  width: 30px;
+  height: 18px;
+  border-radius: 24px;
+  background: #cccccc;
+  flex-shrink: 0;
+}
+
+.upgrade-tips-switch-thumb {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+/* 抽屉组件样式 */
+.drawer-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+
+.drawer-overlay.drawer-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.drawer-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ffffff;
+  border-radius: 12px 12px 0 0;
+  z-index: 101;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-visible .drawer-panel {
+  transform: translateY(0);
+}
+
+[data-theme="dark"] .drawer-panel {
+  background: #222222;
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  flex-shrink: 0;
+}
+
+.drawer-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333333;
+}
+
+[data-theme="dark"] .drawer-title {
+  color: #e0e0e0;
+}
+
+.drawer-close {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999999;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.drawer-close:hover {
+  background-color: #f3f5f6;
+}
+
+[data-theme="dark"] .drawer-close:hover {
+  background-color: #333333;
+}
+
+.drawer-body {
+  padding: 16px 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.drawer-body.drawer-body-hover {
+  padding: 0 20px 20px 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.drawer-body.drawer-body-more-settings {
+  padding-top: 0;
+}
+
+.drawer-footer {
+  padding: 12px 20px;
+  border-top: 1px solid #eef0f2;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+[data-theme="dark"] .drawer-footer {
+  border-top: 1px solid #2e2e2e;
+}
+
+.drawer-footer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.drawer-footer-actions-single {
+  justify-content: center;
+}
+
+.drawer-footer-text {
+  font-size: 12px;
+  cursor: pointer;
+  color: #999999;
+  text-decoration: none;
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.drawer-footer-actions-single .drawer-footer-text {
+  flex: 0 1 auto;
+  max-width: 100%;
+}
+
+.drawer-footer-text:hover {
+  text-decoration: underline;
+}
+
+/* 抽屉内容区域样式 */
+.drawer-section {
+  margin-bottom: 16px;
+}
+
+.drawer-section:last-child {
+  margin-bottom: 0;
+}
+
+.drawer-section-highlight {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+[data-theme="dark"] .drawer-section-highlight {
+  background-color: #2a2a2a;
+}
+
+.drawer-section-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #666666;
+  margin-bottom: 12px;
+}
+
+[data-theme="dark"] .drawer-section-title {
+  color: #999999;
+}
+
+.drawer-section-divider {
+  height: 1px;
+  background-color: #eef0f2;
+  margin: 16px 0;
+}
+
+/* ========== 通用抽屉组件样式 ========== */
+.popup-drawer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.popup-drawer-card {
+  background: #f3f5f6;
+  border-radius: 12px;
+  padding: 12px 12px 16px;
+}
+
+[data-theme="dark"] .popup-drawer-card {
+  background: #2a2a2a;
+}
+
+.popup-drawer-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 21px;
+  gap: 12px;
+}
+
+.popup-drawer-card-header input[type="checkbox"][role="switch"] {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.popup-drawer-card-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #222222;
+  line-height: 21px;
+}
+
+[data-theme="dark"] .popup-drawer-card-title {
+  color: #e0e0e0;
+}
+
+.popup-drawer-card-divider {
+  height: 1px;
+  width: calc(100% + 24px);
+  background-color: #ffffff;
+  margin: 12px -12px 16px;
+}
+
+[data-theme="dark"] .popup-drawer-card-divider {
+  background-color: #333333;
+}
+
+.popup-drawer-demo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.popup-drawer-demo-region-fixed {
+  height: 51px;
+  max-height: 51px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-region-min {
+  min-height: 51px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-selection {
+  width: 100%;
+  min-width: 0;
+  flex-wrap: nowrap;
+}
+
+.popup-drawer-demo-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-plus,
+.popup-drawer-demo-equal {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  color: #333333;
+}
+
+[data-theme="dark"] .popup-drawer-demo-plus,
+[data-theme="dark"] .popup-drawer-demo-equal {
+  color: #e0e0e0;
+}
+
+.popup-drawer-demo-logo {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-logo img {
+  width: 28px;
+  height: 28px;
+  display: block;
+  filter: drop-shadow(0 4px 12px rgba(255, 166, 201, 0.5));
+}
+
+.popup-drawer-demo-result {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #333333;
+}
+
+.popup-drawer-demo-result-ellipsis {
+  min-width: 0;
+  max-width: calc(100% - 72px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .popup-drawer-demo-result {
+  color: #e0e0e0;
+}
+
+.popup-drawer-trigger {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.popup-drawer-trigger-label {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #999999;
+  padding-left: 4px;
+}
+
+.popup-drawer-trigger-options {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.popup-drawer-trigger-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #333333;
+  background: #ffffff;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.popup-drawer-trigger-option-disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.popup-drawer-trigger-option:not(.popup-drawer-trigger-option-selected):hover {
+  border-color: #d0d3d6;
+}
+
+.popup-drawer-trigger-option-selected {
+  border: 0.5px solid #ea4c89;
+  background: #fdedf3;
+  box-shadow: 0px 4px 12px rgba(255, 166, 201, 0.5);
+}
+
+[data-theme="dark"] .popup-drawer-trigger-option {
+  background: #1f1f1f;
+  border-color: #333333;
+  color: #e0e0e0;
+}
+
+[data-theme="dark"]
+  .popup-drawer-trigger-option:not(
+    .popup-drawer-trigger-option-selected
+  ):hover {
+  border-color: #444444;
+}
+
+[data-theme="dark"] .popup-drawer-trigger-option-selected {
+  background: rgba(233, 76, 137, 0.2);
+  border-color: #ea4c89;
+  box-shadow: 0 4px 12px 0 rgba(255, 166, 201, 0.3);
+}
+
+.popup-drawer-trigger-option-with-icon {
+  gap: 8px;
+}
+
+/* ========== 通用抽屉演示区域样式 ========== */
+/* 键帽样式 */
+.popup-drawer-demo-keycap {
+  min-width: 72px;
+  padding: 9px;
+  height: auto;
+  box-sizing: border-box;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  color: #ffffff;
+  background:
+    radial-gradient(
+      60px 36px at 85% 100%,
+      rgba(208, 208, 208, 0.2),
+      rgba(255, 255, 255, 0)
+    ),
+    radial-gradient(72px 36px at 50% 0%, #101010 0%, #242424 100%);
+  box-shadow:
+    2px 2px 3.5px rgba(0, 0, 0, 0.4),
+    inset 0.5px 0.7px 0.4px rgba(255, 255, 255, 0.5),
+    inset -0.5px -0.5px 0.2px rgba(0, 0, 0, 0.6);
+}
+
+.popup-drawer-demo-keycap-text {
+  max-width: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 小圆点样式 */
+.popup-drawer-demo-mini-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ea4c89;
+  flex-shrink: 0;
+  align-self: center;
+  box-shadow: 0 4px 12px rgba(255, 166, 201, 0.5);
+}
+
+[data-theme="dark"] .drawer-section-divider {
+  background-color: #333333;
+}
+
+/* 开关行 */
+.drawer-switch-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.drawer-switch-row.drawer-row-border {
+  border-bottom: 1px solid #eef0f2;
+  margin-bottom: 8px;
+  padding-bottom: 12px;
+}
+
+[data-theme="dark"] .drawer-switch-row.drawer-row-border {
+  border-bottom-color: #333333;
+}
+
+.drawer-switch-label {
+  font-size: 14px;
+  color: #222222;
+}
+
+[data-theme="dark"] .drawer-switch-label {
+  color: #e0e0e0;
+}
+
+/* 链接行 */
+.drawer-link-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  cursor: pointer;
+  border-bottom: 1px solid #eef0f2;
+  font-size: 14px;
+  color: #222222;
+}
+
+.drawer-link-row:last-child {
+  border-bottom: none;
+}
+
+[data-theme="dark"] .drawer-link-row {
+  border-bottom-color: #333333;
+  color: #e0e0e0;
+}
+
+.drawer-link-row:hover {
+  color: #ea4c89;
+}
+
+/* 演示区域 */
+.drawer-demo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 0;
+}
+
+.drawer-demo-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+}
+
+[data-theme="dark"] .drawer-demo-icon {
+  background-color: #333333;
+  border-color: #444444;
+}
+
+.drawer-demo-plus,
+.drawer-demo-equal {
+  font-size: 16px;
+  color: #999999;
+}
+
+.drawer-demo-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.drawer-demo-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.drawer-demo-result {
+  font-size: 14px;
+  color: #222222;
+  padding: 8px 12px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+}
+
+[data-theme="dark"] .drawer-demo-result {
+  background-color: #333333;
+  border-color: #444444;
+  color: #e0e0e0;
+}
+
+/* 触发方式选项 */
+.drawer-options {
+  display: flex;
+  gap: 8px;
+}
+
+.drawer-options-wrap {
+  flex-wrap: wrap;
+}
+
+.drawer-option {
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #666666;
+  background-color: #f3f5f6;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+[data-theme="dark"] .drawer-option {
+  background-color: #333333;
+  color: #b3b3b3;
+}
+
+.drawer-option:hover {
+  background-color: #eaeced;
+}
+
+[data-theme="dark"] .drawer-option:hover {
+  background-color: #3a3a3a;
+}
+
+.drawer-option-selected {
+  border-color: #ea4c89;
+  background-color: #fdedf3;
+  color: #ea4c89;
+  box-shadow: 0px 4px 12px rgba(255, 166, 201, 0.5);
+}
+
+[data-theme="dark"] .drawer-option-selected {
+  background-color: rgba(234, 76, 137, 0.2);
+}
+
+.drawer-body.drawer-body-selection {
+  padding: 0 20px 20px 20px;
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+
+/* ========== 更多设置抽屉样式 ========== */
+.more-settings-drawer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.more-settings-quick-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.more-settings-feature-card {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 40px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: #f3f5f6;
+  transition: background-color 0.2s ease;
+}
+
+.more-settings-feature-card:hover {
+  background-color: #e8eaec;
+}
+
+.more-settings-feature-card:active {
+  background-color: #dde0e2;
+}
+
+.more-settings-feature-card-label {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #666666;
+  white-space: nowrap;
+}
+
+.more-settings-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.more-settings-switch-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 21px;
+  gap: 12px;
+}
+
+.more-settings-switch-label {
+  flex: 1;
+  min-width: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #222222;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.more-settings-switch-row input[type="checkbox"] {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+[data-theme="dark"] .more-settings-switch-label {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .more-settings-feature-card {
+  background-color: #2a2a2a;
+}
+
+[data-theme="dark"] .more-settings-feature-card:hover {
+  background-color: #333333;
+}
+
+[data-theme="dark"] .more-settings-feature-card:active {
+  background-color: #3a3a3a;
+}
+
+[data-theme="dark"] .more-settings-feature-card-label {
+  color: #e0e0e0;
+}
+
+/* 动作按钮样式 */
+.more-settings-action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 12px;
+  color: #222222;
+  background-color: #f3f5f6;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.more-settings-action-button:hover {
+  background-color: #e8eaec;
+}
+
+.more-settings-action-button:active {
+  background-color: #dde0e2;
+}
+
+.more-settings-action-button-label {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  color: inherit;
+  text-align: center;
+}
+
+[data-theme="dark"] .more-settings-action-button {
+  color: #e0e0e0;
+  background-color: #2a2a2a;
+}
+
+[data-theme="dark"] .more-settings-action-button:hover {
+  background-color: #333333;
+}
+
+[data-theme="dark"] .more-settings-action-button:active {
+  background-color: #3a3a3a;
+}
+
+[data-theme="dark"] .more-settings-action-button-label {
+  color: #e0e0e0;
+}
+
+/* 错误消息组件样式 */
+.error-message-container {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 16px;
+  margin-top: 6px;
+  margin-bottom: -14px;
+  border: 1px solid #f53f3f;
+  border-radius: 12px;
+  background-color: var(--error-bg);
+}
+
+.error-message-icon-wrapper {
+  width: 21px;
+  height: 21px;
+  min-width: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4px;
+}
+
+.error-message-icon {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #f53f3f;
+}
+
+.error-message-text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: var(--error-text);
+}
+
+.error-message-text a {
+  color: var(--error-link);
+  text-decoration: underline;
+}
+
+.ad-banner-container {
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+
+html {
+  font-size: 17px;
+}
+
+@media print {
+  .imt-fb-container {
+    display: none !important;
+  }
+}
+
+#mount {
+  position: absolute;
+  display: none;
+  min-width: 250px;
+  height: auto;
+  --font-size: 17px;
+  font-size: 17px;
+}
+
+/* float-ball */
+.imt-fb-container {
+  position: fixed;
+  padding: 0;
+  top: 335px;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  display: none;
+  direction: ltr;
+  background-color: transparent !important;
+}
+
+.imt-fb-container:hover .imt-manga-button {
+  opacity: 1;
+}
+
+.imt-fb-container.left {
+  align-items: flex-start;
+  left: 0;
+}
+
+.imt-fb-container.right {
+  align-items: flex-end;
+  right: 0;
+}
+
+.imt-fb-btn {
+  cursor: pointer;
+  background: var(--float-ball-more-button-background-color);
+  height: 36px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+}
+
+.imt-fb-btn.left {
+  border-top-right-radius: 36px;
+  border-bottom-right-radius: 36px;
+  padding-left: 3px;
+}
+
+.imt-fb-btn.right {
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+  padding-right: 3px;
+}
+
+.imt-fb-btn.mini.left {
+  transform: translateX(-22px);
+}
+
+.imt-fb-btn.mini.right {
+  transform: translateX(22px);
+}
+
+.imt-fb-btn.mini.active {
+  transform: translateX(0);
+}
+
+.imt-fb-btn div {
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+.imt-fb-btn .imt-fb-hit-area {
+  position: absolute;
+  top: 0;
+  height: 36px;
+  bottom: -6px;
+  left: -6px;
+  right: -6px;
+  background: transparent;
+}
+
+.imt-fb-btn.mini.right .imt-fb-hit-area {
+  left: -10px;
+}
+
+.imt-fb-btn.mini.left .imt-fb-hit-area {
+  right: -10px;
+}
+
+.imt-fb-btn.left div {
+  border-top-right-radius: 34px;
+  border-bottom-right-radius: 34px;
+  justify-content: flex-end;
+}
+
+.imt-fb-btn.right div {
+  border-top-left-radius: 34px;
+  border-bottom-left-radius: 34px;
+}
+
+.imt-fb-logo-img {
+  width: 20px;
+  height: 20px;
+  margin: 0 10px;
+}
+
+.imt-fb-logo-img-big-bg {
+  width: 28px;
+  height: 28px;
+  margin: 0;
+  background-color: #ed6d8f;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.imt-float-ball-translated {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  bottom: 4px;
+  right: 4px;
+}
+
+.btn-animate {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform ease-out 250ms;
+  transition: -webkit-transform ease-out 250ms;
+  transition: transform ease-out 250ms;
+  transition: transform ease-out 250ms, -webkit-transform ease-out 250ms;
+}
+
+.imt-fb-setting-btn {
+  margin-right: 18px;
+  width: 28px;
+  height: 28px;
+}
+
+.immersive-translate-popup-wrapper {
+  background: var(--background-color);
+  border-radius: 20px;
+  box-shadow: 2px 10px 24px 0px #0e121614;
+  border: none;
+}
+
+.popup-container {
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-content {
+  border-radius: 20px 20px 12px 12px;
+}
+.popup-footer {
+  border-radius: 20px;
+}
+
+.popup-userscript-three-feature-layout {
+  border-radius: 20px;
+}
+
+.popup-userscript-three-feature-layout .popup-content {
+  border-radius: 20px 20px 12px 12px;
+}
+
+.popup-userscript-three-feature-layout .popup-footer {
+  border-radius: 0;
+}
+
+.imt-fb-close-button {
+  cursor: pointer;
+  position: absolute;
+  left: -10px;
+  bottom: -20px;
+}
+.imt-fb-container.left .imt-fb-close-button {
+  left: auto;
+  right: -10px;
+}
+
+.imt-fb-close-content {
+  padding: 22px;
+  width: 320px;
+  pointer-events: all;
+}
+
+.imt-fb-close-title {
+  font-weight: 500;
+  color: var(--text-black-2);
+}
+
+.imt-fb-close-radio-content {
+  background-color: var(--background-light-green);
+  padding: 8px 20px;
+}
+
+.imt-fb-radio-sel,
+.imt-fb-radio-nor {
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.imt-fb-radio-sel {
+  border: 2px solid var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imt-fb-radio-sel div {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: var(--primary);
+}
+
+.imt-fb-radio-nor {
+  border: 2px solid var(--input-border-strong);
+}
+
+.imt-fb-primary-btn {
+  background-color: var(--primary);
+  width: 72px;
+  height: 32px;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 32px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.imt-fb-default-btn {
+  border: 1px solid var(--primary);
+  width: 72px;
+  height: 32px;
+  border-radius: 8px;
+  color: var(--primary);
+  line-height: 32px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.imt-fb-guide-container {
+  width: 312px;
+  transform: translateY(-45%);
+}
+
+.imt-fb-guide-bg {
+  position: absolute;
+  left: 30px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  height: 100%;
+  width: 90%;
+}
+
+.imt-fb-guide-bg.left {
+  transform: scaleX(-1);
+}
+
+.imt-fb-guide-content {
+  margin: 16px -30px 80px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imt-fb-guide-content.left {
+  margin: 16px 21px 60px 32px;
+}
+
+.imt-fb-guide-img {
+  width: 220px;
+  height: 112px;
+}
+
+.imt-fb-guide-message {
+  font-size: 14px;
+  line-height: 28px;
+  color: #333333;
+  white-space: pre-wrap;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.imt-manga-guide-message {
+  font-size: 16px;
+  line-height: 24px;
+  color: #333333;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.imt-fb-guide-button {
+  margin-top: 16px;
+  line-height: 40px;
+  height: 40px;
+  padding: 0 20px;
+  width: unset;
+}
+
+.imt-fb-side {
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: all;
+  position: relative;
+}
+
+.imt-fb-side {
+  margin: 10px 0;
+}
+
+.imt-fb-side::before,
+.imt-manga-button::before,
+.imt-fb-round-button::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  left: 2px;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color 0.15s ease;
+}
+
+.imt-fb-side:hover::before,
+.imt-manga-button:hover::before,
+.imt-fb-round-button:hover::before {
+  background-color: var(--float-ball-more-button-hover-color);
+}
+
+.imt-fb-new-badge {
+  width: 26px;
+  height: 14px;
+  padding: 3px;
+  background-color: #f53f3f;
+  border-radius: 4px;
+  position: absolute;
+  top: -5px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imt-fb-side * {
+  pointer-events: all;
+}
+
+.imt-fb-pin-icon {
+  position: absolute;
+  left: -16px;
+  bottom: -12px;
+  opacity: 0;
+  cursor: pointer;
+}
+.imt-fb-container.left .imt-fb-pin-icon {
+  left: auto;
+  right: -16px;
+}
+
+.imt-fb-side:hover .imt-fb-pin-icon {
+  opacity: 1;
+}
+
+.imt-fb-more-button {
+  width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+/* Sheet.css */
+.immersive-translate-sheet {
+  position: fixed;
+  transform: translateY(100%);
+  /* Start off screen */
+  left: 0;
+  right: 0;
+  background-color: var(--background-color);
+  transition: transform 0.3s ease-out;
+  /* Smooth slide transition */
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+  /* Ensure it's above other content */
+  bottom: 0;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  overflow: hidden;
+}
+
+.immersive-translate-sheet.visible {
+  transform: translateY(0);
+}
+
+.immersive-translate-sheet-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.immersive-translate-sheet-backdrop.visible {
+  opacity: 1;
+}
+
+.popup-container-sheet {
+  max-width: 100vw;
+  width: 100vw;
+}
+
+.imt-no-events svg * {
+  pointer-events: none !important;
+}
+
+.imt-manga-button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: all;
+  margin: 0 0 10px 0;
+  background-color: var(--float-ball-more-button-background-color);
+  border-radius: 50%;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.08);
+  right: 8px;
+}
+
+.imt-manga-feedback {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.imt-fb-round-button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: var(--float-ball-more-button-background-color);
+  border-radius: 50%;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.imt-fb-round-button > svg {
+  z-index: 1;
+}
+
+.imt-fb-upgrade-button {
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.imt-fb-power-user-card {
+  position: absolute;
+  bottom: -130px;
+  width: 266px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 2px 10px 24px 0 rgba(14, 18, 22, 0.08);
+  border: 1px solid rgba(250, 251, 251, 1);
+  pointer-events: all;
+  z-index: 2;
+  background: linear-gradient(172deg, rgba(255, 255, 255, 0.30) 4.36%, #FFF 35.98%), linear-gradient(0deg, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.40) 100%), radial-gradient(39.95% 47.41% at -0.53% 55.22%, #E0C4F7 0%, rgba(224, 196, 247, 0.00) 100%), radial-gradient(56.37% 54.27% at 86.17% 0%, #E0C4F6 0%, rgba(224, 196, 246, 0.00) 100%), radial-gradient(42.04% 37.43% at -0.53% 3.75%, #AED5FF 0%, rgba(174, 213, 255, 0.00) 100%), radial-gradient(66.88% 52.09% at 36.81% 19.55%, #757ED8 0%, #6B6AC0 100%), #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imt-fb-power-user-card.right {
+  right: 60px;
+}
+
+.imt-fb-power-user-card.right::after {
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: 130px;
+  border-width: 10px 0 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent #fff;
+  filter: drop-shadow(2px 0 2px rgba(14, 18, 22, 0.06));
+}
+
+.imt-fb-power-user-card.left {
+  left: 60px;
+}
+
+.imt-fb-power-user-card.left::after {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 130px;
+  border-width: 10px 10px 10px 0;
+  border-style: solid;
+  border-color: transparent #fff transparent transparent;
+  filter: drop-shadow(-2px 0 2px rgba(14, 18, 22, 0.06));
+}
+
+.imt-fb-power-user-card-banner {
+  display: block;
+  width: 128px;
+  height: auto;
+  margin-top: 8px;
+  border-radius: 8px 8px 0 0;
+}
+
+.imt-fb-power-user-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 16px 24px 0;
+  box-sizing: border-box;
+}
+
+.imt-fb-power-user-card-title {
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+}
+
+.imt-fb-power-user-card-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.imt-fb-power-user-card-body {
+  padding: 12px 24px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.imt-fb-power-user-card-desc {
+  color: #333;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+}
+
+.imt-fb-power-user-card-primary {
+  margin-top: 16px;
+  height: 37px;
+  border-radius: 8px;
+  background: linear-gradient(110deg, #F497BC 17.37%, #EC4C8C 89.68%);
+  color: var(--ZX-FFFFFF, #FFF);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px; /* 150% */
+  display: flex;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  flex: 1 0 0;
+}
+
+.imt-manga-translated {
+  position: absolute;
+  left: 24px;
+  top: 20px;
+}
+
+.imt-float-ball-loading {
+  animation: imt-loading-animation 0.6s infinite linear !important;
+}
+
+.imt-manga-guide-bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  transform: translateY(-50%);
+}
+.imt-manga-guide-content {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  margin: 0 40px 0;
+}
+
+.img-manga-guide-button {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.img-manga-close {
+  position: absolute;
+  bottom: -200px;
+  width: 32px;
+  height: 32px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  cursor: pointer;
+}
+
+.imt-fb-container.dragging .imt-manga-button,
+.imt-fb-container.dragging .btn-animate:not(.imt-fb-btn) {
+  display: none !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn {
+  border-radius: 50% !important;
+  width: 36px !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  cursor: move !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn div {
+  border-radius: 50% !important;
+  width: 36px !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn.left,
+.imt-fb-container.dragging .imt-fb-btn.right {
+  border-radius: 50% !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn.left div,
+.imt-fb-container.dragging .imt-fb-btn.right div {
+  border-radius: 50% !important;
+}
+
+.imt-fb-container.dragging .imt-fb-logo-img {
+  margin: 0 !important;
+}
+
+.imt-fb-container.dragging .imt-float-ball-translated {
+  right: 2px !important;
+  bottom: 2px !important;
+}
+
+@-webkit-keyframes imt-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes imt-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.imt-fb-icon {
+  color: #666666;
+}
+
+[data-theme="dark"] .imt-fb-icon {
+  color: #b3b3b3;
+}
+
+[data-theme="light"] .imt-fb-icon {
+  color: #666666;
+}
+
+/* 悬浮球设置弹窗样式 */
+.imt-fb-setting-wrapper {
+  border-radius: 12px;
+  box-shadow: 2px 10px 24px 0px rgba(0, 0, 0, 0.06);
+}
+
+.imt-fb-setting-content {
+  padding: 16px;
+  width: 350px;
+  pointer-events: all;
+}
+
+.imt-fb-setting-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--text-black-2);
+}
+
+.imt-fb-setting-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px 0;
+}
+
+.imt-fb-preview-wrapper {
+  display: flex;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.imt-fb-preview-item {
+  width: 99px;
+  height: 57px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+}
+
+.imt-fb-preview-item.light {
+  background-color: #f3f5f6;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.imt-fb-preview-item.dark {
+  background-color: #444;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.imt-fb-preview-ball {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.imt-fb-preview-ball.light {
+  background-color: #fff;
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+}
+
+.imt-fb-preview-ball.dark {
+  background-color: #111;
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+}
+
+.imt-fb-preview-ball.full {
+  width: 41px;
+  justify-content: center;
+}
+
+.imt-fb-preview-ball.mini {
+  width: 41px;
+  justify-content: center;
+  transform: translateX(21px);
+}
+
+.imt-fb-preview-ball .imt-fb-preview-logo {
+  flex-shrink: 0;
+}
+
+/* 选项区域 */
+.imt-fb-setting-options {
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.imt-fb-setting-option-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4px;
+}
+
+.imt-fb-setting-option-label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: var(--text-black-2);
+}
+
+/* Toggle 开关样式 */
+.imt-fb-toggle {
+  width: 30px;
+  height: 18px;
+  background-color: var(--switch-background-color);
+  border-radius: 24px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.imt-fb-toggle.checked {
+  background-color: var(--primary);
+}
+
+.imt-fb-toggle.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.imt-fb-toggle-thumb {
+  width: 14px;
+  height: 14px;
+  background-color: var(--switch-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s ease;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+}
+
+.imt-fb-toggle.checked .imt-fb-toggle-thumb {
+  transform: translateX(12px);
+}
+
+.imt-fb-setting-hide-options {
+  background-color: var(--background-light-green);
+  padding: 8px 20px;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.imt-fb-setting-save-btn {
+  background-color: var(--primary);
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 45px;
+  height: 45px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: opacity 0.2s ease;
+}
+
+.imt-fb-setting-save-btn:hover {
+  opacity: 0.9;
+}
+
+.imt-fb-setting-save-btn:active {
+  opacity: 0.8;
+}
+</style><div id="mount" style="display: block;"><div hidden="" id="immersive-translate-popup-overlay" class="immersive-translate-popup-overlay" style="z-index: 2147483647; background-color: rgba(0, 0, 0, 0.5);"><div class="immersive-translate-popup-wrapper" style="position: fixed; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);"></div></div></div></template></div></html>

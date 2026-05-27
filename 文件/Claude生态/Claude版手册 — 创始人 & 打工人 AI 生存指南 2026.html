@@ -1,0 +1,5801 @@
+<!DOCTYPE html>
+<!-- saved from url=(0025)https://founders.wwei.ai/ -->
+<html lang="zh-CN" data-immersive-translate-page-theme="light"><plasmo-csui><template shadowrootmode="open"><div id="plasmo-shadow-container" style="z-index: 2147483647; position: relative;"><div id="plasmo-overlay-0" class="plasmo-csui-container" style="display: flex; position: absolute; top: 0px; left: 0px;"></div></div></template></plasmo-csui><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude版手册 — 创始人 &amp; 打工人 AI 生存指南 2026</title>
+<meta name="description" content="Anthropic Founders Playbook 中文版 — 四阶段框架、中国团队案例与10个即用提示词模板">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link href="./Claude版手册 — 创始人 &amp; 打工人 AI 生存指南 2026_files/css2" rel="stylesheet">
+<style>
+/* ── Anthropic 官方品牌色 ── */
+:root {
+  --dark:      #141413;
+  --light:     #faf9f5;
+  --mid-gray:  #b0aea5;
+  --light-gray:#e8e6dc;
+  --orange:    #d97757;
+  --blue:      #6a9bcc;
+  --green:     #788c5d;
+
+  /* UI 语义映射 */
+  --bg:        var(--light);
+  --surface:   #ffffff;
+  --border:    var(--light-gray);
+  --text:      var(--dark);
+  --text-2:    #4a4845;
+  --text-3:    var(--mid-gray);
+  --accent:    var(--orange);
+  --accent-2:  var(--blue);
+  --accent-3:  var(--green);
+
+  --sidebar-w: 232px;
+  --font-head: 'Poppins', 'Noto Sans SC', Arial, sans-serif;
+  --font-body: 'Lora', 'Noto Sans SC', Georgia, serif;
+  --font-ui:   'Poppins', 'Noto Sans SC', system-ui, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.8;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ──────────────────────────────────────────
+   TOP NAV  — Claude风格：极简、暖色、轻盈
+   ────────────────────────────────────────── */
+.topnav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: 56px;
+  background: rgba(250,249,245,.92);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px) saturate(1.2);
+  display: flex; align-items: center;
+  padding: 0 2rem;
+  gap: 2rem;
+}
+.topnav .logo {
+  font-family: var(--font-ui);
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -.01em;
+  white-space: nowrap;
+  display: flex; align-items: center; gap: .5rem;
+}
+.topnav .logo .dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--accent);
+  display: inline-block;
+}
+.topnav .nav-links {
+  display: flex; gap: 1.5rem; flex: 1;
+}
+.topnav .nav-links a {
+  font-family: var(--font-ui);
+  font-size: .82rem; font-weight: 500;
+  color: var(--text-3); text-decoration: none;
+  transition: color .15s;
+  letter-spacing: .01em;
+}
+.topnav .nav-links a:hover { color: var(--text); }
+.topnav .pill {
+  font-family: var(--font-ui);
+  font-size: .72rem; font-weight: 600;
+  background: var(--light-gray);
+  color: var(--text-2);
+  padding: .25rem .7rem; border-radius: 99px;
+  white-space: nowrap;
+}
+
+/* ── scroll progress ── */
+.progress {
+  position: fixed; top: 56px; left: var(--sidebar-w); right: 0;
+  height: 2px; background: var(--border); z-index: 99;
+}
+.progress .bar {
+  height: 100%; width: 0;
+  background: var(--accent);
+  transition: width .08s linear;
+}
+
+/* ──────────────────────────────────────────
+   SIDEBAR
+   ────────────────────────────────────────── */
+.sidebar {
+  position: fixed; left: 0; top: 56px; bottom: 0;
+  width: var(--sidebar-w);
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  overflow-y: auto; padding: 1.75rem 1rem 2rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+.sidebar-label {
+  font-family: var(--font-ui);
+  font-size: .65rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .12em;
+  color: var(--text-3);
+  padding: 0 .5rem .5rem;
+  margin-bottom: .25rem;
+  margin-top: 1rem;
+}
+.sidebar-label:first-child { margin-top: 0; }
+.sidebar a {
+  display: flex; align-items: center; gap: .5rem;
+  padding: .4rem .6rem; border-radius: 6px;
+  color: var(--text-3);
+  font-family: var(--font-ui);
+  font-size: .82rem; font-weight: 500;
+  text-decoration: none;
+  transition: all .15s;
+  margin-bottom: 1px;
+  border-left: 2px solid transparent;
+}
+.sidebar a:hover { color: var(--text); background: var(--bg); }
+.sidebar a.active {
+  color: var(--text);
+  background: var(--light-gray);
+  border-left-color: var(--accent);
+  font-weight: 600;
+}
+
+/* ──────────────────────────────────────────
+   LAYOUT
+   ────────────────────────────────────────── */
+.main { margin-left: var(--sidebar-w); margin-top: 56px; }
+
+/* ──────────────────────────────────────────
+   HERO  — Claude.com 博客 hero 风格
+   ────────────────────────────────────────── */
+.hero {
+  padding: 5rem 5rem 4rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--light);
+  max-width: 860px;
+}
+.hero .eyebrow {
+  display: inline-flex; align-items: center; gap: .5rem;
+  font-family: var(--font-ui);
+  font-size: .72rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .1em;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+.hero .eyebrow::before {
+  content: ''; width: 20px; height: 1px;
+  background: var(--accent); display: block;
+}
+.hero h1 {
+  font-family: var(--font-head);
+  font-size: 2.8rem; font-weight: 800;
+  line-height: 1.15; letter-spacing: -.02em;
+  color: var(--dark);
+  margin-bottom: 1.25rem;
+  max-width: 640px;
+}
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero .lead {
+  font-family: var(--font-body);
+  font-size: 1.05rem; line-height: 1.75;
+  color: var(--text-2); max-width: 580px;
+  margin-bottom: 2.5rem;
+}
+.hero-meta {
+  display: flex; flex-wrap: wrap; gap: 1.5rem;
+  font-family: var(--font-ui); font-size: .8rem; color: var(--text-3);
+  margin-bottom: 2.5rem;
+  align-items: center;
+}
+.hero-meta .sep { color: var(--border); }
+
+/* KPI strip */
+.kpi-strip {
+  display: flex; gap: 2rem; flex-wrap: wrap;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+.kpi {
+  display: flex; flex-direction: column; gap: .2rem;
+}
+.kpi .num {
+  font-family: var(--font-head);
+  font-size: 2rem; font-weight: 800;
+  color: var(--dark); letter-spacing: -.03em;
+  line-height: 1;
+}
+.kpi .num em { font-style: normal; color: var(--accent); }
+.kpi .desc {
+  font-family: var(--font-ui);
+  font-size: .75rem; color: var(--text-3); font-weight: 500;
+}
+
+/* ──────────────────────────────────────────
+   CONTENT AREA
+   ────────────────────────────────────────── */
+.content {
+  padding: 3.5rem 5rem 6rem;
+  max-width: 860px;
+}
+
+/* Section */
+.section { margin-bottom: 4rem; scroll-margin-top: 72px; }
+.section-eyebrow {
+  font-family: var(--font-ui);
+  font-size: .68rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .12em;
+  color: var(--accent);
+  margin-bottom: .75rem;
+  display: flex; align-items: center; gap: .5rem;
+}
+.section-eyebrow::before {
+  content: ''; width: 16px; height: 1px; background: var(--accent);
+}
+.section h2 {
+  font-family: var(--font-head);
+  font-size: 1.65rem; font-weight: 700;
+  letter-spacing: -.02em;
+  color: var(--dark);
+  margin-bottom: 1rem; line-height: 1.3;
+}
+.section h3 {
+  font-family: var(--font-head);
+  font-size: 1.05rem; font-weight: 600;
+  color: var(--dark);
+  margin: 2rem 0 .65rem;
+  letter-spacing: -.01em;
+}
+.section p { margin-bottom: 1rem; color: var(--text-2); line-height: 1.8; }
+.section ul, .section ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+.section li { margin-bottom: .4rem; color: var(--text-2); }
+
+hr.div {
+  border: none; border-top: 1px solid var(--border);
+  margin: 3.5rem 0;
+}
+
+/* ── Pull quote ── */
+.pullquote {
+  padding: 1.5rem 0 1.5rem 1.75rem;
+  border-left: 2px solid var(--orange);
+  margin: 2rem 0;
+}
+.pullquote p {
+  font-size: 1.1rem; line-height: 1.7;
+  color: var(--dark); font-style: italic;
+  margin: 0;
+}
+.pullquote cite {
+  display: block; margin-top: .75rem;
+  font-style: normal; font-family: var(--font-ui);
+  font-size: .78rem; color: var(--text-3); font-weight: 500;
+}
+
+/* ── Card grid ── */
+.card-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: .75rem; margin: 1.5rem 0; }
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px; padding: 1.25rem 1.5rem;
+}
+.card .icon { font-size: 1.25rem; margin-bottom: .5rem; }
+.card h4 {
+  font-family: var(--font-ui); font-size: .9rem; font-weight: 600;
+  color: var(--dark); margin-bottom: .35rem;
+}
+.card p { font-size: .85rem; color: var(--text-3); margin: 0; line-height: 1.55; font-family: var(--font-ui); }
+
+/* ── Stage blocks ── */
+.stages { display: grid; grid-template-columns: repeat(2,1fr); gap: .75rem; margin: 1.5rem 0; }
+.stage {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 10px; padding: 1.5rem;
+  position: relative; overflow: hidden;
+}
+.stage::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+}
+.stage-1::before { background: var(--blue); }
+.stage-2::before { background: var(--green); }
+.stage-3::before { background: var(--orange); }
+.stage-4::before { background: var(--mid-gray); }
+.stage-n {
+  font-family: var(--font-ui); font-size: .65rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .1em;
+  color: var(--text-3); margin-bottom: .4rem;
+}
+.stage h4 {
+  font-family: var(--font-head); font-size: 1rem; font-weight: 700;
+  color: var(--dark); margin-bottom: .6rem;
+}
+.stage p { font-size: .85rem; color: var(--text-2); line-height: 1.6; margin-bottom: .75rem; font-family: var(--font-ui); }
+.stage .exit {
+  display: inline-block; font-family: var(--font-ui);
+  font-size: .75rem; font-weight: 600;
+  background: var(--light-gray); color: var(--text-2);
+  padding: .3rem .65rem; border-radius: 5px;
+}
+.stage .warn {
+  margin-top: .5rem; font-size: .78rem; color: var(--text-3);
+  font-family: var(--font-ui); font-style: italic;
+}
+
+/* ── Table ── */
+.tbl-wrap { overflow-x: auto; margin: 1.5rem 0; border-radius: 8px; border: 1px solid var(--border); }
+table { width: 100%; border-collapse: collapse; font-family: var(--font-ui); }
+th {
+  background: var(--light-gray); color: var(--dark);
+  padding: .65rem 1rem; text-align: left;
+  font-size: .78rem; font-weight: 600;
+  letter-spacing: .02em;
+}
+td { padding: .6rem 1rem; border-bottom: 1px solid var(--border); font-size: .85rem; color: var(--text-2); }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: var(--bg); }
+
+/* ── Product matrix ── */
+.pm-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: .75rem; margin: 1.5rem 0; }
+.pm-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 10px; padding: 1.25rem 1.5rem;
+}
+.pm-tag {
+  font-family: var(--font-ui); font-size: .68rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .08em;
+  padding: .2rem .5rem; border-radius: 4px; display: inline-block;
+  margin-bottom: .6rem;
+}
+.pm-orange { background: #fdf0eb; color: #9c4a2a; }
+.pm-blue   { background: #eaf1f8; color: #2d5a8a; }
+.pm-green  { background: #eef2e9; color: #3d5025; }
+.pm-gray   { background: var(--light-gray); color: var(--text-2); }
+.pm-card h5 {
+  font-family: var(--font-head); font-size: .95rem; font-weight: 600;
+  color: var(--dark); margin-bottom: .35rem;
+}
+.pm-card p { font-size: .82rem; color: var(--text-3); margin: 0; line-height: 1.5; font-family: var(--font-ui); }
+.pm-stages { display: flex; gap: .35rem; flex-wrap: wrap; margin-top: .75rem; }
+.pm-tag-sm {
+  font-size: .68rem; font-family: var(--font-ui); font-weight: 500;
+  padding: .15rem .45rem; border-radius: 4px;
+  background: var(--bg); color: var(--text-3);
+  border: 1px solid var(--border);
+}
+
+/* ── Case study ── */
+.case {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 10px; padding: 1.5rem; margin: 1rem 0;
+}
+.case-hd { display: flex; gap: .85rem; align-items: flex-start; margin-bottom: .85rem; }
+.case-ico {
+  width: 38px; height: 38px; border-radius: 8px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; font-weight: 800; color: #fff;
+}
+.ico-a { background: var(--blue); }
+.ico-b { background: var(--green); }
+.ico-c { background: var(--orange); }
+.ico-d { background: var(--mid-gray); }
+.ico-cn1 { background: #c0392b; }
+.ico-cn2 { background: #2471a3; }
+.ico-cn3 { background: #1e8449; }
+.case-hd-info h4 {
+  font-family: var(--font-head); font-size: .95rem; font-weight: 600;
+  color: var(--dark); margin-bottom: .15rem;
+}
+.case-hd-info span { font-size: .78rem; color: var(--text-3); font-family: var(--font-ui); }
+.case p { font-size: .88rem; color: var(--text-2); line-height: 1.7; margin-bottom: .65rem; font-family: var(--font-ui); }
+.case p:last-child { margin-bottom: 0; }
+.case .result {
+  font-size: .82rem; font-family: var(--font-ui); font-weight: 600;
+  color: var(--green); background: #eef2e9;
+  border-radius: 6px; padding: .6rem .85rem;
+  border: 1px solid #d0dbc5;
+  margin-top: .75rem;
+}
+.case .warn-result {
+  font-size: .82rem; font-family: var(--font-ui); font-weight: 600;
+  color: #7a5012; background: #fdf5e6;
+  border-radius: 6px; padding: .6rem .85rem;
+  border: 1px solid #f0d9a0;
+  margin-top: .75rem;
+}
+
+/* ── Prompt box ── */
+.prompt-box {
+  background: #1a1916; border-radius: 10px; padding: 1.25rem 1.5rem;
+  margin: .85rem 0; position: relative;
+}
+.prompt-label {
+  font-family: var(--font-ui); font-size: .65rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .1em;
+  color: #5a5852; margin-bottom: .65rem;
+}
+.prompt-box pre {
+  font-family: 'SF Mono', 'Menlo', monospace;
+  font-size: .8rem; color: #b5b1a8; line-height: 1.7;
+  white-space: pre-wrap; word-break: break-word;
+}
+.prompt-box .hl { color: #d97757; }
+.copy-btn {
+  position: absolute; top: 1rem; right: 1rem;
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12);
+  color: #6a665e; font-size: .72rem;
+  padding: .22rem .55rem; border-radius: 4px;
+  cursor: pointer; font-family: var(--font-ui); transition: all .15s;
+}
+.copy-btn:hover { background: rgba(255,255,255,.15); color: #b5b1a8; }
+
+/* ── Action list ── */
+.action-list { list-style: none; padding: 0; }
+.action-list li {
+  display: flex; gap: 1rem; align-items: flex-start;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 10px; padding: 1.1rem 1.25rem;
+  margin-bottom: .6rem;
+}
+.al-num {
+  width: 26px; height: 26px; border-radius: 50%; flex-shrink: 0;
+  background: var(--dark); color: var(--light);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-head); font-size: .75rem; font-weight: 700;
+  margin-top: .1rem;
+}
+.al-body h5 {
+  font-family: var(--font-head); font-size: .9rem; font-weight: 600;
+  color: var(--dark); margin-bottom: .25rem;
+}
+.al-body p { font-size: .83rem; color: var(--text-3); margin: 0; font-family: var(--font-ui); line-height: 1.55; }
+
+/* ── Source note ── */
+.source {
+  background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
+  padding: .75rem 1rem; margin: .75rem 0;
+  font-size: .76rem; font-family: var(--font-ui);
+  color: var(--text-3); line-height: 1.5;
+}
+.source a { color: var(--accent-2); text-decoration: none; }
+
+/* ── Warn box ── */
+.warn-box {
+  background: #fdf8f0; border: 1px solid #f0d9a0;
+  border-radius: 8px; padding: 1rem 1.25rem; margin: 1rem 0;
+  font-size: .85rem; font-family: var(--font-ui); color: #7a5012; line-height: 1.6;
+}
+.warn-box strong { font-weight: 700; }
+
+/* ── Download section ── */
+.download {
+  background: var(--dark); border-radius: 12px;
+  padding: 2.5rem 2rem; text-align: center; margin: 3rem 0 1rem;
+}
+.download h2 {
+  font-family: var(--font-head); font-size: 1.35rem; font-weight: 700;
+  color: var(--light); margin-bottom: .6rem;
+}
+.download p { color: var(--mid-gray); font-family: var(--font-ui); font-size: .88rem; margin-bottom: 1.5rem; }
+.dl-btn {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: var(--orange); color: #fff; text-decoration: none;
+  font-family: var(--font-ui); font-size: .9rem; font-weight: 600;
+  padding: .75rem 1.75rem; border-radius: 8px;
+  transition: all .15s;
+  box-shadow: 0 4px 14px rgba(217,119,87,.3);
+}
+.dl-btn:hover { background: #c26440; transform: translateY(-1px); box-shadow: 0 6px 18px rgba(217,119,87,.4); }
+
+/* ──────────────────────────────────────────
+   SVG INFOGRAPHICS
+   ────────────────────────────────────────── */
+.svg-wrap {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 10px; overflow: hidden; padding: .5rem;
+  margin: 1.5rem 0;
+}
+.svg-caption {
+  text-align: center; font-size: .72rem; font-family: var(--font-ui);
+  color: var(--text-3); margin: .4rem 0 .75rem; font-style: italic;
+}
+
+/* ── Footer ── */
+footer {
+  background: var(--dark); color: var(--mid-gray);
+  text-align: center; padding: 2rem;
+  font-family: var(--font-ui); font-size: .8rem;
+  margin-left: var(--sidebar-w);
+}
+footer a { color: var(--orange); text-decoration: none; }
+
+/* ──────────────────────────────────────────
+   RESPONSIVE
+   ────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .sidebar { display: none; }
+  .main, footer { margin-left: 0; }
+  .progress { left: 0; }
+  .hero, .content { padding: 2.5rem 1.5rem; }
+  .hero h1 { font-size: 2rem; }
+  .kpi-strip { gap: 1.5rem; }
+  .stages, .card-grid, .pm-grid { grid-template-columns: 1fr; }
+}
+
+/* ───── TAB BAR ───── */
+.tab-bar {
+  position:fixed; top:56px; left:0; right:0; z-index:98;
+  height:46px; background:var(--surface);
+  border-bottom:1px solid var(--border);
+  display:flex; align-items:center;
+  padding:0 1.5rem; gap:.5rem;
+}
+.tab-btn {
+  font-family:var(--font-ui); font-size:.82rem; font-weight:600;
+  padding:.3rem 1.1rem; border-radius:8px; cursor:pointer;
+  border:1.5px solid transparent;
+  background:transparent; color:var(--text-3);
+  transition:all .18s; white-space:nowrap;
+}
+.tab-btn.active { background:var(--dark); color:var(--light); border-color:var(--dark); }
+.tab-btn:hover:not(.active) { background:var(--light-gray); color:var(--text); }
+.tab-bar .tab-desc {
+  font-family:var(--font-ui); font-size:.72rem; color:var(--text-3); margin-left:.75rem;
+}
+.progress { top:102px !important; }
+.sidebar  { top:102px !important; }
+.main     { margin-top:102px !important; }
+/* 打工人版辅助样式 */
+.fate-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin:1.5rem 0; }
+.fate-card { border-radius:10px; padding:1.25rem 1rem; text-align:center; }
+.fate-card.bad  { background:#fff3f0; border:1px solid #f8d0c6; }
+.fate-card.mid  { background:#f5f7ff; border:1px solid #d0d8f8; }
+.fate-card.good { background:#f0faf3; border:1px solid #c6e8ce; }
+.fate-emoji { font-size:2rem; margin-bottom:.5rem; }
+.fate-label { font-family:var(--font-ui); font-size:.82rem; font-weight:700; margin-bottom:.4rem; }
+.fate-card p { font-size:.82rem; color:var(--text-2); line-height:1.5; }
+.role-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1rem; margin:1.5rem 0; }
+.role-card { border:1px solid var(--border); border-radius:12px; padding:1.25rem; background:var(--surface); }
+.role-card .rt { font-family:var(--font-ui); font-size:.9rem; font-weight:700; color:var(--dark); margin-bottom:.25rem; }
+.role-card .rs { font-family:var(--font-ui); font-size:.68rem; color:var(--accent); font-weight:600; text-transform:uppercase; letter-spacing:.08em; margin-bottom:.6rem; }
+.role-card p { font-size:.86rem; color:var(--text-2); line-height:1.6; }
+.phase-row { display:flex; gap:1.5rem; flex-wrap:wrap; margin:1.5rem 0; }
+.phase-box { flex:1; min-width:200px; border:1px solid var(--border); border-radius:10px; padding:1.25rem; background:var(--surface); }
+.phase-box .ph-num { font-family:var(--font-ui); font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--accent); margin-bottom:.3rem; }
+.phase-box .ph-title { font-family:var(--font-ui); font-size:.95rem; font-weight:700; color:var(--dark); margin-bottom:.3rem; }
+.phase-box .ph-time { font-family:var(--font-ui); font-size:.72rem; color:var(--text-3); margin-bottom:.6rem; }
+.phase-box p { font-size:.85rem; color:var(--text-2); line-height:1.6; }
+
+/* ───── RESPONSIVE ───── */
+/* 内容列统一 max-width，大屏居中 */
+.hero   { max-width: 900px; }
+.content{ max-width: 900px; padding-right: 2rem; }
+
+@media (min-width: 1280px) {
+  :root { --sidebar-w: 260px; }
+  body  { font-size: 17px; }
+  .hero { padding: 5rem 5rem 4rem; max-width: 960px; }
+  .content { max-width: 960px; }
+}
+@media (min-width: 1600px) {
+  body  { font-size: 17.5px; }
+  .hero { max-width: 1060px; }
+  .content { max-width: 1060px; }
+}
+
+/* 移动端 */
+@media (max-width: 800px) {
+  :root { --sidebar-w: 0px; }
+  .sidebar { transform: translateX(-100%); transition: transform .25s; z-index: 200; }
+  .sidebar.open { transform: translateX(0); }
+  .progress { left: 0; }
+  .main { margin-left: 0; }
+  .tab-bar { padding: 0 1rem; }
+  .tab-btn { font-size: .75rem; padding: .28rem .8rem; }
+  .tab-bar .tab-desc { display: none; }
+  .hero { padding: 3rem 1.25rem 2.5rem; }
+  .hero h1 { font-size: 1.9rem; }
+  .content { padding: 0; }
+  .section { padding: 2rem 1.25rem; }
+  .card-grid { grid-template-columns: 1fr; }
+  .fate-grid { grid-template-columns: 1fr; }
+  .role-grid { grid-template-columns: 1fr; }
+  .two-col   { grid-template-columns: 1fr; }
+  .kpi-strip { flex-direction: column; gap: .75rem; }
+  .phase-row { flex-direction: column; }
+  /* 移动端汉堡菜单按钮 */
+  .menu-btn {
+    display: flex !important;
+    position: fixed; bottom: 1.25rem; right: 1.25rem; z-index: 300;
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--dark); color: var(--light);
+    align-items: center; justify-content: center;
+    font-size: 1.2rem; border: none; cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0,0,0,.25);
+  }
+}
+.menu-btn { display: none; }
+</style>
+<script src="./Claude版手册 — 创始人 &amp; 打工人 AI 生存指南 2026_files/widget.js" defer="" data-wwei-injected="1"></script><style type="text/css">
+  @font-face {
+    font-family: CuboxInter;
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("chrome-extension://bflmgpechpeohjfomgfdkkfcbhfcjohl/fonts/InterVariable.woff2") format("woff2");
+  }
+  #cubox-react-root {
+    z-index: 999999999999999999999;
+  }
+  </style><link rel="stylesheet" href="chrome-extension://bflmgpechpeohjfomgfdkkfcbhfcjohl/css/globalHighlightStyles.css"></head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="topnav">
+  <div class="logo">
+    <span class="dot"></span>
+    <span id="logo-text">创始人手册 · Claude版</span>
+  </div>
+  <div class="nav-links" id="nav-links">
+    <a href="https://founders.wwei.ai/#overview">概览</a>
+    <a href="https://founders.wwei.ai/#stages">四阶段</a>
+    <a href="https://founders.wwei.ai/#china">中国视角</a>
+    <a href="https://founders.wwei.ai/#prompts">提示词</a>
+    <a href="https://founders.wwei.ai/#action">行动</a>
+  </div>
+  <div class="pill">2026 · Anthropic</div>
+</nav>
+
+<!-- TAB BAR -->
+<div class="tab-bar">
+  <button class="tab-btn active" id="tab-btn-founders" onclick="switchTab(&#39;founders&#39;)">🏢 创始人版</button>
+  <button class="tab-btn" id="tab-btn-workers" onclick="switchTab(&#39;workers&#39;)">👷 打工人版</button>
+  <span class="tab-desc" id="tab-desc">AI 原生创业完全指南 2026</span>
+</div>
+
+<div class="progress"><div class="bar" id="bar"></div></div>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+<div id="sidebar-founders"><div class="sidebar-label">文章导读</div>
+  <a href="https://founders.wwei.ai/#overview">📌 核心洞察</a>
+  <a href="https://founders.wwei.ai/#why">🌊 三大瓶颈消失</a>
+  <a href="https://founders.wwei.ai/#stages">🗺️ 四阶段框架</a>
+  <a href="https://founders.wwei.ai/#stage-1">💡 想法验证</a>
+  <a href="https://founders.wwei.ai/#stage-2">🛠️ MVP 构建</a>
+  <a href="https://founders.wwei.ai/#stage-3">🚀 上线运营</a>
+  <a href="https://founders.wwei.ai/#stage-4">📈 规模化</a>
+  <a href="https://founders.wwei.ai/#product-matrix">🧰 产品矩阵</a>
+  <a href="https://founders.wwei.ai/#9-domains">🎯 九大赛道</a>
+  <div class="sidebar-label">扩展内容</div>
+  <a href="https://founders.wwei.ai/#global-cases">🌏 全球案例</a>
+  <a href="https://founders.wwei.ai/#china">🇨🇳 中国视角</a>
+  <a href="https://founders.wwei.ai/#prompts">📝 提示词工具箱</a>
+  <a href="https://founders.wwei.ai/#action">✅ 本周行动</a>
+  <a href="https://founders.wwei.ai/#philosophy">🧭 创始人哲学</a>
+  <a href="https://founders.wwei.ai/#download">📄 下载 PDF</a>
+</div><!-- /sidebar-founders -->
+
+<div id="sidebar-workers" style="display:none">
+  <div class="sidebar-label">打工人导读</div>
+  <a href="https://founders.wwei.ai/#w-overview">🧠 三种打工人命运</a>
+  <a href="https://founders.wwei.ai/#w-stages">🗺️ 四阶段成长框架</a>
+  <a href="https://founders.wwei.ai/#w-stage-1">🔍 认知重建</a>
+  <a href="https://founders.wwei.ai/#w-stage-2">⚡ 个人提速</a>
+  <a href="https://founders.wwei.ai/#w-stage-3">🤝 团队赋能</a>
+  <a href="https://founders.wwei.ai/#w-stage-4">🚀 职业跃迁</a>
+  <div class="sidebar-label">岗位专属</div>
+  <a href="https://founders.wwei.ai/#w-roles">💼 10类岗位攻略</a>
+  <a href="https://founders.wwei.ai/#w-prompts">📝 打工人提示词</a>
+  <a href="https://founders.wwei.ai/#w-action">✅ 本周行动</a>
+</div>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+<div id="content-founders">
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="eyebrow">Anthropic Founders Playbook · 中文深度解读</div>
+  <h1>AI 原生创业的<br><em>完全指南</em></h1>
+  <p class="lead">
+    Anthropic 于 2026 年 5 月 14 日发布 35 页创始人手册，首次系统地将创业四阶段重新映射到 AI 时代。本文是图文并茂的中文深度解读，加入中国团队实战视角与 10 个即用提示词模板。
+  </p>
+  <div class="hero-meta">
+    <span>📅 原文 2026-05-14</span>
+    <span class="sep">·</span>
+    <span>📖 解读深度 150%+</span>
+    <span class="sep">·</span>
+    <span>🇨🇳 含中国案例</span>
+    <span class="sep">·</span>
+    <span>📝 10 个即用提示词</span>
+  </div>
+  <div class="kpi-strip">
+    <div class="kpi">
+      <div class="num">6→<em>1</em></div>
+      <div class="desc">月→天｜从想法到上线的时间</div>
+    </div>
+    <div class="kpi">
+      <div class="num"><em>$40M</em></div>
+      <div class="desc">Cal AI 营收｜7人团队，零风投</div>
+    </div>
+    <div class="kpi">
+      <div class="num">43<em>%</em></div>
+      <div class="desc">创业失败首因｜造了没人要的东西</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<div class="content">
+
+<!-- OVERVIEW -->
+<section class="section" id="overview">
+  <div class="section-eyebrow">核心洞察</div>
+  <h2>一句话读懂这本手册</h2>
+  <p>
+    AI 消灭了创业三大瓶颈——<strong>资本、人员、技术技能</strong>。创始人的角色正在从「亲历者」变成「指挥家」。你不必再自己写代码，也不必再养一支 20 人的团队才能做产品——你需要的，是学会把正确的问题交给正确的 AI 智能体，把最稀缺的注意力留给只有你能做的事。
+  </p>
+
+  <div class="pullquote">
+    <p>"从想法到上线的时间，已经从 6 个月压缩到了一天。我们内部的口号是：Just do things（先做起来）。"</p>
+    <cite>— Anthropic 内部文化，引自 Founders Playbook</cite>
+  </div>
+
+  <p>这不是一本关于 AI 趋势的泛泛之作。它是 Anthropic 站在 2026 年的 AI 能力曲线上，重写了传统创业方法论中已经被颠覆的那些章节。</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="icon">🎯</div>
+      <h4>目标读者</h4>
+      <p>从第一天就把 AI 作为默认架构的创始人，以及帮助他们落地的早期运营者</p>
+    </div>
+    <div class="card">
+      <div class="icon">📋</div>
+      <h4>核心内容</h4>
+      <p>四阶段框架（Idea/MVP/Launch/Scale）+ 每阶段目标、退出标准、常见陷阱、AI 练习题</p>
+    </div>
+    <div class="card">
+      <div class="icon">🛠️</div>
+      <h4>工具矩阵</h4>
+      <p>Claude Chat、Cowork、Claude Code、Claude Platform 在各阶段的精确定位</p>
+    </div>
+    <div class="card">
+      <div class="icon">📊</div>
+      <h4>配套数据</h4>
+      <p>基于 100 万次对话分析的 9 大消费者 AI 赛道，Cal AI 等真实案例的具体数字</p>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- WHY NOW -->
+<section class="section" id="why">
+  <div class="section-eyebrow">时代背景</div>
+  <h2>三大瓶颈同时消失</h2>
+  <p>历史上，每一次创业阶段的跃迁都被三个瓶颈卡住。2026 年，这三个瓶颈几乎同时消失。</p>
+
+  <div class="svg-wrap">
+    <svg viewBox="0 0 760 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;background:#faf9f5;">
+      <text x="380" y="28" text-anchor="middle" font-size="13" font-weight="700" fill="#141413" font-family="Poppins,sans-serif">AI 消除了创业三大历史瓶颈</text>
+      <!-- Card 1 -->
+      <rect x="30" y="45" width="205" height="115" rx="10" fill="#ffffff" stroke="#e8e6dc" stroke-width="1"></rect>
+      <rect x="30" y="45" width="205" height="3" rx="2" fill="#6a9bcc"></rect>
+      <text x="132" y="78" text-anchor="middle" font-size="22" font-family="sans-serif">💰</text>
+      <text x="132" y="97" text-anchor="middle" font-size="12" font-weight="700" fill="#141413" font-family="Poppins,sans-serif">资本瓶颈</text>
+      <text x="132" y="112" text-anchor="middle" font-size="9.5" fill="#4a4845" font-family="sans-serif">过去：买工具雇人租服务器</text>
+      <rect x="65" y="132" width="134" height="18" rx="4" fill="#eef2e9"></rect>
+      <text x="132" y="144" text-anchor="middle" font-size="9" font-weight="700" fill="#3d5025" font-family="sans-serif">✓ Claude API 按用量计费</text>
+      <!-- Arrow -->
+      <text x="258" y="108" text-anchor="middle" font-size="16" fill="#b0aea5" font-family="sans-serif">→</text>
+      <!-- Card 2 -->
+      <rect x="278" y="45" width="205" height="115" rx="10" fill="#ffffff" stroke="#e8e6dc" stroke-width="1"></rect>
+      <rect x="278" y="45" width="205" height="3" rx="2" fill="#788c5d"></rect>
+      <text x="380" y="78" text-anchor="middle" font-size="22" font-family="sans-serif">👥</text>
+      <text x="380" y="97" text-anchor="middle" font-size="12" font-weight="700" fill="#141413" font-family="Poppins,sans-serif">人员瓶颈</text>
+      <text x="380" y="112" text-anchor="middle" font-size="9.5" fill="#4a4845" font-family="sans-serif">过去：需要 20+ 人团队落地</text>
+      <rect x="312" y="132" width="136" height="18" rx="4" fill="#eef2e9"></rect>
+      <text x="380" y="144" text-anchor="middle" font-size="9" font-weight="700" fill="#3d5025" font-family="sans-serif">✓ Multi-Agent 并行执行</text>
+      <!-- Arrow -->
+      <text x="506" y="108" text-anchor="middle" font-size="16" fill="#b0aea5" font-family="sans-serif">→</text>
+      <!-- Card 3 -->
+      <rect x="526" y="45" width="205" height="115" rx="10" fill="#ffffff" stroke="#e8e6dc" stroke-width="1"></rect>
+      <rect x="526" y="45" width="205" height="3" rx="2" fill="#d97757"></rect>
+      <text x="628" y="78" text-anchor="middle" font-size="22" font-family="sans-serif">💻</text>
+      <text x="628" y="97" text-anchor="middle" font-size="12" font-weight="700" fill="#141413" font-family="Poppins,sans-serif">技术技能瓶颈</text>
+      <text x="628" y="112" text-anchor="middle" font-size="9.5" fill="#4a4845" font-family="sans-serif">过去：不懂代码无法独立构建</text>
+      <rect x="562" y="132" width="132" height="18" rx="4" fill="#eef2e9"></rect>
+      <text x="628" y="144" text-anchor="middle" font-size="9" font-weight="700" fill="#3d5025" font-family="sans-serif">✓ Claude Code 自然语言编程</text>
+    </svg>
+    <p class="svg-caption">【事实】来源：Anthropic Founders Playbook，2026-05-14</p>
+  </div>
+
+  <p>与此同时，Anthropic 在 2026 年 2 月完成了 <strong>$300 亿 Series G 融资</strong>，估值 $3800 亿。这本手册是这个战略叙事的产品化表达——同时也是真正有价值的实操指南。</p>
+</section>
+
+<hr class="div">
+
+<!-- FOUR STAGES -->
+<section class="section" id="stages">
+  <div class="section-eyebrow">核心框架</div>
+  <h2>四阶段地图：从想法到规模化</h2>
+  <p>手册把创业旅程拆成四个清晰阶段，每个阶段都有明确的<strong>目标、退出标准、常见失败模式</strong>。</p>
+
+  <!-- Stage map -->
+  <div class="svg-wrap">
+    <svg viewBox="0 0 760 90" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;background:#faf9f5;">
+      <rect x="20" y="18" width="164" height="54" rx="8" fill="#6a9bcc"></rect>
+      <text x="102" y="40" text-anchor="middle" font-size="14" font-family="sans-serif">💡</text>
+      <text x="102" y="55" text-anchor="middle" font-size="11" font-weight="700" fill="#fff" font-family="Poppins,sans-serif">想法验证</text>
+      <text x="102" y="68" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.75)" font-family="sans-serif">Idea</text>
+      <text x="194" y="47" text-anchor="middle" font-size="14" fill="#b0aea5" font-family="sans-serif">›</text>
+      <rect x="205" y="18" width="164" height="54" rx="8" fill="#788c5d"></rect>
+      <text x="287" y="40" text-anchor="middle" font-size="14" font-family="sans-serif">🛠️</text>
+      <text x="287" y="55" text-anchor="middle" font-size="11" font-weight="700" fill="#fff" font-family="Poppins,sans-serif">MVP 构建</text>
+      <text x="287" y="68" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.75)" font-family="sans-serif">MVP</text>
+      <text x="379" y="47" text-anchor="middle" font-size="14" fill="#b0aea5" font-family="sans-serif">›</text>
+      <rect x="390" y="18" width="164" height="54" rx="8" fill="#d97757"></rect>
+      <text x="472" y="40" text-anchor="middle" font-size="14" font-family="sans-serif">🚀</text>
+      <text x="472" y="55" text-anchor="middle" font-size="11" font-weight="700" fill="#fff" font-family="Poppins,sans-serif">上线运营</text>
+      <text x="472" y="68" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.75)" font-family="sans-serif">Launch</text>
+      <text x="564" y="47" text-anchor="middle" font-size="14" fill="#b0aea5" font-family="sans-serif">›</text>
+      <rect x="575" y="18" width="164" height="54" rx="8" fill="#141413"></rect>
+      <text x="657" y="40" text-anchor="middle" font-size="14" font-family="sans-serif">📈</text>
+      <text x="657" y="55" text-anchor="middle" font-size="11" font-weight="700" fill="#fff" font-family="Poppins,sans-serif">规模化</text>
+      <text x="657" y="68" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.6)" font-family="sans-serif">Scale</text>
+    </svg>
+    <p class="svg-caption">【事实】Anthropic Founders Playbook 核心框架</p>
+  </div>
+
+  <div class="stages">
+    <div class="stage stage-1" id="stage-1">
+      <div class="stage-n">Stage 01 · 想法</div>
+      <h4>💡 验证问题，而非打磨方案</h4>
+      <p>不要急着构建。先用 AI 完成三件事：<strong>问题验证、竞争格局扫描、用户洞察</strong>。手册要求至少收集 20 份第一手用户访谈原始记录，找到 10 个愿意付费的目标用户。</p>
+      <p class="warn">⚠️ 常见陷阱：执迷于解决方案，忽视问题本身；把"没有竞争者"当卖点；用问卷代替深度访谈。</p>
+      <span class="exit">退出标准：找到 10 个愿意付费的用户</span>
+    </div>
+    <div class="stage stage-2" id="stage-2">
+      <div class="stage-n">Stage 02 · MVP</div>
+      <h4>🛠️ 工程纪律驾驭 AI 加速</h4>
+      <p>AI 写代码很快，但技术债务积累更快。先定义范围，再开始构建。用 <strong>CLAUDE.md</strong> 维护项目记忆，用 Multi-Agent 模式（UI/后端/QA 并行）替代单线程开发。</p>
+      <p class="warn">⚠️ 演示陷阱：Demo 看起来完美，但底层数据模型无法承载第二个客户的真实数据冲击。</p>
+      <span class="exit">退出标准：可演示核心循环 + 通过安全检查清单</span>
+    </div>
+    <div class="stage stage-3" id="stage-3">
+      <div class="stage-n">Stage 03 · 上线</div>
+      <h4>🚀 区分真实牵引力与早期热度</h4>
+      <p>最容易陷入"虚假繁荣"的阶段。三个客观指标区分真正 PMF：<strong>留存曲线是否趋平、用户主动召回率、付费转化的边际成本</strong>。Sean Ellis 测试：40% 用户会"非常失望"→ 可能达到 PMF。</p>
+      <p class="warn">⚠️ 此阶段开始引入 Claude Cowork 自动化内部运营。注意 Cowork 不写入审计日志，勿用于合规工作流。</p>
+      <span class="exit">退出标准：留存曲线趋平 + 多个真实付费客户</span>
+    </div>
+    <div class="stage stage-4" id="stage-4">
+      <div class="stage-n">Stage 04 · 规模化</div>
+      <h4>📈 构建可复制的 AI 运营系统</h4>
+      <p>规模化的关键不是融资，而是建立"AI 智能体操作系统"。创始人从执行者转为系统设计者，用 Claude Platform 编排多 Agent 工作流，让 80% 重复性工作自动化。</p>
+      <p class="warn">⚠️ 核心指标：每增加一个客户，边际运营成本是否趋近于零？</p>
+      <span class="exit">退出标准：运营成本曲线与营收曲线出现"剪刀差"</span>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- PRODUCT MATRIX -->
+<section class="section" id="product-matrix">
+  <div class="section-eyebrow">工具选择</div>
+  <h2>Claude 产品矩阵</h2>
+  <p>手册最被低估的部分——精确给出四个 Claude 产品在不同阶段的定位，创始人不需要一开始就付所有费用。</p>
+  <div class="pm-grid">
+    <div class="pm-card">
+      <span class="pm-tag pm-blue">Chat</span>
+      <h5>Claude 对话界面</h5>
+      <p>创始人的思考伙伴与客户支持入口。用于构思验证、竞品分析、用户访谈脚本生成。</p>
+      <div class="pm-stages">
+        <span class="pm-tag-sm">💡 想法</span>
+        <span class="pm-tag-sm">🚀 上线</span>
+      </div>
+    </div>
+    <div class="pm-card">
+      <span class="pm-tag pm-orange">Cowork</span>
+      <h5>Claude Cowork</h5>
+      <p>团队知识管理、内部流程自动化。将创始人从客服、内容、社群管理中解放出来。</p>
+      <div class="pm-stages">
+        <span class="pm-tag-sm">🚀 上线</span>
+        <span class="pm-tag-sm">📈 规模化</span>
+      </div>
+    </div>
+    <div class="pm-card">
+      <span class="pm-tag pm-green">Claude Code</span>
+      <h5>Claude Code</h5>
+      <p>工程核心。Multi-Agent 模式（UI + 后端 + QA 并行）。搭配 CLAUDE.md 维持跨 session 上下文。</p>
+      <div class="pm-stages">
+        <span class="pm-tag-sm">🛠️ MVP</span>
+        <span class="pm-tag-sm">📈 规模化</span>
+      </div>
+    </div>
+    <div class="pm-card">
+      <span class="pm-tag pm-gray">Platform</span>
+      <h5>Claude Platform API</h5>
+      <p>后端 API 调用、自定义 Agent 编排、多模型统一接口。规模化阶段的基础设施层。</p>
+      <div class="pm-stages">
+        <span class="pm-tag-sm">📈 规模化</span>
+      </div>
+    </div>
+  </div>
+  <div class="source">【事实】产品定位来源：Anthropic Founders Playbook，2026-05-14，<a href="https://claude.com/blog/the-founders-playbook" target="_blank">claude.com/blog/the-founders-playbook</a></div>
+</section>
+
+<hr class="div">
+
+<!-- 9 DOMAINS -->
+<section class="section" id="9-domains">
+  <div class="section-eyebrow">市场机会</div>
+  <h2>九大消费者 AI 赛道</h2>
+  <p>2026 年 4 月 30 日，Anthropic 发布了基于 <strong>100 万次 Claude 对话</strong>的分析报告。约 6% 属于"个人建议"类——用户说："正是因为负担不起或找不到真人专业人士，才来问 AI。"</p>
+
+  <div class="svg-wrap">
+    <svg viewBox="0 0 760 195" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;background:#faf9f5;">
+      <text x="380" y="22" text-anchor="middle" font-size="12" font-weight="700" fill="#141413" font-family="Poppins,sans-serif">9 大消费者 AI 机会领域（Anthropic 官方数据，2026.04.30）</text>
+      <!-- Row 1 -->
+      <rect x="20" y="35" width="125" height="68" rx="8" fill="#fff" stroke="#e8e6dc" stroke-width="1"></rect>
+      <text x="82" y="60" text-anchor="middle" font-size="18" font-family="sans-serif">🏥</text>
+      <text x="82" y="76" text-anchor="middle" font-size="11" font-weight="700" fill="#141413" font-family="Poppins,sans-serif">健康医疗</text>
+      <text x="82" y="90" text-anchor="middle" font-size="9" fill="#b0aea5" font-family="sans-serif">慢病管理·健康助手</text>
+
+      <rect x="155" y="35" width="125" height="68" rx="8" fill="#fff" stroke="#e8e6dc" stroke-width="1"></rect>
+      <text x="217" y="60" text-anchor="middle" font-size="18" font-family="sans-serif">💼</text>
+      <text x="217" y="76" text-anchor="middle" font-size="11" font-weight="700" fill="#141413" font-family="Poppins,sans-serif">职业发展</text>
+      <text x="217" y="90" text-anchor="middle" font-size="9" fill="#b0aea5" font-family="sans-serif">晋升·转型·面试</text>
+
+      <rect x="290" y="35" width="125" height="68" rx="8" fill="#fff" stroke="#e8e6dc" stroke-width="1"></rect>
+      <text x="352" y="60" text-anchor="middle" font-size="18" font-family="sans-serif">💑</text>
+      <text x="352" y="76" text-anchor="middle" font-size="11" font-weight="700" fill="#141413" font-family="Poppins,sans-serif">人际关系</text>
+      <text x="352" y="90" text-anchor="middle" font-size="9" fill="#b0aea5" font-family="sans-serif">沟通·情感支持</text>
+
+      <rect x="425" y="35" width="125" height="68" rx="8" fill="#fff" stroke="#e8e6dc" stroke-width="1"></rect>
+      <text x="487" y="60" text-anchor="middle" font-size="18" font-family="sans-serif">💰</text>
+      <text x="487" y="76" text-anchor="middle" font-size="11" font-weight="700" fill="#141413" font-family="Poppins,sans-serif">个人理财</text>
+      <text x="487" y="90" text-anchor="middle" font-size="9" fill="#b0aea5" font-family="sans-serif">税务·投资规划</text>
+
+      <rect x="560" y="35" width="178" height="68" rx="8" fill="#fff" stroke="#e8e6dc" stroke-width="1"></rect>
+      <text x="649" y="60" text-anchor="middle" font-size="18" font-family="sans-serif">👶</text>
+      <text x="649" y="76" text-anchor="middle" font-size="11" font-weight="700" fill="#141413" font-family="Poppins,sans-serif">育儿教育</text>
+      <text x="649" y="90" text-anchor="middle" font-size="9" fill="#b0aea5" font-family="sans-serif">成长追踪·育儿决策</text>
+
+      <!-- Row 2 -->
+      <rect x="20" y="115" width="125" height="68" rx="8" fill="#fff" stroke="#e8e6dc" stroke-width="1"></rect>
+      <text x="82" y="140" text-anchor="middle" font-size="18" font-family="sans-serif">⚖️</text>
+      <text x="82" y="156" text-anchor="middle" font-size="11" font-weight="700" fill="#141413" font-family="Poppins,sans-serif">法律维权</text>
+      <text x="82" y="170" text-anchor="middle" font-size="9" fill="#b0aea5" font-family="sans-serif">合同·自助法律</text>
+
+      <rect x="155" y="115" width="125" height="68" rx="8" fill="#fff" stroke="#e8e6dc" stroke-width="1"></rect>
+      <text x="217" y="140" text-anchor="middle" font-size="18" font-family="sans-serif">🔬</text>
+      <text x="217" y="156" text-anchor="middle" font-size="11" font-weight="700" fill="#141413" font-family="Poppins,sans-serif">生命科学</text>
+      <text x="217" y="170" text-anchor="middle" font-size="9" fill="#b0aea5" font-family="sans-serif">科研·生物医学</text>
+
+      <rect x="290" y="115" width="125" height="68" rx="8" fill="#fff" stroke="#e8e6dc" stroke-width="1"></rect>
+      <text x="352" y="140" text-anchor="middle" font-size="18" font-family="sans-serif">🧠</text>
+      <text x="352" y="156" text-anchor="middle" font-size="11" font-weight="700" fill="#141413" font-family="Poppins,sans-serif">心理健康</text>
+      <text x="352" y="170" text-anchor="middle" font-size="9" fill="#b0aea5" font-family="sans-serif">情绪管理·减压</text>
+
+      <!-- Anthropic note -->
+      <rect x="425" y="115" width="313" height="68" rx="8" fill="#fdf8f0" stroke="#f0d9a0" stroke-width="1" stroke-dasharray="5,3"></rect>
+      <text x="581" y="143" text-anchor="middle" font-size="11" font-weight="700" fill="#7a5012" font-family="Poppins,sans-serif">Anthropic 明确声明：</text>
+      <text x="581" y="160" text-anchor="middle" font-size="10" fill="#b0884a" font-family="sans-serif">消费者赛道开放给创业者</text>
+      <text x="581" y="174" text-anchor="middle" font-size="10" fill="#b0884a" font-family="sans-serif">自己只做企业端（医疗/金融/法律）</text>
+    </svg>
+    <p class="svg-caption">【事实】Anthropic "How People Ask Claude for Personal Guidance" 报告，2026-04-30</p>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>领域</th><th>核心用户痛点</th><th>商业化方向</th><th>中国适配度</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>🏥 健康医疗</td><td>挂号难、慢病自我管理</td><td>AI 健康管家</td><td>⭐⭐⭐⭐⭐</td></tr>
+        <tr><td>💼 职业发展</td><td>晋升瓶颈、职场转型</td><td>职业教练、面试模拟</td><td>⭐⭐⭐⭐⭐</td></tr>
+        <tr><td>💰 个人理财</td><td>税务申报、理财规划</td><td>个人 CFO 助手</td><td>⭐⭐⭐⭐</td></tr>
+        <tr><td>👶 育儿教育</td><td>育儿决策、成长追踪</td><td>家庭育儿副驾驶</td><td>⭐⭐⭐⭐⭐</td></tr>
+        <tr><td>⚖️ 法律维权</td><td>维权门槛高、合同难读</td><td>法律自助平台</td><td>⭐⭐⭐</td></tr>
+        <tr><td>💑 人际关系</td><td>沟通障碍、情绪反思</td><td>私人心理陪伴</td><td>⭐⭐⭐</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><strong>Cal AI 案例（事实）</strong>：切入"卡路里计数"子方向，$40M 营收，被 MyFitnessPal 收购，年化 $50M ARR，7 名员工，零风投。这是单一子方向的规模——9 个赛道 × N 个子方向的总规模远超想象。</p>
+</section>
+
+<hr class="div">
+
+<!-- GLOBAL CASES -->
+<section class="section" id="global-cases">
+  <div class="section-eyebrow">真实案例</div>
+  <h2>手册中的创始人故事</h2>
+
+  <div class="case">
+    <div class="case-hd">
+      <div class="case-ico ico-a">A</div>
+      <div class="case-hd-info">
+        <h4>Ambral — B2B 客户关系智能</h4>
+        <span>创始人：Jack Stettner &amp; Sam Brickman</span>
+      </div>
+    </div>
+    <p>每个 B2B 创始人都面临同一个问题：公司规模扩大后，创始人级别的客户亲密度就无法维持。Ambral 用 Claude 解决了这个问题——在规模化的情况下，依然让每个客户感受到被"创始人级别"对待。团队用 Claude 持续分析客户沟通记录，生成个性化的关怀行动建议。</p>
+    <div class="result">核心洞察：AI 可以把创始人的客户感知能力"复制"给整个团队</div>
+  </div>
+
+  <div class="case">
+    <div class="case-hd">
+      <div class="case-ico ico-b">H</div>
+      <div class="case-hd-info">
+        <h4>HumanLayer — AI 智能体治理平台</h4>
+        <span>创始人：Dexter Horthy</span>
+      </div>
+    </div>
+    <p>Dexter 在构建自主 AI 智能体时发现：企业不敢让 AI 自主访问敏感操作。这个观察本身，成了 HumanLayer 的核心产品机会——为 AI 智能体提供"人类审批层"，让企业在自动化与控制之间找到平衡。从痛点到产品，全程用 Claude Code 构建原型。</p>
+    <div class="result">核心洞察：AI 的限制本身，往往是下一个创业机会</div>
+  </div>
+
+  <div class="case">
+    <div class="case-hd">
+      <div class="case-ico ico-c">V</div>
+      <div class="case-hd-info">
+        <h4>Vulcan Technologies — 非技术团队赢得政府合同</h4>
+        <span>行业：政府合同，B2B</span>
+      </div>
+    </div>
+    <p>Vulcan 的创始团队没有传统意义上的工程背景，却用 Claude Code 构建了足以赢得政府级别合同的产品。这是手册里"AI 消灭技术技能瓶颈"最直接的证明：自然语言就是新的编程语言，领域知识才是真正的护城河。</p>
+    <div class="result">核心洞察：在 AI 时代，行业深度 &gt; 技术深度</div>
+  </div>
+
+  <div class="case">
+    <div class="case-hd">
+      <div class="case-ico ico-d">M</div>
+      <div class="case-hd-info">
+        <h4>Medvi — 最接近"一人独角兽"的现实验证</h4>
+        <span>创始人：Matthew Gallagher（纽约时报 2026-04-02 核实）</span>
+      </div>
+    </div>
+    <p>GLP-1 减重药远程医疗平台。两人，从 $20,000 启动，借助 16 个 AI 工具（含 Claude）在 2025 年达到 $4.01 亿营收，净利润率 16.2%（同赛道上市竞品 Hims &amp; Hers，2400+ 员工，约 5%）。</p>
+    <p>Dario Amodei 在 2025 年 5 月预言：2026 年底将出现第一个"一人独角兽"，目前还有约 7 个月时间。</p>
+    <div class="warn-result">⚠️ 注意：同期收到 FDA 警告信，AI 客服产生幻觉，合规层薄弱——这是单创始人模式的结构性脆弱点</div>
+  </div>
+  <div class="source">【事实】Medvi 数据：纽约时报 2026-04-02 报道；FDA 警告信 2026-02-20。Cal AI 数据：公开报道，被 MyFitnessPal 收购后年化 $50M ARR。</div>
+</section>
+
+<hr class="div">
+
+<!-- CHINA -->
+<section class="section" id="china">
+  <div class="section-eyebrow">中国视角</div>
+  <h2>🇨🇳 中国团队的 AI 创业现实</h2>
+  <p>手册是硅谷视角写的。中国创业团队面临不同的约束和机会：访问限制、本土合规、中文语境。以下三个场景，来自中国团队的真实或典型实践。</p>
+
+  <div class="case">
+    <div class="case-hd">
+      <div class="case-ico ico-cn1">C</div>
+      <div class="case-hd-info">
+        <h4>场景 A：跨境电商开发团队的 10 倍提效</h4>
+        <span>行业：跨境电商 SaaS｜规模：10 人</span>
+      </div>
+    </div>
+    <p>接入 Claude Code 后：原本需要 3 人 1 周完成的"大促订单系统重构"，现在 <strong>1 人 2 天</strong>即可落地。ROI 超 400%（$200/月订阅费 → 节省约 $8,000/月工程师时间）。关键做法：用 CLAUDE.md 记录 SKU 规则、物流逻辑、税务体系，让 AI 每次从正确上下文出发。</p>
+    <div class="result">📌 对应手册 Stage 02（MVP）：工程纪律 + CLAUDE.md 上下文管理</div>
+  </div>
+
+  <div class="case">
+    <div class="case-hd">
+      <div class="case-ico ico-cn2">B</div>
+      <div class="case-hd-info">
+        <h4>场景 B：早期产品团队用 AI 做用户研究</h4>
+        <span>行业：To-B SaaS｜规模：5 人</span>
+      </div>
+    </div>
+    <p>一家企业培训 SaaS 早期团队，将 30 次用户访谈录音上传为文字稿，让 AI 提炼高频痛点、用户原话金句、竞品对比。原本需要 1 个月和数万元的竞品分析，压缩到 <strong>3 天</strong>内完成。更重要的是：Claude 帮助识别了"确认偏误"——AI 给出的是用户真实反馈，而不是创始人想听的答案。</p>
+    <div class="result">📌 对应手册 Stage 01（Idea）：竞品扫描 + 用户访谈分析</div>
+  </div>
+
+  <div class="case">
+    <div class="case-hd">
+      <div class="case-ico ico-cn3">D</div>
+      <div class="case-hd-info">
+        <h4>场景 C：独立开发者"2 人替代 15 人团队"</h4>
+        <span>参考案例：国内创业者公开分享</span>
+      </div>
+    </div>
+    <p>通过 Claude Code 驱动 AI 并行开发数十个产品，将原本 15 人团队的工作量压缩到 <strong>2 人</strong>完成。核心策略：不同产品线分配给不同 AI 智能体并行推进，创始人只做产品方向决策、用户沟通和最终审核。</p>
+    <p><strong>中国团队的特殊挑战：</strong>Claude 官方对中国大陆有访问限制，需通过合规 API 代理接入。成本可压缩到官方定价的 30%–60%，但需自行处理账号合规风险。</p>
+    <div class="result">📌 对应手册 Scale 阶段：Multi-Agent 并行编排，创始人成为"指挥家"</div>
+  </div>
+
+  <h3>中国创始人适配建议</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>手册原建议</th><th>中国适配版本</th><th>注意事项</th></tr></thead>
+      <tbody>
+        <tr><td>Claude Chat 直接访问</td><td>通过合规 API 代理服务接入</td><td>确认代理商合规资质和数据安全</td></tr>
+        <tr><td>Claude Cowork 团队协作</td><td>与飞书/钉钉信息流集成</td><td>合规工作流不依赖 Cowork 审计</td></tr>
+        <tr><td>Ship almost broken 文化</td><td>To-C 先做封闭测试</td><td>中国用户对差体验容忍度更低</td></tr>
+        <tr><td>9 大消费者赛道全面开放</td><td>职业、育儿、个人理财优先验证</td><td>政策合规边界相对清晰，付费意愿高</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- PROMPTS -->
+<section class="section" id="prompts">
+  <div class="section-eyebrow">即用工具箱</div>
+  <h2>10 个创始人专用提示词模板</h2>
+  <p>基于手册的核心练习题，结合中文语境优化。可直接复制使用。</p>
+
+  <h3>🔍 想法验证阶段</h3>
+
+  <div class="prompt-box">
+    <div class="prompt-label">Prompt #1 — 问题假设验证</div>
+    <button class="copy-btn" onclick="cp(this)">复制</button>
+    <pre><span class="hl">我的假设是：</span>[目标用户群体] 面临 [具体问题] 的困难，他们目前用 [现有方案] 来应对，但存在 [核心不足]。
+
+请扮演一个严格的投资人，用以下框架质疑我的假设：
+1. 这个问题的痛点烈度是否足够高？（用户是否在主动花钱/花时间解决它？）
+2. 现有方案的失败是结构性的还是执行性的？
+3. 我能接触到目标用户的最快方式是什么？
+4. 给我 5 个可以在 48 小时内验证假设的最小行动。</pre>
+  </div>
+
+  <div class="prompt-box">
+    <div class="prompt-label">Prompt #2 — 竞品格局扫描</div>
+    <button class="copy-btn" onclick="cp(this)">复制</button>
+    <pre><span class="hl">我要进入的领域：</span>[你的赛道或产品方向]
+
+请帮我完成竞品分析：
+1. 列出直接竞品、间接竞品（用户用来替代的）和潜在颠覆者
+2. 对每个竞品：定位、目标客户、核心差异化、定价策略、已知弱点
+3. 找出市场中的"白地"——有真实需求但现有方案明显不足的场景
+4. 如果我是新进入者，最合理的差异化切入点是什么？
+
+注意：不要给我"没有竞争者"这种答案，那说明我没找对问题。</pre>
+  </div>
+
+  <div class="prompt-box">
+    <div class="prompt-label">Prompt #3 — 用户访谈分析</div>
+    <button class="copy-btn" onclick="cp(this)">复制</button>
+    <pre><span class="hl">以下是我最近 [N] 次用户访谈的原始文稿：</span>[粘贴内容]
+
+请帮我：
+1. 提炼出最高频的 3-5 个核心痛点（用用户原话作为证据）
+2. 识别用户描述问题时出现的情绪词汇（购买动机信号）
+3. 找出用户"说了但没当回事"的隐性需求
+4. 指出我在访谈中可能引导了答案的问题（确认偏误检查）
+5. 建议下一轮访谈需要深挖的 3 个方向</pre>
+  </div>
+
+  <h3>🛠️ MVP 构建阶段</h3>
+
+  <div class="prompt-box">
+    <div class="prompt-label">Prompt #4 — CLAUDE.md 项目记忆文件生成</div>
+    <button class="copy-btn" onclick="cp(this)">复制</button>
+    <pre><span class="hl">我要构建的产品：</span>[产品名称和一句话描述]
+<span class="hl">技术栈：</span>[前端/后端/数据库]
+<span class="hl">核心功能（本期）：</span>[列出 3-5 个功能]
+
+请帮我生成一份 CLAUDE.md 项目记忆文件，包含：
+- 项目目标和核心价值主张（1 段）
+- 技术架构决策（为什么选择这个栈）
+- 代码风格和命名规范
+- 本期范围边界（哪些明确不做）
+- 常见业务术语定义
+- 数据模型核心实体关系</pre>
+  </div>
+
+  <div class="prompt-box">
+    <div class="prompt-label">Prompt #5 — 防"演示陷阱"的范围审查</div>
+    <button class="copy-btn" onclick="cp(this)">复制</button>
+    <pre><span class="hl">我们的 MVP 计划包含以下功能：</span>[列出所有计划功能]
+
+请用"演示陷阱"视角审查：
+1. 哪些功能是"看起来很好但真实用户不需要"的？
+2. 数据模型是否能支持第 10 个客户？第 100 个？
+3. 哪个功能去掉后，核心价值主张仍然成立？
+4. 如果我们只能做 1 个功能发布，应该是哪个？</pre>
+  </div>
+
+  <h3>🚀 上线与 PMF 验证阶段</h3>
+
+  <div class="prompt-box">
+    <div class="prompt-label">Prompt #6 — PMF 信号识别</div>
+    <button class="copy-btn" onclick="cp(this)">复制</button>
+    <pre><span class="hl">我们的产品数据（过去 30 天）：</span>
+- 新用户：[N]，留存用户：[N]，活跃用户：[N]
+- 平均使用频次：[N 次/周]
+- NPS / 满意度：[分数]
+- 自发传播案例：[有/没有，描述]
+
+请分析：
+1. 这些数据是真实 PMF 信号，还是早期热度（Hype）？
+2. 留存曲线的形态意味着什么？
+3. 我应该重点追踪哪 3 个指标来判断 PMF？</pre>
+  </div>
+
+  <div class="prompt-box">
+    <div class="prompt-label">Prompt #7 — 竞品深度分析</div>
+    <button class="copy-btn" onclick="cp(this)">复制</button>
+    <pre><span class="hl">请分析竞品 [竞品名称]：</span>
+
+1. 官网首屏传递的核心价值主张（逐字引用）
+2. 目标客户的隐性假设（从措辞推断）
+3. 定价结构和付费门槛
+4. 用户评论中最高频的正面词和负面词
+5. 他们在 Landing Page 上回避提及的功能（往往是弱点）
+6. 如果我要抢他们 10% 的用户，最容易的切入点是什么？</pre>
+  </div>
+
+  <h3>📈 规模化阶段</h3>
+
+  <div class="prompt-box">
+    <div class="prompt-label">Prompt #8 — 运营自动化优先级排序</div>
+    <button class="copy-btn" onclick="cp(this)">复制</button>
+    <pre><span class="hl">我们团队每周的重复性工作：</span>[列出所有重复工作]
+<span class="hl">团队规模：</span>[N 人]
+<span class="hl">最希望创始人专注的事：</span>[客户/产品/融资/...]
+
+请帮我：
+1. 按"频率 × 时间消耗 × 可自动化难度"打分排序
+2. 指出哪 3 项可以在两周内自动化，给出实施路径
+3. 哪些工作永远不应该自动化（需要人类判断的）？</pre>
+  </div>
+
+  <div class="prompt-box">
+    <div class="prompt-label">Prompt #9 — 创始人每日 AI 工作流</div>
+    <button class="copy-btn" onclick="cp(this)">复制</button>
+    <pre><span class="hl">我的角色：</span>[联合创始人/CEO/CTO/...]
+<span class="hl">公司阶段：</span>[Seed/A/B 轮]
+<span class="hl">最大瓶颈：</span>[产品/增长/融资/团队/...]
+
+请为我设计一套 AI 辅助的每日工作流：
+- 早晨（30 分钟）：信息摄入和优先级设定
+- 工作中：决策支持的 AI 调用场景
+- 每周回顾：用 AI 做哪些分析
+- 哪些事情绝对不应该外包给 AI？</pre>
+  </div>
+
+  <div class="prompt-box">
+    <div class="prompt-label">Prompt #10 — Pitch 压力测试</div>
+    <button class="copy-btn" onclick="cp(this)">复制</button>
+    <pre><span class="hl">我的创业 Pitch 核心叙事：</span>[3-5 句话描述你的公司、市场、为什么现在]
+
+请扮演一个挑剔的 VC，质疑：
+1. 市场规模假设是否合理？（TAM 怎么算的？）
+2. 为什么是你而不是大厂来做这个？
+3. AI 解决方案的护城河够深吗？（6 个月后能被复制吗？）
+4. 最坏的失败场景是什么？你的应对策略是？
+
+最后：给我 3 个我没想到但投资人一定会问的问题。</pre>
+  </div>
+
+  <div class="source">【观点】以上提示词模板由作者基于 Founders Playbook 框架原创整理，结合中文语境优化。非 Anthropic 官方提示词。</div>
+</section>
+
+<hr class="div">
+
+<!-- ACTION -->
+<section class="section" id="action">
+  <div class="section-eyebrow">本周行动</div>
+  <h2>本周就能用上的 5 个起点</h2>
+  <ul class="action-list">
+    <li>
+      <div class="al-num">1</div>
+      <div class="al-body">
+        <h5>用 Prompt #1 质疑你最重要的假设</h5>
+        <p>不管你处于哪个阶段，今天就把核心假设写出来，让 AI 扮演严格投资人来挑战它。你会发现之前从未认真对待过的弱点。</p>
+      </div>
+    </li>
+    <li>
+      <div class="al-num">2</div>
+      <div class="al-body">
+        <h5>创建你的第一个 CLAUDE.md</h5>
+        <p>如果你在构建任何产品，今天就用 Prompt #4 生成 CLAUDE.md。这一个习惯能节省每天 30–60 分钟的上下文重建时间。</p>
+      </div>
+    </li>
+    <li>
+      <div class="al-num">3</div>
+      <div class="al-body">
+        <h5>做 3 个真实用户访谈（不是问卷）</h5>
+        <p>这周约 3 个目标用户视频通话，各 30 分钟，只问开放性问题，全程录音，然后用 Prompt #3 分析。</p>
+      </div>
+    </li>
+    <li>
+      <div class="al-num">4</div>
+      <div class="al-body">
+        <h5>列出团队 3 件最浪费时间的重复性工作</h5>
+        <p>用 Prompt #8 分析，找出最容易自动化的那一件，本周完成它。先一个，再建信心和肌肉记忆。</p>
+      </div>
+    </li>
+    <li>
+      <div class="al-num">5</div>
+      <div class="al-body">
+        <h5>明确你当前的阶段退出标准</h5>
+        <p>对照四阶段框架，诚实判断你现在在哪里，把退出标准写在可见的地方。没有清晰退出标准，就无法有效推进。</p>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<hr class="div">
+
+<!-- PHILOSOPHY -->
+<section class="section" id="philosophy">
+  <div class="section-eyebrow">创始人哲学</div>
+  <h2>AI 时代的创始人哲学</h2>
+  <p>手册的最深层洞察，不是关于工具，而是关于<strong>创始人角色的根本转变</strong>。</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="icon">🎯</div>
+      <h4>选择 &gt; 执行</h4>
+      <p>最稀缺的能力不是"能做什么"，而是"选择做什么"。方向判断力是创始人在 AI 时代的核心竞争力。</p>
+    </div>
+    <div class="card">
+      <div class="icon">🔬</div>
+      <h4>验证 &gt; 构建</h4>
+      <p>AI 让构建变得廉价，让"不验证就构建"的代价更大。当原型一天就能出来，你更没有借口不先和真实用户交谈。</p>
+    </div>
+    <div class="card">
+      <div class="icon">🎼</div>
+      <h4>指挥家 &gt; 演奏者</h4>
+      <p>从个人贡献者到 AI 智能体的指挥家。你的工作是定义目标、划定边界、校准输出，而不是亲手执行每一步。</p>
+    </div>
+    <div class="card">
+      <div class="icon">⚡</div>
+      <h4>速度 + 纪律</h4>
+      <p>速度不是鲁莽。AI 加速了构建，也加速了技术债务。范围纪律、安全检查——在 AI 时代更重要，不是更不重要。</p>
+    </div>
+  </div>
+
+  <div class="pullquote">
+    <p>"决定创业胜负的因素，已经从'你能不能构建它'转变为'你能不能比对手更快地迭代和编排'。"</p>
+    <cite>— 观点，非 Anthropic 原文</cite>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- DOWNLOAD -->
+<section class="section" id="download">
+  <div class="download">
+    <h2>下载完整 PDF 版本</h2>
+    <p>包含本文所有内容——四阶段框架、中国案例、10 个提示词模板，适合离线阅读和团队分享。</p>
+    <a href="https://founders.wwei.ai/founders-playbook-cn.pdf" download="" class="dl-btn">
+      ↓ 下载 PDF 版本
+    </a>
+  </div>
+
+  <div class="source">
+    <strong>引用与来源：</strong><br>
+    • 原文：<a href="https://claude.com/blog/the-founders-playbook" target="_blank">The Founder's Playbook: Building an AI-native startup</a>（Anthropic，2026-05-14）<br>
+    • Anthropic 1M 对话分析：How People Ask Claude for Personal Guidance，2026-04-30<br>
+    • TechTimes 独立评审：<a href="http://www.techtimes.com/articles/316740/20260516/anthropics-new-founder-playbook-argues-ai-has-rebooted-startup-lifecycle-heres-what-holds.htm" target="_blank">Anthropic's New Founder Playbook...</a>，2026-05-16<br>
+    • Medvi 数据：纽约时报 2026-04-02 核实报道；FDA 警告信 2026-02-20<br>
+    • Cal AI：公开报道，被 MyFitnessPal 收购后年化 $50M ARR<br>
+    • 本文由 wwei.ai 整理，中国创业者视角扩展，非 Anthropic 官方内容
+  </div>
+</section>
+
+</div><!-- /content -->
+</div><!-- /content-founders -->
+
+<div id="content-workers" style="display:none">
+
+<!-- WORKERS HERO -->
+<section class="hero" id="w-top">
+  <div class="eyebrow">AI时代打工人生存指南 · 2026版</div>
+  <h1>不被替代，<br>才是<em>真正的竞争力</em></h1>
+  <p class="lead">
+    真正的问题从来不是「AI 会不会替代我」——而是「用 AI 的人会不会替代不用 AI 的你」。本指南针对研发、设计、运营、市场、财务、数据等 10 类互联网岗位，提供可立刻落地的 AI 提效路径与职业跃迁框架。
+  </p>
+  <div class="hero-meta">
+    <span>📅 2026 年版</span>
+    <span class="sep">·</span>
+    <span>💼 10 类岗位攻略</span>
+    <span class="sep">·</span>
+    <span>📝 10 个专属提示词</span>
+    <span class="sep">·</span>
+    <span>🇨🇳 互联网场景</span>
+  </div>
+  <div class="kpi-strip">
+    <div class="kpi">
+      <div class="num">3<em>×</em></div>
+      <div class="desc">个人产能提升｜掌握 AI 工作流后的平均提效</div>
+    </div>
+    <div class="kpi">
+      <div class="num"><em>2</em>年</div>
+      <div class="desc">晋升加速｜AI 用户 vs 非 AI 用户的职业速度差</div>
+    </div>
+    <div class="kpi">
+      <div class="num">85<em>%</em></div>
+      <div class="desc">白领岗位｜受 AI 实质影响的工作比例（IMF，2024）</div>
+    </div>
+  </div>
+</section>
+
+<div class="content">
+
+<!-- OVERVIEW -->
+<section class="section" id="w-overview">
+  <div class="section-eyebrow">核心认知</div>
+  <h2>三种打工人，三种命运</h2>
+  <p>AI 时代不是「人 vs AI」，而是「会用 AI 的人 vs 不会用 AI 的人」。在互联网公司，同一个岗位，三年后会分裂成截然不同的三条路。</p>
+
+  <div class="fate-grid">
+    <div class="fate-card bad">
+      <div class="fate-emoji">😰</div>
+      <div class="fate-label">被替代者</div>
+      <p>把 AI 当威胁，拒绝学习。岗位被压缩，成本变高，第一批被优化。</p>
+    </div>
+    <div class="fate-card mid">
+      <div class="fate-emoji">🤔</div>
+      <div class="fate-label">旁观者</div>
+      <p>知道 AI 重要，但浅尝辄止。效率略提升，但无法形成差异化优势。</p>
+    </div>
+    <div class="fate-card good">
+      <div class="fate-emoji">🚀</div>
+      <div class="fate-label">放大者</div>
+      <p>用 AI 放大自己的专业判断。产能 3×，影响力 10×，不可替代。</p>
+    </div>
+  
+<div style="margin:2rem 0; overflow-x:auto;">
+<svg viewBox="0 0 720 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;display:block;margin:0 auto;font-family:&#39;Poppins&#39;,sans-serif;">
+  <defs>
+    <lineargradient id="g-bad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f8d0c6"></stop><stop offset="100%" stop-color="#ffe8e2"></stop></lineargradient>
+    <lineargradient id="g-mid" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#d0d8f8"></stop><stop offset="100%" stop-color="#edf0ff"></stop></lineargradient>
+    <lineargradient id="g-good" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c6e8ce"></stop><stop offset="100%" stop-color="#e8f8ec"></stop></lineargradient>
+  </defs>
+  <!-- 被替代者 -->
+  <rect x="20" y="20" width="200" height="160" rx="12" fill="url(#g-bad)" stroke="#f8d0c6" stroke-width="1.5"></rect>
+  <text x="120" y="60" text-anchor="middle" font-size="28">😰</text>
+  <text x="120" y="88" text-anchor="middle" font-size="13" font-weight="700" fill="#c0392b">被替代者</text>
+  <text x="120" y="108" text-anchor="middle" font-size="10" fill="#888">拒绝 AI，等待被优化</text>
+  <line x1="120" y1="118" x2="120" y2="145" stroke="#f8d0c6" stroke-width="1.5" stroke-dasharray="3,3"></line>
+  <text x="120" y="160" text-anchor="middle" font-size="10" fill="#c0392b">↓ 岗位压缩</text>
+  <!-- 旁观者 -->
+  <rect x="260" y="20" width="200" height="160" rx="12" fill="url(#g-mid)" stroke="#d0d8f8" stroke-width="1.5"></rect>
+  <text x="360" y="60" text-anchor="middle" font-size="28">🤔</text>
+  <text x="360" y="88" text-anchor="middle" font-size="13" font-weight="700" fill="#3a4a9c">旁观者</text>
+  <text x="360" y="108" text-anchor="middle" font-size="10" fill="#888">浅尝辄止，无差异化</text>
+  <line x1="360" y1="118" x2="360" y2="145" stroke="#d0d8f8" stroke-width="1.5" stroke-dasharray="3,3"></line>
+  <text x="360" y="160" text-anchor="middle" font-size="10" fill="#3a4a9c">→ 原地踏步</text>
+  <!-- 放大者 -->
+  <rect x="500" y="20" width="200" height="160" rx="12" fill="url(#g-good)" stroke="#c6e8ce" stroke-width="1.5"></rect>
+  <text x="600" y="60" text-anchor="middle" font-size="28">🚀</text>
+  <text x="600" y="88" text-anchor="middle" font-size="13" font-weight="700" fill="#27673a">放大者</text>
+  <text x="600" y="108" text-anchor="middle" font-size="10" fill="#888">专业判断 × AI 执行</text>
+  <line x1="600" y1="118" x2="600" y2="145" stroke="#c6e8ce" stroke-width="1.5" stroke-dasharray="3,3"></line>
+  <text x="600" y="160" text-anchor="middle" font-size="10" fill="#27673a">↑ 不可替代</text>
+</svg>
+</div>
+</div>
+
+  <div class="pullquote">
+    <p>"AI 不会替代你，但用 AI 的人会。问题不在于你的岗位会不会消失，而在于你在用 AI 做更有价值的事，还是在等着别人用 AI 做你的工作。"</p>
+    <cite>— 观点</cite>
+  </div>
+
+  <p>互联网公司已经率先感受到变化：同样的需求，5 人团队 + AI 和 20 人团队，输出质量已经相差无几。压缩的是头部证，放大的是真正懂业务的人。</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="icon">🎯</div>
+      <h4>AI 替代的是什么</h4>
+      <p>重复性执行、模板化输出、信息搜集整理——这些工作正在被自动化。</p>
+    </div>
+    <div class="card">
+      <div class="icon">🧠</div>
+      <h4>AI 无法替代的是什么</h4>
+      <p>业务判断、用户洞察、跨团队协作、稀缺的上下文理解——越是需要人际信任和领域积累的，越安全。</p>
+    </div>
+    <div class="card">
+      <div class="icon">⚡</div>
+      <h4>放大者的核心逻辑</h4>
+      <p>把 AI 当「杠杆」而非「工具」。你的专业判断 × AI 的执行速度 = 指数级输出。</p>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- STAGES OVERVIEW -->
+<section class="section" id="w-stages">
+  <div class="section-eyebrow">成长框架</div>
+  <h2>打工人 AI 成长四阶段</h2>
+  <p>不同于创始人的「公司阶段」，打工人的成长以「个人能力积累」为轴线。四个阶段不是严格时间线，但有清晰的能力跃迁标志。</p>
+
+
+<div style="margin:1.5rem 0; overflow-x:auto;">
+<svg viewBox="0 0 760 120" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:760px;display:block;margin:0 auto;font-family:&#39;Poppins&#39;,sans-serif;">
+  <!-- 连接线 -->
+  <line x1="80" y1="52" x2="680" y2="52" stroke="#e8e6dc" stroke-width="3"></line>
+  <!-- 阶段1 -->
+  <circle cx="80" cy="52" r="28" fill="#d97757" opacity=".15"></circle>
+  <circle cx="80" cy="52" r="18" fill="#d97757"></circle>
+  <text x="80" y="57" text-anchor="middle" font-size="13" fill="white" font-weight="700">1</text>
+  <text x="80" y="92" text-anchor="middle" font-size="11" font-weight="700" fill="#141413">认知重建</text>
+  <text x="80" y="107" text-anchor="middle" font-size="9" fill="#b0aea5">0—3 个月</text>
+  <!-- 阶段2 -->
+  <circle cx="280" cy="52" r="28" fill="#6a9bcc" opacity=".15"></circle>
+  <circle cx="280" cy="52" r="18" fill="#6a9bcc"></circle>
+  <text x="280" y="57" text-anchor="middle" font-size="13" fill="white" font-weight="700">2</text>
+  <text x="280" y="92" text-anchor="middle" font-size="11" font-weight="700" fill="#141413">个人提速</text>
+  <text x="280" y="107" text-anchor="middle" font-size="9" fill="#b0aea5">3—12 个月</text>
+  <!-- 阶段3 -->
+  <circle cx="480" cy="52" r="28" fill="#788c5d" opacity=".15"></circle>
+  <circle cx="480" cy="52" r="18" fill="#788c5d"></circle>
+  <text x="480" y="57" text-anchor="middle" font-size="13" fill="white" font-weight="700">3</text>
+  <text x="480" y="92" text-anchor="middle" font-size="11" font-weight="700" fill="#141413">团队赋能</text>
+  <text x="480" y="107" text-anchor="middle" font-size="9" fill="#b0aea5">12—24 个月</text>
+  <!-- 阶段4 -->
+  <circle cx="680" cy="52" r="28" fill="#141413" opacity=".1"></circle>
+  <circle cx="680" cy="52" r="18" fill="#141413"></circle>
+  <text x="680" y="57" text-anchor="middle" font-size="13" fill="white" font-weight="700">4</text>
+  <text x="680" y="92" text-anchor="middle" font-size="11" font-weight="700" fill="#141413">职业跃迁</text>
+  <text x="680" y="107" text-anchor="middle" font-size="9" fill="#b0aea5">24 个月+</text>
+  <!-- 箭头 -->
+  <polygon points="690,48 700,52 690,56" fill="#141413" opacity=".4"></polygon>
+</svg>
+</div>
+
+  <div class="phase-row">
+    <div class="phase-box">
+      <div class="ph-num">阶段一</div>
+      <div class="ph-title">认知重建</div>
+      <div class="ph-time">0—3 个月</div>
+      <p>建立正确认知，找到自己岗位的 AI 渗透点，完成第一个 AI 工作流闭环。</p>
+    </div>
+    <div class="phase-box">
+      <div class="ph-num">阶段二</div>
+      <div class="ph-title">个人提速</div>
+      <div class="ph-time">3—12 个月</div>
+      <p>建立个人 AI 工作栈，核心任务产能提升 2-5×，开始感受到「时间剩余」。</p>
+    </div>
+    <div class="phase-box">
+      <div class="ph-num">阶段三</div>
+      <div class="ph-title">团队赋能</div>
+      <div class="ph-time">12—24 个月</div>
+      <p>从个人效率走向团队影响力，成为部门内的 AI Champion，主导流程建设。</p>
+    </div>
+    <div class="phase-box">
+      <div class="ph-num">阶段四</div>
+      <div class="ph-title">职业跃迁</div>
+      <div class="ph-time">24 个月+</div>
+      <p>重新定义自己的职业价值，具备跨角色能力，甚至走向 OPC 或独立顾问。</p>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- STAGE 1 -->
+<section class="section" id="w-stage-1">
+  <div class="section-eyebrow">阶段一</div>
+  <h2>认知重建 — 找到你的 AI 渗透点</h2>
+  <p>大多数人在「知道 AI 很重要」和「真正改变工作方式」之间卡住了。阶段一的目标只有一个：完成第一个 AI 工作流闭环，让 AI 真实节省你的时间。</p>
+
+  <h3>三步启动</h3>
+  <div class="card-grid">
+    <div class="card">
+      <div class="icon">1️⃣</div>
+      <h4>列出你最耗时的 3 件事</h4>
+      <p>不是「最重要的」，而是「最耗时间、最消耗精力、最重复」的。这是 AI 最容易切入的入口。</p>
+    </div>
+    <div class="card">
+      <div class="icon">2️⃣</div>
+      <h4>用 AI 做一次完整尝试</h4>
+      <p>不要只是试试看，要完整跑一次：从输入到输出到你的判断修改到最终交付。感受全流程。</p>
+    </div>
+    <div class="card">
+      <div class="icon">3️⃣</div>
+      <h4>记录节省了多少时间</h4>
+      <p>量化很重要。「节省了 2 小时」比「感觉还不错」更能驱动习惯形成，也更容易向团队传播。</p>
+    </div>
+  </div>
+
+  <div class="pullquote">
+    <p>"AI 的价值不是替你思考，而是替你执行。你的判断 + AI 的速度，才是真正的放大器。"</p>
+    <cite>— 观点</cite>
+  </div>
+
+  <h3>认知重建的关键转变</h3>
+  <div class="two-col">
+    <div>
+      <strong>旧思维（放弃这些）</strong>
+      <ul style="margin-top:.5rem; padding-left:1.2rem; color:var(--text-2); font-size:.9rem;">
+        <li>AI 会替代我</li>
+        <li>AI 输出质量不够好</li>
+        <li>我的工作太复杂，AI 做不了</li>
+        <li>等公司统一培训我再用</li>
+      </ul>
+    </div>
+    <div>
+      <strong>新思维（建立这些）</strong>
+      <ul style="margin-top:.5rem; padding-left:1.2rem; color:var(--text-2); font-size:.9rem;">
+        <li>不用 AI 的人会替代我</li>
+        <li>AI 输出 80% + 我判断 20% = 120%</li>
+        <li>复杂工作可以拆解成 AI 能处理的子任务</li>
+        <li>先自己探索，再去影响团队</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- STAGE 2 -->
+<section class="section" id="w-stage-2">
+  <div class="section-eyebrow">阶段二</div>
+  <h2>个人提速 — 建立你的 AI 工作栈</h2>
+  <p>阶段二的核心是「系统化」。不是偶尔用一下，而是把 AI 嵌入每日工作流，让提效变成默认状态。</p>
+
+  <h3>个人 AI 工作栈四层结构</h3>
+
+<div style="margin:1.5rem 0; overflow-x:auto;">
+<svg viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:600px;display:block;margin:0 auto;font-family:&#39;Poppins&#39;,sans-serif;">
+  <defs>
+    <lineargradient id="sg1" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97757"></stop><stop offset="100%" stop-color="#e8956f"></stop></lineargradient>
+    <lineargradient id="sg2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#6a9bcc"></stop><stop offset="100%" stop-color="#82afd8"></stop></lineargradient>
+    <lineargradient id="sg3" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#788c5d"></stop><stop offset="100%" stop-color="#8fa070"></stop></lineargradient>
+    <lineargradient id="sg4" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#141413"></stop><stop offset="100%" stop-color="#2e2d2b"></stop></lineargradient>
+  </defs>
+  <!-- 自动化层（底）-->
+  <rect x="20" y="180" width="560" height="48" rx="8" fill="url(#sg4)"></rect>
+  <text x="40" y="200" font-size="11" fill="white" opacity=".6" font-weight="600">⚙️ 自动化层</text>
+  <text x="40" y="218" font-size="10" fill="white" opacity=".5">n8n / Zapier / Claude API — 重复任务自动化</text>
+  <!-- 研究层 -->
+  <rect x="30" y="128" width="540" height="46" rx="8" fill="url(#sg3)"></rect>
+  <text x="50" y="148" font-size="11" fill="white" opacity=".85" font-weight="600">🔍 研究层</text>
+  <text x="50" y="164" font-size="10" fill="white" opacity=".75">Perplexity / Claude — 竞品分析、市场研究、数据解读</text>
+  <!-- 生产层 -->
+  <rect x="50" y="78" width="500" height="46" rx="8" fill="url(#sg2)"></rect>
+  <text x="70" y="98" font-size="11" fill="white" opacity=".9" font-weight="600">✍️ 生产层</text>
+  <text x="70" y="114" font-size="10" fill="white" opacity=".8">Claude / Notion AI — 初稿生成、改写润色、格式化</text>
+  <!-- 思考层（顶）-->
+  <rect x="80" y="20" width="440" height="54" rx="10" fill="url(#sg1)"></rect>
+  <text x="300" y="44" text-anchor="middle" font-size="12" fill="white" font-weight="700">🧠 思考层（最高价值）</text>
+  <text x="300" y="62" text-anchor="middle" font-size="10" fill="white" opacity=".85">Claude / ChatGPT — 头脑风暴、方案对比、逻辑梳理</text>
+  <!-- 标注 -->
+  <text x="590" y="208" text-anchor="end" font-size="9" fill="#b0aea5">执行 →</text>
+  <text x="590" y="47" text-anchor="end" font-size="9" fill="#b0aea5">判断 ↑</text>
+</svg>
+</div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="icon">🧠</div>
+      <h4>思考层</h4>
+      <p>用 AI 做头脑风暴、方案对比、逻辑梳理。<br><em style="color:var(--accent); font-size:.85rem;">工具：Claude / ChatGPT</em></p>
+    </div>
+    <div class="card">
+      <div class="icon">✍️</div>
+      <h4>生产层</h4>
+      <p>用 AI 生成初稿、改写润色、翻译格式化。<br><em style="color:var(--accent); font-size:.85rem;">工具：Claude / Notion AI</em></p>
+    </div>
+    <div class="card">
+      <div class="icon">🔍</div>
+      <h4>研究层</h4>
+      <p>用 AI 做竞品分析、市场研究、数据解读。<br><em style="color:var(--accent); font-size:.85rem;">工具：Perplexity / Claude</em></p>
+    </div>
+    <div class="card">
+      <div class="icon">⚙️</div>
+      <h4>自动化层</h4>
+      <p>用 AI 做重复任务自动化、报表生成、流程触发。<br><em style="color:var(--accent); font-size:.85rem;">工具：n8n / Zapier / Claude API</em></p>
+    </div>
+  </div>
+
+  <h3>Prompt 技能：打工人最值得投资的单项技能</h3>
+  <p>不需要学编程，但需要学会「和 AI 说清楚话」。好的 Prompt = 角色 + 背景 + 任务 + 要求 + 格式。</p>
+
+  <div class="infographic" style="background:var(--dark); color:var(--light); border-radius:12px; padding:1.5rem; margin:1.5rem 0;">
+    <div style="font-family:var(--font-ui); font-size:.8rem; color:var(--mid-gray); margin-bottom:1rem; text-transform:uppercase; letter-spacing:.08em;">高效 Prompt 结构</div>
+    <div style="display:grid; grid-template-columns:auto 1fr; gap:.5rem 1rem; font-size:.88rem; line-height:1.7;">
+      <span style="color:var(--orange); font-weight:700;">角色</span><span>你是一名有 5 年经验的互联网产品运营...</span>
+      <span style="color:var(--orange); font-weight:700;">背景</span><span>我们正在准备一个面向 25-35 岁都市白领的活动...</span>
+      <span style="color:var(--orange); font-weight:700;">任务</span><span>帮我起草 3 个不同风格的活动标题...</span>
+      <span style="color:var(--orange); font-weight:700;">要求</span><span>每个标题不超过 15 字，突出「省时」或「成就感」...</span>
+      <span style="color:var(--orange); font-weight:700;">格式</span><span>列表形式，每条附上 1 句适用场景说明</span>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- STAGE 3 -->
+<section class="section" id="w-stage-3">
+  <div class="section-eyebrow">阶段三</div>
+  <h2>团队赋能 — 从个人效率到 AI Champion</h2>
+  <p>当你的个人 AI 提效已经稳定，下一步是「向外辐射」。成为团队内部的 AI 推广者，不仅能提升影响力，也能让整个团队的产出质量跃升。</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="icon">📚</div>
+      <h4>建立团队 Prompt 库</h4>
+      <p>把你验证过的高效 Prompt 沉淀下来，建立共享文档。让团队成员直接复用，是最低成本的赋能。</p>
+    </div>
+    <div class="card">
+      <div class="icon">🎓</div>
+      <h4>做一次内部分享</h4>
+      <p>把你节省的时间、提升的效率量化出来，在 All-hands 或周会上分享。数字说话，比理念传播更有效。</p>
+    </div>
+    <div class="card">
+      <div class="icon">🔧</div>
+      <h4>主导一个 AI 流程改造</h4>
+      <p>选一个团队内公认的「低效环节」，用 AI 重新设计流程。落地一个，胜过讨论十个。</p>
+    </div>
+    <div class="card">
+      <div class="icon">📊</div>
+      <h4>建立 AI 使用度量</h4>
+      <p>跟踪团队 AI 工具使用率、节省工时、错误率变化。数据是向上汇报和持续推进的最强武器。</p>
+    </div>
+  </div>
+
+  <div class="pullquote">
+    <p>"AI Champion 不是头衔，是行为模式。你持续分享、持续迭代、持续帮别人解决 AI 使用中的问题——这才是真正的组织影响力。"</p>
+    <cite>— 观点</cite>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- STAGE 4 -->
+<section class="section" id="w-stage-4">
+  <div class="section-eyebrow">阶段四</div>
+  <h2>职业跃迁 — 重新定义你的市场价值</h2>
+  <p>AI 正在模糊岗位边界。两年后，「会用 AI 的运营」和「会写代码的运营」之间的距离，可能比「运营」和「产品」之间的距离更小。</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="icon">🌐</div>
+      <h4>跨角色能力</h4>
+      <p>运营可以用 AI 做数据分析，设计师可以用 AI 写需求文档，开发可以用 AI 做 UI 原型。「T型人才」在 AI 加持下变成「π 型」。</p>
+    </div>
+    <div class="card">
+      <div class="icon">💡</div>
+      <h4>从执行到判断</h4>
+      <p>AI 承包执行层，人的价值向上移动到判断层。能定义「好的输出」的人，比能产出的人更稀缺。</p>
+    </div>
+    <div class="card">
+      <div class="icon">🏗️</div>
+      <h4>个人品牌建设</h4>
+      <p>Learn in public。把你的 AI 实践过程写出来，分享出去。你的「公开学习轨迹」会成为最有说服力的简历。</p>
+    </div>
+    <div class="card">
+      <div class="icon">🧩</div>
+      <h4>OPC 可能性</h4>
+      <p>AI 让一个人可以同时承担多个角色。今天的打工人，可能是明天的一人公司或独立顾问——起点是个人 AI 能力的积累。</p>
+    </div>
+  </div>
+
+  <div class="pullquote">
+    <p>"职业竞争力的本质，已经从'你能做什么'转变为'你能编排什么'。你不必做所有事，但你需要知道什么事该让 AI 做，什么事该用你的判断。"</p>
+    <cite>— 观点</cite>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- ROLES -->
+<section class="section" id="w-roles">
+  <div class="section-eyebrow">岗位专属攻略</div>
+  <h2>10 类互联网岗位 AI 攻略</h2>
+  <p>不同岗位的 AI 渗透路径不同。以下是针对互联网公司常见岗位的具体切入点和优先工作流。</p>
+
+  <div class="role-grid">
+    <div class="role-card">
+      <div class="rt">💻 研发工程师</div>
+      <div class="rs">研发 / 前端 / 后端</div>
+      <p><strong>优先工作流：</strong>Claude Code 生成 / 代码审查 / 单元测试生成 / 文档自动化。<br><strong>核心价值转移：</strong>从「写代码」到「定义架构 + 审查 AI 输出」。</p>
+    </div>
+    <div class="role-card">
+      <div class="rt">🎨 设计师</div>
+      <div class="rs">UI/UX / 视觉 / 品牌</div>
+      <p><strong>优先工作流：</strong>用 AI 生成设计说明文档、竞品分析报告、用户旅程梳理、文案配合。<br><strong>核心价值转移：</strong>从「执行设计」到「设计判断 + 品牌把控」。</p>
+    </div>
+    <div class="role-card">
+      <div class="rt">📣 内容运营</div>
+      <div class="rs">内容 / 社媒 / 新媒体</div>
+      <p><strong>优先工作流：</strong>选题批量生成、初稿产出、SEO 优化、多平台改写、评论分析。<br><strong>核心价值转移：</strong>从「写文章」到「内容策略 + 质量把控」。</p>
+    </div>
+    <div class="role-card">
+      <div class="rt">📈 增长运营</div>
+      <div class="rs">增长 / 用户运营 / 活动</div>
+      <p><strong>优先工作流：</strong>活动方案批量生成、A/B 测试文案、用户分群逻辑、数据解读报告。<br><strong>核心价值转移：</strong>从「执行增长实验」到「增长假设构建 + 实验设计」。</p>
+    </div>
+    <div class="role-card">
+      <div class="rt">📢 市场公关</div>
+      <div class="rs">市场 / PR / 品牌传播</div>
+      <p><strong>优先工作流：</strong>新闻稿起草、媒体沟通邮件、竞品舆情摘要、品牌内容生成。<br><strong>核心价值转移：</strong>从「内容生产」到「品牌叙事 + 媒体关系维护」。</p>
+    </div>
+    <div class="role-card">
+      <div class="rt">👥 HRBP</div>
+      <div class="rs">人力资源 / 组织发展</div>
+      <p><strong>优先工作流：</strong>JD 生成优化、候选人筛选摘要、员工调研分析、培训材料起草。<br><strong>核心价值转移：</strong>从「流程管理」到「组织诊断 + 人才战略」。</p>
+    </div>
+    <div class="role-card">
+      <div class="rt">💰 财务</div>
+      <div class="rs">财务分析 / 管理会计</div>
+      <p><strong>优先工作流：</strong>报表解读叙述、预算说明生成、成本分析报告、财务答疑准备。<br><strong>核心价值转移：</strong>从「做报表」到「财务洞察 + 业务建议」。</p>
+    </div>
+    <div class="role-card">
+      <div class="rt">🔧 运维 / DevOps</div>
+      <div class="rs">SRE / 基础设施 / IT</div>
+      <p><strong>优先工作流：</strong>告警分析解读、故障排查 SOP、脚本生成优化、文档自动化。<br><strong>核心价值转移：</strong>从「救火」到「系统可靠性设计 + 自动化架构」。</p>
+    </div>
+    <div class="role-card">
+      <div class="rt">📊 商业分析师</div>
+      <div class="rs">BA / 战略分析</div>
+      <p><strong>优先工作流：</strong>行业报告摘要、竞品对比框架、决策备忘录起草、数据故事叙述。<br><strong>核心价值转移：</strong>从「整理数据」到「洞察生成 + 决策推动」。</p>
+    </div>
+    <div class="role-card">
+      <div class="rt">📉 数据分析师</div>
+      <div class="rs">数据 / BI / 算法</div>
+      <p><strong>优先工作流：</strong>SQL 生成调试、数据解读报告、可视化方案设计、指标体系梳理。<br><strong>核心价值转移：</strong>从「跑数」到「业务策略 + 数据产品化」。</p>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- WORKERS PROMPTS -->
+<section class="section" id="w-prompts">
+  <div class="section-eyebrow">提示词工具箱</div>
+  <h2>10 个打工人专属提示词模板</h2>
+  <p>以下 10 个 Prompt 模板覆盖打工人最高频的 AI 使用场景，开箱即用，按需修改括号内的变量。</p>
+
+  <div class="prompt-box">
+    <div class="prompt-header">
+      <span class="prompt-num">01</span>
+      <span class="prompt-label">周报/日报生成器</span>
+      <button class="copy-btn" onclick="cp(this)">复制</button>
+    </div>
+    <pre>你是一名资深运营/[你的岗位]，帮我把以下工作记录整理成一份专业的周报。
+
+本周完成的工作：
+[粘贴你的碎片化记录]
+
+要求：
+1. 结构：本周成果 / 进行中 / 下周计划 / 需支持事项
+2. 每条成果尽量量化（用数字说话）
+3. 语气专业、简洁，避免流水账
+4. 总字数控制在 300 字以内</pre>
+  </div>
+
+  <div class="prompt-box">
+    <div class="prompt-header">
+      <span class="prompt-num">02</span>
+      <span class="prompt-label">需求文档快速起草</span>
+      <button class="copy-btn" onclick="cp(this)">复制</button>
+    </div>
+    <pre>你是一名有 5 年经验的产品经理，帮我起草以下功能的需求文档。
+
+功能描述：[一句话描述功能]
+目标用户：[用户画像]
+核心场景：[最重要的使用场景]
+已有约束：[技术限制/时间限制/资源限制]
+
+输出格式：
+1. 背景与目标（为什么做）
+2. 用户故事（谁/在什么时候/想要什么/为了什么）
+3. 功能范围（本期做什么/不做什么）
+4. 验收标准
+5. 遗留问题</pre>
+  </div>
+
+  <div class="prompt-box">
+    <div class="prompt-header">
+      <span class="prompt-num">03</span>
+      <span class="prompt-label">会议纪要整理</span>
+      <button class="copy-btn" onclick="cp(this)">复制</button>
+    </div>
+    <pre>请将以下会议记录整理成结构化的会议纪要。
+
+会议主题：[主题]
+参会人：[姓名/角色]
+会议记录（原始）：
+[粘贴录音转文字或手记]
+
+输出格式：
+1. 会议决策（已确认的事项，列 bullet）
+2. 行动项（谁负责/做什么/什么时间完成）
+3. 待解决问题（需要跟进的不确定项）
+4. 下次会议议程建议</pre>
+  </div>
+
+  <div class="prompt-box">
+    <div class="prompt-header">
+      <span class="prompt-num">04</span>
+      <span class="prompt-label">数据分析解读报告</span>
+      <button class="copy-btn" onclick="cp(this)">复制</button>
+    </div>
+    <pre>你是一名资深数据分析师，帮我解读以下数据并给出业务建议。
+
+数据背景：[业务场景/指标说明]
+数据内容：
+[粘贴数据或关键指标]
+
+分析维度：[时间趋势/用户分群/渠道对比/等]
+
+请输出：
+1. 关键发现（最多 3 条，每条用一句话概括）
+2. 数据背后的业务原因推测
+3. 建议的后续行动（优先级排序）
+4. 需要进一步验证的假设</pre>
+  </div>
+
+  <div class="prompt-box">
+    <div class="prompt-header">
+      <span class="prompt-num">05</span>
+      <span class="prompt-label">竞品分析框架</span>
+      <button class="copy-btn" onclick="cp(this)">复制</button>
+    </div>
+    <pre>帮我做一个[产品/功能/市场]的竞品分析框架。
+
+我们的产品：[简介]
+分析目的：[为什么分析/决策场景]
+主要竞品：[竞品A / 竞品B / 竞品C]
+
+分析维度请包含：
+- 目标用户与定位
+- 核心功能对比
+- 产品体验差异
+- 商业模式
+- 市场策略
+- 我方优劣势总结
+
+最后给出 1-2 条可操作的战略建议。</pre>
+  </div>
+
+  <div class="prompt-box">
+    <div class="prompt-header">
+      <span class="prompt-num">06</span>
+      <span class="prompt-label">方案 PPT 大纲生成</span>
+      <button class="copy-btn" onclick="cp(this)">复制</button>
+    </div>
+    <pre>帮我生成一份[主题]汇报方案的 PPT 大纲。
+
+汇报对象：[CEO/部门负责人/客户]
+汇报目的：[争取预算/项目立项/阶段汇报]
+核心内容要点：[列出你已有的核心信息]
+时间限制：[10分钟/20分钟]
+
+要求：
+1. 金字塔结构，结论优先
+2. 每张 slide 用一句话概括核心观点
+3. 数据和案例的位置标注（[数据待填]）
+4. 建议 8-12 张 slide，注明每张用时</pre>
+  </div>
+
+  <div class="prompt-box">
+    <div class="prompt-header">
+      <span class="prompt-num">07</span>
+      <span class="prompt-label">用户访谈分析</span>
+      <button class="copy-btn" onclick="cp(this)">复制</button>
+    </div>
+    <pre>你是一名用户研究专家，帮我分析以下用户访谈内容。
+
+研究目的：[想要了解什么]
+访谈记录：
+[粘贴访谈内容]
+
+请输出：
+1. 用户核心痛点（按频率排序，前3条）
+2. 用户的隐性需求（他们没说但能推断的）
+3. 用户原话中最有价值的 3-5 个 quote
+4. 对产品/运营的启示
+5. 建议的后续验证方向</pre>
+  </div>
+
+  <div class="prompt-box">
+    <div class="prompt-header">
+      <span class="prompt-num">08</span>
+      <span class="prompt-label">求职/晋升材料优化</span>
+      <button class="copy-btn" onclick="cp(this)">复制</button>
+    </div>
+    <pre>你是一名资深 HR 和职业顾问，帮我优化以下职业材料。
+
+目标岗位/晋升方向：[岗位名称]
+当前材料：
+[粘贴简历/晋升申请/自我介绍]
+
+公司/团队背景：[可选]
+
+请从以下角度优化：
+1. 成果量化：把模糊描述转化为数字
+2. 关键词匹配：补充目标岗位的核心能力词
+3. 叙事结构：用 STAR 结构重写关键经历
+4. 差异化亮点：找出最值得突出的 1-2 个核心优势
+给出修改建议和优化后版本。</pre>
+  </div>
+
+  <div class="prompt-box">
+    <div class="prompt-header">
+      <span class="prompt-num">09</span>
+      <span class="prompt-label">棘手邮件/沟通起草</span>
+      <button class="copy-btn" onclick="cp(this)">复制</button>
+    </div>
+    <pre>帮我起草一封[场景：拒绝/催促/提需求/投诉/道歉]的专业邮件。
+
+背景：[事情经过]
+对方：[对方角色/关系]
+我的诉求：[我想达到的结果]
+需要注意的敏感点：[可选]
+
+要求：
+1. 语气[专业且友好/坚定但有礼/简洁直接]
+2. 开门见山，不要过度客套
+3. 提供明确的下一步行动
+4. 控制在 200 字以内
+给我 2 个风格不同的版本。</pre>
+  </div>
+
+  <div class="prompt-box">
+    <div class="prompt-header">
+      <span class="prompt-num">10</span>
+      <span class="prompt-label">个人 AI 工作流复盘</span>
+      <button class="copy-btn" onclick="cp(this)">复制</button>
+    </div>
+    <pre>帮我复盘我过去一个月的 AI 使用情况，并给出优化建议。
+
+我的岗位：[岗位]
+我目前用 AI 做的事：[列举]
+感觉有效的：[哪些效果好]
+感觉没效果的：[哪些效果差]
+我最耗时但还没用 AI 的工作：[列举]
+
+请给我：
+1. 现有工作流的评分和优化方向
+2. 我还没用到但适合我岗位的 AI 场景（前 3 条）
+3. 本月值得尝试的一个新 AI 工作流（具体到操作步骤）</pre>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- ACTION -->
+<section class="section" id="w-action">
+  <div class="section-eyebrow">立即行动</div>
+  <h2>打工人 AI 升级 — 本周行动清单</h2>
+  <p>理解框架只是起点。改变，从本周开始。</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="icon">📌</div>
+      <h4>今天（30 分钟）</h4>
+      <p>列出你工作中最耗时的 3 件事，用 Claude 或 ChatGPT 试做其中一件的 AI 辅助版本。计时，看节省了多少分钟。</p>
+    </div>
+    <div class="card">
+      <div class="icon">📆</div>
+      <h4>本周（2-3 小时）</h4>
+      <p>把这次成功的 AI 工作流写成 SOP，存到你的个人文档。尝试把第 10 个 Prompt（工作流复盘）用在自己身上。</p>
+    </div>
+    <div class="card">
+      <div class="icon">🗓️</div>
+      <h4>本月（持续投入）</h4>
+      <p>在团队内做一次 AI 工作流分享（哪怕只有 10 分钟）。建立一个共享 Prompt 文档，放进团队群。这是最快的 AI Champion 路径。</p>
+    </div>
+  </div>
+
+  <div class="pullquote">
+    <p>"AI 时代最大的职业风险，不是你的岗位被取消，而是你在观望的时候，别人已经把你 3 倍的工作做完了。"</p>
+    <cite>— 观点</cite>
+  </div>
+
+  <div class="source">
+    <strong>本版来源说明：</strong><br>
+    • 数据参考：IMF「Artificial Intelligence and the Future of Work」报告（2024），WEF 未来就业报告 2025<br>
+    • 岗位洞察：基于互联网行业实践整理，代表观点非权威数据<br>
+    • 本文由 wwei.ai 原创，打工人视角扩展 · 非 Anthropic 官方内容
+  </div>
+</section>
+
+</div><!-- /content workers -->
+<hr class="div">
+
+<section class="section" id="w-download">
+  <div class="download">
+    <h2>下载打工人版 PDF</h2>
+    <p>包含本文所有内容——四阶段成长框架、10类岗位攻略、10个专属提示词，适合离线阅读和团队分享。</p>
+    <a href="https://founders.wwei.ai/workers-guide-cn.pdf" download="" class="dl-btn">
+      ↓ 下载打工人版 PDF
+    </a>
+  </div>
+  <div class="source">
+    <strong>数据来源说明：</strong><br>
+    • IMF「Artificial Intelligence and the Future of Work」报告（2024）<br>
+    • WEF Future of Jobs Report 2025<br>
+    • 本文由 wwei.ai 原创，打工人视角，非 Anthropic 官方内容
+  </div>
+</section>
+
+</div><!-- /content-workers -->
+
+</main>
+
+<footer>
+  <p>© 2026 <a href="https://wwei.ai/" target="_blank">wwei.ai</a> · 基于 <a href="https://claude.com/blog/the-founders-playbook" target="_blank">Anthropic Founders Playbook</a> 整理扩展 · 非官方中文版</p>
+</footer>
+
+<script>
+// Progress bar
+const bar = document.getElementById('bar');
+window.addEventListener('scroll', () => {
+  const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+  bar.style.width = pct + '%';
+}, { passive: true });
+
+// Active sidebar
+const allIds = [...document.querySelectorAll('[id]')];
+const links = [...document.querySelectorAll('.sidebar a')];
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const id = e.target.id;
+      links.forEach(l => {
+        l.classList.toggle('active', l.getAttribute('href') === '#' + id);
+      });
+    }
+  });
+}, { rootMargin: '-15% 0px -75% 0px' });
+allIds.forEach(el => io.observe(el));
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+  });
+});
+
+// Copy prompt
+function cp(btn) {
+  const text = btn.nextElementSibling.textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = '✓ 已复制';
+    btn.style.color = '#788c5d';
+    setTimeout(() => { btn.textContent = '复制'; btn.style.color = ''; }, 2000);
+  });
+}
+
+// ── Tab 切换 ──
+function switchTab(tab) {
+  const isFounders = tab === 'founders';
+  document.getElementById('tab-btn-founders').classList.toggle('active', isFounders);
+  document.getElementById('tab-btn-workers').classList.toggle('active', !isFounders);
+  document.getElementById('sidebar-founders').style.display = isFounders ? '' : 'none';
+  document.getElementById('sidebar-workers').style.display  = isFounders ? 'none' : '';
+  document.getElementById('content-founders').style.display = isFounders ? '' : 'none';
+  document.getElementById('content-workers').style.display  = isFounders ? 'none' : '';
+  // 同步顶部文案
+  const logoEl = document.getElementById('logo-text');
+  if (logoEl) logoEl.textContent = isFounders ? '创始人手册 · Claude版' : '打工人指南 · Claude版';
+  const descEl = document.getElementById('tab-desc');
+  if (descEl) descEl.textContent = isFounders ? 'AI 原生创业完全指南 2026' : 'AI 时代打工人生存指南 2026';
+  // 同步 nav 链接
+  const navEl = document.getElementById('nav-links');
+  if (navEl) {
+    navEl.innerHTML = isFounders
+      ? '<a href="#overview">概览</a><a href="#stages">四阶段</a><a href="#china">中国视角</a><a href="#prompts">提示词</a><a href="#action">行动</a>'
+      : '<a href="#w-overview">命运选择</a><a href="#w-stages">成长框架</a><a href="#w-roles">岗位攻略</a><a href="#w-prompts">提示词</a><a href="#w-action">行动</a>';
+  }
+  window.scrollTo({top: 0, behavior: 'smooth'});
+  try { localStorage.setItem('playbook-tab', tab); } catch(e) {}
+}
+// 恢复上次选择
+try {
+  const saved = localStorage.getItem('playbook-tab');
+  if (saved === 'workers') switchTab('workers');
+} catch(e) {}
+
+</script>
+
+<button class="menu-btn" onclick="document.querySelector(&#39;.sidebar&#39;).classList.toggle(&#39;open&#39;)" aria-label="目录">☰</button>
+
+<script defer="" src="./Claude版手册 — 创始人 &amp; 打工人 AI 生存指南 2026_files/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;73a749ca3ace4b2abd6813f039000869&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+<div id="wwei-auth-widget" style="position: fixed; top: 16px; right: 16px; z-index: 2147483647;"><template shadowrootmode="open"><style>
+      :host { all: initial; }
+      * { box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif; }
+      .wrap { position: relative; }
+      .avatar {
+        width: 36px; height: 36px; border-radius: 50%; padding: 0; cursor: pointer; position: relative;
+        border: 2px solid rgba(255,255,255,0.15); background: #111214; color: #f0f0f2;
+        display: flex; align-items: center; justify-content: center; overflow: hidden;
+        transition: all .2s; box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      }
+      .avatar:hover { transform: scale(1.05); border-color: rgba(255,255,255,0.3); }
+      .avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+      .avatar .fallback { font-weight: 600; font-size: 14px; }
+      .avatar.loading { animation: pulse 1.4s infinite; cursor: default; }
+      @keyframes pulse { 0%,100% { opacity: 0.5; } 50% { opacity: 0.9; } }
+      .dot {
+        position: absolute; bottom: -2px; right: -2px; width: 12px; height: 12px;
+        border-radius: 50%; border: 2px solid #111214;
+      }
+      .login-btn {
+        display: inline-block; padding: 7px 16px; border-radius: 100px;
+        background: rgba(110, 231, 183, 0.95); color: #08090a; font-size: 13px; font-weight: 500;
+        text-decoration: none; transition: all .2s; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        border: 1px solid rgba(110, 231, 183, 0.3);
+      }
+      .login-btn:hover { background: #6ee7b7; transform: translateY(-1px); }
+      .dropdown {
+        position: absolute; top: 44px; right: 0; min-width: 260px;
+        background: #111214; border: 1px solid #1e2024; border-radius: 12px;
+        padding: 16px; opacity: 0; transform: translateY(-6px) scale(0.96);
+        pointer-events: none; transition: all .18s cubic-bezier(.4,0,.2,1);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.4); color: #f0f0f2;
+      }
+      .dropdown.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+      .dropdown-head { display: flex; gap: 12px; align-items: center; }
+      .dropdown-avatar { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; flex-shrink: 0; background: #1e2024; display: flex; align-items: center; justify-content: center; }
+      .dropdown-avatar img { width: 100%; height: 100%; object-fit: cover; }
+      .dropdown-info { flex: 1; min-width: 0; }
+      .dropdown-name { font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .dropdown-email { font-size: 11px; color: #a0a3ab; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .dropdown-level {
+        display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px;
+        font-size: 10px; font-weight: 600; letter-spacing: 0.05em;
+        border: 1px solid;
+      }
+      .dropdown-divider { height: 1px; background: #1e2024; margin: 14px 0; }
+      .dropdown-item {
+        display: block; padding: 8px 12px; font-size: 13px; color: #f0f0f2;
+        text-decoration: none; border-radius: 6px; transition: background .15s;
+      }
+      .dropdown-item:hover { background: #1e2024; }
+    </style>
+        <div class="wrap">
+          <button class="avatar" id="avatar" aria-label="user menu" title="yiyixiao920@gmail.com · ADMIN">
+            <img src="https://lh3.googleusercontent.com/a/ACg8ocKu-yjD3iu0mgzG7jWbJHAxSpl7HBx0GqADxeh6y8jMFDEhpA=s96-c" referrerpolicy="no-referrer" alt="">
+            <span class="dot" style="background:#f87171" title="ADMIN"></span>
+          </button>
+          <div class="dropdown" id="dropdown">
+            <div class="dropdown-head">
+              <div class="dropdown-avatar"><img src="https://lh3.googleusercontent.com/a/ACg8ocKu-yjD3iu0mgzG7jWbJHAxSpl7HBx0GqADxeh6y8jMFDEhpA=s96-c" referrerpolicy="no-referrer" alt=""></div>
+              <div class="dropdown-info">
+                <div class="dropdown-name">姚伊笑</div>
+                <div class="dropdown-email">yiyixiao920@gmail.com</div>
+                <div class="dropdown-level" style="color:#f87171;border-color:#f8717140">ADMIN</div>
+              </div>
+            </div>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="https://admin.wwei.ai/">管理后台 →</a>
+            <a class="dropdown-item" href="https://auth.wwei.ai/logout?next=https%3A%2F%2Ffounders.wwei.ai%2F">退出登录</a>
+          </div>
+        </div>
+      </template></div><div id="cubox-react-root"><template shadowrootmode="open"><link rel="stylesheet" href="chrome-extension://bflmgpechpeohjfomgfdkkfcbhfcjohl/css/content.css"><div><div style="z-index: 2147483647;"></div></div></template></div><a id="colorPickerDivHidden"><img src="chrome-extension://njolgcnddhepjpplfifbmagdgkidikpj/logo.png" data-cubox-image-id="ae8686952839c0b69466b05216a82003" data-cubox-image-index="0" data-cubox-image-load="false"></a></body><plasmo-csui id="aitdk-csui"><template shadowrootmode="open"><style>*,:before,:after{box-sizing:border-box;border:0 solid #e5e7eb}:before,:after{--tw-content:""}html{-webkit-text-size-adjust:100%;tab-size:4;font-feature-settings:normal;font-variation-settings:normal;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}body{line-height:inherit;margin:0}hr{color:inherit;border-top-width:1px;height:0}abbr:where([title]){text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em}small{font-size:80%}sub,sup{vertical-align:baseline;font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-feature-settings:inherit;font-variation-settings:inherit;font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,[type=button],[type=reset],[type=submit]{-webkit-appearance:button;background-color:#0000;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button{height:auto}::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dl,dd,h1,h2,h3,h4,h5,h6,hr,figure,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}ol,ul,menu{margin:0;padding:0;list-style:none}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}button,[role=button]{cursor:pointer}:disabled{cursor:default}img,svg,video,canvas,audio,iframe,embed,object{vertical-align:middle;display:block}img,video{max-width:100%;height:auto}[hidden]{display:none}:host,:root{--background:0 0% 100%;--foreground:224 71.4% 4.1%;--card:0 0% 100%;--card-foreground:224 71.4% 4.1%;--popover:0 0% 100%;--popover-foreground:224 71.4% 4.1%;--primary:262.1 83.3% 57.8%;--primary-foreground:210 20% 98%;--secondary:220 14.3% 95.9%;--secondary-foreground:220.9 39.3% 11%;--muted:220 14.3% 95.9%;--muted-foreground:220 8.9% 46.1%;--accent:220 14.3% 95.9%;--accent-foreground:220.9 39.3% 11%;--destructive:0 84.2% 60.2%;--destructive-foreground:210 20% 98%;--border:220 13% 91%;--input:220 13% 91%;--ring:262.1 83.3% 57.8%;--radius:4.2px;z-index:2147483647}.dark{--background:224 71.4% 4.1%;--foreground:210 20% 98%;--card:224 71.4% 4.1%;--card-foreground:210 20% 98%;--popover:224 71.4% 4.1%;--popover-foreground:210 20% 98%;--primary:263.4 70% 50.4%;--primary-foreground:210 20% 98%;--secondary:215 27.9% 16.9%;--secondary-foreground:210 20% 98%;--muted:215 27.9% 16.9%;--muted-foreground:217.9 10.6% 64.9%;--accent:215 27.9% 16.9%;--accent-foreground:210 20% 98%;--destructive:0 62.8% 30.6%;--destructive-foreground:210 20% 98%;--border:215 27.9% 16.9%;--input:215 27.9% 16.9%;--ring:263.4 70% 50.4%}*{border-color:hsl(var(--border))}html{font-size:14px}body{background-color:hsl(var(--background));color:hsl(var(--foreground));font-feature-settings:"rlig" 1,"calt" 1;font-size:14px}*,:before,:after,::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:#3b82f680;--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }.container{width:100%;margin-left:auto;margin-right:auto;padding-left:28px;padding-right:28px}@media (width>=1400px){.container{max-width:1400px}}.visible{visibility:visible}.invisible{visibility:hidden}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.bottom-0{bottom:0}.left-1\/2{left:50%}.right-0{right:0}.right-2{right:7px}.top-0{top:0}.top-1\/2{top:50%}.top-2{top:7px}.-z-\[1\]{z-index:-1}.z-\[1\]{z-index:1}.z-\[2147483647\]{z-index:2147483647}.mx-auto{margin-left:auto;margin-right:auto}.-ml-\[13px\]{margin-left:-13px}.-mt-\[13px\]{margin-top:-13px}.mt-3{margin-top:10.5px}.mt-5{margin-top:17.5px}.block{display:block}.flex{display:flex}.hidden{display:none}.h-full{height:100%}.w-\[420px\]{width:420px}.w-\[520px\]{width:520px}.w-full{width:100%}@keyframes spin{to{transform:rotate(360deg)}}.animate-spin{animation:1s linear infinite spin}.cursor-pointer{cursor:pointer}.items-center{align-items:center}.justify-center{justify-content:center}.gap-x-2{column-gap:7px}.rounded{border-radius:3.5px}.bg-\[\#635bff\]{--tw-bg-opacity:1;background-color:rgb(99 91 255/var(--tw-bg-opacity))}.bg-\[\#635bff\]\/10{background-color:#635bff1a}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity))}.p-1{padding:3.5px}.p-6{padding:21px}.px-4{padding-left:14px;padding-right:14px}.py-2{padding-top:7px;padding-bottom:7px}.py-2\.5{padding-top:8.75px;padding-bottom:8.75px}.text-\[14px\]{font-size:14px}.text-xl{font-size:17.5px;line-height:24.5px}.font-medium{font-weight:500}.leading-6{line-height:21px}.text-black{--tw-text-opacity:1;color:rgb(0 0 0/var(--tw-text-opacity))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175/var(--tw-text-opacity))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128/var(--tw-text-opacity))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55/var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity))}.shadow-2xl{--tw-shadow:0 25px 50px -12px #00000040;--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.outline{outline-style:solid}.filter{filter:var(--tw-blur)var(--tw-brightness)var(--tw-contrast)var(--tw-grayscale)var(--tw-hue-rotate)var(--tw-invert)var(--tw-saturate)var(--tw-sepia)var(--tw-drop-shadow)}.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-duration:.15s;transition-timing-function:cubic-bezier(.4,0,.2,1)}@keyframes enter{0%{opacity:var(--tw-enter-opacity,1);transform:translate3d(var(--tw-enter-translate-x,0),var(--tw-enter-translate-y,0),0)scale3d(var(--tw-enter-scale,1),var(--tw-enter-scale,1),var(--tw-enter-scale,1))rotate(var(--tw-enter-rotate,0))}}@keyframes exit{to{opacity:var(--tw-exit-opacity,1);transform:translate3d(var(--tw-exit-translate-x,0),var(--tw-exit-translate-y,0),0)scale3d(var(--tw-exit-scale,1),var(--tw-exit-scale,1),var(--tw-exit-scale,1))rotate(var(--tw-exit-rotate,0))}}.hover\:bg-\[\#635bff\]\/90:hover{background-color:#635bffe6}</style><div id="plasmo-shadow-container" style="z-index: 2147483647; position: relative;"><div id="plasmo-inline" class="plasmo-csui-container" style="display: flex; position: relative; top: 0px; left: 0px;"><div class="aitdk-extension shadow-2xl flex fixed w-[520px] top-0 right-0 bottom-0 bg-white hidden"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x absolute right-2 top-2 z-[1] p-1 cursor-pointer text-gray-500"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-loader-circle animate-spin text-gray-400 absolute top-1/2 left-1/2 -ml-[13px] -mt-[13px] -z-[1]"><path d="M21 12a9 9 0 1 1-6.219-8.56"></path></svg></div></div></div></template></plasmo-csui><div id="immersive-translate-browser-popup" style="all: initial"><template shadowrootmode="open"><style>/** 基础色阶定义 **/
+:root,
+#mount[data-theme="light"],
+#mount:not([data-theme="dark"]) {
+  /* 中性灰阶（light） */
+  --c-00: #000000;
+  --c-22: #222222;
+  --c-33: #333333;
+  --c-66: #666666;
+  --c-83: #838383;
+  --c-99: #999999;
+  --c-c7: #c7c7c7;
+  --c-cc: #cccccc;
+  --c-e6: #e6e6e6;
+  --c-f5: #f5f5f5;
+  --c-ff: #ffffff;
+  /* 品牌主色阶（light） */
+  --p-main: #ea4c89;
+  --p-hover: #ec5e95;
+  --p-active: #e34a85;
+  --p-special: #ee71a2;
+  --p-disabled: #f4a5c4;
+  --p-text-disabled: #f9c9dc;
+  --p-weak: #fdedf3;
+  /* Surface 层级（light，TC 填充-1） */
+  --s-1: #f3f5f6;
+  --s-1-hover: #f6f8f9;
+  --s-1-active: #edf1f2;
+  --s-1-weak: #fafbfb;
+  /* 输入/边框（light，TC 填充-2） */
+  --input-bg-base: #fafbfc;
+  --input-border: #ecf0f7;
+  --input-border-strong: #e0e0e6;
+  --input-bg-strong: #fafdff;
+}
+
+:root[data-theme="dark"],
+[data-theme="dark"] {
+  /* 中性灰阶（dark） */
+  --c-00: #ffffff;
+  --c-22: #dbdbdb;
+  --c-33: #dbdbdb;
+  --c-66: #b3b3b3;
+  --c-83: #838383;
+  --c-99: #707070;
+  --c-c7: #666666;
+  --c-cc: #5c5c5c;
+  --c-e6: #3b3b3b;
+  --c-f5: #262626;
+  --c-ff: #222222;
+  /* 品牌主色阶（dark） */
+  --p-main: #e23c7c;
+  --p-hover: #ea4c89;
+  --p-active: #d5467d;
+  --p-special: #a93a65;
+  --p-disabled: #7e2f4d;
+  --p-text-disabled: #522335;
+  --p-weak: #26171d;
+  /* Surface 层级（dark，TC 填充-1） */
+  --s-1: #2d2e2f;
+  --s-1-hover: #323434;
+  --s-1-active: #202121;
+  --s-1-weak: #262627;
+  /* 输入/边框（dark，TC 填充-2） */
+  --input-bg-base: #2b2d30;
+  --input-border: #3e434b;
+  --input-border-strong: #43474b;
+  --input-bg-strong: #1f2123;
+}
+
+:root,
+#mount [data-theme] {
+  /* 业务/通用变量引用色阶（全局可见，含 Shadow DOM） */
+  --primary: var(--p-main);
+  --primary-hover: var(--p-hover);
+  --primary-inverse: #fff;
+  --modal-background: var(--s-1);
+  --modal-border: var(--input-border);
+  --modal-text: var(--c-22);
+  --modal-text-secondary: var(--c-66);
+  --modal-error: var(--p-main);
+  --modal-required: #f53f3f;
+  --modal-success: #68cd52;
+  --modal-button-background: var(--p-main);
+  --modal-button-text: var(--c-ff);
+  --modal-input-background: var(--input-bg-base);
+  --modal-check-color: var(--p-main);
+  --background-color: var(--c-ff);
+  --background-light-green: var(--s-1-weak, #f5f7f9);
+  --text-black-2: var(--c-22);
+  --text-gray-2: var(--c-22);
+  --text-gray-6: var(--c-66);
+  --text-gray-9: var(--c-99);
+  --text-gray-c2: var(--c-c7);
+  --switch-background-color: var(--c-c7, hsl(205deg, 16%, 77%));
+  --float-ball-more-button-border-color: var(--c-f5, #f6f6f6);
+  --float-ball-more-button-background-color: var(--c-ff);
+  --float-ball-more-button-hover-color: var(--p-weak);
+  --float-ball-more-button-svg-color: #6c6f73;
+  --service-bg-hover: var(--s-1-hover, #f7faff);
+  --service-bg: var(--s-1-weak, #fafbfb);
+}
+
+#mount {
+  --font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
+    "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  /* PC/H5 兼容的字号、间距、圆角、阴影变量 */
+  --f-12: 12px;
+  --f-14: 14px;
+  --f-15: 15px;
+  --f-16: 16px;
+  --f-18: 18px;
+  --f-20: 20px;
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-18: 18px;
+  --space-24: 24px;
+  --radius-8: 8px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --control-height-lg: 44px;
+  --width-28: 28px;
+  --width-24: 24px;
+  --width-20: 20px;
+  --width-18: 18px;
+  --width-16: 16px;
+  --width-label-md: 56px;
+  --shadow-lg: 0 18px 48px rgba(0, 0, 0, 0.12);
+
+  /* 常规变量 */
+  --line-height: 1.5;
+  --font-weight: 400;
+  --font-size: 16px;
+  --border-radius: 4px;
+  --border-width: 2px;
+  --outline-width: 3px;
+  --spacing: 16px;
+  --typography-spacing-vertical: 24px;
+  --block-spacing-vertical: calc(var(--spacing) * 2);
+  --block-spacing-horizontal: var(--spacing);
+  --grid-spacing-vertical: 0;
+  --grid-spacing-horizontal: var(--spacing);
+  --form-element-spacing-vertical: 12px;
+  --form-element-spacing-horizontal: 16px;
+  --nav-element-spacing-vertical: 16px;
+  --nav-element-spacing-horizontal: 8px;
+  --nav-link-spacing-vertical: 8px;
+  --nav-link-spacing-horizontal: 8px;
+  --form-label-font-weight: var(--font-weight);
+  --transition: 0.2s ease-in-out;
+  --modal-overlay-backdrop-filter: blur(4px);
+  --switch-color: var(--primary-inverse);
+  --switch-checked-background-color: var(--primary);
+  --icon-xia: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgaWQ9IkZyYW1lIj4KPHBhdGggaWQ9IlZlY3RvciIgZD0iTTguMDAyOTEgOS42Nzk4M0wzLjgzMzM5IDUuNTEyMjFMMy4wMjUzOSA2LjMxOTgzTDguMDAzMjkgMTEuMjk1MUwxMi45NzYyIDYuMzE5ODNMMTIuMTY3OSA1LjUxMjIxTDguMDAyOTEgOS42Nzk4M1oiIGZpbGw9IiM4MzgzODMiLz4KPC9nPgo8L3N2Zz4K");
+  /* 兼容旧变量：主色直接引用品牌主色阶 */
+  --primary: var(--p-main);
+  --primary-hover: var(--p-hover);
+  --primary-inverse: #fff;
+  /* Modal 业务变量引用色阶 */
+  --modal-background: var(--s-1);
+  --modal-border: var(--input-border);
+  --modal-text: var(--c-22);
+  --modal-text-secondary: var(--c-66);
+  --modal-error: var(--p-main);
+  --modal-required: #f53f3f;
+  --modal-success: #68cd52;
+  --modal-button-background: var(--p-main);
+  --modal-button-text: var(--c-ff);
+  --modal-input-background: var(--input-bg-base);
+  --modal-check-color: var(--p-main);
+  --background-color: var(--c-ff);
+  --background-light-green: var(--s-1-weak, #f5f7f9);
+  --text-black-2: var(--c-22);
+  --text-gray-2: var(--c-22);
+  --text-gray-6: var(--c-66);
+  --text-gray-9: var(--c-99);
+  --text-gray-c2: var(--c-c7);
+  --switch-background-color: var(--c-c7, hsl(205deg, 16%, 77%));
+  --float-ball-more-button-border-color: var(--c-f5, #f6f6f6);
+  --float-ball-more-button-background-color: var(--c-ff);
+  --float-ball-more-button-hover-color: var(--p-weak);
+  --float-ball-more-button-svg-color: #6c6f73;
+  --service-bg-hover: var(--s-1-hover, #f7faff);
+  --service-bg: var(--s-1-weak, #fafbfb);
+  line-height: var(--line-height);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+}
+
+@media (max-width: 480px) {
+  :root,
+  #mount {
+    --f-12: 10px;
+    --f-14: 12px;
+    --f-15: 13px;
+    --f-16: 14px;
+    --f-18: 16px;
+    --f-20: 18px;
+    --space-4: 4px;
+    --space-6: 4px;
+    --space-8: 6px;
+    --space-12: 8px;
+    --space-16: 12px;
+    --space-18: 14px;
+    --space-24: 18px;
+    --radius-8: 6px;
+    --radius-12: 10px;
+    --radius-16: 12px;
+    --control-height-lg: 38px;
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.1);
+    --width-28: 24px;
+    --width-24: 20px;
+    --width-20: 16px;
+    --width-18: 14px;
+    --width-16: 12px;
+    --width-label-md: 52px;
+  }
+}
+
+#mount * {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+:where(#mount) a,
+:where(#mount) [role="link"] {
+  --color: var(--primary);
+  --background-color: transparent;
+  outline: none;
+  background-color: var(--background-color);
+  color: var(--color);
+  -webkit-text-decoration: var(--text-decoration);
+  text-decoration: var(--text-decoration);
+  transition: background-color var(--transition), color var(--transition),
+    box-shadow var(--transition), -webkit-text-decoration var(--transition);
+  transition: background-color var(--transition), color var(--transition),
+    text-decoration var(--transition), box-shadow var(--transition);
+  transition: background-color var(--transition), color var(--transition),
+    text-decoration var(--transition), box-shadow var(--transition),
+    -webkit-text-decoration var(--transition);
+}
+:where(#mount) a:is([aria-current], :hover, :active, :focus),
+:where(#mount) [role="link"]:is([aria-current], :hover, :active, :focus) {
+  --color: var(--primary-hover);
+  --text-decoration: underline;
+}
+
+:where(#mount) label {
+  font-size: 13px;
+  line-height: 1.3;
+  color: var(--text-gray-2, #222222);
+}
+
+:where(#mount) button {
+  width: 100%;
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.3;
+  min-height: 44px;
+  border-radius: 12px;
+  padding: 0 14px;
+  border: none;
+  background-color: var(--primary, #ea4c89);
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+:where(#mount) button:hover {
+  background-color: var(--primary-hover, #f082ac);
+}
+
+:where(#mount) button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+:where(#mount) select,
+:where(#mount) input,
+:where(#mount) textarea {
+  font-family: inherit;
+  color: var(--text-gray-2, #222222);
+}
+
+:where(#mount) select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: inherit;
+  color: var(--text-gray-2, inherit);
+  font-size: 13px;
+  line-height: 1.3;
+  outline: none;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--popup-item-background-color, transparent);
+  background-image: var(--icon-xia, none);
+  background-repeat: no-repeat;
+  background-position: center right 12px;
+  background-size: 16px auto;
+  cursor: pointer;
+}
+
+:where(#mount) input[type="checkbox"] {
+  accent-color: var(--primary, #ea4c89);
+}
+
+[type="checkbox"],
+[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 1.25em;
+  height: 1.25em;
+  margin-top: -0.125em;
+  margin-right: 0.375em;
+  margin-left: 0;
+  -webkit-margin-start: 0;
+  margin-inline-start: 0;
+  -webkit-margin-end: 0.375em;
+  margin-inline-end: 0.375em;
+  border-width: var(--border-width);
+  font-size: inherit;
+  vertical-align: middle;
+  cursor: pointer;
+}
+[type="checkbox"]::-ms-check,
+[type="radio"]::-ms-check {
+  display: none;
+}
+[type="checkbox"]:checked,
+[type="checkbox"]:checked:active,
+[type="checkbox"]:checked:focus,
+[type="radio"]:checked,
+[type="radio"]:checked:active,
+[type="radio"]:checked:focus {
+  --background-color: var(--primary);
+  --border-color: var(--primary);
+  background-image: var(--icon-checkbox);
+  background-position: center;
+  background-size: 0.75em auto;
+  background-repeat: no-repeat;
+}
+[type="checkbox"] ~ label,
+[type="radio"] ~ label {
+  display: inline-block;
+  margin-right: 0.375em;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+[type="checkbox"]:indeterminate {
+  --background-color: var(--primary);
+  --border-color: var(--primary);
+  background-image: var(--icon-minus);
+  background-position: center;
+  background-size: 0.75em auto;
+  background-repeat: no-repeat;
+}
+
+[type="radio"] {
+  border-radius: 50%;
+}
+[type="radio"]:checked,
+[type="radio"]:checked:active,
+[type="radio"]:checked:focus {
+  --background-color: var(--primary-inverse);
+  border-width: 0.35em;
+  background-image: none;
+}
+
+:where(#mount) [type="checkbox"][role="switch"] {
+  --background-color: var(--switch-background-color);
+  --border-color: var(--switch-background-color);
+  --color: var(--switch-color);
+  width: 2.25em;
+  height: 1.25em;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 1.25em;
+  background-color: var(--background-color);
+  line-height: 1.25em;
+}
+:where(#mount) [type="checkbox"][role="switch"]:focus {
+  --background-color: var(--switch-background-color);
+  --border-color: var(--switch-background-color);
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked {
+  --background-color: var(--switch-checked-background-color);
+  --border-color: var(--switch-checked-background-color);
+}
+:where(#mount) [type="checkbox"][role="switch"]:before {
+  display: block;
+  width: calc(1.25em - (var(--border-width) * 2));
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--color);
+  content: "";
+  transition: margin 0.1s ease-in-out;
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked {
+  background-image: none;
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked::before {
+  margin-left: calc(1.125em - var(--border-width));
+  -webkit-margin-start: calc(1.125em - var(--border-width));
+  margin-inline-start: calc(1.125em - var(--border-width));
+}
+
+:where(#mount) [type="checkbox"][aria-invalid="false"],
+:where(#mount) [type="checkbox"]:checked[aria-invalid="false"],
+:where(#mount) [type="radio"][aria-invalid="false"],
+:where(#mount) [type="radio"]:checked[aria-invalid="false"],
+:where(#mount) [type="checkbox"][role="switch"][aria-invalid="false"],
+:where(#mount) [type="checkbox"][role="switch"]:checked[aria-invalid="false"] {
+  --border-color: var(--form-element-valid-border-color);
+}
+:where(#mount) [type="checkbox"][aria-invalid="true"],
+:where(#mount) [type="checkbox"]:checked[aria-invalid="true"],
+:where(#mount) [type="radio"][aria-invalid="true"],
+:where(#mount) [type="radio"]:checked[aria-invalid="true"],
+:where(#mount) [type="checkbox"][role="switch"][aria-invalid="true"],
+:where(#mount) [type="checkbox"][role="switch"]:checked[aria-invalid="true"] {
+  --border-color: var(--form-element-invalid-border-color);
+}
+
+.text-black {
+  color: var(--text-black-2);
+}
+
+.text-gray-2 {
+  color: var(--text-gray-2);
+}
+
+.text-gray-6 {
+  color: var(--text-gray-6);
+}
+
+.text-gray-9 {
+  color: var(--text-gray-9);
+}
+
+.text-gray-c2 {
+  color: var(--text-gray-c2);
+}
+
+.pt-4 {
+  padding-top: 16px;
+}
+
+.p-2 {
+  padding: 8px;
+}
+
+.pl-5 {
+  padding-left: 48px;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.pl-2 {
+  padding-left: 8px;
+}
+
+.pl-4 {
+  padding-left: 24px;
+}
+
+.pt-2 {
+  padding-top: 8px;
+}
+
+.pb-2 {
+  padding-bottom: 8px;
+}
+
+.pb-4 {
+  padding-bottom: 16px;
+}
+
+.pb-5 {
+  padding-bottom: 20px;
+}
+
+.pr-5 {
+  padding-right: 48px;
+}
+
+.text-sm {
+  font-size: 13px;
+}
+
+.text-base {
+  font-size: 16px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.mb-0 {
+  margin-bottom: 0px;
+}
+
+.mb-2 {
+  margin-bottom: 8px;
+}
+
+.mb-4 {
+  margin-bottom: 16px;
+}
+
+.mb-3 {
+  margin-bottom: 12px;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.py-2 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.py-2-5 {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mt-2 {
+  margin-top: 8px;
+}
+
+.mt-3 {
+  margin-top: 12px;
+}
+
+.mt-4 {
+  margin-top: 16px;
+}
+
+.mt-5 {
+  margin-top: 20px;
+}
+
+.mt-6 {
+  margin-top: 24px;
+}
+
+.mb-1 {
+  margin-bottom: 4px;
+}
+
+.ml-4 {
+  margin-left: 24px;
+}
+
+.ml-3 {
+  margin-left: 16px;
+}
+
+.ml-2 {
+  margin-left: 8px;
+}
+
+.ml-1 {
+  margin-left: 4px;
+}
+
+.mr-1 {
+  margin-right: 4px;
+}
+
+.mr-2 {
+  margin-right: 8px;
+}
+
+.mr-3 {
+  margin-right: 16px;
+}
+
+.mx-2 {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.pl-3 {
+  padding-left: 12px;
+}
+
+.pr-3 {
+  padding-right: 12px;
+}
+
+.p-3 {
+  padding: 12px;
+}
+
+.px-1 {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.px-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.pt-3 {
+  padding-top: 12px;
+}
+
+.px-6 {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.px-4 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.pt-6 {
+  padding-top: 20px;
+}
+
+.py-3 {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.py-0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.left-auto {
+  left: auto !important;
+}
+
+.max-h-28 {
+  max-height: 112px;
+}
+
+.max-h-30 {
+  max-height: 120px;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
+.text-xs {
+  font-size: 12px;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-3 {
+  flex: 3;
+}
+
+.flex-4 {
+  flex: 4;
+}
+
+.flex-2 {
+  flex: 2;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.max-content {
+  width: max-content;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-baseline {
+  align-items: baseline;
+}
+
+.my-5 {
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+.my-4 {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.my-3 {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.pt-3 {
+  padding-top: 12px;
+}
+
+.px-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.pt-2 {
+  padding-top: 8px;
+}
+
+.px-2 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.pt-1 {
+  padding-top: 4px;
+}
+
+.px-1 {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.pb-2 {
+  padding-bottom: 8px;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.shrink-0 {
+  flex-shrink: 0;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.close {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  background-image: var(--icon-close);
+  background-position: center;
+  background-size: auto 1rem;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  transition: opacity var(--transition);
+}
+
+.padding-two-column {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.muted {
+  color: #999;
+}
+
+.text-label {
+  color: #666;
+}
+
+.display-none {
+  display: none;
+}
+
+/* dark use #18232c */
+@media (prefers-color-scheme: dark) {
+  .text-label {
+    color: #9ca3af;
+  }
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.text-decoration-none:is([aria-current], :hover, :active, :focus),
+[role="link"]:is([aria-current], :hover, :active, :focus) {
+  --text-decoration: none !important;
+  background-color: transparent !important;
+}
+
+.text-overflow-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.max-w-20 {
+  max-width: 180px;
+  white-space: nowrap;
+}
+
+[data-theme="light"],
+#mount:not([data-theme="dark"]) {
+  --popup-footer-background-color: #e8eaeb;
+  --popup-content-background-color: #ffffff;
+  --popup-item-background-color: #f3f5f6;
+  --popup-item-hover-background-color: #eaeced;
+  --popup-trial-pro-background-color: #f9fbfc;
+  --service-select-content-shadow: 0px 2px 12px 0px rgba(75, 76, 77, 0.2);
+  --service-select-border-color: #fafafa;
+  --service-select-selected-background-color: #f3f5f6;
+  --download-app-background: #f3f5f6;
+  --translate-language-background-color: #f3f5f6;
+  --translate-language-icon-color: #666666;
+  --translate-language-text-color: #222222;
+  --translate-language-hover-background-color: #fdedf3;
+  --translate-language-hover-icon-color: #e95d93;
+  --error-bg: #fdedf3;
+  --error-text: #222;
+  --error-link: #ea4c89;
+}
+
+[data-theme="dark"] {
+  --popup-footer-background-color: #0d0d0d;
+  --popup-content-background-color: #191919;
+  --popup-item-background-color: #272727;
+  --popup-item-hover-background-color: #333333;
+  --popup-trial-pro-background-color: #222222;
+  --service-select-content-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.9);
+  --service-select-border-color: #2c2c2c;
+  --service-select-selected-background-color: #333333;
+  --download-app-background: #333;
+  --translate-language-background-color: #2d2e2f;
+  --translate-language-icon-color: #b3b3b3;
+  --translate-language-text-color: #b3b3b3;
+  --translate-language-hover-background-color: #a97b8c;
+  --translate-language-hover-icon-color: rgba(255, 255, 255, 0.9);
+  --error-bg: #26171d;
+  --error-text: #dbdbdb;
+  --error-link: #ea4c89;
+}
+
+#mount {
+  min-width: 268px;
+}
+
+body {
+  padding: 0;
+  margin: 0 auto;
+  min-width: 268px;
+  border-radius: 10px;
+}
+
+.popup-container {
+  font-size: 16px;
+  --font-size: 16px;
+  color: #666;
+  background-color: var(--popup-footer-background-color);
+  width: 316px;
+  min-width: 316px;
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-content {
+  background-color: var(--popup-content-background-color);
+  border-radius: 0px 0px 12px 12px;
+  padding: 16px 20px;
+}
+
+.popup-userscript-three-feature-layout {
+  background-color: var(--popup-footer-background-color);
+  width: 350px;
+  min-width: 350px;
+}
+
+.popup-userscript-three-feature-layout .popup-content {
+  padding-bottom: 20px;
+  border-radius: 0 0 12px 12px;
+}
+
+.popup-userscript-three-feature-layout .popup-footer {
+  border-radius: 0;
+}
+
+.immersive-translate-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  touch-action: none;
+}
+
+.immersive-translate-popup-wrapper {
+  background: var(--background-color);
+  border-radius: 10px;
+  border: 1px solid var(--muted-border-color);
+}
+
+.main-button {
+  font-size: 16px;
+  font-weight: 700;
+  vertical-align: middle;
+  border-radius: 12px;
+  padding: unset;
+  height: 48px;
+  line-height: 48px;
+  flex: 1;
+}
+
+select.translate-service,
+select.min-select {
+  --form-element-spacing-horizontal: 0;
+  margin-bottom: 0px;
+  max-width: unset;
+  flex: 1;
+  overflow: hidden;
+  font-size: 13px;
+  border: none;
+  border-radius: 8px;
+  padding-right: 30px;
+  padding-left: 0px;
+  background-position: center right 12px;
+  background-size: 16px auto;
+  background-image: var(--icon-xia);
+  text-overflow: ellipsis;
+  color: var(--text-gray-2);
+  background-color: transparent;
+  box-shadow: unset !important;
+  cursor: pointer;
+}
+
+select.more {
+  background-position: center right;
+  padding-right: 20px;
+}
+
+select.translate-service {
+  color: var(--text-black-2);
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSI4IiB2aWV3Qm94PSIwIDAgOCA4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIG9wYWNpdHk9IjAuOCI+PHBhdGggZD0iTTMuNDc5NzMgNi4zODY0M0wwLjcyOTI5NyAzLjMyMjE2QzAuNjE2ODggMy4xOTY5NCAwLjU1NDY5NSAzLjAzNDU5IDAuNTU0Njg4IDIuODY2M0MwLjU1NDY4OCAyLjQ4OTI0IDAuODYwNTQ3IDIuMTgzNTkgMS4yMzc4NCAyLjE4MzU5SDYuNzM4NzFDNi45MDcwNyAyLjE4MzU4IDcuMDY5NTEgMi4yNDU3MiA3LjE5NDg4IDIuMzU4MDlDNy40NzU3NCAyLjYwOTg2IDcuNDk5MTkgMy4wNDE0OCA3LjI0NzI2IDMuMzIyMTZMNC40OTY4MiA2LjM4NjQ0QzQuNDgwMzIgNi40MDQ4MiA0LjQ2MjgzIDYuNDIyMjkgNC40NDQ0NCA2LjQzODc4QzQuMTYzNTggNi42OTA1NSAzLjczMTY2IDYuNjY3MTEgMy40Nzk3MyA2LjM4NjQzWiIgZmlsbD0iIzk5OTk5OSIvPjwvZz48L3N2Zz4K");
+  background-size: 8px auto;
+}
+
+.min-select-container.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.popup-footer {
+  background-color: var(--popup-footer-background-color);
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+/* Footer 三栏布局样式 */
+.footer-link-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  min-width: 72px;
+}
+
+.footer-icon-btn {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-icon-btn svg {
+  color: #999999;
+}
+
+[data-theme="dark"] .footer-icon-btn svg {
+  color: #707070;
+}
+
+.footer-link-text {
+  font-size: 12px;
+  line-height: 18px;
+  color: #666666;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .footer-link-text {
+  color: #b3b3b3;
+}
+
+.footer-link-btn-right {
+  justify-content: flex-end;
+}
+
+.footer-center-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #999999;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.footer-center-text.is-overflowing {
+  justify-content: flex-start;
+}
+
+.footer-center-text.is-overflowing .footer-center-content {
+  animation: footer-scroll-text 12s linear infinite;
+}
+
+@keyframes footer-scroll-text {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.footer-center-content {
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-scroll-gap {
+  display: inline-block;
+  width: 80px;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .footer-center-text {
+  color: #707070;
+}
+
+.footer-text-content {
+  display: inline-block;
+}
+
+.footer-privacy-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-version-inline-text {
+  font-size: 12px;
+  color: #999999;
+  line-height: 1;
+  border-bottom: 1px solid transparent;
+}
+
+[data-theme="dark"] .footer-version-inline-text {
+  color: #707070;
+}
+
+.footer-version-inline-text:hover {
+  border-bottom-color: #999999;
+}
+
+[data-theme="dark"] .footer-version-inline-text:hover {
+  border-bottom-color: #707070;
+}
+
+.translate-language-row {
+  gap: 4px;
+}
+
+.translate-language-exchange {
+  width: 36px;
+  height: 48px;
+  background-color: var(--translate-language-background-color);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--translate-language-icon-color);
+  flex-shrink: 0;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.translate-language-exchange:hover {
+  color: var(--translate-language-hover-icon-color);
+}
+
+.translate-language-exchange-active {
+  background-color: var(--translate-language-hover-background-color);
+  color: var(--translate-language-hover-icon-color);
+}
+
+.translate-language-exchange-active:hover {
+  background-color: var(--translate-language-hover-background-color);
+  color: var(--translate-language-hover-icon-color);
+}
+
+.translate-language-arrow {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+}
+
+.translation-service-container {
+  background-color: var(--popup-item-background-color);
+  border-radius: 12px;
+}
+
+.translation-service-primary-field {
+  position: relative;
+}
+
+.translation-service-guide-hitbox {
+  position: absolute;
+  right: 46px;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: auto;
+}
+
+.min-select-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 44px;
+  background-color: var(--popup-item-background-color);
+  padding-left: 16px;
+}
+
+.min-select-container:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.min-select-container:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.min-select-container:only-child {
+  border-radius: 10px;
+}
+
+.popup-ai-context-label {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+  min-width: 60px;
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+.popup-ai-context-switch {
+  align-self: center;
+  margin: 0;
+  margin-inline-end: 12px;
+}
+
+.translate-mode {
+  width: 36px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: var(--translate-language-background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  color: var(--translate-language-text-color);
+  margin-right: 8px;
+}
+
+/* 快捷操作设置标题栏 */
+.widgets-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 4px;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.widgets-header-title {
+  color: #999999;
+}
+
+.widgets-header-action {
+  color: #999999;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.widgets-header-action:hover {
+  color: #666666;
+}
+
+.widgets-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+  gap: 8px;
+}
+
+.popup-userscript-three-feature-layout .widgets-container-compact-monkey {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 12px;
+}
+
+.widgets-container.widgets-single-item {
+  grid-template-columns: minmax(0, 1fr);
+  margin-top: 12px;
+}
+
+.widgets-container.widgets-single-item .widget-item {
+  max-width: none;
+}
+
+/* 当只有两个小组件时的样式优化 */
+.widgets-container.widgets-two-items {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.widgets-container.widgets-two-items .widget-item {
+  max-width: none;
+}
+
+.widget-item {
+  display: flex;
+  width: 100%;
+  min-height: 44px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 1px solid #eef0f2;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  padding: 0 14px;
+  text-align: left;
+  gap: 6px;
+}
+
+.widget-item.widget-item-single {
+  flex: 1 1 auto;
+  flex-direction: row;
+  justify-content: center;
+  border: 1px solid #eef0f2;
+  border-radius: 16px;
+  padding: 0 14px;
+  background: transparent;
+}
+
+.popup-userscript-three-feature-layout .widget-item-compact {
+  min-height: 60px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  padding: 8px 12px;
+}
+
+.widget-item svg {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+}
+
+.widget-icon-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--c-66, #666666);
+  font-size: 14px;
+  line-height: 21px;
+  text-align: left;
+  word-break: keep-all;
+}
+
+.popup-userscript-three-feature-layout .widget-item-compact .widget-icon-text {
+  white-space: nowrap;
+  overflow: visible;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.widget-item.widget-item-single .widget-icon-text {
+  white-space: nowrap;
+  text-align: left;
+  color: var(--c-66, #666666);
+}
+
+[data-theme="dark"] .widget-item,
+[data-theme="dark"] .widget-item.widget-item-single {
+  border-color: #2e2e2e;
+}
+
+[data-theme="dark"] .widget-icon-text,
+[data-theme="dark"] .widget-item.widget-item-single .widget-icon-text {
+  color: var(--c-66, #666666);
+}
+
+[data-theme="dark"] .more-settings-icon {
+  fill: #191919;
+}
+
+.share-button-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 2px 3px 0 8px;
+}
+
+.share-button-container svg {
+  fill: var(--text-gray-9);
+}
+
+.min-select-container:hover,
+.widget-item:hover {
+  background-color: var(--popup-item-hover-background-color);
+}
+
+.main-button:hover {
+  background-color: #f5508f;
+}
+
+.share-button-container:hover {
+  background-color: var(--popup-item-background-color);
+  border-radius: 6px;
+}
+
+.error-boundary {
+  background: #fff2f0;
+  border: 1px solid #ffccc7;
+  display: flex;
+  padding: 12px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.88);
+  word-break: break-all;
+  margin: 12px;
+  border-radius: 12px;
+  flex-direction: column;
+}
+
+.upgrade-pro {
+  border-radius: 11px;
+  background: linear-gradient(57deg, #272727 19.8%, #696969 82.2%);
+  padding: 2px 8px;
+  transform: scale(0.85);
+}
+
+.upgrade-pro span {
+  background: linear-gradient(180deg, #ffeab4 17.65%, #f8c235 85.29%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+.upgrade-pro svg {
+  margin-top: -2px;
+}
+
+.upgrade-pro:hover {
+  background: linear-gradient(57deg, #3d3d3d 19.8%, #949494 82.2%);
+}
+
+.border-bottom-radius-0 {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.trial-pro-container {
+  border-radius: 0px 0px 12px 12px;
+  background: var(--popup-trial-pro-background-color);
+  display: flex;
+  align-items: center;
+  height: 44px;
+  padding-left: 16px;
+  padding-right: 12px;
+  font-size: 12px;
+}
+
+.trial-pro-container label {
+  line-height: 13px;
+  color: var(--text-black-2);
+}
+
+.trial-pro-container img {
+  margin-left: 5px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.upgrade-pro-discount-act {
+  height: 25px;
+  display: flex;
+  padding: 0 4px;
+  align-items: center;
+  border-radius: 15px;
+  background: linear-gradient(
+    90deg,
+    #cefbfa 11.33%,
+    #d7f56f 63.75%,
+    #fccd5e 100%
+  );
+  transform: scale(0.9);
+  box-shadow: 0px 1.8px 3.6px 0px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.upgrade-pro-discount-act span {
+  font-size: 12px;
+  font-weight: 700;
+  margin-left: 4px;
+  color: #222222;
+}
+
+.upgrade-pro-discount-act:hover {
+  text-decoration: unset;
+  background: linear-gradient(
+    90deg,
+    #e2fffe 11.33%,
+    #e6ff91 63.75%,
+    #ffdf93 100%
+  );
+}
+
+.custom-select-container {
+  width: 200px;
+  position: relative;
+  flex: 1;
+}
+
+#translation-service-select {
+  padding-right: 12px;
+}
+
+.custom-select-content {
+  border-radius: 12px;
+  background: var(--popup-content-background-color);
+  box-shadow: var(--service-select-content-shadow);
+  border: 1px solid var(--service-select-border-color);
+  padding: 8px;
+  position: absolute;
+  left: -68px;
+  right: 0;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.custom-select-item.default {
+  width: 100%;
+  padding: 0;
+}
+
+.custom-select-item {
+  font-size: 14px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--text-black-2);
+  width: auto;
+  overflow: hidden;
+  height: 30px;
+  line-height: 30px;
+}
+
+.custom-select-item-img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .custom-select-item-img {
+    margin-right: 6px;
+  }
+}
+
+.custom-select-content .custom-select-item.selected,
+.custom-select-content .custom-select-item:hover {
+  background: var(--service-select-selected-background-color);
+}
+
+.custom-select-item > span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.custom-select-item-pro {
+  font-size: 12px;
+  margin-left: 6px;
+  display: flex;
+}
+
+.custom-select-item-pro img {
+  margin: 0 3px;
+  width: 20px;
+  flex-shrink: 0;
+}
+
+.service-select-inline-sponsor-container {
+  width: 50px;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.service-select-inline-sponsor-marquee {
+  min-width: max-content;
+  display: inline-flex;
+  align-items: center;
+  column-gap: 12px;
+  animation: service-select-inline-sponsor-scroll 10s linear infinite;
+}
+
+.service-select-inline-sponsor-track {
+  min-width: max-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+@keyframes service-select-inline-sponsor-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 6px));
+  }
+}
+
+.custom-select-group-header {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-gray-9);
+  padding: 8px 8px 6px;
+  margin-top: 2px;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.custom-select-group-header--recommendation {
+  color: #beb3a0;
+  font-weight: 400;
+  letter-spacing: 0;
+  padding-top: 4px;
+}
+
+.custom-select-group-header-tip {
+  display: inline-flex;
+  align-items: center;
+  color: #bcbcbc;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.more-container {
+  position: relative;
+}
+
+.new-menu-indicator {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #ef3434;
+  border-radius: 50%;
+  right: 18px;
+  top: 4px;
+}
+
+.download-app {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px;
+  background: var(--download-app-background);
+  padding: 4px 8px;
+  color: var(--text-gray-6);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Popup 动画效果 */
+@keyframes popup-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes popup-fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+}
+
+.popup-generic-content {
+  animation: popup-fade-in 0.2s ease-out;
+}
+
+.popup-generic-content.hiding {
+  animation: popup-fade-out 0.15s ease-in;
+}
+
+select.min-select {
+  --form-element-spacing-horizontal: 0;
+  max-width: 128px;
+  overflow: hidden;
+  color: var(--primary);
+  font-size: 13px;
+  border: none;
+  padding: 0;
+  padding-right: 20px;
+  text-overflow: ellipsis;
+  color: var(--color);
+}
+select.min-select-secondary {
+  color: var(--color);
+}
+select.min-select:focus {
+  outline: none;
+  border: none;
+  --box-shadow: none;
+}
+
+select.min-select-left {
+  padding-right: 0px;
+  /* padding-left: 24px; */
+  /* background-position: center left 0; */
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+select.transform-padding-left {
+  padding-left: 12px;
+  transform: translateX(-12px);
+  background-position: center right 0px;
+}
+
+select.text-gray-6 {
+  color: var(--text-gray-6);
+}
+
+/* dark use black, for windows */
+@media (prefers-color-scheme: dark) {
+  select.translate-service option,
+  select.min-select option {
+    background-color: #666666;
+  }
+}
+
+select.min-select-no-arrow {
+  background-image: none;
+  padding-right: 0;
+}
+
+.activity-tips {
+  border-radius: 8px;
+  padding: 0px 8px;
+  height: 26px;
+  background: linear-gradient(
+    83deg,
+    #faccde -0.87%,
+    #fce7ef 43.13%,
+    #fbd6e4 72.08%,
+    #ffb3d1 96.34%
+  );
+  color: #333;
+  cursor: pointer;
+  gap: 4px;
+  font-size: 12px;
+}
+
+.activity-tips-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.countdown-container {
+  min-width: 50px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.01em;
+}
+
+.activity-tips-text {
+  font-weight: 600;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 非会员升级提示 */
+.upgrade-tips {
+  padding: 0px 6px 0px 4px;
+  height: 18px;
+  color: #ea4c89;
+  cursor: pointer;
+  gap: 6px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.upgrade-tips svg:first-child {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  filter: drop-shadow(0px 4px 4px rgba(236, 76, 140, 0.2));
+}
+
+.upgrade-tips-text {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.upgrade-tips-switch {
+  position: relative;
+  width: 30px;
+  height: 18px;
+  border-radius: 24px;
+  background: #cccccc;
+  flex-shrink: 0;
+}
+
+.upgrade-tips-switch-thumb {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+/* 抽屉组件样式 */
+.drawer-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+
+.drawer-overlay.drawer-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.drawer-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ffffff;
+  border-radius: 12px 12px 0 0;
+  z-index: 101;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-visible .drawer-panel {
+  transform: translateY(0);
+}
+
+[data-theme="dark"] .drawer-panel {
+  background: #222222;
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  flex-shrink: 0;
+}
+
+.drawer-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333333;
+}
+
+[data-theme="dark"] .drawer-title {
+  color: #e0e0e0;
+}
+
+.drawer-close {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999999;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.drawer-close:hover {
+  background-color: #f3f5f6;
+}
+
+[data-theme="dark"] .drawer-close:hover {
+  background-color: #333333;
+}
+
+.drawer-body {
+  padding: 16px 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.drawer-body.drawer-body-hover {
+  padding: 0 20px 20px 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.drawer-body.drawer-body-more-settings {
+  padding-top: 0;
+}
+
+.drawer-footer {
+  padding: 12px 20px;
+  border-top: 1px solid #eef0f2;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+[data-theme="dark"] .drawer-footer {
+  border-top: 1px solid #2e2e2e;
+}
+
+.drawer-footer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.drawer-footer-actions-single {
+  justify-content: center;
+}
+
+.drawer-footer-text {
+  font-size: 12px;
+  cursor: pointer;
+  color: #999999;
+  text-decoration: none;
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.drawer-footer-actions-single .drawer-footer-text {
+  flex: 0 1 auto;
+  max-width: 100%;
+}
+
+.drawer-footer-text:hover {
+  text-decoration: underline;
+}
+
+/* 抽屉内容区域样式 */
+.drawer-section {
+  margin-bottom: 16px;
+}
+
+.drawer-section:last-child {
+  margin-bottom: 0;
+}
+
+.drawer-section-highlight {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+[data-theme="dark"] .drawer-section-highlight {
+  background-color: #2a2a2a;
+}
+
+.drawer-section-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #666666;
+  margin-bottom: 12px;
+}
+
+[data-theme="dark"] .drawer-section-title {
+  color: #999999;
+}
+
+.drawer-section-divider {
+  height: 1px;
+  background-color: #eef0f2;
+  margin: 16px 0;
+}
+
+/* ========== 通用抽屉组件样式 ========== */
+.popup-drawer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.popup-drawer-card {
+  background: #f3f5f6;
+  border-radius: 12px;
+  padding: 12px 12px 16px;
+}
+
+[data-theme="dark"] .popup-drawer-card {
+  background: #2a2a2a;
+}
+
+.popup-drawer-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 21px;
+  gap: 12px;
+}
+
+.popup-drawer-card-header input[type="checkbox"][role="switch"] {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.popup-drawer-card-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #222222;
+  line-height: 21px;
+}
+
+[data-theme="dark"] .popup-drawer-card-title {
+  color: #e0e0e0;
+}
+
+.popup-drawer-card-divider {
+  height: 1px;
+  width: calc(100% + 24px);
+  background-color: #ffffff;
+  margin: 12px -12px 16px;
+}
+
+[data-theme="dark"] .popup-drawer-card-divider {
+  background-color: #333333;
+}
+
+.popup-drawer-demo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.popup-drawer-demo-region-fixed {
+  height: 51px;
+  max-height: 51px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-region-min {
+  min-height: 51px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-selection {
+  width: 100%;
+  min-width: 0;
+  flex-wrap: nowrap;
+}
+
+.popup-drawer-demo-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-plus,
+.popup-drawer-demo-equal {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  color: #333333;
+}
+
+[data-theme="dark"] .popup-drawer-demo-plus,
+[data-theme="dark"] .popup-drawer-demo-equal {
+  color: #e0e0e0;
+}
+
+.popup-drawer-demo-logo {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-logo img {
+  width: 28px;
+  height: 28px;
+  display: block;
+  filter: drop-shadow(0 4px 12px rgba(255, 166, 201, 0.5));
+}
+
+.popup-drawer-demo-result {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #333333;
+}
+
+.popup-drawer-demo-result-ellipsis {
+  min-width: 0;
+  max-width: calc(100% - 72px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .popup-drawer-demo-result {
+  color: #e0e0e0;
+}
+
+.popup-drawer-trigger {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.popup-drawer-trigger-label {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #999999;
+  padding-left: 4px;
+}
+
+.popup-drawer-trigger-options {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.popup-drawer-trigger-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #333333;
+  background: #ffffff;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.popup-drawer-trigger-option-disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.popup-drawer-trigger-option:not(.popup-drawer-trigger-option-selected):hover {
+  border-color: #d0d3d6;
+}
+
+.popup-drawer-trigger-option-selected {
+  border: 0.5px solid #ea4c89;
+  background: #fdedf3;
+  box-shadow: 0px 4px 12px rgba(255, 166, 201, 0.5);
+}
+
+[data-theme="dark"] .popup-drawer-trigger-option {
+  background: #1f1f1f;
+  border-color: #333333;
+  color: #e0e0e0;
+}
+
+[data-theme="dark"]
+  .popup-drawer-trigger-option:not(
+    .popup-drawer-trigger-option-selected
+  ):hover {
+  border-color: #444444;
+}
+
+[data-theme="dark"] .popup-drawer-trigger-option-selected {
+  background: rgba(233, 76, 137, 0.2);
+  border-color: #ea4c89;
+  box-shadow: 0 4px 12px 0 rgba(255, 166, 201, 0.3);
+}
+
+.popup-drawer-trigger-option-with-icon {
+  gap: 8px;
+}
+
+/* ========== 通用抽屉演示区域样式 ========== */
+/* 键帽样式 */
+.popup-drawer-demo-keycap {
+  min-width: 72px;
+  padding: 9px;
+  height: auto;
+  box-sizing: border-box;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  color: #ffffff;
+  background:
+    radial-gradient(
+      60px 36px at 85% 100%,
+      rgba(208, 208, 208, 0.2),
+      rgba(255, 255, 255, 0)
+    ),
+    radial-gradient(72px 36px at 50% 0%, #101010 0%, #242424 100%);
+  box-shadow:
+    2px 2px 3.5px rgba(0, 0, 0, 0.4),
+    inset 0.5px 0.7px 0.4px rgba(255, 255, 255, 0.5),
+    inset -0.5px -0.5px 0.2px rgba(0, 0, 0, 0.6);
+}
+
+.popup-drawer-demo-keycap-text {
+  max-width: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 小圆点样式 */
+.popup-drawer-demo-mini-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ea4c89;
+  flex-shrink: 0;
+  align-self: center;
+  box-shadow: 0 4px 12px rgba(255, 166, 201, 0.5);
+}
+
+[data-theme="dark"] .drawer-section-divider {
+  background-color: #333333;
+}
+
+/* 开关行 */
+.drawer-switch-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.drawer-switch-row.drawer-row-border {
+  border-bottom: 1px solid #eef0f2;
+  margin-bottom: 8px;
+  padding-bottom: 12px;
+}
+
+[data-theme="dark"] .drawer-switch-row.drawer-row-border {
+  border-bottom-color: #333333;
+}
+
+.drawer-switch-label {
+  font-size: 14px;
+  color: #222222;
+}
+
+[data-theme="dark"] .drawer-switch-label {
+  color: #e0e0e0;
+}
+
+/* 链接行 */
+.drawer-link-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  cursor: pointer;
+  border-bottom: 1px solid #eef0f2;
+  font-size: 14px;
+  color: #222222;
+}
+
+.drawer-link-row:last-child {
+  border-bottom: none;
+}
+
+[data-theme="dark"] .drawer-link-row {
+  border-bottom-color: #333333;
+  color: #e0e0e0;
+}
+
+.drawer-link-row:hover {
+  color: #ea4c89;
+}
+
+/* 演示区域 */
+.drawer-demo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 0;
+}
+
+.drawer-demo-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+}
+
+[data-theme="dark"] .drawer-demo-icon {
+  background-color: #333333;
+  border-color: #444444;
+}
+
+.drawer-demo-plus,
+.drawer-demo-equal {
+  font-size: 16px;
+  color: #999999;
+}
+
+.drawer-demo-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.drawer-demo-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.drawer-demo-result {
+  font-size: 14px;
+  color: #222222;
+  padding: 8px 12px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+}
+
+[data-theme="dark"] .drawer-demo-result {
+  background-color: #333333;
+  border-color: #444444;
+  color: #e0e0e0;
+}
+
+/* 触发方式选项 */
+.drawer-options {
+  display: flex;
+  gap: 8px;
+}
+
+.drawer-options-wrap {
+  flex-wrap: wrap;
+}
+
+.drawer-option {
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #666666;
+  background-color: #f3f5f6;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+[data-theme="dark"] .drawer-option {
+  background-color: #333333;
+  color: #b3b3b3;
+}
+
+.drawer-option:hover {
+  background-color: #eaeced;
+}
+
+[data-theme="dark"] .drawer-option:hover {
+  background-color: #3a3a3a;
+}
+
+.drawer-option-selected {
+  border-color: #ea4c89;
+  background-color: #fdedf3;
+  color: #ea4c89;
+  box-shadow: 0px 4px 12px rgba(255, 166, 201, 0.5);
+}
+
+[data-theme="dark"] .drawer-option-selected {
+  background-color: rgba(234, 76, 137, 0.2);
+}
+
+.drawer-body.drawer-body-selection {
+  padding: 0 20px 20px 20px;
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+
+/* ========== 更多设置抽屉样式 ========== */
+.more-settings-drawer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.more-settings-quick-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.more-settings-feature-card {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 40px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: #f3f5f6;
+  transition: background-color 0.2s ease;
+}
+
+.more-settings-feature-card:hover {
+  background-color: #e8eaec;
+}
+
+.more-settings-feature-card:active {
+  background-color: #dde0e2;
+}
+
+.more-settings-feature-card-label {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #666666;
+  white-space: nowrap;
+}
+
+.more-settings-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.more-settings-switch-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 21px;
+  gap: 12px;
+}
+
+.more-settings-switch-label {
+  flex: 1;
+  min-width: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #222222;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.more-settings-switch-row input[type="checkbox"] {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+[data-theme="dark"] .more-settings-switch-label {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .more-settings-feature-card {
+  background-color: #2a2a2a;
+}
+
+[data-theme="dark"] .more-settings-feature-card:hover {
+  background-color: #333333;
+}
+
+[data-theme="dark"] .more-settings-feature-card:active {
+  background-color: #3a3a3a;
+}
+
+[data-theme="dark"] .more-settings-feature-card-label {
+  color: #e0e0e0;
+}
+
+/* 动作按钮样式 */
+.more-settings-action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 12px;
+  color: #222222;
+  background-color: #f3f5f6;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.more-settings-action-button:hover {
+  background-color: #e8eaec;
+}
+
+.more-settings-action-button:active {
+  background-color: #dde0e2;
+}
+
+.more-settings-action-button-label {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  color: inherit;
+  text-align: center;
+}
+
+[data-theme="dark"] .more-settings-action-button {
+  color: #e0e0e0;
+  background-color: #2a2a2a;
+}
+
+[data-theme="dark"] .more-settings-action-button:hover {
+  background-color: #333333;
+}
+
+[data-theme="dark"] .more-settings-action-button:active {
+  background-color: #3a3a3a;
+}
+
+[data-theme="dark"] .more-settings-action-button-label {
+  color: #e0e0e0;
+}
+
+/* 错误消息组件样式 */
+.error-message-container {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 16px;
+  margin-top: 6px;
+  margin-bottom: -14px;
+  border: 1px solid #f53f3f;
+  border-radius: 12px;
+  background-color: var(--error-bg);
+}
+
+.error-message-icon-wrapper {
+  width: 21px;
+  height: 21px;
+  min-width: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4px;
+}
+
+.error-message-icon {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #f53f3f;
+}
+
+.error-message-text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: var(--error-text);
+}
+
+.error-message-text a {
+  color: var(--error-link);
+  text-decoration: underline;
+}
+
+.ad-banner-container {
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+
+html {
+  font-size: 17px;
+}
+
+@media print {
+  .imt-fb-container {
+    display: none !important;
+  }
+}
+
+#mount {
+  position: absolute;
+  display: none;
+  min-width: 250px;
+  height: auto;
+  --font-size: 17px;
+  font-size: 17px;
+}
+
+/* float-ball */
+.imt-fb-container {
+  position: fixed;
+  padding: 0;
+  top: 335px;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  display: none;
+  direction: ltr;
+  background-color: transparent !important;
+}
+
+.imt-fb-container:hover .imt-manga-button {
+  opacity: 1;
+}
+
+.imt-fb-container.left {
+  align-items: flex-start;
+  left: 0;
+}
+
+.imt-fb-container.right {
+  align-items: flex-end;
+  right: 0;
+}
+
+.imt-fb-btn {
+  cursor: pointer;
+  background: var(--float-ball-more-button-background-color);
+  height: 36px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+}
+
+.imt-fb-btn.left {
+  border-top-right-radius: 36px;
+  border-bottom-right-radius: 36px;
+  padding-left: 3px;
+}
+
+.imt-fb-btn.right {
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+  padding-right: 3px;
+}
+
+.imt-fb-btn.mini.left {
+  transform: translateX(-22px);
+}
+
+.imt-fb-btn.mini.right {
+  transform: translateX(22px);
+}
+
+.imt-fb-btn.mini.active {
+  transform: translateX(0);
+}
+
+.imt-fb-btn div {
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+.imt-fb-btn .imt-fb-hit-area {
+  position: absolute;
+  top: 0;
+  height: 36px;
+  bottom: -6px;
+  left: -6px;
+  right: -6px;
+  background: transparent;
+}
+
+.imt-fb-btn.mini.right .imt-fb-hit-area {
+  left: -10px;
+}
+
+.imt-fb-btn.mini.left .imt-fb-hit-area {
+  right: -10px;
+}
+
+.imt-fb-btn.left div {
+  border-top-right-radius: 34px;
+  border-bottom-right-radius: 34px;
+  justify-content: flex-end;
+}
+
+.imt-fb-btn.right div {
+  border-top-left-radius: 34px;
+  border-bottom-left-radius: 34px;
+}
+
+.imt-fb-logo-img {
+  width: 20px;
+  height: 20px;
+  margin: 0 10px;
+}
+
+.imt-fb-logo-img-big-bg {
+  width: 28px;
+  height: 28px;
+  margin: 0;
+  background-color: #ed6d8f;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.imt-float-ball-translated {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  bottom: 4px;
+  right: 4px;
+}
+
+.btn-animate {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform ease-out 250ms;
+  transition: -webkit-transform ease-out 250ms;
+  transition: transform ease-out 250ms;
+  transition: transform ease-out 250ms, -webkit-transform ease-out 250ms;
+}
+
+.imt-fb-setting-btn {
+  margin-right: 18px;
+  width: 28px;
+  height: 28px;
+}
+
+.immersive-translate-popup-wrapper {
+  background: var(--background-color);
+  border-radius: 20px;
+  box-shadow: 2px 10px 24px 0px #0e121614;
+  border: none;
+}
+
+.popup-container {
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-content {
+  border-radius: 20px 20px 12px 12px;
+}
+.popup-footer {
+  border-radius: 20px;
+}
+
+.popup-userscript-three-feature-layout {
+  border-radius: 20px;
+}
+
+.popup-userscript-three-feature-layout .popup-content {
+  border-radius: 20px 20px 12px 12px;
+}
+
+.popup-userscript-three-feature-layout .popup-footer {
+  border-radius: 0;
+}
+
+.imt-fb-close-button {
+  cursor: pointer;
+  position: absolute;
+  left: -10px;
+  bottom: -20px;
+}
+.imt-fb-container.left .imt-fb-close-button {
+  left: auto;
+  right: -10px;
+}
+
+.imt-fb-close-content {
+  padding: 22px;
+  width: 320px;
+  pointer-events: all;
+}
+
+.imt-fb-close-title {
+  font-weight: 500;
+  color: var(--text-black-2);
+}
+
+.imt-fb-close-radio-content {
+  background-color: var(--background-light-green);
+  padding: 8px 20px;
+}
+
+.imt-fb-radio-sel,
+.imt-fb-radio-nor {
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.imt-fb-radio-sel {
+  border: 2px solid var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imt-fb-radio-sel div {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: var(--primary);
+}
+
+.imt-fb-radio-nor {
+  border: 2px solid var(--input-border-strong);
+}
+
+.imt-fb-primary-btn {
+  background-color: var(--primary);
+  width: 72px;
+  height: 32px;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 32px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.imt-fb-default-btn {
+  border: 1px solid var(--primary);
+  width: 72px;
+  height: 32px;
+  border-radius: 8px;
+  color: var(--primary);
+  line-height: 32px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.imt-fb-guide-container {
+  width: 312px;
+  transform: translateY(-45%);
+}
+
+.imt-fb-guide-bg {
+  position: absolute;
+  left: 30px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  height: 100%;
+  width: 90%;
+}
+
+.imt-fb-guide-bg.left {
+  transform: scaleX(-1);
+}
+
+.imt-fb-guide-content {
+  margin: 16px -30px 80px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imt-fb-guide-content.left {
+  margin: 16px 21px 60px 32px;
+}
+
+.imt-fb-guide-img {
+  width: 220px;
+  height: 112px;
+}
+
+.imt-fb-guide-message {
+  font-size: 14px;
+  line-height: 28px;
+  color: #333333;
+  white-space: pre-wrap;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.imt-manga-guide-message {
+  font-size: 16px;
+  line-height: 24px;
+  color: #333333;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.imt-fb-guide-button {
+  margin-top: 16px;
+  line-height: 40px;
+  height: 40px;
+  padding: 0 20px;
+  width: unset;
+}
+
+.imt-fb-side {
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: all;
+  position: relative;
+}
+
+.imt-fb-side {
+  margin: 10px 0;
+}
+
+.imt-fb-side::before,
+.imt-manga-button::before,
+.imt-fb-round-button::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  left: 2px;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color 0.15s ease;
+}
+
+.imt-fb-side:hover::before,
+.imt-manga-button:hover::before,
+.imt-fb-round-button:hover::before {
+  background-color: var(--float-ball-more-button-hover-color);
+}
+
+.imt-fb-new-badge {
+  width: 26px;
+  height: 14px;
+  padding: 3px;
+  background-color: #f53f3f;
+  border-radius: 4px;
+  position: absolute;
+  top: -5px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imt-fb-side * {
+  pointer-events: all;
+}
+
+.imt-fb-pin-icon {
+  position: absolute;
+  left: -16px;
+  bottom: -12px;
+  opacity: 0;
+  cursor: pointer;
+}
+.imt-fb-container.left .imt-fb-pin-icon {
+  left: auto;
+  right: -16px;
+}
+
+.imt-fb-side:hover .imt-fb-pin-icon {
+  opacity: 1;
+}
+
+.imt-fb-more-button {
+  width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+/* Sheet.css */
+.immersive-translate-sheet {
+  position: fixed;
+  transform: translateY(100%);
+  /* Start off screen */
+  left: 0;
+  right: 0;
+  background-color: var(--background-color);
+  transition: transform 0.3s ease-out;
+  /* Smooth slide transition */
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+  /* Ensure it's above other content */
+  bottom: 0;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  overflow: hidden;
+}
+
+.immersive-translate-sheet.visible {
+  transform: translateY(0);
+}
+
+.immersive-translate-sheet-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.immersive-translate-sheet-backdrop.visible {
+  opacity: 1;
+}
+
+.popup-container-sheet {
+  max-width: 100vw;
+  width: 100vw;
+}
+
+.imt-no-events svg * {
+  pointer-events: none !important;
+}
+
+.imt-manga-button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: all;
+  margin: 0 0 10px 0;
+  background-color: var(--float-ball-more-button-background-color);
+  border-radius: 50%;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.08);
+  right: 8px;
+}
+
+.imt-manga-feedback {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.imt-fb-round-button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: var(--float-ball-more-button-background-color);
+  border-radius: 50%;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.imt-fb-round-button > svg {
+  z-index: 1;
+}
+
+.imt-fb-upgrade-button {
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.imt-fb-power-user-card {
+  position: absolute;
+  bottom: -130px;
+  width: 266px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 2px 10px 24px 0 rgba(14, 18, 22, 0.08);
+  border: 1px solid rgba(250, 251, 251, 1);
+  pointer-events: all;
+  z-index: 2;
+  background: linear-gradient(172deg, rgba(255, 255, 255, 0.30) 4.36%, #FFF 35.98%), linear-gradient(0deg, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.40) 100%), radial-gradient(39.95% 47.41% at -0.53% 55.22%, #E0C4F7 0%, rgba(224, 196, 247, 0.00) 100%), radial-gradient(56.37% 54.27% at 86.17% 0%, #E0C4F6 0%, rgba(224, 196, 246, 0.00) 100%), radial-gradient(42.04% 37.43% at -0.53% 3.75%, #AED5FF 0%, rgba(174, 213, 255, 0.00) 100%), radial-gradient(66.88% 52.09% at 36.81% 19.55%, #757ED8 0%, #6B6AC0 100%), #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imt-fb-power-user-card.right {
+  right: 60px;
+}
+
+.imt-fb-power-user-card.right::after {
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: 130px;
+  border-width: 10px 0 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent #fff;
+  filter: drop-shadow(2px 0 2px rgba(14, 18, 22, 0.06));
+}
+
+.imt-fb-power-user-card.left {
+  left: 60px;
+}
+
+.imt-fb-power-user-card.left::after {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 130px;
+  border-width: 10px 10px 10px 0;
+  border-style: solid;
+  border-color: transparent #fff transparent transparent;
+  filter: drop-shadow(-2px 0 2px rgba(14, 18, 22, 0.06));
+}
+
+.imt-fb-power-user-card-banner {
+  display: block;
+  width: 128px;
+  height: auto;
+  margin-top: 8px;
+  border-radius: 8px 8px 0 0;
+}
+
+.imt-fb-power-user-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 16px 24px 0;
+  box-sizing: border-box;
+}
+
+.imt-fb-power-user-card-title {
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+}
+
+.imt-fb-power-user-card-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.imt-fb-power-user-card-body {
+  padding: 12px 24px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.imt-fb-power-user-card-desc {
+  color: #333;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+}
+
+.imt-fb-power-user-card-primary {
+  margin-top: 16px;
+  height: 37px;
+  border-radius: 8px;
+  background: linear-gradient(110deg, #F497BC 17.37%, #EC4C8C 89.68%);
+  color: var(--ZX-FFFFFF, #FFF);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px; /* 150% */
+  display: flex;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  flex: 1 0 0;
+}
+
+.imt-manga-translated {
+  position: absolute;
+  left: 24px;
+  top: 20px;
+}
+
+.imt-float-ball-loading {
+  animation: imt-loading-animation 0.6s infinite linear !important;
+}
+
+.imt-manga-guide-bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  transform: translateY(-50%);
+}
+.imt-manga-guide-content {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  margin: 0 40px 0;
+}
+
+.img-manga-guide-button {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.img-manga-close {
+  position: absolute;
+  bottom: -200px;
+  width: 32px;
+  height: 32px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  cursor: pointer;
+}
+
+.imt-fb-container.dragging .imt-manga-button,
+.imt-fb-container.dragging .btn-animate:not(.imt-fb-btn) {
+  display: none !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn {
+  border-radius: 50% !important;
+  width: 36px !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  cursor: move !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn div {
+  border-radius: 50% !important;
+  width: 36px !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn.left,
+.imt-fb-container.dragging .imt-fb-btn.right {
+  border-radius: 50% !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn.left div,
+.imt-fb-container.dragging .imt-fb-btn.right div {
+  border-radius: 50% !important;
+}
+
+.imt-fb-container.dragging .imt-fb-logo-img {
+  margin: 0 !important;
+}
+
+.imt-fb-container.dragging .imt-float-ball-translated {
+  right: 2px !important;
+  bottom: 2px !important;
+}
+
+@-webkit-keyframes imt-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes imt-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.imt-fb-icon {
+  color: #666666;
+}
+
+[data-theme="dark"] .imt-fb-icon {
+  color: #b3b3b3;
+}
+
+[data-theme="light"] .imt-fb-icon {
+  color: #666666;
+}
+
+/* 悬浮球设置弹窗样式 */
+.imt-fb-setting-wrapper {
+  border-radius: 12px;
+  box-shadow: 2px 10px 24px 0px rgba(0, 0, 0, 0.06);
+}
+
+.imt-fb-setting-content {
+  padding: 16px;
+  width: 350px;
+  pointer-events: all;
+}
+
+.imt-fb-setting-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--text-black-2);
+}
+
+.imt-fb-setting-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px 0;
+}
+
+.imt-fb-preview-wrapper {
+  display: flex;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.imt-fb-preview-item {
+  width: 99px;
+  height: 57px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+}
+
+.imt-fb-preview-item.light {
+  background-color: #f3f5f6;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.imt-fb-preview-item.dark {
+  background-color: #444;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.imt-fb-preview-ball {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.imt-fb-preview-ball.light {
+  background-color: #fff;
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+}
+
+.imt-fb-preview-ball.dark {
+  background-color: #111;
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+}
+
+.imt-fb-preview-ball.full {
+  width: 41px;
+  justify-content: center;
+}
+
+.imt-fb-preview-ball.mini {
+  width: 41px;
+  justify-content: center;
+  transform: translateX(21px);
+}
+
+.imt-fb-preview-ball .imt-fb-preview-logo {
+  flex-shrink: 0;
+}
+
+/* 选项区域 */
+.imt-fb-setting-options {
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.imt-fb-setting-option-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4px;
+}
+
+.imt-fb-setting-option-label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: var(--text-black-2);
+}
+
+/* Toggle 开关样式 */
+.imt-fb-toggle {
+  width: 30px;
+  height: 18px;
+  background-color: var(--switch-background-color);
+  border-radius: 24px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.imt-fb-toggle.checked {
+  background-color: var(--primary);
+}
+
+.imt-fb-toggle.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.imt-fb-toggle-thumb {
+  width: 14px;
+  height: 14px;
+  background-color: var(--switch-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s ease;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+}
+
+.imt-fb-toggle.checked .imt-fb-toggle-thumb {
+  transform: translateX(12px);
+}
+
+.imt-fb-setting-hide-options {
+  background-color: var(--background-light-green);
+  padding: 8px 20px;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.imt-fb-setting-save-btn {
+  background-color: var(--primary);
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 45px;
+  height: 45px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: opacity 0.2s ease;
+}
+
+.imt-fb-setting-save-btn:hover {
+  opacity: 0.9;
+}
+
+.imt-fb-setting-save-btn:active {
+  opacity: 0.8;
+}
+</style><div id="mount" style="display: block;"><div hidden="" id="immersive-translate-popup-overlay" class="immersive-translate-popup-overlay" style="z-index: 2147483647; background-color: rgba(0, 0, 0, 0.5);"><div class="immersive-translate-popup-wrapper" style="position: fixed; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);"></div></div></div></template></div></html>

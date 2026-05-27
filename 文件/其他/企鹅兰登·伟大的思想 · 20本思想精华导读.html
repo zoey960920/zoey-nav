@@ -1,0 +1,5423 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)https://penguin-ideas.wwei.ai/ -->
+<html lang="zh-CN" data-immersive-translate-page-theme="dark"><plasmo-csui><template shadowrootmode="open"><div id="plasmo-shadow-container" style="z-index: 2147483647; position: relative;"><div id="plasmo-overlay-0" class="plasmo-csui-container" style="display: flex; position: absolute; top: 0px; left: 0px;"></div></div></template></plasmo-csui><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>企鹅兰登·伟大的思想 · 20本思想精华导读</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="stylesheet" href="./企鹅兰登·伟大的思想 · 20本思想精华导读_files/css2">
+<style>
+/* === 主题变量 === */
+:root {
+  --bg: #080D1A;
+  --bg2: #0C1220;
+  --mint: #00D4B4;
+  --amber: #F0A830;
+  --dim: rgba(255,255,255,0.52);
+  --faint: rgba(255,255,255,0.10);
+  --card: rgba(255,255,255,0.04);
+  --ease: cubic-bezier(0.16,1,0.3,1);
+}
+
+/* === viewport-base (内联) === */
+html, body {
+  margin:0; padding:0; width:100%; height:100%;
+  overflow:hidden;
+  scroll-behavior:smooth;
+  scroll-snap-type:y mandatory;
+  background:var(--bg);
+  color:#fff;
+  font-family:'Sora','Noto Serif SC',sans-serif;
+}
+*, *::before, *::after { box-sizing:border-box; }
+
+.slide {
+  position:relative;
+  width:100%; height:100vh; height:100dvh;
+  overflow:hidden;
+  scroll-snap-align:start;
+  display:grid;
+  align-content:center;
+  padding:clamp(1rem,3vw,3rem);
+}
+
+.slide-content {
+  width:min(1200px,100%);
+  max-height:88vh; max-height:88dvh;
+  margin:0 auto;
+  overflow:hidden;
+}
+
+/* progress bar */
+.pb {
+  position:fixed; left:0; top:0;
+  width:0; height:3px; z-index:9999;
+  background:var(--mint);
+  transition:width .2s linear;
+}
+
+/* nav dots */
+.nd {
+  position:fixed; right:clamp(.5rem,1.5vw,1rem); top:50%;
+  transform:translateY(-50%);
+  display:grid; gap:.4rem; z-index:9998;
+}
+.nd button {
+  width:7px; height:7px; border-radius:999px;
+  border:0; background:rgba(255,255,255,.22); cursor:pointer;
+  transition:background .2s,transform .2s;
+}
+.nd button.active { background:var(--mint); transform:scale(1.4); }
+
+/* === Reveal animation === */
+.reveal {
+  opacity:0; transform:translateY(22px);
+  transition:opacity .65s var(--ease),transform .65s var(--ease);
+}
+.slide.visible .reveal { opacity:1; transform:translateY(0); }
+.reveal:nth-child(1){transition-delay:.06s}
+.reveal:nth-child(2){transition-delay:.13s}
+.reveal:nth-child(3){transition-delay:.20s}
+.reveal:nth-child(4){transition-delay:.27s}
+.reveal:nth-child(5){transition-delay:.34s}
+.reveal:nth-child(6){transition-delay:.40s}
+
+/* Left/Right slide-in for book layout */
+.rl {
+  opacity:0; transform:translateX(-36px);
+  transition:opacity .7s var(--ease),transform .7s var(--ease);
+  transition-delay:.05s;
+}
+.rr {
+  opacity:0; transform:translateX(36px);
+  transition:opacity .7s var(--ease),transform .7s var(--ease);
+  transition-delay:.12s;
+}
+.slide.visible .rl, .slide.visible .rr { opacity:1; transform:translateX(0); }
+
+/* ========================
+   HERO SLIDE
+======================== */
+.s-hero {
+  background:
+    radial-gradient(ellipse at 25% 65%, rgba(0,212,180,.18) 0%,transparent 52%),
+    radial-gradient(ellipse at 78% 22%, rgba(240,168,48,.13) 0%,transparent 48%),
+    var(--bg);
+  text-align:center;
+}
+.s-hero .wm {
+  position:absolute; inset:0; display:grid; place-items:center;
+  font-size:clamp(10rem,26vw,22rem);
+  font-weight:700; opacity:.022; color:#fff;
+  pointer-events:none; user-select:none; font-family:'Sora',sans-serif;
+}
+.pill {
+  display:inline-block;
+  border:1px solid rgba(0,212,180,.45); color:var(--mint);
+  border-radius:999px; padding:.28em 1.2em;
+  font-size:clamp(.68rem,1.05vw,.88rem);
+  letter-spacing:.13em; text-transform:uppercase;
+  margin-bottom:clamp(.8rem,2vh,1.5rem);
+}
+.s-hero h1 {
+  font-family:'Noto Serif SC',serif;
+  font-size:clamp(2rem,5.5vw,4.5rem);
+  line-height:1.15; letter-spacing:-.02em;
+  margin-bottom:.45em;
+}
+.s-hero .sub {
+  color:var(--dim);
+  font-size:clamp(.88rem,1.5vw,1.15rem);
+  margin-bottom:clamp(1.5rem,3.5vh,3rem);
+}
+.stats {
+  display:flex; gap:clamp(1rem,3vw,3.5rem);
+  justify-content:center; flex-wrap:wrap;
+}
+.stat { text-align:center; }
+.stat-n {
+  font-size:clamp(1.6rem,3.5vw,3rem);
+  font-weight:700; color:var(--mint); line-height:1;
+}
+.stat-l {
+  font-size:clamp(.65rem,.95vw,.82rem);
+  color:var(--dim); margin-top:.3em;
+}
+
+/* ========================
+   INTRO SLIDE
+======================== */
+.s-intro {
+  background:
+    radial-gradient(ellipse at 82% 35%, rgba(240,168,48,.10) 0%,transparent 52%),
+    var(--bg);
+}
+.s-intro h2 {
+  font-family:'Noto Serif SC',serif;
+  font-size:clamp(1.4rem,3.2vw,2.6rem);
+  color:var(--amber); margin-bottom:clamp(.7rem,1.5vh,1.2rem);
+}
+.s-intro .lead {
+  color:var(--dim); font-size:clamp(.82rem,1.25vw,1rem);
+  line-height:1.8; max-width:68ch;
+  margin-bottom:clamp(.8rem,1.8vh,1.4rem);
+}
+.i-cards {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:clamp(.6rem,1.2vw,1rem);
+}
+.i-card {
+  background:var(--card); border:1px solid var(--faint);
+  border-radius:10px; padding:clamp(.8rem,1.5vw,1.2rem);
+}
+.i-card h3 { color:var(--mint); font-size:clamp(.8rem,1.1vw,.95rem); margin-bottom:.45em; }
+.i-card p { color:var(--dim); font-size:clamp(.72rem,.98vw,.85rem); line-height:1.65; }
+
+/* ========================
+   CHAPTER DIVIDER
+======================== */
+.s-chapter {
+  background:var(--bg2);
+  text-align:center;
+}
+.ch-num {
+  font-size:clamp(4.5rem,16vw,13rem);
+  font-weight:700; line-height:1;
+  background:linear-gradient(135deg,var(--mint),var(--amber));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  background-clip:text; opacity:.65;
+}
+.s-chapter h2 {
+  font-family:'Noto Serif SC',serif;
+  font-size:clamp(1.3rem,3.2vw,2.6rem);
+  margin:.25em 0 .6em;
+}
+.ch-sub { color:var(--dim); font-size:clamp(.75rem,1.2vw,.95rem); letter-spacing:.08em; }
+.ch-list {
+  display:flex; flex-wrap:wrap; gap:.45rem;
+  justify-content:center; margin-top:clamp(.8rem,2vh,1.8rem);
+}
+.ch-tag {
+  background:var(--card); border:1px solid var(--faint);
+  border-radius:6px; padding:.25em .75em;
+  font-size:clamp(.65rem,.95vw,.8rem);
+  font-family:'Noto Serif SC',serif; color:var(--dim);
+}
+
+/* ========================
+   BOOK SLIDE
+======================== */
+.s-book { background:var(--bg); }
+
+.sb-glow {
+  position:absolute; border-radius:50%;
+  filter:blur(90px); pointer-events:none;
+}
+.sb-glow-a { width:38vw; height:38vw; background:rgba(0,212,180,.065); left:-8%; top:-12%; }
+.sb-glow-b { width:32vw; height:32vw; background:rgba(240,168,48,.055); right:-6%; bottom:-10%; }
+
+.sb-wm {
+  position:absolute; right:clamp(.5rem,2.5vw,2.5rem); bottom:-1.5rem;
+  font-size:clamp(7rem,18vw,15rem);
+  font-weight:700; color:rgba(255,255,255,.025);
+  line-height:1; pointer-events:none; user-select:none; font-family:'Sora',sans-serif;
+}
+
+/* 2-column layout */
+.sb-layout {
+  display:grid;
+  grid-template-columns:2fr 3fr;
+  gap:clamp(1.2rem,2.8vw,3rem);
+  align-items:start;
+}
+
+/* LEFT column */
+.sb-seq {
+  font-size:clamp(.65rem,.95vw,.82rem);
+  color:var(--mint); letter-spacing:.16em; font-weight:600;
+  margin-bottom:.4em;
+}
+.sb-sp {
+  display:inline-block;
+  background:rgba(0,212,180,.1); border:1px solid rgba(0,212,180,.28);
+  color:var(--mint); border-radius:4px;
+  padding:.12em .55em; font-size:clamp(.6rem,.85vw,.75rem);
+  letter-spacing:.1em; margin-bottom:clamp(.5rem,1vh,.8rem);
+}
+.sb-cn {
+  font-family:'Noto Serif SC',serif;
+  font-size:clamp(1.3rem,2.6vw,2.1rem);
+  line-height:1.2; letter-spacing:-.01em;
+  margin-bottom:.28em;
+}
+.sb-en {
+  font-style:italic; color:var(--dim);
+  font-size:clamp(.75rem,1.1vw,.95rem); margin-bottom:.55em;
+}
+.sb-author { color:var(--amber); font-weight:600; font-size:clamp(.75rem,1.1vw,.92rem); margin-bottom:.18em; }
+.sb-era { color:var(--dim); font-size:clamp(.65rem,.88vw,.78rem); margin-bottom:clamp(.5rem,1vh,.85rem); }
+
+.sb-tags { display:flex; flex-wrap:wrap; gap:.35rem; margin-bottom:clamp(.6rem,1.2vh,1rem); }
+.stag { border-radius:4px; padding:.18em .55em; font-size:clamp(.6rem,.82vw,.73rem); font-weight:600; }
+.stag-p { background:rgba(0,212,180,.12); color:var(--mint); }
+.stag-e { background:rgba(240,168,48,.12); color:var(--amber); }
+.stag-b { background:rgba(120,150,255,.12); color:#8aabff; }
+.stag-r { background:rgba(255,100,140,.12); color:#ff7096; }
+
+.sb-quote {
+  border-left:2px solid var(--mint);
+  padding-left:clamp(.65rem,1.1vw,.9rem);
+}
+.sb-qt {
+  font-family:'Noto Serif SC',serif;
+  font-size:clamp(.75rem,1.05vw,.88rem);
+  line-height:1.72; color:rgba(255,255,255,.78); font-style:italic;
+}
+.sb-qs { font-size:clamp(.62rem,.8vw,.72rem); color:var(--dim); margin-top:.35em; }
+
+/* RIGHT column */
+.sb-ideas-h {
+  font-size:clamp(.65rem,.92vw,.78rem);
+  color:var(--mint); letter-spacing:.16em; font-weight:700;
+  text-transform:uppercase; margin-bottom:clamp(.5rem,1vh,.8rem);
+}
+.sb-idea {
+  display:grid; grid-template-columns:auto 1fr;
+  gap:.65rem; align-items:start;
+  margin-bottom:clamp(.45rem,.9vh,.75rem);
+}
+.sb-in {
+  width:clamp(1.3rem,1.9vw,1.7rem); height:clamp(1.3rem,1.9vw,1.7rem);
+  border-radius:50%;
+  background:rgba(0,212,180,.13); border:1px solid rgba(0,212,180,.28);
+  color:var(--mint); font-size:clamp(.6rem,.85vw,.75rem);
+  font-weight:700; display:grid; place-items:center; flex-shrink:0;
+}
+.sb-it { font-size:clamp(.73rem,1.05vw,.87rem); line-height:1.62; color:rgba(255,255,255,.83); }
+
+.sb-box {
+  border-radius:8px; padding:clamp(.55rem,1.1vw,.9rem);
+  margin-top:clamp(.5rem,.9vh,.8rem);
+}
+.sb-bio { background:rgba(255,255,255,.04); }
+.sb-inf { background:rgba(0,212,180,.055); border:1px solid rgba(0,212,180,.14); }
+.sb-bh {
+  font-size:clamp(.6rem,.85vw,.72rem);
+  letter-spacing:.13em; font-weight:700; text-transform:uppercase; margin-bottom:.35em;
+}
+.sb-bio .sb-bh { color:var(--amber); }
+.sb-inf .sb-bh { color:var(--mint); }
+.sb-bt { font-size:clamp(.68rem,.98vw,.82rem); line-height:1.62; color:var(--dim); }
+
+/* ========================
+   RECO SLIDE
+======================== */
+.s-reco {
+  background:
+    radial-gradient(ellipse at 50% 85%,rgba(0,212,180,.11),transparent 55%),
+    var(--bg);
+}
+.s-reco h2 {
+  font-family:'Noto Serif SC',serif;
+  font-size:clamp(1.4rem,2.8vw,2.3rem);
+  color:var(--mint); margin-bottom:clamp(.7rem,1.5vh,1.2rem);
+}
+.reco-grid {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:clamp(.55rem,1.1vw,.9rem);
+}
+.reco-card {
+  background:var(--card); border:1px solid var(--faint);
+  border-radius:10px; padding:clamp(.7rem,1.3vw,1rem);
+}
+.reco-card h3 { color:var(--amber); font-size:clamp(.78rem,1.05vw,.9rem); margin-bottom:.45em; }
+.reco-card p { color:var(--dim); font-size:clamp(.68rem,.92vw,.8rem); line-height:1.65; }
+.reco-card ul { color:var(--dim); font-size:clamp(.68rem,.92vw,.8rem); line-height:1.85; padding-left:1.1em; margin:0; }
+
+/* ========================
+   RESPONSIVE
+======================== */
+@media (max-width:780px) {
+  .sb-layout { grid-template-columns:1fr; gap:1rem; }
+  .i-cards { grid-template-columns:1fr 1fr; }
+  .reco-grid { grid-template-columns:1fr 1fr; }
+}
+@media (max-width:480px) {
+  .i-cards, .reco-grid { grid-template-columns:1fr; }
+}
+@media (max-height:700px) {
+  .slide { padding:clamp(.7rem,1.8vw,1.1rem); }
+  .slide-content { max-height:84vh; }
+}
+@media (max-height:600px) {
+  .slide-content { max-height:82vh; }
+}
+@media (max-height:500px) {
+  .slide { padding:clamp(.5rem,1.2vw,.8rem); }
+  .slide-content { max-height:80vh; }
+}
+@media (prefers-reduced-motion:reduce) {
+  *, *::before, *::after { animation:none !important; transition:none !important; }
+  html, body { scroll-behavior:auto; }
+}
+</style>
+<script src="./企鹅兰登·伟大的思想 · 20本思想精华导读_files/widget.js" defer="" data-wwei-injected="1"></script><style type="text/css">
+  @font-face {
+    font-family: CuboxInter;
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("chrome-extension://bflmgpechpeohjfomgfdkkfcbhfcjohl/fonts/InterVariable.woff2") format("woff2");
+  }
+  #cubox-react-root {
+    z-index: 999999999999999999999;
+  }
+  </style><link rel="stylesheet" href="chrome-extension://bflmgpechpeohjfomgfdkkfcbhfcjohl/css/globalHighlightStyles.css"></head>
+<body>
+
+<div class="pb" id="pb" style="width: 0%;"></div>
+<nav class="nd" id="nd" aria-label="页面导航"><button aria-label="第 1 页" class="active"></button><button aria-label="第 2 页"></button><button aria-label="第 3 页"></button><button aria-label="第 4 页"></button><button aria-label="第 5 页"></button><button aria-label="第 6 页"></button><button aria-label="第 7 页"></button><button aria-label="第 8 页"></button><button aria-label="第 9 页"></button><button aria-label="第 10 页"></button><button aria-label="第 11 页"></button><button aria-label="第 12 页"></button><button aria-label="第 13 页"></button><button aria-label="第 14 页"></button><button aria-label="第 15 页"></button><button aria-label="第 16 页"></button><button aria-label="第 17 页"></button><button aria-label="第 18 页"></button><button aria-label="第 19 页"></button><button aria-label="第 20 页"></button><button aria-label="第 21 页"></button><button aria-label="第 22 页"></button><button aria-label="第 23 页"></button><button aria-label="第 24 页"></button><button aria-label="第 25 页"></button></nav>
+
+<!-- ===== SLIDE 0: HERO ===== -->
+<section class="slide s-hero visible" id="s0">
+  <div class="wm">P</div>
+  <div class="slide-content">
+    <div class="pill reveal">企鹅兰登思想系列 · 商务印书馆 2023</div>
+    <h1 class="reveal">伟大的思想<br><span style="color:var(--mint)">20 本精华导读</span></h1>
+    <p class="sub reveal">从马基雅维利到蒙田，横跨 25 个世纪的人类智识传承</p>
+    <div class="stats reveal">
+      <div class="stat"><div class="stat-n">20</div><div class="stat-l">经典著作</div></div>
+      <div class="stat"><div class="stat-n">25</div><div class="stat-l">世纪跨度</div></div>
+      <div class="stat"><div class="stat-n">2</div><div class="stat-l">辑系列</div></div>
+      <div class="stat"><div class="stat-n">∞</div><div class="stat-l">思想影响</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SLIDE 1: SERIES INTRO ===== -->
+<section class="slide s-intro" id="s1">
+  <div class="slide-content">
+    <h2 class="reveal">关于本系列</h2>
+    <p class="lead reveal">企鹅出版集团"伟大的思想"系列精选人类史上最具影响力的著作节选，以便携开本呈现，让经典触手可及。2023 年商务印书馆引进出版中文版，分两辑各十册，涵盖政治哲学、自然科学、社会思想、文学艺术等领域。</p>
+    <div class="i-cards">
+      <div class="i-card reveal">
+        <h3>策展理念</h3>
+        <p>每本精选原著最核心篇章，附导读与注释，让现代读者快速把握原典精髓，无需通读全书。</p>
+      </div>
+      <div class="i-card reveal">
+        <h3>两辑格局</h3>
+        <p>辑一聚焦近代西方思想奠基之作；辑二溯源古典文明，并扩展至东方军事哲学与文艺复兴人文主义。</p>
+      </div>
+      <div class="i-card reveal">
+        <h3>阅读价值</h3>
+        <p>与其读二手解读，不如直面原典。本导读帮你定位每部著作的核心命题与当代意义，找到最佳入口。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== JS-GENERATED BOOK SLIDES ===== -->
+<div id="slides-container">
+<section class="slide s-chapter">
+  <div class="slide-content" style="text-align:center">
+    <div class="ch-num reveal">辑一</div>
+    <h2 class="reveal">近代西方思想奠基之作</h2>
+    <p class="ch-sub reveal">文艺复兴 · 启蒙运动 · 近代科学革命 · 1469–1900</p>
+    <div class="ch-list reveal"><span class="ch-tag">君主论</span><span class="ch-tag">论好的生活</span><span class="ch-tag">社会契约论</span><span class="ch-tag">论自由</span><span class="ch-tag">悲剧的诞生</span><span class="ch-tag">共产党宣言</span><span class="ch-tag">论美国的民主</span><span class="ch-tag">梦的解析</span><span class="ch-tag">物种起源</span><span class="ch-tag">论自杀</span></div>
+  </div>
+</section>
+<section class="slide s-book">
+  <div class="sb-glow sb-glow-a"></div>
+  <div class="sb-wm">01</div>
+  <div class="slide-content">
+    <div class="sb-layout">
+      <div class="rl">
+        <div class="sb-seq">01 / 20</div>
+        <div class="sb-sp">辑一</div>
+        <div class="sb-cn">君主论</div>
+        <div class="sb-en">The Prince</div>
+        <div class="sb-author">尼科洛·马基雅维利</div>
+        <div class="sb-era">1469–1527 · 文艺复兴意大利</div>
+        <div class="sb-tags"><span class="stag stag-p">政治</span><span class="stag stag-p">权力</span><span class="stag stag-e">治国术</span></div>
+        <div class="sb-quote">
+          <div class="sb-qt">"君主必须懂得如何善用兽性与人性。"</div>
+          <div class="sb-qs">—— 尼科洛·马基雅维利</div>
+        </div>
+      </div>
+      <div class="rr">
+        <div class="sb-ideas-h">核心思想</div>
+        
+    <div class="sb-idea">
+      <div class="sb-in">1</div>
+      <div class="sb-it">权力的本质是效果而非道德——君主必须懂得何时像狮子，何时像狐狸，以结果衡量行动的正当性。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">2</div>
+      <div class="sb-it">历史不是道德寓言，而是权力运作的真实记录。马基雅维利首次将政治从神学与伦理学中解放出来。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">3</div>
+      <div class="sb-it">命运（Fortuna）只能左右一半，另一半取决于君主的德能（Virtu）——准备充分者能驾驭时势。</div>
+    </div>
+        <div class="sb-box sb-bio">
+          <div class="sb-bh">作者简介</div>
+          <div class="sb-bt">马基雅维利是佛罗伦萨外交官、历史学家和政治思想家。《君主论》写于 1513 年失业流亡期间，献给洛伦佐·德·美第奇，试图以实用政治学换取重新任职。</div>
+        </div>
+        <div class="sb-box sb-inf">
+          <div class="sb-bh">历史影响</div>
+          <div class="sb-bt">开创"政治现实主义"传统，影响霍布斯、韦伯、葛兰西等思想家。"马基雅维利主义"至今是政治学的核心议题。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="slide s-book">
+  <div class="sb-glow sb-glow-a"></div>
+  <div class="sb-wm">02</div>
+  <div class="slide-content">
+    <div class="sb-layout">
+      <div class="rl">
+        <div class="sb-seq">02 / 20</div>
+        <div class="sb-sp">辑一</div>
+        <div class="sb-cn">论好的生活</div>
+        <div class="sb-en">On the Good Life</div>
+        <div class="sb-author">马尔库斯·图利乌斯·西塞罗</div>
+        <div class="sb-era">前106–前43 · 古罗马共和国</div>
+        <div class="sb-tags"><span class="stag stag-p">伦理</span><span class="stag stag-e">斯多葛</span><span class="stag stag-b">美德</span></div>
+        <div class="sb-quote">
+          <div class="sb-qt">"唯有美德才是真正的善，才值得追求。"</div>
+          <div class="sb-qs">—— 马尔库斯·图利乌斯·西塞罗</div>
+        </div>
+      </div>
+      <div class="rr">
+        <div class="sb-ideas-h">核心思想</div>
+        
+    <div class="sb-idea">
+      <div class="sb-in">1</div>
+      <div class="sb-it">真正的善来自理性与美德，而非财富或权力。西塞罗综合斯多葛与柏拉图传统，构建以智慧为核心的生活方式。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">2</div>
+      <div class="sb-it">友谊是美好生活的基石——不是利益结盟，而是建立在共同美德基础上的灵魂联结。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">3</div>
+      <div class="sb-it">公民责任与个人幸福并不矛盾：为共同体服务本身就是美德的实践，是人最高尚的存在方式。</div>
+    </div>
+        <div class="sb-box sb-bio">
+          <div class="sb-bh">作者简介</div>
+          <div class="sb-bt">西塞罗是古罗马最伟大的演说家与哲学家，曾任执政官。晚年被迫退出政治，转而著书，将希腊哲学系统引入拉丁世界。</div>
+        </div>
+        <div class="sb-box sb-inf">
+          <div class="sb-bh">历史影响</div>
+          <div class="sb-bt">奠定西方人文主义的道德基础，文艺复兴时期被奉为典范。他的书信与演讲影响了两千年拉丁散文传统。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="slide s-book">
+  <div class="sb-glow sb-glow-a"></div>
+  <div class="sb-wm">03</div>
+  <div class="slide-content">
+    <div class="sb-layout">
+      <div class="rl">
+        <div class="sb-seq">03 / 20</div>
+        <div class="sb-sp">辑一</div>
+        <div class="sb-cn">社会契约论</div>
+        <div class="sb-en">The Social Contract</div>
+        <div class="sb-author">让-雅克·卢梭</div>
+        <div class="sb-era">1712–1778 · 启蒙时代</div>
+        <div class="sb-tags"><span class="stag stag-p">政治</span><span class="stag stag-p">民主</span><span class="stag stag-e">自由</span></div>
+        <div class="sb-quote">
+          <div class="sb-qt">"人是生而自由的，但无论如何都处于枷锁中。"</div>
+          <div class="sb-qs">—— 让-雅克·卢梭</div>
+        </div>
+      </div>
+      <div class="rr">
+        <div class="sb-ideas-h">核心思想</div>
+        
+    <div class="sb-idea">
+      <div class="sb-in">1</div>
+      <div class="sb-it">人生而自由，却无往不在枷锁之中——政治权威只有建立在自由个体的契约同意之上才具合法性。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">2</div>
+      <div class="sb-it">公意（Volonte generale）不等于众意之和，它指向全体利益，是真正民主的基础，高于个人意志。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">3</div>
+      <div class="sb-it">主权在民不可转让：代议制政府只是委托执行，人民随时有权收回主权，废除不合公意的政府。</div>
+    </div>
+        <div class="sb-box sb-bio">
+          <div class="sb-bh">作者简介</div>
+          <div class="sb-bt">卢梭是瑞士裔法国哲学家，出身平民，自学成才。思想涵盖政治哲学、教育学、文学，是启蒙运动的关键人物，也是浪漫主义先驱。</div>
+        </div>
+        <div class="sb-box sb-inf">
+          <div class="sb-bh">历史影响</div>
+          <div class="sb-bt">直接影响法国大革命的意识形态，塑造了现代民主理论。对康德、马克思、以至当代共和主义思想均有深远影响。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="slide s-book">
+  <div class="sb-glow sb-glow-a"></div>
+  <div class="sb-wm">04</div>
+  <div class="slide-content">
+    <div class="sb-layout">
+      <div class="rl">
+        <div class="sb-seq">04 / 20</div>
+        <div class="sb-sp">辑一</div>
+        <div class="sb-cn">论自由</div>
+        <div class="sb-en">On Liberty</div>
+        <div class="sb-author">约翰·斯图亚特·密尔</div>
+        <div class="sb-era">1806–1873 · 维多利亚英国</div>
+        <div class="sb-tags"><span class="stag stag-p">自由主义</span><span class="stag stag-e">个人权利</span><span class="stag stag-b">言论自由</span></div>
+        <div class="sb-quote">
+          <div class="sb-qt">"过一种符合自己本性的生活是对人类最重要的事情之一。"</div>
+          <div class="sb-qs">—— 约翰·斯图亚特·密尔</div>
+        </div>
+      </div>
+      <div class="rr">
+        <div class="sb-ideas-h">核心思想</div>
+        
+    <div class="sb-idea">
+      <div class="sb-in">1</div>
+      <div class="sb-it">"危害原则"：唯一能正当限制个人自由的理由是防止其伤害他人；对自己的支配权是绝对的。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">2</div>
+      <div class="sb-it">思想与言论的自由是一切自由的根基——即便错误的意见也应被允许，因为真理在辩论中才能淬炼。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">3</div>
+      <div class="sb-it">社会的"多数暴政"比政府专制更危险，它以习俗和舆论无形地压制个性，是自由主义必须抵御的核心威胁。</div>
+    </div>
+        <div class="sb-box sb-bio">
+          <div class="sb-bh">作者简介</div>
+          <div class="sb-bt">密尔是英国哲学家、经济学家，功利主义创始人边沁的传人。其伴侣哈丽特·泰勒对本书思想贡献卓著，是少数被密尔公开致谢的合作者。</div>
+        </div>
+        <div class="sb-box sb-inf">
+          <div class="sb-bh">历史影响</div>
+          <div class="sb-bt">自由主义政治哲学的奠基文本，直接塑造了言论自由、新闻自由的现代法律框架，影响罗尔斯等当代思想家。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="slide s-book">
+  <div class="sb-glow sb-glow-a"></div>
+  <div class="sb-wm">05</div>
+  <div class="slide-content">
+    <div class="sb-layout">
+      <div class="rl">
+        <div class="sb-seq">05 / 20</div>
+        <div class="sb-sp">辑一</div>
+        <div class="sb-cn">悲剧的诞生</div>
+        <div class="sb-en">The Birth of Tragedy</div>
+        <div class="sb-author">弗里德里希·尼采</div>
+        <div class="sb-era">1844–1900 · 德国</div>
+        <div class="sb-tags"><span class="stag stag-p">美学</span><span class="stag stag-e">文化批评</span><span class="stag stag-b">生命意志</span></div>
+        <div class="sb-quote">
+          <div class="sb-qt">"只有作为审美现象，人类的存在与世界才能得到永恒的辩护。"</div>
+          <div class="sb-qs">—— 弗里德里希·尼采</div>
+        </div>
+      </div>
+      <div class="rr">
+        <div class="sb-ideas-h">核心思想</div>
+        
+    <div class="sb-idea">
+      <div class="sb-in">1</div>
+      <div class="sb-it">阿波罗（秩序、理性、形式）与狄奥尼索斯（混沌、本能、生命冲动）的张力，构成一切伟大艺术的动力。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">2</div>
+      <div class="sb-it">苏格拉底式理性主义杀死了古希腊悲剧精神——当逻辑取代神话，文化便失去了拥抱苦难的能力。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">3</div>
+      <div class="sb-it">悲剧的功能不是逃避痛苦，而是正视人生的非理性与苦难，并在其中发现生命的肯定与力量。</div>
+    </div>
+        <div class="sb-box sb-bio">
+          <div class="sb-bh">作者简介</div>
+          <div class="sb-bt">尼采是德国哲学家，早年是叔本华的崇拜者与瓦格纳的密友。《悲剧的诞生》是他 28 岁时的处女作，奠定了其文化批评的核心视角。</div>
+        </div>
+        <div class="sb-box sb-inf">
+          <div class="sb-bh">历史影响</div>
+          <div class="sb-bt">影响 20 世纪存在主义、后结构主义、文化研究等领域。弗洛伊德、海德格尔、德里达、福柯均受其深刻影响。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="slide s-book">
+  <div class="sb-glow sb-glow-a"></div>
+  <div class="sb-wm">06</div>
+  <div class="slide-content">
+    <div class="sb-layout">
+      <div class="rl">
+        <div class="sb-seq">06 / 20</div>
+        <div class="sb-sp">辑一</div>
+        <div class="sb-cn">共产党宣言</div>
+        <div class="sb-en">The Communist Manifesto</div>
+        <div class="sb-author">卡尔·马克思 &amp; 弗里德里希·恩格斯</div>
+        <div class="sb-era">1818–1883 / 1820–1895</div>
+        <div class="sb-tags"><span class="stag stag-p">政治经济</span><span class="stag stag-e">阶级</span><span class="stag stag-r">革命</span></div>
+        <div class="sb-quote">
+          <div class="sb-qt">"全世界无产者，联合起来！"</div>
+          <div class="sb-qs">—— 卡尔·马克思 &amp; 弗里德里希·恩格斯</div>
+        </div>
+      </div>
+      <div class="rr">
+        <div class="sb-ideas-h">核心思想</div>
+        
+    <div class="sb-idea">
+      <div class="sb-in">1</div>
+      <div class="sb-it">迄今一切社会的历史都是阶级斗争的历史——资产阶级与无产阶级的矛盾是资本主义社会的根本矛盾。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">2</div>
+      <div class="sb-it">资本主义自身蕴含消灭自身的力量：它不断创造并扩大无产阶级，最终将颠覆创造了它的那个阶级。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">3</div>
+      <div class="sb-it">共产主义不是道德理想，而是消灭现存状况的现实运动；宣言的核心是行动纲领，而非乌托邦蓝图。</div>
+    </div>
+        <div class="sb-box sb-bio">
+          <div class="sb-bh">作者简介</div>
+          <div class="sb-bt">马克思是德国哲学家、经济学家、革命家，在伦敦贫困中完成大部分著作。恩格斯是其挚友与合作者，资助并共同完成了大量写作。</div>
+        </div>
+        <div class="sb-box sb-inf">
+          <div class="sb-bh">历史影响</div>
+          <div class="sb-bt">改变 20 世纪世界格局的文本，影响所有社会主义与共产主义运动，并推动了社会科学对阶级、劳动与资本的研究。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="slide s-book">
+  <div class="sb-glow sb-glow-a"></div>
+  <div class="sb-wm">07</div>
+  <div class="slide-content">
+    <div class="sb-layout">
+      <div class="rl">
+        <div class="sb-seq">07 / 20</div>
+        <div class="sb-sp">辑一</div>
+        <div class="sb-cn">论美国的民主</div>
+        <div class="sb-en">Democracy in America</div>
+        <div class="sb-author">阿历克西·德·托克维尔</div>
+        <div class="sb-era">1805–1859 · 法国</div>
+        <div class="sb-tags"><span class="stag stag-p">民主</span><span class="stag stag-e">平等</span><span class="stag stag-b">自由</span></div>
+        <div class="sb-quote">
+          <div class="sb-qt">"自由是例外，专制才是常态；自由必须时刻守护才能维持。"</div>
+          <div class="sb-qs">—— 阿历克西·德·托克维尔</div>
+        </div>
+      </div>
+      <div class="rr">
+        <div class="sb-ideas-h">核心思想</div>
+        
+    <div class="sb-idea">
+      <div class="sb-in">1</div>
+      <div class="sb-it">民主的本质是平等条件的扩张——这股力量不可阻挡，所有政治力量只能引导它而非遏制它。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">2</div>
+      <div class="sb-it">民主最大的威胁是"温和专制"——公民在物质舒适中放弃政治自主，委身于全能政府。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">3</div>
+      <div class="sb-it">公民自治与自由结社是民主的基础——没有活跃的公民社会，个人在国家面前将沦为原子化的孤独个体。</div>
+    </div>
+        <div class="sb-box sb-bio">
+          <div class="sb-bh">作者简介</div>
+          <div class="sb-bt">托克维尔是法国贵族出身的政治学家，29 岁时赴美考察监狱制度，返回后写就此书。他是少数同时预见民主潜力与风险的 19 世纪思想家。</div>
+        </div>
+        <div class="sb-box sb-inf">
+          <div class="sb-bh">历史影响</div>
+          <div class="sb-bt">奠定比较政治学与民主理论的方法论基础，影响罗伯特·达尔、哈贝马斯、普特南等当代政治学家。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="slide s-book">
+  <div class="sb-glow sb-glow-a"></div>
+  <div class="sb-wm">08</div>
+  <div class="slide-content">
+    <div class="sb-layout">
+      <div class="rl">
+        <div class="sb-seq">08 / 20</div>
+        <div class="sb-sp">辑一</div>
+        <div class="sb-cn">梦的解析</div>
+        <div class="sb-en">The Interpretation of Dreams</div>
+        <div class="sb-author">西格蒙德·弗洛伊德</div>
+        <div class="sb-era">1856–1939 · 奥匈帝国</div>
+        <div class="sb-tags"><span class="stag stag-p">心理学</span><span class="stag stag-e">无意识</span><span class="stag stag-b">欲望</span></div>
+        <div class="sb-quote">
+          <div class="sb-qt">"梦是（被压抑的）愿望的（变形的）满足。"</div>
+          <div class="sb-qs">—— 西格蒙德·弗洛伊德</div>
+        </div>
+      </div>
+      <div class="rr">
+        <div class="sb-ideas-h">核心思想</div>
+        
+    <div class="sb-idea">
+      <div class="sb-in">1</div>
+      <div class="sb-it">梦是通往无意识的王道——每个梦都是被压抑欲望的伪装满足，有完整的逻辑与意义，并非随机神经活动。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">2</div>
+      <div class="sb-it">无意识不是简单的"潜意识"，而是一个主动压制被禁止欲望的动态系统，构成心灵的真正核心。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">3</div>
+      <div class="sb-it">梦工作通过凝缩、移置、戏剧化等机制将隐念转化为显念，解析梦境就是拆解这套伪装密码。</div>
+    </div>
+        <div class="sb-box sb-bio">
+          <div class="sb-bh">作者简介</div>
+          <div class="sb-bt">弗洛伊德是奥地利神经科医生，精神分析学派创始人。在维也纳行医数十年，晚年因纳粹迫害流亡伦敦。本书是其毕生代表作，历时四年写成。</div>
+        </div>
+        <div class="sb-box sb-inf">
+          <div class="sb-bh">历史影响</div>
+          <div class="sb-bt">精神分析成为 20 世纪最具影响力的人文科学范式，影响文学批评、艺术、人类学、电影理论等几乎所有人文学科。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="slide s-book">
+  <div class="sb-glow sb-glow-a"></div>
+  <div class="sb-wm">09</div>
+  <div class="slide-content">
+    <div class="sb-layout">
+      <div class="rl">
+        <div class="sb-seq">09 / 20</div>
+        <div class="sb-sp">辑一</div>
+        <div class="sb-cn">物种起源</div>
+        <div class="sb-en">On the Origin of Species</div>
+        <div class="sb-author">查尔斯·达尔文</div>
+        <div class="sb-era">1809–1882 · 维多利亚英国</div>
+        <div class="sb-tags"><span class="stag stag-p">科学</span><span class="stag stag-e">进化</span><span class="stag stag-b">自然选择</span></div>
+        <div class="sb-quote">
+          <div class="sb-qt">"在漫长的生命历史中，适应变化者存活，而非最强者。"</div>
+          <div class="sb-qs">—— 查尔斯·达尔文</div>
+        </div>
+      </div>
+      <div class="rr">
+        <div class="sb-ideas-h">核心思想</div>
+        
+    <div class="sb-idea">
+      <div class="sb-in">1</div>
+      <div class="sb-it">自然选择是进化的核心机制：具有有利变异的个体在生存竞争中更易存活繁殖，将特征传递后代。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">2</div>
+      <div class="sb-it">所有物种共享共同祖先——生命之树的隐喻打破了物种固定不变的神创论，颠覆了人类在自然中的中心地位。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">3</div>
+      <div class="sb-it">进化没有目的与方向，不是进步的阶梯，而是对当下环境的适应——偶然性与时间积累是一切生命多样性的来源。</div>
+    </div>
+        <div class="sb-box sb-bio">
+          <div class="sb-bh">作者简介</div>
+          <div class="sb-bt">达尔文是英国博物学家，随"小猎犬号"历时五年环球航行。回国后用二十余年整理材料，才在华莱士的压力下于 1859 年发表《物种起源》。</div>
+        </div>
+        <div class="sb-box sb-inf">
+          <div class="sb-bh">历史影响</div>
+          <div class="sb-bt">开创了现代生物学，影响遗传学、生态学、神经科学乃至哲学与社会理论。是科学史上最具革命性的著作之一。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="slide s-book">
+  <div class="sb-glow sb-glow-a"></div>
+  <div class="sb-wm">10</div>
+  <div class="slide-content">
+    <div class="sb-layout">
+      <div class="rl">
+        <div class="sb-seq">10 / 20</div>
+        <div class="sb-sp">辑一</div>
+        <div class="sb-cn">论自杀</div>
+        <div class="sb-en">On Suicide</div>
+        <div class="sb-author">大卫·休谟</div>
+        <div class="sb-era">1711–1776 · 苏格兰启蒙</div>
+        <div class="sb-tags"><span class="stag stag-p">哲学</span><span class="stag stag-e">伦理</span><span class="stag stag-b">自主</span></div>
+        <div class="sb-quote">
+          <div class="sb-qt">"如果自杀是犯罪，那只能是对自己的犯罪；而这种罪行是可以宽恕的。"</div>
+          <div class="sb-qs">—— 大卫·休谟</div>
+        </div>
+      </div>
+      <div class="rr">
+        <div class="sb-ideas-h">核心思想</div>
+        
+    <div class="sb-idea">
+      <div class="sb-in">1</div>
+      <div class="sb-it">自杀既不违反对上帝的义务，也不违反对社会的义务——社会对个人无权强制要求以生命为代价。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">2</div>
+      <div class="sb-it">启蒙理性要求我们将生死问题从宗教教条中解放出来，以理性与同情而非恐惧与迷信审视自我终结的道德地位。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">3</div>
+      <div class="sb-it">个人对自己的生命拥有主权——休谟以自然论反驳神意论，为现代生命伦理学中的自主权原则奠定哲学基础。</div>
+    </div>
+        <div class="sb-box sb-bio">
+          <div class="sb-bh">作者简介</div>
+          <div class="sb-bt">休谟是苏格兰哲学家、历史学家，经验主义与怀疑主义的集大成者。本文在其生前未能出版，因内容属当时禁忌，1777 年才在其身后发表。</div>
+        </div>
+        <div class="sb-box sb-inf">
+          <div class="sb-bh">历史影响</div>
+          <div class="sb-bt">奠定现代生命伦理学中自主权讨论的基础，影响了当代关于安乐死、辅助自杀的哲学与政策辩论。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="slide s-chapter">
+  <div class="slide-content" style="text-align:center">
+    <div class="ch-num reveal">辑二</div>
+    <h2 class="reveal">古典文明与人文主义传统</h2>
+    <p class="ch-sub reveal">古希腊 · 古罗马 · 东方古典 · 宗教改革 · 前500–1626</p>
+    <div class="ch-list reveal"><span class="ch-tag">孙子兵法</span><span class="ch-tag">理想国</span><span class="ch-tag">国富论</span><span class="ch-tag">随笔</span><span class="ch-tag">沉思录</span><span class="ch-tag">九十五条论纲</span><span class="ch-tag">诗歌选</span><span class="ch-tag">论宽容</span><span class="ch-tag">论法的精神</span><span class="ch-tag">随笔集</span></div>
+  </div>
+</section>
+<section class="slide s-book">
+  <div class="sb-glow sb-glow-b"></div>
+  <div class="sb-wm">11</div>
+  <div class="slide-content">
+    <div class="sb-layout">
+      <div class="rl">
+        <div class="sb-seq">11 / 20</div>
+        <div class="sb-sp">辑二</div>
+        <div class="sb-cn">孙子兵法</div>
+        <div class="sb-en">The Art of War</div>
+        <div class="sb-author">孙子（孙武）</div>
+        <div class="sb-era">约前544–前496 · 春秋时代</div>
+        <div class="sb-tags"><span class="stag stag-p">军事</span><span class="stag stag-e">战略</span><span class="stag stag-b">东方思想</span></div>
+        <div class="sb-quote">
+          <div class="sb-qt">"上兵伐谋，其次伐交，其次伐兵，其下攻城。"</div>
+          <div class="sb-qs">—— 孙子（孙武）</div>
+        </div>
+      </div>
+      <div class="rr">
+        <div class="sb-ideas-h">核心思想</div>
+        
+    <div class="sb-idea">
+      <div class="sb-in">1</div>
+      <div class="sb-it">知彼知己，百战不殆——信息优势与自我认知是一切战略行动的前提，胜利在战场之外已经决定。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">2</div>
+      <div class="sb-it">不战而屈人之兵，善之善者也——最高明的战略是通过威慑、外交与谋略让对手放弃抵抗，无须流血。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">3</div>
+      <div class="sb-it">兵无常势，水无常形——真正的战略家不依赖固定战术，而是根据形势灵活变化，以虚击实，因敌制胜。</div>
+    </div>
+        <div class="sb-box sb-bio">
+          <div class="sb-bh">作者简介</div>
+          <div class="sb-bt">孙武是春秋时期著名军事家，据说辅佐吴王阖闾破楚入郢。《孙子兵法》传世约 6000 字，是世界现存最古老的军事论著，至今仍被各国军校研读。</div>
+        </div>
+        <div class="sb-box sb-inf">
+          <div class="sb-bh">历史影响</div>
+          <div class="sb-bt">影响中国历代军事理论，并在 20 世纪传播至西方，成为商业管理、博弈论、地缘政治分析的重要参考框架。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="slide s-book">
+  <div class="sb-glow sb-glow-b"></div>
+  <div class="sb-wm">12</div>
+  <div class="slide-content">
+    <div class="sb-layout">
+      <div class="rl">
+        <div class="sb-seq">12 / 20</div>
+        <div class="sb-sp">辑二</div>
+        <div class="sb-cn">理想国</div>
+        <div class="sb-en">The Republic</div>
+        <div class="sb-author">柏拉图</div>
+        <div class="sb-era">前428–前348 · 古希腊</div>
+        <div class="sb-tags"><span class="stag stag-p">政治哲学</span><span class="stag stag-e">正义</span><span class="stag stag-b">教育</span></div>
+        <div class="sb-quote">
+          <div class="sb-qt">"除非哲学家成为国王，或国王具有哲学的精神，否则城邦不会得到安宁。"</div>
+          <div class="sb-qs">—— 柏拉图</div>
+        </div>
+      </div>
+      <div class="rr">
+        <div class="sb-ideas-h">核心思想</div>
+        
+    <div class="sb-idea">
+      <div class="sb-in">1</div>
+      <div class="sb-it">正义是灵魂各部分（理性、意志、欲望）各司其职的和谐状态，在国家层面则是哲学家、武士、生产者各守其位。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">2</div>
+      <div class="sb-it">"洞穴隐喻"揭示大众认知的局限——人们把墙上的影子当作现实，哲学家的使命是走出洞穴，将真理带回。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">3</div>
+      <div class="sb-it">哲学王理论：治国者必须是懂得"善的理念"的哲学家，因为只有掌握最高知识的人，才有资格为城邦立法。</div>
+    </div>
+        <div class="sb-box sb-bio">
+          <div class="sb-bh">作者简介</div>
+          <div class="sb-bt">柏拉图是古希腊哲学家，苏格拉底的学生，亚里士多德的老师，在雅典创立了"学园"（Academy）。其著作以对话形式写就，苏格拉底是主要发言人。</div>
+        </div>
+        <div class="sb-box sb-inf">
+          <div class="sb-bh">历史影响</div>
+          <div class="sb-bt">西方哲学最重要的奠基文本，开创了政治哲学、认识论、形而上学等领域。怀特海称"西方哲学史是对柏拉图的一系列注脚"。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="slide s-book">
+  <div class="sb-glow sb-glow-b"></div>
+  <div class="sb-wm">13</div>
+  <div class="slide-content">
+    <div class="sb-layout">
+      <div class="rl">
+        <div class="sb-seq">13 / 20</div>
+        <div class="sb-sp">辑二</div>
+        <div class="sb-cn">国富论</div>
+        <div class="sb-en">The Wealth of Nations</div>
+        <div class="sb-author">亚当·斯密</div>
+        <div class="sb-era">1723–1790 · 苏格兰启蒙</div>
+        <div class="sb-tags"><span class="stag stag-p">经济学</span><span class="stag stag-e">市场</span><span class="stag stag-b">分工</span></div>
+        <div class="sb-quote">
+          <div class="sb-qt">"我们的晚餐不是出自屠夫、酿酒商或面包师的善意，而是来自他们自身利益的关切。"</div>
+          <div class="sb-qs">—— 亚当·斯密</div>
+        </div>
+      </div>
+      <div class="rr">
+        <div class="sb-ideas-h">核心思想</div>
+        
+    <div class="sb-idea">
+      <div class="sb-in">1</div>
+      <div class="sb-it">分工是财富增长的根本动力——劳动专业化极大提高了生产率，是现代工业文明的技术基础。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">2</div>
+      <div class="sb-it">市场的"看不见的手"：每个人追求自身利益，在竞争性市场中往往无意间促进了整个社会的经济福祉。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">3</div>
+      <div class="sb-it">重商主义的谬误：财富不是金银的积累，而是实际商品与服务产出。自由贸易比保护主义更能增进国家财富。</div>
+    </div>
+        <div class="sb-box sb-bio">
+          <div class="sb-bh">作者简介</div>
+          <div class="sb-bt">亚当·斯密是苏格兰道德哲学家，格拉斯哥大学教授。在写作本书前已以《道德情操论》闻名欧洲，两书合起来构成完整的社会科学理论体系。</div>
+        </div>
+        <div class="sb-box sb-inf">
+          <div class="sb-bh">历史影响</div>
+          <div class="sb-bt">现代经济学的奠基文本，塑造了自由主义经济政策的理论基础，影响从古典经济学到当代市场经济体制的设计。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="slide s-book">
+  <div class="sb-glow sb-glow-b"></div>
+  <div class="sb-wm">14</div>
+  <div class="slide-content">
+    <div class="sb-layout">
+      <div class="rl">
+        <div class="sb-seq">14 / 20</div>
+        <div class="sb-sp">辑二</div>
+        <div class="sb-cn">随笔</div>
+        <div class="sb-en">Essays</div>
+        <div class="sb-author">弗朗西斯·培根</div>
+        <div class="sb-era">1561–1626 · 文艺复兴英国</div>
+        <div class="sb-tags"><span class="stag stag-p">随笔</span><span class="stag stag-e">归纳法</span><span class="stag stag-b">实用主义</span></div>
+        <div class="sb-quote">
+          <div class="sb-qt">"知识就是力量。"</div>
+          <div class="sb-qs">—— 弗朗西斯·培根</div>
+        </div>
+      </div>
+      <div class="rr">
+        <div class="sb-ideas-h">核心思想</div>
+        
+    <div class="sb-idea">
+      <div class="sb-in">1</div>
+      <div class="sb-it">知识就是力量——科学的目的不是形而上学沉思，而是通过认识自然规律来改造世界，增进人类福祉。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">2</div>
+      <div class="sb-it">四种"假象"：部落假象、洞穴假象、市场假象、剧场假象，是人类认知错误的四大根源，必须首先清除。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">3</div>
+      <div class="sb-it">归纳法是获取知识的正确方法：从具体经验和实验出发，上升到一般规律，而非从公设演绎。</div>
+    </div>
+        <div class="sb-box sb-bio">
+          <div class="sb-bh">作者简介</div>
+          <div class="sb-bt">培根是英国哲学家、散文家、政治家，曾任英国大法官。因受贿被弹劾去职后专心著述，是现代科学方法论的先驱之一。</div>
+        </div>
+        <div class="sb-box sb-inf">
+          <div class="sb-bh">历史影响</div>
+          <div class="sb-bt">奠定英国经验主义传统，影响洛克、休谟及皇家学会的建立。培根式随笔也确立了英语散文的一种经典形式。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="slide s-book">
+  <div class="sb-glow sb-glow-b"></div>
+  <div class="sb-wm">15</div>
+  <div class="slide-content">
+    <div class="sb-layout">
+      <div class="rl">
+        <div class="sb-seq">15 / 20</div>
+        <div class="sb-sp">辑二</div>
+        <div class="sb-cn">沉思录</div>
+        <div class="sb-en">Meditations</div>
+        <div class="sb-author">马可·奥勒留</div>
+        <div class="sb-era">121–180 · 古罗马帝国</div>
+        <div class="sb-tags"><span class="stag stag-p">斯多葛</span><span class="stag stag-e">自我修炼</span><span class="stag stag-b">内在秩序</span></div>
+        <div class="sb-quote">
+          <div class="sb-qt">"你有权掌控自己的思想——而非外部事件。意识到这一点，你将找到力量。"</div>
+          <div class="sb-qs">—— 马可·奥勒留</div>
+        </div>
+      </div>
+      <div class="rr">
+        <div class="sb-ideas-h">核心思想</div>
+        
+    <div class="sb-idea">
+      <div class="sb-in">1</div>
+      <div class="sb-it">外部事件不能伤害你，只有你对它们的判断才能——痛苦与快乐都是心灵的选择，而非命运的强加。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">2</div>
+      <div class="sb-it">把每一天当作完整的生命来过，专注当下而非悔恨过去或忧虑未来，是斯多葛修炼的核心。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">3</div>
+      <div class="sb-it">宇宙是一个有机整体，每个人都是其中的一部分；为共同体服务、尽职于当下角色，是最高的道德实践。</div>
+    </div>
+        <div class="sb-box sb-bio">
+          <div class="sb-bh">作者简介</div>
+          <div class="sb-bt">马可·奥勒留是罗马帝国第 16 位皇帝，史称"哲学家皇帝"。《沉思录》是他在军旅生涯中以希腊文写给自己的私人笔记，从未打算发表，死后才被发现。</div>
+        </div>
+        <div class="sb-box sb-inf">
+          <div class="sb-bh">历史影响</div>
+          <div class="sb-bt">斯多葛哲学的巅峰文本，深刻影响基督教伦理学，并在现代成为高管、军人和心理治疗领域的常备读物。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="slide s-book">
+  <div class="sb-glow sb-glow-b"></div>
+  <div class="sb-wm">16</div>
+  <div class="slide-content">
+    <div class="sb-layout">
+      <div class="rl">
+        <div class="sb-seq">16 / 20</div>
+        <div class="sb-sp">辑二</div>
+        <div class="sb-cn">九十五条论纲</div>
+        <div class="sb-en">Ninety-Five Theses</div>
+        <div class="sb-author">马丁·路德</div>
+        <div class="sb-era">1483–1546 · 宗教改革德国</div>
+        <div class="sb-tags"><span class="stag stag-p">宗教改革</span><span class="stag stag-e">信仰</span><span class="stag stag-r">抵抗权威</span></div>
+        <div class="sb-quote">
+          <div class="sb-qt">"这里我站立，我别无选择。愿上帝帮助我，阿门。"</div>
+          <div class="sb-qs">—— 马丁·路德</div>
+        </div>
+      </div>
+      <div class="rr">
+        <div class="sb-ideas-h">核心思想</div>
+        
+    <div class="sb-idea">
+      <div class="sb-in">1</div>
+      <div class="sb-it">赎罪券是对基督徒的欺骗——救恩来自神的恩典与个人信仰，而非教廷的商业交易，这是改教运动的核心命题。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">2</div>
+      <div class="sb-it">圣经（sola scriptura）是信仰的唯一权威——路德挑战教皇与公会议的无误权，开创了信仰的个人化道路。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">3</div>
+      <div class="sb-it">宗教改革既是神学革命也是政治革命——它瓦解了中世纪天主教的统一权威，为现代民族国家与世俗化埋下种子。</div>
+    </div>
+        <div class="sb-box sb-bio">
+          <div class="sb-bh">作者简介</div>
+          <div class="sb-bt">马丁·路德是德国神学家、奥古斯丁会修士。1517 年将《九十五条论纲》公布于众，引发宗教改革运动，永久分裂了西方基督教。</div>
+        </div>
+        <div class="sb-box sb-inf">
+          <div class="sb-bh">历史影响</div>
+          <div class="sb-bt">引发宗教改革，永久改变欧洲宗教格局，推动了民族语言文学的兴起、出版印刷的普及与近代民族国家的形成。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="slide s-book">
+  <div class="sb-glow sb-glow-b"></div>
+  <div class="sb-wm">17</div>
+  <div class="slide-content">
+    <div class="sb-layout">
+      <div class="rl">
+        <div class="sb-seq">17 / 20</div>
+        <div class="sb-sp">辑二</div>
+        <div class="sb-cn">诗歌选</div>
+        <div class="sb-en">Selected Poems</div>
+        <div class="sb-author">约翰·济慈</div>
+        <div class="sb-era">1795–1821 · 浪漫主义英国</div>
+        <div class="sb-tags"><span class="stag stag-p">诗歌</span><span class="stag stag-e">美学</span><span class="stag stag-b">浪漫主义</span></div>
+        <div class="sb-quote">
+          <div class="sb-qt">""美即是真，真即是美"——这就是你们所知道的，也是所需知道的一切。"</div>
+          <div class="sb-qs">—— 约翰·济慈</div>
+        </div>
+      </div>
+      <div class="rr">
+        <div class="sb-ideas-h">核心思想</div>
+        
+    <div class="sb-idea">
+      <div class="sb-in">1</div>
+      <div class="sb-it">"消极能力"（Negative Capability）：伟大诗人的特质是安于不确定性与神秘，不急于理性解决，这是最高的艺术创造力。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">2</div>
+      <div class="sb-it">美即真理，真理即美——济慈相信审美体验能给予我们关于存在真相的直接认知，超越科学分析所能达到的境界。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">3</div>
+      <div class="sb-it">短暂性与永恒性的张力是济慈诗歌的核心——青春与美丽必将消逝，而艺术能将流逝时刻凝固为永恒。</div>
+    </div>
+        <div class="sb-box sb-bio">
+          <div class="sb-bh">作者简介</div>
+          <div class="sb-bt">济慈是英国浪漫主义诗人，出身平民，接受医学训练，最终投身诗歌。25 岁死于肺结核，在世时名声有限，身后被誉为英语文学最伟大的诗人之一。</div>
+        </div>
+        <div class="sb-box sb-inf">
+          <div class="sb-bh">历史影响</div>
+          <div class="sb-bt">影响了维多利亚时代唯美主义、布鲁姆斯伯里团体，以及 20 世纪无数英语诗人。"消极能力"概念至今是创意思维研究的重要参照。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="slide s-book">
+  <div class="sb-glow sb-glow-b"></div>
+  <div class="sb-wm">18</div>
+  <div class="slide-content">
+    <div class="sb-layout">
+      <div class="rl">
+        <div class="sb-seq">18 / 20</div>
+        <div class="sb-sp">辑二</div>
+        <div class="sb-cn">论宽容</div>
+        <div class="sb-en">A Letter Concerning Toleration</div>
+        <div class="sb-author">约翰·洛克</div>
+        <div class="sb-era">1632–1704 · 英国启蒙</div>
+        <div class="sb-tags"><span class="stag stag-p">宽容</span><span class="stag stag-e">政教分离</span><span class="stag stag-b">自由主义</span></div>
+        <div class="sb-quote">
+          <div class="sb-qt">"国家不关心灵魂的救赎，只关心每个人的公民利益。"</div>
+          <div class="sb-qs">—— 约翰·洛克</div>
+        </div>
+      </div>
+      <div class="rr">
+        <div class="sb-ideas-h">核心思想</div>
+        
+    <div class="sb-idea">
+      <div class="sb-in">1</div>
+      <div class="sb-it">国家的职责是保护公民的生命、自由与财产，而非拯救灵魂——宗教信仰属于个人良知领域，超出政治强制的合法范围。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">2</div>
+      <div class="sb-it">强迫不能产生真实信仰——即使能强迫人说出信仰的语言，也无法改变内心的信念，因此宗教迫害在逻辑上也是无效的。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">3</div>
+      <div class="sb-it">宽容不是纵容：洛克划出边界——无神论者和颠覆国家的宗教团体不在宽容之列，宽容是有条件的。</div>
+    </div>
+        <div class="sb-box sb-bio">
+          <div class="sb-bh">作者简介</div>
+          <div class="sb-bt">洛克是英国哲学家，经验主义与自由主义政治理论的奠基人。本信写于流亡荷兰期间，以拉丁文匿名发表，后被译为多种语言广泛传播。</div>
+        </div>
+        <div class="sb-box sb-inf">
+          <div class="sb-bh">历史影响</div>
+          <div class="sb-bt">成为现代政教分离原则的理论基础，直接影响美国宪法第一修正案及《世界人权宣言》中的宗教自由条款。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="slide s-book">
+  <div class="sb-glow sb-glow-b"></div>
+  <div class="sb-wm">19</div>
+  <div class="slide-content">
+    <div class="sb-layout">
+      <div class="rl">
+        <div class="sb-seq">19 / 20</div>
+        <div class="sb-sp">辑二</div>
+        <div class="sb-cn">论法的精神</div>
+        <div class="sb-en">The Spirit of the Laws</div>
+        <div class="sb-author">孟德斯鸠</div>
+        <div class="sb-era">1689–1755 · 法国启蒙</div>
+        <div class="sb-tags"><span class="stag stag-p">政治哲学</span><span class="stag stag-e">法学</span><span class="stag stag-b">三权分立</span></div>
+        <div class="sb-quote">
+          <div class="sb-qt">"自由是做法律许可的一切事情的权利。"</div>
+          <div class="sb-qs">—— 孟德斯鸠</div>
+        </div>
+      </div>
+      <div class="rr">
+        <div class="sb-ideas-h">核心思想</div>
+        
+    <div class="sb-idea">
+      <div class="sb-in">1</div>
+      <div class="sb-it">三权分立（立法、行政、司法）是防止权力腐败的制度设计——自由只存在于权力相互制衡的地方。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">2</div>
+      <div class="sb-it">法律不是普遍的，它必须与一个民族的自然环境、历史传统、经济状况相适应——政治没有放之四海皆准的公式。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">3</div>
+      <div class="sb-it">比较政治方法：通过跨文化、跨历史的比较分析，揭示不同政治体制背后的社会条件与逻辑。</div>
+    </div>
+        <div class="sb-box sb-bio">
+          <div class="sb-bh">作者简介</div>
+          <div class="sb-bt">孟德斯鸠是法国启蒙时代法学家、政治哲学家，波尔多高等法院院长。在欧洲各国旅行考察后，历经 14 年完成这部巨著，出版后立即被列为禁书。</div>
+        </div>
+        <div class="sb-box sb-inf">
+          <div class="sb-bh">历史影响</div>
+          <div class="sb-bt">三权分立理论直接影响美国宪法与《人权宣言》的起草者，成为现代民主宪政制度设计的理论基石。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="slide s-book">
+  <div class="sb-glow sb-glow-b"></div>
+  <div class="sb-wm">20</div>
+  <div class="slide-content">
+    <div class="sb-layout">
+      <div class="rl">
+        <div class="sb-seq">20 / 20</div>
+        <div class="sb-sp">辑二</div>
+        <div class="sb-cn">随笔集</div>
+        <div class="sb-en">Essays</div>
+        <div class="sb-author">米歇尔·德·蒙田</div>
+        <div class="sb-era">1533–1592 · 文艺复兴法国</div>
+        <div class="sb-tags"><span class="stag stag-p">随笔</span><span class="stag stag-e">自我审视</span><span class="stag stag-b">怀疑主义</span></div>
+        <div class="sb-quote">
+          <div class="sb-qt">"我所研究的对象是我自己；这是我的形而上学，这是我的物理学。"</div>
+          <div class="sb-qs">—— 米歇尔·德·蒙田</div>
+        </div>
+      </div>
+      <div class="rr">
+        <div class="sb-ideas-h">核心思想</div>
+        
+    <div class="sb-idea">
+      <div class="sb-in">1</div>
+      <div class="sb-it">"我知道什么？"——蒙田将怀疑主义变成一种生活方式，以诚实和好奇心不断审视自我，而非追求确定性体系。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">2</div>
+      <div class="sb-it">随笔（essai = 尝试）这一文体的发明：以第一人称直接审视自身经验与想法，将个人生命本身当作哲学探索的对象。</div>
+    </div>
+    <div class="sb-idea">
+      <div class="sb-in">3</div>
+      <div class="sb-it">接受人性的矛盾与多变：蒙田拒绝将人性简化为任何统一理论，认为流动性与多样性正是人类经验的真实本质。</div>
+    </div>
+        <div class="sb-box sb-bio">
+          <div class="sb-bh">作者简介</div>
+          <div class="sb-bt">蒙田是法国文艺复兴作家，波尔多市长，退休后在自己的城堡塔楼中写就三卷《随笔集》。他被誉为"随笔"这一文学体裁的发明者。</div>
+        </div>
+        <div class="sb-box sb-inf">
+          <div class="sb-bh">历史影响</div>
+          <div class="sb-bt">开创散文随笔传统，影响莎士比亚、笛卡尔、帕斯卡、卢梭，乃至弗吉尼亚·伍尔夫和现代自传写作。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section></div>
+
+<!-- ===== LAST SLIDE: READING RECOMMENDATIONS ===== -->
+<section class="slide s-reco" id="s-reco">
+  <div class="slide-content">
+    <h2 class="reveal">阅读路线图</h2>
+    <div class="reco-grid">
+      <div class="reco-card reveal">
+        <h3>🌱 初探思想史</h3>
+        <ul>
+          <li>马可·奥勒留《沉思录》</li>
+          <li>西塞罗《论好的生活》</li>
+          <li>培根《随笔》</li>
+          <li>蒙田《随笔集》</li>
+        </ul>
+      </div>
+      <div class="reco-card reveal">
+        <h3>⚡ 政治与权力</h3>
+        <ul>
+          <li>马基雅维利《君主论》</li>
+          <li>卢梭《社会契约论》</li>
+          <li>密尔《论自由》</li>
+          <li>托克维尔《论美国的民主》</li>
+          <li>孙子《孙子兵法》</li>
+        </ul>
+      </div>
+      <div class="reco-card reveal">
+        <h3>🔬 科学与理性</h3>
+        <ul>
+          <li>达尔文《物种起源》</li>
+          <li>弗洛伊德《梦的解析》</li>
+          <li>亚当·斯密《国富论》</li>
+          <li>洛克《论宽容》</li>
+        </ul>
+      </div>
+      <div class="reco-card reveal">
+        <h3>🌊 颠覆与批判</h3>
+        <ul>
+          <li>马克思《共产党宣言》</li>
+          <li>尼采《悲剧的诞生》</li>
+          <li>马丁·路德《九十五条论纲》</li>
+          <li>休谟《论自杀》</li>
+        </ul>
+      </div>
+      <div class="reco-card reveal">
+        <h3>🏛️ 哲学与理想</h3>
+        <ul>
+          <li>柏拉图《理想国》</li>
+          <li>孟德斯鸠《论法的精神》</li>
+          <li>马可·奥勒留《沉思录》</li>
+          <li>济慈《诗歌选》</li>
+        </ul>
+      </div>
+      <div class="reco-card reveal">
+        <h3>✍️ 阅读建议</h3>
+        <p>建议配合中文注释本阅读，遇难解处先跳过，通读后再精读。每读完一册，用一句话总结核心主张，内化为自己的思维工具。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+// ================================================================
+// BOOKS DATA
+// ================================================================
+const BOOKS = [
+  {
+    num:'01', cn:'君主论', en:'The Prince',
+    author:'尼科洛·马基雅维利', era:'1469–1527 · 文艺复兴意大利',
+    series:1, tags:[['政治','p'],['权力','p'],['治国术','e']],
+    ideas:[
+      '权力的本质是效果而非道德——君主必须懂得何时像狮子，何时像狐狸，以结果衡量行动的正当性。',
+      '历史不是道德寓言，而是权力运作的真实记录。马基雅维利首次将政治从神学与伦理学中解放出来。',
+      '命运（Fortuna）只能左右一半，另一半取决于君主的德能（Virtu）——准备充分者能驾驭时势。'
+    ],
+    quoteCn:'君主必须懂得如何善用兽性与人性。',
+    bio:'马基雅维利是佛罗伦萨外交官、历史学家和政治思想家。《君主论》写于 1513 年失业流亡期间，献给洛伦佐·德·美第奇，试图以实用政治学换取重新任职。',
+    influence:'开创"政治现实主义"传统，影响霍布斯、韦伯、葛兰西等思想家。"马基雅维利主义"至今是政治学的核心议题。'
+  },
+  {
+    num:'02', cn:'论好的生活', en:'On the Good Life',
+    author:'马尔库斯·图利乌斯·西塞罗', era:'前106–前43 · 古罗马共和国',
+    series:1, tags:[['伦理','p'],['斯多葛','e'],['美德','b']],
+    ideas:[
+      '真正的善来自理性与美德，而非财富或权力。西塞罗综合斯多葛与柏拉图传统，构建以智慧为核心的生活方式。',
+      '友谊是美好生活的基石——不是利益结盟，而是建立在共同美德基础上的灵魂联结。',
+      '公民责任与个人幸福并不矛盾：为共同体服务本身就是美德的实践，是人最高尚的存在方式。'
+    ],
+    quoteCn:'唯有美德才是真正的善，才值得追求。',
+    bio:'西塞罗是古罗马最伟大的演说家与哲学家，曾任执政官。晚年被迫退出政治，转而著书，将希腊哲学系统引入拉丁世界。',
+    influence:'奠定西方人文主义的道德基础，文艺复兴时期被奉为典范。他的书信与演讲影响了两千年拉丁散文传统。'
+  },
+  {
+    num:'03', cn:'社会契约论', en:'The Social Contract',
+    author:'让-雅克·卢梭', era:'1712–1778 · 启蒙时代',
+    series:1, tags:[['政治','p'],['民主','p'],['自由','e']],
+    ideas:[
+      '人生而自由，却无往不在枷锁之中——政治权威只有建立在自由个体的契约同意之上才具合法性。',
+      '公意（Volonte generale）不等于众意之和，它指向全体利益，是真正民主的基础，高于个人意志。',
+      '主权在民不可转让：代议制政府只是委托执行，人民随时有权收回主权，废除不合公意的政府。'
+    ],
+    quoteCn:'人是生而自由的，但无论如何都处于枷锁中。',
+    bio:'卢梭是瑞士裔法国哲学家，出身平民，自学成才。思想涵盖政治哲学、教育学、文学，是启蒙运动的关键人物，也是浪漫主义先驱。',
+    influence:'直接影响法国大革命的意识形态，塑造了现代民主理论。对康德、马克思、以至当代共和主义思想均有深远影响。'
+  },
+  {
+    num:'04', cn:'论自由', en:'On Liberty',
+    author:'约翰·斯图亚特·密尔', era:'1806–1873 · 维多利亚英国',
+    series:1, tags:[['自由主义','p'],['个人权利','e'],['言论自由','b']],
+    ideas:[
+      '"危害原则"：唯一能正当限制个人自由的理由是防止其伤害他人；对自己的支配权是绝对的。',
+      '思想与言论的自由是一切自由的根基——即便错误的意见也应被允许，因为真理在辩论中才能淬炼。',
+      '社会的"多数暴政"比政府专制更危险，它以习俗和舆论无形地压制个性，是自由主义必须抵御的核心威胁。'
+    ],
+    quoteCn:'过一种符合自己本性的生活是对人类最重要的事情之一。',
+    bio:'密尔是英国哲学家、经济学家，功利主义创始人边沁的传人。其伴侣哈丽特·泰勒对本书思想贡献卓著，是少数被密尔公开致谢的合作者。',
+    influence:'自由主义政治哲学的奠基文本，直接塑造了言论自由、新闻自由的现代法律框架，影响罗尔斯等当代思想家。'
+  },
+  {
+    num:'05', cn:'悲剧的诞生', en:'The Birth of Tragedy',
+    author:'弗里德里希·尼采', era:'1844–1900 · 德国',
+    series:1, tags:[['美学','p'],['文化批评','e'],['生命意志','b']],
+    ideas:[
+      '阿波罗（秩序、理性、形式）与狄奥尼索斯（混沌、本能、生命冲动）的张力，构成一切伟大艺术的动力。',
+      '苏格拉底式理性主义杀死了古希腊悲剧精神——当逻辑取代神话，文化便失去了拥抱苦难的能力。',
+      '悲剧的功能不是逃避痛苦，而是正视人生的非理性与苦难，并在其中发现生命的肯定与力量。'
+    ],
+    quoteCn:'只有作为审美现象，人类的存在与世界才能得到永恒的辩护。',
+    bio:'尼采是德国哲学家，早年是叔本华的崇拜者与瓦格纳的密友。《悲剧的诞生》是他 28 岁时的处女作，奠定了其文化批评的核心视角。',
+    influence:'影响 20 世纪存在主义、后结构主义、文化研究等领域。弗洛伊德、海德格尔、德里达、福柯均受其深刻影响。'
+  },
+  {
+    num:'06', cn:'共产党宣言', en:'The Communist Manifesto',
+    author:'卡尔·马克思 & 弗里德里希·恩格斯', era:'1818–1883 / 1820–1895',
+    series:1, tags:[['政治经济','p'],['阶级','e'],['革命','r']],
+    ideas:[
+      '迄今一切社会的历史都是阶级斗争的历史——资产阶级与无产阶级的矛盾是资本主义社会的根本矛盾。',
+      '资本主义自身蕴含消灭自身的力量：它不断创造并扩大无产阶级，最终将颠覆创造了它的那个阶级。',
+      '共产主义不是道德理想，而是消灭现存状况的现实运动；宣言的核心是行动纲领，而非乌托邦蓝图。'
+    ],
+    quoteCn:'全世界无产者，联合起来！',
+    bio:'马克思是德国哲学家、经济学家、革命家，在伦敦贫困中完成大部分著作。恩格斯是其挚友与合作者，资助并共同完成了大量写作。',
+    influence:'改变 20 世纪世界格局的文本，影响所有社会主义与共产主义运动，并推动了社会科学对阶级、劳动与资本的研究。'
+  },
+  {
+    num:'07', cn:'论美国的民主', en:'Democracy in America',
+    author:'阿历克西·德·托克维尔', era:'1805–1859 · 法国',
+    series:1, tags:[['民主','p'],['平等','e'],['自由','b']],
+    ideas:[
+      '民主的本质是平等条件的扩张——这股力量不可阻挡，所有政治力量只能引导它而非遏制它。',
+      '民主最大的威胁是"温和专制"——公民在物质舒适中放弃政治自主，委身于全能政府。',
+      '公民自治与自由结社是民主的基础——没有活跃的公民社会，个人在国家面前将沦为原子化的孤独个体。'
+    ],
+    quoteCn:'自由是例外，专制才是常态；自由必须时刻守护才能维持。',
+    bio:'托克维尔是法国贵族出身的政治学家，29 岁时赴美考察监狱制度，返回后写就此书。他是少数同时预见民主潜力与风险的 19 世纪思想家。',
+    influence:'奠定比较政治学与民主理论的方法论基础，影响罗伯特·达尔、哈贝马斯、普特南等当代政治学家。'
+  },
+  {
+    num:'08', cn:'梦的解析', en:'The Interpretation of Dreams',
+    author:'西格蒙德·弗洛伊德', era:'1856–1939 · 奥匈帝国',
+    series:1, tags:[['心理学','p'],['无意识','e'],['欲望','b']],
+    ideas:[
+      '梦是通往无意识的王道——每个梦都是被压抑欲望的伪装满足，有完整的逻辑与意义，并非随机神经活动。',
+      '无意识不是简单的"潜意识"，而是一个主动压制被禁止欲望的动态系统，构成心灵的真正核心。',
+      '梦工作通过凝缩、移置、戏剧化等机制将隐念转化为显念，解析梦境就是拆解这套伪装密码。'
+    ],
+    quoteCn:'梦是（被压抑的）愿望的（变形的）满足。',
+    bio:'弗洛伊德是奥地利神经科医生，精神分析学派创始人。在维也纳行医数十年，晚年因纳粹迫害流亡伦敦。本书是其毕生代表作，历时四年写成。',
+    influence:'精神分析成为 20 世纪最具影响力的人文科学范式，影响文学批评、艺术、人类学、电影理论等几乎所有人文学科。'
+  },
+  {
+    num:'09', cn:'物种起源', en:'On the Origin of Species',
+    author:'查尔斯·达尔文', era:'1809–1882 · 维多利亚英国',
+    series:1, tags:[['科学','p'],['进化','e'],['自然选择','b']],
+    ideas:[
+      '自然选择是进化的核心机制：具有有利变异的个体在生存竞争中更易存活繁殖，将特征传递后代。',
+      '所有物种共享共同祖先——生命之树的隐喻打破了物种固定不变的神创论，颠覆了人类在自然中的中心地位。',
+      '进化没有目的与方向，不是进步的阶梯，而是对当下环境的适应——偶然性与时间积累是一切生命多样性的来源。'
+    ],
+    quoteCn:'在漫长的生命历史中，适应变化者存活，而非最强者。',
+    bio:'达尔文是英国博物学家，随"小猎犬号"历时五年环球航行。回国后用二十余年整理材料，才在华莱士的压力下于 1859 年发表《物种起源》。',
+    influence:'开创了现代生物学，影响遗传学、生态学、神经科学乃至哲学与社会理论。是科学史上最具革命性的著作之一。'
+  },
+  {
+    num:'10', cn:'论自杀', en:'On Suicide',
+    author:'大卫·休谟', era:'1711–1776 · 苏格兰启蒙',
+    series:1, tags:[['哲学','p'],['伦理','e'],['自主','b']],
+    ideas:[
+      '自杀既不违反对上帝的义务，也不违反对社会的义务——社会对个人无权强制要求以生命为代价。',
+      '启蒙理性要求我们将生死问题从宗教教条中解放出来，以理性与同情而非恐惧与迷信审视自我终结的道德地位。',
+      '个人对自己的生命拥有主权——休谟以自然论反驳神意论，为现代生命伦理学中的自主权原则奠定哲学基础。'
+    ],
+    quoteCn:'如果自杀是犯罪，那只能是对自己的犯罪；而这种罪行是可以宽恕的。',
+    bio:'休谟是苏格兰哲学家、历史学家，经验主义与怀疑主义的集大成者。本文在其生前未能出版，因内容属当时禁忌，1777 年才在其身后发表。',
+    influence:'奠定现代生命伦理学中自主权讨论的基础，影响了当代关于安乐死、辅助自杀的哲学与政策辩论。'
+  },
+  {
+    num:'11', cn:'孙子兵法', en:'The Art of War',
+    author:'孙子（孙武）', era:'约前544–前496 · 春秋时代',
+    series:2, tags:[['军事','p'],['战略','e'],['东方思想','b']],
+    ideas:[
+      '知彼知己，百战不殆——信息优势与自我认知是一切战略行动的前提，胜利在战场之外已经决定。',
+      '不战而屈人之兵，善之善者也——最高明的战略是通过威慑、外交与谋略让对手放弃抵抗，无须流血。',
+      '兵无常势，水无常形——真正的战略家不依赖固定战术，而是根据形势灵活变化，以虚击实，因敌制胜。'
+    ],
+    quoteCn:'上兵伐谋，其次伐交，其次伐兵，其下攻城。',
+    bio:'孙武是春秋时期著名军事家，据说辅佐吴王阖闾破楚入郢。《孙子兵法》传世约 6000 字，是世界现存最古老的军事论著，至今仍被各国军校研读。',
+    influence:'影响中国历代军事理论，并在 20 世纪传播至西方，成为商业管理、博弈论、地缘政治分析的重要参考框架。'
+  },
+  {
+    num:'12', cn:'理想国', en:'The Republic',
+    author:'柏拉图', era:'前428–前348 · 古希腊',
+    series:2, tags:[['政治哲学','p'],['正义','e'],['教育','b']],
+    ideas:[
+      '正义是灵魂各部分（理性、意志、欲望）各司其职的和谐状态，在国家层面则是哲学家、武士、生产者各守其位。',
+      '"洞穴隐喻"揭示大众认知的局限——人们把墙上的影子当作现实，哲学家的使命是走出洞穴，将真理带回。',
+      '哲学王理论：治国者必须是懂得"善的理念"的哲学家，因为只有掌握最高知识的人，才有资格为城邦立法。'
+    ],
+    quoteCn:'除非哲学家成为国王，或国王具有哲学的精神，否则城邦不会得到安宁。',
+    bio:'柏拉图是古希腊哲学家，苏格拉底的学生，亚里士多德的老师，在雅典创立了"学园"（Academy）。其著作以对话形式写就，苏格拉底是主要发言人。',
+    influence:'西方哲学最重要的奠基文本，开创了政治哲学、认识论、形而上学等领域。怀特海称"西方哲学史是对柏拉图的一系列注脚"。'
+  },
+  {
+    num:'13', cn:'国富论', en:'The Wealth of Nations',
+    author:'亚当·斯密', era:'1723–1790 · 苏格兰启蒙',
+    series:2, tags:[['经济学','p'],['市场','e'],['分工','b']],
+    ideas:[
+      '分工是财富增长的根本动力——劳动专业化极大提高了生产率，是现代工业文明的技术基础。',
+      '市场的"看不见的手"：每个人追求自身利益，在竞争性市场中往往无意间促进了整个社会的经济福祉。',
+      '重商主义的谬误：财富不是金银的积累，而是实际商品与服务产出。自由贸易比保护主义更能增进国家财富。'
+    ],
+    quoteCn:'我们的晚餐不是出自屠夫、酿酒商或面包师的善意，而是来自他们自身利益的关切。',
+    bio:'亚当·斯密是苏格兰道德哲学家，格拉斯哥大学教授。在写作本书前已以《道德情操论》闻名欧洲，两书合起来构成完整的社会科学理论体系。',
+    influence:'现代经济学的奠基文本，塑造了自由主义经济政策的理论基础，影响从古典经济学到当代市场经济体制的设计。'
+  },
+  {
+    num:'14', cn:'随笔', en:'Essays',
+    author:'弗朗西斯·培根', era:'1561–1626 · 文艺复兴英国',
+    series:2, tags:[['随笔','p'],['归纳法','e'],['实用主义','b']],
+    ideas:[
+      '知识就是力量——科学的目的不是形而上学沉思，而是通过认识自然规律来改造世界，增进人类福祉。',
+      '四种"假象"：部落假象、洞穴假象、市场假象、剧场假象，是人类认知错误的四大根源，必须首先清除。',
+      '归纳法是获取知识的正确方法：从具体经验和实验出发，上升到一般规律，而非从公设演绎。'
+    ],
+    quoteCn:'知识就是力量。',
+    bio:'培根是英国哲学家、散文家、政治家，曾任英国大法官。因受贿被弹劾去职后专心著述，是现代科学方法论的先驱之一。',
+    influence:'奠定英国经验主义传统，影响洛克、休谟及皇家学会的建立。培根式随笔也确立了英语散文的一种经典形式。'
+  },
+  {
+    num:'15', cn:'沉思录', en:'Meditations',
+    author:'马可·奥勒留', era:'121–180 · 古罗马帝国',
+    series:2, tags:[['斯多葛','p'],['自我修炼','e'],['内在秩序','b']],
+    ideas:[
+      '外部事件不能伤害你，只有你对它们的判断才能——痛苦与快乐都是心灵的选择，而非命运的强加。',
+      '把每一天当作完整的生命来过，专注当下而非悔恨过去或忧虑未来，是斯多葛修炼的核心。',
+      '宇宙是一个有机整体，每个人都是其中的一部分；为共同体服务、尽职于当下角色，是最高的道德实践。'
+    ],
+    quoteCn:'你有权掌控自己的思想——而非外部事件。意识到这一点，你将找到力量。',
+    bio:'马可·奥勒留是罗马帝国第 16 位皇帝，史称"哲学家皇帝"。《沉思录》是他在军旅生涯中以希腊文写给自己的私人笔记，从未打算发表，死后才被发现。',
+    influence:'斯多葛哲学的巅峰文本，深刻影响基督教伦理学，并在现代成为高管、军人和心理治疗领域的常备读物。'
+  },
+  {
+    num:'16', cn:'九十五条论纲', en:'Ninety-Five Theses',
+    author:'马丁·路德', era:'1483–1546 · 宗教改革德国',
+    series:2, tags:[['宗教改革','p'],['信仰','e'],['抵抗权威','r']],
+    ideas:[
+      '赎罪券是对基督徒的欺骗——救恩来自神的恩典与个人信仰，而非教廷的商业交易，这是改教运动的核心命题。',
+      '圣经（sola scriptura）是信仰的唯一权威——路德挑战教皇与公会议的无误权，开创了信仰的个人化道路。',
+      '宗教改革既是神学革命也是政治革命——它瓦解了中世纪天主教的统一权威，为现代民族国家与世俗化埋下种子。'
+    ],
+    quoteCn:'这里我站立，我别无选择。愿上帝帮助我，阿门。',
+    bio:'马丁·路德是德国神学家、奥古斯丁会修士。1517 年将《九十五条论纲》公布于众，引发宗教改革运动，永久分裂了西方基督教。',
+    influence:'引发宗教改革，永久改变欧洲宗教格局，推动了民族语言文学的兴起、出版印刷的普及与近代民族国家的形成。'
+  },
+  {
+    num:'17', cn:'诗歌选', en:'Selected Poems',
+    author:'约翰·济慈', era:'1795–1821 · 浪漫主义英国',
+    series:2, tags:[['诗歌','p'],['美学','e'],['浪漫主义','b']],
+    ideas:[
+      '"消极能力"（Negative Capability）：伟大诗人的特质是安于不确定性与神秘，不急于理性解决，这是最高的艺术创造力。',
+      '美即真理，真理即美——济慈相信审美体验能给予我们关于存在真相的直接认知，超越科学分析所能达到的境界。',
+      '短暂性与永恒性的张力是济慈诗歌的核心——青春与美丽必将消逝，而艺术能将流逝时刻凝固为永恒。'
+    ],
+    quoteCn:'"美即是真，真即是美"——这就是你们所知道的，也是所需知道的一切。',
+    bio:'济慈是英国浪漫主义诗人，出身平民，接受医学训练，最终投身诗歌。25 岁死于肺结核，在世时名声有限，身后被誉为英语文学最伟大的诗人之一。',
+    influence:'影响了维多利亚时代唯美主义、布鲁姆斯伯里团体，以及 20 世纪无数英语诗人。"消极能力"概念至今是创意思维研究的重要参照。'
+  },
+  {
+    num:'18', cn:'论宽容', en:'A Letter Concerning Toleration',
+    author:'约翰·洛克', era:'1632–1704 · 英国启蒙',
+    series:2, tags:[['宽容','p'],['政教分离','e'],['自由主义','b']],
+    ideas:[
+      '国家的职责是保护公民的生命、自由与财产，而非拯救灵魂——宗教信仰属于个人良知领域，超出政治强制的合法范围。',
+      '强迫不能产生真实信仰——即使能强迫人说出信仰的语言，也无法改变内心的信念，因此宗教迫害在逻辑上也是无效的。',
+      '宽容不是纵容：洛克划出边界——无神论者和颠覆国家的宗教团体不在宽容之列，宽容是有条件的。'
+    ],
+    quoteCn:'国家不关心灵魂的救赎，只关心每个人的公民利益。',
+    bio:'洛克是英国哲学家，经验主义与自由主义政治理论的奠基人。本信写于流亡荷兰期间，以拉丁文匿名发表，后被译为多种语言广泛传播。',
+    influence:'成为现代政教分离原则的理论基础，直接影响美国宪法第一修正案及《世界人权宣言》中的宗教自由条款。'
+  },
+  {
+    num:'19', cn:'论法的精神', en:'The Spirit of the Laws',
+    author:'孟德斯鸠', era:'1689–1755 · 法国启蒙',
+    series:2, tags:[['政治哲学','p'],['法学','e'],['三权分立','b']],
+    ideas:[
+      '三权分立（立法、行政、司法）是防止权力腐败的制度设计——自由只存在于权力相互制衡的地方。',
+      '法律不是普遍的，它必须与一个民族的自然环境、历史传统、经济状况相适应——政治没有放之四海皆准的公式。',
+      '比较政治方法：通过跨文化、跨历史的比较分析，揭示不同政治体制背后的社会条件与逻辑。'
+    ],
+    quoteCn:'自由是做法律许可的一切事情的权利。',
+    bio:'孟德斯鸠是法国启蒙时代法学家、政治哲学家，波尔多高等法院院长。在欧洲各国旅行考察后，历经 14 年完成这部巨著，出版后立即被列为禁书。',
+    influence:'三权分立理论直接影响美国宪法与《人权宣言》的起草者，成为现代民主宪政制度设计的理论基石。'
+  },
+  {
+    num:'20', cn:'随笔集', en:'Essays',
+    author:'米歇尔·德·蒙田', era:'1533–1592 · 文艺复兴法国',
+    series:2, tags:[['随笔','p'],['自我审视','e'],['怀疑主义','b']],
+    ideas:[
+      '"我知道什么？"——蒙田将怀疑主义变成一种生活方式，以诚实和好奇心不断审视自我，而非追求确定性体系。',
+      '随笔（essai = 尝试）这一文体的发明：以第一人称直接审视自身经验与想法，将个人生命本身当作哲学探索的对象。',
+      '接受人性的矛盾与多变：蒙田拒绝将人性简化为任何统一理论，认为流动性与多样性正是人类经验的真实本质。'
+    ],
+    quoteCn:'我所研究的对象是我自己；这是我的形而上学，这是我的物理学。',
+    bio:'蒙田是法国文艺复兴作家，波尔多市长，退休后在自己的城堡塔楼中写就三卷《随笔集》。他被誉为"随笔"这一文学体裁的发明者。',
+    influence:'开创散文随笔传统，影响莎士比亚、笛卡尔、帕斯卡、卢梭，乃至弗吉尼亚·伍尔夫和现代自传写作。'
+  }
+];
+
+// ================================================================
+// HTML GENERATORS
+// ================================================================
+function tagsHtml(tags) {
+  return tags.map(([n,c]) => `<span class="stag stag-${c}">${n}</span>`).join('');
+}
+
+function makeChapter(label, title, sub, books) {
+  const pills = books.map(b => `<span class="ch-tag">${b.cn}</span>`).join('');
+  return `
+<section class="slide s-chapter">
+  <div class="slide-content" style="text-align:center">
+    <div class="ch-num reveal">${label}</div>
+    <h2 class="reveal">${title}</h2>
+    <p class="ch-sub reveal">${sub}</p>
+    <div class="ch-list reveal">${pills}</div>
+  </div>
+</section>`;
+}
+
+function makeBook(b) {
+  const glowHtml = b.series === 1
+    ? `<div class="sb-glow sb-glow-a"></div>`
+    : `<div class="sb-glow sb-glow-b"></div>`;
+
+  const ideasHtml = b.ideas.map((txt,i) => `
+    <div class="sb-idea">
+      <div class="sb-in">${i+1}</div>
+      <div class="sb-it">${txt}</div>
+    </div>`).join('');
+
+  return `
+<section class="slide s-book">
+  ${glowHtml}
+  <div class="sb-wm">${b.num}</div>
+  <div class="slide-content">
+    <div class="sb-layout">
+      <div class="rl">
+        <div class="sb-seq">${b.num} / 20</div>
+        <div class="sb-sp">辑${b.series===1?'一':'二'}</div>
+        <div class="sb-cn">${b.cn}</div>
+        <div class="sb-en">${b.en}</div>
+        <div class="sb-author">${b.author}</div>
+        <div class="sb-era">${b.era}</div>
+        <div class="sb-tags">${tagsHtml(b.tags)}</div>
+        <div class="sb-quote">
+          <div class="sb-qt">"${b.quoteCn}"</div>
+          <div class="sb-qs">—— ${b.author}</div>
+        </div>
+      </div>
+      <div class="rr">
+        <div class="sb-ideas-h">核心思想</div>
+        ${ideasHtml}
+        <div class="sb-box sb-bio">
+          <div class="sb-bh">作者简介</div>
+          <div class="sb-bt">${b.bio}</div>
+        </div>
+        <div class="sb-box sb-inf">
+          <div class="sb-bh">历史影响</div>
+          <div class="sb-bt">${b.influence}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>`;
+}
+
+// Inject all slides
+const container = document.getElementById('slides-container');
+const s1 = BOOKS.filter(b => b.series===1);
+const s2 = BOOKS.filter(b => b.series===2);
+let html = '';
+html += makeChapter('辑一','近代西方思想奠基之作','文艺复兴 · 启蒙运动 · 近代科学革命 · 1469–1900', s1);
+s1.forEach(b => { html += makeBook(b); });
+html += makeChapter('辑二','古典文明与人文主义传统','古希腊 · 古罗马 · 东方古典 · 宗教改革 · 前500–1626', s2);
+s2.forEach(b => { html += makeBook(b); });
+container.innerHTML = html;
+
+// ================================================================
+// DECK CONTROLLER
+// ================================================================
+class Deck {
+  constructor() {
+    this.slides = [...document.querySelectorAll('.slide')];
+    this.cur = 0;
+    this.lock = false;
+    this._obs();
+    this._keys();
+    this._touch();
+    this._wheel();
+    this.pb = document.getElementById('pb');
+    this._dots();
+    if (this.slides[0]) this.slides[0].classList.add('visible');
+    this._upd();
+  }
+
+  _obs() {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          const i = this.slides.indexOf(e.target);
+          if (i >= 0) { this.cur = i; this._upd(); }
+        }
+      });
+    }, { threshold: 0.5 });
+    this.slides.forEach(s => io.observe(s));
+  }
+
+  go(n) {
+    n = Math.max(0, Math.min(n, this.slides.length-1));
+    this.cur = n;
+    this.slides[n].scrollIntoView({ behavior:'smooth', block:'start' });
+    this._upd();
+  }
+
+  _keys() {
+    document.addEventListener('keydown', e => {
+      if (['ArrowDown','PageDown',' '].includes(e.key)) { e.preventDefault(); this.go(this.cur+1); }
+      if (['ArrowUp','PageUp'].includes(e.key)) { e.preventDefault(); this.go(this.cur-1); }
+    });
+  }
+
+  _touch() {
+    let sy = 0;
+    document.addEventListener('touchstart', e => { sy = e.touches[0].clientY; }, { passive:true });
+    document.addEventListener('touchend', e => {
+      const d = sy - e.changedTouches[0].clientY;
+      if (Math.abs(d) < 40) return;
+      d > 0 ? this.go(this.cur+1) : this.go(this.cur-1);
+    }, { passive:true });
+  }
+
+  _wheel() {
+    document.addEventListener('wheel', e => {
+      if (this.lock) return;
+      this.lock = true;
+      e.deltaY > 0 ? this.go(this.cur+1) : this.go(this.cur-1);
+      setTimeout(() => { this.lock = false; }, 400);
+    }, { passive:true });
+  }
+
+  _dots() {
+    const nd = document.getElementById('nd');
+    nd.innerHTML = '';
+    this.slides.forEach((_,i) => {
+      const btn = document.createElement('button');
+      btn.setAttribute('aria-label',`第 ${i+1} 页`);
+      btn.addEventListener('click', () => this.go(i));
+      nd.appendChild(btn);
+    });
+  }
+
+  _upd() {
+    if (this.pb) {
+      const r = this.slides.length<=1 ? 1 : this.cur/(this.slides.length-1);
+      this.pb.style.width = `${Math.round(r*100)}%`;
+    }
+    document.querySelectorAll('.nd button').forEach((d,i) => {
+      d.classList.toggle('active', i===this.cur);
+    });
+  }
+}
+
+new Deck();
+</script>
+<script defer="" src="./企鹅兰登·伟大的思想 · 20本思想精华导读_files/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;73a749ca3ace4b2abd6813f039000869&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+<div id="wwei-auth-widget" style="position: fixed; top: 16px; right: 16px; z-index: 2147483647;"><template shadowrootmode="open"><style>
+      :host { all: initial; }
+      * { box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif; }
+      .wrap { position: relative; }
+      .avatar {
+        width: 36px; height: 36px; border-radius: 50%; padding: 0; cursor: pointer; position: relative;
+        border: 2px solid rgba(255,255,255,0.15); background: #111214; color: #f0f0f2;
+        display: flex; align-items: center; justify-content: center; overflow: hidden;
+        transition: all .2s; box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      }
+      .avatar:hover { transform: scale(1.05); border-color: rgba(255,255,255,0.3); }
+      .avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+      .avatar .fallback { font-weight: 600; font-size: 14px; }
+      .avatar.loading { animation: pulse 1.4s infinite; cursor: default; }
+      @keyframes pulse { 0%,100% { opacity: 0.5; } 50% { opacity: 0.9; } }
+      .dot {
+        position: absolute; bottom: -2px; right: -2px; width: 12px; height: 12px;
+        border-radius: 50%; border: 2px solid #111214;
+      }
+      .login-btn {
+        display: inline-block; padding: 7px 16px; border-radius: 100px;
+        background: rgba(110, 231, 183, 0.95); color: #08090a; font-size: 13px; font-weight: 500;
+        text-decoration: none; transition: all .2s; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        border: 1px solid rgba(110, 231, 183, 0.3);
+      }
+      .login-btn:hover { background: #6ee7b7; transform: translateY(-1px); }
+      .dropdown {
+        position: absolute; top: 44px; right: 0; min-width: 260px;
+        background: #111214; border: 1px solid #1e2024; border-radius: 12px;
+        padding: 16px; opacity: 0; transform: translateY(-6px) scale(0.96);
+        pointer-events: none; transition: all .18s cubic-bezier(.4,0,.2,1);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.4); color: #f0f0f2;
+      }
+      .dropdown.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+      .dropdown-head { display: flex; gap: 12px; align-items: center; }
+      .dropdown-avatar { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; flex-shrink: 0; background: #1e2024; display: flex; align-items: center; justify-content: center; }
+      .dropdown-avatar img { width: 100%; height: 100%; object-fit: cover; }
+      .dropdown-info { flex: 1; min-width: 0; }
+      .dropdown-name { font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .dropdown-email { font-size: 11px; color: #a0a3ab; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .dropdown-level {
+        display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px;
+        font-size: 10px; font-weight: 600; letter-spacing: 0.05em;
+        border: 1px solid;
+      }
+      .dropdown-divider { height: 1px; background: #1e2024; margin: 14px 0; }
+      .dropdown-item {
+        display: block; padding: 8px 12px; font-size: 13px; color: #f0f0f2;
+        text-decoration: none; border-radius: 6px; transition: background .15s;
+      }
+      .dropdown-item:hover { background: #1e2024; }
+    </style>
+        <div class="wrap">
+          <button class="avatar" id="avatar" aria-label="user menu" title="yiyixiao920@gmail.com · ADMIN">
+            <img src="https://lh3.googleusercontent.com/a/ACg8ocKu-yjD3iu0mgzG7jWbJHAxSpl7HBx0GqADxeh6y8jMFDEhpA=s96-c" referrerpolicy="no-referrer" alt="">
+            <span class="dot" style="background:#f87171" title="ADMIN"></span>
+          </button>
+          <div class="dropdown" id="dropdown">
+            <div class="dropdown-head">
+              <div class="dropdown-avatar"><img src="https://lh3.googleusercontent.com/a/ACg8ocKu-yjD3iu0mgzG7jWbJHAxSpl7HBx0GqADxeh6y8jMFDEhpA=s96-c" referrerpolicy="no-referrer" alt=""></div>
+              <div class="dropdown-info">
+                <div class="dropdown-name">姚伊笑</div>
+                <div class="dropdown-email">yiyixiao920@gmail.com</div>
+                <div class="dropdown-level" style="color:#f87171;border-color:#f8717140">ADMIN</div>
+              </div>
+            </div>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="https://admin.wwei.ai/">管理后台 →</a>
+            <a class="dropdown-item" href="https://auth.wwei.ai/logout?next=https%3A%2F%2Fpenguin-ideas.wwei.ai%2F">退出登录</a>
+          </div>
+        </div>
+      </template></div><div id="cubox-react-root"><template shadowrootmode="open"><link rel="stylesheet" href="chrome-extension://bflmgpechpeohjfomgfdkkfcbhfcjohl/css/content.css"><div><div style="z-index: 2147483647;"></div></div></template></div><a id="colorPickerDivHidden"><img src="chrome-extension://njolgcnddhepjpplfifbmagdgkidikpj/logo.png" data-cubox-image-id="ae8686952839c0b69466b05216a82003" data-cubox-image-index="0" data-cubox-image-load="false"></a></body><plasmo-csui id="aitdk-csui"><template shadowrootmode="open"><style>*,:before,:after{box-sizing:border-box;border:0 solid #e5e7eb}:before,:after{--tw-content:""}html{-webkit-text-size-adjust:100%;tab-size:4;font-feature-settings:normal;font-variation-settings:normal;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}body{line-height:inherit;margin:0}hr{color:inherit;border-top-width:1px;height:0}abbr:where([title]){text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em}small{font-size:80%}sub,sup{vertical-align:baseline;font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-feature-settings:inherit;font-variation-settings:inherit;font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,[type=button],[type=reset],[type=submit]{-webkit-appearance:button;background-color:#0000;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button{height:auto}::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dl,dd,h1,h2,h3,h4,h5,h6,hr,figure,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}ol,ul,menu{margin:0;padding:0;list-style:none}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}button,[role=button]{cursor:pointer}:disabled{cursor:default}img,svg,video,canvas,audio,iframe,embed,object{vertical-align:middle;display:block}img,video{max-width:100%;height:auto}[hidden]{display:none}:host,:root{--background:0 0% 100%;--foreground:224 71.4% 4.1%;--card:0 0% 100%;--card-foreground:224 71.4% 4.1%;--popover:0 0% 100%;--popover-foreground:224 71.4% 4.1%;--primary:262.1 83.3% 57.8%;--primary-foreground:210 20% 98%;--secondary:220 14.3% 95.9%;--secondary-foreground:220.9 39.3% 11%;--muted:220 14.3% 95.9%;--muted-foreground:220 8.9% 46.1%;--accent:220 14.3% 95.9%;--accent-foreground:220.9 39.3% 11%;--destructive:0 84.2% 60.2%;--destructive-foreground:210 20% 98%;--border:220 13% 91%;--input:220 13% 91%;--ring:262.1 83.3% 57.8%;--radius:4.2px;z-index:2147483647}.dark{--background:224 71.4% 4.1%;--foreground:210 20% 98%;--card:224 71.4% 4.1%;--card-foreground:210 20% 98%;--popover:224 71.4% 4.1%;--popover-foreground:210 20% 98%;--primary:263.4 70% 50.4%;--primary-foreground:210 20% 98%;--secondary:215 27.9% 16.9%;--secondary-foreground:210 20% 98%;--muted:215 27.9% 16.9%;--muted-foreground:217.9 10.6% 64.9%;--accent:215 27.9% 16.9%;--accent-foreground:210 20% 98%;--destructive:0 62.8% 30.6%;--destructive-foreground:210 20% 98%;--border:215 27.9% 16.9%;--input:215 27.9% 16.9%;--ring:263.4 70% 50.4%}*{border-color:hsl(var(--border))}html{font-size:14px}body{background-color:hsl(var(--background));color:hsl(var(--foreground));font-feature-settings:"rlig" 1,"calt" 1;font-size:14px}*,:before,:after,::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:#3b82f680;--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }.container{width:100%;margin-left:auto;margin-right:auto;padding-left:28px;padding-right:28px}@media (width>=1400px){.container{max-width:1400px}}.visible{visibility:visible}.invisible{visibility:hidden}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.bottom-0{bottom:0}.left-1\/2{left:50%}.right-0{right:0}.right-2{right:7px}.top-0{top:0}.top-1\/2{top:50%}.top-2{top:7px}.-z-\[1\]{z-index:-1}.z-\[1\]{z-index:1}.z-\[2147483647\]{z-index:2147483647}.mx-auto{margin-left:auto;margin-right:auto}.-ml-\[13px\]{margin-left:-13px}.-mt-\[13px\]{margin-top:-13px}.mt-3{margin-top:10.5px}.mt-5{margin-top:17.5px}.block{display:block}.flex{display:flex}.hidden{display:none}.h-full{height:100%}.w-\[420px\]{width:420px}.w-\[520px\]{width:520px}.w-full{width:100%}@keyframes spin{to{transform:rotate(360deg)}}.animate-spin{animation:1s linear infinite spin}.cursor-pointer{cursor:pointer}.items-center{align-items:center}.justify-center{justify-content:center}.gap-x-2{column-gap:7px}.rounded{border-radius:3.5px}.bg-\[\#635bff\]{--tw-bg-opacity:1;background-color:rgb(99 91 255/var(--tw-bg-opacity))}.bg-\[\#635bff\]\/10{background-color:#635bff1a}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity))}.p-1{padding:3.5px}.p-6{padding:21px}.px-4{padding-left:14px;padding-right:14px}.py-2{padding-top:7px;padding-bottom:7px}.py-2\.5{padding-top:8.75px;padding-bottom:8.75px}.text-\[14px\]{font-size:14px}.text-xl{font-size:17.5px;line-height:24.5px}.font-medium{font-weight:500}.leading-6{line-height:21px}.text-black{--tw-text-opacity:1;color:rgb(0 0 0/var(--tw-text-opacity))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175/var(--tw-text-opacity))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128/var(--tw-text-opacity))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55/var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity))}.shadow-2xl{--tw-shadow:0 25px 50px -12px #00000040;--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.outline{outline-style:solid}.filter{filter:var(--tw-blur)var(--tw-brightness)var(--tw-contrast)var(--tw-grayscale)var(--tw-hue-rotate)var(--tw-invert)var(--tw-saturate)var(--tw-sepia)var(--tw-drop-shadow)}.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-duration:.15s;transition-timing-function:cubic-bezier(.4,0,.2,1)}@keyframes enter{0%{opacity:var(--tw-enter-opacity,1);transform:translate3d(var(--tw-enter-translate-x,0),var(--tw-enter-translate-y,0),0)scale3d(var(--tw-enter-scale,1),var(--tw-enter-scale,1),var(--tw-enter-scale,1))rotate(var(--tw-enter-rotate,0))}}@keyframes exit{to{opacity:var(--tw-exit-opacity,1);transform:translate3d(var(--tw-exit-translate-x,0),var(--tw-exit-translate-y,0),0)scale3d(var(--tw-exit-scale,1),var(--tw-exit-scale,1),var(--tw-exit-scale,1))rotate(var(--tw-exit-rotate,0))}}.hover\:bg-\[\#635bff\]\/90:hover{background-color:#635bffe6}</style><div id="plasmo-shadow-container" style="z-index: 2147483647; position: relative;"><div id="plasmo-inline" class="plasmo-csui-container" style="display: flex; position: relative; top: 0px; left: 0px;"><div class="aitdk-extension shadow-2xl flex fixed w-[520px] top-0 right-0 bottom-0 bg-white hidden"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x absolute right-2 top-2 z-[1] p-1 cursor-pointer text-gray-500"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-loader-circle animate-spin text-gray-400 absolute top-1/2 left-1/2 -ml-[13px] -mt-[13px] -z-[1]"><path d="M21 12a9 9 0 1 1-6.219-8.56"></path></svg></div></div></div></template></plasmo-csui><div id="immersive-translate-browser-popup" style="all: initial"><template shadowrootmode="open"><style>/** 基础色阶定义 **/
+:root,
+#mount[data-theme="light"],
+#mount:not([data-theme="dark"]) {
+  /* 中性灰阶（light） */
+  --c-00: #000000;
+  --c-22: #222222;
+  --c-33: #333333;
+  --c-66: #666666;
+  --c-83: #838383;
+  --c-99: #999999;
+  --c-c7: #c7c7c7;
+  --c-cc: #cccccc;
+  --c-e6: #e6e6e6;
+  --c-f5: #f5f5f5;
+  --c-ff: #ffffff;
+  /* 品牌主色阶（light） */
+  --p-main: #ea4c89;
+  --p-hover: #ec5e95;
+  --p-active: #e34a85;
+  --p-special: #ee71a2;
+  --p-disabled: #f4a5c4;
+  --p-text-disabled: #f9c9dc;
+  --p-weak: #fdedf3;
+  /* Surface 层级（light，TC 填充-1） */
+  --s-1: #f3f5f6;
+  --s-1-hover: #f6f8f9;
+  --s-1-active: #edf1f2;
+  --s-1-weak: #fafbfb;
+  /* 输入/边框（light，TC 填充-2） */
+  --input-bg-base: #fafbfc;
+  --input-border: #ecf0f7;
+  --input-border-strong: #e0e0e6;
+  --input-bg-strong: #fafdff;
+}
+
+:root[data-theme="dark"],
+[data-theme="dark"] {
+  /* 中性灰阶（dark） */
+  --c-00: #ffffff;
+  --c-22: #dbdbdb;
+  --c-33: #dbdbdb;
+  --c-66: #b3b3b3;
+  --c-83: #838383;
+  --c-99: #707070;
+  --c-c7: #666666;
+  --c-cc: #5c5c5c;
+  --c-e6: #3b3b3b;
+  --c-f5: #262626;
+  --c-ff: #222222;
+  /* 品牌主色阶（dark） */
+  --p-main: #e23c7c;
+  --p-hover: #ea4c89;
+  --p-active: #d5467d;
+  --p-special: #a93a65;
+  --p-disabled: #7e2f4d;
+  --p-text-disabled: #522335;
+  --p-weak: #26171d;
+  /* Surface 层级（dark，TC 填充-1） */
+  --s-1: #2d2e2f;
+  --s-1-hover: #323434;
+  --s-1-active: #202121;
+  --s-1-weak: #262627;
+  /* 输入/边框（dark，TC 填充-2） */
+  --input-bg-base: #2b2d30;
+  --input-border: #3e434b;
+  --input-border-strong: #43474b;
+  --input-bg-strong: #1f2123;
+}
+
+:root,
+#mount [data-theme] {
+  /* 业务/通用变量引用色阶（全局可见，含 Shadow DOM） */
+  --primary: var(--p-main);
+  --primary-hover: var(--p-hover);
+  --primary-inverse: #fff;
+  --modal-background: var(--s-1);
+  --modal-border: var(--input-border);
+  --modal-text: var(--c-22);
+  --modal-text-secondary: var(--c-66);
+  --modal-error: var(--p-main);
+  --modal-required: #f53f3f;
+  --modal-success: #68cd52;
+  --modal-button-background: var(--p-main);
+  --modal-button-text: var(--c-ff);
+  --modal-input-background: var(--input-bg-base);
+  --modal-check-color: var(--p-main);
+  --background-color: var(--c-ff);
+  --background-light-green: var(--s-1-weak, #f5f7f9);
+  --text-black-2: var(--c-22);
+  --text-gray-2: var(--c-22);
+  --text-gray-6: var(--c-66);
+  --text-gray-9: var(--c-99);
+  --text-gray-c2: var(--c-c7);
+  --switch-background-color: var(--c-c7, hsl(205deg, 16%, 77%));
+  --float-ball-more-button-border-color: var(--c-f5, #f6f6f6);
+  --float-ball-more-button-background-color: var(--c-ff);
+  --float-ball-more-button-hover-color: var(--p-weak);
+  --float-ball-more-button-svg-color: #6c6f73;
+  --service-bg-hover: var(--s-1-hover, #f7faff);
+  --service-bg: var(--s-1-weak, #fafbfb);
+}
+
+#mount {
+  --font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
+    "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  /* PC/H5 兼容的字号、间距、圆角、阴影变量 */
+  --f-12: 12px;
+  --f-14: 14px;
+  --f-15: 15px;
+  --f-16: 16px;
+  --f-18: 18px;
+  --f-20: 20px;
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-18: 18px;
+  --space-24: 24px;
+  --radius-8: 8px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --control-height-lg: 44px;
+  --width-28: 28px;
+  --width-24: 24px;
+  --width-20: 20px;
+  --width-18: 18px;
+  --width-16: 16px;
+  --width-label-md: 56px;
+  --shadow-lg: 0 18px 48px rgba(0, 0, 0, 0.12);
+
+  /* 常规变量 */
+  --line-height: 1.5;
+  --font-weight: 400;
+  --font-size: 16px;
+  --border-radius: 4px;
+  --border-width: 2px;
+  --outline-width: 3px;
+  --spacing: 16px;
+  --typography-spacing-vertical: 24px;
+  --block-spacing-vertical: calc(var(--spacing) * 2);
+  --block-spacing-horizontal: var(--spacing);
+  --grid-spacing-vertical: 0;
+  --grid-spacing-horizontal: var(--spacing);
+  --form-element-spacing-vertical: 12px;
+  --form-element-spacing-horizontal: 16px;
+  --nav-element-spacing-vertical: 16px;
+  --nav-element-spacing-horizontal: 8px;
+  --nav-link-spacing-vertical: 8px;
+  --nav-link-spacing-horizontal: 8px;
+  --form-label-font-weight: var(--font-weight);
+  --transition: 0.2s ease-in-out;
+  --modal-overlay-backdrop-filter: blur(4px);
+  --switch-color: var(--primary-inverse);
+  --switch-checked-background-color: var(--primary);
+  --icon-xia: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgaWQ9IkZyYW1lIj4KPHBhdGggaWQ9IlZlY3RvciIgZD0iTTguMDAyOTEgOS42Nzk4M0wzLjgzMzM5IDUuNTEyMjFMMy4wMjUzOSA2LjMxOTgzTDguMDAzMjkgMTEuMjk1MUwxMi45NzYyIDYuMzE5ODNMMTIuMTY3OSA1LjUxMjIxTDguMDAyOTEgOS42Nzk4M1oiIGZpbGw9IiM4MzgzODMiLz4KPC9nPgo8L3N2Zz4K");
+  /* 兼容旧变量：主色直接引用品牌主色阶 */
+  --primary: var(--p-main);
+  --primary-hover: var(--p-hover);
+  --primary-inverse: #fff;
+  /* Modal 业务变量引用色阶 */
+  --modal-background: var(--s-1);
+  --modal-border: var(--input-border);
+  --modal-text: var(--c-22);
+  --modal-text-secondary: var(--c-66);
+  --modal-error: var(--p-main);
+  --modal-required: #f53f3f;
+  --modal-success: #68cd52;
+  --modal-button-background: var(--p-main);
+  --modal-button-text: var(--c-ff);
+  --modal-input-background: var(--input-bg-base);
+  --modal-check-color: var(--p-main);
+  --background-color: var(--c-ff);
+  --background-light-green: var(--s-1-weak, #f5f7f9);
+  --text-black-2: var(--c-22);
+  --text-gray-2: var(--c-22);
+  --text-gray-6: var(--c-66);
+  --text-gray-9: var(--c-99);
+  --text-gray-c2: var(--c-c7);
+  --switch-background-color: var(--c-c7, hsl(205deg, 16%, 77%));
+  --float-ball-more-button-border-color: var(--c-f5, #f6f6f6);
+  --float-ball-more-button-background-color: var(--c-ff);
+  --float-ball-more-button-hover-color: var(--p-weak);
+  --float-ball-more-button-svg-color: #6c6f73;
+  --service-bg-hover: var(--s-1-hover, #f7faff);
+  --service-bg: var(--s-1-weak, #fafbfb);
+  line-height: var(--line-height);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+}
+
+@media (max-width: 480px) {
+  :root,
+  #mount {
+    --f-12: 10px;
+    --f-14: 12px;
+    --f-15: 13px;
+    --f-16: 14px;
+    --f-18: 16px;
+    --f-20: 18px;
+    --space-4: 4px;
+    --space-6: 4px;
+    --space-8: 6px;
+    --space-12: 8px;
+    --space-16: 12px;
+    --space-18: 14px;
+    --space-24: 18px;
+    --radius-8: 6px;
+    --radius-12: 10px;
+    --radius-16: 12px;
+    --control-height-lg: 38px;
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.1);
+    --width-28: 24px;
+    --width-24: 20px;
+    --width-20: 16px;
+    --width-18: 14px;
+    --width-16: 12px;
+    --width-label-md: 52px;
+  }
+}
+
+#mount * {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+:where(#mount) a,
+:where(#mount) [role="link"] {
+  --color: var(--primary);
+  --background-color: transparent;
+  outline: none;
+  background-color: var(--background-color);
+  color: var(--color);
+  -webkit-text-decoration: var(--text-decoration);
+  text-decoration: var(--text-decoration);
+  transition: background-color var(--transition), color var(--transition),
+    box-shadow var(--transition), -webkit-text-decoration var(--transition);
+  transition: background-color var(--transition), color var(--transition),
+    text-decoration var(--transition), box-shadow var(--transition);
+  transition: background-color var(--transition), color var(--transition),
+    text-decoration var(--transition), box-shadow var(--transition),
+    -webkit-text-decoration var(--transition);
+}
+:where(#mount) a:is([aria-current], :hover, :active, :focus),
+:where(#mount) [role="link"]:is([aria-current], :hover, :active, :focus) {
+  --color: var(--primary-hover);
+  --text-decoration: underline;
+}
+
+:where(#mount) label {
+  font-size: 13px;
+  line-height: 1.3;
+  color: var(--text-gray-2, #222222);
+}
+
+:where(#mount) button {
+  width: 100%;
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.3;
+  min-height: 44px;
+  border-radius: 12px;
+  padding: 0 14px;
+  border: none;
+  background-color: var(--primary, #ea4c89);
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+:where(#mount) button:hover {
+  background-color: var(--primary-hover, #f082ac);
+}
+
+:where(#mount) button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+:where(#mount) select,
+:where(#mount) input,
+:where(#mount) textarea {
+  font-family: inherit;
+  color: var(--text-gray-2, #222222);
+}
+
+:where(#mount) select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: inherit;
+  color: var(--text-gray-2, inherit);
+  font-size: 13px;
+  line-height: 1.3;
+  outline: none;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--popup-item-background-color, transparent);
+  background-image: var(--icon-xia, none);
+  background-repeat: no-repeat;
+  background-position: center right 12px;
+  background-size: 16px auto;
+  cursor: pointer;
+}
+
+:where(#mount) input[type="checkbox"] {
+  accent-color: var(--primary, #ea4c89);
+}
+
+[type="checkbox"],
+[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 1.25em;
+  height: 1.25em;
+  margin-top: -0.125em;
+  margin-right: 0.375em;
+  margin-left: 0;
+  -webkit-margin-start: 0;
+  margin-inline-start: 0;
+  -webkit-margin-end: 0.375em;
+  margin-inline-end: 0.375em;
+  border-width: var(--border-width);
+  font-size: inherit;
+  vertical-align: middle;
+  cursor: pointer;
+}
+[type="checkbox"]::-ms-check,
+[type="radio"]::-ms-check {
+  display: none;
+}
+[type="checkbox"]:checked,
+[type="checkbox"]:checked:active,
+[type="checkbox"]:checked:focus,
+[type="radio"]:checked,
+[type="radio"]:checked:active,
+[type="radio"]:checked:focus {
+  --background-color: var(--primary);
+  --border-color: var(--primary);
+  background-image: var(--icon-checkbox);
+  background-position: center;
+  background-size: 0.75em auto;
+  background-repeat: no-repeat;
+}
+[type="checkbox"] ~ label,
+[type="radio"] ~ label {
+  display: inline-block;
+  margin-right: 0.375em;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+[type="checkbox"]:indeterminate {
+  --background-color: var(--primary);
+  --border-color: var(--primary);
+  background-image: var(--icon-minus);
+  background-position: center;
+  background-size: 0.75em auto;
+  background-repeat: no-repeat;
+}
+
+[type="radio"] {
+  border-radius: 50%;
+}
+[type="radio"]:checked,
+[type="radio"]:checked:active,
+[type="radio"]:checked:focus {
+  --background-color: var(--primary-inverse);
+  border-width: 0.35em;
+  background-image: none;
+}
+
+:where(#mount) [type="checkbox"][role="switch"] {
+  --background-color: var(--switch-background-color);
+  --border-color: var(--switch-background-color);
+  --color: var(--switch-color);
+  width: 2.25em;
+  height: 1.25em;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 1.25em;
+  background-color: var(--background-color);
+  line-height: 1.25em;
+}
+:where(#mount) [type="checkbox"][role="switch"]:focus {
+  --background-color: var(--switch-background-color);
+  --border-color: var(--switch-background-color);
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked {
+  --background-color: var(--switch-checked-background-color);
+  --border-color: var(--switch-checked-background-color);
+}
+:where(#mount) [type="checkbox"][role="switch"]:before {
+  display: block;
+  width: calc(1.25em - (var(--border-width) * 2));
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--color);
+  content: "";
+  transition: margin 0.1s ease-in-out;
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked {
+  background-image: none;
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked::before {
+  margin-left: calc(1.125em - var(--border-width));
+  -webkit-margin-start: calc(1.125em - var(--border-width));
+  margin-inline-start: calc(1.125em - var(--border-width));
+}
+
+:where(#mount) [type="checkbox"][aria-invalid="false"],
+:where(#mount) [type="checkbox"]:checked[aria-invalid="false"],
+:where(#mount) [type="radio"][aria-invalid="false"],
+:where(#mount) [type="radio"]:checked[aria-invalid="false"],
+:where(#mount) [type="checkbox"][role="switch"][aria-invalid="false"],
+:where(#mount) [type="checkbox"][role="switch"]:checked[aria-invalid="false"] {
+  --border-color: var(--form-element-valid-border-color);
+}
+:where(#mount) [type="checkbox"][aria-invalid="true"],
+:where(#mount) [type="checkbox"]:checked[aria-invalid="true"],
+:where(#mount) [type="radio"][aria-invalid="true"],
+:where(#mount) [type="radio"]:checked[aria-invalid="true"],
+:where(#mount) [type="checkbox"][role="switch"][aria-invalid="true"],
+:where(#mount) [type="checkbox"][role="switch"]:checked[aria-invalid="true"] {
+  --border-color: var(--form-element-invalid-border-color);
+}
+
+.text-black {
+  color: var(--text-black-2);
+}
+
+.text-gray-2 {
+  color: var(--text-gray-2);
+}
+
+.text-gray-6 {
+  color: var(--text-gray-6);
+}
+
+.text-gray-9 {
+  color: var(--text-gray-9);
+}
+
+.text-gray-c2 {
+  color: var(--text-gray-c2);
+}
+
+.pt-4 {
+  padding-top: 16px;
+}
+
+.p-2 {
+  padding: 8px;
+}
+
+.pl-5 {
+  padding-left: 48px;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.pl-2 {
+  padding-left: 8px;
+}
+
+.pl-4 {
+  padding-left: 24px;
+}
+
+.pt-2 {
+  padding-top: 8px;
+}
+
+.pb-2 {
+  padding-bottom: 8px;
+}
+
+.pb-4 {
+  padding-bottom: 16px;
+}
+
+.pb-5 {
+  padding-bottom: 20px;
+}
+
+.pr-5 {
+  padding-right: 48px;
+}
+
+.text-sm {
+  font-size: 13px;
+}
+
+.text-base {
+  font-size: 16px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.mb-0 {
+  margin-bottom: 0px;
+}
+
+.mb-2 {
+  margin-bottom: 8px;
+}
+
+.mb-4 {
+  margin-bottom: 16px;
+}
+
+.mb-3 {
+  margin-bottom: 12px;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.py-2 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.py-2-5 {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mt-2 {
+  margin-top: 8px;
+}
+
+.mt-3 {
+  margin-top: 12px;
+}
+
+.mt-4 {
+  margin-top: 16px;
+}
+
+.mt-5 {
+  margin-top: 20px;
+}
+
+.mt-6 {
+  margin-top: 24px;
+}
+
+.mb-1 {
+  margin-bottom: 4px;
+}
+
+.ml-4 {
+  margin-left: 24px;
+}
+
+.ml-3 {
+  margin-left: 16px;
+}
+
+.ml-2 {
+  margin-left: 8px;
+}
+
+.ml-1 {
+  margin-left: 4px;
+}
+
+.mr-1 {
+  margin-right: 4px;
+}
+
+.mr-2 {
+  margin-right: 8px;
+}
+
+.mr-3 {
+  margin-right: 16px;
+}
+
+.mx-2 {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.pl-3 {
+  padding-left: 12px;
+}
+
+.pr-3 {
+  padding-right: 12px;
+}
+
+.p-3 {
+  padding: 12px;
+}
+
+.px-1 {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.px-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.pt-3 {
+  padding-top: 12px;
+}
+
+.px-6 {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.px-4 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.pt-6 {
+  padding-top: 20px;
+}
+
+.py-3 {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.py-0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.left-auto {
+  left: auto !important;
+}
+
+.max-h-28 {
+  max-height: 112px;
+}
+
+.max-h-30 {
+  max-height: 120px;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
+.text-xs {
+  font-size: 12px;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-3 {
+  flex: 3;
+}
+
+.flex-4 {
+  flex: 4;
+}
+
+.flex-2 {
+  flex: 2;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.max-content {
+  width: max-content;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-baseline {
+  align-items: baseline;
+}
+
+.my-5 {
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+.my-4 {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.my-3 {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.pt-3 {
+  padding-top: 12px;
+}
+
+.px-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.pt-2 {
+  padding-top: 8px;
+}
+
+.px-2 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.pt-1 {
+  padding-top: 4px;
+}
+
+.px-1 {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.pb-2 {
+  padding-bottom: 8px;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.shrink-0 {
+  flex-shrink: 0;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.close {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  background-image: var(--icon-close);
+  background-position: center;
+  background-size: auto 1rem;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  transition: opacity var(--transition);
+}
+
+.padding-two-column {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.muted {
+  color: #999;
+}
+
+.text-label {
+  color: #666;
+}
+
+.display-none {
+  display: none;
+}
+
+/* dark use #18232c */
+@media (prefers-color-scheme: dark) {
+  .text-label {
+    color: #9ca3af;
+  }
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.text-decoration-none:is([aria-current], :hover, :active, :focus),
+[role="link"]:is([aria-current], :hover, :active, :focus) {
+  --text-decoration: none !important;
+  background-color: transparent !important;
+}
+
+.text-overflow-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.max-w-20 {
+  max-width: 180px;
+  white-space: nowrap;
+}
+
+[data-theme="light"],
+#mount:not([data-theme="dark"]) {
+  --popup-footer-background-color: #e8eaeb;
+  --popup-content-background-color: #ffffff;
+  --popup-item-background-color: #f3f5f6;
+  --popup-item-hover-background-color: #eaeced;
+  --popup-trial-pro-background-color: #f9fbfc;
+  --service-select-content-shadow: 0px 2px 12px 0px rgba(75, 76, 77, 0.2);
+  --service-select-border-color: #fafafa;
+  --service-select-selected-background-color: #f3f5f6;
+  --download-app-background: #f3f5f6;
+  --translate-language-background-color: #f3f5f6;
+  --translate-language-icon-color: #666666;
+  --translate-language-text-color: #222222;
+  --translate-language-hover-background-color: #fdedf3;
+  --translate-language-hover-icon-color: #e95d93;
+  --error-bg: #fdedf3;
+  --error-text: #222;
+  --error-link: #ea4c89;
+}
+
+[data-theme="dark"] {
+  --popup-footer-background-color: #0d0d0d;
+  --popup-content-background-color: #191919;
+  --popup-item-background-color: #272727;
+  --popup-item-hover-background-color: #333333;
+  --popup-trial-pro-background-color: #222222;
+  --service-select-content-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.9);
+  --service-select-border-color: #2c2c2c;
+  --service-select-selected-background-color: #333333;
+  --download-app-background: #333;
+  --translate-language-background-color: #2d2e2f;
+  --translate-language-icon-color: #b3b3b3;
+  --translate-language-text-color: #b3b3b3;
+  --translate-language-hover-background-color: #a97b8c;
+  --translate-language-hover-icon-color: rgba(255, 255, 255, 0.9);
+  --error-bg: #26171d;
+  --error-text: #dbdbdb;
+  --error-link: #ea4c89;
+}
+
+#mount {
+  min-width: 268px;
+}
+
+body {
+  padding: 0;
+  margin: 0 auto;
+  min-width: 268px;
+  border-radius: 10px;
+}
+
+.popup-container {
+  font-size: 16px;
+  --font-size: 16px;
+  color: #666;
+  background-color: var(--popup-footer-background-color);
+  width: 316px;
+  min-width: 316px;
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-content {
+  background-color: var(--popup-content-background-color);
+  border-radius: 0px 0px 12px 12px;
+  padding: 16px 20px;
+}
+
+.popup-userscript-three-feature-layout {
+  background-color: var(--popup-footer-background-color);
+  width: 350px;
+  min-width: 350px;
+}
+
+.popup-userscript-three-feature-layout .popup-content {
+  padding-bottom: 20px;
+  border-radius: 0 0 12px 12px;
+}
+
+.popup-userscript-three-feature-layout .popup-footer {
+  border-radius: 0;
+}
+
+.immersive-translate-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  touch-action: none;
+}
+
+.immersive-translate-popup-wrapper {
+  background: var(--background-color);
+  border-radius: 10px;
+  border: 1px solid var(--muted-border-color);
+}
+
+.main-button {
+  font-size: 16px;
+  font-weight: 700;
+  vertical-align: middle;
+  border-radius: 12px;
+  padding: unset;
+  height: 48px;
+  line-height: 48px;
+  flex: 1;
+}
+
+select.translate-service,
+select.min-select {
+  --form-element-spacing-horizontal: 0;
+  margin-bottom: 0px;
+  max-width: unset;
+  flex: 1;
+  overflow: hidden;
+  font-size: 13px;
+  border: none;
+  border-radius: 8px;
+  padding-right: 30px;
+  padding-left: 0px;
+  background-position: center right 12px;
+  background-size: 16px auto;
+  background-image: var(--icon-xia);
+  text-overflow: ellipsis;
+  color: var(--text-gray-2);
+  background-color: transparent;
+  box-shadow: unset !important;
+  cursor: pointer;
+}
+
+select.more {
+  background-position: center right;
+  padding-right: 20px;
+}
+
+select.translate-service {
+  color: var(--text-black-2);
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSI4IiB2aWV3Qm94PSIwIDAgOCA4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIG9wYWNpdHk9IjAuOCI+PHBhdGggZD0iTTMuNDc5NzMgNi4zODY0M0wwLjcyOTI5NyAzLjMyMjE2QzAuNjE2ODggMy4xOTY5NCAwLjU1NDY5NSAzLjAzNDU5IDAuNTU0Njg4IDIuODY2M0MwLjU1NDY4OCAyLjQ4OTI0IDAuODYwNTQ3IDIuMTgzNTkgMS4yMzc4NCAyLjE4MzU5SDYuNzM4NzFDNi45MDcwNyAyLjE4MzU4IDcuMDY5NTEgMi4yNDU3MiA3LjE5NDg4IDIuMzU4MDlDNy40NzU3NCAyLjYwOTg2IDcuNDk5MTkgMy4wNDE0OCA3LjI0NzI2IDMuMzIyMTZMNC40OTY4MiA2LjM4NjQ0QzQuNDgwMzIgNi40MDQ4MiA0LjQ2MjgzIDYuNDIyMjkgNC40NDQ0NCA2LjQzODc4QzQuMTYzNTggNi42OTA1NSAzLjczMTY2IDYuNjY3MTEgMy40Nzk3MyA2LjM4NjQzWiIgZmlsbD0iIzk5OTk5OSIvPjwvZz48L3N2Zz4K");
+  background-size: 8px auto;
+}
+
+.min-select-container.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.popup-footer {
+  background-color: var(--popup-footer-background-color);
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+/* Footer 三栏布局样式 */
+.footer-link-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  min-width: 72px;
+}
+
+.footer-icon-btn {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-icon-btn svg {
+  color: #999999;
+}
+
+[data-theme="dark"] .footer-icon-btn svg {
+  color: #707070;
+}
+
+.footer-link-text {
+  font-size: 12px;
+  line-height: 18px;
+  color: #666666;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .footer-link-text {
+  color: #b3b3b3;
+}
+
+.footer-link-btn-right {
+  justify-content: flex-end;
+}
+
+.footer-center-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #999999;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.footer-center-text.is-overflowing {
+  justify-content: flex-start;
+}
+
+.footer-center-text.is-overflowing .footer-center-content {
+  animation: footer-scroll-text 12s linear infinite;
+}
+
+@keyframes footer-scroll-text {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.footer-center-content {
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-scroll-gap {
+  display: inline-block;
+  width: 80px;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .footer-center-text {
+  color: #707070;
+}
+
+.footer-text-content {
+  display: inline-block;
+}
+
+.footer-privacy-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-version-inline-text {
+  font-size: 12px;
+  color: #999999;
+  line-height: 1;
+  border-bottom: 1px solid transparent;
+}
+
+[data-theme="dark"] .footer-version-inline-text {
+  color: #707070;
+}
+
+.footer-version-inline-text:hover {
+  border-bottom-color: #999999;
+}
+
+[data-theme="dark"] .footer-version-inline-text:hover {
+  border-bottom-color: #707070;
+}
+
+.translate-language-row {
+  gap: 4px;
+}
+
+.translate-language-exchange {
+  width: 36px;
+  height: 48px;
+  background-color: var(--translate-language-background-color);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--translate-language-icon-color);
+  flex-shrink: 0;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.translate-language-exchange:hover {
+  color: var(--translate-language-hover-icon-color);
+}
+
+.translate-language-exchange-active {
+  background-color: var(--translate-language-hover-background-color);
+  color: var(--translate-language-hover-icon-color);
+}
+
+.translate-language-exchange-active:hover {
+  background-color: var(--translate-language-hover-background-color);
+  color: var(--translate-language-hover-icon-color);
+}
+
+.translate-language-arrow {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+}
+
+.translation-service-container {
+  background-color: var(--popup-item-background-color);
+  border-radius: 12px;
+}
+
+.translation-service-primary-field {
+  position: relative;
+}
+
+.translation-service-guide-hitbox {
+  position: absolute;
+  right: 46px;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: auto;
+}
+
+.min-select-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 44px;
+  background-color: var(--popup-item-background-color);
+  padding-left: 16px;
+}
+
+.min-select-container:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.min-select-container:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.min-select-container:only-child {
+  border-radius: 10px;
+}
+
+.popup-ai-context-label {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+  min-width: 60px;
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+.popup-ai-context-switch {
+  align-self: center;
+  margin: 0;
+  margin-inline-end: 12px;
+}
+
+.translate-mode {
+  width: 36px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: var(--translate-language-background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  color: var(--translate-language-text-color);
+  margin-right: 8px;
+}
+
+/* 快捷操作设置标题栏 */
+.widgets-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 4px;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.widgets-header-title {
+  color: #999999;
+}
+
+.widgets-header-action {
+  color: #999999;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.widgets-header-action:hover {
+  color: #666666;
+}
+
+.widgets-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+  gap: 8px;
+}
+
+.popup-userscript-three-feature-layout .widgets-container-compact-monkey {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 12px;
+}
+
+.widgets-container.widgets-single-item {
+  grid-template-columns: minmax(0, 1fr);
+  margin-top: 12px;
+}
+
+.widgets-container.widgets-single-item .widget-item {
+  max-width: none;
+}
+
+/* 当只有两个小组件时的样式优化 */
+.widgets-container.widgets-two-items {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.widgets-container.widgets-two-items .widget-item {
+  max-width: none;
+}
+
+.widget-item {
+  display: flex;
+  width: 100%;
+  min-height: 44px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 1px solid #eef0f2;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  padding: 0 14px;
+  text-align: left;
+  gap: 6px;
+}
+
+.widget-item.widget-item-single {
+  flex: 1 1 auto;
+  flex-direction: row;
+  justify-content: center;
+  border: 1px solid #eef0f2;
+  border-radius: 16px;
+  padding: 0 14px;
+  background: transparent;
+}
+
+.popup-userscript-three-feature-layout .widget-item-compact {
+  min-height: 60px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  padding: 8px 12px;
+}
+
+.widget-item svg {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+}
+
+.widget-icon-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--c-66, #666666);
+  font-size: 14px;
+  line-height: 21px;
+  text-align: left;
+  word-break: keep-all;
+}
+
+.popup-userscript-three-feature-layout .widget-item-compact .widget-icon-text {
+  white-space: nowrap;
+  overflow: visible;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.widget-item.widget-item-single .widget-icon-text {
+  white-space: nowrap;
+  text-align: left;
+  color: var(--c-66, #666666);
+}
+
+[data-theme="dark"] .widget-item,
+[data-theme="dark"] .widget-item.widget-item-single {
+  border-color: #2e2e2e;
+}
+
+[data-theme="dark"] .widget-icon-text,
+[data-theme="dark"] .widget-item.widget-item-single .widget-icon-text {
+  color: var(--c-66, #666666);
+}
+
+[data-theme="dark"] .more-settings-icon {
+  fill: #191919;
+}
+
+.share-button-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 2px 3px 0 8px;
+}
+
+.share-button-container svg {
+  fill: var(--text-gray-9);
+}
+
+.min-select-container:hover,
+.widget-item:hover {
+  background-color: var(--popup-item-hover-background-color);
+}
+
+.main-button:hover {
+  background-color: #f5508f;
+}
+
+.share-button-container:hover {
+  background-color: var(--popup-item-background-color);
+  border-radius: 6px;
+}
+
+.error-boundary {
+  background: #fff2f0;
+  border: 1px solid #ffccc7;
+  display: flex;
+  padding: 12px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.88);
+  word-break: break-all;
+  margin: 12px;
+  border-radius: 12px;
+  flex-direction: column;
+}
+
+.upgrade-pro {
+  border-radius: 11px;
+  background: linear-gradient(57deg, #272727 19.8%, #696969 82.2%);
+  padding: 2px 8px;
+  transform: scale(0.85);
+}
+
+.upgrade-pro span {
+  background: linear-gradient(180deg, #ffeab4 17.65%, #f8c235 85.29%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+.upgrade-pro svg {
+  margin-top: -2px;
+}
+
+.upgrade-pro:hover {
+  background: linear-gradient(57deg, #3d3d3d 19.8%, #949494 82.2%);
+}
+
+.border-bottom-radius-0 {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.trial-pro-container {
+  border-radius: 0px 0px 12px 12px;
+  background: var(--popup-trial-pro-background-color);
+  display: flex;
+  align-items: center;
+  height: 44px;
+  padding-left: 16px;
+  padding-right: 12px;
+  font-size: 12px;
+}
+
+.trial-pro-container label {
+  line-height: 13px;
+  color: var(--text-black-2);
+}
+
+.trial-pro-container img {
+  margin-left: 5px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.upgrade-pro-discount-act {
+  height: 25px;
+  display: flex;
+  padding: 0 4px;
+  align-items: center;
+  border-radius: 15px;
+  background: linear-gradient(
+    90deg,
+    #cefbfa 11.33%,
+    #d7f56f 63.75%,
+    #fccd5e 100%
+  );
+  transform: scale(0.9);
+  box-shadow: 0px 1.8px 3.6px 0px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.upgrade-pro-discount-act span {
+  font-size: 12px;
+  font-weight: 700;
+  margin-left: 4px;
+  color: #222222;
+}
+
+.upgrade-pro-discount-act:hover {
+  text-decoration: unset;
+  background: linear-gradient(
+    90deg,
+    #e2fffe 11.33%,
+    #e6ff91 63.75%,
+    #ffdf93 100%
+  );
+}
+
+.custom-select-container {
+  width: 200px;
+  position: relative;
+  flex: 1;
+}
+
+#translation-service-select {
+  padding-right: 12px;
+}
+
+.custom-select-content {
+  border-radius: 12px;
+  background: var(--popup-content-background-color);
+  box-shadow: var(--service-select-content-shadow);
+  border: 1px solid var(--service-select-border-color);
+  padding: 8px;
+  position: absolute;
+  left: -68px;
+  right: 0;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.custom-select-item.default {
+  width: 100%;
+  padding: 0;
+}
+
+.custom-select-item {
+  font-size: 14px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--text-black-2);
+  width: auto;
+  overflow: hidden;
+  height: 30px;
+  line-height: 30px;
+}
+
+.custom-select-item-img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .custom-select-item-img {
+    margin-right: 6px;
+  }
+}
+
+.custom-select-content .custom-select-item.selected,
+.custom-select-content .custom-select-item:hover {
+  background: var(--service-select-selected-background-color);
+}
+
+.custom-select-item > span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.custom-select-item-pro {
+  font-size: 12px;
+  margin-left: 6px;
+  display: flex;
+}
+
+.custom-select-item-pro img {
+  margin: 0 3px;
+  width: 20px;
+  flex-shrink: 0;
+}
+
+.service-select-inline-sponsor-container {
+  width: 50px;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.service-select-inline-sponsor-marquee {
+  min-width: max-content;
+  display: inline-flex;
+  align-items: center;
+  column-gap: 12px;
+  animation: service-select-inline-sponsor-scroll 10s linear infinite;
+}
+
+.service-select-inline-sponsor-track {
+  min-width: max-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+@keyframes service-select-inline-sponsor-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 6px));
+  }
+}
+
+.custom-select-group-header {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-gray-9);
+  padding: 8px 8px 6px;
+  margin-top: 2px;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.custom-select-group-header--recommendation {
+  color: #beb3a0;
+  font-weight: 400;
+  letter-spacing: 0;
+  padding-top: 4px;
+}
+
+.custom-select-group-header-tip {
+  display: inline-flex;
+  align-items: center;
+  color: #bcbcbc;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.more-container {
+  position: relative;
+}
+
+.new-menu-indicator {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #ef3434;
+  border-radius: 50%;
+  right: 18px;
+  top: 4px;
+}
+
+.download-app {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px;
+  background: var(--download-app-background);
+  padding: 4px 8px;
+  color: var(--text-gray-6);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Popup 动画效果 */
+@keyframes popup-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes popup-fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+}
+
+.popup-generic-content {
+  animation: popup-fade-in 0.2s ease-out;
+}
+
+.popup-generic-content.hiding {
+  animation: popup-fade-out 0.15s ease-in;
+}
+
+select.min-select {
+  --form-element-spacing-horizontal: 0;
+  max-width: 128px;
+  overflow: hidden;
+  color: var(--primary);
+  font-size: 13px;
+  border: none;
+  padding: 0;
+  padding-right: 20px;
+  text-overflow: ellipsis;
+  color: var(--color);
+}
+select.min-select-secondary {
+  color: var(--color);
+}
+select.min-select:focus {
+  outline: none;
+  border: none;
+  --box-shadow: none;
+}
+
+select.min-select-left {
+  padding-right: 0px;
+  /* padding-left: 24px; */
+  /* background-position: center left 0; */
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+select.transform-padding-left {
+  padding-left: 12px;
+  transform: translateX(-12px);
+  background-position: center right 0px;
+}
+
+select.text-gray-6 {
+  color: var(--text-gray-6);
+}
+
+/* dark use black, for windows */
+@media (prefers-color-scheme: dark) {
+  select.translate-service option,
+  select.min-select option {
+    background-color: #666666;
+  }
+}
+
+select.min-select-no-arrow {
+  background-image: none;
+  padding-right: 0;
+}
+
+.activity-tips {
+  border-radius: 8px;
+  padding: 0px 8px;
+  height: 26px;
+  background: linear-gradient(
+    83deg,
+    #faccde -0.87%,
+    #fce7ef 43.13%,
+    #fbd6e4 72.08%,
+    #ffb3d1 96.34%
+  );
+  color: #333;
+  cursor: pointer;
+  gap: 4px;
+  font-size: 12px;
+}
+
+.activity-tips-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.countdown-container {
+  min-width: 50px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.01em;
+}
+
+.activity-tips-text {
+  font-weight: 600;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 非会员升级提示 */
+.upgrade-tips {
+  padding: 0px 6px 0px 4px;
+  height: 18px;
+  color: #ea4c89;
+  cursor: pointer;
+  gap: 6px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.upgrade-tips svg:first-child {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  filter: drop-shadow(0px 4px 4px rgba(236, 76, 140, 0.2));
+}
+
+.upgrade-tips-text {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.upgrade-tips-switch {
+  position: relative;
+  width: 30px;
+  height: 18px;
+  border-radius: 24px;
+  background: #cccccc;
+  flex-shrink: 0;
+}
+
+.upgrade-tips-switch-thumb {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+/* 抽屉组件样式 */
+.drawer-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+
+.drawer-overlay.drawer-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.drawer-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ffffff;
+  border-radius: 12px 12px 0 0;
+  z-index: 101;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-visible .drawer-panel {
+  transform: translateY(0);
+}
+
+[data-theme="dark"] .drawer-panel {
+  background: #222222;
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  flex-shrink: 0;
+}
+
+.drawer-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333333;
+}
+
+[data-theme="dark"] .drawer-title {
+  color: #e0e0e0;
+}
+
+.drawer-close {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999999;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.drawer-close:hover {
+  background-color: #f3f5f6;
+}
+
+[data-theme="dark"] .drawer-close:hover {
+  background-color: #333333;
+}
+
+.drawer-body {
+  padding: 16px 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.drawer-body.drawer-body-hover {
+  padding: 0 20px 20px 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.drawer-body.drawer-body-more-settings {
+  padding-top: 0;
+}
+
+.drawer-footer {
+  padding: 12px 20px;
+  border-top: 1px solid #eef0f2;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+[data-theme="dark"] .drawer-footer {
+  border-top: 1px solid #2e2e2e;
+}
+
+.drawer-footer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.drawer-footer-actions-single {
+  justify-content: center;
+}
+
+.drawer-footer-text {
+  font-size: 12px;
+  cursor: pointer;
+  color: #999999;
+  text-decoration: none;
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.drawer-footer-actions-single .drawer-footer-text {
+  flex: 0 1 auto;
+  max-width: 100%;
+}
+
+.drawer-footer-text:hover {
+  text-decoration: underline;
+}
+
+/* 抽屉内容区域样式 */
+.drawer-section {
+  margin-bottom: 16px;
+}
+
+.drawer-section:last-child {
+  margin-bottom: 0;
+}
+
+.drawer-section-highlight {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+[data-theme="dark"] .drawer-section-highlight {
+  background-color: #2a2a2a;
+}
+
+.drawer-section-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #666666;
+  margin-bottom: 12px;
+}
+
+[data-theme="dark"] .drawer-section-title {
+  color: #999999;
+}
+
+.drawer-section-divider {
+  height: 1px;
+  background-color: #eef0f2;
+  margin: 16px 0;
+}
+
+/* ========== 通用抽屉组件样式 ========== */
+.popup-drawer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.popup-drawer-card {
+  background: #f3f5f6;
+  border-radius: 12px;
+  padding: 12px 12px 16px;
+}
+
+[data-theme="dark"] .popup-drawer-card {
+  background: #2a2a2a;
+}
+
+.popup-drawer-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 21px;
+  gap: 12px;
+}
+
+.popup-drawer-card-header input[type="checkbox"][role="switch"] {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.popup-drawer-card-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #222222;
+  line-height: 21px;
+}
+
+[data-theme="dark"] .popup-drawer-card-title {
+  color: #e0e0e0;
+}
+
+.popup-drawer-card-divider {
+  height: 1px;
+  width: calc(100% + 24px);
+  background-color: #ffffff;
+  margin: 12px -12px 16px;
+}
+
+[data-theme="dark"] .popup-drawer-card-divider {
+  background-color: #333333;
+}
+
+.popup-drawer-demo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.popup-drawer-demo-region-fixed {
+  height: 51px;
+  max-height: 51px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-region-min {
+  min-height: 51px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-selection {
+  width: 100%;
+  min-width: 0;
+  flex-wrap: nowrap;
+}
+
+.popup-drawer-demo-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-plus,
+.popup-drawer-demo-equal {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  color: #333333;
+}
+
+[data-theme="dark"] .popup-drawer-demo-plus,
+[data-theme="dark"] .popup-drawer-demo-equal {
+  color: #e0e0e0;
+}
+
+.popup-drawer-demo-logo {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-logo img {
+  width: 28px;
+  height: 28px;
+  display: block;
+  filter: drop-shadow(0 4px 12px rgba(255, 166, 201, 0.5));
+}
+
+.popup-drawer-demo-result {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #333333;
+}
+
+.popup-drawer-demo-result-ellipsis {
+  min-width: 0;
+  max-width: calc(100% - 72px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .popup-drawer-demo-result {
+  color: #e0e0e0;
+}
+
+.popup-drawer-trigger {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.popup-drawer-trigger-label {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #999999;
+  padding-left: 4px;
+}
+
+.popup-drawer-trigger-options {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.popup-drawer-trigger-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #333333;
+  background: #ffffff;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.popup-drawer-trigger-option-disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.popup-drawer-trigger-option:not(.popup-drawer-trigger-option-selected):hover {
+  border-color: #d0d3d6;
+}
+
+.popup-drawer-trigger-option-selected {
+  border: 0.5px solid #ea4c89;
+  background: #fdedf3;
+  box-shadow: 0px 4px 12px rgba(255, 166, 201, 0.5);
+}
+
+[data-theme="dark"] .popup-drawer-trigger-option {
+  background: #1f1f1f;
+  border-color: #333333;
+  color: #e0e0e0;
+}
+
+[data-theme="dark"]
+  .popup-drawer-trigger-option:not(
+    .popup-drawer-trigger-option-selected
+  ):hover {
+  border-color: #444444;
+}
+
+[data-theme="dark"] .popup-drawer-trigger-option-selected {
+  background: rgba(233, 76, 137, 0.2);
+  border-color: #ea4c89;
+  box-shadow: 0 4px 12px 0 rgba(255, 166, 201, 0.3);
+}
+
+.popup-drawer-trigger-option-with-icon {
+  gap: 8px;
+}
+
+/* ========== 通用抽屉演示区域样式 ========== */
+/* 键帽样式 */
+.popup-drawer-demo-keycap {
+  min-width: 72px;
+  padding: 9px;
+  height: auto;
+  box-sizing: border-box;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  color: #ffffff;
+  background:
+    radial-gradient(
+      60px 36px at 85% 100%,
+      rgba(208, 208, 208, 0.2),
+      rgba(255, 255, 255, 0)
+    ),
+    radial-gradient(72px 36px at 50% 0%, #101010 0%, #242424 100%);
+  box-shadow:
+    2px 2px 3.5px rgba(0, 0, 0, 0.4),
+    inset 0.5px 0.7px 0.4px rgba(255, 255, 255, 0.5),
+    inset -0.5px -0.5px 0.2px rgba(0, 0, 0, 0.6);
+}
+
+.popup-drawer-demo-keycap-text {
+  max-width: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 小圆点样式 */
+.popup-drawer-demo-mini-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ea4c89;
+  flex-shrink: 0;
+  align-self: center;
+  box-shadow: 0 4px 12px rgba(255, 166, 201, 0.5);
+}
+
+[data-theme="dark"] .drawer-section-divider {
+  background-color: #333333;
+}
+
+/* 开关行 */
+.drawer-switch-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.drawer-switch-row.drawer-row-border {
+  border-bottom: 1px solid #eef0f2;
+  margin-bottom: 8px;
+  padding-bottom: 12px;
+}
+
+[data-theme="dark"] .drawer-switch-row.drawer-row-border {
+  border-bottom-color: #333333;
+}
+
+.drawer-switch-label {
+  font-size: 14px;
+  color: #222222;
+}
+
+[data-theme="dark"] .drawer-switch-label {
+  color: #e0e0e0;
+}
+
+/* 链接行 */
+.drawer-link-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  cursor: pointer;
+  border-bottom: 1px solid #eef0f2;
+  font-size: 14px;
+  color: #222222;
+}
+
+.drawer-link-row:last-child {
+  border-bottom: none;
+}
+
+[data-theme="dark"] .drawer-link-row {
+  border-bottom-color: #333333;
+  color: #e0e0e0;
+}
+
+.drawer-link-row:hover {
+  color: #ea4c89;
+}
+
+/* 演示区域 */
+.drawer-demo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 0;
+}
+
+.drawer-demo-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+}
+
+[data-theme="dark"] .drawer-demo-icon {
+  background-color: #333333;
+  border-color: #444444;
+}
+
+.drawer-demo-plus,
+.drawer-demo-equal {
+  font-size: 16px;
+  color: #999999;
+}
+
+.drawer-demo-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.drawer-demo-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.drawer-demo-result {
+  font-size: 14px;
+  color: #222222;
+  padding: 8px 12px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+}
+
+[data-theme="dark"] .drawer-demo-result {
+  background-color: #333333;
+  border-color: #444444;
+  color: #e0e0e0;
+}
+
+/* 触发方式选项 */
+.drawer-options {
+  display: flex;
+  gap: 8px;
+}
+
+.drawer-options-wrap {
+  flex-wrap: wrap;
+}
+
+.drawer-option {
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #666666;
+  background-color: #f3f5f6;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+[data-theme="dark"] .drawer-option {
+  background-color: #333333;
+  color: #b3b3b3;
+}
+
+.drawer-option:hover {
+  background-color: #eaeced;
+}
+
+[data-theme="dark"] .drawer-option:hover {
+  background-color: #3a3a3a;
+}
+
+.drawer-option-selected {
+  border-color: #ea4c89;
+  background-color: #fdedf3;
+  color: #ea4c89;
+  box-shadow: 0px 4px 12px rgba(255, 166, 201, 0.5);
+}
+
+[data-theme="dark"] .drawer-option-selected {
+  background-color: rgba(234, 76, 137, 0.2);
+}
+
+.drawer-body.drawer-body-selection {
+  padding: 0 20px 20px 20px;
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+
+/* ========== 更多设置抽屉样式 ========== */
+.more-settings-drawer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.more-settings-quick-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.more-settings-feature-card {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 40px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: #f3f5f6;
+  transition: background-color 0.2s ease;
+}
+
+.more-settings-feature-card:hover {
+  background-color: #e8eaec;
+}
+
+.more-settings-feature-card:active {
+  background-color: #dde0e2;
+}
+
+.more-settings-feature-card-label {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #666666;
+  white-space: nowrap;
+}
+
+.more-settings-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.more-settings-switch-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 21px;
+  gap: 12px;
+}
+
+.more-settings-switch-label {
+  flex: 1;
+  min-width: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #222222;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.more-settings-switch-row input[type="checkbox"] {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+[data-theme="dark"] .more-settings-switch-label {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .more-settings-feature-card {
+  background-color: #2a2a2a;
+}
+
+[data-theme="dark"] .more-settings-feature-card:hover {
+  background-color: #333333;
+}
+
+[data-theme="dark"] .more-settings-feature-card:active {
+  background-color: #3a3a3a;
+}
+
+[data-theme="dark"] .more-settings-feature-card-label {
+  color: #e0e0e0;
+}
+
+/* 动作按钮样式 */
+.more-settings-action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 12px;
+  color: #222222;
+  background-color: #f3f5f6;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.more-settings-action-button:hover {
+  background-color: #e8eaec;
+}
+
+.more-settings-action-button:active {
+  background-color: #dde0e2;
+}
+
+.more-settings-action-button-label {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  color: inherit;
+  text-align: center;
+}
+
+[data-theme="dark"] .more-settings-action-button {
+  color: #e0e0e0;
+  background-color: #2a2a2a;
+}
+
+[data-theme="dark"] .more-settings-action-button:hover {
+  background-color: #333333;
+}
+
+[data-theme="dark"] .more-settings-action-button:active {
+  background-color: #3a3a3a;
+}
+
+[data-theme="dark"] .more-settings-action-button-label {
+  color: #e0e0e0;
+}
+
+/* 错误消息组件样式 */
+.error-message-container {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 16px;
+  margin-top: 6px;
+  margin-bottom: -14px;
+  border: 1px solid #f53f3f;
+  border-radius: 12px;
+  background-color: var(--error-bg);
+}
+
+.error-message-icon-wrapper {
+  width: 21px;
+  height: 21px;
+  min-width: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4px;
+}
+
+.error-message-icon {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #f53f3f;
+}
+
+.error-message-text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: var(--error-text);
+}
+
+.error-message-text a {
+  color: var(--error-link);
+  text-decoration: underline;
+}
+
+.ad-banner-container {
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+
+html {
+  font-size: 17px;
+}
+
+@media print {
+  .imt-fb-container {
+    display: none !important;
+  }
+}
+
+#mount {
+  position: absolute;
+  display: none;
+  min-width: 250px;
+  height: auto;
+  --font-size: 17px;
+  font-size: 17px;
+}
+
+/* float-ball */
+.imt-fb-container {
+  position: fixed;
+  padding: 0;
+  top: 335px;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  display: none;
+  direction: ltr;
+  background-color: transparent !important;
+}
+
+.imt-fb-container:hover .imt-manga-button {
+  opacity: 1;
+}
+
+.imt-fb-container.left {
+  align-items: flex-start;
+  left: 0;
+}
+
+.imt-fb-container.right {
+  align-items: flex-end;
+  right: 0;
+}
+
+.imt-fb-btn {
+  cursor: pointer;
+  background: var(--float-ball-more-button-background-color);
+  height: 36px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+}
+
+.imt-fb-btn.left {
+  border-top-right-radius: 36px;
+  border-bottom-right-radius: 36px;
+  padding-left: 3px;
+}
+
+.imt-fb-btn.right {
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+  padding-right: 3px;
+}
+
+.imt-fb-btn.mini.left {
+  transform: translateX(-22px);
+}
+
+.imt-fb-btn.mini.right {
+  transform: translateX(22px);
+}
+
+.imt-fb-btn.mini.active {
+  transform: translateX(0);
+}
+
+.imt-fb-btn div {
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+.imt-fb-btn .imt-fb-hit-area {
+  position: absolute;
+  top: 0;
+  height: 36px;
+  bottom: -6px;
+  left: -6px;
+  right: -6px;
+  background: transparent;
+}
+
+.imt-fb-btn.mini.right .imt-fb-hit-area {
+  left: -10px;
+}
+
+.imt-fb-btn.mini.left .imt-fb-hit-area {
+  right: -10px;
+}
+
+.imt-fb-btn.left div {
+  border-top-right-radius: 34px;
+  border-bottom-right-radius: 34px;
+  justify-content: flex-end;
+}
+
+.imt-fb-btn.right div {
+  border-top-left-radius: 34px;
+  border-bottom-left-radius: 34px;
+}
+
+.imt-fb-logo-img {
+  width: 20px;
+  height: 20px;
+  margin: 0 10px;
+}
+
+.imt-fb-logo-img-big-bg {
+  width: 28px;
+  height: 28px;
+  margin: 0;
+  background-color: #ed6d8f;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.imt-float-ball-translated {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  bottom: 4px;
+  right: 4px;
+}
+
+.btn-animate {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform ease-out 250ms;
+  transition: -webkit-transform ease-out 250ms;
+  transition: transform ease-out 250ms;
+  transition: transform ease-out 250ms, -webkit-transform ease-out 250ms;
+}
+
+.imt-fb-setting-btn {
+  margin-right: 18px;
+  width: 28px;
+  height: 28px;
+}
+
+.immersive-translate-popup-wrapper {
+  background: var(--background-color);
+  border-radius: 20px;
+  box-shadow: 2px 10px 24px 0px #0e121614;
+  border: none;
+}
+
+.popup-container {
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-content {
+  border-radius: 20px 20px 12px 12px;
+}
+.popup-footer {
+  border-radius: 20px;
+}
+
+.popup-userscript-three-feature-layout {
+  border-radius: 20px;
+}
+
+.popup-userscript-three-feature-layout .popup-content {
+  border-radius: 20px 20px 12px 12px;
+}
+
+.popup-userscript-three-feature-layout .popup-footer {
+  border-radius: 0;
+}
+
+.imt-fb-close-button {
+  cursor: pointer;
+  position: absolute;
+  left: -10px;
+  bottom: -20px;
+}
+.imt-fb-container.left .imt-fb-close-button {
+  left: auto;
+  right: -10px;
+}
+
+.imt-fb-close-content {
+  padding: 22px;
+  width: 320px;
+  pointer-events: all;
+}
+
+.imt-fb-close-title {
+  font-weight: 500;
+  color: var(--text-black-2);
+}
+
+.imt-fb-close-radio-content {
+  background-color: var(--background-light-green);
+  padding: 8px 20px;
+}
+
+.imt-fb-radio-sel,
+.imt-fb-radio-nor {
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.imt-fb-radio-sel {
+  border: 2px solid var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imt-fb-radio-sel div {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: var(--primary);
+}
+
+.imt-fb-radio-nor {
+  border: 2px solid var(--input-border-strong);
+}
+
+.imt-fb-primary-btn {
+  background-color: var(--primary);
+  width: 72px;
+  height: 32px;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 32px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.imt-fb-default-btn {
+  border: 1px solid var(--primary);
+  width: 72px;
+  height: 32px;
+  border-radius: 8px;
+  color: var(--primary);
+  line-height: 32px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.imt-fb-guide-container {
+  width: 312px;
+  transform: translateY(-45%);
+}
+
+.imt-fb-guide-bg {
+  position: absolute;
+  left: 30px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  height: 100%;
+  width: 90%;
+}
+
+.imt-fb-guide-bg.left {
+  transform: scaleX(-1);
+}
+
+.imt-fb-guide-content {
+  margin: 16px -30px 80px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imt-fb-guide-content.left {
+  margin: 16px 21px 60px 32px;
+}
+
+.imt-fb-guide-img {
+  width: 220px;
+  height: 112px;
+}
+
+.imt-fb-guide-message {
+  font-size: 14px;
+  line-height: 28px;
+  color: #333333;
+  white-space: pre-wrap;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.imt-manga-guide-message {
+  font-size: 16px;
+  line-height: 24px;
+  color: #333333;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.imt-fb-guide-button {
+  margin-top: 16px;
+  line-height: 40px;
+  height: 40px;
+  padding: 0 20px;
+  width: unset;
+}
+
+.imt-fb-side {
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: all;
+  position: relative;
+}
+
+.imt-fb-side {
+  margin: 10px 0;
+}
+
+.imt-fb-side::before,
+.imt-manga-button::before,
+.imt-fb-round-button::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  left: 2px;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color 0.15s ease;
+}
+
+.imt-fb-side:hover::before,
+.imt-manga-button:hover::before,
+.imt-fb-round-button:hover::before {
+  background-color: var(--float-ball-more-button-hover-color);
+}
+
+.imt-fb-new-badge {
+  width: 26px;
+  height: 14px;
+  padding: 3px;
+  background-color: #f53f3f;
+  border-radius: 4px;
+  position: absolute;
+  top: -5px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imt-fb-side * {
+  pointer-events: all;
+}
+
+.imt-fb-pin-icon {
+  position: absolute;
+  left: -16px;
+  bottom: -12px;
+  opacity: 0;
+  cursor: pointer;
+}
+.imt-fb-container.left .imt-fb-pin-icon {
+  left: auto;
+  right: -16px;
+}
+
+.imt-fb-side:hover .imt-fb-pin-icon {
+  opacity: 1;
+}
+
+.imt-fb-more-button {
+  width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+/* Sheet.css */
+.immersive-translate-sheet {
+  position: fixed;
+  transform: translateY(100%);
+  /* Start off screen */
+  left: 0;
+  right: 0;
+  background-color: var(--background-color);
+  transition: transform 0.3s ease-out;
+  /* Smooth slide transition */
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+  /* Ensure it's above other content */
+  bottom: 0;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  overflow: hidden;
+}
+
+.immersive-translate-sheet.visible {
+  transform: translateY(0);
+}
+
+.immersive-translate-sheet-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.immersive-translate-sheet-backdrop.visible {
+  opacity: 1;
+}
+
+.popup-container-sheet {
+  max-width: 100vw;
+  width: 100vw;
+}
+
+.imt-no-events svg * {
+  pointer-events: none !important;
+}
+
+.imt-manga-button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: all;
+  margin: 0 0 10px 0;
+  background-color: var(--float-ball-more-button-background-color);
+  border-radius: 50%;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.08);
+  right: 8px;
+}
+
+.imt-manga-feedback {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.imt-fb-round-button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: var(--float-ball-more-button-background-color);
+  border-radius: 50%;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.imt-fb-round-button > svg {
+  z-index: 1;
+}
+
+.imt-fb-upgrade-button {
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.imt-fb-power-user-card {
+  position: absolute;
+  bottom: -130px;
+  width: 266px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 2px 10px 24px 0 rgba(14, 18, 22, 0.08);
+  border: 1px solid rgba(250, 251, 251, 1);
+  pointer-events: all;
+  z-index: 2;
+  background: linear-gradient(172deg, rgba(255, 255, 255, 0.30) 4.36%, #FFF 35.98%), linear-gradient(0deg, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.40) 100%), radial-gradient(39.95% 47.41% at -0.53% 55.22%, #E0C4F7 0%, rgba(224, 196, 247, 0.00) 100%), radial-gradient(56.37% 54.27% at 86.17% 0%, #E0C4F6 0%, rgba(224, 196, 246, 0.00) 100%), radial-gradient(42.04% 37.43% at -0.53% 3.75%, #AED5FF 0%, rgba(174, 213, 255, 0.00) 100%), radial-gradient(66.88% 52.09% at 36.81% 19.55%, #757ED8 0%, #6B6AC0 100%), #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imt-fb-power-user-card.right {
+  right: 60px;
+}
+
+.imt-fb-power-user-card.right::after {
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: 130px;
+  border-width: 10px 0 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent #fff;
+  filter: drop-shadow(2px 0 2px rgba(14, 18, 22, 0.06));
+}
+
+.imt-fb-power-user-card.left {
+  left: 60px;
+}
+
+.imt-fb-power-user-card.left::after {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 130px;
+  border-width: 10px 10px 10px 0;
+  border-style: solid;
+  border-color: transparent #fff transparent transparent;
+  filter: drop-shadow(-2px 0 2px rgba(14, 18, 22, 0.06));
+}
+
+.imt-fb-power-user-card-banner {
+  display: block;
+  width: 128px;
+  height: auto;
+  margin-top: 8px;
+  border-radius: 8px 8px 0 0;
+}
+
+.imt-fb-power-user-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 16px 24px 0;
+  box-sizing: border-box;
+}
+
+.imt-fb-power-user-card-title {
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+}
+
+.imt-fb-power-user-card-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.imt-fb-power-user-card-body {
+  padding: 12px 24px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.imt-fb-power-user-card-desc {
+  color: #333;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+}
+
+.imt-fb-power-user-card-primary {
+  margin-top: 16px;
+  height: 37px;
+  border-radius: 8px;
+  background: linear-gradient(110deg, #F497BC 17.37%, #EC4C8C 89.68%);
+  color: var(--ZX-FFFFFF, #FFF);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px; /* 150% */
+  display: flex;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  flex: 1 0 0;
+}
+
+.imt-manga-translated {
+  position: absolute;
+  left: 24px;
+  top: 20px;
+}
+
+.imt-float-ball-loading {
+  animation: imt-loading-animation 0.6s infinite linear !important;
+}
+
+.imt-manga-guide-bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  transform: translateY(-50%);
+}
+.imt-manga-guide-content {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  margin: 0 40px 0;
+}
+
+.img-manga-guide-button {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.img-manga-close {
+  position: absolute;
+  bottom: -200px;
+  width: 32px;
+  height: 32px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  cursor: pointer;
+}
+
+.imt-fb-container.dragging .imt-manga-button,
+.imt-fb-container.dragging .btn-animate:not(.imt-fb-btn) {
+  display: none !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn {
+  border-radius: 50% !important;
+  width: 36px !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  cursor: move !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn div {
+  border-radius: 50% !important;
+  width: 36px !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn.left,
+.imt-fb-container.dragging .imt-fb-btn.right {
+  border-radius: 50% !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn.left div,
+.imt-fb-container.dragging .imt-fb-btn.right div {
+  border-radius: 50% !important;
+}
+
+.imt-fb-container.dragging .imt-fb-logo-img {
+  margin: 0 !important;
+}
+
+.imt-fb-container.dragging .imt-float-ball-translated {
+  right: 2px !important;
+  bottom: 2px !important;
+}
+
+@-webkit-keyframes imt-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes imt-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.imt-fb-icon {
+  color: #666666;
+}
+
+[data-theme="dark"] .imt-fb-icon {
+  color: #b3b3b3;
+}
+
+[data-theme="light"] .imt-fb-icon {
+  color: #666666;
+}
+
+/* 悬浮球设置弹窗样式 */
+.imt-fb-setting-wrapper {
+  border-radius: 12px;
+  box-shadow: 2px 10px 24px 0px rgba(0, 0, 0, 0.06);
+}
+
+.imt-fb-setting-content {
+  padding: 16px;
+  width: 350px;
+  pointer-events: all;
+}
+
+.imt-fb-setting-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--text-black-2);
+}
+
+.imt-fb-setting-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px 0;
+}
+
+.imt-fb-preview-wrapper {
+  display: flex;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.imt-fb-preview-item {
+  width: 99px;
+  height: 57px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+}
+
+.imt-fb-preview-item.light {
+  background-color: #f3f5f6;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.imt-fb-preview-item.dark {
+  background-color: #444;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.imt-fb-preview-ball {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.imt-fb-preview-ball.light {
+  background-color: #fff;
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+}
+
+.imt-fb-preview-ball.dark {
+  background-color: #111;
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+}
+
+.imt-fb-preview-ball.full {
+  width: 41px;
+  justify-content: center;
+}
+
+.imt-fb-preview-ball.mini {
+  width: 41px;
+  justify-content: center;
+  transform: translateX(21px);
+}
+
+.imt-fb-preview-ball .imt-fb-preview-logo {
+  flex-shrink: 0;
+}
+
+/* 选项区域 */
+.imt-fb-setting-options {
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.imt-fb-setting-option-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4px;
+}
+
+.imt-fb-setting-option-label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: var(--text-black-2);
+}
+
+/* Toggle 开关样式 */
+.imt-fb-toggle {
+  width: 30px;
+  height: 18px;
+  background-color: var(--switch-background-color);
+  border-radius: 24px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.imt-fb-toggle.checked {
+  background-color: var(--primary);
+}
+
+.imt-fb-toggle.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.imt-fb-toggle-thumb {
+  width: 14px;
+  height: 14px;
+  background-color: var(--switch-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s ease;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+}
+
+.imt-fb-toggle.checked .imt-fb-toggle-thumb {
+  transform: translateX(12px);
+}
+
+.imt-fb-setting-hide-options {
+  background-color: var(--background-light-green);
+  padding: 8px 20px;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.imt-fb-setting-save-btn {
+  background-color: var(--primary);
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 45px;
+  height: 45px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: opacity 0.2s ease;
+}
+
+.imt-fb-setting-save-btn:hover {
+  opacity: 0.9;
+}
+
+.imt-fb-setting-save-btn:active {
+  opacity: 0.8;
+}
+</style><div id="mount" style="display: block;"><div hidden="" id="immersive-translate-popup-overlay" class="immersive-translate-popup-overlay" style="z-index: 2147483647; background-color: rgba(0, 0, 0, 0.5);"><div class="immersive-translate-popup-wrapper" style="position: fixed; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);"></div></div></div></template></div></html>

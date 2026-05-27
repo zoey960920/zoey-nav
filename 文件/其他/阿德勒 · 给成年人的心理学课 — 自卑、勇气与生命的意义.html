@@ -1,0 +1,6513 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)https://adler.wwei.ai/ -->
+<html lang="zh-CN" data-immersive-translate-page-theme="light"><plasmo-csui><template shadowrootmode="open"><div id="plasmo-shadow-container" style="z-index: 2147483647; position: relative;"><div id="plasmo-overlay-0" class="plasmo-csui-container" style="display: flex; position: absolute; top: 0px; left: 0px;"></div></div></template></plasmo-csui><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>阿德勒 · 给成年人的心理学课 — 自卑、勇气与生命的意义</title>
+<meta name="description" content="基于阿德勒《超越自卑》《洞察人性》《理解生命》《性格的塑造》四册原典的成年人心理学教育演讲报告。42 章节，原文摘录 + 深度解读 + 行动号召。">
+<style>
+  :root {
+    --bg-dark: #14202b;
+    --bg-deep: #0d161e;
+    --bg-light: #f5efe6;
+    --bg-card: #1d2b38;
+    --ink-dark: #1a2332;
+    --ink-soft: #2c2c3e;
+    --cream: #f5efe6;
+    --cream-soft: #ebe2d2;
+    --gold: #c9a76a;
+    --gold-bright: #e0bd7a;
+    --teal: #4a7c7e;
+    --rust: #b86a4a;
+    --muted: #8a9099;
+    --line: rgba(245,239,230,0.14);
+    --line-dark: rgba(26,35,50,0.12);
+    --serif: "Noto Serif SC", "Source Han Serif SC", "Songti SC", "PingFang SC", serif;
+    --sans: "Noto Sans SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--bg-light);
+    color: var(--ink-soft);
+    line-height: 1.75;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--gold); color: var(--ink-dark); }
+
+  /* ============ Page Framework ============ */
+  .page {
+    min-height: 100vh;
+    padding: 90px 7vw 80px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 1px solid var(--line-dark);
+  }
+  .page.dark {
+    background: var(--bg-dark);
+    color: var(--cream);
+    border-bottom-color: var(--line);
+  }
+  .page.deep {
+    background: var(--bg-deep);
+    color: var(--cream);
+    border-bottom-color: var(--line);
+  }
+  .page.cream { background: var(--bg-light); color: var(--ink-soft); }
+  .page-num {
+    position: absolute;
+    top: 32px;
+    right: 7vw;
+    font-family: var(--serif);
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  .page.dark .page-num, .page.deep .page-num { color: rgba(245,239,230,0.42); }
+  .page-tag {
+    position: absolute;
+    top: 32px;
+    left: 7vw;
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    font-weight: 500;
+  }
+  .container {
+    width: 100%;
+    max-width: 920px;
+    margin: 0 auto;
+  }
+  .container-wide { max-width: 1080px; }
+
+  /* ============ Typography ============ */
+  h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; line-height: 1.25; }
+  h1 { font-size: clamp(36px, 5.5vw, 68px); margin-bottom: 28px; letter-spacing: -0.01em; }
+  h2 { font-size: clamp(28px, 3.6vw, 44px); margin-bottom: 24px; letter-spacing: -0.01em; }
+  h3 { font-size: clamp(20px, 2.2vw, 26px); margin-bottom: 16px; }
+  h4 { font-size: 18px; margin-bottom: 10px; }
+  p { margin-bottom: 18px; font-size: clamp(15px, 1.15vw, 17px); }
+  .lead { font-size: clamp(18px, 1.5vw, 22px); line-height: 1.7; color: var(--ink-soft); font-weight: 300; }
+  .dark .lead, .deep .lead { color: var(--cream-soft); }
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 0.32em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    font-weight: 500;
+  }
+  .divider {
+    width: 60px; height: 2px; background: var(--gold);
+    margin: 28px 0;
+  }
+  .divider.center { margin: 28px auto; }
+
+  /* ============ Components ============ */
+  .quote-block {
+    background: linear-gradient(135deg, rgba(201,167,106,0.08), rgba(201,167,106,0.03));
+    border-left: 3px solid var(--gold);
+    padding: 24px 28px;
+    margin: 24px 0;
+    border-radius: 0 8px 8px 0;
+    position: relative;
+  }
+  .dark .quote-block, .deep .quote-block {
+    background: linear-gradient(135deg, rgba(201,167,106,0.12), rgba(201,167,106,0.04));
+  }
+  .quote-block::before {
+    content: "「";
+    font-family: var(--serif);
+    font-size: 48px;
+    color: var(--gold);
+    position: absolute;
+    top: -8px; left: 12px;
+    opacity: 0.4;
+    line-height: 1;
+  }
+  .quote-block .label {
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .quote-block p {
+    font-family: var(--serif);
+    font-size: clamp(16px, 1.25vw, 19px);
+    line-height: 1.85;
+    margin-bottom: 8px;
+    font-style: italic;
+  }
+  .quote-block cite {
+    display: block;
+    font-style: normal;
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 8px;
+    letter-spacing: 0.08em;
+  }
+
+  .analysis {
+    margin: 28px 0;
+  }
+  .analysis .head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .analysis .badge {
+    background: var(--ink-dark);
+    color: var(--cream);
+    padding: 5px 12px;
+    border-radius: 100px;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    font-weight: 600;
+  }
+  .dark .analysis .badge, .deep .analysis .badge {
+    background: var(--cream);
+    color: var(--ink-dark);
+  }
+  .analysis .head h4 { margin: 0; }
+
+  .action {
+    background: rgba(74,124,126,0.08);
+    border: 1px solid rgba(74,124,126,0.25);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin: 28px 0;
+  }
+  .dark .action, .deep .action {
+    background: rgba(224,189,122,0.06);
+    border-color: rgba(224,189,122,0.18);
+  }
+  .action .head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .action .icon {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--teal);
+    color: var(--cream);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .dark .action .icon, .deep .action .icon { background: var(--gold); color: var(--ink-dark); }
+  .action h4 {
+    margin: 0;
+    color: var(--teal);
+    font-size: 16px;
+    letter-spacing: 0.12em;
+  }
+  .dark .action h4, .deep .action h4 { color: var(--gold-bright); }
+  .action ol, .action ul { padding-left: 24px; margin-top: 8px; }
+  .action li { margin-bottom: 8px; }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin: 32px 0;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin: 32px 0;
+  }
+  .grid-4 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin: 28px 0;
+  }
+  @media (min-width: 900px) {
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+  }
+  @media (max-width: 700px) {
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    .page { padding: 70px 6vw 60px; }
+    .page-num, .page-tag { left: 6vw; right: 6vw; }
+  }
+
+  .card {
+    background: rgba(255,255,255,0.6);
+    border: 1px solid var(--line-dark);
+    border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .dark .card, .deep .card {
+    background: var(--bg-card);
+    border-color: var(--line);
+  }
+  .card h4 {
+    color: var(--ink-dark);
+    margin-bottom: 10px;
+  }
+  .dark .card h4, .deep .card h4 { color: var(--gold-bright); }
+  .card .num {
+    font-family: var(--serif);
+    font-size: 48px;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .card .meta {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+  .card p { font-size: 15px; margin: 0; line-height: 1.7; }
+
+  .nav-pill {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    background: rgba(20,32,43,0.85);
+    backdrop-filter: blur(10px);
+    color: var(--cream);
+    padding: 8px 14px;
+    border-radius: 100px;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    font-family: var(--serif);
+    pointer-events: none;
+  }
+  @media (max-width: 700px) { .nav-pill { display: none; } }
+
+  .table-of-contents {
+    columns: 2;
+    column-gap: 40px;
+    margin: 28px 0;
+  }
+  .table-of-contents .toc-item {
+    break-inside: avoid;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 6px 0;
+    border-bottom: 1px dotted var(--line);
+    margin-bottom: 4px;
+  }
+  .dark .table-of-contents .toc-item, .deep .table-of-contents .toc-item {
+    border-bottom-color: rgba(245,239,230,0.18);
+  }
+  .toc-num {
+    font-family: var(--serif);
+    color: var(--gold);
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 24px;
+  }
+  .toc-title { font-size: 14px; }
+  .toc-group {
+    font-family: var(--serif);
+    color: var(--gold);
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 14px 0 4px;
+    border-bottom: 1px solid var(--gold);
+    margin-bottom: 8px;
+    break-after: avoid;
+  }
+
+  /* ============ Cover ============ */
+  .cover {
+    background: radial-gradient(ellipse at 30% 30%, #1f3349 0%, #0b141d 70%);
+    color: var(--cream);
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+    min-height: 100vh;
+  }
+  .cover .stars {
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 20% 30%, rgba(245,239,230,0.4), transparent),
+      radial-gradient(1px 1px at 80% 50%, rgba(245,239,230,0.3), transparent),
+      radial-gradient(1px 1px at 50% 80%, rgba(245,239,230,0.5), transparent),
+      radial-gradient(2px 2px at 15% 70%, rgba(201,167,106,0.4), transparent),
+      radial-gradient(1px 1px at 70% 20%, rgba(245,239,230,0.35), transparent),
+      radial-gradient(1px 1px at 90% 85%, rgba(201,167,106,0.3), transparent);
+    pointer-events: none;
+  }
+  .cover-content {
+    position: relative;
+    z-index: 2;
+    max-width: 920px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .cover h1 {
+    font-size: clamp(44px, 7vw, 96px);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
+  }
+  .cover h1 .accent { color: var(--gold-bright); display: block; font-style: italic; font-weight: 400; }
+  .cover .sub {
+    font-size: clamp(16px, 1.3vw, 19px);
+    color: var(--cream-soft);
+    max-width: 680px;
+    margin-bottom: 48px;
+    line-height: 1.8;
+  }
+  .cover-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 36px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(245,239,230,0.18);
+    font-size: 13px;
+    letter-spacing: 0.16em;
+  }
+  .cover-meta div span { display: block; color: var(--gold); font-size: 11px; letter-spacing: 0.28em; margin-bottom: 6px; }
+
+  /* ============ SVG Diagram base ============ */
+  .diagram {
+    margin: 32px auto;
+    width: 100%;
+    max-width: 720px;
+    display: block;
+  }
+  .diagram-wide { max-width: 100%; }
+
+  /* ============ Numbered list special ============ */
+  .step-list { counter-reset: step; list-style: none; padding: 0; margin: 24px 0; }
+  .step-list li {
+    counter-increment: step;
+    position: relative;
+    padding: 16px 16px 16px 64px;
+    margin-bottom: 14px;
+    background: rgba(245,239,230,0.4);
+    border-radius: 10px;
+    border-left: 3px solid var(--gold);
+  }
+  .dark .step-list li, .deep .step-list li {
+    background: rgba(245,239,230,0.04);
+  }
+  .step-list li::before {
+    content: counter(step, decimal-leading-zero);
+    position: absolute;
+    left: 16px;
+    top: 16px;
+    font-family: var(--serif);
+    font-size: 20px;
+    color: var(--gold);
+    font-weight: 700;
+  }
+  .step-list li strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 15px;
+    color: var(--ink-dark);
+  }
+  .dark .step-list li strong, .deep .step-list li strong { color: var(--cream); }
+  .step-list li span { font-size: 14px; color: var(--ink-soft); line-height: 1.7; }
+  .dark .step-list li span, .deep .step-list li span { color: var(--cream-soft); }
+
+  /* ============ vs / compare table ============ */
+  .vs-table {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 0;
+    margin: 28px 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--line-dark);
+  }
+  .dark .vs-table, .deep .vs-table { border-color: var(--line); }
+  .vs-col {
+    padding: 22px 24px;
+    background: rgba(245,239,230,0.5);
+  }
+  .dark .vs-col, .deep .vs-col { background: rgba(245,239,230,0.04); }
+  .vs-col h5 {
+    font-family: var(--serif);
+    font-size: 17px;
+    margin-bottom: 12px;
+    color: var(--ink-dark);
+  }
+  .dark .vs-col h5, .deep .vs-col h5 { color: var(--cream); }
+  .vs-col.bad h5 { color: var(--rust); }
+  .vs-col.good h5 { color: var(--teal); }
+  .dark .vs-col.bad h5, .deep .vs-col.bad h5 { color: #e58a6b; }
+  .dark .vs-col.good h5, .deep .vs-col.good h5 { color: #7ab5b7; }
+  .vs-col ul { list-style: none; padding: 0; }
+  .vs-col li { padding: 6px 0; font-size: 14px; line-height: 1.6; position: relative; padding-left: 18px; }
+  .vs-col.bad li::before { content: "✕"; position: absolute; left: 0; color: var(--rust); font-weight: 700; }
+  .vs-col.good li::before { content: "✓"; position: absolute; left: 0; color: var(--teal); font-weight: 700; }
+  .vs-divider {
+    width: 60px;
+    background: var(--ink-dark);
+    color: var(--cream);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif);
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    writing-mode: vertical-rl;
+  }
+  .dark .vs-divider, .deep .vs-divider { background: var(--gold); color: var(--ink-dark); }
+  @media (max-width: 700px) {
+    .vs-table { grid-template-columns: 1fr; }
+    .vs-divider { writing-mode: horizontal-tb; width: 100%; padding: 10px; }
+  }
+
+  /* ============ Closing big text ============ */
+  .closing-big {
+    font-family: var(--serif);
+    font-size: clamp(28px, 4vw, 48px);
+    line-height: 1.5;
+    text-align: center;
+    margin: 40px 0;
+  }
+  .closing-big .accent { color: var(--gold); }
+  .signature {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 18px;
+    text-align: center;
+    color: var(--muted);
+    margin-top: 40px;
+  }
+
+  /* ============ Checklist ============ */
+  .checklist { list-style: none; padding: 0; }
+  .checklist li {
+    padding: 14px 18px;
+    margin-bottom: 10px;
+    background: rgba(245,239,230,0.4);
+    border-radius: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 15px;
+  }
+  .dark .checklist li, .deep .checklist li { background: rgba(245,239,230,0.05); }
+  .checklist .day {
+    flex-shrink: 0;
+    width: 56px;
+    font-family: var(--serif);
+    color: var(--gold);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+  }
+  .checklist .body { flex: 1; }
+  .checklist .body strong { display: block; margin-bottom: 4px; font-size: 16px; color: var(--ink-dark); }
+  .dark .checklist .body strong, .deep .checklist .body strong { color: var(--cream); }
+  .checklist .body span { color: var(--ink-soft); font-size: 14px; line-height: 1.6; }
+  .dark .checklist .body span, .deep .checklist .body span { color: var(--cream-soft); }
+
+  /* ============ Mini icons ============ */
+  .icon-row { display: flex; gap: 20px; flex-wrap: wrap; margin: 24px 0; }
+  .icon-item { flex: 1; min-width: 200px; padding: 16px; background: rgba(245,239,230,0.4); border-radius: 10px; }
+  .dark .icon-item, .deep .icon-item { background: rgba(245,239,230,0.04); }
+
+  /* ============ Smooth fade ============ */
+  .fade-in { animation: fadeIn 0.8s ease both; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* ============ Image layers ============ */
+  /* L1: full-bleed hero background on a .page */
+  .page.with-hero {
+    background-color: #0d161e;
+    color: var(--cream);
+    background-image: linear-gradient(rgba(13,22,30,0.78), rgba(13,22,30,0.92)), var(--hero-img);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+  .page.with-hero .page-num, .page.with-hero .page-tag { color: var(--gold-bright); }
+  .page.with-hero .quote-block {
+    background: linear-gradient(135deg, rgba(13,22,30,0.7), rgba(13,22,30,0.55));
+    backdrop-filter: blur(6px);
+    border-left-color: var(--gold);
+  }
+  .page.with-hero .card {
+    background: rgba(13,22,30,0.65);
+    border-color: rgba(245,239,230,0.16);
+    backdrop-filter: blur(6px);
+  }
+  .page.with-hero .action {
+    background: rgba(13,22,30,0.55);
+    border-color: rgba(224,189,122,0.32);
+    backdrop-filter: blur(6px);
+  }
+  @media (max-width: 700px) {
+    .page.with-hero { background-attachment: scroll; }
+  }
+
+  /* L2: feature strip at top of a content section */
+  .feature-strip {
+    width: calc(100% + 14vw);
+    margin-left: -7vw;
+    margin-right: -7vw;
+    margin-top: -40px;
+    margin-bottom: 36px;
+    height: 220px;
+    background-color: #0d161e;
+    background-image: linear-gradient(180deg, rgba(13,22,30,0) 0%, rgba(13,22,30,0.15) 60%, rgba(245,239,230,0.92) 100%), var(--strip-img);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+  }
+  .page.dark .feature-strip, .page.deep .feature-strip {
+    background-image: linear-gradient(180deg, rgba(13,22,30,0) 0%, rgba(13,22,30,0.3) 60%, rgba(20,32,43,0.95) 100%), var(--strip-img);
+  }
+  .feature-strip::after {
+    content: attr(data-caption);
+    position: absolute;
+    bottom: 18px;
+    right: 22px;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: rgba(245,239,230,0.65);
+    font-family: var(--serif);
+    text-transform: uppercase;
+    pointer-events: none;
+  }
+  @media (max-width: 700px) {
+    .feature-strip {
+      width: 100vw;
+      max-width: 100vw;
+      margin-left: 50%;
+      margin-right: 0;
+      transform: translateX(-50%);
+      height: 160px;
+      margin-top: -30px;
+      margin-bottom: 28px;
+    }
+  }
+
+  /* L3: image-quote — quote block over an image */
+  .image-quote {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    margin: 36px 0;
+    min-height: 280px;
+    background-color: #0d161e;
+    background-image: linear-gradient(135deg, rgba(13,22,30,0.85) 0%, rgba(13,22,30,0.65) 60%, rgba(13,22,30,0.45) 100%), var(--quote-img);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 48px 44px;
+  }
+  .image-quote .inner {
+    max-width: 640px;
+    color: var(--cream);
+  }
+  .image-quote .label {
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    color: var(--gold-bright);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+  .image-quote p {
+    font-family: var(--serif);
+    font-size: clamp(20px, 2vw, 28px);
+    line-height: 1.65;
+    font-style: italic;
+    margin: 0;
+  }
+  .image-quote p::before {
+    content: "「";
+    font-size: 36px;
+    color: var(--gold);
+    margin-right: 6px;
+    opacity: 0.65;
+  }
+  @media (max-width: 700px) {
+    .image-quote { padding: 36px 26px; min-height: 240px; }
+  }
+
+  /* Cover with hero photo override */
+  .cover.with-hero {
+    background: var(--bg-deep);
+    background-image: linear-gradient(135deg, rgba(13,22,30,0.85) 0%, rgba(13,22,30,0.55) 50%, rgba(20,32,43,0.92) 100%), var(--hero-img);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  .cover.with-hero .stars { opacity: 0.5; }
+  @media (max-width: 700px) {
+    .cover.with-hero { background-attachment: scroll; }
+  }
+
+  /* ============ Responsive HTML diagram system ============ */
+  .dgm {
+    margin: 36px 0;
+    width: 100%;
+  }
+  .dgm-cap {
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    margin-bottom: 18px;
+    font-family: var(--serif);
+  }
+  .dark .dgm-cap, .deep .dgm-cap, .with-hero .dgm-cap { color: rgba(245,239,230,0.55); }
+  .dgm-row {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: nowrap;
+  }
+  .dgm-node {
+    flex: 1;
+    min-width: 0;
+    border-radius: 14px;
+    padding: 22px 18px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--bg-card);
+    color: var(--cream);
+    border: 1px solid var(--line);
+  }
+  .dgm-node .t {
+    font-family: var(--serif);
+    font-size: clamp(17px, 2.2vw, 21px);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .dgm-node .en {
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    color: var(--gold);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  .dgm-node .s {
+    font-size: clamp(13px, 1.5vw, 15px);
+    line-height: 1.65;
+    opacity: 0.92;
+  }
+  .dgm-node .s + .s { margin-top: 4px; }
+  .dgm-node.teal { background: #3c6a6c; border-color: rgba(122,181,183,0.4); }
+  .dgm-node.rust { background: #a85e44; border-color: rgba(229,138,107,0.4); }
+  .dgm-node.gold { background: linear-gradient(135deg,#c9a76a,#b08d4f); border-color: rgba(224,189,122,0.5); color: var(--ink-dark); }
+  .dgm-node.gold .en { color: var(--ink-dark); opacity: 0.6; }
+  .dgm-node.cream { background: var(--bg-light); color: var(--ink-soft); border-color: var(--line-dark); }
+  .dgm-node.cream .t { color: var(--ink-dark); }
+  .dgm-node.ghost { background: transparent; border: 1.5px dashed var(--gold); }
+  .dgm-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 24px;
+    flex-shrink: 0;
+    width: 26px;
+  }
+  .dgm-arrow::before { content: "→"; }
+  .dgm-arrow.dgm-boundary { width: 54px; }
+  .dgm-arrow.dgm-boundary::before { content: none; }
+  .dgm-arrow.dgm-boundary span {
+    border: 1.5px dashed var(--gold);
+    color: var(--gold);
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    font-family: var(--serif);
+  }
+  /* center hub layout (4-book map / triangle) */
+  .dgm-hub {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    position: relative;
+  }
+  .dgm-hub-center {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 20px;
+    border: 2px solid var(--gold);
+    border-radius: 100px;
+    margin: 6px auto;
+    max-width: 360px;
+    font-family: var(--serif);
+  }
+  .dgm-hub-center .t { font-size: 20px; font-weight: 600; color: var(--gold-bright); }
+  .dgm-hub-center .s { font-size: 12px; letter-spacing: 0.18em; opacity: 0.7; margin-top: 4px; }
+  /* split: one to two */
+  .dgm-split { display: flex; flex-direction: column; align-items: center; gap: 0; }
+  .dgm-split .top { max-width: 320px; }
+  .dgm-split .branch-line {
+    height: 28px; width: 2px; background: var(--gold); margin: 0;
+  }
+  .dgm-split .branches {
+    display: flex; gap: 16px; width: 100%; margin-top: 0;
+  }
+  .dgm-split .branches .dgm-node { flex: 1; }
+  .dgm-foot {
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 16px;
+    letter-spacing: 0.12em;
+  }
+  .dark .dgm-foot, .deep .dgm-foot, .with-hero .dgm-foot { color: rgba(245,239,230,0.5); }
+
+  /* MOBILE: stack everything vertically */
+  @media (max-width: 720px) {
+    .dgm-row { flex-direction: column; gap: 0; }
+    .dgm-arrow { width: 100%; height: 30px; transform: rotate(90deg); }
+    .dgm-arrow.dgm-boundary { transform: none; height: auto; padding: 8px 0; }
+    .dgm-node { padding: 18px 16px; }
+    .dgm-hub { grid-template-columns: 1fr; }
+    .dgm-hub-center { order: -1; max-width: 100%; }
+    .dgm-split .branches { flex-direction: column; gap: 12px; }
+  }
+
+  /* SVG diagrams: true full-bleed on mobile (padding-independent, no overflow) */
+  @media (max-width: 700px) {
+    svg.diagram {
+      width: 100vw;
+      max-width: 100vw;
+      margin-left: 50%;
+      margin-right: 0;
+      transform: translateX(-50%);
+    }
+  }
+
+  /* ============ Consolidated mobile reading polish ============ */
+  @media (max-width: 700px) {
+    body { font-size: 16px; -webkit-text-size-adjust: 100%; }
+    .page { padding: 64px 5.5vw 56px; }
+    .page-num, .page-tag { top: 22px; font-size: 11px; }
+    .page-tag { letter-spacing: 0.16em; }
+
+    h1 { font-size: clamp(30px, 8.4vw, 40px); margin-bottom: 20px; line-height: 1.18; }
+    h2 { font-size: clamp(24px, 6.8vw, 32px); margin-bottom: 18px; line-height: 1.22; }
+    h3 { font-size: clamp(19px, 5.2vw, 23px); }
+    p, .lead { font-size: 16px; line-height: 1.78; }
+    .lead { font-size: 17px; }
+    .eyebrow { font-size: 11px; letter-spacing: 0.22em; margin-bottom: 14px; }
+
+    /* cover */
+    .cover h1 { font-size: clamp(32px, 9vw, 46px); margin-bottom: 22px; }
+    .cover h1 .accent { font-size: 0.62em; }
+    .cover .sub { font-size: 15px; margin-bottom: 32px; }
+    .cover-meta { gap: 18px 28px; padding-top: 24px; }
+    .cover-meta div { font-size: 12px; }
+
+    /* quote / analysis / action — tighten padding */
+    .quote-block { padding: 20px 18px 18px; }
+    .quote-block p { font-size: 16px; line-height: 1.8; }
+    .quote-block::before { font-size: 38px; top: -6px; left: 8px; }
+    .action, .analysis { margin: 22px 0; }
+    .action { padding: 20px 18px; }
+    .action ol, .action ul { padding-left: 20px; }
+    .analysis .head, .action .head { flex-wrap: wrap; gap: 8px; }
+
+    /* step-list & checklist — reduce big left indent */
+    .step-list li { padding: 14px 14px 14px 50px; }
+    .step-list li::before { left: 14px; top: 14px; font-size: 17px; }
+    .checklist li { flex-direction: column; gap: 6px; padding: 14px 16px; }
+    .checklist .day { width: auto; font-size: 13px; }
+
+    /* image-quote */
+    .image-quote { min-height: 200px; padding: 30px 22px; border-radius: 12px; }
+    .image-quote p { font-size: 19px; line-height: 1.6; }
+
+    /* closing big text */
+    .closing-big { font-size: clamp(22px, 6.4vw, 30px); line-height: 1.5; margin: 28px 0; }
+    .cover .closing-big { padding: 28px 18px !important; }
+
+    /* hero pages: scrolling background instead of fixed (perf + iOS) */
+    .page.with-hero, .cover.with-hero { background-attachment: scroll; }
+
+    /* feature strip — shorter, less negative-margin math drift */
+    .feature-strip { height: 150px; }
+
+    /* card num smaller */
+    .card .num { font-size: 38px; }
+
+    /* diagram captions/foot a touch bigger for mobile */
+    .dgm-cap { font-size: 13px; }
+    .dgm-foot { font-size: 13px; }
+    .dgm-node .t { font-size: 19px; }
+    .dgm-node .s { font-size: 14.5px; }
+
+    /* nav pill stays hidden (already) ; give a thin top progress bar */
+    #readProgress { display: block; }
+  }
+
+  /* very small phones */
+  @media (max-width: 380px) {
+    .page { padding: 60px 5vw 52px; }
+    .cover h1 { font-size: 30px; }
+    h2 { font-size: 23px; }
+    .vs-divider { font-size: 12px; }
+  }
+
+  /* reading progress bar */
+  #readProgress {
+    position: fixed;
+    top: 0; left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--gold), var(--gold-bright));
+    z-index: 200;
+    transition: width 0.1s linear;
+    display: none;
+  }
+  @media (max-width: 700px) { #readProgress { display: block; } }
+
+  /* Attribution footer for images */
+  .image-credit {
+    text-align: center;
+    padding: 28px 7vw;
+    background: var(--bg-deep);
+    color: rgba(245,239,230,0.45);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    font-family: var(--serif);
+    border-top: 1px solid rgba(245,239,230,0.08);
+  }
+</style>
+<script src="./阿德勒 · 给成年人的心理学课 — 自卑、勇气与生命的意义_files/widget.js" defer="" data-wwei-injected="1"></script><style type="text/css">
+  @font-face {
+    font-family: CuboxInter;
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("chrome-extension://bflmgpechpeohjfomgfdkkfcbhfcjohl/fonts/InterVariable.woff2") format("woff2");
+  }
+  #cubox-react-root {
+    z-index: 999999999999999999999;
+  }
+  </style><link rel="stylesheet" href="chrome-extension://bflmgpechpeohjfomgfdkkfcbhfcjohl/css/globalHighlightStyles.css"></head>
+<body>
+<div id="readProgress" style="width: 0%;"></div>
+<div class="nav-pill" id="navPill">01 · 封面</div>
+<!-- ============== 01 COVER ============== -->
+<section class="page cover with-hero" style="--hero-img:url(https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1800&amp;q=80&amp;auto=format&amp;fit=crop)" data-page="01" data-title="封面">
+  <div class="stars"></div>
+  <div class="cover-content">
+    <div class="eyebrow">Adler · Individual Psychology · 2026</div>
+    <h1>给成年人的<br>心理学课<span class="accent">— 自卑、勇气与生命的意义</span></h1>
+    <p class="sub">一份以阿尔弗雷德·阿德勒《超越自卑》《洞察人性》《理解生命》《性格的塑造》四部经典为内核的成人疗愈讲稿。<br>共 42 章，每章三段式：原文短摘 · 深度解读 · 行动号召。</p>
+    <div class="cover-meta">
+      <div><span>本源</span>阿德勒四册原典</div>
+      <div><span>体例</span>摘录 + 解读 + 行动</div>
+      <div><span>受众</span>渴望走出内耗的成年人</div>
+      <div><span>篇幅</span>42 章 · 约 90 分钟阅读</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 02 关于阿德勒 ============== -->
+<section class="page cream" data-page="02" data-title="阿德勒其人">
+  <div class="page-tag">PROLOGUE · 02</div>
+  <div class="page-num">CH. 02 / 42</div>
+  <div class="container">
+    <div class="feature-strip" style="--strip-img:url(https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?w=1400&amp;q=70&amp;auto=format&amp;fit=crop)" data-caption="CH. 02"></div>
+    <div class="eyebrow">先认识这个人</div>
+    <h2>一个被时代低估的心理学家</h2>
+    <div class="divider"></div>
+    <p class="lead">阿尔弗雷德·阿德勒（Alfred Adler, 1870–1937），奥地利精神病学家，"个体心理学（Individual Psychology）"的创立者。曾与弗洛伊德、荣格并称二十世纪心理学三巨头，却长期被前两位的光芒遮住。</p>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="meta">关键背景</div>
+        <h4>童年的失败者</h4>
+        <p>阿德勒幼年患佝偻病，4 岁才会走路，5 岁因肺炎几乎丧命。他从小活在哥哥的优秀阴影里。后来他说，正是"自卑"把他推进了医学院、推进了对人性的研究——他本人就是"自卑→超越"最朴素的样本。</p>
+      </div>
+      <div class="card">
+        <div class="meta">学术分裂</div>
+        <h4>与弗洛伊德决裂</h4>
+        <p>1902 年加入弗洛伊德圈子，1911 年因学术分歧决裂。弗洛伊德把人解释为"过去与本能的奴隶"，阿德勒说不：人是有目的的、可以创造自己生活方式的主体。这一刀划下了现代积极心理学的源头。</p>
+      </div>
+      <div class="card">
+        <div class="meta">实践方向</div>
+        <h4>走进社区与学校</h4>
+        <p>1920 年代他在维也纳办了 30 多家儿童咨询中心，是把心理学从象牙塔搬进社会的第一人。他相信治疗不只在诊所里——一个会合作的家庭、一所健康的学校，本身就是预防性的疗愈。</p>
+      </div>
+      <div class="card">
+        <div class="meta">现代影响</div>
+        <h4>看不见的精神祖父</h4>
+        <p>马斯洛说："阿德勒比弗洛伊德更对。"罗杰斯、维克多·弗兰克、积极心理学派、近年风靡的《被讨厌的勇气》，骨子里都是阿德勒的孩子。他不是一个流派——他是被消化进现代心理学血液里的一种基础思维。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 03 四本书地图 ============== -->
+<section class="page dark" data-page="03" data-title="四册地图">
+  <div class="page-tag">PROLOGUE · 03</div>
+  <div class="page-num">CH. 03 / 42</div>
+  <div class="container">
+    <div class="feature-strip" style="--strip-img:url(https://images.unsplash.com/photo-1455218873509-8097305ee378?w=1400&amp;q=70&amp;auto=format&amp;fit=crop)" data-caption="CH. 03"></div>
+    <div class="eyebrow">本次内核</div>
+    <h2>四本书，一张地图</h2>
+    <div class="divider"></div>
+    <p class="lead">这套书不是孤立的四本，而是阿德勒思想的四个切面。把它们摆在一起，才能看清他的完整体系。</p>
+
+    <div class="dgm">
+      <div class="dgm-cap">四册 · 一个体系</div>
+      <div class="dgm-hub">
+        <div class="dgm-node">
+          <div class="en">Book 01 · 1931</div>
+          <div class="t">超越自卑</div>
+          <div class="s">生命意义 · 自卑情结 · 优越追求</div>
+        </div>
+        <div class="dgm-node">
+          <div class="en">Book 02 · 1927</div>
+          <div class="t">洞察人性</div>
+          <div class="s">人格 · 性格特征 · 情绪的功能</div>
+        </div>
+        <div class="dgm-hub-center">
+          <div class="t">个体心理学</div>
+          <div class="s">Individual Psychology</div>
+        </div>
+        <div class="dgm-node">
+          <div class="en">Book 03 · 1929</div>
+          <div class="t">理解生命</div>
+          <div class="s">早期记忆 · 梦 · 社会兴趣</div>
+        </div>
+        <div class="dgm-node">
+          <div class="en">Book 04 · 1930</div>
+          <div class="t">性格的塑造</div>
+          <div class="s">儿童教养 · 生活方式 · 合作训练</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h4>横轴 — 时间</h4>
+        <p>1927 → 1931，阿德勒思想从"分析"走向"行动"。前期重在拆解人为什么会病；后期重在告诉人怎么活才不病。</p>
+      </div>
+      <div class="card">
+        <h4>纵轴 — 对象</h4>
+        <p>上半是"人是什么"——人格、自卑、追求；下半是"人怎么被造出来又怎么改造自己"——童年、合作、生活方式。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 04 阅读这份报告的方式 ============== -->
+<section class="page cream" data-page="04" data-title="如何阅读">
+  <div class="page-tag">PROLOGUE · 04</div>
+  <div class="page-num">CH. 04 / 42</div>
+  <div class="container">
+    <div class="feature-strip" style="--strip-img:url(https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=1400&amp;q=70&amp;auto=format&amp;fit=crop)" data-caption="CH. 04"></div>
+    <div class="eyebrow">使用说明</div>
+    <h2>这份报告该怎么读</h2>
+    <div class="divider"></div>
+    <p class="lead">不是一本传统的"书摘"，更不是干瘪的论文。每一章都按三段式构造，像三层楼梯——从原典走到你自己。</p>
+
+    <div class="grid-3" style="margin-top:48px">
+      <div class="card" style="border-top:4px solid #c9a76a;">
+        <div class="num">01</div>
+        <div class="meta">第一层 / 原文</div>
+        <h4>原文摘录</h4>
+        <p>从四本书里抽出最锐利、最具代表性的句段。阿德勒的文字朴素，但每一句都在锤击你某个被回避的现实。</p>
+      </div>
+      <div class="card" style="border-top:4px solid #4a7c7e;">
+        <div class="num">02</div>
+        <div class="meta">第二层 / 解读</div>
+        <h4>深度解读</h4>
+        <p>把摘录翻译成"今天的你能听懂的话"。结合现代心理学、职场、亲密关系的语境，告诉你阿德勒到底在说什么，又有哪些坑要警惕。</p>
+      </div>
+      <div class="card" style="border-top:4px solid #b86a4a;">
+        <div class="num">03</div>
+        <div class="meta">第三层 / 行动</div>
+        <h4>行动号召</h4>
+        <p>每章给出一个具体、可在 24 小时内开始执行的练习。<strong>看书不练，等于没看</strong>——这是阿德勒最讨厌的事。</p>
+      </div>
+    </div>
+
+    <div class="quote-block" style="margin-top:48px">
+      <div class="label">编者按</div>
+      <p>"阿德勒不喜欢做你的解药，他想做你的拐杖——直到你能自己走。"</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 05 个体心理学是什么 ============== -->
+<section class="page with-hero" style="--hero-img:url(https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=1800&amp;q=80&amp;auto=format&amp;fit=crop)" data-page="05" data-title="个体心理学">
+  <div class="page-tag">PART I · 基础 · 05</div>
+  <div class="page-num">CH. 05 / 42</div>
+  <div class="container">
+    <div class="eyebrow">第一部分 · 基础概念</div>
+    <h2>什么是"个体心理学"</h2>
+    <div class="divider"></div>
+
+    <div class="quote-block">
+      <div class="label">摘录 · 《理解生命》</div>
+      <p>"Individual"——这个词的本意是"不可分割的"。我们不能把人切成本能、意识、潜意识三块去研究，必须把他作为一个不可分割的整体来理解。</p>
+      <cite>—— 阿德勒，意译</cite>
+    </div>
+
+    <div class="analysis">
+      <div class="head">
+        <span class="badge">解读</span>
+        <h4>"个体"不是孤立的人，是"不可分割的人"</h4>
+      </div>
+      <p>中文翻译里"个体心理学"特别容易被误读为"研究单个人的心理学"。其实阿德勒用 <em>Individual</em> 这个词，强调的是 <strong>in-dividual = 不可分割（in + divide）</strong>。</p>
+      <p>这是他和弗洛伊德最根本的分歧。弗洛伊德把人切开，挑出本我、自我、超我互相打架；阿德勒说，一个人的所有想法、情绪、症状、梦——都是为同一个目的服务的<strong>统一行为</strong>。你看一个人焦虑、失眠、拖延、对伴侣发火，看似四件事，背后可能是同一个意图：避免自己暴露在"我做不到"的真相里。</p>
+      <p>这个翻面带来一个革命性的结论：你不能只治"症状"，你必须搞清楚这个症状在你的整体生活里"在替你完成什么任务"。</p>
+    </div>
+
+    <div class="action">
+      <div class="head">
+        <span class="icon">!</span>
+        <h4>行动号召 · 你的整体性自检</h4>
+      </div>
+      <ol>
+        <li>挑你最近最困扰你的一个"症状"——可以是失眠、刷手机、对某人发火、不敢辞职。</li>
+        <li>问自己：<strong>这件事正在帮我"避开"什么？</strong>（不是"它从哪儿来"，而是"它在为我达成什么"）</li>
+        <li>把答案写在纸上，不要美化。这就是阿德勒所说的"目的"——你今晚要做的事，就是把它看清楚。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 06 目的论 vs 因果论 ============== -->
+<section class="page cream" data-page="06" data-title="目的论">
+  <div class="page-tag">PART I · 基础 · 06</div>
+  <div class="page-num">CH. 06 / 42</div>
+  <div class="container">
+    <div class="feature-strip" style="--strip-img:url(https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1400&amp;q=70&amp;auto=format&amp;fit=crop)" data-caption="CH. 06"></div>
+    <div class="eyebrow">阿德勒的第一把刀</div>
+    <h2>目的论 — 你不是被过去推着，是被未来拽着</h2>
+    <div class="divider"></div>
+
+    <div class="quote-block">
+      <div class="label">摘录 · 《超越自卑》</div>
+      <p>我们感受到的并非事情本身，而是它们经过诠释后的意义。意义的领域，即充满谬误的领域。</p>
+    </div>
+
+    <div class="analysis">
+      <div class="head">
+        <span class="badge">解读</span>
+        <h4>同一段过去，可以推出两个完全相反的"我"</h4>
+      </div>
+      <p>弗洛伊德的因果论说："你今天恐惧亲密，<strong>是因为</strong>你妈小时候冷落你。"——过去是因，现在是果，你是被决定的。</p>
+      <p>阿德勒反着来。他说同样的童年经历，有人长大后是温暖的伴侣，有人是孤独的暴君。决定性变量不是经历本身，而是这个人 <strong>用经历去解释什么</strong>、<strong>为自己今天的选择准备了什么借口</strong>。</p>
+      <p>所以你说"我恐惧亲密是因为我妈"——阿德勒会冷冷地反问你：<em>你是先决定了不要走进亲密关系，才去翻找了一个童年理由，对吗？</em></p>
+    </div>
+
+    <div class="dgm">
+      <div class="dgm-cap">两套时间观</div>
+      <div style="margin-bottom:20px">
+        <div style="font-family:var(--serif);font-size:16px;font-weight:600;color:var(--rust);margin-bottom:10px">因果论 · 弗洛伊德</div>
+        <div class="dgm-row">
+          <div class="dgm-node rust"><div class="t">过去</div><div class="s">原因</div></div>
+          <div class="dgm-arrow"></div>
+          <div class="dgm-node" style="background:rgba(184,106,74,0.35);color:var(--ink-dark)"><div class="t" style="color:var(--ink-dark)">现在</div><div class="s">结果 · 你是被动的</div></div>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:var(--serif);font-size:16px;font-weight:600;color:var(--teal);margin-bottom:10px">目的论 · 阿德勒</div>
+        <div class="dgm-row">
+          <div class="dgm-node" style="background:rgba(74,124,126,0.35);color:var(--ink-dark)"><div class="t" style="color:var(--ink-dark)">现在</div><div class="s">选择</div></div>
+          <div class="dgm-arrow"></div>
+          <div class="dgm-node teal"><div class="t">目的</div><div class="s">朝向 · 你是主动的</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="action">
+      <div class="head">
+        <span class="icon">!</span>
+        <h4>行动号召 · 翻转一次叙事</h4>
+      </div>
+      <ol>
+        <li>写下一句你常说的"<strong>因为... 所以我...</strong>"句式。比如"因为我学历不好，所以我不敢谈升职。"</li>
+        <li>把它倒过来重写："<strong>我选择不谈升职，于是我把 学历不好 当作理由。</strong>"</li>
+        <li>留意身体反应。如果你觉得被冒犯——恭喜，这句话戳中了。这就是阿德勒想让你看见的东西。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 07 生命的意义 ============== -->
+<section class="page cream" data-page="07" data-title="生命的意义">
+  <div class="page-tag">PART I · 基础 · 07</div>
+  <div class="page-num">CH. 07 / 42</div>
+  <div class="container">
+    <div class="feature-strip" style="--strip-img:url(https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1400&amp;q=70&amp;auto=format&amp;fit=crop)" data-caption="CH. 07"></div>
+    <div class="eyebrow">追问的开端</div>
+    <h2>"活着是为了什么？"——只有挫败的人才会问</h2>
+    <div class="divider"></div>
+
+    <div class="quote-block">
+      <div class="label">摘录 · 《超越自卑》第一章</div>
+      <p>每个人在行动中都会不可避免地遇到并要回答这些问题。如果我们抛开一个人的语言，只观察其举止，就会发现，他有自己的"生活的意义"。</p>
+    </div>
+
+    <div class="analysis">
+      <div class="head">
+        <span class="badge">解读</span>
+        <h4>你嘴上的人生观和你脚下的人生观，往往不是同一个</h4>
+      </div>
+      <p>阿德勒说得很狠：人只有在受挫之后，才会开口问"活着的意义"。顺风的时候没人琢磨这个。但是注意——<em>嘴上不问，不等于心里没有答案。</em></p>
+      <p>每个人都有一个"<strong>无言的生活意义</strong>"——它写在你的日程表里、你的消费记录里、你回避或追逐的事物里、你早上醒来的第一个念头里。你嘴上说"我要自由"，但你 7 年没换工作，没创业、没出走、没换城市——那你身体里的真实意义其实是"我要安全"。</p>
+      <p>阿德勒认为：真正的成长第一步，不是去问"我应该追求什么意义"，而是先去<strong>勘察你已经在追求的意义</strong>。你自己已经在投票了，只是你不愿意承认那张票投给了谁。</p>
+    </div>
+
+    <div class="action">
+      <div class="head">
+        <span class="icon">!</span>
+        <h4>行动号召 · 给你的"沉默的意义"画像</h4>
+      </div>
+      <ol>
+        <li>打开手机的<strong>屏幕使用时间</strong>，前 5 个 App 是什么？</li>
+        <li>打开<strong>银行账单</strong>，过去 3 个月你花得最多的 3 个类目？</li>
+        <li>回顾<strong>过去 30 天</strong>，你拒绝过最重要的事是什么？接受过最重要的事是什么？</li>
+        <li>把这三组数据拼一起，给自己写一句话："我嘴上说要 ___，但我的时间和钱说，我真正要的是 ___。"</li>
+      </ol>
+      <p style="margin-top:14px;font-size:14px;color:var(--muted)">这句话不需要给任何人看。但它是后面 35 章所有练习的起点。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 08 生活的三大任务 ============== -->
+<section class="page dark" data-page="08" data-title="三大任务">
+  <div class="page-tag">PART I · 基础 · 08</div>
+  <div class="page-num">CH. 08 / 42</div>
+  <div class="container">
+    <div class="feature-strip" style="--strip-img:url(https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?w=1400&amp;q=70&amp;auto=format&amp;fit=crop)" data-caption="CH. 08"></div>
+    <div class="eyebrow">阿德勒最实用的一张图</div>
+    <h2>生活的三大任务 — 工作、社交、爱情</h2>
+    <div class="divider"></div>
+
+    <div class="quote-block">
+      <div class="label">摘录 · 《超越自卑》</div>
+      <p>个体心理学研究发现，生活中的所有问题都可以归为三类：职业、社会和性。每个人在应对这三个问题时，都会反映出对生命意义的解读。</p>
+    </div>
+
+    <div class="dgm">
+      <div class="dgm-cap">生命意义 = 三大任务应对方式的总和</div>
+      <div class="dgm-row">
+        <div class="dgm-node">
+          <div class="en">Work</div>
+          <div class="t">工作</div>
+          <div class="s">"我能否在世界上谋一席之地"</div>
+        </div>
+        <div class="dgm-node">
+          <div class="en">Friends</div>
+          <div class="t">社交</div>
+          <div class="s">"我是否归属于人群"</div>
+        </div>
+        <div class="dgm-node">
+          <div class="en">Love</div>
+          <div class="t">爱情</div>
+          <div class="s">"我能否与一个人交付彼此"</div>
+        </div>
+      </div>
+      <div class="dgm-foot">三条边任意一条塌陷，整张人生答卷都会失衡</div>
+    </div>
+
+    <div class="analysis">
+      <div class="head">
+        <span class="badge">解读</span>
+        <h4>哪一条腿是瘸的，整张桌子都歪</h4>
+      </div>
+      <p>阿德勒的理论模型极其朴素：人一辈子无非要回答三个问题——<strong>怎么挣口饭吃（工作），怎么跟人相处（社交），怎么和一个人共同生活（爱情）</strong>。每个人对这三个问题的应对方式合起来，就是他这一生的答卷。</p>
+      <p>注意——他从不挑出某一个让你"特别精进"。三角形的稳定，靠三条边都不塌。一个工作上的强人，如果社交是空白、爱情是废墟，他的"成功"在阿德勒看来是<strong>失衡的代偿</strong>——他用工作的过度发展，遮住了另外两条腿的缺失。</p>
+    </div>
+
+    <div class="action">
+      <div class="head">
+        <span class="icon">!</span>
+        <h4>行动号召 · 给你的三角形打分</h4>
+      </div>
+      <ol>
+        <li>分别给"工作 / 社交 / 爱情"这三个领域<strong>0–10 分</strong>打分（10 = 我对此完全满意）。</li>
+        <li>分数最低的那一边，是你的"代偿区"——你正在用其他两边的过度发展，掩盖它。</li>
+        <li>本周给最低的那一边，做一件具体的小事：约一个老朋友吃饭 / 发一条主动的关心信息 / 报一个能逼自己离开舒适区的活动。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 09 整体论 ============== -->
+<section class="page cream" data-page="09" data-title="整体论">
+  <div class="page-tag">PART I · 基础 · 09</div>
+  <div class="page-num">CH. 09 / 42</div>
+  <div class="container">
+    <div class="feature-strip" style="--strip-img:url(https://images.unsplash.com/photo-1502630859934-b3b41d18206c?w=1400&amp;q=70&amp;auto=format&amp;fit=crop)" data-caption="CH. 09"></div>
+    <div class="eyebrow">人格的统一性</div>
+    <h2>你的"矛盾"不是矛盾，是同一个目的的不同面孔</h2>
+    <div class="divider"></div>
+
+    <div class="quote-block">
+      <div class="label">摘录 · 《洞察人性》</div>
+      <p>人的每一个举动背后都有自己的含义。他的眼、他的嘴、他的面部肌肉，甚至他的每一个表情都有特定含义，这个含义是心灵赋予的。</p>
+    </div>
+
+    <div class="analysis">
+      <div class="head">
+        <span class="badge">解读</span>
+        <h4>整体论 — 你不是被矛盾撕扯的，你是被同一只手统一调度的</h4>
+      </div>
+      <p>很多人来做心理咨询，开口第一句就是："我特别矛盾——我又想 A 又想 B。" 阿德勒在这里会停下来打断你：你不矛盾，你只是<strong>同时给自己保留了两条退路</strong>。</p>
+      <p>例子：一个人嘴上要减肥，行动上猛吃。这不是"两个我在打架"，而是"<strong>同一个我</strong>在用"嘴上的目标"维持自尊，又用"行动的失败"避免去面对'瘦下来之后我还是没人爱'这种更深的恐惧"。</p>
+      <p>整体论的杀伤力在于：它取消了你"我控制不住自己"的所有借口。<strong>每一个你声称"控制不住"的行为，其实都被你完整地控制着，只是它服务的不是你嘴上的目标，而是你不愿承认的另一个目标。</strong></p>
+    </div>
+
+    <div class="action">
+      <div class="head">
+        <span class="icon">!</span>
+        <h4>行动号召 · 找出你的"双轨目标"</h4>
+      </div>
+      <ol>
+        <li>列出一个你"努力了但一直做不到"的目标。</li>
+        <li>问自己一个反直觉的问题：<strong>如果我真的达成了这个目标，最让我害怕失去的东西是什么？</strong></li>
+        <li>那个让你害怕的东西，就是你正在偷偷服务的"隐藏目标"——它和你嘴上的目标，正在共用同一个你。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 10 心灵与肉体 ============== -->
+<section class="page deep" data-page="10" data-title="心灵与肉体">
+  <div class="page-tag">PART I · 基础 · 10</div>
+  <div class="page-num">CH. 10 / 42</div>
+  <div class="container">
+    <div class="feature-strip" style="--strip-img:url(https://images.unsplash.com/photo-1517999144091-3d9dca6d1e43?w=1400&amp;q=70&amp;auto=format&amp;fit=crop)" data-caption="CH. 10"></div>
+    <div class="eyebrow">身体也有自己的话要说</div>
+    <h2>心灵与肉体 — 同一辆车的方向盘与轮子</h2>
+    <div class="divider"></div>
+
+    <div class="quote-block">
+      <div class="label">摘录 · 《超越自卑》第二章</div>
+      <p>肉体和心灵是同一整体两个无形的部分，亲密无间地合作。心灵就像是马达，充分调动肉体的所有潜能。</p>
+    </div>
+
+    <div class="analysis">
+      <div class="head">
+        <span class="badge">解读</span>
+        <h4>身体的"症状"是一种含蓄的发言</h4>
+      </div>
+      <p>阿德勒早在 1930 年代就提出了今天身心医学的核心命题：很多慢性身体不适，不是单纯的器官问题，而是<strong>心灵选择以身体的方式发言</strong>。</p>
+      <p>这里要警惕两个极端：</p>
+      <p>极端一（机械唯物）："我胃疼就是胃疼，跟心理没关系。" —— 错。你的胃在每一次重要谈话前都疼，那它不是胃，那是一份未读的信。</p>
+      <p>极端二（玄学化身心）："所有疾病都是负面情绪积累。" —— 也错。这种说法变成了对患者的二次伤害。阿德勒从不否认器质病变——他只是说，<strong>当一个人朝某个方向用力时，他的身体会被他自己征用为信号塔</strong>。</p>
+    </div>
+
+    <div class="action">
+      <div class="head">
+        <span class="icon">!</span>
+        <h4>行动号召 · 给身体当一周翻译</h4>
+      </div>
+      <ol>
+        <li>这周开始记录一份"<strong>身体—事件</strong>"日志：每次身体出现明显信号（头痛、胃紧、肩颈僵、心慌、肠胃失常），记下当下你正面对的人/事。</li>
+        <li>7 天后看模式：是否某类人、某类话题、某类场景会反复触发同一个身体信号？</li>
+        <li>这个模式，比任何咨询师的"洞察"都贴近你。<strong>身体记得，且不会撒谎。</strong></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 11 生活方式 ============== -->
+<section class="page cream" data-page="11" data-title="生活方式">
+  <div class="page-tag">PART I · 基础 · 11</div>
+  <div class="page-num">CH. 11 / 42</div>
+  <div class="container">
+    <div class="feature-strip" style="--strip-img:url(https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1400&amp;q=70&amp;auto=format&amp;fit=crop)" data-caption="CH. 11"></div>
+    <div class="eyebrow">阿德勒的核心概念</div>
+    <h2>生活方式 — 你 5 岁前就定了稿，你余生都在演这个剧本</h2>
+    <div class="divider"></div>
+
+    <div class="quote-block">
+      <div class="label">摘录 · 《理解生命》</div>
+      <p>一个人在 4 至 5 岁的时候，就已经形成了他的生活方式——这是他理解世界、理解自己、应对生活的一整套基本姿态。</p>
+    </div>
+
+    <div class="analysis">
+      <div class="head">
+        <span class="badge">解读</span>
+        <h4>"生活方式（Style of Life）"不是穿什么牌子的衣服</h4>
+      </div>
+      <p>这是阿德勒最有原创性的概念之一。他说每个人在 4–5 岁前，已经基于"我是谁 / 别人是谁 / 世界长什么样"这三个问题，形成了一套<strong>底层应对模板</strong>。后面 70 年，他都在用这套模板应对新场景。</p>
+      <p>这就是为什么——你换了城市，换了行业，换了伴侣，问题却惊人地相似。<strong>你换了舞台，但没换剧本。</strong></p>
+      <p>好消息：生活方式不是基因，是<strong>幼年的解释</strong>。既然是解释，就可以重写——但重写不是靠"我以后要变成 XX 样"的口号，而是靠一次次去做"原剧本里不允许你做的事"。</p>
+    </div>
+
+    <div class="dgm">
+      <div class="dgm-cap">生活方式 = 三个基本判断的总和</div>
+      <div class="dgm-row">
+        <div class="dgm-node cream">
+          <div class="t">我是谁</div>
+          <div class="s">我能干 / 我没用</div>
+          <div class="s">我可爱 / 我多余</div>
+        </div>
+        <div class="dgm-node cream">
+          <div class="t">别人是谁</div>
+          <div class="s">可信 / 危险</div>
+          <div class="s">合作 / 利用</div>
+        </div>
+        <div class="dgm-node cream">
+          <div class="t">世界长什么样</div>
+          <div class="s">机会 / 险境</div>
+          <div class="s">公平 / 弱肉强食</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="action">
+      <div class="head">
+        <span class="icon">!</span>
+        <h4>行动号召 · 写出你的"四岁剧本"</h4>
+      </div>
+      <ol>
+        <li>用 3 句话回答："我是 ___ 的人 / 别人对我来说是 ___ / 世界对我来说是 ___ 的"。每个空填 1–3 个形容词，凭直觉写，不要思考。</li>
+        <li>这就是你目前的生活方式三句话版。把它贴在手机壁纸看一周。</li>
+        <li>本周观察：你哪些反应是在<strong>验证</strong>这个剧本？哪些是<strong>反抗</strong>它？没有评判，只观察。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 12 PART II 扉页 自卑普遍性 ============== -->
+<section class="page with-hero" style="--hero-img:url(https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=1800&amp;q=80&amp;auto=format&amp;fit=crop)" data-page="12" data-title="自卑普遍性">
+  <div class="page-tag">PART II · 自卑与超越 · 12</div>
+  <div class="page-num">CH. 12 / 42</div>
+  <div class="container">
+    <div class="eyebrow">第二部分 · 自卑与超越</div>
+    <h2>自卑感 — 人类一切努力的隐秘动力</h2>
+    <div class="divider"></div>
+
+    <div class="quote-block">
+      <div class="label">摘录 · 《超越自卑》第三章</div>
+      <p>每个人都有不同程度的自卑感，因为我们总会遇到力所不能及的目标。<br>没有人能长期忍受自卑感，而是必然会采取某种行动来解除自己的紧张状态。</p>
+    </div>
+
+    <div class="analysis">
+      <div class="head">
+        <span class="badge">解读</span>
+        <h4>自卑不是缺陷，是燃料</h4>
+      </div>
+      <p>这句话是阿德勒整个体系的心脏。请反复读三遍。</p>
+      <p>主流文化把"自卑"当成需要消除的负面情绪——"做最好的自己"、"自信满满"、"value yourself"。阿德勒说：错。<strong>自卑是人类作为有限生物的基本配置，是文明所有进步的发动机</strong>。一个真的不自卑的人，要么是傻子，要么已经死了。</p>
+      <p>婴儿生下来就是弱者——所以人类发明了语言、工具、社会。一个孩子比大人矮——所以他踮脚、他学习、他长大。<strong>自卑感本身是中性的</strong>，关键在于你用它做了什么：用它推动你去解决真实问题（健康路径），还是用它推动你去装作问题不存在（病态路径）。</p>
+    </div>
+
+    <div class="action">
+      <div class="head">
+        <span class="icon">!</span>
+        <h4>行动号召 · 给自卑感正名</h4>
+      </div>
+      <ol>
+        <li>列出 3 件让你最自卑的事（不分大小，可以是收入、身高、学历、孩子成绩、社交能力）。</li>
+        <li>对每一件问自己：<strong>这份自卑过去是否曾推动过我做出努力？</strong>哪怕是失败的努力。</li>
+        <li>记住——你不是要"消除"自卑，你是要把它转化为<strong>燃料</strong>而不是<strong>枷锁</strong>。后面 30 章都在教你怎么做这件事。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 13 自卑感 vs 自卑情结 ============== -->
+<section class="page cream" data-page="13" data-title="情结的诞生">
+  <div class="page-tag">PART II · 13</div>
+  <div class="page-num">CH. 13 / 42</div>
+  <div class="container">
+    <div class="feature-strip" style="--strip-img:url(https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=1400&amp;q=70&amp;auto=format&amp;fit=crop)" data-caption="CH. 13"></div>
+    <div class="eyebrow">最容易被混淆的两个词</div>
+    <h2>"自卑感"vs"自卑情结" — 一字之差，两种命运</h2>
+    <div class="divider"></div>
+
+    <div class="quote-block">
+      <div class="label">摘录 · 《超越自卑》</div>
+      <p>当某一问题超出个体的适应程度或能力范围，并且他承认绝对无力解决时，就会产生自卑情结。</p>
+    </div>
+
+    <div class="vs-table">
+      <div class="vs-col good">
+        <h5>自卑感（Inferiority Feeling）</h5>
+        <ul>
+          <li>普世的、流动的、暂时的</li>
+          <li>是承认"我现在做不到"</li>
+          <li>推动你去训练、去学、去走出去</li>
+          <li>能被一次具体行动缓解</li>
+          <li>每个健康的成年人都有它</li>
+        </ul>
+      </div>
+      <div class="vs-divider">分水岭</div>
+      <div class="vs-col bad">
+        <h5>自卑情结（Inferiority Complex）</h5>
+        <ul>
+          <li>固化的、弥散的、慢性的</li>
+          <li>是宣判"我永远做不到"</li>
+          <li>推动你去回避、合理化、放弃</li>
+          <li>越行动越加深它</li>
+          <li>只有放弃努力才会形成</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="analysis">
+      <div class="head">
+        <span class="badge">解读</span>
+        <h4>一道阈值，划开两种人生</h4>
+      </div>
+      <p>阿德勒的"自卑情结"有一个非常具体的诞生时刻：<strong>当一个人面对困难时，停止"如何解决"，开始"为什么我注定不行"——情结就在那一秒生成了</strong>。</p>
+      <p>这两个词被中文笼统翻译成"自卑"，造成了巨大的认知混乱。许多人花一生跟"自卑感"作战，其实那是徒劳——它根本不该被消灭。真正要警惕的是<strong>从"自卑感"滑向"自卑情结"的那一瞬间</strong>。</p>
+      <p>这道阈值上的关键变量是：<strong>勇气</strong>。下一章我们专门讲。</p>
+    </div>
+
+    <div class="action">
+      <div class="head">
+        <span class="icon">!</span>
+        <h4>行动号召 · 抓住自己越过阈值的瞬间</h4>
+      </div>
+      <ol>
+        <li>这一周，留意你脑子里出现"<strong>反正我就是 ___ 的人</strong>""<strong>这辈子我也 ___ 不了</strong>"这种句式的时刻。</li>
+        <li>每出现一次，记一次。这就是"自卑情结"正在固化的现场录像。</li>
+        <li>把那句话改写为："<strong>目前我还没能 ___，下一步我可以尝试 ___。</strong>" 这个语法上的小动作，是把自卑情结拉回自卑感的关键操作。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 14 追求优越感 ============== -->
+<section class="page cream" data-page="14" data-title="追求优越">
+  <div class="page-tag">PART II · 14</div>
+  <div class="page-num">CH. 14 / 42</div>
+  <div class="container">
+    <div class="feature-strip" style="--strip-img:url(https://images.unsplash.com/photo-1517242810446-cc8951b2be40?w=1400&amp;q=70&amp;auto=format&amp;fit=crop)" data-caption="CH. 14"></div>
+    <div class="eyebrow">阿德勒的另一支柱</div>
+    <h2>追求优越 — 不是想超过别人，是想超过昨天的自己</h2>
+    <div class="divider"></div>
+
+    <div class="quote-block">
+      <div class="label">摘录 · 《超越自卑》</div>
+      <p>每个生命都被"由下到上"的潮汐推动着，从弱到强，从不完美趋向完美。这是生活本身的事实。</p>
+    </div>
+
+    <div class="analysis">
+      <div class="head">
+        <span class="badge">解读</span>
+        <h4>"优越"的中文翻译有歧义，请重读</h4>
+      </div>
+      <p>阿德勒原文用的是 <em>Streben nach Überlegenheit / striving for superiority</em>。中文容易理解成"踩别人一头"。这是大误。</p>
+      <p>他的本意更接近 <strong>"持续向上的、对完整与卓越的渴望"</strong>——一种生命固有的、把自己往更高处推的冲动。在健康轨道上，它表现为：你今年学了新东西、你比 5 年前更善良、你的关系比去年更深。</p>
+      <p>问题出在：当一个人无法从"超越昨天的自己"中获得满足时，他就会切换到<strong>"超过别人"的廉价版</strong>——通过让别人变低，来体验自己变高。这就是病态的"优越情结"。</p>
+    </div>
+
+    <svg class="diagram" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="健康轨道：从过去的我到未来的我的纵向上升曲线">
+      <text x="300" y="40" text-anchor="middle" font-family="serif" font-size="26" fill="#4a7c7e" font-weight="600">健康轨道 · 纵向超越</text>
+      <line x1="50" y1="250" x2="560" y2="250" stroke="#2c2c3e" stroke-width="2"></line>
+      <path d="M 70 240 Q 250 130 540 70" fill="none" stroke="#4a7c7e" stroke-width="5" stroke-linecap="round"></path>
+      <circle cx="70" cy="240" r="9" fill="#4a7c7e"></circle>
+      <circle cx="540" cy="70" r="9" fill="#4a7c7e"></circle>
+      <text x="70" y="285" text-anchor="middle" font-size="22" fill="#2c2c3e">过去的我</text>
+      <text x="540" y="285" text-anchor="middle" font-size="22" fill="#2c2c3e">未来的我</text>
+      <text x="320" y="150" text-anchor="middle" font-size="20" fill="#8a9099">只和昨天的自己比</text>
+    </svg>
+
+    <div class="action">
+      <div class="head">
+        <span class="icon">!</span>
+        <h4>行动号召 · 切换你的比较坐标</h4>
+      </div>
+      <ol>
+        <li>这一周每天结束时，问自己一个问题——<strong>不</strong>是"我今天比谁谁强吗"，而是"<strong>我今天比昨天的自己强在哪一件具体的事？</strong>"</li>
+        <li>哪怕是"今天没冲女儿发火"、"今天给同事写了一封更耐心的邮件"。</li>
+        <li>7 天后回看：你会发现，<strong>纵向坐标</strong>带来的满足感是连续而稳定的；而过去你追求的横向比较，让你永远卡在焦虑里。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 15 优越情结的伪装 ============== -->
+<section class="page deep" data-page="15" data-title="优越情结">
+  <div class="page-tag">PART II · 15</div>
+  <div class="page-num">CH. 15 / 42</div>
+  <div class="container">
+    <div class="feature-strip" style="--strip-img:url(https://images.unsplash.com/photo-1518770660439-4636190af475?w=1400&amp;q=70&amp;auto=format&amp;fit=crop)" data-caption="CH. 15"></div>
+    <div class="eyebrow">病态补偿</div>
+    <h2>优越情结 — 它是自卑的另一张面孔</h2>
+    <div class="divider"></div>
+
+    <div class="quote-block">
+      <div class="label">摘录 · 《超越自卑》</div>
+      <p>在举手投足间都想高人一等的人背后，我们都能猜想他有一种需要极力掩饰的自卑感。</p>
+    </div>
+
+    <div class="analysis">
+      <div class="head">
+        <span class="badge">解读</span>
+        <h4>越要表现得高，越是底下有缺</h4>
+      </div>
+      <p>这是阿德勒在《超越自卑》里最有杀伤力的一节。他指出：所谓"优越情结"——一个人浮夸地强调自己很厉害、很特别、很优越——并不是与自卑情结对立的两种人格，而是<strong>自卑情结的硬币背面</strong>。</p>
+      <p>常见的优越情结伪装：</p>
+      <ul style="padding-left:24px; margin: 12px 0 18px">
+        <li><strong>炫耀型</strong>：必须让所有人知道我的成绩、我的人脉、我的孩子的学校</li>
+        <li><strong>贬低型</strong>：通过持续指出别人的瑕疵来确认自己的高度</li>
+        <li><strong>"我特别"型</strong>：用一种"你们不会懂我"的孤芳自赏，回避真正的较量</li>
+        <li><strong>受害者型</strong>：把自己钉在受害者的位置上，用悲惨获得道德优越</li>
+        <li><strong>"佛系"型</strong>：用"不在乎"假装超脱，回避自己根本就没有竞争力的事实</li>
+      </ul>
+      <p>注意最后两条——很多人以为受害者和佛系是自卑的表现，阿德勒却看得更深：它们其实是<strong>用一种间接路径换取优越感</strong>。"我没有，因为我清高"，"我没争，因为我看不上"——这都是优越情结的高级款。</p>
+    </div>
+
+    <div class="action">
+      <div class="head">
+        <span class="icon">!</span>
+        <h4>行动号召 · 揪出你自己的优越伪装</h4>
+      </div>
+      <ol>
+        <li>从上面 5 种里，<strong>诚实地</strong>勾出最像你的 1-2 种。</li>
+        <li>问自己：<em>当我做这件事的时候，我在掩盖什么自卑？</em></li>
+        <li>不要急着改掉它。先让自己看见它存在——这本身已经是疗愈的一半。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 16 健康追求 vs 病态补偿 ============== -->
+<section class="page cream" data-page="16" data-title="补偿方向">
+  <div class="page-tag">PART II · 16</div>
+  <div class="page-num">CH. 16 / 42</div>
+  <div class="container">
+    <div class="feature-strip" style="--strip-img:url(https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1400&amp;q=70&amp;auto=format&amp;fit=crop)" data-caption="CH. 16"></div>
+    <div class="eyebrow">补偿的两条岔路</div>
+    <h2>同一份自卑，可以拐到两个截然相反的地方</h2>
+    <div class="divider"></div>
+
+    <div class="dgm">
+      <div class="dgm-split">
+        <div class="dgm-node top" style="background:var(--bg-card);max-width:320px">
+          <div class="t">自卑感</div>
+          <div class="s" style="color:var(--gold-bright)">"我做不到"</div>
+        </div>
+        <div class="branch-line"></div>
+        <div class="branches">
+          <div class="dgm-node teal">
+            <div class="t">健康补偿</div>
+            <div class="s">直面问题 · 提升能力</div>
+            <div class="s">承担风险 · 接受失败</div>
+            <div class="s" style="color:var(--gold-bright);margin-top:8px">→ 真实成长</div>
+          </div>
+          <div class="dgm-node rust">
+            <div class="t">病态补偿</div>
+            <div class="s">逃避问题 · 自我催眠</div>
+            <div class="s">寻求优越感的幻觉</div>
+            <div class="s" style="color:var(--gold-bright);margin-top:8px">→ 看似强大，越来越虚</div>
+          </div>
+        </div>
+      </div>
+      <div class="dgm-foot">分岔点上的关键变量：勇气 + 社会兴趣</div>
+    </div>
+
+    <div class="analysis">
+      <div class="head">
+        <span class="badge">解读</span>
+        <h4>问问自己：你现在走在哪一条路上？</h4>
+      </div>
+      <p>阿德勒说：人在面对自卑时，几乎都会进行"补偿"——这是本能。但补偿有两个完全不同的方向：</p>
+      <p><strong>健康补偿</strong> 朝向"问题"——我感到我不行，那我就练，我就学，我就接受被打脸，我就慢慢变行。这条路慢，但每一步都是真的。</p>
+      <p><strong>病态补偿</strong> 朝向"感觉"——我感到我不行，所以我要赶紧让自己<em>感觉</em>到我行。我换更贵的车、我嘲笑同事、我编故事、我在朋友圈打造人设。问题没解决，自卑被暂时遮住了。下一次同类情境到来，自卑会以更大的强度回来，逼你需要更猛的剂量。</p>
+      <p>病态补偿最致命的地方在于：<strong>它会反向毒化你的人际关系</strong>。因为它要求别人不断为你的优越感买单。亲密关系、合作关系都会在长期被它蛀空。</p>
+    </div>
+
+    <div class="action">
+      <div class="head">
+        <span class="icon">!</span>
+        <h4>行动号召 · 一次"扭头"练习</h4>
+      </div>
+      <ol>
+        <li>挑出一件最近让你做了"病态补偿"的事（吹牛/贬低/逃避/伪装）。</li>
+        <li>问：如果我把同样的能量，朝"健康补偿"的方向用，应该做什么？</li>
+        <li>本周内，把这个"应该做"的动作做完一次。哪怕只做一半。</li>
+        <li>记录扭头之后心理状态的变化——你会发现，<strong>真实的笨拙比虚假的优越，舒服一万倍</strong>。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 17 鼓起勇气 ============== -->
+<section class="page dark" data-page="17" data-title="勇气">
+  <div class="page-tag">PART II · 17</div>
+  <div class="page-num">CH. 17 / 42</div>
+  <div class="container">
+    <div class="feature-strip" style="--strip-img:url(https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=1400&amp;q=70&amp;auto=format&amp;fit=crop)" data-caption="CH. 17"></div>
+    <div class="eyebrow">阿德勒最重的字</div>
+    <h2>勇气 — 不是天赋，是一种可以训练的能力</h2>
+    <div class="divider"></div>
+
+    <div class="quote-block">
+      <div class="label">摘录 · 《理解生命》</div>
+      <p>所有失败者的共同特征是：他们缺乏勇气。</p>
+    </div>
+
+    <div class="analysis">
+      <div class="head">
+        <span class="badge">解读</span>
+        <h4>勇气 ≠ 不害怕，勇气 = 害怕但还是去做</h4>
+      </div>
+      <p>阿德勒用的德文 <em>Mut</em>（勇气）是他全部体系里频率最高的词之一。但他对"勇气"的定义和大众理解完全不同。</p>
+      <p>大众理解：勇敢的人是天生就不怕的。</p>
+      <p>阿德勒理解：勇敢的人是看清了风险、感到了恐惧、依然选择朝它走过去的人。<strong>恐惧是勇气的必要原料，而不是反义词。</strong></p>
+      <p>更进一步——阿德勒认为，所有的"心理症状"本质上都是<strong>勇气的缺失</strong>。一个抑郁的人不是"心情坏了"，是"对生活失去了勇气"；一个焦虑的人不是"想太多"，是"还没找到敢面对的方式"；一个回避型依恋的人不是"不需要爱"，是"没勇气承受爱的不确定性"。</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <h4>勇气的来源 ①</h4>
+        <p><strong>归属感</strong> — 我知道哪怕我失败，世界上仍有人不会抛弃我。</p>
+      </div>
+      <div class="card">
+        <h4>勇气的来源 ②</h4>
+        <p><strong>贡献感</strong> — 我做的事对别人有用，让我有底气前进。</p>
+      </div>
+      <div class="card">
+        <h4>勇气的来源 ③</h4>
+        <p><strong>不完美的允许</strong> — 我允许自己做得烂，所以我才敢开始做。</p>
+      </div>
+    </div>
+
+    <div class="action">
+      <div class="head">
+        <span class="icon">!</span>
+        <h4>行动号召 · 制造一个"勇气最小单元"</h4>
+      </div>
+      <ol>
+        <li>挑一件你拖了 30 天以上、恐惧不大但就是不肯做的事（一封难邮件、一次拒绝、一个体检、一段道歉）。</li>
+        <li>设 25 分钟番茄钟。开始之前，对自己说一句：<strong>"我允许自己做得很烂。我只是去开始。"</strong></li>
+        <li>开始动。25 分钟完成的程度不重要，重要的是你启动了。</li>
+        <li>启动一次，勇气的肌肉就加了 0.1 公斤。30 天后回看，它的累积是惊人的。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 18 PART III 性格 ============== -->
+<section class="page with-hero" style="--hero-img:url(https://images.unsplash.com/photo-1543872084-c7bd3822856f?w=1800&amp;q=80&amp;auto=format&amp;fit=crop)" data-page="18" data-title="性格的形成">
+  <div class="page-tag">PART III · 人性洞察 · 18</div>
+  <div class="page-num">CH. 18 / 42</div>
+  <div class="container">
+    <div class="eyebrow">第三部分 · 人性洞察</div>
+    <h2>性格不是天生的 — 它是一套被你长期训练出来的策略</h2>
+    <div class="divider"></div>
+
+    <div class="quote-block">
+      <div class="label">摘录 · 《洞察人性》</div>
+      <p>性格特征不过是一个人为达到某种目的所使用的工具。它们不是固定的天性，而是为人生剧本服务的"角色装备"。</p>
+    </div>
+
+    <div class="analysis">
+      <div class="head">
+        <span class="badge">解读</span>
+        <h4>"我天生就是这样"——阿德勒最讨厌这句话</h4>
+      </div>
+      <p>《洞察人性》整本书在做一件事：把"性格"这个看似牢固的东西，拆解成"<strong>一组被你长期训练出来的反应模式</strong>"。</p>
+      <p>你性格"急"——不是基因，是你在某种环境里发现"快"能拿到资源；你性格"敏感"——不是天生的，是你曾经处在必须察言观色才能生存的位置；你性格"独立"——多半因为你过去依赖别人时被深深辜负过。</p>
+      <p>这意味着：<strong>性格是可以被重新训练的</strong>。代价是你要愿意放弃旧性格曾经给你的好处。这才是真正难的部分。</p>
+    </div>
+
+    <div class="action">
+      <div class="head">
+        <span class="icon">!</span>
+        <h4>行动号召 · 给你的性格做"成本/收益"表</h4>
+      </div>
+      <ol>
+        <li>写下你最常被别人评价的 3 个性格词（"你就是太敏感了"、"你太固执"、"你太好说话"）。</li>
+        <li>每个词下面写两栏：<strong>它给我带来什么</strong> / <strong>它让我失去什么</strong>。</li>
+        <li>看完两栏，问自己：那些"给我带来"的好处，今天还需要吗？如果不需要——那这个性格是该退役了。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 19 攻击 vs 回避 ============== -->
+<section class="page cream" data-page="19" data-title="攻击与回避">
+  <div class="page-tag">PART III · 19</div>
+  <div class="page-num">CH. 19 / 42</div>
+  <div class="container">
+    <div class="feature-strip" style="--strip-img:url(https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=1400&amp;q=70&amp;auto=format&amp;fit=crop)" data-caption="CH. 19"></div>
+    <div class="eyebrow">阿德勒对性格的二分</div>
+    <h2>攻击性 vs 非攻击性 — 两种逃避真实问题的方式</h2>
+    <div class="divider"></div>
+
+    <p class="lead">《洞察人性》里阿德勒把不健康的性格分成两个大类，请对照看你属于哪一类——很多人同时有两种成分。</p>
+
+    <div class="grid-2">
+      <div class="card" style="border-top:4px solid #b86a4a">
+        <div class="meta">类型 A</div>
+        <h4>攻击性性格</h4>
+        <p style="margin-bottom:10px">通过<strong>主动出击</strong>来掩盖自卑：</p>
+        <ul style="padding-left:18px; font-size:14px; line-height:1.8">
+          <li><strong>虚荣</strong>——必须被注意到，否则我等于不存在</li>
+          <li><strong>嫉妒</strong>——别人的好像在偷我的</li>
+          <li><strong>愤怒</strong>——用强度替代力量</li>
+          <li><strong>傲慢</strong>——不让别人靠近，他们就不能看见我</li>
+          <li><strong>贪婪</strong>——多即多益善，永远填不满</li>
+        </ul>
+      </div>
+      <div class="card" style="border-top:4px solid #4a7c7e">
+        <div class="meta">类型 B</div>
+        <h4>非攻击性性格</h4>
+        <p style="margin-bottom:10px">通过<strong>退缩缺席</strong>来掩盖自卑：</p>
+        <ul style="padding-left:18px; font-size:14px; line-height:1.8">
+          <li><strong>退避</strong>——不参与，就不会失败</li>
+          <li><strong>焦虑</strong>——用预设的恐惧合理化不开始</li>
+          <li><strong>羞怯</strong>——保持低存在感来获得安全</li>
+          <li><strong>怯懦</strong>——把决定权让给别人，再抱怨没决定权</li>
+          <li><strong>自暴自弃</strong>——主动确认"我不行"以避免被确认</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="analysis" style="margin-top:36px">
+      <div class="head">
+        <span class="badge">解读</span>
+        <h4>两类性格背后是同一个心理动作</h4>
+      </div>
+      <p>请仔细看——攻击和退缩看似相反，做的都是同一件事：<strong>不去面对真实问题，而是绕开它另谋出路</strong>。攻击性的人通过让别人难受来感觉自己强；非攻击性的人通过让自己缺席来避免被衡量。两者都没真正去解决最初让他们自卑的那件事。</p>
+      <p>这两类性格的疗愈方向也是同一个：<strong>把绕开问题的能量，拐回去对准问题本身</strong>。</p>
+    </div>
+
+    <div class="action">
+      <div class="head">
+        <span class="icon">!</span>
+        <h4>行动号召 · 一周自我观察</h4>
+      </div>
+      <ol>
+        <li>这一周，每次你被某件事触发情绪反应，问：<em>我刚才是用攻击的方式逃，还是用退缩的方式逃？</em></li>
+        <li>不要立刻改正。只观察和记录。</li>
+        <li>7 天后看模式——你会发现你的"逃跑套路"惊人地稳定。看见就是改变的开始。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 20 情绪是工具 ============== -->
+<section class="page cream" data-page="20" data-title="情绪是工具">
+  <div class="page-tag">PART III · 20</div>
+  <div class="page-num">CH. 20 / 42</div>
+  <div class="container">
+    <div class="feature-strip" style="--strip-img:url(https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1400&amp;q=70&amp;auto=format&amp;fit=crop)" data-caption="CH. 20"></div>
+    <div class="eyebrow">阿德勒最颠覆的洞察之一</div>
+    <h2>情绪不是被动发生的 — 它是你召唤来完成任务的</h2>
+    <div class="divider"></div>
+
+    <div class="quote-block">
+      <div class="label">摘录 · 《超越自卑》</div>
+      <p>情感总是与个体的生活方式相一致。它出现在合适的时机，强度刚好够用——它是为目的服务的。</p>
+    </div>
+
+    <div class="analysis">
+      <div class="head">
+        <span class="badge">解读</span>
+        <h4>"我情绪上来了"——其实是你召唤了它上来</h4>
+      </div>
+      <p>这一节非常难接受，但请你忍住反驳读完。</p>
+      <p>主流心理学：情绪是被外界刺激引发的反应，你是被动接受者。</p>
+      <p>阿德勒：每一个情绪都有<strong>目的性</strong>。你"愤怒"不是因为外界让你愤怒，而是因为愤怒能完成某个你需要的任务——比如让对方退让、让自己不必道歉、让自己不必继续讨论一个尴尬话题。</p>
+      <p>典型证据：你正对孩子大吼，电话响了，是老板——你瞬间切换温和语气。如果情绪是"控制不了"的，这种瞬间切换根本不可能发生。所以阿德勒说：<strong>你不是被情绪挟持，你是情绪的雇主</strong>，只是你不愿承认你雇了它。</p>
+    </div>
+
+    <div class="dgm">
+      <div class="dgm-cap">情绪的"目的链"</div>
+      <div class="dgm-row">
+        <div class="dgm-node">
+          <div class="t">隐藏目的</div>
+          <div class="s">让对方让步</div>
+        </div>
+        <div class="dgm-arrow"></div>
+        <div class="dgm-node rust">
+          <div class="t">召唤情绪</div>
+          <div class="s">愤怒 / 眼泪 / 冷漠</div>
+        </div>
+        <div class="dgm-arrow"></div>
+        <div class="dgm-node teal">
+          <div class="t">达成目的</div>
+          <div class="s">对方让步 / 我可以走</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="action">
+      <div class="head">
+        <span class="icon">!</span>
+        <h4>行动号召 · 抓现行</h4>
+      </div>
+      <ol>
+        <li>下次你情绪上来的时候，<strong>不要试图压制</strong>，先停 5 秒，问自己一个问题——</li>
+        <li><strong>"我现在如果不发这股情绪，我需要做的那件难事是什么？"</strong></li>
+        <li>这个问题会让你看见：愤怒在帮你逃避对话，眼泪在帮你避免承担责任，焦虑在帮你不必行动。看见了，你就有了选择权——下一秒可以选择不雇它。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 21 早期记忆 ============== -->
+<section class="page deep" data-page="21" data-title="早期记忆">
+  <div class="page-tag">PART III · 21</div>
+  <div class="page-num">CH. 21 / 42</div>
+  <div class="container">
+    <div class="feature-strip" style="--strip-img:url(https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=1400&amp;q=70&amp;auto=format&amp;fit=crop)" data-caption="CH. 21"></div>
+    <div class="eyebrow">阿德勒的解码工具</div>
+    <h2>早期记忆 — 不是真相，是你对世界下的第一个判决</h2>
+    <div class="divider"></div>
+
+    <div class="quote-block">
+      <div class="label">摘录 · 《超越自卑》第四章</div>
+      <p>所有"记忆"都是"有用的记忆"。一个人在所有可记的事情中，只记下与其生活方式相符的部分——其余的都被悄悄丢弃了。</p>
+    </div>
+
+    <div class="analysis">
+      <div class="head">
+        <span class="badge">解读</span>
+        <h4>你能记起的最早场景，是你给世界的"开场白"</h4>
+      </div>
+      <p>阿德勒在咨询里有一个标志性问题："请告诉我你能想起的最早的一件事，不是听家人说的，是你自己记得的。"</p>
+      <p>他不在乎这件事是否客观真实——他在乎你<strong>选择</strong>记住了什么。在 4-6 岁那段记忆海洋里，你记住了"走丢被找回"还是"被妈妈拥抱"还是"摔了一跤没人扶"——这个挑选不是随机的。它体现的是你对"世界是什么样"的<strong>第一份判决书</strong>。</p>
+      <p>更进一步——这份判决书会反过来塑造你今后所有的选择。一个早期记忆是"我自己解决了它"的人和一个早期记忆是"没有人来帮我"的人，30 年后的婚恋决策、职业决策、合作策略，会有可预测的差异。</p>
+    </div>
+
+    <div class="action">
+      <div class="head">
+        <span class="icon">!</span>
+        <h4>行动号召 · 解码你自己的早期记忆</h4>
+      </div>
+      <ol>
+        <li>闭眼，回忆你能想起的<strong>最早的</strong>一件事（不是听别人说的）。用一段话写下来，越具体越好——光线、气味、谁在场、你的感受。</li>
+        <li>写完后问 4 个问题：①这件事里我是主动还是被动？ ②周围的人是支持的还是冷漠的？ ③我学到了什么"关于世界"的结论？ ④这个结论今天还在影响我哪些决定？</li>
+        <li>这个练习不要做超过 30 分钟。它的目的不是治疗，是让你看见——你的"开场白"已经写了几十年，是时候考虑要不要换一段了。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 22 梦 ============== -->
+<section class="page cream" data-page="22" data-title="梦">
+  <div class="page-tag">PART III · 22</div>
+  <div class="page-num">CH. 22 / 42</div>
+  <div class="container">
+    <div class="feature-strip" style="--strip-img:url(https://images.unsplash.com/photo-1518349619113-03114f06ac3a?w=1400&amp;q=70&amp;auto=format&amp;fit=crop)" data-caption="CH. 22"></div>
+    <div class="eyebrow">阿德勒 vs 弗洛伊德 · 终局对决</div>
+    <h2>梦 — 不是潜意识的偷情，是为白天的难题"预演情绪"</h2>
+    <div class="divider"></div>
+
+    <div class="quote-block">
+      <div class="label">摘录 · 《超越自卑》第五章</div>
+      <p>梦的目的不是揭示秘密，而是为做梦者制造一种他需要的情绪。梦造完情绪，第二天醒来的人就有了与梦相一致的行动倾向。</p>
+    </div>
+
+    <div class="analysis">
+      <div class="head">
+        <span class="badge">解读</span>
+        <h4>不要再去查"梦见牙齿掉了是什么意思"</h4>
+      </div>
+      <p>弗洛伊德把梦看成潜意识的密码，里面有被压抑的欲望和童年创伤。阿德勒把这套体系几乎全推翻。</p>
+      <p>他说：<strong>梦是你的生活方式在睡眠中的延续</strong>，是你为白天难以处理的处境提前"配酒"。你明天要去开一个艰难的会，你晚上做了一个被追赶的梦——梦不是密码，梦是<strong>把你预先泡进焦虑里</strong>，让你早上醒来"理所应当地"处于谨慎或回避状态。</p>
+      <p>这个理论看起来轻飘飘，但实用度极高——它让你不再迷信梦，而是开始观察："<em>我最近在做什么类型的梦？它在为我准备什么样的白天？</em>"</p>
+    </div>
+
+    <div class="action">
+      <div class="head">
+        <span class="icon">!</span>
+        <h4>行动号召 · 一周梦境—情绪日记</h4>
+      </div>
+      <ol>
+        <li>床头放一支笔。每天早上醒来不刷手机，先写 30 秒昨晚的梦片段（哪怕只剩一个画面）。</li>
+        <li>同时写一句：<strong>"醒来后我对今天的第一感受是 ___"</strong></li>
+        <li>7 天后回看：你会发现你的梦"准备"了什么样的白天——焦虑型梦带来谨慎型白天，胜利型梦带来主动型白天。看见这个连接，你就有了上游干预的权力。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 23 出生顺序 ============== -->
+<section class="page cream" data-page="23" data-title="出生顺序">
+  <div class="page-tag">PART III · 23</div>
+  <div class="page-num">CH. 23 / 42</div>
+  <div class="container">
+    <div class="feature-strip" style="--strip-img:url(https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?w=1400&amp;q=70&amp;auto=format&amp;fit=crop)" data-caption="CH. 23"></div>
+    <div class="eyebrow">阿德勒的家庭社会学</div>
+    <h2>家中老大、老二、老幺、独生子 — 你的"位次"塑造了你</h2>
+    <div class="divider"></div>
+
+    <div class="quote-block">
+      <div class="label">摘录 · 《超越自卑》第六章</div>
+      <p>儿童在家庭中的"位置"，常比血缘和遗传更直接地决定他的性格倾向。</p>
+    </div>
+
+    <p>阿德勒是出生顺序心理学（Birth Order Theory）的奠基人。下面这张表是他临床观察的提炼——记住这是<strong>倾向</strong>，不是宿命，每条都有例外。</p>
+
+    <div class="grid-4" style="margin-top:32px">
+      <div class="card">
+        <div class="meta">长子 / 长女</div>
+        <h4>"被废黜的国王"</h4>
+        <p>独享过父母全部注意，弟妹一出生被"夺权"。倾向：保守、负责任、追求稳定、有时过于看重权威与规则。</p>
+      </div>
+      <div class="card">
+        <div class="meta">老二 / 中间子女</div>
+        <h4>"永远的追赶者"</h4>
+        <p>出生就有一个比自己强的人在前面。倾向：竞争心强、灵活、外交家、容易在群体中找到平衡角色。</p>
+      </div>
+      <div class="card">
+        <div class="meta">最小的孩子</div>
+        <h4>"被宠的与被低估的"</h4>
+        <p>家中目光最多但同时被视为"小"。倾向：野心大但容易高估目标、有创造性、也容易在受挫时退回"被照顾"的姿态。</p>
+      </div>
+      <div class="card">
+        <div class="meta">独生子女</div>
+        <h4>"小成人"</h4>
+        <p>同龄玩伴缺席，长期和大人打交道。倾向：早熟、独立、与同龄合作能力可能偏弱、对竞争更敏感。</p>
+      </div>
+    </div>
+
+    <div class="analysis" style="margin-top:36px">
+      <div class="head">
+        <span class="badge">解读</span>
+        <h4>位次决定了你的"出场剧本"</h4>
+      </div>
+      <p>阿德勒的核心观点：每个孩子是在一个<strong>已经有其他角色的舞台</strong>上出生的。他必须找到一个还没被占据的位置——这个寻找过程，本身就在塑造他的性格。</p>
+      <p>典型案例：老大是"听话型学霸"，老二就常常发展出"叛逆型"性格——不是天生叛逆，是听话这个位置已经被占了。这也是为什么同一家长的两个孩子，性格往往南辕北辙。</p>
+      <p>这对成年人的意义在于：你今天的很多"我就是这样"，可能只是 4 岁时为了不和哥哥/姐姐撞角色而临时认领的位置——你<strong>现在已经成年</strong>，没人逼你继续演那个角色了。</p>
+    </div>
+
+    <div class="action">
+      <div class="head">
+        <span class="icon">!</span>
+        <h4>行动号召 · 重审你的"角色分配"</h4>
+      </div>
+      <ol>
+        <li>写下你在原生家庭里的"角色标签"（懂事的、闯祸的、聪明的、慢的、可爱的、被忽略的...）。</li>
+        <li>问：这个角色在我成年后还在哪些场景里被复制？（公司里？亲密关系里？朋友群里？）</li>
+        <li>挑一个场景，本周尝试<strong>反角色</strong>地做一次——一直是"懂事"的人这次任性一回，一直是"逗乐"的人这次安静一回。观察自己的不适感——那不适感就是旧剧本的边界。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 24 PART IV 人际关系 ============== -->
+<section class="page with-hero" style="--hero-img:url(https://images.unsplash.com/photo-1542838132-92c53300491e?w=1800&amp;q=80&amp;auto=format&amp;fit=crop)" data-page="24" data-title="人际关系是源头">
+  <div class="page-tag">PART IV · 人际关系 · 24</div>
+  <div class="page-num">CH. 24 / 42</div>
+  <div class="container">
+    <div class="eyebrow">第四部分 · 人际关系</div>
+    <h2>"一切烦恼都来自人际关系"</h2>
+    <div class="divider"></div>
+
+    <div class="quote-block">
+      <div class="label">摘录 · 阿德勒思想核心命题</div>
+      <p>把人放进真空，他将不再有烦恼。所有困扰人类的问题——金钱、健康、自我厌恶——拆到底层，都是"我与他人的关系"出了问题。</p>
+    </div>
+
+    <div class="analysis">
+      <div class="head">
+        <span class="badge">解读</span>
+        <h4>这是一句被《被讨厌的勇气》带火的金句，但很多人没读懂</h4>
+      </div>
+      <p>把"一切烦恼都来自人际关系"理解为"远离人就没事了"——错得离谱。阿德勒说的恰恰相反：</p>
+      <p>1. 因为人是社会动物，<strong>所有让你感到痛苦的事，都是因为它涉及到别人对你的评价、需要、依赖或缺席</strong>。</p>
+      <p>2. 既然源头在关系里，<strong>解药也只能在关系里</strong>——逃到孤岛上不是治愈，只是把症状静音。</p>
+      <p>所以阿德勒给出的处方不是"减少人际"，而是"<strong>升级人际</strong>"——学会一种更健康的方式去和人打交道。后面 4 章会拆解他的具体处方：课题分离、横向关系、社会兴趣、合作能力。</p>
+    </div>
+
+    <div class="action">
+      <div class="head">
+        <span class="icon">!</span>
+        <h4>行动号召 · 反向追源</h4>
+      </div>
+      <ol>
+        <li>列出当下最困扰你的 3 件事（不论看起来是关于钱、工作还是健康）。</li>
+        <li>对每件追问到底："如果世界上只有我一个人，这件事还会困扰我吗？"</li>
+        <li>你会发现 90% 以上的"困扰"——其源头一旦剥离"别人怎么看 / 别人怎么对我 / 我配不配 / 我能不能赢过 / 我会不会失去他"，几乎不再成立。这就是为什么解药必须从关系里下手。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 25 课题分离 ============== -->
+<section class="page cream" data-page="25" data-title="课题分离">
+  <div class="page-tag">PART IV · 25</div>
+  <div class="page-num">CH. 25 / 42</div>
+  <div class="container">
+    <div class="feature-strip" style="--strip-img:url(https://images.unsplash.com/photo-1504275107627-0c2ba7a43dba?w=1400&amp;q=70&amp;auto=format&amp;fit=crop)" data-caption="CH. 25"></div>
+    <div class="eyebrow">阿德勒最锋利的一刀</div>
+    <h2>课题分离 — 搞清楚"这是谁的事"</h2>
+    <div class="divider"></div>
+
+    <div class="quote-block">
+      <div class="label">阿德勒核心实操原则</div>
+      <p>一切人际关系矛盾，都起源于一方擅自介入了另一方的课题，或被另一方介入了自己的课题。</p>
+    </div>
+
+    <div class="analysis">
+      <div class="head">
+        <span class="badge">解读</span>
+        <h4>判断一件事是谁的课题，只有一个标准</h4>
+      </div>
+      <p><strong>「这件事的结果，最终由谁承担？」</strong></p>
+      <p>孩子不写作业，最终承担的是孩子——所以"学不学习"是孩子的课题。你看了焦虑，是你的课题。</p>
+      <p>同事不喜欢你，最终承担的是同事自己的情绪——所以"喜不喜欢你"是同事的课题。你为此痛苦，是你的课题。</p>
+      <p>父母希望你早点结婚——结不结婚最终由你承担——是你的课题。父母焦虑，是父母的课题。</p>
+      <p>这个工具看似冷酷，实际上是<strong>对所有人最大的尊重</strong>。当你不再越界，你也就有了能量经营自己的课题。</p>
+    </div>
+
+    <div class="dgm">
+      <div class="dgm-row">
+        <div class="dgm-node teal">
+          <div class="t">我的课题</div>
+          <div class="s">我承担后果，我有决策权</div>
+        </div>
+        <div class="dgm-arrow dgm-boundary"><span>边界</span></div>
+        <div class="dgm-node rust">
+          <div class="t">他人的课题</div>
+          <div class="s">他承担后果，我不越界</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="analysis">
+      <div class="head">
+        <span class="badge">警告</span>
+        <h4>课题分离 ≠ 冷漠</h4>
+      </div>
+      <p>小红书上把"课题分离"用烂了——任何时候不想承担责任、不想共情，就一句"这是你的课题"。这是阉割版阿德勒。</p>
+      <p>原作里，课题分离必须配套<strong>"共同体感觉"（下一章）</strong>才完整：你先分清界限，<strong>然后主动去贡献、去支持</strong>——而不是把人推开了事。前者是把别人当成熟个体来尊重；后者是把别人当陌生人来挡开。</p>
+    </div>
+
+    <div class="action">
+      <div class="head">
+        <span class="icon">!</span>
+        <h4>行动号召 · 划三条线</h4>
+      </div>
+      <ol>
+        <li>列出当下最让你内耗的 3 段关系——伴侣 / 父母 / 同事 / 孩子任选。</li>
+        <li>每段找出 1 件你正在干涉的<strong>对方的课题</strong>（你越界帮他焦虑、替他决定、催他改变）。</li>
+        <li>找出 1 件你正在被对方干涉的<strong>你自己的课题</strong>（被催婚、被指导、被评价）。</li>
+        <li>本周做一次实验：第一类——主动撤回。第二类——温和拒绝。观察自己的失控感与对方的反应。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 26 横向关系 vs 纵向关系 ============== -->
+<section class="page cream" data-page="26" data-title="横向关系">
+  <div class="page-tag">PART IV · 26</div>
+  <div class="page-num">CH. 26 / 42</div>
+  <div class="container">
+    <div class="feature-strip" style="--strip-img:url(https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=1400&amp;q=70&amp;auto=format&amp;fit=crop)" data-caption="CH. 26"></div>
+    <div class="eyebrow">阿德勒的关系工程学</div>
+    <h2>所有不健康的关系，都站在了纵向位置上</h2>
+    <div class="divider"></div>
+
+    <div class="vs-table">
+      <div class="vs-col bad">
+        <h5>纵向关系（上下 · 病）</h5>
+        <ul>
+          <li>权力对比：谁说了算</li>
+          <li>评价系统：夸奖 / 批评</li>
+          <li>核心情绪：服从 或 反抗</li>
+          <li>典型场景：上司—下属、父母—孩子、爹味爱情</li>
+          <li>长期效果：一方屈从、一方傲慢，双方都在生病</li>
+        </ul>
+      </div>
+      <div class="vs-divider">底层差异</div>
+      <div class="vs-col good">
+        <h5>横向关系（平等 · 健康）</h5>
+        <ul>
+          <li>角色对比：分工不同但人格平等</li>
+          <li>回应系统：感谢 / 协商</li>
+          <li>核心情绪：尊重 与 合作</li>
+          <li>典型场景：成熟的伴侣、好的导师、平等的同事</li>
+          <li>长期效果：双方都成长，关系不消耗</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="analysis">
+      <div class="head">
+        <span class="badge">解读</span>
+        <h4>夸奖也是一种纵向关系，你信吗？</h4>
+      </div>
+      <p>阿德勒最颠覆的一条：<strong>夸奖（praise）也是不健康的</strong>。</p>
+      <p>"你真棒！"——表面是肯定，本质是一个有评价权的人对一个被评价的人下判决。它和"你真差"是<strong>同一种纵向结构</strong>——只是这次评价是正面的而已。</p>
+      <p>横向的替代品是<strong>感谢</strong>：不是"你真棒"，是"<strong>谢谢你帮了我，这件事因为你的努力完成得更好</strong>"。前者把对方放在评价席上，后者把对方放在并肩位置上。</p>
+      <p>这条对父母尤其重要——你以为你在鼓励孩子，其实你在反复确认"我是评委，你是选手"的位置。等他长大后他会找另一个评委（领导/伴侣）继续这个游戏。</p>
+    </div>
+
+    <div class="action">
+      <div class="head">
+        <span class="icon">!</span>
+        <h4>行动号召 · 一周"去夸奖化"</h4>
+      </div>
+      <ol>
+        <li>这一周对你身边的人（孩子、伴侣、下属、朋友），<strong>禁止使用"你真棒""你真厉害""你真聪明"</strong>这类句式。</li>
+        <li>换成感谢式表达："<strong>谢谢你 ___，这让我 ___</strong>"或者描述式："<strong>你做了 ___，结果是 ___</strong>"。</li>
+        <li>7 天后观察：对方的反应、你的关系质感、你自己说话的姿态。三者会有微妙但显著的变化。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 27 社会兴趣 ============== -->
+<section class="page deep" data-page="27" data-title="社会兴趣">
+  <div class="page-tag">PART IV · 27</div>
+  <div class="page-num">CH. 27 / 42</div>
+  <div class="container">
+    <div class="feature-strip" style="--strip-img:url(https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1400&amp;q=70&amp;auto=format&amp;fit=crop)" data-caption="CH. 27"></div>
+    <div class="eyebrow">阿德勒的终极指标</div>
+    <h2>社会兴趣 — 衡量一个人心理健康的唯一标尺</h2>
+    <div class="divider"></div>
+
+    <div class="quote-block">
+      <div class="label">摘录 · 《理解生命》</div>
+      <p>判断一个人是否健康，最可靠的指标是他的"社会兴趣（Gemeinschaftsgefühl）"——即他在多大程度上把自己的命运与他人的福祉联系起来。</p>
+    </div>
+
+    <div class="analysis">
+      <div class="head">
+        <span class="badge">解读</span>
+        <h4>"社会兴趣"是阿德勒造的一个新词，请仔细理解</h4>
+      </div>
+      <p>德文 <em>Gemeinschaftsgefühl</em> 直译"共同体感觉"，英译 social interest 又被中译"社会兴趣"——三次翻译让原义变得朦胧。它的真实含义是：</p>
+      <p><strong>"我属于一个更大的整体，我的存在对这个整体有意义，整体的命运与我相关"</strong>——这种贯穿一生的根本情感。</p>
+      <p>请注意——它不是"乐于助人"或"爱社交"那种表层行为。一个内向的程序员可以有极强的社会兴趣（他知道他写的代码让千万人受益），一个外向的销售可以有极弱的社会兴趣（他眼里所有人都是工具）。</p>
+      <p>阿德勒的临床观察：所有心理问题的人，都共同地<strong>缺乏社会兴趣</strong>——他们眼里只有自己，世界对他们而言是一个用于满足或拒绝他们需求的工具箱。康复的方向，永远是让他们重新感到自己<strong>属于</strong>一个更大的人间。</p>
+    </div>
+
+    <svg class="diagram" viewBox="0 0 600 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="社会兴趣同心圆：从我到家人、朋友、社区、人类整体逐层扩大">
+      <text x="300" y="36" text-anchor="middle" fill="#ebe2d2" font-family="serif" font-size="24" font-weight="600">同心圆 · 你的社会兴趣半径</text>
+      <g transform="translate(0,30)">
+        <circle cx="300" cy="250" r="200" fill="none" stroke="#c9a76a" stroke-width="1.2" opacity="0.28"></circle>
+        <circle cx="300" cy="250" r="158" fill="none" stroke="#c9a76a" stroke-width="1.4" opacity="0.42"></circle>
+        <circle cx="300" cy="250" r="116" fill="none" stroke="#c9a76a" stroke-width="1.6" opacity="0.58"></circle>
+        <circle cx="300" cy="250" r="74" fill="none" stroke="#c9a76a" stroke-width="1.8" opacity="0.75"></circle>
+        <circle cx="300" cy="250" r="34" fill="#c9a76a"></circle>
+        <text x="300" y="258" text-anchor="middle" fill="#1a2332" font-size="22" font-weight="700">我</text>
+        <text x="300" y="192" text-anchor="middle" fill="#e0bd7a" font-size="20">家人</text>
+        <text x="300" y="150" text-anchor="middle" fill="#e0bd7a" font-size="20">朋友 / 同事</text>
+        <text x="300" y="108" text-anchor="middle" fill="#e0bd7a" font-size="20">社区 / 行业</text>
+        <text x="300" y="66" text-anchor="middle" fill="#e0bd7a" font-size="20" opacity="0.85">人类整体</text>
+      </g>
+    </svg>
+
+    <div class="action">
+      <div class="head">
+        <span class="icon">!</span>
+        <h4>行动号召 · 检测你的"半径"</h4>
+      </div>
+      <ol>
+        <li>过去 30 天，你为"自己之外的人"做过什么具体的事？不需要伟大——给同事写过一封真诚的肯定、帮邻居拿过快递、给老朋友发过一个生日祝福。</li>
+        <li>列不出 5 件——警报。你的社会兴趣半径在收缩。</li>
+        <li>本周做一件"半径外的事"：给一个你欣赏但很久没联系的人发一段话；为你的行业写一篇分享；帮一个不会来感谢你的人。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 28 合作能力 ============== -->
+<section class="page cream" data-page="28" data-title="合作能力">
+  <div class="page-tag">PART IV · 28</div>
+  <div class="page-num">CH. 28 / 42</div>
+  <div class="container">
+    <div class="feature-strip" style="--strip-img:url(https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=1400&amp;q=70&amp;auto=format&amp;fit=crop)" data-caption="CH. 28"></div>
+    <div class="eyebrow">区分人的根本能力</div>
+    <h2>会合作的人，是从童年就被训练过的</h2>
+    <div class="divider"></div>
+
+    <div class="quote-block">
+      <div class="label">摘录 · 《超越自卑》</div>
+      <p>儿童在 5 岁前形成的核心能力，就是"合作"。一个不被教会合作的孩子，长大后会在职业、社会、爱情三个领域同时遭遇失败。</p>
+    </div>
+
+    <div class="analysis">
+      <div class="head">
+        <span class="badge">解读</span>
+        <h4>"合作"是阿德勒的另一个被低估的关键词</h4>
+      </div>
+      <p>合作（cooperation）在阿德勒体系里不是"团队精神"或"礼貌"，它指一种<strong>把自己嵌入他人需要、并能与人共同前进的根本能力</strong>。</p>
+      <p>它包括四个微能力：</p>
+      <ul style="padding-left:24px; margin:12px 0">
+        <li><strong>看见对方</strong>：能从对方的角度看问题，不是嘴上说说</li>
+        <li><strong>调整自己</strong>：愿意为共同目标改变自己的方式（不是讨好）</li>
+        <li><strong>持续付出</strong>：能在没有即时回报时也继续投入</li>
+        <li><strong>容忍冲突</strong>：不把分歧当人身攻击</li>
+      </ul>
+      <p>这四样里你最弱的一项是什么？阿德勒说：那个就是你过去 30 年人际困局的核心源头。</p>
+    </div>
+
+    <div class="action">
+      <div class="head">
+        <span class="icon">!</span>
+        <h4>行动号召 · 合作能力自检</h4>
+      </div>
+      <ol>
+        <li>给上面 4 个微能力<strong>分别打分</strong>（0-10）。</li>
+        <li>分数最低的那一项，回忆童年——你是否曾在该方面被剥夺训练？（独生子女常缺"调整自己"；被宠的孩子常缺"持续付出"；被忽视的孩子常缺"看见对方"——以为情感是奢侈品）</li>
+        <li>本周针对最弱项做一次具体训练。例如最弱是"看见对方"——找一个老朋友主动问："最近你过得怎么样？"然后<strong>认真听 10 分钟不打断、不评论、不抢话</strong>。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 29 爱情与婚姻 ============== -->
+<section class="page cream" data-page="29" data-title="爱情与婚姻">
+  <div class="page-tag">PART IV · 29</div>
+  <div class="page-num">CH. 29 / 42</div>
+  <div class="container">
+    <div class="feature-strip" style="--strip-img:url(https://images.unsplash.com/photo-1517242810446-cc8951b2be40?w=1400&amp;q=70&amp;auto=format&amp;fit=crop)" data-caption="CH. 29"></div>
+    <div class="eyebrow">三大任务里最考人的一道</div>
+    <h2>爱情是一种能力，不是好运</h2>
+    <div class="divider"></div>
+
+    <div class="quote-block">
+      <div class="label">摘录 · 《超越自卑》第十二章</div>
+      <p>爱情与婚姻是一种平等的协作关系。它不是一个人"找到对的人"，而是两个人一起承担"作为生命伙伴的全部任务"。</p>
+    </div>
+
+    <div class="analysis">
+      <div class="head">
+        <span class="badge">解读</span>
+        <h4>阿德勒对爱情的三个反鸡汤判断</h4>
+      </div>
+      <p><strong>判断一：爱情不是"找对人"，是"练成那个能爱的人"。</strong>很多人换了一个又一个伴侣，问题相似——因为他自己的爱的能力是固定的，外面没人能解决。</p>
+      <p><strong>判断二：所有亲密关系问题，都是"合作能力"问题在亲密领域的暴露。</strong>你在公司不善合作，回到家也不会突然善了。你只是因为亲密关系容错更高，把它的迷彩剥光了。</p>
+      <p><strong>判断三：爱情是三大任务里"最社会"的一项，不是"最个人"的一项。</strong>它要求你的社会兴趣指向另一个具体的人，要求你把"我"扩展为"我们"。一个社会兴趣弱的人，进入亲密关系时常会把对方当作满足自己需求的工具——这就是大量"爱情失败"的根源。</p>
+    </div>
+
+    <div class="grid-3" style="margin-top:32px">
+      <div class="card">
+        <h4>健康爱情的特征 ①</h4>
+        <p><strong>双向的贡献感</strong>——你在为对方贡献什么，对方也清晰知道。不是单方面付出。</p>
+      </div>
+      <div class="card">
+        <h4>健康爱情的特征 ②</h4>
+        <p><strong>能谈难话题</strong>——钱、性、原生家庭、未来不确定性——四个话题都能聊不爆炸，关系才是真的成熟。</p>
+      </div>
+      <div class="card">
+        <h4>健康爱情的特征 ③</h4>
+        <p><strong>双方还有"自己"</strong>——共生型亲密是浪漫陷阱。健康关系里，两个人都还是完整的自己，只是分享了人生。</p>
+      </div>
+    </div>
+
+    <div class="action">
+      <div class="head">
+        <span class="icon">!</span>
+        <h4>行动号召 · 给亲密关系做体检</h4>
+      </div>
+      <ol>
+        <li>用上面 3 个特征给当下关系（或最近一段）打分（0-10）。</li>
+        <li>最低分那一项，是你现在最需要工作的方向。</li>
+        <li>本周做一个具体动作：①如果是"双向贡献"低——主动问对方"我能为你做什么"。②如果是"难话题"低——挑一个回避了很久的话题，约一个安静时间谈。③如果是"完整自己"低——本周安排一件只属于你自己的事，不带伴侣。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 30 PART V 童年三大不利 ============== -->
+<section class="page with-hero" style="--hero-img:url(https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=1800&amp;q=80&amp;auto=format&amp;fit=crop)" data-page="30" data-title="童年三大不利">
+  <div class="page-tag">PART V · 童年印记 · 30</div>
+  <div class="page-num">CH. 30 / 42</div>
+  <div class="container">
+    <div class="eyebrow">第五部分 · 童年印记与疗愈</div>
+    <h2>三种童年处境，可能扭曲你的一生</h2>
+    <div class="divider"></div>
+
+    <div class="quote-block">
+      <div class="label">摘录 · 《理解生命》</div>
+      <p>三种童年处境最容易扭曲生活方式：器官缺陷的孩子、被宠坏的孩子、被忽视的孩子。三者所采取的应对策略不同，但产生的核心错觉是相同的——这个世界对我不公平。</p>
+    </div>
+
+    <div class="analysis">
+      <div class="head">
+        <span class="badge">解读</span>
+        <h4>阿德勒：80% 的成年心理困境，可追溯到这三种童年处境</h4>
+      </div>
+      <p>这是阿德勒临床观察了几十年得出的结论。它的厉害之处在于：他不只是说"有过这些处境的人会有问题"——他给出了非常具体的<strong>每种处境产生的特定思维偏差</strong>。</p>
+      <p>下面 3 章我们分别拆解。读的时候请坦诚自检——很多人是<strong>三种处境同时部分中招</strong>。</p>
+    </div>
+
+    <div class="grid-3" style="margin-top:32px">
+      <div class="card" style="border-top:4px solid #b86a4a">
+        <div class="meta">处境 1</div>
+        <h4>被宠坏的孩子</h4>
+        <p>所有需求被预先满足，从未学会"等待""失望""付出"。长大后期待世界继续按他的速度运转。</p>
+      </div>
+      <div class="card" style="border-top:4px solid #4a7c7e">
+        <div class="meta">处境 2</div>
+        <h4>被忽视的孩子</h4>
+        <p>感情需要长期得不到回应，得出结论"我不重要"。长大后对人际抱持深层不信任。</p>
+      </div>
+      <div class="card" style="border-top:4px solid #c9a76a">
+        <div class="meta">处境 3</div>
+        <h4>器官缺陷的孩子</h4>
+        <p>因身体、外形、家境等被同伴对比出"我和别人不一样"。长大后用"我注定不行"或"我必须证明给你看"两种极端来应对。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 31 被宠坏的孩子 ============== -->
+<section class="page cream" data-page="31" data-title="被宠坏的孩子">
+  <div class="page-tag">PART V · 31</div>
+  <div class="page-num">CH. 31 / 42</div>
+  <div class="container">
+    <div class="feature-strip" style="--strip-img:url(https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=1400&amp;q=70&amp;auto=format&amp;fit=crop)" data-caption="CH. 31"></div>
+    <div class="eyebrow">阿德勒认为最危险的一种童年</div>
+    <h2>"被宠坏" — 不是被给得太多，是被错误地给</h2>
+    <div class="divider"></div>
+
+    <div class="quote-block">
+      <div class="label">摘录 · 《超越自卑》</div>
+      <p>被宠坏的孩子，是被剥夺了"学会努力获取"的孩子。他们的生活方式是：世界本就应该按我的意愿运转，如果不能——那就是世界错了。</p>
+    </div>
+
+    <div class="analysis">
+      <div class="head">
+        <span class="badge">解读</span>
+        <h4>"宠"的真正含义：剥夺独立行动的机会</h4>
+      </div>
+      <p>很多人会自我安慰："我家不富，我没被宠坏。" 这是误解。阿德勒说的"宠"和物质无关——一个贫困家庭的孩子也可以被严重宠坏。</p>
+      <p>真正的"宠"是：<strong>父母替他承担了本该他承担的体验</strong>。具体表现：</p>
+      <ul style="padding-left:24px; margin:12px 0">
+        <li>替他做选择，让他不必练习决策</li>
+        <li>替他化解冲突，让他不必学会面对人</li>
+        <li>替他承担失败的后果，让他不必为自己负责</li>
+        <li>替他屏蔽现实的反馈，让他活在"我很特别"的幻觉里</li>
+      </ul>
+      <p>典型成年人特征：脆弱（容不下批评）、自恋（觉得自己天生应得更多）、易怒（世界没按预期运转就崩溃）、关系短命（一旦对方不再无条件配合就走人）。</p>
+    </div>
+
+    <div class="action">
+      <div class="head">
+        <span class="icon">!</span>
+        <h4>行动号召 · 主动制造"被剥夺的体验"</h4>
+      </div>
+      <ol>
+        <li>挑一件你过去依赖别人替你做的事（家务、报销、医院挂号、跟物业沟通、谈薪）——本月自己做一遍。</li>
+        <li>挑一件你过去不接受的反馈——本月找一个你信任的人，请他<strong>诚实指出</strong>你的一个盲点，承诺不反驳。</li>
+        <li>挑一件你过去回避的失败——本月主动去做一件你大概率做不好的事（学一门新技能、参加一个比赛）。</li>
+        <li>这三个"被剥夺"的体验，是补上童年缺课最快的方法。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 32 被忽视的孩子 ============== -->
+<section class="page cream" data-page="32" data-title="被忽视的孩子">
+  <div class="page-tag">PART V · 32</div>
+  <div class="page-num">CH. 32 / 42</div>
+  <div class="container">
+    <div class="feature-strip" style="--strip-img:url(https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=1400&amp;q=70&amp;auto=format&amp;fit=crop)" data-caption="CH. 32"></div>
+    <div class="eyebrow">最隐性的童年伤害</div>
+    <h2>"被忽视" — 不一定是被打骂，可能只是从未被看见</h2>
+    <div class="divider"></div>
+
+    <div class="quote-block">
+      <div class="label">摘录 · 《理解生命》</div>
+      <p>被忽视的孩子学不会"什么是合作"。在他的世界图景里，他人不是合作伙伴，而是 distant 的、潜在威胁的、不可靠的存在。</p>
+    </div>
+
+    <div class="analysis">
+      <div class="head">
+        <span class="badge">解读</span>
+        <h4>很多"高功能"的成年人，是被忽视长大的</h4>
+      </div>
+      <p>阿德勒强调一点常被忽略：被忽视不等于物理上的缺席。一个有父母在身边、衣食无忧的孩子，照样可能被严重忽视——只要父母对他的<strong>内在情感世界</strong>是缺席的。</p>
+      <p>典型场景：你考了 95 分，父母只问那 5 分丢哪儿了。你试图分享一个感动，他们说"别矫情"。你害怕了，他们说"这有什么好怕的"。久而久之，孩子学到的是：<strong>"我的内在体验对这个世界没有意义。我必须靠成就才有存在的资格。"</strong></p>
+      <p>这类人长大后的标志特征：</p>
+      <ul style="padding-left:24px; margin:12px 0">
+        <li>极度独立，几乎不向人求助</li>
+        <li>用工作成就来确认自我价值</li>
+        <li>在亲密关系里"高功能但低连接"——什么都能给，但情感深处不肯靠近</li>
+        <li>对"被理解"既渴望又恐惧——一旦被真的看见，反而想逃</li>
+      </ul>
+    </div>
+
+    <div class="action">
+      <div class="head">
+        <span class="icon">!</span>
+        <h4>行动号召 · 练习"暴露内在"</h4>
+      </div>
+      <ol>
+        <li>每天对自己说一次：<strong>"我的感受本身就有价值，不需要靠任何成就来证明。"</strong></li>
+        <li>本周找一个你信任的人，分享一件你"通常不会说"的脆弱（一个恐惧、一个不安全感、一段没处理好的关系）。<strong>不解释、不收尾、不让对方解决——只让自己被看见</strong>。</li>
+        <li>观察分享后 24 小时你的感受。被忽视的孩子最难学的，是允许自己被看见。每一次成功的暴露都是一次反向重塑。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 33 PART VI 自我诊断 ============== -->
+<section class="page with-hero" style="--hero-img:url(https://images.unsplash.com/photo-1504805572947-34fad45aed93?w=1800&amp;q=80&amp;auto=format&amp;fit=crop)" data-page="33" data-title="自我诊断">
+  <div class="page-tag">PART VI · 成年人的疗愈 · 33</div>
+  <div class="page-num">CH. 33 / 42</div>
+  <div class="container">
+    <div class="eyebrow">第六部分 · 给成年人的疗愈路径</div>
+    <h2>第一步：识别你的"生活方式"</h2>
+    <div class="divider"></div>
+
+    <p class="lead">前 32 章铺垫完毕。从这里开始，我们进入"工程师模式"——不再讨论理论，只给操作。每一章是一项可执行的练习，可以独立做，也可以串成一条 30 天的自我训练路径。</p>
+
+    <div class="analysis" style="margin-top:36px">
+      <div class="head">
+        <span class="badge">解读</span>
+        <h4>阿德勒诊断法：四问</h4>
+      </div>
+      <p>阿德勒在咨询里只用四道题就能勾勒来访者的生活方式。请你也用同样的方式问自己——纸笔不要打字，凭直觉作答。</p>
+    </div>
+
+    <ol class="step-list">
+      <li><strong>请讲你最早的一段记忆</strong><span>5-6 岁之前，自己记得的，不是听家人转述的。越具体越好——光线、气味、当时的感受。</span></li>
+      <li><strong>请讲一个你反复做过的梦</strong><span>如果想不起来，讲最近 1-2 个月做过的最有印象的梦。</span></li>
+      <li><strong>如果三大任务（工作 / 社交 / 爱情）必须放弃一个，你会放弃哪个？为什么？</strong><span>这个回答会暴露你最自卑的领域，也是你避之最深的领域。</span></li>
+      <li><strong>如果你的人生没有任何限制，你今天会做什么？你为什么没做？</strong><span>第二问比第一问重要——你给自己找的所有理由，就是你的"借口图谱"。</span></li>
+    </ol>
+
+    <div class="action">
+      <div class="head">
+        <span class="icon">!</span>
+        <h4>行动号召 · 写下答案，密封一周</h4>
+      </div>
+      <ol>
+        <li>认真回答以上 4 题，写在纸上。</li>
+        <li>装进信封封好，7 天后再打开看。</li>
+        <li>7 天的距离会让你以"第三方"的眼光看自己的答案——你会清晰地看到你的生活方式的轮廓。这是后面所有练习的起点。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 34 重写早期记忆 ============== -->
+<section class="page cream" data-page="34" data-title="重写早期记忆">
+  <div class="page-tag">PART VI · 34</div>
+  <div class="page-num">CH. 34 / 42</div>
+  <div class="container">
+    <div class="feature-strip" style="--strip-img:url(https://images.unsplash.com/photo-1518770660439-4636190af475?w=1400&amp;q=70&amp;auto=format&amp;fit=crop)" data-caption="CH. 34"></div>
+    <div class="eyebrow">第二步</div>
+    <h2>重新解释你的早期记忆 — 同一段过去，可以推出新结论</h2>
+    <div class="divider"></div>
+
+    <div class="analysis">
+      <div class="head">
+        <span class="badge">解读</span>
+        <h4>记忆不可改，解释可改</h4>
+      </div>
+      <p>记得吗？阿德勒说早期记忆不是事实，是你给自己的"开场判决"。所以疗愈的关键不在于"忘掉那段事"——你忘不掉，也不该忘。关键在于<strong>重新解释那段事</strong>。</p>
+      <p>方法：把你 33 章写下的最早记忆，从三个角度重新讲一遍。</p>
+    </div>
+
+    <ol class="step-list">
+      <li><strong>原版叙述</strong><span>你最初记住它的方式。比如："5 岁那年我走丢了，妈妈很久才找到我，那种被遗忘的感觉一直跟着我。"</span></li>
+      <li><strong>反向重述 — 主动版本</strong><span>同一件事，强调你做了什么。"5 岁那年我自己在街上走了两个小时，没哭，等到了妈妈。我那时候就有独立的能力。"</span></li>
+      <li><strong>关系重述 — 连接版本</strong><span>同一件事，强调谁出现了。"5 岁那年我走丢了，妈妈疯了一样找我，最后找到我抱了很久。这件事告诉我——有人在乎我。"</span></li>
+    </ol>
+
+    <div class="analysis">
+      <p>三个版本都是"真的"。它们采用了同一段事实的不同切面。阿德勒治疗里有一个标志性时刻——来访者第一次发现自己可以选择"<strong>用哪一版来活</strong>"。那一刻往往伴随眼泪——因为他第一次知道自己原来一直在用最伤自己的那一版。</p>
+    </div>
+
+    <div class="action">
+      <div class="head">
+        <span class="icon">!</span>
+        <h4>行动号召 · 三版重述</h4>
+      </div>
+      <ol>
+        <li>把 33 章里的最早记忆，按上面三个版本各写一遍（每版 100 字以内）。</li>
+        <li>大声读出第三版（连接版），<strong>读三遍</strong>。</li>
+        <li>这周开始，当你脑子里又自动播放第一版时，提醒自己：第三版同样真实。它只是你<strong>还没用</strong>的一面。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 35 优越情结回到健康追求 ============== -->
+<section class="page cream" data-page="35" data-title="从优越情结回归">
+  <div class="page-tag">PART VI · 35</div>
+  <div class="page-num">CH. 35 / 42</div>
+  <div class="container">
+    <div class="feature-strip" style="--strip-img:url(https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=1400&amp;q=70&amp;auto=format&amp;fit=crop)" data-caption="CH. 35"></div>
+    <div class="eyebrow">第三步</div>
+    <h2>把"优越情结"拐回"健康追求"</h2>
+    <div class="divider"></div>
+
+    <div class="analysis">
+      <div class="head">
+        <span class="badge">解读</span>
+        <h4>具体方法：四步拐弯</h4>
+      </div>
+      <p>从 15-16 章我们知道，"优越情结"是用幻觉补偿自卑。要把它拐回健康追求，需要四个具体动作：</p>
+    </div>
+
+    <ol class="step-list">
+      <li><strong>命名（Naming）</strong><span>给你的优越伪装起一个名字。"我有一种 用学历贬低人 的习惯""我有一种 通过 不在乎 来维持高度 的习惯"。命名就是揭开。</span></li>
+      <li><strong>追溯（Tracing）</strong><span>问这个习惯第一次出现是什么时候？通常追溯会回到一个具体的童年场景——一次被嘲笑、一次被对比、一次没有得到爱。</span></li>
+      <li><strong>替换（Replacing）</strong><span>每次想做"优越伪装"时，问自己：如果这股能量朝"真问题"使，我应该做什么具体的事？把这件事做完。</span></li>
+      <li><strong>报告（Reporting）</strong><span>每周写一份"诚实日记"——记录你这周做了几次"替换"，几次又掉回旧模式。不评判，只观察。</span></li>
+    </ol>
+
+    <div class="quote-block">
+      <p>阿德勒治疗的精髓不是"消灭自卑"，而是把朝向"看起来强"的能量，扭转为朝向"实际上变强"。这一扭，整个人生的方向就换了。</p>
+    </div>
+
+    <div class="action">
+      <div class="head">
+        <span class="icon">!</span>
+        <h4>行动号召 · 命名你的伪装</h4>
+      </div>
+      <ol>
+        <li>给你最常用的 1-2 个"优越伪装"起名字。</li>
+        <li>把名字写在手机便签里，置顶。</li>
+        <li>本周每次它冒出来，就在便签下面记一笔。一周后看次数——这就是你的"病灶活动度"。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 36 重建社会兴趣 ============== -->
+<section class="page deep" data-page="36" data-title="重建社会兴趣">
+  <div class="page-tag">PART VI · 36</div>
+  <div class="page-num">CH. 36 / 42</div>
+  <div class="container">
+    <div class="feature-strip" style="--strip-img:url(https://images.unsplash.com/photo-1542838132-92c53300491e?w=1400&amp;q=70&amp;auto=format&amp;fit=crop)" data-caption="CH. 36"></div>
+    <div class="eyebrow">第四步</div>
+    <h2>重建你的"社会兴趣"半径</h2>
+    <div class="divider"></div>
+
+    <div class="analysis">
+      <div class="head">
+        <span class="badge">解读</span>
+        <h4>从最小单位开始</h4>
+      </div>
+      <p>27 章讲了社会兴趣是心理健康的根本指标。但很多成年人到了这里会卡——"我同心圆都收缩到只剩自己了，要怎么重建？"</p>
+      <p>阿德勒的处方非常具体：<strong>不要从大爱开始，要从最小单位开始</strong>。"为家人做一杯水"是社会兴趣，"为同事写一封真诚的邮件"是社会兴趣，"给陌生人让一次座"也是。社会兴趣不是宏大行动，是<strong>把视线从自己身上挪开</strong>的微动作。</p>
+    </div>
+
+    <div class="grid-2" style="margin-top:32px">
+      <div class="card">
+        <h4>反例 · 假社会兴趣</h4>
+        <p>"我做志愿者是为了简历""我帮你是为了你将来帮我""我捐款是为了发朋友圈"——这些都是 <em>用社会兴趣的形式做利己的事</em>。阿德勒说：这反而会进一步腐蚀你的真社会兴趣。</p>
+      </div>
+      <div class="card">
+        <h4>正例 · 真社会兴趣</h4>
+        <p>"我做一件不会被任何人知道、对方也不会感谢我的好事。" —— 这是一面镜子。如果你做不下来，说明你的社会兴趣还需要训练。能做得下来，说明你的"自我中心"在松动。</p>
+      </div>
+    </div>
+
+    <div class="action">
+      <div class="head">
+        <span class="icon">!</span>
+        <h4>行动号召 · "无人知晓"练习</h4>
+      </div>
+      <ol>
+        <li>本周做一件<strong>对别人有帮助、但绝不会有人知道是你做的</strong>的事。</li>
+        <li>例如：匿名给一个公益项目转 100 元；偷偷整理了同事的工位；帮邻居把放在外面的快递搬进门里不留名。</li>
+        <li>做完后<strong>不要告诉任何人</strong>。让这件事永远只在你和宇宙之间。</li>
+        <li>这是阿德勒社会兴趣最高级的训练——它证明你做这件事不是为了任何回报，纯粹因为你是这个世界的一份子。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 37 课题分离实操 ============== -->
+<section class="page cream" data-page="37" data-title="课题分离实操">
+  <div class="page-tag">PART VI · 37</div>
+  <div class="page-num">CH. 37 / 42</div>
+  <div class="container">
+    <div class="feature-strip" style="--strip-img:url(https://images.unsplash.com/photo-1504275107627-0c2ba7a43dba?w=1400&amp;q=70&amp;auto=format&amp;fit=crop)" data-caption="CH. 37"></div>
+    <div class="eyebrow">第五步</div>
+    <h2>课题分离的实操脚本</h2>
+    <div class="divider"></div>
+
+    <p class="lead">25 章讲了课题分离的原则。这一章给你具体话术——四种最常见的越界场景，怎么用语言把边界放回原位。</p>
+
+    <div class="grid-2" style="margin-top:32px">
+      <div class="card" style="border-top:4px solid #c9a76a">
+        <div class="meta">场景 1 · 父母催婚</div>
+        <h4>对方越界你的课题</h4>
+        <p style="margin-bottom:10px">❌ 旧脚本："你们别管了，我的事我自己有数。"（反击式，引发战争）</p>
+        <p>✅ 新脚本："我知道你们担心。<strong>怎么样过我的人生这件事，最终是我承担。我会用我的方式做好</strong>。你们的担心我听到了，但请相信我有能力处理。"</p>
+      </div>
+      <div class="card" style="border-top:4px solid #c9a76a">
+        <div class="meta">场景 2 · 你想干涉伴侣</div>
+        <h4>你越界对方的课题</h4>
+        <p style="margin-bottom:10px">❌ 旧脚本："你应该 ___，不然 ___。"（替对方做决定）</p>
+        <p>✅ 新脚本："我观察到 ___，我担心 ___。<strong>这件事最终由你决定。不论你选哪条路，我都在</strong>。"</p>
+      </div>
+      <div class="card" style="border-top:4px solid #c9a76a">
+        <div class="meta">场景 3 · 同事甩锅</div>
+        <h4>对方推他的课题给你</h4>
+        <p style="margin-bottom:10px">❌ 旧脚本：默默接下，咬牙完成，回家生闷气。</p>
+        <p>✅ 新脚本："我理解你现在压力大。<strong>这件事按照分工是 X 负责，我可以协助但不能代办</strong>。你需要我怎么协助？"</p>
+      </div>
+      <div class="card" style="border-top:4px solid #c9a76a">
+        <div class="meta">场景 4 · 朋友倾诉求建议</div>
+        <h4>不要替对方走过他的路</h4>
+        <p style="margin-bottom:10px">❌ 旧脚本："你应该 X，你怎么不试 Y！"（替对方做主）</p>
+        <p>✅ 新脚本："听起来你很难。<strong>这件事是你的课题，我不替你决定。如果你想要我陪你想，我在</strong>。"</p>
+      </div>
+    </div>
+
+    <div class="action">
+      <div class="head">
+        <span class="icon">!</span>
+        <h4>行动号召 · 试用一次</h4>
+      </div>
+      <ol>
+        <li>从上面 4 个场景里挑一个本周大概率会遇到的。</li>
+        <li>把新脚本抄在便签里，演练 3 遍直到自然。</li>
+        <li>真实遇到时用一次。事后记录对方反应、你的感觉、关系的变化。</li>
+        <li>课题分离不是一次革命，是 100 次微调。每次微调都让你的关系少一点扭曲。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 38 鼓起勇气 ============== -->
+<section class="page cream" data-page="38" data-title="勇气的练习">
+  <div class="page-tag">PART VI · 38</div>
+  <div class="page-num">CH. 38 / 42</div>
+  <div class="container">
+    <div class="feature-strip" style="--strip-img:url(https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=1400&amp;q=70&amp;auto=format&amp;fit=crop)" data-caption="CH. 38"></div>
+    <div class="eyebrow">第六步</div>
+    <h2>勇气训练 — 阿德勒的"小步跳"清单</h2>
+    <div class="divider"></div>
+
+    <p class="lead">勇气不是一夜壮大的，它是 100 次"小到不可能失败"的尝试。下面这份清单是阿德勒治疗师惯用的难度梯度，你可以从最低级开始往上走。</p>
+
+    <ol class="step-list" style="margin-top:32px">
+      <li><strong>L1 · 微暴露</strong><span>对一个陌生人说一句完整的话（点单时多说"谢谢，今天辛苦了"）</span></li>
+      <li><strong>L2 · 微请求</strong><span>本周向某人提出一个你"通常不好意思提"的小请求（请同事帮忙看一份文档）</span></li>
+      <li><strong>L3 · 微拒绝</strong><span>本周对一个不重要但你通常会硬接的请求说"不"，不解释、不道歉</span></li>
+      <li><strong>L4 · 微暴露脆弱</strong><span>对一个信任的人讲一件你"通常不说"的脆弱</span></li>
+      <li><strong>L5 · 微道歉</strong><span>主动为一件你 30 天内做错的事真诚道歉</span></li>
+      <li><strong>L6 · 微开始</strong><span>开始一件你想了 6 个月但一直不敢启动的事（哪怕只做 25 分钟）</span></li>
+      <li><strong>L7 · 微对峙</strong><span>当面而非微信地表达一次不同意见</span></li>
+      <li><strong>L8 · 微决定</strong><span>独自做一个 1000 元以上的决定，不问任何人意见</span></li>
+      <li><strong>L9 · 微离开</strong><span>退出一段你长期消耗在里面的关系或群</span></li>
+      <li><strong>L10 · 大暴露</strong><span>做一件可能失败、可能被嘲笑、但你真心想做的事</span></li>
+    </ol>
+
+    <div class="action">
+      <div class="head">
+        <span class="icon">!</span>
+        <h4>行动号召 · 一周一级</h4>
+      </div>
+      <ol>
+        <li>从 L1 开始，每周做一级。10 周完成一轮。</li>
+        <li>每完成一级，给自己写一句话："我做了 ___，结果 ___，下一次我可以 ___。"</li>
+        <li>10 周后回看，你会发现 L10 已经不那么吓人了——因为你已经从 L1 开始训练了你的勇气肌肉。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 39 贡献感的练习 ============== -->
+<section class="page deep" data-page="39" data-title="贡献感">
+  <div class="page-tag">PART VI · 39</div>
+  <div class="page-num">CH. 39 / 42</div>
+  <div class="container">
+    <div class="feature-strip" style="--strip-img:url(https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1400&amp;q=70&amp;auto=format&amp;fit=crop)" data-caption="CH. 39"></div>
+    <div class="eyebrow">第七步</div>
+    <h2>贡献感 — 阿德勒所说的"幸福的真名"</h2>
+    <div class="divider"></div>
+
+    <div class="quote-block">
+      <div class="label">阿德勒核心命题</div>
+      <p>归属感不是别人给你的，是你主动贡献换来的。"我对这个共同体有用"——这就是幸福的真名。</p>
+    </div>
+
+    <div class="analysis">
+      <div class="head">
+        <span class="badge">解读</span>
+        <h4>"被认可"是糖，"贡献感"才是饭</h4>
+      </div>
+      <p>主流文化把"被看见、被认可"当成幸福的源头。阿德勒指出这是糖——短暂、易上瘾、留不下营养。真正的精神饱腹来自<strong>贡献感</strong>：你知道你对一个更大的整体有用，无论是否有人为你鼓掌。</p>
+      <p>贡献感有一个奇妙性质——它<strong>不依赖外界反馈</strong>。一个母亲在孩子睡觉时帮他盖被，没人看见也没人感谢，但她有贡献感。一个程序员深夜修了一个 bug，用户不会知道是谁，但他有贡献感。这就是为什么贡献感比认可感更稳定。</p>
+    </div>
+
+    <div class="action">
+      <div class="head">
+        <span class="icon">!</span>
+        <h4>行动号召 · "今天我贡献了什么"日记</h4>
+      </div>
+      <ol>
+        <li>从今天起，每晚睡前问自己一个问题——<strong>不</strong>是"我今天完成了什么 KPI"，而是"<strong>我今天的存在，让谁的世界稍微好了一点点？</strong>"</li>
+        <li>哪怕只是"我给保洁阿姨说了谢谢"，哪怕只是"我今天没把坏情绪倒给伴侣"——都算。</li>
+        <li>连续 21 天。你会发现你的睡眠质量、晨起情绪、对工作的意义感，会发生微妙但显著的变化。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 40 赋予新意义 ============== -->
+<section class="page cream" data-page="40" data-title="重新赋义">
+  <div class="page-tag">PART VI · 40</div>
+  <div class="page-num">CH. 40 / 42</div>
+  <div class="container">
+    <div class="feature-strip" style="--strip-img:url(https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=1400&amp;q=70&amp;auto=format&amp;fit=crop)" data-caption="CH. 40"></div>
+    <div class="eyebrow">第八步</div>
+    <h2>给自己的生命，重新赋一次意义</h2>
+    <div class="divider"></div>
+
+    <div class="quote-block">
+      <div class="label">摘录 · 《超越自卑》</div>
+      <p>意义不是被发现的，是被赋予的。你赋予生命什么意义，生命就用什么样的方式回应你。</p>
+    </div>
+
+    <div class="analysis">
+      <div class="head">
+        <span class="badge">解读</span>
+        <h4>这是这份报告最后一个练习</h4>
+      </div>
+      <p>前面 39 章是工具。这一章是把工具放下，看你想盖一座什么样的房子。</p>
+      <p>阿德勒终生反对一个观点："人生的意义是被发现的"——好像它藏在某个山洞里等你找。他坚持："<strong>人生的意义是被赋予的</strong>"——它是你的选择，你的承担，你的宣告。</p>
+      <p>问自己一个非常简单但非常重的问题：</p>
+    </div>
+
+    <div class="closing-big" style="background: rgba(201,167,106,0.08); padding: 48px 32px; border-radius: 16px; margin: 40px 0;">
+      "如果我把生命的意义定义为<span class="accent">"对他人有贡献"</span>，<br>我今天会做哪一件，<br>我过去一直没做的事？"
+    </div>
+
+    <div class="action">
+      <div class="head">
+        <span class="icon">!</span>
+        <h4>行动号召 · 写下你的"赋义宣言"</h4>
+      </div>
+      <ol>
+        <li>用一段话回答：<strong>"在阿德勒的意义上，我赋予我这一生的意义是 ___。我将通过 ___ 的方式实现它。第一步我今天就做 ___。"</strong></li>
+        <li>把这段话打印出来，贴在你每天能看到的地方（书桌前、卫生间镜子上、冰箱门）。</li>
+        <li>不要追求它"完美"。<strong>它会进化，但它必须存在</strong>。一个没有被赋义的人生，会自动被外界赋义——而外界给你的意义，往往不是你真正想要的。</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 41 21天清单 ============== -->
+<section class="page with-hero" style="--hero-img:url(https://images.unsplash.com/photo-1494797262163-102fae527c62?w=1800&amp;q=80&amp;auto=format&amp;fit=crop)" data-page="41" data-title="21 天清单">
+  <div class="page-tag">CLOSING · 41</div>
+  <div class="page-num">CH. 41 / 42</div>
+  <div class="container">
+    <div class="eyebrow">把全部 42 章浓缩成一份清单</div>
+    <h2>21 天阿德勒疗愈清单</h2>
+    <div class="divider"></div>
+
+    <p class="lead">如果你只想做一件事——做完这 21 天。每天 15 分钟，三周后你会拥有比读完 100 本心理学书更扎实的自我认知。</p>
+
+    <ul class="checklist" style="margin-top:32px">
+      <li><div class="day">DAY 01</div><div class="body"><strong>翻转一句"因为"</strong><span>找一句你常说的"因为我 ___，所以我 ___"，把它倒过来写"我选择不 ___，于是我用 ___ 作借口"。（→ 第 6 章）</span></div></li>
+      <li><div class="day">DAY 02</div><div class="body"><strong>给三大任务打分</strong><span>工作/社交/爱情，每项 0-10 分，找出最瘸的那条腿。（→ 第 8 章）</span></div></li>
+      <li><div class="day">DAY 03</div><div class="body"><strong>追踪屏幕时间和银行账单</strong><span>用数据看你"沉默的意义"。（→ 第 7 章）</span></div></li>
+      <li><div class="day">DAY 04</div><div class="body"><strong>写最早记忆 + 三版重述</strong><span>同一段过去，三种解释。（→ 第 21/34 章）</span></div></li>
+      <li><div class="day">DAY 05</div><div class="body"><strong>3 件让我自卑的事</strong><span>不消除，只记录，给自卑感正名。（→ 第 12 章）</span></div></li>
+      <li><div class="day">DAY 06</div><div class="body"><strong>抓"反正我就是 ___"</strong><span>把自卑情结改写为"我目前还没 ___，下一步我可以 ___"。（→ 第 13 章）</span></div></li>
+      <li><div class="day">DAY 07</div><div class="body"><strong>命名一个优越伪装</strong><span>诚实地揪一个，命名它，贴便签。（→ 第 15/35 章）</span></div></li>
+      <li><div class="day">DAY 08</div><div class="body"><strong>纵向比较改成横向比较</strong><span>每天问自己"比昨天的我强在哪里"。（→ 第 14 章）</span></div></li>
+      <li><div class="day">DAY 09</div><div class="body"><strong>身体—事件日志</strong><span>记录身体信号 vs 触发情境。（→ 第 10 章）</span></div></li>
+      <li><div class="day">DAY 10</div><div class="body"><strong>抓一次"情绪召唤"</strong><span>问"如果我现在不发这股情绪，我要做的难事是什么"。（→ 第 20 章）</span></div></li>
+      <li><div class="day">DAY 11</div><div class="body"><strong>给性格做成本/收益表</strong><span>3 个被评价过的性格词 × 利弊。（→ 第 18 章）</span></div></li>
+      <li><div class="day">DAY 12</div><div class="body"><strong>反角色练习</strong><span>原生家庭里你扮演什么？本周演一次反角色。（→ 第 23 章）</span></div></li>
+      <li><div class="day">DAY 13</div><div class="body"><strong>课题分离实操 · 撤回</strong><span>退出一件你在干涉的别人的课题。（→ 第 25/37 章）</span></div></li>
+      <li><div class="day">DAY 14</div><div class="body"><strong>课题分离实操 · 拒绝</strong><span>对一件别人对你越界的事温和说"不"。（→ 第 25/37 章）</span></div></li>
+      <li><div class="day">DAY 15</div><div class="body"><strong>去夸奖化</strong><span>一周不说"你真棒"，换成"谢谢你 ___"。（→ 第 26 章）</span></div></li>
+      <li><div class="day">DAY 16</div><div class="body"><strong>无人知晓的好事</strong><span>做一件别人不会知道是你做的好事。（→ 第 36 章）</span></div></li>
+      <li><div class="day">DAY 17</div><div class="body"><strong>勇气 L1-L3</strong><span>微暴露 + 微请求 + 微拒绝。（→ 第 38 章）</span></div></li>
+      <li><div class="day">DAY 18</div><div class="body"><strong>勇气 L4 · 暴露脆弱</strong><span>对信任的人说一件通常不说的脆弱。（→ 第 32/38 章）</span></div></li>
+      <li><div class="day">DAY 19</div><div class="body"><strong>合作能力自检</strong><span>4 个微能力打分，针对最弱项做一次练习。（→ 第 28 章）</span></div></li>
+      <li><div class="day">DAY 20</div><div class="body"><strong>贡献感日记</strong><span>晚上问"我让谁的世界稍微好了一点点"。（→ 第 39 章）</span></div></li>
+      <li><div class="day">DAY 21</div><div class="body"><strong>写赋义宣言</strong><span>"我赋予这一生的意义是 ___，第一步我今天做 ___。"贴墙上。（→ 第 40 章）</span></div></li>
+    </ul>
+
+    <div class="action" style="margin-top:36px">
+      <div class="head">
+        <span class="icon">!</span>
+        <h4>使用提示</h4>
+      </div>
+      <p>21 天不是终点，是<strong>起点</strong>。这份清单的真正用法：第 1 轮认真做，第 2 轮选 3-5 项重做，第 3 轮选 1 项做到精。1 年后你会拥有一份完全不一样的"生活方式"——不是更"成功"的，而是更<strong>真实</strong>的。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 42 结语 ============== -->
+<section class="page cover with-hero" style="--hero-img:url(https://images.unsplash.com/photo-1500964757637-c85e8a162699?w=1800&amp;q=80&amp;auto=format&amp;fit=crop)" data-page="42" data-title="结语">
+  <div class="stars"></div>
+  <div class="cover-content">
+    <div class="eyebrow">FINALE · 42 / 42</div>
+    <h1 style="font-size: clamp(36px, 5vw, 64px); margin-bottom: 40px;">最后一段话<br><span class="accent" style="font-size: 0.7em;">— 阿德勒留给你的</span></h1>
+
+    <p class="sub" style="font-size: clamp(17px, 1.4vw, 21px); line-height: 1.85;">
+      阿德勒一辈子在反对一句话：<strong>"我就是这样的人。"</strong><br><br>
+      他的整个体系，骨子里就是要告诉你：<br>
+      你不是"被造好的"，你是"正在被你自己造"的。<br>
+      你的童年没办法重来，但<strong>你今天的解释</strong>可以重来。<br>
+      你的恐惧没办法消除，但<strong>你下一步的动作</strong>可以选择。<br>
+      你已经活过的那段人生你改不了，但<strong>从现在开始的部分</strong>是你的。<br><br>
+      他不让你做完美的人，他让你做<strong>有勇气的人</strong>。<br>
+      他不让你超过别人，他让你<strong>超过昨天的自己</strong>。<br>
+      他不让你独活成英雄，他让你<strong>融进人群成为有用的一份子</strong>。<br><br>
+      这份报告读到这里，文字结束了。<br>
+      但阿德勒最在乎的那部分——<strong>你接下来去做的事</strong>——才刚刚开始。
+    </p>
+
+    <div class="signature" style="text-align: left; color: var(--gold-bright); margin-top: 60px; font-size: 16px;">
+      —— 完 ——<br>
+      <span style="color: rgba(245,239,230,0.5); font-size: 13px; font-style: normal; letter-spacing: 0.15em;">本报告基于阿德勒《超越自卑》《洞察人性》《理解生命》《性格的塑造》四册中文版整理</span><br>
+      <span style="color: rgba(245,239,230,0.5); font-size: 13px; font-style: normal; letter-spacing: 0.15em;">短句摘录均限于评论性引用 · 解读与行动框架为本报告原创</span>
+    </div>
+  </div>
+</section>
+
+<script>
+  const pages = document.querySelectorAll('.page');
+  const pill = document.getElementById('navPill');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        const num = e.target.getAttribute('data-page');
+        const title = e.target.getAttribute('data-title') || '';
+        pill.textContent = title ? `${num} · ${title}` : `第 ${num} 章`;
+      }
+    });
+  },{threshold: 0.4});
+  pages.forEach(p=>io.observe(p));
+
+  // reading progress bar (mobile)
+  const bar = document.getElementById('readProgress');
+  let ticking = false;
+  function updateProgress(){
+    const h = document.documentElement;
+    const scrolled = h.scrollTop || document.body.scrollTop;
+    const total = h.scrollHeight - h.clientHeight;
+    const pct = total > 0 ? (scrolled / total) * 100 : 0;
+    bar.style.width = pct.toFixed(2) + '%';
+    ticking = false;
+  }
+  window.addEventListener('scroll', ()=>{
+    if(!ticking){ window.requestAnimationFrame(updateProgress); ticking = true; }
+  }, {passive:true});
+  updateProgress();
+</script>
+
+<div class="image-credit">
+  视觉素材 · Unsplash · 自由摄影师作品 · 用于本报告氛围烘托<br>
+  报告文字与解读框架 © 2026 · 阿德勒原作引用限于评论性短句
+</div>
+<script defer="" src="./阿德勒 · 给成年人的心理学课 — 自卑、勇气与生命的意义_files/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;73a749ca3ace4b2abd6813f039000869&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+<div id="wwei-auth-widget" style="position: fixed; top: 16px; right: 16px; z-index: 2147483647;"><template shadowrootmode="open"><style>
+      :host { all: initial; }
+      * { box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif; }
+      .wrap { position: relative; }
+      .avatar {
+        width: 36px; height: 36px; border-radius: 50%; padding: 0; cursor: pointer; position: relative;
+        border: 2px solid rgba(255,255,255,0.15); background: #111214; color: #f0f0f2;
+        display: flex; align-items: center; justify-content: center; overflow: hidden;
+        transition: all .2s; box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      }
+      .avatar:hover { transform: scale(1.05); border-color: rgba(255,255,255,0.3); }
+      .avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+      .avatar .fallback { font-weight: 600; font-size: 14px; }
+      .avatar.loading { animation: pulse 1.4s infinite; cursor: default; }
+      @keyframes pulse { 0%,100% { opacity: 0.5; } 50% { opacity: 0.9; } }
+      .dot {
+        position: absolute; bottom: -2px; right: -2px; width: 12px; height: 12px;
+        border-radius: 50%; border: 2px solid #111214;
+      }
+      .login-btn {
+        display: inline-block; padding: 7px 16px; border-radius: 100px;
+        background: rgba(110, 231, 183, 0.95); color: #08090a; font-size: 13px; font-weight: 500;
+        text-decoration: none; transition: all .2s; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        border: 1px solid rgba(110, 231, 183, 0.3);
+      }
+      .login-btn:hover { background: #6ee7b7; transform: translateY(-1px); }
+      .dropdown {
+        position: absolute; top: 44px; right: 0; min-width: 260px;
+        background: #111214; border: 1px solid #1e2024; border-radius: 12px;
+        padding: 16px; opacity: 0; transform: translateY(-6px) scale(0.96);
+        pointer-events: none; transition: all .18s cubic-bezier(.4,0,.2,1);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.4); color: #f0f0f2;
+      }
+      .dropdown.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+      .dropdown-head { display: flex; gap: 12px; align-items: center; }
+      .dropdown-avatar { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; flex-shrink: 0; background: #1e2024; display: flex; align-items: center; justify-content: center; }
+      .dropdown-avatar img { width: 100%; height: 100%; object-fit: cover; }
+      .dropdown-info { flex: 1; min-width: 0; }
+      .dropdown-name { font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .dropdown-email { font-size: 11px; color: #a0a3ab; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .dropdown-level {
+        display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px;
+        font-size: 10px; font-weight: 600; letter-spacing: 0.05em;
+        border: 1px solid;
+      }
+      .dropdown-divider { height: 1px; background: #1e2024; margin: 14px 0; }
+      .dropdown-item {
+        display: block; padding: 8px 12px; font-size: 13px; color: #f0f0f2;
+        text-decoration: none; border-radius: 6px; transition: background .15s;
+      }
+      .dropdown-item:hover { background: #1e2024; }
+    </style>
+        <div class="wrap">
+          <button class="avatar" id="avatar" aria-label="user menu" title="yiyixiao920@gmail.com · ADMIN">
+            <img src="https://lh3.googleusercontent.com/a/ACg8ocKu-yjD3iu0mgzG7jWbJHAxSpl7HBx0GqADxeh6y8jMFDEhpA=s96-c" referrerpolicy="no-referrer" alt="">
+            <span class="dot" style="background:#f87171" title="ADMIN"></span>
+          </button>
+          <div class="dropdown" id="dropdown">
+            <div class="dropdown-head">
+              <div class="dropdown-avatar"><img src="https://lh3.googleusercontent.com/a/ACg8ocKu-yjD3iu0mgzG7jWbJHAxSpl7HBx0GqADxeh6y8jMFDEhpA=s96-c" referrerpolicy="no-referrer" alt=""></div>
+              <div class="dropdown-info">
+                <div class="dropdown-name">姚伊笑</div>
+                <div class="dropdown-email">yiyixiao920@gmail.com</div>
+                <div class="dropdown-level" style="color:#f87171;border-color:#f8717140">ADMIN</div>
+              </div>
+            </div>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="https://admin.wwei.ai/">管理后台 →</a>
+            <a class="dropdown-item" href="https://auth.wwei.ai/logout?next=https%3A%2F%2Fadler.wwei.ai%2F">退出登录</a>
+          </div>
+        </div>
+      </template></div><div id="cubox-react-root"><template shadowrootmode="open"><link rel="stylesheet" href="chrome-extension://bflmgpechpeohjfomgfdkkfcbhfcjohl/css/content.css"><div><div style="z-index: 2147483647;"></div></div></template></div><a id="colorPickerDivHidden"><img src="chrome-extension://njolgcnddhepjpplfifbmagdgkidikpj/logo.png" data-cubox-image-id="ae8686952839c0b69466b05216a82003" data-cubox-image-index="0" data-cubox-image-load="false"></a></body><plasmo-csui id="aitdk-csui"><template shadowrootmode="open"><style>*,:before,:after{box-sizing:border-box;border:0 solid #e5e7eb}:before,:after{--tw-content:""}html{-webkit-text-size-adjust:100%;tab-size:4;font-feature-settings:normal;font-variation-settings:normal;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}body{line-height:inherit;margin:0}hr{color:inherit;border-top-width:1px;height:0}abbr:where([title]){text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em}small{font-size:80%}sub,sup{vertical-align:baseline;font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-feature-settings:inherit;font-variation-settings:inherit;font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,[type=button],[type=reset],[type=submit]{-webkit-appearance:button;background-color:#0000;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button{height:auto}::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dl,dd,h1,h2,h3,h4,h5,h6,hr,figure,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}ol,ul,menu{margin:0;padding:0;list-style:none}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}button,[role=button]{cursor:pointer}:disabled{cursor:default}img,svg,video,canvas,audio,iframe,embed,object{vertical-align:middle;display:block}img,video{max-width:100%;height:auto}[hidden]{display:none}:host,:root{--background:0 0% 100%;--foreground:224 71.4% 4.1%;--card:0 0% 100%;--card-foreground:224 71.4% 4.1%;--popover:0 0% 100%;--popover-foreground:224 71.4% 4.1%;--primary:262.1 83.3% 57.8%;--primary-foreground:210 20% 98%;--secondary:220 14.3% 95.9%;--secondary-foreground:220.9 39.3% 11%;--muted:220 14.3% 95.9%;--muted-foreground:220 8.9% 46.1%;--accent:220 14.3% 95.9%;--accent-foreground:220.9 39.3% 11%;--destructive:0 84.2% 60.2%;--destructive-foreground:210 20% 98%;--border:220 13% 91%;--input:220 13% 91%;--ring:262.1 83.3% 57.8%;--radius:4.2px;z-index:2147483647}.dark{--background:224 71.4% 4.1%;--foreground:210 20% 98%;--card:224 71.4% 4.1%;--card-foreground:210 20% 98%;--popover:224 71.4% 4.1%;--popover-foreground:210 20% 98%;--primary:263.4 70% 50.4%;--primary-foreground:210 20% 98%;--secondary:215 27.9% 16.9%;--secondary-foreground:210 20% 98%;--muted:215 27.9% 16.9%;--muted-foreground:217.9 10.6% 64.9%;--accent:215 27.9% 16.9%;--accent-foreground:210 20% 98%;--destructive:0 62.8% 30.6%;--destructive-foreground:210 20% 98%;--border:215 27.9% 16.9%;--input:215 27.9% 16.9%;--ring:263.4 70% 50.4%}*{border-color:hsl(var(--border))}html{font-size:14px}body{background-color:hsl(var(--background));color:hsl(var(--foreground));font-feature-settings:"rlig" 1,"calt" 1;font-size:14px}*,:before,:after,::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:#3b82f680;--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }.container{width:100%;margin-left:auto;margin-right:auto;padding-left:28px;padding-right:28px}@media (width>=1400px){.container{max-width:1400px}}.visible{visibility:visible}.invisible{visibility:hidden}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.bottom-0{bottom:0}.left-1\/2{left:50%}.right-0{right:0}.right-2{right:7px}.top-0{top:0}.top-1\/2{top:50%}.top-2{top:7px}.-z-\[1\]{z-index:-1}.z-\[1\]{z-index:1}.z-\[2147483647\]{z-index:2147483647}.mx-auto{margin-left:auto;margin-right:auto}.-ml-\[13px\]{margin-left:-13px}.-mt-\[13px\]{margin-top:-13px}.mt-3{margin-top:10.5px}.mt-5{margin-top:17.5px}.block{display:block}.flex{display:flex}.hidden{display:none}.h-full{height:100%}.w-\[420px\]{width:420px}.w-\[520px\]{width:520px}.w-full{width:100%}@keyframes spin{to{transform:rotate(360deg)}}.animate-spin{animation:1s linear infinite spin}.cursor-pointer{cursor:pointer}.items-center{align-items:center}.justify-center{justify-content:center}.gap-x-2{column-gap:7px}.rounded{border-radius:3.5px}.bg-\[\#635bff\]{--tw-bg-opacity:1;background-color:rgb(99 91 255/var(--tw-bg-opacity))}.bg-\[\#635bff\]\/10{background-color:#635bff1a}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity))}.p-1{padding:3.5px}.p-6{padding:21px}.px-4{padding-left:14px;padding-right:14px}.py-2{padding-top:7px;padding-bottom:7px}.py-2\.5{padding-top:8.75px;padding-bottom:8.75px}.text-\[14px\]{font-size:14px}.text-xl{font-size:17.5px;line-height:24.5px}.font-medium{font-weight:500}.leading-6{line-height:21px}.text-black{--tw-text-opacity:1;color:rgb(0 0 0/var(--tw-text-opacity))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175/var(--tw-text-opacity))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128/var(--tw-text-opacity))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55/var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity))}.shadow-2xl{--tw-shadow:0 25px 50px -12px #00000040;--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.outline{outline-style:solid}.filter{filter:var(--tw-blur)var(--tw-brightness)var(--tw-contrast)var(--tw-grayscale)var(--tw-hue-rotate)var(--tw-invert)var(--tw-saturate)var(--tw-sepia)var(--tw-drop-shadow)}.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-duration:.15s;transition-timing-function:cubic-bezier(.4,0,.2,1)}@keyframes enter{0%{opacity:var(--tw-enter-opacity,1);transform:translate3d(var(--tw-enter-translate-x,0),var(--tw-enter-translate-y,0),0)scale3d(var(--tw-enter-scale,1),var(--tw-enter-scale,1),var(--tw-enter-scale,1))rotate(var(--tw-enter-rotate,0))}}@keyframes exit{to{opacity:var(--tw-exit-opacity,1);transform:translate3d(var(--tw-exit-translate-x,0),var(--tw-exit-translate-y,0),0)scale3d(var(--tw-exit-scale,1),var(--tw-exit-scale,1),var(--tw-exit-scale,1))rotate(var(--tw-exit-rotate,0))}}.hover\:bg-\[\#635bff\]\/90:hover{background-color:#635bffe6}</style><div id="plasmo-shadow-container" style="z-index: 2147483647; position: relative;"><div id="plasmo-inline" class="plasmo-csui-container" style="display: flex; position: relative; top: 0px; left: 0px;"><div class="aitdk-extension shadow-2xl flex fixed w-[520px] top-0 right-0 bottom-0 bg-white hidden"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x absolute right-2 top-2 z-[1] p-1 cursor-pointer text-gray-500"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-loader-circle animate-spin text-gray-400 absolute top-1/2 left-1/2 -ml-[13px] -mt-[13px] -z-[1]"><path d="M21 12a9 9 0 1 1-6.219-8.56"></path></svg></div></div></div></template></plasmo-csui><div id="immersive-translate-browser-popup" style="all: initial"><template shadowrootmode="open"><style>/** 基础色阶定义 **/
+:root,
+#mount[data-theme="light"],
+#mount:not([data-theme="dark"]) {
+  /* 中性灰阶（light） */
+  --c-00: #000000;
+  --c-22: #222222;
+  --c-33: #333333;
+  --c-66: #666666;
+  --c-83: #838383;
+  --c-99: #999999;
+  --c-c7: #c7c7c7;
+  --c-cc: #cccccc;
+  --c-e6: #e6e6e6;
+  --c-f5: #f5f5f5;
+  --c-ff: #ffffff;
+  /* 品牌主色阶（light） */
+  --p-main: #ea4c89;
+  --p-hover: #ec5e95;
+  --p-active: #e34a85;
+  --p-special: #ee71a2;
+  --p-disabled: #f4a5c4;
+  --p-text-disabled: #f9c9dc;
+  --p-weak: #fdedf3;
+  /* Surface 层级（light，TC 填充-1） */
+  --s-1: #f3f5f6;
+  --s-1-hover: #f6f8f9;
+  --s-1-active: #edf1f2;
+  --s-1-weak: #fafbfb;
+  /* 输入/边框（light，TC 填充-2） */
+  --input-bg-base: #fafbfc;
+  --input-border: #ecf0f7;
+  --input-border-strong: #e0e0e6;
+  --input-bg-strong: #fafdff;
+}
+
+:root[data-theme="dark"],
+[data-theme="dark"] {
+  /* 中性灰阶（dark） */
+  --c-00: #ffffff;
+  --c-22: #dbdbdb;
+  --c-33: #dbdbdb;
+  --c-66: #b3b3b3;
+  --c-83: #838383;
+  --c-99: #707070;
+  --c-c7: #666666;
+  --c-cc: #5c5c5c;
+  --c-e6: #3b3b3b;
+  --c-f5: #262626;
+  --c-ff: #222222;
+  /* 品牌主色阶（dark） */
+  --p-main: #e23c7c;
+  --p-hover: #ea4c89;
+  --p-active: #d5467d;
+  --p-special: #a93a65;
+  --p-disabled: #7e2f4d;
+  --p-text-disabled: #522335;
+  --p-weak: #26171d;
+  /* Surface 层级（dark，TC 填充-1） */
+  --s-1: #2d2e2f;
+  --s-1-hover: #323434;
+  --s-1-active: #202121;
+  --s-1-weak: #262627;
+  /* 输入/边框（dark，TC 填充-2） */
+  --input-bg-base: #2b2d30;
+  --input-border: #3e434b;
+  --input-border-strong: #43474b;
+  --input-bg-strong: #1f2123;
+}
+
+:root,
+#mount [data-theme] {
+  /* 业务/通用变量引用色阶（全局可见，含 Shadow DOM） */
+  --primary: var(--p-main);
+  --primary-hover: var(--p-hover);
+  --primary-inverse: #fff;
+  --modal-background: var(--s-1);
+  --modal-border: var(--input-border);
+  --modal-text: var(--c-22);
+  --modal-text-secondary: var(--c-66);
+  --modal-error: var(--p-main);
+  --modal-required: #f53f3f;
+  --modal-success: #68cd52;
+  --modal-button-background: var(--p-main);
+  --modal-button-text: var(--c-ff);
+  --modal-input-background: var(--input-bg-base);
+  --modal-check-color: var(--p-main);
+  --background-color: var(--c-ff);
+  --background-light-green: var(--s-1-weak, #f5f7f9);
+  --text-black-2: var(--c-22);
+  --text-gray-2: var(--c-22);
+  --text-gray-6: var(--c-66);
+  --text-gray-9: var(--c-99);
+  --text-gray-c2: var(--c-c7);
+  --switch-background-color: var(--c-c7, hsl(205deg, 16%, 77%));
+  --float-ball-more-button-border-color: var(--c-f5, #f6f6f6);
+  --float-ball-more-button-background-color: var(--c-ff);
+  --float-ball-more-button-hover-color: var(--p-weak);
+  --float-ball-more-button-svg-color: #6c6f73;
+  --service-bg-hover: var(--s-1-hover, #f7faff);
+  --service-bg: var(--s-1-weak, #fafbfb);
+}
+
+#mount {
+  --font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
+    "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  /* PC/H5 兼容的字号、间距、圆角、阴影变量 */
+  --f-12: 12px;
+  --f-14: 14px;
+  --f-15: 15px;
+  --f-16: 16px;
+  --f-18: 18px;
+  --f-20: 20px;
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-18: 18px;
+  --space-24: 24px;
+  --radius-8: 8px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --control-height-lg: 44px;
+  --width-28: 28px;
+  --width-24: 24px;
+  --width-20: 20px;
+  --width-18: 18px;
+  --width-16: 16px;
+  --width-label-md: 56px;
+  --shadow-lg: 0 18px 48px rgba(0, 0, 0, 0.12);
+
+  /* 常规变量 */
+  --line-height: 1.5;
+  --font-weight: 400;
+  --font-size: 16px;
+  --border-radius: 4px;
+  --border-width: 2px;
+  --outline-width: 3px;
+  --spacing: 16px;
+  --typography-spacing-vertical: 24px;
+  --block-spacing-vertical: calc(var(--spacing) * 2);
+  --block-spacing-horizontal: var(--spacing);
+  --grid-spacing-vertical: 0;
+  --grid-spacing-horizontal: var(--spacing);
+  --form-element-spacing-vertical: 12px;
+  --form-element-spacing-horizontal: 16px;
+  --nav-element-spacing-vertical: 16px;
+  --nav-element-spacing-horizontal: 8px;
+  --nav-link-spacing-vertical: 8px;
+  --nav-link-spacing-horizontal: 8px;
+  --form-label-font-weight: var(--font-weight);
+  --transition: 0.2s ease-in-out;
+  --modal-overlay-backdrop-filter: blur(4px);
+  --switch-color: var(--primary-inverse);
+  --switch-checked-background-color: var(--primary);
+  --icon-xia: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgaWQ9IkZyYW1lIj4KPHBhdGggaWQ9IlZlY3RvciIgZD0iTTguMDAyOTEgOS42Nzk4M0wzLjgzMzM5IDUuNTEyMjFMMy4wMjUzOSA2LjMxOTgzTDguMDAzMjkgMTEuMjk1MUwxMi45NzYyIDYuMzE5ODNMMTIuMTY3OSA1LjUxMjIxTDguMDAyOTEgOS42Nzk4M1oiIGZpbGw9IiM4MzgzODMiLz4KPC9nPgo8L3N2Zz4K");
+  /* 兼容旧变量：主色直接引用品牌主色阶 */
+  --primary: var(--p-main);
+  --primary-hover: var(--p-hover);
+  --primary-inverse: #fff;
+  /* Modal 业务变量引用色阶 */
+  --modal-background: var(--s-1);
+  --modal-border: var(--input-border);
+  --modal-text: var(--c-22);
+  --modal-text-secondary: var(--c-66);
+  --modal-error: var(--p-main);
+  --modal-required: #f53f3f;
+  --modal-success: #68cd52;
+  --modal-button-background: var(--p-main);
+  --modal-button-text: var(--c-ff);
+  --modal-input-background: var(--input-bg-base);
+  --modal-check-color: var(--p-main);
+  --background-color: var(--c-ff);
+  --background-light-green: var(--s-1-weak, #f5f7f9);
+  --text-black-2: var(--c-22);
+  --text-gray-2: var(--c-22);
+  --text-gray-6: var(--c-66);
+  --text-gray-9: var(--c-99);
+  --text-gray-c2: var(--c-c7);
+  --switch-background-color: var(--c-c7, hsl(205deg, 16%, 77%));
+  --float-ball-more-button-border-color: var(--c-f5, #f6f6f6);
+  --float-ball-more-button-background-color: var(--c-ff);
+  --float-ball-more-button-hover-color: var(--p-weak);
+  --float-ball-more-button-svg-color: #6c6f73;
+  --service-bg-hover: var(--s-1-hover, #f7faff);
+  --service-bg: var(--s-1-weak, #fafbfb);
+  line-height: var(--line-height);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+}
+
+@media (max-width: 480px) {
+  :root,
+  #mount {
+    --f-12: 10px;
+    --f-14: 12px;
+    --f-15: 13px;
+    --f-16: 14px;
+    --f-18: 16px;
+    --f-20: 18px;
+    --space-4: 4px;
+    --space-6: 4px;
+    --space-8: 6px;
+    --space-12: 8px;
+    --space-16: 12px;
+    --space-18: 14px;
+    --space-24: 18px;
+    --radius-8: 6px;
+    --radius-12: 10px;
+    --radius-16: 12px;
+    --control-height-lg: 38px;
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.1);
+    --width-28: 24px;
+    --width-24: 20px;
+    --width-20: 16px;
+    --width-18: 14px;
+    --width-16: 12px;
+    --width-label-md: 52px;
+  }
+}
+
+#mount * {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+:where(#mount) a,
+:where(#mount) [role="link"] {
+  --color: var(--primary);
+  --background-color: transparent;
+  outline: none;
+  background-color: var(--background-color);
+  color: var(--color);
+  -webkit-text-decoration: var(--text-decoration);
+  text-decoration: var(--text-decoration);
+  transition: background-color var(--transition), color var(--transition),
+    box-shadow var(--transition), -webkit-text-decoration var(--transition);
+  transition: background-color var(--transition), color var(--transition),
+    text-decoration var(--transition), box-shadow var(--transition);
+  transition: background-color var(--transition), color var(--transition),
+    text-decoration var(--transition), box-shadow var(--transition),
+    -webkit-text-decoration var(--transition);
+}
+:where(#mount) a:is([aria-current], :hover, :active, :focus),
+:where(#mount) [role="link"]:is([aria-current], :hover, :active, :focus) {
+  --color: var(--primary-hover);
+  --text-decoration: underline;
+}
+
+:where(#mount) label {
+  font-size: 13px;
+  line-height: 1.3;
+  color: var(--text-gray-2, #222222);
+}
+
+:where(#mount) button {
+  width: 100%;
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.3;
+  min-height: 44px;
+  border-radius: 12px;
+  padding: 0 14px;
+  border: none;
+  background-color: var(--primary, #ea4c89);
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+:where(#mount) button:hover {
+  background-color: var(--primary-hover, #f082ac);
+}
+
+:where(#mount) button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+:where(#mount) select,
+:where(#mount) input,
+:where(#mount) textarea {
+  font-family: inherit;
+  color: var(--text-gray-2, #222222);
+}
+
+:where(#mount) select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: inherit;
+  color: var(--text-gray-2, inherit);
+  font-size: 13px;
+  line-height: 1.3;
+  outline: none;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--popup-item-background-color, transparent);
+  background-image: var(--icon-xia, none);
+  background-repeat: no-repeat;
+  background-position: center right 12px;
+  background-size: 16px auto;
+  cursor: pointer;
+}
+
+:where(#mount) input[type="checkbox"] {
+  accent-color: var(--primary, #ea4c89);
+}
+
+[type="checkbox"],
+[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 1.25em;
+  height: 1.25em;
+  margin-top: -0.125em;
+  margin-right: 0.375em;
+  margin-left: 0;
+  -webkit-margin-start: 0;
+  margin-inline-start: 0;
+  -webkit-margin-end: 0.375em;
+  margin-inline-end: 0.375em;
+  border-width: var(--border-width);
+  font-size: inherit;
+  vertical-align: middle;
+  cursor: pointer;
+}
+[type="checkbox"]::-ms-check,
+[type="radio"]::-ms-check {
+  display: none;
+}
+[type="checkbox"]:checked,
+[type="checkbox"]:checked:active,
+[type="checkbox"]:checked:focus,
+[type="radio"]:checked,
+[type="radio"]:checked:active,
+[type="radio"]:checked:focus {
+  --background-color: var(--primary);
+  --border-color: var(--primary);
+  background-image: var(--icon-checkbox);
+  background-position: center;
+  background-size: 0.75em auto;
+  background-repeat: no-repeat;
+}
+[type="checkbox"] ~ label,
+[type="radio"] ~ label {
+  display: inline-block;
+  margin-right: 0.375em;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+[type="checkbox"]:indeterminate {
+  --background-color: var(--primary);
+  --border-color: var(--primary);
+  background-image: var(--icon-minus);
+  background-position: center;
+  background-size: 0.75em auto;
+  background-repeat: no-repeat;
+}
+
+[type="radio"] {
+  border-radius: 50%;
+}
+[type="radio"]:checked,
+[type="radio"]:checked:active,
+[type="radio"]:checked:focus {
+  --background-color: var(--primary-inverse);
+  border-width: 0.35em;
+  background-image: none;
+}
+
+:where(#mount) [type="checkbox"][role="switch"] {
+  --background-color: var(--switch-background-color);
+  --border-color: var(--switch-background-color);
+  --color: var(--switch-color);
+  width: 2.25em;
+  height: 1.25em;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 1.25em;
+  background-color: var(--background-color);
+  line-height: 1.25em;
+}
+:where(#mount) [type="checkbox"][role="switch"]:focus {
+  --background-color: var(--switch-background-color);
+  --border-color: var(--switch-background-color);
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked {
+  --background-color: var(--switch-checked-background-color);
+  --border-color: var(--switch-checked-background-color);
+}
+:where(#mount) [type="checkbox"][role="switch"]:before {
+  display: block;
+  width: calc(1.25em - (var(--border-width) * 2));
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--color);
+  content: "";
+  transition: margin 0.1s ease-in-out;
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked {
+  background-image: none;
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked::before {
+  margin-left: calc(1.125em - var(--border-width));
+  -webkit-margin-start: calc(1.125em - var(--border-width));
+  margin-inline-start: calc(1.125em - var(--border-width));
+}
+
+:where(#mount) [type="checkbox"][aria-invalid="false"],
+:where(#mount) [type="checkbox"]:checked[aria-invalid="false"],
+:where(#mount) [type="radio"][aria-invalid="false"],
+:where(#mount) [type="radio"]:checked[aria-invalid="false"],
+:where(#mount) [type="checkbox"][role="switch"][aria-invalid="false"],
+:where(#mount) [type="checkbox"][role="switch"]:checked[aria-invalid="false"] {
+  --border-color: var(--form-element-valid-border-color);
+}
+:where(#mount) [type="checkbox"][aria-invalid="true"],
+:where(#mount) [type="checkbox"]:checked[aria-invalid="true"],
+:where(#mount) [type="radio"][aria-invalid="true"],
+:where(#mount) [type="radio"]:checked[aria-invalid="true"],
+:where(#mount) [type="checkbox"][role="switch"][aria-invalid="true"],
+:where(#mount) [type="checkbox"][role="switch"]:checked[aria-invalid="true"] {
+  --border-color: var(--form-element-invalid-border-color);
+}
+
+.text-black {
+  color: var(--text-black-2);
+}
+
+.text-gray-2 {
+  color: var(--text-gray-2);
+}
+
+.text-gray-6 {
+  color: var(--text-gray-6);
+}
+
+.text-gray-9 {
+  color: var(--text-gray-9);
+}
+
+.text-gray-c2 {
+  color: var(--text-gray-c2);
+}
+
+.pt-4 {
+  padding-top: 16px;
+}
+
+.p-2 {
+  padding: 8px;
+}
+
+.pl-5 {
+  padding-left: 48px;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.pl-2 {
+  padding-left: 8px;
+}
+
+.pl-4 {
+  padding-left: 24px;
+}
+
+.pt-2 {
+  padding-top: 8px;
+}
+
+.pb-2 {
+  padding-bottom: 8px;
+}
+
+.pb-4 {
+  padding-bottom: 16px;
+}
+
+.pb-5 {
+  padding-bottom: 20px;
+}
+
+.pr-5 {
+  padding-right: 48px;
+}
+
+.text-sm {
+  font-size: 13px;
+}
+
+.text-base {
+  font-size: 16px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.mb-0 {
+  margin-bottom: 0px;
+}
+
+.mb-2 {
+  margin-bottom: 8px;
+}
+
+.mb-4 {
+  margin-bottom: 16px;
+}
+
+.mb-3 {
+  margin-bottom: 12px;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.py-2 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.py-2-5 {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mt-2 {
+  margin-top: 8px;
+}
+
+.mt-3 {
+  margin-top: 12px;
+}
+
+.mt-4 {
+  margin-top: 16px;
+}
+
+.mt-5 {
+  margin-top: 20px;
+}
+
+.mt-6 {
+  margin-top: 24px;
+}
+
+.mb-1 {
+  margin-bottom: 4px;
+}
+
+.ml-4 {
+  margin-left: 24px;
+}
+
+.ml-3 {
+  margin-left: 16px;
+}
+
+.ml-2 {
+  margin-left: 8px;
+}
+
+.ml-1 {
+  margin-left: 4px;
+}
+
+.mr-1 {
+  margin-right: 4px;
+}
+
+.mr-2 {
+  margin-right: 8px;
+}
+
+.mr-3 {
+  margin-right: 16px;
+}
+
+.mx-2 {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.pl-3 {
+  padding-left: 12px;
+}
+
+.pr-3 {
+  padding-right: 12px;
+}
+
+.p-3 {
+  padding: 12px;
+}
+
+.px-1 {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.px-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.pt-3 {
+  padding-top: 12px;
+}
+
+.px-6 {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.px-4 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.pt-6 {
+  padding-top: 20px;
+}
+
+.py-3 {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.py-0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.left-auto {
+  left: auto !important;
+}
+
+.max-h-28 {
+  max-height: 112px;
+}
+
+.max-h-30 {
+  max-height: 120px;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
+.text-xs {
+  font-size: 12px;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-3 {
+  flex: 3;
+}
+
+.flex-4 {
+  flex: 4;
+}
+
+.flex-2 {
+  flex: 2;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.max-content {
+  width: max-content;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-baseline {
+  align-items: baseline;
+}
+
+.my-5 {
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+.my-4 {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.my-3 {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.pt-3 {
+  padding-top: 12px;
+}
+
+.px-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.pt-2 {
+  padding-top: 8px;
+}
+
+.px-2 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.pt-1 {
+  padding-top: 4px;
+}
+
+.px-1 {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.pb-2 {
+  padding-bottom: 8px;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.shrink-0 {
+  flex-shrink: 0;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.close {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  background-image: var(--icon-close);
+  background-position: center;
+  background-size: auto 1rem;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  transition: opacity var(--transition);
+}
+
+.padding-two-column {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.muted {
+  color: #999;
+}
+
+.text-label {
+  color: #666;
+}
+
+.display-none {
+  display: none;
+}
+
+/* dark use #18232c */
+@media (prefers-color-scheme: dark) {
+  .text-label {
+    color: #9ca3af;
+  }
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.text-decoration-none:is([aria-current], :hover, :active, :focus),
+[role="link"]:is([aria-current], :hover, :active, :focus) {
+  --text-decoration: none !important;
+  background-color: transparent !important;
+}
+
+.text-overflow-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.max-w-20 {
+  max-width: 180px;
+  white-space: nowrap;
+}
+
+[data-theme="light"],
+#mount:not([data-theme="dark"]) {
+  --popup-footer-background-color: #e8eaeb;
+  --popup-content-background-color: #ffffff;
+  --popup-item-background-color: #f3f5f6;
+  --popup-item-hover-background-color: #eaeced;
+  --popup-trial-pro-background-color: #f9fbfc;
+  --service-select-content-shadow: 0px 2px 12px 0px rgba(75, 76, 77, 0.2);
+  --service-select-border-color: #fafafa;
+  --service-select-selected-background-color: #f3f5f6;
+  --download-app-background: #f3f5f6;
+  --translate-language-background-color: #f3f5f6;
+  --translate-language-icon-color: #666666;
+  --translate-language-text-color: #222222;
+  --translate-language-hover-background-color: #fdedf3;
+  --translate-language-hover-icon-color: #e95d93;
+  --error-bg: #fdedf3;
+  --error-text: #222;
+  --error-link: #ea4c89;
+}
+
+[data-theme="dark"] {
+  --popup-footer-background-color: #0d0d0d;
+  --popup-content-background-color: #191919;
+  --popup-item-background-color: #272727;
+  --popup-item-hover-background-color: #333333;
+  --popup-trial-pro-background-color: #222222;
+  --service-select-content-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.9);
+  --service-select-border-color: #2c2c2c;
+  --service-select-selected-background-color: #333333;
+  --download-app-background: #333;
+  --translate-language-background-color: #2d2e2f;
+  --translate-language-icon-color: #b3b3b3;
+  --translate-language-text-color: #b3b3b3;
+  --translate-language-hover-background-color: #a97b8c;
+  --translate-language-hover-icon-color: rgba(255, 255, 255, 0.9);
+  --error-bg: #26171d;
+  --error-text: #dbdbdb;
+  --error-link: #ea4c89;
+}
+
+#mount {
+  min-width: 268px;
+}
+
+body {
+  padding: 0;
+  margin: 0 auto;
+  min-width: 268px;
+  border-radius: 10px;
+}
+
+.popup-container {
+  font-size: 16px;
+  --font-size: 16px;
+  color: #666;
+  background-color: var(--popup-footer-background-color);
+  width: 316px;
+  min-width: 316px;
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-content {
+  background-color: var(--popup-content-background-color);
+  border-radius: 0px 0px 12px 12px;
+  padding: 16px 20px;
+}
+
+.popup-userscript-three-feature-layout {
+  background-color: var(--popup-footer-background-color);
+  width: 350px;
+  min-width: 350px;
+}
+
+.popup-userscript-three-feature-layout .popup-content {
+  padding-bottom: 20px;
+  border-radius: 0 0 12px 12px;
+}
+
+.popup-userscript-three-feature-layout .popup-footer {
+  border-radius: 0;
+}
+
+.immersive-translate-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  touch-action: none;
+}
+
+.immersive-translate-popup-wrapper {
+  background: var(--background-color);
+  border-radius: 10px;
+  border: 1px solid var(--muted-border-color);
+}
+
+.main-button {
+  font-size: 16px;
+  font-weight: 700;
+  vertical-align: middle;
+  border-radius: 12px;
+  padding: unset;
+  height: 48px;
+  line-height: 48px;
+  flex: 1;
+}
+
+select.translate-service,
+select.min-select {
+  --form-element-spacing-horizontal: 0;
+  margin-bottom: 0px;
+  max-width: unset;
+  flex: 1;
+  overflow: hidden;
+  font-size: 13px;
+  border: none;
+  border-radius: 8px;
+  padding-right: 30px;
+  padding-left: 0px;
+  background-position: center right 12px;
+  background-size: 16px auto;
+  background-image: var(--icon-xia);
+  text-overflow: ellipsis;
+  color: var(--text-gray-2);
+  background-color: transparent;
+  box-shadow: unset !important;
+  cursor: pointer;
+}
+
+select.more {
+  background-position: center right;
+  padding-right: 20px;
+}
+
+select.translate-service {
+  color: var(--text-black-2);
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSI4IiB2aWV3Qm94PSIwIDAgOCA4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIG9wYWNpdHk9IjAuOCI+PHBhdGggZD0iTTMuNDc5NzMgNi4zODY0M0wwLjcyOTI5NyAzLjMyMjE2QzAuNjE2ODggMy4xOTY5NCAwLjU1NDY5NSAzLjAzNDU5IDAuNTU0Njg4IDIuODY2M0MwLjU1NDY4OCAyLjQ4OTI0IDAuODYwNTQ3IDIuMTgzNTkgMS4yMzc4NCAyLjE4MzU5SDYuNzM4NzFDNi45MDcwNyAyLjE4MzU4IDcuMDY5NTEgMi4yNDU3MiA3LjE5NDg4IDIuMzU4MDlDNy40NzU3NCAyLjYwOTg2IDcuNDk5MTkgMy4wNDE0OCA3LjI0NzI2IDMuMzIyMTZMNC40OTY4MiA2LjM4NjQ0QzQuNDgwMzIgNi40MDQ4MiA0LjQ2MjgzIDYuNDIyMjkgNC40NDQ0NCA2LjQzODc4QzQuMTYzNTggNi42OTA1NSAzLjczMTY2IDYuNjY3MTEgMy40Nzk3MyA2LjM4NjQzWiIgZmlsbD0iIzk5OTk5OSIvPjwvZz48L3N2Zz4K");
+  background-size: 8px auto;
+}
+
+.min-select-container.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.popup-footer {
+  background-color: var(--popup-footer-background-color);
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+/* Footer 三栏布局样式 */
+.footer-link-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  min-width: 72px;
+}
+
+.footer-icon-btn {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-icon-btn svg {
+  color: #999999;
+}
+
+[data-theme="dark"] .footer-icon-btn svg {
+  color: #707070;
+}
+
+.footer-link-text {
+  font-size: 12px;
+  line-height: 18px;
+  color: #666666;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .footer-link-text {
+  color: #b3b3b3;
+}
+
+.footer-link-btn-right {
+  justify-content: flex-end;
+}
+
+.footer-center-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #999999;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.footer-center-text.is-overflowing {
+  justify-content: flex-start;
+}
+
+.footer-center-text.is-overflowing .footer-center-content {
+  animation: footer-scroll-text 12s linear infinite;
+}
+
+@keyframes footer-scroll-text {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.footer-center-content {
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-scroll-gap {
+  display: inline-block;
+  width: 80px;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .footer-center-text {
+  color: #707070;
+}
+
+.footer-text-content {
+  display: inline-block;
+}
+
+.footer-privacy-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-version-inline-text {
+  font-size: 12px;
+  color: #999999;
+  line-height: 1;
+  border-bottom: 1px solid transparent;
+}
+
+[data-theme="dark"] .footer-version-inline-text {
+  color: #707070;
+}
+
+.footer-version-inline-text:hover {
+  border-bottom-color: #999999;
+}
+
+[data-theme="dark"] .footer-version-inline-text:hover {
+  border-bottom-color: #707070;
+}
+
+.translate-language-row {
+  gap: 4px;
+}
+
+.translate-language-exchange {
+  width: 36px;
+  height: 48px;
+  background-color: var(--translate-language-background-color);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--translate-language-icon-color);
+  flex-shrink: 0;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.translate-language-exchange:hover {
+  color: var(--translate-language-hover-icon-color);
+}
+
+.translate-language-exchange-active {
+  background-color: var(--translate-language-hover-background-color);
+  color: var(--translate-language-hover-icon-color);
+}
+
+.translate-language-exchange-active:hover {
+  background-color: var(--translate-language-hover-background-color);
+  color: var(--translate-language-hover-icon-color);
+}
+
+.translate-language-arrow {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+}
+
+.translation-service-container {
+  background-color: var(--popup-item-background-color);
+  border-radius: 12px;
+}
+
+.translation-service-primary-field {
+  position: relative;
+}
+
+.translation-service-guide-hitbox {
+  position: absolute;
+  right: 46px;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: auto;
+}
+
+.min-select-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 44px;
+  background-color: var(--popup-item-background-color);
+  padding-left: 16px;
+}
+
+.min-select-container:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.min-select-container:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.min-select-container:only-child {
+  border-radius: 10px;
+}
+
+.popup-ai-context-label {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+  min-width: 60px;
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+.popup-ai-context-switch {
+  align-self: center;
+  margin: 0;
+  margin-inline-end: 12px;
+}
+
+.translate-mode {
+  width: 36px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: var(--translate-language-background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  color: var(--translate-language-text-color);
+  margin-right: 8px;
+}
+
+/* 快捷操作设置标题栏 */
+.widgets-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 4px;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.widgets-header-title {
+  color: #999999;
+}
+
+.widgets-header-action {
+  color: #999999;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.widgets-header-action:hover {
+  color: #666666;
+}
+
+.widgets-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+  gap: 8px;
+}
+
+.popup-userscript-three-feature-layout .widgets-container-compact-monkey {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 12px;
+}
+
+.widgets-container.widgets-single-item {
+  grid-template-columns: minmax(0, 1fr);
+  margin-top: 12px;
+}
+
+.widgets-container.widgets-single-item .widget-item {
+  max-width: none;
+}
+
+/* 当只有两个小组件时的样式优化 */
+.widgets-container.widgets-two-items {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.widgets-container.widgets-two-items .widget-item {
+  max-width: none;
+}
+
+.widget-item {
+  display: flex;
+  width: 100%;
+  min-height: 44px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 1px solid #eef0f2;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  padding: 0 14px;
+  text-align: left;
+  gap: 6px;
+}
+
+.widget-item.widget-item-single {
+  flex: 1 1 auto;
+  flex-direction: row;
+  justify-content: center;
+  border: 1px solid #eef0f2;
+  border-radius: 16px;
+  padding: 0 14px;
+  background: transparent;
+}
+
+.popup-userscript-three-feature-layout .widget-item-compact {
+  min-height: 60px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  padding: 8px 12px;
+}
+
+.widget-item svg {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+}
+
+.widget-icon-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--c-66, #666666);
+  font-size: 14px;
+  line-height: 21px;
+  text-align: left;
+  word-break: keep-all;
+}
+
+.popup-userscript-three-feature-layout .widget-item-compact .widget-icon-text {
+  white-space: nowrap;
+  overflow: visible;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.widget-item.widget-item-single .widget-icon-text {
+  white-space: nowrap;
+  text-align: left;
+  color: var(--c-66, #666666);
+}
+
+[data-theme="dark"] .widget-item,
+[data-theme="dark"] .widget-item.widget-item-single {
+  border-color: #2e2e2e;
+}
+
+[data-theme="dark"] .widget-icon-text,
+[data-theme="dark"] .widget-item.widget-item-single .widget-icon-text {
+  color: var(--c-66, #666666);
+}
+
+[data-theme="dark"] .more-settings-icon {
+  fill: #191919;
+}
+
+.share-button-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 2px 3px 0 8px;
+}
+
+.share-button-container svg {
+  fill: var(--text-gray-9);
+}
+
+.min-select-container:hover,
+.widget-item:hover {
+  background-color: var(--popup-item-hover-background-color);
+}
+
+.main-button:hover {
+  background-color: #f5508f;
+}
+
+.share-button-container:hover {
+  background-color: var(--popup-item-background-color);
+  border-radius: 6px;
+}
+
+.error-boundary {
+  background: #fff2f0;
+  border: 1px solid #ffccc7;
+  display: flex;
+  padding: 12px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.88);
+  word-break: break-all;
+  margin: 12px;
+  border-radius: 12px;
+  flex-direction: column;
+}
+
+.upgrade-pro {
+  border-radius: 11px;
+  background: linear-gradient(57deg, #272727 19.8%, #696969 82.2%);
+  padding: 2px 8px;
+  transform: scale(0.85);
+}
+
+.upgrade-pro span {
+  background: linear-gradient(180deg, #ffeab4 17.65%, #f8c235 85.29%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+.upgrade-pro svg {
+  margin-top: -2px;
+}
+
+.upgrade-pro:hover {
+  background: linear-gradient(57deg, #3d3d3d 19.8%, #949494 82.2%);
+}
+
+.border-bottom-radius-0 {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.trial-pro-container {
+  border-radius: 0px 0px 12px 12px;
+  background: var(--popup-trial-pro-background-color);
+  display: flex;
+  align-items: center;
+  height: 44px;
+  padding-left: 16px;
+  padding-right: 12px;
+  font-size: 12px;
+}
+
+.trial-pro-container label {
+  line-height: 13px;
+  color: var(--text-black-2);
+}
+
+.trial-pro-container img {
+  margin-left: 5px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.upgrade-pro-discount-act {
+  height: 25px;
+  display: flex;
+  padding: 0 4px;
+  align-items: center;
+  border-radius: 15px;
+  background: linear-gradient(
+    90deg,
+    #cefbfa 11.33%,
+    #d7f56f 63.75%,
+    #fccd5e 100%
+  );
+  transform: scale(0.9);
+  box-shadow: 0px 1.8px 3.6px 0px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.upgrade-pro-discount-act span {
+  font-size: 12px;
+  font-weight: 700;
+  margin-left: 4px;
+  color: #222222;
+}
+
+.upgrade-pro-discount-act:hover {
+  text-decoration: unset;
+  background: linear-gradient(
+    90deg,
+    #e2fffe 11.33%,
+    #e6ff91 63.75%,
+    #ffdf93 100%
+  );
+}
+
+.custom-select-container {
+  width: 200px;
+  position: relative;
+  flex: 1;
+}
+
+#translation-service-select {
+  padding-right: 12px;
+}
+
+.custom-select-content {
+  border-radius: 12px;
+  background: var(--popup-content-background-color);
+  box-shadow: var(--service-select-content-shadow);
+  border: 1px solid var(--service-select-border-color);
+  padding: 8px;
+  position: absolute;
+  left: -68px;
+  right: 0;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.custom-select-item.default {
+  width: 100%;
+  padding: 0;
+}
+
+.custom-select-item {
+  font-size: 14px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--text-black-2);
+  width: auto;
+  overflow: hidden;
+  height: 30px;
+  line-height: 30px;
+}
+
+.custom-select-item-img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .custom-select-item-img {
+    margin-right: 6px;
+  }
+}
+
+.custom-select-content .custom-select-item.selected,
+.custom-select-content .custom-select-item:hover {
+  background: var(--service-select-selected-background-color);
+}
+
+.custom-select-item > span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.custom-select-item-pro {
+  font-size: 12px;
+  margin-left: 6px;
+  display: flex;
+}
+
+.custom-select-item-pro img {
+  margin: 0 3px;
+  width: 20px;
+  flex-shrink: 0;
+}
+
+.service-select-inline-sponsor-container {
+  width: 50px;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.service-select-inline-sponsor-marquee {
+  min-width: max-content;
+  display: inline-flex;
+  align-items: center;
+  column-gap: 12px;
+  animation: service-select-inline-sponsor-scroll 10s linear infinite;
+}
+
+.service-select-inline-sponsor-track {
+  min-width: max-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+@keyframes service-select-inline-sponsor-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 6px));
+  }
+}
+
+.custom-select-group-header {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-gray-9);
+  padding: 8px 8px 6px;
+  margin-top: 2px;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.custom-select-group-header--recommendation {
+  color: #beb3a0;
+  font-weight: 400;
+  letter-spacing: 0;
+  padding-top: 4px;
+}
+
+.custom-select-group-header-tip {
+  display: inline-flex;
+  align-items: center;
+  color: #bcbcbc;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.more-container {
+  position: relative;
+}
+
+.new-menu-indicator {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #ef3434;
+  border-radius: 50%;
+  right: 18px;
+  top: 4px;
+}
+
+.download-app {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px;
+  background: var(--download-app-background);
+  padding: 4px 8px;
+  color: var(--text-gray-6);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Popup 动画效果 */
+@keyframes popup-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes popup-fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+}
+
+.popup-generic-content {
+  animation: popup-fade-in 0.2s ease-out;
+}
+
+.popup-generic-content.hiding {
+  animation: popup-fade-out 0.15s ease-in;
+}
+
+select.min-select {
+  --form-element-spacing-horizontal: 0;
+  max-width: 128px;
+  overflow: hidden;
+  color: var(--primary);
+  font-size: 13px;
+  border: none;
+  padding: 0;
+  padding-right: 20px;
+  text-overflow: ellipsis;
+  color: var(--color);
+}
+select.min-select-secondary {
+  color: var(--color);
+}
+select.min-select:focus {
+  outline: none;
+  border: none;
+  --box-shadow: none;
+}
+
+select.min-select-left {
+  padding-right: 0px;
+  /* padding-left: 24px; */
+  /* background-position: center left 0; */
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+select.transform-padding-left {
+  padding-left: 12px;
+  transform: translateX(-12px);
+  background-position: center right 0px;
+}
+
+select.text-gray-6 {
+  color: var(--text-gray-6);
+}
+
+/* dark use black, for windows */
+@media (prefers-color-scheme: dark) {
+  select.translate-service option,
+  select.min-select option {
+    background-color: #666666;
+  }
+}
+
+select.min-select-no-arrow {
+  background-image: none;
+  padding-right: 0;
+}
+
+.activity-tips {
+  border-radius: 8px;
+  padding: 0px 8px;
+  height: 26px;
+  background: linear-gradient(
+    83deg,
+    #faccde -0.87%,
+    #fce7ef 43.13%,
+    #fbd6e4 72.08%,
+    #ffb3d1 96.34%
+  );
+  color: #333;
+  cursor: pointer;
+  gap: 4px;
+  font-size: 12px;
+}
+
+.activity-tips-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.countdown-container {
+  min-width: 50px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.01em;
+}
+
+.activity-tips-text {
+  font-weight: 600;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 非会员升级提示 */
+.upgrade-tips {
+  padding: 0px 6px 0px 4px;
+  height: 18px;
+  color: #ea4c89;
+  cursor: pointer;
+  gap: 6px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.upgrade-tips svg:first-child {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  filter: drop-shadow(0px 4px 4px rgba(236, 76, 140, 0.2));
+}
+
+.upgrade-tips-text {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.upgrade-tips-switch {
+  position: relative;
+  width: 30px;
+  height: 18px;
+  border-radius: 24px;
+  background: #cccccc;
+  flex-shrink: 0;
+}
+
+.upgrade-tips-switch-thumb {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+/* 抽屉组件样式 */
+.drawer-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+
+.drawer-overlay.drawer-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.drawer-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ffffff;
+  border-radius: 12px 12px 0 0;
+  z-index: 101;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-visible .drawer-panel {
+  transform: translateY(0);
+}
+
+[data-theme="dark"] .drawer-panel {
+  background: #222222;
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  flex-shrink: 0;
+}
+
+.drawer-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333333;
+}
+
+[data-theme="dark"] .drawer-title {
+  color: #e0e0e0;
+}
+
+.drawer-close {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999999;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.drawer-close:hover {
+  background-color: #f3f5f6;
+}
+
+[data-theme="dark"] .drawer-close:hover {
+  background-color: #333333;
+}
+
+.drawer-body {
+  padding: 16px 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.drawer-body.drawer-body-hover {
+  padding: 0 20px 20px 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.drawer-body.drawer-body-more-settings {
+  padding-top: 0;
+}
+
+.drawer-footer {
+  padding: 12px 20px;
+  border-top: 1px solid #eef0f2;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+[data-theme="dark"] .drawer-footer {
+  border-top: 1px solid #2e2e2e;
+}
+
+.drawer-footer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.drawer-footer-actions-single {
+  justify-content: center;
+}
+
+.drawer-footer-text {
+  font-size: 12px;
+  cursor: pointer;
+  color: #999999;
+  text-decoration: none;
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.drawer-footer-actions-single .drawer-footer-text {
+  flex: 0 1 auto;
+  max-width: 100%;
+}
+
+.drawer-footer-text:hover {
+  text-decoration: underline;
+}
+
+/* 抽屉内容区域样式 */
+.drawer-section {
+  margin-bottom: 16px;
+}
+
+.drawer-section:last-child {
+  margin-bottom: 0;
+}
+
+.drawer-section-highlight {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+[data-theme="dark"] .drawer-section-highlight {
+  background-color: #2a2a2a;
+}
+
+.drawer-section-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #666666;
+  margin-bottom: 12px;
+}
+
+[data-theme="dark"] .drawer-section-title {
+  color: #999999;
+}
+
+.drawer-section-divider {
+  height: 1px;
+  background-color: #eef0f2;
+  margin: 16px 0;
+}
+
+/* ========== 通用抽屉组件样式 ========== */
+.popup-drawer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.popup-drawer-card {
+  background: #f3f5f6;
+  border-radius: 12px;
+  padding: 12px 12px 16px;
+}
+
+[data-theme="dark"] .popup-drawer-card {
+  background: #2a2a2a;
+}
+
+.popup-drawer-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 21px;
+  gap: 12px;
+}
+
+.popup-drawer-card-header input[type="checkbox"][role="switch"] {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.popup-drawer-card-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #222222;
+  line-height: 21px;
+}
+
+[data-theme="dark"] .popup-drawer-card-title {
+  color: #e0e0e0;
+}
+
+.popup-drawer-card-divider {
+  height: 1px;
+  width: calc(100% + 24px);
+  background-color: #ffffff;
+  margin: 12px -12px 16px;
+}
+
+[data-theme="dark"] .popup-drawer-card-divider {
+  background-color: #333333;
+}
+
+.popup-drawer-demo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.popup-drawer-demo-region-fixed {
+  height: 51px;
+  max-height: 51px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-region-min {
+  min-height: 51px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-selection {
+  width: 100%;
+  min-width: 0;
+  flex-wrap: nowrap;
+}
+
+.popup-drawer-demo-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-plus,
+.popup-drawer-demo-equal {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  color: #333333;
+}
+
+[data-theme="dark"] .popup-drawer-demo-plus,
+[data-theme="dark"] .popup-drawer-demo-equal {
+  color: #e0e0e0;
+}
+
+.popup-drawer-demo-logo {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-logo img {
+  width: 28px;
+  height: 28px;
+  display: block;
+  filter: drop-shadow(0 4px 12px rgba(255, 166, 201, 0.5));
+}
+
+.popup-drawer-demo-result {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #333333;
+}
+
+.popup-drawer-demo-result-ellipsis {
+  min-width: 0;
+  max-width: calc(100% - 72px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .popup-drawer-demo-result {
+  color: #e0e0e0;
+}
+
+.popup-drawer-trigger {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.popup-drawer-trigger-label {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #999999;
+  padding-left: 4px;
+}
+
+.popup-drawer-trigger-options {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.popup-drawer-trigger-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #333333;
+  background: #ffffff;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.popup-drawer-trigger-option-disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.popup-drawer-trigger-option:not(.popup-drawer-trigger-option-selected):hover {
+  border-color: #d0d3d6;
+}
+
+.popup-drawer-trigger-option-selected {
+  border: 0.5px solid #ea4c89;
+  background: #fdedf3;
+  box-shadow: 0px 4px 12px rgba(255, 166, 201, 0.5);
+}
+
+[data-theme="dark"] .popup-drawer-trigger-option {
+  background: #1f1f1f;
+  border-color: #333333;
+  color: #e0e0e0;
+}
+
+[data-theme="dark"]
+  .popup-drawer-trigger-option:not(
+    .popup-drawer-trigger-option-selected
+  ):hover {
+  border-color: #444444;
+}
+
+[data-theme="dark"] .popup-drawer-trigger-option-selected {
+  background: rgba(233, 76, 137, 0.2);
+  border-color: #ea4c89;
+  box-shadow: 0 4px 12px 0 rgba(255, 166, 201, 0.3);
+}
+
+.popup-drawer-trigger-option-with-icon {
+  gap: 8px;
+}
+
+/* ========== 通用抽屉演示区域样式 ========== */
+/* 键帽样式 */
+.popup-drawer-demo-keycap {
+  min-width: 72px;
+  padding: 9px;
+  height: auto;
+  box-sizing: border-box;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  color: #ffffff;
+  background:
+    radial-gradient(
+      60px 36px at 85% 100%,
+      rgba(208, 208, 208, 0.2),
+      rgba(255, 255, 255, 0)
+    ),
+    radial-gradient(72px 36px at 50% 0%, #101010 0%, #242424 100%);
+  box-shadow:
+    2px 2px 3.5px rgba(0, 0, 0, 0.4),
+    inset 0.5px 0.7px 0.4px rgba(255, 255, 255, 0.5),
+    inset -0.5px -0.5px 0.2px rgba(0, 0, 0, 0.6);
+}
+
+.popup-drawer-demo-keycap-text {
+  max-width: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 小圆点样式 */
+.popup-drawer-demo-mini-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ea4c89;
+  flex-shrink: 0;
+  align-self: center;
+  box-shadow: 0 4px 12px rgba(255, 166, 201, 0.5);
+}
+
+[data-theme="dark"] .drawer-section-divider {
+  background-color: #333333;
+}
+
+/* 开关行 */
+.drawer-switch-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.drawer-switch-row.drawer-row-border {
+  border-bottom: 1px solid #eef0f2;
+  margin-bottom: 8px;
+  padding-bottom: 12px;
+}
+
+[data-theme="dark"] .drawer-switch-row.drawer-row-border {
+  border-bottom-color: #333333;
+}
+
+.drawer-switch-label {
+  font-size: 14px;
+  color: #222222;
+}
+
+[data-theme="dark"] .drawer-switch-label {
+  color: #e0e0e0;
+}
+
+/* 链接行 */
+.drawer-link-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  cursor: pointer;
+  border-bottom: 1px solid #eef0f2;
+  font-size: 14px;
+  color: #222222;
+}
+
+.drawer-link-row:last-child {
+  border-bottom: none;
+}
+
+[data-theme="dark"] .drawer-link-row {
+  border-bottom-color: #333333;
+  color: #e0e0e0;
+}
+
+.drawer-link-row:hover {
+  color: #ea4c89;
+}
+
+/* 演示区域 */
+.drawer-demo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 0;
+}
+
+.drawer-demo-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+}
+
+[data-theme="dark"] .drawer-demo-icon {
+  background-color: #333333;
+  border-color: #444444;
+}
+
+.drawer-demo-plus,
+.drawer-demo-equal {
+  font-size: 16px;
+  color: #999999;
+}
+
+.drawer-demo-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.drawer-demo-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.drawer-demo-result {
+  font-size: 14px;
+  color: #222222;
+  padding: 8px 12px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+}
+
+[data-theme="dark"] .drawer-demo-result {
+  background-color: #333333;
+  border-color: #444444;
+  color: #e0e0e0;
+}
+
+/* 触发方式选项 */
+.drawer-options {
+  display: flex;
+  gap: 8px;
+}
+
+.drawer-options-wrap {
+  flex-wrap: wrap;
+}
+
+.drawer-option {
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #666666;
+  background-color: #f3f5f6;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+[data-theme="dark"] .drawer-option {
+  background-color: #333333;
+  color: #b3b3b3;
+}
+
+.drawer-option:hover {
+  background-color: #eaeced;
+}
+
+[data-theme="dark"] .drawer-option:hover {
+  background-color: #3a3a3a;
+}
+
+.drawer-option-selected {
+  border-color: #ea4c89;
+  background-color: #fdedf3;
+  color: #ea4c89;
+  box-shadow: 0px 4px 12px rgba(255, 166, 201, 0.5);
+}
+
+[data-theme="dark"] .drawer-option-selected {
+  background-color: rgba(234, 76, 137, 0.2);
+}
+
+.drawer-body.drawer-body-selection {
+  padding: 0 20px 20px 20px;
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+
+/* ========== 更多设置抽屉样式 ========== */
+.more-settings-drawer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.more-settings-quick-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.more-settings-feature-card {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 40px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: #f3f5f6;
+  transition: background-color 0.2s ease;
+}
+
+.more-settings-feature-card:hover {
+  background-color: #e8eaec;
+}
+
+.more-settings-feature-card:active {
+  background-color: #dde0e2;
+}
+
+.more-settings-feature-card-label {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #666666;
+  white-space: nowrap;
+}
+
+.more-settings-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.more-settings-switch-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 21px;
+  gap: 12px;
+}
+
+.more-settings-switch-label {
+  flex: 1;
+  min-width: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #222222;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.more-settings-switch-row input[type="checkbox"] {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+[data-theme="dark"] .more-settings-switch-label {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .more-settings-feature-card {
+  background-color: #2a2a2a;
+}
+
+[data-theme="dark"] .more-settings-feature-card:hover {
+  background-color: #333333;
+}
+
+[data-theme="dark"] .more-settings-feature-card:active {
+  background-color: #3a3a3a;
+}
+
+[data-theme="dark"] .more-settings-feature-card-label {
+  color: #e0e0e0;
+}
+
+/* 动作按钮样式 */
+.more-settings-action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 12px;
+  color: #222222;
+  background-color: #f3f5f6;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.more-settings-action-button:hover {
+  background-color: #e8eaec;
+}
+
+.more-settings-action-button:active {
+  background-color: #dde0e2;
+}
+
+.more-settings-action-button-label {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  color: inherit;
+  text-align: center;
+}
+
+[data-theme="dark"] .more-settings-action-button {
+  color: #e0e0e0;
+  background-color: #2a2a2a;
+}
+
+[data-theme="dark"] .more-settings-action-button:hover {
+  background-color: #333333;
+}
+
+[data-theme="dark"] .more-settings-action-button:active {
+  background-color: #3a3a3a;
+}
+
+[data-theme="dark"] .more-settings-action-button-label {
+  color: #e0e0e0;
+}
+
+/* 错误消息组件样式 */
+.error-message-container {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 16px;
+  margin-top: 6px;
+  margin-bottom: -14px;
+  border: 1px solid #f53f3f;
+  border-radius: 12px;
+  background-color: var(--error-bg);
+}
+
+.error-message-icon-wrapper {
+  width: 21px;
+  height: 21px;
+  min-width: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4px;
+}
+
+.error-message-icon {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #f53f3f;
+}
+
+.error-message-text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: var(--error-text);
+}
+
+.error-message-text a {
+  color: var(--error-link);
+  text-decoration: underline;
+}
+
+.ad-banner-container {
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+
+html {
+  font-size: 17px;
+}
+
+@media print {
+  .imt-fb-container {
+    display: none !important;
+  }
+}
+
+#mount {
+  position: absolute;
+  display: none;
+  min-width: 250px;
+  height: auto;
+  --font-size: 17px;
+  font-size: 17px;
+}
+
+/* float-ball */
+.imt-fb-container {
+  position: fixed;
+  padding: 0;
+  top: 335px;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  display: none;
+  direction: ltr;
+  background-color: transparent !important;
+}
+
+.imt-fb-container:hover .imt-manga-button {
+  opacity: 1;
+}
+
+.imt-fb-container.left {
+  align-items: flex-start;
+  left: 0;
+}
+
+.imt-fb-container.right {
+  align-items: flex-end;
+  right: 0;
+}
+
+.imt-fb-btn {
+  cursor: pointer;
+  background: var(--float-ball-more-button-background-color);
+  height: 36px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+}
+
+.imt-fb-btn.left {
+  border-top-right-radius: 36px;
+  border-bottom-right-radius: 36px;
+  padding-left: 3px;
+}
+
+.imt-fb-btn.right {
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+  padding-right: 3px;
+}
+
+.imt-fb-btn.mini.left {
+  transform: translateX(-22px);
+}
+
+.imt-fb-btn.mini.right {
+  transform: translateX(22px);
+}
+
+.imt-fb-btn.mini.active {
+  transform: translateX(0);
+}
+
+.imt-fb-btn div {
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+.imt-fb-btn .imt-fb-hit-area {
+  position: absolute;
+  top: 0;
+  height: 36px;
+  bottom: -6px;
+  left: -6px;
+  right: -6px;
+  background: transparent;
+}
+
+.imt-fb-btn.mini.right .imt-fb-hit-area {
+  left: -10px;
+}
+
+.imt-fb-btn.mini.left .imt-fb-hit-area {
+  right: -10px;
+}
+
+.imt-fb-btn.left div {
+  border-top-right-radius: 34px;
+  border-bottom-right-radius: 34px;
+  justify-content: flex-end;
+}
+
+.imt-fb-btn.right div {
+  border-top-left-radius: 34px;
+  border-bottom-left-radius: 34px;
+}
+
+.imt-fb-logo-img {
+  width: 20px;
+  height: 20px;
+  margin: 0 10px;
+}
+
+.imt-fb-logo-img-big-bg {
+  width: 28px;
+  height: 28px;
+  margin: 0;
+  background-color: #ed6d8f;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.imt-float-ball-translated {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  bottom: 4px;
+  right: 4px;
+}
+
+.btn-animate {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform ease-out 250ms;
+  transition: -webkit-transform ease-out 250ms;
+  transition: transform ease-out 250ms;
+  transition: transform ease-out 250ms, -webkit-transform ease-out 250ms;
+}
+
+.imt-fb-setting-btn {
+  margin-right: 18px;
+  width: 28px;
+  height: 28px;
+}
+
+.immersive-translate-popup-wrapper {
+  background: var(--background-color);
+  border-radius: 20px;
+  box-shadow: 2px 10px 24px 0px #0e121614;
+  border: none;
+}
+
+.popup-container {
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-content {
+  border-radius: 20px 20px 12px 12px;
+}
+.popup-footer {
+  border-radius: 20px;
+}
+
+.popup-userscript-three-feature-layout {
+  border-radius: 20px;
+}
+
+.popup-userscript-three-feature-layout .popup-content {
+  border-radius: 20px 20px 12px 12px;
+}
+
+.popup-userscript-three-feature-layout .popup-footer {
+  border-radius: 0;
+}
+
+.imt-fb-close-button {
+  cursor: pointer;
+  position: absolute;
+  left: -10px;
+  bottom: -20px;
+}
+.imt-fb-container.left .imt-fb-close-button {
+  left: auto;
+  right: -10px;
+}
+
+.imt-fb-close-content {
+  padding: 22px;
+  width: 320px;
+  pointer-events: all;
+}
+
+.imt-fb-close-title {
+  font-weight: 500;
+  color: var(--text-black-2);
+}
+
+.imt-fb-close-radio-content {
+  background-color: var(--background-light-green);
+  padding: 8px 20px;
+}
+
+.imt-fb-radio-sel,
+.imt-fb-radio-nor {
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.imt-fb-radio-sel {
+  border: 2px solid var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imt-fb-radio-sel div {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: var(--primary);
+}
+
+.imt-fb-radio-nor {
+  border: 2px solid var(--input-border-strong);
+}
+
+.imt-fb-primary-btn {
+  background-color: var(--primary);
+  width: 72px;
+  height: 32px;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 32px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.imt-fb-default-btn {
+  border: 1px solid var(--primary);
+  width: 72px;
+  height: 32px;
+  border-radius: 8px;
+  color: var(--primary);
+  line-height: 32px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.imt-fb-guide-container {
+  width: 312px;
+  transform: translateY(-45%);
+}
+
+.imt-fb-guide-bg {
+  position: absolute;
+  left: 30px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  height: 100%;
+  width: 90%;
+}
+
+.imt-fb-guide-bg.left {
+  transform: scaleX(-1);
+}
+
+.imt-fb-guide-content {
+  margin: 16px -30px 80px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imt-fb-guide-content.left {
+  margin: 16px 21px 60px 32px;
+}
+
+.imt-fb-guide-img {
+  width: 220px;
+  height: 112px;
+}
+
+.imt-fb-guide-message {
+  font-size: 14px;
+  line-height: 28px;
+  color: #333333;
+  white-space: pre-wrap;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.imt-manga-guide-message {
+  font-size: 16px;
+  line-height: 24px;
+  color: #333333;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.imt-fb-guide-button {
+  margin-top: 16px;
+  line-height: 40px;
+  height: 40px;
+  padding: 0 20px;
+  width: unset;
+}
+
+.imt-fb-side {
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: all;
+  position: relative;
+}
+
+.imt-fb-side {
+  margin: 10px 0;
+}
+
+.imt-fb-side::before,
+.imt-manga-button::before,
+.imt-fb-round-button::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  left: 2px;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color 0.15s ease;
+}
+
+.imt-fb-side:hover::before,
+.imt-manga-button:hover::before,
+.imt-fb-round-button:hover::before {
+  background-color: var(--float-ball-more-button-hover-color);
+}
+
+.imt-fb-new-badge {
+  width: 26px;
+  height: 14px;
+  padding: 3px;
+  background-color: #f53f3f;
+  border-radius: 4px;
+  position: absolute;
+  top: -5px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imt-fb-side * {
+  pointer-events: all;
+}
+
+.imt-fb-pin-icon {
+  position: absolute;
+  left: -16px;
+  bottom: -12px;
+  opacity: 0;
+  cursor: pointer;
+}
+.imt-fb-container.left .imt-fb-pin-icon {
+  left: auto;
+  right: -16px;
+}
+
+.imt-fb-side:hover .imt-fb-pin-icon {
+  opacity: 1;
+}
+
+.imt-fb-more-button {
+  width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+/* Sheet.css */
+.immersive-translate-sheet {
+  position: fixed;
+  transform: translateY(100%);
+  /* Start off screen */
+  left: 0;
+  right: 0;
+  background-color: var(--background-color);
+  transition: transform 0.3s ease-out;
+  /* Smooth slide transition */
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+  /* Ensure it's above other content */
+  bottom: 0;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  overflow: hidden;
+}
+
+.immersive-translate-sheet.visible {
+  transform: translateY(0);
+}
+
+.immersive-translate-sheet-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.immersive-translate-sheet-backdrop.visible {
+  opacity: 1;
+}
+
+.popup-container-sheet {
+  max-width: 100vw;
+  width: 100vw;
+}
+
+.imt-no-events svg * {
+  pointer-events: none !important;
+}
+
+.imt-manga-button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: all;
+  margin: 0 0 10px 0;
+  background-color: var(--float-ball-more-button-background-color);
+  border-radius: 50%;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.08);
+  right: 8px;
+}
+
+.imt-manga-feedback {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.imt-fb-round-button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: var(--float-ball-more-button-background-color);
+  border-radius: 50%;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.imt-fb-round-button > svg {
+  z-index: 1;
+}
+
+.imt-fb-upgrade-button {
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.imt-fb-power-user-card {
+  position: absolute;
+  bottom: -130px;
+  width: 266px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 2px 10px 24px 0 rgba(14, 18, 22, 0.08);
+  border: 1px solid rgba(250, 251, 251, 1);
+  pointer-events: all;
+  z-index: 2;
+  background: linear-gradient(172deg, rgba(255, 255, 255, 0.30) 4.36%, #FFF 35.98%), linear-gradient(0deg, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.40) 100%), radial-gradient(39.95% 47.41% at -0.53% 55.22%, #E0C4F7 0%, rgba(224, 196, 247, 0.00) 100%), radial-gradient(56.37% 54.27% at 86.17% 0%, #E0C4F6 0%, rgba(224, 196, 246, 0.00) 100%), radial-gradient(42.04% 37.43% at -0.53% 3.75%, #AED5FF 0%, rgba(174, 213, 255, 0.00) 100%), radial-gradient(66.88% 52.09% at 36.81% 19.55%, #757ED8 0%, #6B6AC0 100%), #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imt-fb-power-user-card.right {
+  right: 60px;
+}
+
+.imt-fb-power-user-card.right::after {
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: 130px;
+  border-width: 10px 0 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent #fff;
+  filter: drop-shadow(2px 0 2px rgba(14, 18, 22, 0.06));
+}
+
+.imt-fb-power-user-card.left {
+  left: 60px;
+}
+
+.imt-fb-power-user-card.left::after {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 130px;
+  border-width: 10px 10px 10px 0;
+  border-style: solid;
+  border-color: transparent #fff transparent transparent;
+  filter: drop-shadow(-2px 0 2px rgba(14, 18, 22, 0.06));
+}
+
+.imt-fb-power-user-card-banner {
+  display: block;
+  width: 128px;
+  height: auto;
+  margin-top: 8px;
+  border-radius: 8px 8px 0 0;
+}
+
+.imt-fb-power-user-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 16px 24px 0;
+  box-sizing: border-box;
+}
+
+.imt-fb-power-user-card-title {
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+}
+
+.imt-fb-power-user-card-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.imt-fb-power-user-card-body {
+  padding: 12px 24px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.imt-fb-power-user-card-desc {
+  color: #333;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+}
+
+.imt-fb-power-user-card-primary {
+  margin-top: 16px;
+  height: 37px;
+  border-radius: 8px;
+  background: linear-gradient(110deg, #F497BC 17.37%, #EC4C8C 89.68%);
+  color: var(--ZX-FFFFFF, #FFF);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px; /* 150% */
+  display: flex;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  flex: 1 0 0;
+}
+
+.imt-manga-translated {
+  position: absolute;
+  left: 24px;
+  top: 20px;
+}
+
+.imt-float-ball-loading {
+  animation: imt-loading-animation 0.6s infinite linear !important;
+}
+
+.imt-manga-guide-bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  transform: translateY(-50%);
+}
+.imt-manga-guide-content {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  margin: 0 40px 0;
+}
+
+.img-manga-guide-button {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.img-manga-close {
+  position: absolute;
+  bottom: -200px;
+  width: 32px;
+  height: 32px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  cursor: pointer;
+}
+
+.imt-fb-container.dragging .imt-manga-button,
+.imt-fb-container.dragging .btn-animate:not(.imt-fb-btn) {
+  display: none !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn {
+  border-radius: 50% !important;
+  width: 36px !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  cursor: move !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn div {
+  border-radius: 50% !important;
+  width: 36px !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn.left,
+.imt-fb-container.dragging .imt-fb-btn.right {
+  border-radius: 50% !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn.left div,
+.imt-fb-container.dragging .imt-fb-btn.right div {
+  border-radius: 50% !important;
+}
+
+.imt-fb-container.dragging .imt-fb-logo-img {
+  margin: 0 !important;
+}
+
+.imt-fb-container.dragging .imt-float-ball-translated {
+  right: 2px !important;
+  bottom: 2px !important;
+}
+
+@-webkit-keyframes imt-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes imt-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.imt-fb-icon {
+  color: #666666;
+}
+
+[data-theme="dark"] .imt-fb-icon {
+  color: #b3b3b3;
+}
+
+[data-theme="light"] .imt-fb-icon {
+  color: #666666;
+}
+
+/* 悬浮球设置弹窗样式 */
+.imt-fb-setting-wrapper {
+  border-radius: 12px;
+  box-shadow: 2px 10px 24px 0px rgba(0, 0, 0, 0.06);
+}
+
+.imt-fb-setting-content {
+  padding: 16px;
+  width: 350px;
+  pointer-events: all;
+}
+
+.imt-fb-setting-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--text-black-2);
+}
+
+.imt-fb-setting-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px 0;
+}
+
+.imt-fb-preview-wrapper {
+  display: flex;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.imt-fb-preview-item {
+  width: 99px;
+  height: 57px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+}
+
+.imt-fb-preview-item.light {
+  background-color: #f3f5f6;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.imt-fb-preview-item.dark {
+  background-color: #444;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.imt-fb-preview-ball {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.imt-fb-preview-ball.light {
+  background-color: #fff;
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+}
+
+.imt-fb-preview-ball.dark {
+  background-color: #111;
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+}
+
+.imt-fb-preview-ball.full {
+  width: 41px;
+  justify-content: center;
+}
+
+.imt-fb-preview-ball.mini {
+  width: 41px;
+  justify-content: center;
+  transform: translateX(21px);
+}
+
+.imt-fb-preview-ball .imt-fb-preview-logo {
+  flex-shrink: 0;
+}
+
+/* 选项区域 */
+.imt-fb-setting-options {
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.imt-fb-setting-option-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4px;
+}
+
+.imt-fb-setting-option-label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: var(--text-black-2);
+}
+
+/* Toggle 开关样式 */
+.imt-fb-toggle {
+  width: 30px;
+  height: 18px;
+  background-color: var(--switch-background-color);
+  border-radius: 24px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.imt-fb-toggle.checked {
+  background-color: var(--primary);
+}
+
+.imt-fb-toggle.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.imt-fb-toggle-thumb {
+  width: 14px;
+  height: 14px;
+  background-color: var(--switch-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s ease;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+}
+
+.imt-fb-toggle.checked .imt-fb-toggle-thumb {
+  transform: translateX(12px);
+}
+
+.imt-fb-setting-hide-options {
+  background-color: var(--background-light-green);
+  padding: 8px 20px;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.imt-fb-setting-save-btn {
+  background-color: var(--primary);
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 45px;
+  height: 45px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: opacity 0.2s ease;
+}
+
+.imt-fb-setting-save-btn:hover {
+  opacity: 0.9;
+}
+
+.imt-fb-setting-save-btn:active {
+  opacity: 0.8;
+}
+</style><div id="mount" style="display: block;"><div hidden="" id="immersive-translate-popup-overlay" class="immersive-translate-popup-overlay" style="z-index: 2147483647; background-color: rgba(0, 0, 0, 0.5);"><div class="immersive-translate-popup-wrapper" style="position: fixed; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);"></div></div></div></template></div></html>

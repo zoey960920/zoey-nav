@@ -1,0 +1,4169 @@
+<!DOCTYPE html>
+<!-- saved from url=(0026)https://anthropic.wwei.ai/ -->
+<html lang="zh" data-immersive-translate-page-theme="dark"><plasmo-csui><template shadowrootmode="open"><div id="plasmo-shadow-container" style="z-index: 2147483647; position: relative;"><div id="plasmo-overlay-0" class="plasmo-csui-container" style="display: flex; position: absolute; top: 0px; left: 0px;"></div></div></template></plasmo-csui><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anthropic 招聘全景 | Careers Deep Dive</title>
+<style>
+:root{--bg:#0d0d0d;--bg2:#141414;--bg3:#1a1a1a;--border:#2a2a2a;--text:#e8e8e8;--text2:#999;--accent:#d4a843;--red:#e05c3a;--blue:#4a8fd4;--green:#5aad7e;--purple:#8b6fd4;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,'SF Pro Text','PingFang SC','Helvetica Neue',sans-serif;line-height:1.6;}
+nav{position:sticky;top:0;z-index:100;background:rgba(13,13,13,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:56px;}
+.nav-logo{font-size:15px;font-weight:600;}.nav-logo span{color:var(--accent);}
+.nav-links{display:flex;gap:24px;align-items:center;}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:13px;}
+.lang-btn{background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:5px 14px;border-radius:20px;font-size:12px;cursor:pointer;}
+.hero{padding:80px 32px 60px;max-width:1100px;margin:0 auto;}
+.hero-tag{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:16px;}
+.hero h1{font-size:clamp(36px,5vw,60px);font-weight:700;line-height:1.1;letter-spacing:-1px;margin-bottom:20px;}
+.hero h1 em{font-style:normal;color:var(--accent);}
+.hero p{font-size:17px;color:var(--text2);max-width:600px;}
+.hero-stats{display:flex;gap:40px;margin-top:40px;flex-wrap:wrap;}
+.stat-num{font-size:36px;font-weight:700;color:var(--accent);line-height:1;}
+.stat-label{font-size:12px;color:var(--text2);margin-top:4px;}
+section{max-width:1100px;margin:0 auto;padding:60px 32px;border-top:1px solid var(--border);}
+.section-tag{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px;}
+.section-title{font-size:28px;font-weight:700;margin-bottom:8px;letter-spacing:-0.5px;}
+.section-sub{color:var(--text2);font-size:15px;margin-bottom:36px;}
+.analysis-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;}
+.analysis-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:24px;}
+.card-icon{font-size:24px;margin-bottom:12px;}
+.card-title{font-size:16px;font-weight:600;margin-bottom:8px;}
+.card-body{font-size:13px;color:var(--text2);line-height:1.7;}
+.card-body strong{color:var(--text);}
+.card-highlight{background:linear-gradient(135deg,rgba(212,168,67,0.08),rgba(200,134,74,0.04));border-color:rgba(212,168,67,0.2);}
+.org-row{display:flex;gap:12px;margin-bottom:12px;flex-wrap:wrap;}
+.org-box{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:12px 16px;flex:1;min-width:160px;}
+.org-box-title{font-size:12px;font-weight:600;color:var(--accent);margin-bottom:4px;}
+.org-box-body{font-size:12px;color:var(--text2);}
+.values-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;}
+.value-item{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:20px;}
+.value-num{font-size:11px;color:var(--accent);font-weight:600;letter-spacing:1px;margin-bottom:8px;}
+.value-title{font-size:14px;font-weight:600;margin-bottom:6px;}
+.value-desc{font-size:12px;color:var(--text2);line-height:1.6;}
+.benefits-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;}
+.benefit-item{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:18px;}
+.benefit-icon{font-size:20px;margin-bottom:8px;}
+.benefit-title{font-size:13px;font-weight:600;margin-bottom:6px;}
+.benefit-desc{font-size:12px;color:var(--text2);line-height:1.5;}
+.process-steps{display:flex;flex-wrap:wrap;}
+.process-step{flex:1;min-width:160px;padding:20px;background:var(--bg2);border:1px solid var(--border);}
+.process-step:first-child{border-radius:10px 0 0 10px;}
+.process-step:last-child{border-radius:0 10px 10px 0;}
+.process-step+.process-step{border-left:none;}
+.step-num{font-size:11px;color:var(--accent);font-weight:600;margin-bottom:6px;}
+.step-title{font-size:13px;font-weight:600;margin-bottom:4px;}
+.step-desc{font-size:12px;color:var(--text2);}
+.insight-box{background:linear-gradient(135deg,rgba(212,168,67,0.06),rgba(200,134,74,0.03));border:1px solid rgba(212,168,67,0.2);border-radius:12px;padding:24px 28px;margin-top:32px;}
+.insight-title{font-size:14px;font-weight:600;color:var(--accent);margin-bottom:12px;}
+.insight-list{list-style:none;}
+.insight-list li{font-size:13px;color:var(--text2);padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.05);display:flex;gap:10px;}
+.insight-list li:last-child{border-bottom:none;}
+.insight-list li::before{content:"→";color:var(--accent);flex-shrink:0;}
+.insight-list li strong{color:var(--text);}
+.filter-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
+.filter-btn{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:6px 14px;border-radius:20px;font-size:12px;cursor:pointer;white-space:nowrap;transition:all 0.15s;}
+.filter-btn:hover,.filter-btn.active{background:var(--accent);border-color:var(--accent);color:#000;font-weight:600;}
+.search-box{width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:12px 16px;color:var(--text);font-size:14px;margin-bottom:20px;outline:none;}
+.search-box:focus{border-color:var(--accent);}
+.search-box::placeholder{color:var(--text2);}
+.dept-section{margin-bottom:36px;}
+.dept-header{display:flex;align-items:center;gap:12px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border);}
+.dept-name{font-size:18px;font-weight:600;}
+.dept-count{background:var(--bg3);border:1px solid var(--border);padding:2px 10px;border-radius:20px;font-size:11px;color:var(--text2);}
+.jobs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;}
+.job-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px;cursor:pointer;transition:all 0.15s;position:relative;}
+.job-card:hover{border-color:#555;background:var(--bg3);transform:translateY(-1px);}
+.job-card:hover .job-arrow{opacity:1;}
+.job-en{font-size:13px;font-weight:500;line-height:1.4;margin-bottom:4px;}
+.job-zh{font-size:12px;color:var(--accent);margin-bottom:8px;font-weight:500;}
+.job-meta{display:flex;gap:6px;flex-wrap:wrap;align-items:center;}
+.job-tag{font-size:10px;color:var(--text2);background:var(--bg);border:1px solid var(--border);padding:2px 8px;border-radius:10px;}
+.job-tag.intl{color:var(--purple);border-color:rgba(139,111,212,0.3);}
+.job-tag.sf{color:var(--blue);border-color:rgba(74,143,212,0.3);}
+.job-tag.remote{color:var(--green);border-color:rgba(90,173,126,0.3);}
+.job-arrow{position:absolute;right:14px;top:50%;transform:translateY(-50%);opacity:0;color:var(--accent);font-size:14px;transition:opacity 0.15s;}
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:200;backdrop-filter:blur(4px);}
+.modal-overlay.open{display:flex;align-items:center;justify-content:center;padding:20px;}
+.modal{background:var(--bg2);border:1px solid #333;border-radius:16px;max-width:640px;width:100%;max-height:85vh;overflow-y:auto;padding:32px;}
+.modal-dept{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:8px;}
+.modal-en{font-size:22px;font-weight:700;line-height:1.3;margin-bottom:6px;}
+.modal-zh{font-size:16px;color:var(--accent);margin-bottom:20px;font-weight:500;}
+.modal-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px;}
+.modal-tag{font-size:11px;padding:4px 12px;border-radius:20px;border:1px solid var(--border);color:var(--text2);}
+.modal-section{margin-bottom:20px;}
+.modal-section h4{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--text2);margin-bottom:10px;}
+.modal-desc{font-size:14px;color:var(--text2);line-height:1.7;}
+.modal-list{list-style:none;padding:0;}
+.modal-list li{font-size:13px;color:var(--text2);padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.04);display:flex;gap:8px;line-height:1.5;}
+.modal-list li:last-child{border-bottom:none;}
+.modal-list li::before{content:"·";color:var(--accent);flex-shrink:0;}
+.modal-close{display:flex;justify-content:space-between;align-items:center;margin-top:24px;padding-top:20px;border-top:1px solid var(--border);}
+.btn-close{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:8px 20px;border-radius:8px;cursor:pointer;font-size:13px;}
+.btn-apply{background:var(--accent);border:none;color:#000;padding:8px 20px;border-radius:8px;cursor:pointer;font-size:13px;font-weight:600;text-decoration:none;display:inline-block;}
+.zh{display:block;}.en{display:none;}
+body.lang-en .zh{display:none;}body.lang-en .en{display:block;}
+span.zh,span.en{display:inline;}
+body.lang-en span.zh{display:none;}body.lang-en span.en{display:inline;}
+footer{border-top:1px solid var(--border);padding:32px;text-align:center;color:var(--text2);font-size:12px;}
+footer a{color:var(--accent);text-decoration:none;}
+@media(max-width:640px){.hero,.section{padding-left:20px;padding-right:20px;}nav{padding:0 20px;}}
+</style>
+<script src="./Anthropic 招聘全景 _ Careers Deep Dive_files/widget.js" defer="" data-wwei-injected="1"></script><style type="text/css">
+  @font-face {
+    font-family: CuboxInter;
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("chrome-extension://bflmgpechpeohjfomgfdkkfcbhfcjohl/fonts/InterVariable.woff2") format("woff2");
+  }
+  #cubox-react-root {
+    z-index: 999999999999999999999;
+  }
+  </style><link rel="stylesheet" href="chrome-extension://bflmgpechpeohjfomgfdkkfcbhfcjohl/css/globalHighlightStyles.css"></head>
+<body>
+<nav>
+  <div class="nav-logo">Anthropic <span>Careers</span></div>
+  <div class="nav-links">
+    <a href="https://anthropic.wwei.ai/#analysis"><span class="zh">深度分析</span><span class="en">Analysis</span></a>
+    <a href="https://anthropic.wwei.ai/#values"><span class="zh">价值观</span><span class="en">Values</span></a>
+    <a href="https://anthropic.wwei.ai/#benefits"><span class="zh">福利</span><span class="en">Benefits</span></a>
+    <a href="https://anthropic.wwei.ai/#jobs"><span class="zh">全部职位</span><span class="en">All Jobs</span></a>
+    <button class="lang-btn" onclick="toggleLang()">EN / 中文</button>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag"><span class="zh">招聘全景分析</span><span class="en">Careers Intelligence Report</span></div>
+  <h1 class="zh">Anthropic<br>在招什么人？<br>是什么样的公司？</h1>
+  <h1 class="en">Anthropic<br>Who They Hire.<br>What They Build.</h1>
+  <p class="zh">完整复刻官方招聘页 + 深度解读。500+ 在招岗位，15个部门，覆盖全球主要城市。点击职位卡片查看详情。</p>
+  <p class="en">Full mirror of official careers + deep analysis. 500+ open roles, 15 departments. Click any job card for details.</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">500+</div><div class="stat-label"><span class="zh">在招岗位</span><span class="en">Open Roles</span></div></div>
+    <div class="stat"><div class="stat-num">15</div><div class="stat-label"><span class="zh">部门</span><span class="en">Departments</span></div></div>
+    <div class="stat"><div class="stat-num">20+</div><div class="stat-label"><span class="zh">城市</span><span class="en">Cities</span></div></div>
+    <div class="stat"><div class="stat-num">50%</div><div class="stat-label"><span class="zh">技术员工无ML背景</span><span class="en">Tech w/o ML Bg</span></div></div>
+  </div>
+</div>
+
+<!-- ANALYSIS -->
+<section id="analysis">
+  <div class="section-tag"><span class="zh">深度解读</span><span class="en">Deep Analysis</span></div>
+  <div class="section-title zh">Anthropic 是什么样的公司？</div>
+  <div class="section-title en">What Kind of Company Is Anthropic?</div>
+  <div class="section-sub zh">从招聘结构看透一家公司的战略意图</div>
+  <div class="section-sub en">Reading corporate strategy through hiring patterns</div>
+  <div class="analysis-grid">
+    <div class="analysis-card card-highlight">
+      <div class="card-icon">🔬</div>
+      <div class="card-title zh">本质：AI 安全公司，不只是 AI 公司</div>
+      <div class="card-title en">Essence: AI Safety Company, Not Just AI</div>
+      <div class="card-body zh">创始人 Dario/Daniela Amodei 等均来自 OpenAI，因安全理念分歧出走。<strong>Safeguards 部门独立存在</strong>，招聘生物安全、CBRN 威胁、影响力操控等专职研究员，这在同类公司中罕见。使命优先于商业。</div>
+      <div class="card-body en">Founders left OpenAI over safety disagreements. <strong>Safeguards is a standalone department</strong> with dedicated CBRN, bio-safety, and influence-ops researchers — unique in the industry. Mission before money.</div>
+    </div>
+    <div class="analysis-card">
+      <div class="card-icon">💰</div>
+      <div class="card-title zh">战略重心：全面商业化</div>
+      <div class="card-title en">Strategic Pivot: Full Commercialization</div>
+      <div class="card-body zh"><strong>销售部门 150 个岗位</strong>，是最大招聘品类，远超研究岗（68个）。遍布 APAC、EMEA、北美，覆盖企业、政府、医疗、金融。已从研究实验室转向<strong>全面 B2B 商业化</strong>。</div>
+      <div class="card-body en"><strong>Sales has 150 openings</strong> — the largest dept, far exceeding Research (68). APAC/EMEA/NA across enterprise, gov, health, finance. Clearly shifted from research lab to <strong>full B2B commercialization</strong>.</div>
+    </div>
+    <div class="analysis-card">
+      <div class="card-icon">🧠</div>
+      <div class="card-title zh">人才哲学：背景多元，能力为王</div>
+      <div class="card-title en">Talent: Diverse Backgrounds, Ability First</div>
+      <div class="card-body zh"><strong>50% 技术人员没有 ML 经验</strong>就加入。50% 有 PhD，但很多没有大学学历。不看标签，看<strong>独立研究、开源贡献、实际解决问题的能力</strong>。</div>
+      <div class="card-body en"><strong>50% of tech staff had no ML experience</strong> when joining. 50% have PhDs, many lack college degrees. No credentialism — they want <strong>independent research, open-source, actual problem-solving</strong>.</div>
+    </div>
+    <div class="analysis-card">
+      <div class="card-icon">🌍</div>
+      <div class="card-title zh">地理扩张：湾区→全球</div>
+      <div class="card-title en">Geo Expansion: Bay Area → Global</div>
+      <div class="card-body zh">研究岗集中旧金山，但销售和运营<strong>快速国际化</strong>：东京、首尔、悉尼、班加罗尔（APAC）；伦敦、都柏林、慕尼黑、巴黎（EMEA）。典型 US SaaS 全球化路径。</div>
+      <div class="card-body en">Research in SF, but sales/ops are <strong>rapidly globalizing</strong>: Tokyo, Seoul, Sydney, Bangalore (APAC); London, Dublin, Munich, Paris (EMEA). Classic US SaaS global playbook.</div>
+    </div>
+    <div class="analysis-card">
+      <div class="card-icon">🏗️</div>
+      <div class="card-title zh">组织三大支柱</div>
+      <div class="card-title en">Three Organizational Pillars</div>
+      <div class="card-body zh"><strong>① 研究层</strong>（对齐/解释性/RL）→ 能力源头<br><strong>② 工程层</strong>（基础设施/产品工程）→ 工程化<br><strong>③ 商业层</strong>（销售/市场/法务）→ 货币化<br>商业必须服从安全判断。</div>
+      <div class="card-body en"><strong>① Research</strong> (alignment/interpretability/RL) → source<br><strong>② Engineering</strong> (infra/product) → engineering<br><strong>③ Commercial</strong> (sales/marketing/legal) → monetization<br>Commercial defers to safety judgment.</div>
+    </div>
+    <div class="analysis-card">
+      <div class="card-icon">⚔️</div>
+      <div class="card-title zh">竞争：正面对抗 OpenAI + Google</div>
+      <div class="card-title en">Competition: Head-to-Head vs OpenAI + Google</div>
+      <div class="card-body zh">差异化是<strong>「安全可信赖」</strong>，而非功能领先。企业端主打合规、可解释性、数据安全。在<strong>垂直行业（金融、生命科学、政府）</strong>重点突破。</div>
+      <div class="card-body en">Differentiation is <strong>"safe and trustworthy"</strong>, not features. Enterprise pitch: compliance, interpretability, data security. Breaking through in <strong>verticals (finance, life sciences, gov)</strong>.</div>
+    </div>
+  </div>
+  <div class="insight-box">
+    <div class="insight-title zh">💡 快速判断</div>
+    <div class="insight-title en">💡 Quick Takeaways</div>
+    <ul class="insight-list">
+      <li><span class="zh"><strong>销售岗位井喷</strong>说明已过「靠融资活着」阶段，商业化压力是真实的。</span><span class="en"><strong>Sales explosion</strong> means they're past "living on VC money" — real commercial pressure exists.</span></li>
+      <li><span class="zh"><strong>没有 ML 背景也能进</strong>，但需要跨领域深度——顶级产品、运营、法务、政策人才都是要的。</span><span class="en"><strong>No ML background needed</strong>, but cross-domain depth required — top product, ops, legal, policy talent is exactly what they want.</span></li>
+      <li><span class="zh"><strong>Safeguards 部门</strong>是最独特的信号——他们真的在认真对待 CBRN 威胁研究，其他 AI 公司没有这个。</span><span class="en"><strong>Safeguards department</strong> is the most unique signal — no other AI company has dedicated CBRN threat researchers.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ORG -->
+<section id="org">
+  <div class="section-tag"><span class="zh">组织架构</span><span class="en">Organization</span></div>
+  <div class="section-title zh">15个部门全景图</div>
+  <div class="section-title en">15 Departments at a Glance</div>
+  <div class="org-row">
+    <div class="org-box" style="border-color:rgba(224,92,58,0.4)"><div class="org-box-title" style="color:#e05c3a">销售 Sales</div><div class="org-box-body">150+ 岗 · 全球 · AE/SA/CSM/Applied AI</div></div>
+    <div class="org-box" style="border-color:rgba(74,143,212,0.4)"><div class="org-box-title" style="color:#4a8fd4">AI 研究与工程</div><div class="org-box-body">68 岗 · SF/London · 对齐/解释性/RL/预训练</div></div>
+    <div class="org-box" style="border-color:rgba(212,168,67,0.4)"><div class="org-box-title" style="color:#d4a843">财务 Finance</div><div class="org-box-body">36 岗 · SF/Seattle · 营收会计/交易/税务</div></div>
+  </div>
+  <div class="org-row">
+    <div class="org-box"><div class="org-box-title">安全 Security</div><div class="org-box-body">24 岗 · 检测响应/应用安全</div></div>
+    <div class="org-box"><div class="org-box-title">市场营销</div><div class="org-box-body">23 岗 · 品牌/企业/社区/活动</div></div>
+    <div class="org-box"><div class="org-box-title">产品工程</div><div class="org-box-body">22 岗 · Claude.ai/API/iOS/Android</div></div>
+    <div class="org-box"><div class="org-box-title">基础设施工程</div><div class="org-box-body">22 岗 · 推理/云部署/数据库</div></div>
+    <div class="org-box"><div class="org-box-title">内容安全 Safeguards</div><div class="org-box-body">21 岗 · 生物/网络/欺诈/人权</div></div>
+  </div>
+  <div class="org-row">
+    <div class="org-box"><div class="org-box-title">产品管理与运营</div><div class="org-box-body">17 岗 · API/消费者/货币化</div></div>
+    <div class="org-box"><div class="org-box-title">算力 Compute</div><div class="org-box-body">13 岗 · 数据中心/网络/效率</div></div>
+    <div class="org-box"><div class="org-box-title">法务 Legal</div><div class="org-box-body">13 岗 · 商业合同/产品/合规</div></div>
+    <div class="org-box"><div class="org-box-title">技术项目管理</div><div class="org-box-body">10 岗 · 对齐/算力/推理/安全</div></div>
+    <div class="org-box"><div class="org-box-title">公共政策/传播/人力</div><div class="org-box-body">13 岗 · 联邦/澳洲/拉美/传播</div></div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section id="values">
+  <div class="section-tag"><span class="zh">核心价值观</span><span class="en">Core Values</span></div>
+  <div class="section-title zh">7 条指导原则</div>
+  <div class="section-title en">7 Guiding Principles</div>
+  <div class="values-grid">
+    <div class="value-item"><div class="value-num">01</div><div class="value-title zh">为全球善好而行动</div><div class="value-title en">Act for the Global Good</div><div class="value-desc zh">最大化对人类的长期正面影响，使命驱动。</div><div class="value-desc en">Maximize long-term positive outcomes for humanity.</div></div>
+    <div class="value-item"><div class="value-num">02</div><div class="value-title zh">持有光明与阴影</div><div class="value-title en">Hold Light and Shade</div><div class="value-desc zh">同时承认 AI 的风险与收益，不盲目乐观也不末日论。</div><div class="value-desc en">Acknowledge both AI risks and benefits. Neither naive nor doomerist.</div></div>
+    <div class="value-item"><div class="value-num">03</div><div class="value-title zh">善待我们的用户</div><div class="value-title en">Be Good to Our Users</div><div class="value-desc zh">以慷慨和善意对待客户、政策制定者及受影响社区。</div><div class="value-desc en">Treat customers and communities with generosity and kindness.</div></div>
+    <div class="value-item"><div class="value-num">04</div><div class="value-title zh">点燃安全竞赛</div><div class="value-title en">Ignite a Race to the Top on Safety</div><div class="value-desc zh">把安全当竞争优势，用竞争迫使行业提升安全标准。</div><div class="value-desc en">Safety as competitive advantage, not cost burden.</div></div>
+    <div class="value-item"><div class="value-num">05</div><div class="value-title zh">做有效的简单事</div><div class="value-title en">Do the Simple Thing That Works</div><div class="value-desc zh">实证主义，不过度工程化，找有效的方法。</div><div class="value-desc en">Empirical, not over-engineered. Find what works.</div></div>
+    <div class="value-item"><div class="value-num">06</div><div class="value-title zh">有帮助、诚实、无害</div><div class="value-title en">Be Helpful, Honest, Harmless</div><div class="value-desc zh">高信任、低自我的沟通文化，与 Claude 的训练目标一致。</div><div class="value-desc en">High-trust, low-ego communication. Mirrors Claude's training objective.</div></div>
+    <div class="value-item"><div class="value-num">07</div><div class="value-title zh">使命优先</div><div class="value-title en">Put the Mission First</div><div class="value-desc zh">商业利益与安全使命冲突时，使命胜出。</div><div class="value-desc en">When commercial interest conflicts with mission, mission wins.</div></div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section id="benefits">
+  <div class="section-tag"><span class="zh">福利待遇</span><span class="en">Benefits</span></div>
+  <div class="section-title zh">待遇一览</div><div class="section-title en">Compensation &amp; Perks</div>
+  <div class="benefits-grid">
+    <div class="benefit-item"><div class="benefit-icon">🏥</div><div class="benefit-title zh">综合医疗</div><div class="benefit-title en">Health Coverage</div><div class="benefit-desc zh">医疗、牙科、视力险。含生育治疗（Carrot Fertility）</div><div class="benefit-desc en">Health, dental, vision + fertility benefits (Carrot)</div></div>
+    <div class="benefit-item"><div class="benefit-icon">👶</div><div class="benefit-title zh">22周育儿假</div><div class="benefit-title en">22-Week Parental Leave</div><div class="benefit-desc zh">带薪育儿假，行业顶配</div><div class="benefit-desc en">Paid parental leave — top-tier in industry</div></div>
+    <div class="benefit-item"><div class="benefit-icon">💆</div><div class="benefit-title zh">$500/月健康津贴</div><div class="benefit-title en">$500/mo Wellness</div><div class="benefit-desc zh">每月 $500 健康补贴 + 心理健康支持</div><div class="benefit-desc en">Monthly wellness stipend + mental health support</div></div>
+    <div class="benefit-item"><div class="benefit-icon">📚</div><div class="benefit-title zh">年度教育补贴</div><div class="benefit-title en">Education Stipend</div><div class="benefit-desc zh">年度学习补贴，支持终生学习</div><div class="benefit-desc en">Annual stipend for continuous learning</div></div>
+    <div class="benefit-item"><div class="benefit-icon">🏠</div><div class="benefit-title zh">居家办公补贴</div><div class="benefit-title en">Home Office Stipend</div><div class="benefit-desc zh">居家办公设备补贴 + 搬迁支持</div><div class="benefit-desc en">Equipment stipend + relocation support</div></div>
+    <div class="benefit-item"><div class="benefit-icon">📈</div><div class="benefit-title zh">股权激励</div><div class="benefit-title en">Equity + Matching</div><div class="benefit-desc zh">竞争性薪资 + 股权 + 1:1 股权捐赠匹配（上限25%）</div><div class="benefit-desc en">Salary + equity + 1:1 donation matching (up to 25%)</div></div>
+    <div class="benefit-item"><div class="benefit-icon">🍽️</div><div class="benefit-title zh">办公室餐食</div><div class="benefit-title en">Daily Meals</div><div class="benefit-desc zh">办公室提供每日餐食和零食</div><div class="benefit-desc en">Daily office meals and snacks provided</div></div>
+    <div class="benefit-item"><div class="benefit-icon">✈️</div><div class="benefit-title zh">签证支持</div><div class="benefit-title en">Visa Sponsorship</div><div class="benefit-desc zh">符合条件的岗位提供签证担保</div><div class="benefit-desc en">Sponsorship available for eligible roles</div></div>
+  </div>
+</section>
+
+<!-- HIRING PROCESS -->
+<section>
+  <div class="section-tag"><span class="zh">面试流程</span><span class="en">Hiring Process</span></div>
+  <div class="section-title zh">如何加入？</div><div class="section-title en">How to Get In?</div>
+  <div class="process-steps">
+    <div class="process-step"><div class="step-num">01</div><div class="step-title zh">投递申请</div><div class="step-title en">Apply</div><div class="step-desc zh">官网投递，可合理使用 AI 辅助</div><div class="step-desc en">Apply via website; AI use permitted</div></div>
+    <div class="process-step"><div class="step-num">02</div><div class="step-title zh">筛选面试</div><div class="step-title en">Screening</div><div class="step-desc zh">Google Meet 视频面试</div><div class="step-desc en">Video interview via Google Meet</div></div>
+    <div class="process-step"><div class="step-num">03</div><div class="step-title zh">技术评估</div><div class="step-title en">Assessment</div><div class="step-desc zh">技术岗：Colab/CodeSignal 实时编程；非技术岗：对话式</div><div class="step-desc en">Tech: live coding (Colab/CodeSignal); Non-tech: conversational</div></div>
+    <div class="process-step"><div class="step-num">04</div><div class="step-title zh">终面 / Offer</div><div class="step-title en">Final / Offer</div><div class="step-desc zh">可查阅资料；12 个月后可重新申请</div><div class="step-desc en">Can look up info; re-apply after 12 months if rejected</div></div>
+  </div>
+</section>
+
+<!-- JOBS -->
+<section id="jobs">
+  <div class="section-tag"><span class="zh">全部职位</span><span class="en">All Open Roles</span></div>
+  <div class="section-title zh">500+ 在招岗位 <span style="font-size:16px;color:var(--accent);font-weight:400">← 点击卡片查看详情</span></div>
+  <div class="section-title en">500+ Open Positions <span style="font-size:16px;color:var(--accent);font-weight:400">← Click cards for details</span></div>
+  <div class="section-sub zh">数据来源：anthropic.com/careers/jobs（2026年4月）</div>
+  <div class="section-sub en">Source: anthropic.com/careers/jobs (April 2026)</div>
+  <input type="text" class="search-box" placeholder="🔍 搜索职位 / Search roles..." oninput="filterJobs(this.value)" id="jobSearch">
+  <div class="filter-bar" id="filterBar">
+    <button class="filter-btn active" onclick="showDept(&#39;all&#39;,this)"><span class="zh">全部</span><span class="en">All</span></button>
+    <button class="filter-btn" onclick="showDept(&#39;pm&#39;,this)"><span class="zh">⭐ 产品&amp;运营</span><span class="en">⭐ Product &amp; Ops</span></button>
+    <button class="filter-btn" onclick="showDept(&#39;marketing&#39;,this)"><span class="zh">⭐ 市场营销</span><span class="en">⭐ Marketing</span></button>
+    <button class="filter-btn" onclick="showDept(&#39;product-eng&#39;,this)"><span class="zh">⭐ 产品工程</span><span class="en">⭐ Product Eng</span></button>
+    <button class="filter-btn" onclick="showDept(&#39;sales&#39;,this)">Sales</button>
+    <button class="filter-btn" onclick="showDept(&#39;ai-research&#39;,this)">AI Research</button>
+    <button class="filter-btn" onclick="showDept(&#39;infra&#39;,this)">Infrastructure</button>
+    <button class="filter-btn" onclick="showDept(&#39;safeguards&#39;,this)">Safeguards</button>
+    <button class="filter-btn" onclick="showDept(&#39;security&#39;,this)">Security</button>
+    <button class="filter-btn" onclick="showDept(&#39;finance&#39;,this)">Finance</button>
+    <button class="filter-btn" onclick="showDept(&#39;legal&#39;,this)">Legal</button>
+    <button class="filter-btn" onclick="showDept(&#39;compute&#39;,this)">Compute</button>
+    <button class="filter-btn" onclick="showDept(&#39;policy&#39;,this)">Policy</button>
+    <button class="filter-btn" onclick="showDept(&#39;comms&#39;,this)">Comms</button>
+    <button class="filter-btn" onclick="showDept(&#39;tpm&#39;,this)">TPM</button>
+    <button class="filter-btn" onclick="showDept(&#39;people&#39;,this)">People</button>
+  </div>
+  <div id="jobsContainer"><div class="dept-section"><div class="dept-header"><span class="dept-name">产品管理与运营</span><span class="dept-count">16 roles</span></div><div class="jobs-grid"><div class="job-card"><div class="job-en">Product Manager, Claude Code</div><div class="job-zh">产品经理，Claude Code</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Product Manager, Consumer</div><div class="job-zh">产品经理，消费者产品</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Product Manager, API Growth</div><div class="job-zh">产品经理，API 增长</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Product Manager, Monetization</div><div class="job-zh">产品经理，货币化</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Product Manager, Multi-Cloud Growth - Google</div><div class="job-zh">产品经理，多云增长（Google合作）</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Research Product Manager, Model Behaviors</div><div class="job-zh">研究产品经理，模型行为</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Product Operations Manager, Feedback Loops</div><div class="job-zh">产品运营经理，反馈闭环</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Product Operations Manager, Research Product</div><div class="job-zh">产品运营经理，研究产品</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Product Management, Research</div><div class="job-zh">产品经理，研究方向</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Community Operations &amp; Executive Escalations Manager</div><div class="job-zh">社区运营与高管升级管理经理</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Product Support Manager</div><div class="job-zh">产品支持经理</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Product Support Manager (Dublin)</div><div class="job-zh">产品支持经理（都柏林）</div><div class="job-meta"><span class="job-tag intl">International</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Product Support Specialist</div><div class="job-zh">产品支持专员</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Support Operations Analyst</div><div class="job-zh">支持运营分析师</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Support Operations Specialist, AI Agent Management</div><div class="job-zh">支持运营专员，AI Agent管理</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Support Vendor Operations Manager</div><div class="job-zh">支持供应商运营经理</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div></div></div><div class="dept-section"><div class="dept-header"><span class="dept-name">市场营销与品牌</span><span class="dept-count">23 roles</span></div><div class="jobs-grid"><div class="job-card"><div class="job-en">Head of Integrated Marketing, Claude</div><div class="job-zh">Claude 整合营销负责人</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Head of Enterprise Marketing Strategy &amp; Analytics</div><div class="job-zh">企业营销策略与分析负责人</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Head of Customer Programs</div><div class="job-zh">客户项目负责人</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Art Director, Enterprise</div><div class="job-zh">艺术总监，企业端</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Video Director, Product Launches</div><div class="job-zh">视频总监，产品发布</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Copy &amp; Content Lead, Launches</div><div class="job-zh">文案与内容负责人，产品发布</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Copy Lead, Enterprise</div><div class="job-zh">文案负责人，企业端</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Community Marketing Lead</div><div class="job-zh">社区营销负责人</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Design Engineer, Web</div><div class="job-zh">设计工程师，Web</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Developer Community Lead - EMEA</div><div class="job-zh">开发者社区负责人，EMEA</div><div class="job-meta"><span class="job-tag intl">International</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Field Marketing Lead, Industries - EMEA</div><div class="job-zh">行业现场营销负责人，EMEA</div><div class="job-meta"><span class="job-tag intl">International</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Field Marketing Manager</div><div class="job-zh">现场营销经理</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Marketing Events Lead, Enterprise</div><div class="job-zh">市场活动负责人，企业端</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Marketing Events Lead - EMEA</div><div class="job-zh">市场活动负责人，EMEA</div><div class="job-meta"><span class="job-tag intl">International</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Marketing Events Content Manager</div><div class="job-zh">市场活动内容经理</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Senior Marketing Events Manager, Partners</div><div class="job-zh">高级市场活动经理，合作伙伴</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Partner Marketing Lead - EMEA</div><div class="job-zh">合作伙伴营销负责人，EMEA</div><div class="job-meta"><span class="job-tag intl">International</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Customer Marketing Lead, Startups - EMEA</div><div class="job-zh">客户营销负责人，初创公司（EMEA）</div><div class="job-meta"><span class="job-tag intl">International</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Customer Marketing, Strategic Programs</div><div class="job-zh">客户营销，战略项目</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Customer Programs Manager, Customer Advisory Boards</div><div class="job-zh">客户项目经理，客户顾问委员会</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Segment Marketing Manager, Financial Services &amp; Insurance</div><div class="job-zh">细分市场营销经理，金融与保险</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Segment Marketing Manager, Strategic Accounts</div><div class="job-zh">细分市场营销经理，战略账户</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Program Manager, Student Outreach</div><div class="job-zh">项目经理，学生推广</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div></div></div><div class="dept-section"><div class="dept-header"><span class="dept-name">产品工程与设计</span><span class="dept-count">21 roles</span></div><div class="jobs-grid"><div class="job-card"><div class="job-en">Product Designer, Claude Code</div><div class="job-zh">产品设计师，Claude Code</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Engineering Manager, Agent Prompts &amp; Evals</div><div class="job-zh">工程经理，Agent提示词与评估</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Engineering Manager, Auth &amp; Identity</div><div class="job-zh">工程经理，认证与身份</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Engineering Manager, Product Monetization (Billing Platform)</div><div class="job-zh">工程经理，产品货币化（计费平台）</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Engineering Manager, People Products</div><div class="job-zh">工程经理，内部人事产品</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Engineering Manager, Vertical AI Products (Multiple Roles)</div><div class="job-zh">工程经理，垂直 AI 产品（多职位）</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Prompt Engineer, Claude Code</div><div class="job-zh">提示词工程师，Claude Code</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Prompt Engineer, Agent Prompts &amp; Evals</div><div class="job-zh">提示词工程师，Agent提示词与评估</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Model Quality Software Engineer, Claude Code</div><div class="job-zh">模型质量软件工程师，Claude Code</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Senior Staff Software Engineer, API</div><div class="job-zh">高级 Staff 工程师，API</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Software Engineer, Android</div><div class="job-zh">软件工程师，Android</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Software Engineer, iOS</div><div class="job-zh">软件工程师，iOS</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Software Engineer, Desktop</div><div class="job-zh">软件工程师，桌面端</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Software Engineer, Full-stack</div><div class="job-zh">软件工程师，全栈</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">UI Software Engineer, Claude.ai Consumer Product</div><div class="job-zh">UI 软件工程师，Claude.ai 消费者产品</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Software Engineer, Platform</div><div class="job-zh">软件工程师，平台</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Software Engineer, UI Platform</div><div class="job-zh">软件工程师，UI 平台</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Staff Software Engineer, Billing Platform</div><div class="job-zh">Staff 工程师，计费平台</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Staff+ Software Engineer, Backend</div><div class="job-zh">Staff+ 工程师，后端</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Staff+ Software Engineer, Full-stack</div><div class="job-zh">Staff+ 工程师，全栈</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Staff+ Software Engineer, Platform</div><div class="job-zh">Staff+ 工程师，平台</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div></div></div><div class="dept-section"><div class="dept-header"><span class="dept-name">销售</span><span class="dept-count">10 roles</span></div><div class="jobs-grid"><div class="job-card"><div class="job-en">Applied AI Engineer</div><div class="job-zh">应用 AI 工程师</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Applied AI Engineer (Startups)</div><div class="job-zh">应用 AI 工程师（初创公司）</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Forward Deployed Engineer, Applied AI</div><div class="job-zh">前线部署工程师，应用 AI</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Solutions Architect, Applied AI</div><div class="job-zh">解决方案架构师，应用 AI</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Enterprise Account Executive, Financial Services &amp; Insurance</div><div class="job-zh">企业客户主管，金融与保险</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Enterprise Account Executive, Life Sciences</div><div class="job-zh">企业客户主管，生命科学</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Strategic Account Executive, Tech</div><div class="job-zh">战略客户主管，科技行业</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Customer Success Manager, Industries</div><div class="job-zh">客户成功经理，行业</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Business Development Representative</div><div class="job-zh">商务拓展代表</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Revenue Strategy &amp; Operations</div><div class="job-zh">营收策略与运营</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div></div></div><div class="dept-section"><div class="dept-header"><span class="dept-name">AI 研究与工程</span><span class="dept-count">10 roles</span></div><div class="jobs-grid"><div class="job-card"><div class="job-en">Research Engineer, Interpretability</div><div class="job-zh">研究工程师，可解释性</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Research Engineer, Agents</div><div class="job-zh">研究工程师，Agent</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Research Engineer / Research Scientist, Pre-training</div><div class="job-zh">研究工程师/科学家，预训练</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Research Engineer / Research Scientist, Vision</div><div class="job-zh">研究工程师/科学家，视觉</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Anthropic Fellows Program</div><div class="job-zh">Anthropic 研究员计划</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Research Engineer, AI Observability</div><div class="job-zh">研究工程师，AI 可观测性</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Research Scientist, Interpretability</div><div class="job-zh">研究科学家，可解释性</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">TPU Kernel Engineer</div><div class="job-zh">TPU 内核工程师</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Research Engineer, Machine Learning (Reinforcement Learning)</div><div class="job-zh">研究工程师，机器学习（强化学习）</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Research Engineer / Scientist, Alignment Science</div><div class="job-zh">研究工程师/科学家，对齐科学</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div></div></div><div class="dept-section"><div class="dept-header"><span class="dept-name">基础设施工程</span><span class="dept-count">8 roles</span></div><div class="jobs-grid"><div class="job-card"><div class="job-en">Staff / Senior Software Engineer, Inference</div><div class="job-zh">Staff/高级工程师，推理系统</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Staff+ Software Engineer, Data Infrastructure</div><div class="job-zh">Staff+ 工程师，数据基础设施</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Staff+ Software Engineer, Observability</div><div class="job-zh">Staff+ 工程师，可观测性</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Staff / Senior Software Engineer, Cloud Inference</div><div class="job-zh">Staff/高级工程师，云端推理</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Staff+ Software Engineer, Databases</div><div class="job-zh">Staff+ 工程师，数据库</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Infrastructure Engineer, Sandboxing</div><div class="job-zh">基础设施工程师，沙箱</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Staff / Senior Software Engineer, AI Reliability</div><div class="job-zh">Staff/高级工程师，AI 可靠性</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Staff+ Software Engineer, Developer Productivity</div><div class="job-zh">Staff+ 工程师，开发者生产力</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div></div></div><div class="dept-section"><div class="dept-header"><span class="dept-name">内容安全</span><span class="dept-count">6 roles</span></div><div class="jobs-grid"><div class="job-card"><div class="job-en">Biological Safety Research Scientist</div><div class="job-zh">生物安全研究科学家</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Technical CBRN-E Threat Investigator</div><div class="job-zh">技术 CBRN-E 威胁调查员</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Safeguards Analyst, Human Exploitation &amp; Abuse</div><div class="job-zh">安全分析师，人口贩卖与滥用</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Policy Manager, Chemical Weapons and High Yield Explosives</div><div class="job-zh">政策经理，化学武器与高当量爆炸物</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Technical Cyber Threat Investigator</div><div class="job-zh">技术网络威胁调查员</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Enforcement Operations Lead</div><div class="job-zh">执法运营负责人</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div></div></div><div class="dept-section"><div class="dept-header"><span class="dept-name">安全</span><span class="dept-count">4 roles</span></div><div class="jobs-grid"><div class="job-card"><div class="job-en">Application Security Engineer</div><div class="job-zh">应用安全工程师</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Security Engineer, Detection &amp; Response</div><div class="job-zh">安全工程师，检测与响应</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Geopolitical Intelligence Analyst</div><div class="job-zh">地缘政治情报分析师</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">IT Systems Engineer, Enterprise SaaS</div><div class="job-zh">IT 系统工程师，企业 SaaS</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div></div></div><div class="dept-section"><div class="dept-header"><span class="dept-name">财务</span><span class="dept-count">4 roles</span></div><div class="jobs-grid"><div class="job-card"><div class="job-en">Finance &amp; Strategy, Deal Desk - Americas</div><div class="job-zh">财务与战略，交易台（美洲）</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Senior Manager, Revenue Accounting</div><div class="job-zh">高级经理，营收会计</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Director, Accounting Operations</div><div class="job-zh">总监，会计运营</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Capital Markets &amp; Investor Relations</div><div class="job-zh">资本市场与投资者关系</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div></div></div><div class="dept-section"><div class="dept-header"><span class="dept-name">法务</span><span class="dept-count">4 roles</span></div><div class="jobs-grid"><div class="job-card"><div class="job-en">Product Counsel, Claude Platform</div><div class="job-zh">产品法务，Claude 平台</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Commercial Counsel, EMEA</div><div class="job-zh">商业法务，EMEA</div><div class="job-meta"><span class="job-tag intl">International</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Frontier Counsel</div><div class="job-zh">前沿技术法务</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Trade Compliance Counsel</div><div class="job-zh">贸易合规法务</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div></div></div><div class="dept-section"><div class="dept-header"><span class="dept-name">算力</span><span class="dept-count">3 roles</span></div><div class="jobs-grid"><div class="job-card"><div class="job-en">Cluster Deployment Engineer</div><div class="job-zh">集群部署工程师</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Data Center Design Execution Lead</div><div class="job-zh">数据中心设计执行负责人</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Transaction Principal</div><div class="job-zh">交易负责人</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div></div></div><div class="dept-section"><div class="dept-header"><span class="dept-name">公共政策与公共利益</span><span class="dept-count">3 roles</span></div><div class="jobs-grid"><div class="job-card"><div class="job-en">Policy Planning &amp; Operations, US Federal</div><div class="job-zh">政策规划与运营，美国联邦</div><div class="job-meta"><span class="job-tag remote">Remote-Friendly</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">External Affairs, Australia</div><div class="job-zh">对外事务，澳大利亚</div><div class="job-meta"><span class="job-tag intl">International</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Research Economist, Economic Research</div><div class="job-zh">研究经济学家，经济研究</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div></div></div><div class="dept-section"><div class="dept-header"><span class="dept-name">传播</span><span class="dept-count">3 roles</span></div><div class="jobs-grid"><div class="job-card"><div class="job-en">Communications Lead, Claude Code</div><div class="job-zh">传播负责人，Claude Code</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Communications Manager, Research</div><div class="job-zh">传播经理，研究</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Engineering Editorial Lead</div><div class="job-zh">工程内容编辑负责人</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div></div></div><div class="dept-section"><div class="dept-header"><span class="dept-name">技术项目管理</span><span class="dept-count">4 roles</span></div><div class="jobs-grid"><div class="job-card"><div class="job-en">Technical Program Manager, Platform</div><div class="job-zh">技术项目经理，平台</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Technical Program Manager, Safeguards (Infrastructure &amp; Evals)</div><div class="job-zh">技术项目经理，安全（基础设施与评估）</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Technical Program Manager, Inference Performance</div><div class="job-zh">技术项目经理，推理性能</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Technical Program Manager, Security</div><div class="job-zh">技术项目经理，安全</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div></div></div><div class="dept-section"><div class="dept-header"><span class="dept-name">人力资源</span><span class="dept-count">3 roles</span></div><div class="jobs-grid"><div class="job-card"><div class="job-en">Technical Recruiter, Specialized</div><div class="job-zh">专业技术招聘专员</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">People Operations Lead</div><div class="job-zh">人事运营负责人</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div><div class="job-card"><div class="job-en">Immigration Coordinator</div><div class="job-zh">移民协调专员</div><div class="job-meta"><span class="job-tag sf">SF / NYC</span></div><span class="job-arrow">›</span></div></div></div></div>
+</section>
+
+<footer>
+  <p class="zh">数据来源：<a href="https://www.anthropic.com/careers" target="_blank">anthropic.com/careers</a> · 2026年4月 · 由 Wayne @ wwei.ai 整理分析</p>
+  <p class="en">Source: <a href="https://www.anthropic.com/careers" target="_blank">anthropic.com/careers</a> · April 2026 · Curated by Wayne @ wwei.ai</p>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal" id="modal">
+    <div class="modal-dept" id="mDept"></div>
+    <div class="modal-en" id="mEn"></div>
+    <div class="modal-zh" id="mZh"></div>
+    <div class="modal-tags" id="mTags"></div>
+    <div class="modal-section">
+      <h4><span class="zh">岗位概述</span><span class="en">Overview</span></h4>
+      <div class="modal-desc" id="mDesc"></div>
+    </div>
+    <div class="modal-section" id="mReqSection">
+      <h4><span class="zh">核心要求</span><span class="en">Key Requirements</span></h4>
+      <ul class="modal-list" id="mReqs"></ul>
+    </div>
+    <div class="modal-close">
+      <button class="btn-close" onclick="document.getElementById(&#39;modalOverlay&#39;).classList.remove(&#39;open&#39;)"><span class="zh">关闭</span><span class="en">Close</span></button>
+      <a class="btn-apply" href="https://www.anthropic.com/careers/jobs" target="_blank"><span class="zh">在官网查看 →</span><span class="en">View on Anthropic →</span></a>
+    </div>
+  </div>
+</div>
+
+<script>
+const JOBS = {
+"pm":{label:"Product Management, Support & Operations",labelZh:"产品管理与运营",jobs:[
+{en:"Product Manager, Claude Code",zh:"产品经理，Claude Code",loc:"sf",desc:"负责 Claude Code（面向开发者的 AI 编程助手）的产品策略与路线图，与工程、研究和设计团队紧密协作。",descEn:"Own the product strategy and roadmap for Claude Code, Anthropic's AI coding assistant for developers. Work closely with engineering, research, and design.",reqs:["5+ 年产品经理经验，有开发者工具产品经验","深度理解软件开发工作流","数据驱动决策能力","出色的跨职能协作能力"]},
+{en:"Product Manager, Consumer",zh:"产品经理，消费者产品",loc:"sf",desc:"负责 Claude.ai 消费者端的产品体验，包括对话 UI、个性化功能和用户增长路径。",descEn:"Own the consumer product experience for Claude.ai, including conversation UI, personalization features, and user growth funnels.",reqs:["5+ 年 C端产品经验","消费者增长/留存产品设计经验","强用户同理心与研究能力","数据分析能力"]},
+{en:"Product Manager, API Growth",zh:"产品经理，API 增长",loc:"sf",desc:"驱动 Claude API 的开发者增长，设计开发者体验、入门流程和 API 功能路线图。",descEn:"Drive developer growth for the Claude API — developer experience, onboarding flows, and API feature roadmap.",reqs:["平台/API 产品经验","开发者生态理解","增长产品设计能力","技术背景（能与工程师深度对话）"]},
+{en:"Product Manager, Monetization",zh:"产品经理，货币化",loc:"sf",desc:"设计并优化订阅、定价、付费转化路径，平衡用户价值与商业目标。",descEn:"Design and optimize subscription, pricing, and paid conversion flows — balancing user value with business goals.",reqs:["货币化/增长产品经验","A/B 测试与定价策略","数据分析与财务建模","跨销售/工程/运营协作"]},
+{en:"Product Manager, Multi-Cloud Growth - Google",zh:"产品经理，多云增长（Google合作）",loc:"sf",desc:"负责与 Google Cloud 合作的战略产品线，推动 Claude 在 GCP 生态的集成与增长。",descEn:"Lead strategic product initiatives with Google Cloud, driving Claude's integration and growth within the GCP ecosystem.",reqs:["企业级产品经验","云平台合作/集成经验","商业策略思维","跨公司合作协调能力"]},
+{en:"Research Product Manager, Model Behaviors",zh:"研究产品经理，模型行为",loc:"sf",desc:"连接研究团队与产品，负责模型行为（安全性、有用性、诚实性）的产品化定义与评估。",descEn:"Bridge research and product, owning the productization of model behavior — safety, helpfulness, and honesty evals.",reqs:["研究型产品经验","AI/ML 产品理解","对齐与安全领域知识","极强书面沟通能力"]},
+{en:"Product Operations Manager, Feedback Loops",zh:"产品运营经理，反馈闭环",loc:"sf",desc:"构建用户反馈→产品改进的闭环系统，连接客服、用户研究与产品团队。",descEn:"Build systems connecting user feedback to product improvement — linking support, user research, and product teams.",reqs:["产品运营或项目管理经验","数据分析能力","流程设计与优化","跨团队协调能力"]},
+{en:"Product Operations Manager, Research Product",zh:"产品运营经理，研究产品",loc:"sf",desc:"支持研究产品的发布、运营和内部流程，确保研究成果顺利产品化。",descEn:"Support research product launches, operations, and internal processes ensuring research outputs get productized smoothly.",reqs:["运营或项目管理背景","能在快节奏研究环境工作","流程建立能力","技术理解力"]},
+{en:"Product Management, Research",zh:"产品经理，研究方向",loc:"sf",desc:"为 Anthropic 内部研究团队提供产品支持，管理研究工具和工作流程。",descEn:"Provide product support for internal research teams — managing research tooling and workflows.",reqs:["研究型产品或内部工具经验","理解 ML 研究工作流","优先级排序与项目管理","技术产品思维"]},
+{en:"Community Operations & Executive Escalations Manager",zh:"社区运营与高管升级管理经理",loc:"sf",desc:"管理用户社区运营和高价值客户问题升级，确保顶级客户获得及时专业的解决方案。",descEn:"Manage user community operations and high-value customer escalations, ensuring top-tier customers get timely, expert resolution.",reqs:["社区运营或客户成功经验","高压处理高管级别问题能力","跨部门协调","出色沟通与危机处理"]},
+{en:"Product Support Manager",zh:"产品支持经理",loc:"sf",desc:"领导产品支持团队，建立支持流程，管理用户问题响应与解决。",descEn:"Lead the product support team, build support processes, manage user issue response and resolution.",reqs:["5+ 年客户支持/技术支持管理","团队管理经验","流程建立与优化","Zendesk或同类工具经验"]},
+{en:"Product Support Manager (Dublin)",zh:"产品支持经理（都柏林）",loc:"intl",desc:"负责欧洲区产品支持团队管理，确保 EMEA 用户获得高质量的支持服务。",descEn:"Lead European product support team, ensuring high-quality support for EMEA users.",reqs:["客户支持团队管理经验","欧洲时区工作","多语言支持优先","EMEA 市场理解"]},
+{en:"Product Support Specialist",zh:"产品支持专员",loc:"sf",desc:"直接解决用户技术问题，收集反馈并推动产品改进，是用户与产品团队之间的桥梁。",descEn:"Directly resolve user technical issues, collect feedback, and drive product improvements as a bridge between users and product.",reqs:["技术支持或客服经验","AI 产品使用经验","出色书面沟通","快速学习新产品能力"]},
+{en:"Support Operations Analyst",zh:"支持运营分析师",loc:"sf",desc:"分析支持数据、识别模式和趋势，优化支持团队效率，输出数据洞察。",descEn:"Analyze support data, identify patterns and trends, optimize support team efficiency, and deliver data insights.",reqs:["数据分析背景","SQL 基础","支持运营经验","可视化与报告能力"]},
+{en:"Support Operations Specialist, AI Agent Management",zh:"支持运营专员，AI Agent管理",loc:"sf",desc:"管理和优化 AI Agent 在客户支持场景中的表现，确保自动化支持质量。",descEn:"Manage and optimize AI Agents in customer support — ensuring automation quality and performance.",reqs:["AI/自动化工具使用经验","支持运营背景","流程优化能力","数据驱动思维"]},
+{en:"Support Vendor Operations Manager",zh:"支持供应商运营经理",loc:"sf",desc:"管理外包支持供应商关系，确保服务质量、SLA 达成和成本效率。",descEn:"Manage outsourced support vendor relationships — ensuring quality, SLA compliance, and cost efficiency.",reqs:["供应商/合同管理经验","支持运营背景","谈判和关系管理","跨时区协调能力"]}
+]},
+"marketing":{label:"Marketing & Brand",labelZh:"市场营销与品牌",jobs:[
+{en:"Head of Integrated Marketing, Claude",zh:"Claude 整合营销负责人",loc:"sf",desc:"统领 Claude 品牌的全渠道整合营销战略，包括品牌定位、活动策划、内容营销和市场推广。这是市场营销部门的核心领导岗位。",descEn:"Lead the full-channel integrated marketing strategy for the Claude brand — brand positioning, campaigns, content, and go-to-market. A core leadership role in marketing.",reqs:["10+ 年整合营销经验，有 AI/SaaS 背景优先","B2C + B2B 双向营销经验","品牌策略与活动执行能力","团队领导与跨职能协作"]},
+{en:"Head of Enterprise Marketing Strategy & Analytics",zh:"企业营销策略与分析负责人",loc:"sf",desc:"负责企业端营销的策略规划和数据分析体系，将营销投入与业务增长直接挂钩。",descEn:"Lead enterprise marketing strategy planning and analytics systems, directly tying marketing investment to business growth.",reqs:["企业营销策略经验","营销分析与归因建模","Salesforce/Marketo 等工具","数据驱动决策能力"]},
+{en:"Head of Customer Programs",zh:"客户项目负责人",loc:"sf",desc:"设计并运营客户生命周期项目，包括客户顾问委员会、案例研究、参考客户体系和社区建设。",descEn:"Design and run customer lifecycle programs — advisory boards, case studies, reference programs, and community.",reqs:["客户营销或客户成功背景","项目设计与运营能力","优秀的客户关系管理","内容产出与故事讲述"]},
+{en:"Art Director, Enterprise",zh:"艺术总监，企业端",loc:"sf",desc:"主导企业市场视觉设计方向，包括销售材料、案例研究、展会物料和企业品牌形象。",descEn:"Lead visual design direction for enterprise market — sales materials, case studies, event assets, and enterprise brand.",reqs:["7+ 年艺术指导/设计经验","企业 B2B 设计经验","熟练使用 Figma/Adobe Suite","品牌系统建设能力"]},
+{en:"Video Director, Product Launches",zh:"视频总监，产品发布",loc:"sf",desc:"负责产品发布视频内容的整体策划和制作，从概念开发到最终剪辑，是产品发布传播的核心角色。",descEn:"Own product launch video content from concept to final cut. Core to how Anthropic communicates major product releases.",reqs:["5+ 年视频导演/制作经验","科技产品发布视频经验","创意方向与执行双强","团队协作与快节奏交付能力"]},
+{en:"Copy & Content Lead, Launches",zh:"文案与内容负责人，产品发布",loc:"sf",desc:"主导产品发布的文案策略，包括公告、落地页、社媒内容和媒体材料，打造产品上市的叙事体系。",descEn:"Lead copy strategy for product launches — announcements, landing pages, social content, and press materials.",reqs:["5+ 年文案/内容写作，科技产品背景","产品发布内容经验","精准高效的写作风格","品牌声音理解与维护"]},
+{en:"Copy Lead, Enterprise",zh:"文案负责人，企业端",loc:"sf",desc:"为企业销售渠道创作高质量文案，包括销售材料、提案、客户沟通模板和白皮书。",descEn:"Create high-quality copy for enterprise sales channels — materials, proposals, customer communication templates, and white papers.",reqs:["企业 B2B 文案经验","技术写作能力","理解企业买家决策过程","与销售团队紧密协作"]},
+{en:"Community Marketing Lead",zh:"社区营销负责人",loc:"sf",desc:"建立和运营 Anthropic/Claude 的开发者与用户社区，通过社区驱动品牌增长和用户留存。",descEn:"Build and run the Anthropic/Claude developer and user community — driving brand growth and retention through community.",reqs:["社区建设与运营经验","开发者社区背景优先","内容创作能力","活动策划与执行"]},
+{en:"Design Engineer, Web",zh:"设计工程师，Web",loc:"sf",desc:"负责 Anthropic 官网的设计与前端实现，将创意设计转化为高性能的 Web 体验。",descEn:"Own Anthropic's website design and frontend implementation — converting creative designs into high-performance web experiences.",reqs:["设计+前端开发双栈能力","Figma + React/Next.js","Web 性能优化","动效和交互设计能力"]},
+{en:"Developer Community Lead - EMEA",zh:"开发者社区负责人，EMEA",loc:"intl",desc:"负责欧洲、中东和非洲地区的开发者社区建设，组织线下活动、在线内容和技术布道。",descEn:"Build the developer community across EMEA — offline events, online content, and technical evangelism.",reqs:["开发者关系或社区经验","技术背景（能与开发者对话）","欧洲市场经验","英语+第二语言优先"]},
+{en:"Field Marketing Lead, Industries - EMEA",zh:"行业现场营销负责人，EMEA",loc:"intl",desc:"负责 EMEA 地区垂直行业（金融、医疗、制造等）的现场营销活动，驱动企业销售管道。",descEn:"Lead vertical industry field marketing (finance, health, manufacturing) in EMEA to drive enterprise sales pipeline.",reqs:["B2B 现场营销经验","垂直行业营销背景","活动策划与执行","与销售团队协作能力"]},
+{en:"Field Marketing Manager",zh:"现场营销经理",loc:"sf",desc:"策划和执行线下营销活动（会议、峰会、用户大会），将品牌与企业销售机会直接连接。",descEn:"Plan and execute offline marketing events — conferences, summits, user gatherings — connecting brand to enterprise sales.",reqs:["活动策划与现场执行经验","预算管理","与销售团队的 pipeline 协作","数据驱动的活动 ROI 分析"]},
+{en:"Marketing Events Lead, Enterprise",zh:"市场活动负责人，企业端",loc:"sf",desc:"主导企业端市场活动的策划与执行，包括客户峰会、行业会议和线下展示活动。",descEn:"Lead enterprise marketing event planning and execution — customer summits, industry conferences, and demos.",reqs:["企业活动管理经验","预算和时间线管理","供应商协调","与市场和销售对齐"]},
+{en:"Marketing Events Lead - EMEA",zh:"市场活动负责人，EMEA",loc:"intl",desc:"负责 EMEA 地区市场活动的端到端执行，建立 Anthropic 在欧洲市场的品牌存在感。",descEn:"End-to-end marketing event execution in EMEA, building Anthropic brand presence in the European market.",reqs:["欧洲活动经验","多语言沟通能力优先","供应商和合作伙伴管理","快节奏执行力"]},
+{en:"Marketing Events Content Manager",zh:"市场活动内容经理",loc:"sf",desc:"负责市场活动的内容策划，包括演讲主题、展台内容、会议资料和活动后内容复用。",descEn:"Own content strategy for marketing events — talk tracks, booth content, conference materials, and post-event repurposing.",reqs:["内容策略与写作经验","活动内容制作","与演讲者协调","技术/AI 内容理解能力"]},
+{en:"Senior Marketing Events Manager, Partners",zh:"高级市场活动经理，合作伙伴",loc:"sf",desc:"管理与合作伙伴联合举办的市场活动，包括 AWS、Google Cloud 等云服务商合作活动。",descEn:"Manage co-marketing events with partners — AWS, Google Cloud, and other cloud and technology partners.",reqs:["合作伙伴营销或联合活动经验","大型科技公司合作背景","预算管理","合同与供应商谈判"]},
+{en:"Partner Marketing Lead - EMEA",zh:"合作伙伴营销负责人，EMEA",loc:"intl",desc:"在 EMEA 地区建立并执行合作伙伴联合营销计划，驱动合作渠道的销售增长。",descEn:"Build and execute partner co-marketing programs in EMEA, driving channel sales growth through partnerships.",reqs:["合作伙伴/渠道营销经验","EMEA 市场知识","合作项目设计与执行","与销售和合作团队协作"]},
+{en:"Customer Marketing Lead, Startups - EMEA",zh:"客户营销负责人，初创公司（EMEA）",loc:"intl",desc:"专注于 EMEA 地区初创公司客户的营销工作，包括案例研究、客户故事和社区活动。",descEn:"Focus on startup customer marketing in EMEA — case studies, customer stories, and community events.",reqs:["客户营销经验","初创生态理解","内容创作能力","欧洲市场经验"]},
+{en:"Customer Marketing, Strategic Programs",zh:"客户营销，战略项目",loc:"sf",desc:"设计和运营战略级客户营销项目，包括大客户案例库、参考客户体系和大客户内容。",descEn:"Design and run strategic customer marketing programs — reference programs, case libraries, and enterprise content.",reqs:["战略客户营销经验","大客户关系管理","内容策划与制作","数据驱动的项目优化"]},
+{en:"Customer Programs Manager, Customer Advisory Boards",zh:"客户项目经理，客户顾问委员会",loc:"sf",desc:"组建和运营客户顾问委员会（CAB），将核心客户洞察输送到产品和营销决策中。",descEn:"Build and run Customer Advisory Boards, channeling key customer insights into product and marketing decisions.",reqs:["CAB 或客户项目经验","高管级别客户关系","活动策划与执行","内容记录与洞察提炼"]},
+{en:"Segment Marketing Manager, Financial Services & Insurance",zh:"细分市场营销经理，金融与保险",loc:"sf",desc:"负责金融服务和保险行业的垂直市场营销，包括行业内容、案例研究、活动和销售支持。",descEn:"Own vertical marketing for financial services and insurance — industry content, case studies, events, and sales enablement.",reqs:["金融行业营销或销售支持经验","对金融科技有深入了解","内容创作与活动执行","与销售团队紧密合作"]},
+{en:"Segment Marketing Manager, Strategic Accounts",zh:"细分市场营销经理，战略账户",loc:"sf",desc:"为战略级大客户（Fortune 500）设计定制化营销方案，支持销售团队的大客户开拓和维护。",descEn:"Design custom marketing programs for strategic enterprise accounts (Fortune 500), supporting large account acquisition.",reqs:["ABM（基于账户的营销）经验","大客户营销背景","与销售团队协作","定制化内容制作"]},
+{en:"Program Manager, Student Outreach",zh:"项目经理，学生推广",loc:"sf",desc:"设计和运营面向高校学生的 Anthropic 推广项目，包括校园大使、学术合作和学生活动。",descEn:"Design and run Anthropic outreach programs for university students — campus ambassadors, academic partnerships, student events.",reqs:["校园营销或教育项目经验","学生群体沟通能力","项目管理","内容创作"]}
+]},
+"product-eng":{label:"Engineering & Design - Product",labelZh:"产品工程与设计",jobs:[
+{en:"Product Designer, Claude Code",zh:"产品设计师，Claude Code",loc:"sf",desc:"为 Claude Code 设计端到端的用户体验，从概念到交互细节，打造开发者喜爱的 AI 编程工具体验。",descEn:"Design the end-to-end user experience for Claude Code — from concepts to interaction details, crafting an AI coding tool developers love.",reqs:["5+ 年产品设计经验","开发者工具设计经验优先","精通 Figma","用户研究与可用性测试能力","强信息架构和交互设计能力"]},
+{en:"Engineering Manager, Agent Prompts & Evals",zh:"工程经理，Agent提示词与评估",loc:"sf",desc:"领导负责 Claude Agent 提示词工程和评估系统的团队，确保 Agent 行为的可靠性与质量。",descEn:"Lead the team responsible for Claude Agent prompt engineering and evaluation systems, ensuring reliable and high-quality agent behavior.",reqs:["工程团队管理经验","Prompt 工程或 AI 评估背景","系统思维","跨团队协调能力"]},
+{en:"Engineering Manager, Auth & Identity",zh:"工程经理，认证与身份",loc:"sf",desc:"领导认证和身份管理系统的工程团队，负责 Claude 产品的安全登录、OAuth、SSO 等核心基础设施。",descEn:"Lead engineering for auth and identity systems — secure login, OAuth, SSO, and related core infrastructure for Claude products.",reqs:["工程管理经验","认证/身份系统深度经验","安全工程背景","分布式系统理解"]},
+{en:"Engineering Manager, Product Monetization (Billing Platform)",zh:"工程经理，产品货币化（计费平台）",loc:"sf",desc:"领导计费和货币化平台的工程团队，负责订阅管理、支付集成、使用量计费等系统。",descEn:"Lead billing and monetization platform engineering — subscription management, payment integration, and usage-based billing.",reqs:["工程管理经验","计费/支付系统经验","Stripe 等支付平台","高可用系统设计能力"]},
+{en:"Engineering Manager, People Products",zh:"工程经理，内部人事产品",loc:"sf",desc:"领导内部员工工具和 HR 技术产品的工程团队，提升 Anthropic 员工的工作效率。",descEn:"Lead engineering for internal employee tools and HR tech products, improving Anthropic employee productivity.",reqs:["工程管理经验","内部工具或 HR Tech 背景","与 People 团队协作","全栈工程理解"]},
+{en:"Engineering Manager, Vertical AI Products (Multiple Roles)",zh:"工程经理，垂直 AI 产品（多职位）",loc:"sf",desc:"领导垂直行业 AI 产品（如医疗、法律、金融）的工程团队，将 Claude 能力转化为行业解决方案。",descEn:"Lead engineering for vertical industry AI products (healthcare, legal, finance), converting Claude capabilities into industry solutions.",reqs:["工程管理经验","垂直行业产品经验","AI 产品工程背景","客户导向的工程思维"]},
+{en:"Prompt Engineer, Claude Code",zh:"提示词工程师，Claude Code",loc:"sf",desc:"专注于 Claude Code 的提示词设计与优化，提升代码生成、调试和解释等核心任务的性能。",descEn:"Focus on prompt design and optimization for Claude Code — improving core tasks like code generation, debugging, and explanation.",reqs:["Prompt 工程经验","软件开发背景","实验设计与评估能力","对 LLM 行为的深入理解"]},
+{en:"Prompt Engineer, Agent Prompts & Evals",zh:"提示词工程师，Agent提示词与评估",loc:"sf",desc:"设计和优化 Claude Agent 的提示词系统，包括工具使用、多步骤推理和 Agent 行为评估。",descEn:"Design and optimize Claude Agent prompt systems — tool use, multi-step reasoning, and agent behavior evaluation.",reqs:["Prompt 工程或 AI 评估经验","Agent 系统理解","实验和数据分析能力","Python 脚本能力"]},
+{en:"Model Quality Software Engineer, Claude Code",zh:"模型质量软件工程师，Claude Code",loc:"sf",desc:"构建测试和评估 Claude Code 模型质量的工程系统，确保代码生成能力持续提升。",descEn:"Build engineering systems to test and evaluate Claude Code model quality, ensuring continuous improvement in code generation.",reqs:["软件工程经验","测试框架和评估系统设计","ML 评估基础","Python 精通"]},
+{en:"Senior Staff Software Engineer, API",zh:"高级 Staff 工程师，API",loc:"sf",desc:"作为 Claude API 的技术负责人，设计高可用、高性能的 API 架构，支撑数百万开发者使用。",descEn:"Technical lead for the Claude API — designing high-availability, high-performance architecture supporting millions of developers.",reqs:["10+ 年软件工程经验","大规模 API 设计与运维","分布式系统专家","系统架构与技术领导力"]},
+{en:"Software Engineer, Android",zh:"软件工程师，Android",loc:"sf",desc:"构建和优化 Claude Android 应用，打造原生、流畅的移动端 AI 体验。",descEn:"Build and optimize the Claude Android app, delivering a native and smooth mobile AI experience.",reqs:["Android 开发经验（Kotlin/Java）","Jetpack Compose 优先","性能优化经验","API 集成和状态管理"]},
+{en:"Software Engineer, iOS",zh:"软件工程师，iOS",loc:"sf",desc:"构建和优化 Claude iOS 应用，在苹果生态中提供最佳的 AI 对话体验。",descEn:"Build and optimize the Claude iOS app, delivering the best AI conversation experience in the Apple ecosystem.",reqs:["iOS 开发经验（Swift/SwiftUI）","Apple 设计规范深度理解","性能与内存优化","API 集成经验"]},
+{en:"Software Engineer, Desktop",zh:"软件工程师，桌面端",loc:"sf",desc:"构建 Claude 桌面应用（macOS/Windows），将 AI 能力深度集成到用户的日常工作流。",descEn:"Build Claude desktop apps (macOS/Windows), deeply integrating AI into users' daily workflows.",reqs:["桌面应用开发经验","Electron/Tauri 或原生开发","跨平台兼容性","系统级集成经验"]},
+{en:"Software Engineer, Full-stack",zh:"软件工程师，全栈",loc:"sf",desc:"作为全栈工程师参与 Claude 产品的前后端开发，快速迭代新功能和改进用户体验。",descEn:"Full-stack engineer contributing to both frontend and backend of Claude products — rapidly iterating features and UX.",reqs:["全栈开发经验（React + Node/Python）","API 设计与集成","产品思维","快速迭代和交付能力"]},
+{en:"UI Software Engineer, Claude.ai Consumer Product",zh:"UI 软件工程师，Claude.ai 消费者产品",loc:"sf",desc:"专注于 Claude.ai 的前端 UI 开发，实现精细的交互细节和流畅的对话体验。",descEn:"Specialize in frontend UI development for Claude.ai — implementing refined interaction details and smooth conversation UX.",reqs:["前端工程经验（React/TypeScript）","动效和交互实现能力","性能优化","设计与工程协作经验"]},
+{en:"Software Engineer, Platform",zh:"软件工程师，平台",loc:"sf",desc:"构建支撑所有 Claude 产品的核心平台能力，包括认证、权限、配置管理等底层服务。",descEn:"Build core platform capabilities supporting all Claude products — auth, permissions, config management, and foundational services.",reqs:["后端/平台工程经验","分布式系统理解","API 设计","可靠性与可扩展性工程"]},
+{en:"Software Engineer, UI Platform",zh:"软件工程师，UI 平台",loc:"sf",desc:"构建供所有产品团队使用的 UI 组件库和设计系统基础设施，提升全公司前端开发效率。",descEn:"Build the UI component library and design system infrastructure used by all product teams, improving company-wide frontend efficiency.",reqs:["前端平台或设计系统经验","React 组件库构建","文档和开发者体验","性能与可访问性"]},
+{en:"Staff Software Engineer, Billing Platform",zh:"Staff 工程师，计费平台",loc:"sf",desc:"作为技术负责人设计和实现 Anthropic 的计费系统，支持复杂的企业定价模型和高并发交易。",descEn:"Technical lead for Anthropic's billing system, supporting complex enterprise pricing models and high-concurrency transactions.",reqs:["8+ 年软件工程","支付/计费系统设计经验","高可用系统","Stripe 或同类支付平台"]},
+{en:"Staff+ Software Engineer, Backend",zh:"Staff+ 工程师，后端",loc:"sf",desc:"作为后端技术领导者，主导核心服务的架构设计，推动工程卓越文化和最佳实践。",descEn:"Backend technical leader — drive core service architecture, engineering excellence culture, and best practices.",reqs:["8+ 年后端工程","系统架构设计","技术领导力","大规模系统运维经验"]},
+{en:"Staff+ Software Engineer, Full-stack",zh:"Staff+ 工程师，全栈",loc:"sf",desc:"全栈技术领导者，负责重要产品功能的端到端技术决策，连接前端体验与后端能力。",descEn:"Full-stack technical leader owning end-to-end technical decisions for key product features, bridging frontend experience and backend capabilities.",reqs:["8+ 年全栈工程","技术决策与评审","前后端最佳实践","跨团队影响力"]},
+{en:"Staff+ Software Engineer, Platform",zh:"Staff+ 工程师，平台",loc:"sf",desc:"平台技术负责人，主导 Anthropic 核心平台的长期架构演进，支撑快速增长的产品矩阵。",descEn:"Platform technical lead, driving the long-term architecture evolution of Anthropic's core platform supporting rapidly growing products.",reqs:["10+ 年平台/基础设施工程","架构规划能力","技术战略思维","内部开发者体验"]}
+]},
+"sales":{label:"Sales",labelZh:"销售",jobs:[
+{en:"Applied AI Engineer",zh:"应用 AI 工程师",loc:"sf",desc:"连接技术与客户，帮助企业客户将 Claude 集成到生产系统中，提供技术咨询和实施支持。",descEn:"Bridge technology and customers — helping enterprise clients integrate Claude into production systems with technical consulting and implementation.",reqs:["软件工程背景","API 集成经验","客户沟通能力","AI/ML 应用理解"]},
+{en:"Applied AI Engineer (Startups)",zh:"应用 AI 工程师（初创公司）",loc:"sf",desc:"专注于服务初创公司客户，帮助他们快速将 Claude API 集成到产品中，驱动早期客户成功。",descEn:"Focus on startup customers — helping them rapidly integrate the Claude API into their products and driving early customer success.",reqs:["工程背景","初创生态理解","快速原型能力","API 集成经验"]},
+{en:"Forward Deployed Engineer, Applied AI",zh:"前线部署工程师，应用 AI",loc:"sf",desc:"深入客户现场，直接参与 Claude 的企业级部署和集成工作，解决复杂的技术实施挑战。",descEn:"Embedded at customer sites, directly participating in enterprise-level Claude deployment and integration, solving complex technical implementation challenges.",reqs:["软件工程经验","企业系统集成","客户导向","出差/现场工作能力"]},
+{en:"Solutions Architect, Applied AI",zh:"解决方案架构师，应用 AI",loc:"sf",desc:"作为技术销售的核心角色，设计和展示 Claude 在企业场景中的解决方案架构，支持销售过程中的技术评估。",descEn:"Core technical sales role — design and demonstrate Claude's solution architecture in enterprise scenarios, supporting technical evaluations in sales.",reqs:["解决方案架构或销售工程经验","企业架构理解","演示和沟通能力","AI 应用开发经验"]},
+{en:"Enterprise Account Executive, Financial Services & Insurance",zh:"企业客户主管，金融与保险",loc:"sf",desc:"负责金融和保险行业的企业级 Claude 销售，从开拓到成交管理完整销售周期。",descEn:"Own enterprise Claude sales for financial services and insurance — full sales cycle from prospecting to close.",reqs:["企业级 B2B 销售经验（SaaS/AI 优先）","金融行业销售背景","大客户关系管理","配额超额完成记录"]},
+{en:"Enterprise Account Executive, Life Sciences",zh:"企业客户主管，生命科学",loc:"sf",desc:"专注生命科学行业（制药、医疗器械、生物技术）的企业销售，了解行业数据合规需求。",descEn:"Focus on life sciences enterprise sales (pharma, medtech, biotech) with understanding of industry data compliance requirements.",reqs:["生命科学行业 B2B 销售","企业软件/AI 销售经验","监管和合规意识","大客户管理"]},
+{en:"Strategic Account Executive, Tech",zh:"战略客户主管，科技行业",loc:"sf",desc:"管理科技行业顶级客户（大型科技公司），维护并扩展长期战略合作关系。",descEn:"Manage top-tier tech industry accounts (large tech companies) — maintaining and expanding long-term strategic partnerships.",reqs:["战略级大客户销售经验","科技行业理解","高管级别关系管理","复杂合同谈判"]},
+{en:"Customer Success Manager, Industries",zh:"客户成功经理，行业",loc:"sf",desc:"确保行业客户（制造、零售、能源等）获得价值，管理续约、扩张和客户健康度。",descEn:"Ensure industry customers (manufacturing, retail, energy) realize value — managing renewal, expansion, and customer health.",reqs:["客户成功经验","行业解决方案理解","数据分析能力","跨团队协调"]},
+{en:"Business Development Representative",zh:"商务拓展代表",loc:"sf",desc:"通过外呼、邮件和社媒开拓新客户商机，是销售管道的源头，支持 Account Executive 的工作。",descEn:"Generate new business through outbound calls, emails, and social — the source of the sales pipeline, supporting Account Executives.",reqs:["销售或 BDR 经验","出色的书面和口头沟通","抗压能力","Salesforce/HubSpot 使用经验"]},
+{en:"Revenue Strategy & Operations",zh:"营收策略与运营",loc:"sf",desc:"支持销售组织的运营效率，包括流程优化、数据分析、配额设计和销售工具管理。",descEn:"Support sales organization efficiency — process optimization, data analytics, quota design, and sales tooling.",reqs:["销售运营或 RevOps 经验","Salesforce 管理能力","数据分析（SQL 优先）","跨职能协作"]}
+]},
+"ai-research":{label:"AI Research & Engineering",labelZh:"AI 研究与工程",jobs:[
+{en:"Research Engineer, Interpretability",zh:"研究工程师，可解释性",loc:"sf",desc:"研究如何理解 Claude 内部的工作机制，让 AI 的决策过程变得可解释和可信任。",descEn:"Research how to understand Claude's internal mechanisms, making AI decision processes interpretable and trustworthy.",reqs:["ML 研究经验","PyTorch 精通","发表过相关研究论文优先","独立研究能力"]},
+{en:"Research Engineer, Agents",zh:"研究工程师，Agent",loc:"sf",desc:"研究和构建自主 AI Agent 系统，探索 Claude 在复杂多步骤任务中的能力边界。",descEn:"Research and build autonomous AI Agent systems, exploring Claude's capability boundaries in complex multi-step tasks.",reqs:["LLM Agent 研究或工程经验","工具使用和规划研究","实验设计","Python/PyTorch"]},
+{en:"Research Engineer / Research Scientist, Pre-training",zh:"研究工程师/科学家，预训练",loc:"sf",desc:"研究和优化大规模语言模型的预训练过程，包括数据、架构和训练稳定性。",descEn:"Research and optimize large-scale language model pre-training — data, architecture, and training stability.",reqs:["大规模 LLM 训练经验","分布式训练系统","ML 优化经验","博士或同等研究经验优先"]},
+{en:"Research Engineer / Research Scientist, Vision",zh:"研究工程师/科学家，视觉",loc:"sf",desc:"研究多模态 AI 能力，将视觉理解融入 Claude，推进图像和视频理解的前沿研究。",descEn:"Research multimodal AI capabilities, integrating visual understanding into Claude and advancing frontier image/video research.",reqs:["计算机视觉 + NLP 双向经验","多模态模型研究","PyTorch","博士或相关研究发表"]},
+{en:"Anthropic Fellows Program",zh:"Anthropic 研究员计划",loc:"sf",desc:"面向有潜力的 AI 安全研究人员的培养计划，提供独立研究机会和资深导师指导。",descEn:"A fellowship program for promising AI safety researchers, offering independent research opportunities and senior mentorship.",reqs:["AI 安全或 ML 研究背景","独立研究项目经验","强数学基础","发表记录或开源贡献优先"]},
+{en:"Research Engineer, AI Observability",zh:"研究工程师，AI 可观测性",loc:"sf",desc:"构建监测和理解 Claude 模型行为的工程系统，包括日志、指标和异常检测。",descEn:"Build systems to monitor and understand Claude model behavior — logging, metrics, and anomaly detection.",reqs:["可观测性/监控系统经验","ML 系统工程","Python","分布式系统理解"]},
+{en:"Research Scientist, Interpretability",zh:"研究科学家，可解释性",loc:"sf",desc:"领导可解释性研究方向，产出关于神经网络内部机制的原创研究，推动 AI 透明度的前沿进展。",descEn:"Lead interpretability research — publishing original research on neural network internals and advancing AI transparency.",reqs:["博士学位（ML/认知科学/物理/数学等）","强发表记录","独立研究设计能力","深度学习理论理解"]},
+{en:"TPU Kernel Engineer",zh:"TPU 内核工程师",loc:"sf",desc:"为 Google TPU 优化 ML 训练内核，提升 Anthropic 大模型训练的计算效率。",descEn:"Optimize ML training kernels for Google TPUs, improving computational efficiency for Anthropic's large model training.",reqs:["CUDA/TPU 内核开发经验","HPC 或 ML 系统工程","XLA 编译器理解","C++/Python"]},
+{en:"Research Engineer, Machine Learning (Reinforcement Learning)",zh:"研究工程师，机器学习（强化学习）",loc:"sf",desc:"研究和实现强化学习方法用于 Claude 的训练，改进模型在复杂任务中的行为和表现。",descEn:"Research and implement reinforcement learning methods for Claude training, improving model behavior on complex tasks.",reqs:["RL 研究或工程经验","RLHF/RLAIF 经验优先","PyTorch","实验设计和评估能力"]},
+{en:"Research Engineer / Scientist, Alignment Science",zh:"研究工程师/科学家，对齐科学",loc:"sf",desc:"推进 AI 对齐的核心研究，确保 Claude 的行为与人类价值观保持一致，是 Anthropic 最核心的研究方向之一。",descEn:"Advance core AI alignment research, ensuring Claude's behavior remains aligned with human values — one of Anthropic's most central research directions.",reqs:["ML 研究经验","对 AI 对齐问题的深度思考","发表记录优先","博士学位或同等研究经验"]}
+]},
+"infra":{label:"Software Engineering - Infrastructure",labelZh:"基础设施工程",jobs:[
+{en:"Staff / Senior Software Engineer, Inference",zh:"Staff/高级工程师，推理系统",loc:"sf",desc:"设计和优化 Claude 模型推理的核心系统，包括延迟优化、吞吐量提升和成本降低。",descEn:"Design and optimize core systems for Claude model inference — latency, throughput, and cost reduction.",reqs:["大规模推理系统经验","CUDA/分布式计算","Python/C++","性能优化专家"]},
+{en:"Staff+ Software Engineer, Data Infrastructure",zh:"Staff+ 工程师，数据基础设施",loc:"sf",desc:"构建支撑 Anthropic 研究和产品的数据平台，包括数据管道、存储和处理系统。",descEn:"Build the data platform powering Anthropic research and products — data pipelines, storage, and processing systems.",reqs:["大规模数据工程经验","Spark/Flink/Ray 等","数据仓库设计","流式和批量处理"]},
+{en:"Staff+ Software Engineer, Observability",zh:"Staff+ 工程师，可观测性",loc:"sf",desc:"构建 Anthropic 基础设施的监控、日志和可观测性体系，确保系统可靠运行。",descEn:"Build Anthropic's infrastructure monitoring, logging, and observability stack, ensuring reliable system operation.",reqs:["可观测性平台经验","Prometheus/Grafana/OpenTelemetry","大规模系统运维","SRE/平台工程背景"]},
+{en:"Staff / Senior Software Engineer, Cloud Inference",zh:"Staff/高级工程师，云端推理",loc:"sf",desc:"在多云环境（AWS/GCP/Azure）上构建和优化 Claude 的云端推理服务，实现高可用和弹性扩缩容。",descEn:"Build and optimize Claude's cloud inference service across multi-cloud (AWS/GCP/Azure) for high availability and elastic scaling.",reqs:["云端大规模服务部署","Kubernetes/容器化","多云架构","推理服务优化经验"]},
+{en:"Staff+ Software Engineer, Databases",zh:"Staff+ 工程师，数据库",loc:"sf",desc:"设计和维护 Anthropic 的核心数据库系统，支撑高并发用户请求和海量对话数据存储。",descEn:"Design and maintain Anthropic's core database systems, supporting high-concurrency requests and massive conversation data storage.",reqs:["数据库工程专家（PostgreSQL/MySQL）","分布式数据库","性能调优","数据一致性与可靠性"]},
+{en:"Infrastructure Engineer, Sandboxing",zh:"基础设施工程师，沙箱",loc:"sf",desc:"构建安全的代码执行沙箱环境，让 Claude 能够安全运行用户代码而不影响系统安全。",descEn:"Build secure code execution sandbox environments allowing Claude to safely run user code without system security risks.",reqs:["系统安全工程经验","容器/VM 隔离技术","Linux 内核安全","性能与安全权衡"]},
+{en:"Staff / Senior Software Engineer, AI Reliability",zh:"Staff/高级工程师，AI 可靠性",loc:"sf",desc:"构建确保 Claude AI 服务高可靠性的工程系统，包括故障检测、自动恢复和服务质量保障。",descEn:"Build engineering systems ensuring high reliability of Claude AI services — fault detection, auto-recovery, and service quality.",reqs:["SRE/可靠性工程经验","大规模分布式系统","故障模式分析","事故响应"]},
+{en:"Staff+ Software Engineer, Developer Productivity",zh:"Staff+ 工程师，开发者生产力",loc:"sf",desc:"构建提升 Anthropic 工程师开发效率的内部工具，包括 CI/CD、开发环境和工程平台。",descEn:"Build internal tools improving Anthropic engineer productivity — CI/CD, dev environments, and engineering platforms.",reqs:["开发者工具或平台工程","CI/CD 系统设计","内部工具产品思维","跨团队影响力"]}
+]},
+"safeguards":{label:"Safeguards (Trust & Safety)",labelZh:"内容安全",jobs:[
+{en:"Biological Safety Research Scientist",zh:"生物安全研究科学家",loc:"sf",desc:"研究 AI 在生物威胁场景中的风险，制定生物安全政策和技术防护措施，防止 Claude 被用于有害的生物研究。",descEn:"Research AI risks in biological threat scenarios, develop biosafety policies and technical safeguards preventing Claude misuse for harmful bio research.",reqs:["生物学博士学位","生物安全政策经验","跨学科研究能力","AI 安全理解"]},
+{en:"Technical CBRN-E Threat Investigator",zh:"技术 CBRN-E 威胁调查员",loc:"sf",desc:"调查和评估 Claude 在化学、生物、放射性、核武器和爆炸物（CBRN-E）领域的潜在滥用风险。",descEn:"Investigate and assess potential misuse risks of Claude in chemical, biological, radiological, nuclear, and explosive (CBRN-E) domains.",reqs:["CBRN 领域专业知识","威胁情报分析","政府/国防安全背景优先","涉密许可优先"]},
+{en:"Safeguards Analyst, Human Exploitation & Abuse",zh:"安全分析师，人口贩卖与滥用",loc:"sf",desc:"识别和处理平台上涉及人口贩卖、性剥削和儿童安全的内容，制定政策和检测系统。",descEn:"Identify and address content related to human trafficking, sexual exploitation, and child safety on the platform — policies and detection.",reqs:["内容安全或儿童保护经验","心理韧性（接触高风险内容）","调查能力","政策制定经验"]},
+{en:"Policy Manager, Chemical Weapons and High Yield Explosives",zh:"政策经理，化学武器与高当量爆炸物",loc:"sf",desc:"制定和执行关于化学武器和爆炸物内容的平台政策，确保 Claude 不被用于有害目的。",descEn:"Develop and enforce platform policies around chemical weapons and explosives content, ensuring Claude isn't used for harmful purposes.",reqs:["化学/爆炸物专业背景","政策制定经验","风险评估能力","跨部门协调"]},
+{en:"Technical Cyber Threat Investigator",zh:"技术网络威胁调查员",loc:"sf",desc:"调查平台上的网络安全威胁和滥用行为，包括黑客攻击辅助、漏洞利用代码生成等。",descEn:"Investigate cybersecurity threats and abuse on the platform — hacking assistance, exploit code generation, and similar misuse.",reqs:["网络安全专家","威胁情报分析","逆向工程/恶意代码分析","AI 系统理解"]},
+{en:"Enforcement Operations Lead",zh:"执法运营负责人",loc:"sf",desc:"领导违规内容的执行运营团队，管理账号处理流程、上诉机制和规模化执法工作。",descEn:"Lead enforcement operations team — managing account action workflows, appeals processes, and scaled enforcement operations.",reqs:["内容执法或信任安全运营经验","团队管理","流程优化","数据驱动的执法决策"]}
+]},
+"security":{label:"Security",labelZh:"安全",jobs:[
+{en:"Application Security Engineer",zh:"应用安全工程师",loc:"sf",desc:"评估和加固 Claude 产品的应用层安全，包括代码审计、渗透测试和安全最佳实践推广。",descEn:"Assess and harden Claude product application-layer security — code audits, penetration testing, and security best practices.",reqs:["应用安全经验","Web 漏洞（OWASP Top 10）","代码审计","安全工具开发"]},
+{en:"Security Engineer, Detection & Response",zh:"安全工程师，检测与响应",loc:"sf",desc:"构建和运营 Anthropic 的安全检测和响应系统，快速识别和处理安全事件。",descEn:"Build and operate Anthropic's security detection and response systems, rapidly identifying and handling security incidents.",reqs:["SIEM/EDR 经验","事故响应","威胁狩猎","安全自动化"]},
+{en:"Geopolitical Intelligence Analyst",zh:"地缘政治情报分析师",loc:"sf",desc:"分析地缘政治风险对 Anthropic 业务和技术的影响，为高管决策提供情报支持。",descEn:"Analyze geopolitical risks impacting Anthropic's business and technology, providing intelligence support for executive decisions.",reqs:["情报分析或地缘政治研究背景","政府/国防/咨询经验","分析写作能力","AI 政策理解"]},
+{en:"IT Systems Engineer, Enterprise SaaS",zh:"IT 系统工程师，企业 SaaS",loc:"sf",desc:"管理和优化 Anthropic 使用的企业 SaaS 工具（Okta/Slack/Google Workspace 等），确保安全高效运行。",descEn:"Manage and optimize enterprise SaaS tools (Okta/Slack/Google Workspace) for security and efficiency.",reqs:["企业 IT 管理经验","IAM/SSO 系统","SaaS 安全配置","自动化运维"]}
+]},
+"finance":{label:"Finance",labelZh:"财务",jobs:[
+{en:"Finance & Strategy, Deal Desk - Americas",zh:"财务与战略，交易台（美洲）",loc:"sf",desc:"支持美洲区企业销售交易的财务审批和定价决策，在速度与风险之间寻找平衡。",descEn:"Support enterprise sales deal financial approval and pricing decisions in Americas — balancing speed and risk.",reqs:["Deal Desk 或销售运营经验","财务建模","合同审查","Salesforce CPQ 优先"]},
+{en:"Senior Manager, Revenue Accounting",zh:"高级经理，营收会计",loc:"sf",desc:"管理 Anthropic 的营收确认会计，包括 SaaS 订阅、API 使用量和企业合同的 ASC 606 处理。",descEn:"Manage Anthropic revenue recognition accounting — SaaS subscriptions, API usage, and enterprise contract ASC 606 treatment.",reqs:["CPA","ASC 606 专家","SaaS/技术公司营收会计","Big 4 经验优先"]},
+{en:"Director, Accounting Operations",zh:"总监，会计运营",loc:"sf",desc:"领导会计运营团队，管理月度结账、应付账款、应收账款和财务系统。",descEn:"Lead accounting operations team, managing monthly close, AP, AR, and financial systems.",reqs:["10+ 年会计经验","团队领导力","月度结账流程管理","ERP 系统（NetSuite 优先）"]},
+{en:"Capital Markets & Investor Relations",zh:"资本市场与投资者关系",loc:"sf",desc:"管理 Anthropic 与投资者的关系，准备融资材料，支持未来的资本运作。",descEn:"Manage Anthropic's investor relationships, prepare fundraising materials, and support future capital operations.",reqs:["投资银行或 IR 背景","财务建模","投资者沟通","AI 行业理解"]}
+]},
+"legal":{label:"Legal",labelZh:"法务",jobs:[
+{en:"Product Counsel, Claude Platform",zh:"产品法务，Claude 平台",loc:"sf",desc:"为 Claude 平台提供法律支持，包括 API 使用条款、内容政策、数据处理协议和合规要求。",descEn:"Provide legal support for the Claude platform — API terms, content policies, data processing agreements, and compliance.",reqs:["科技公司产品法务经验","数据隐私法（GDPR/CCPA）","AI 监管理解","合同谈判"]},
+{en:"Commercial Counsel, EMEA",zh:"商业法务，EMEA",loc:"intl",desc:"支持 Anthropic 在欧洲、中东和非洲地区的商业合同谈判，理解 GDPR 等欧洲法规。",descEn:"Support commercial contract negotiations in EMEA with understanding of GDPR and other European regulations.",reqs:["欧洲法律资质","商业合同经验","GDPR 专家","英语+第二语言"]},
+{en:"Frontier Counsel",zh:"前沿技术法务",loc:"sf",desc:"专注于 AI 前沿技术的法律问题，包括 AI 监管、知识产权、责任归属等新兴法律领域。",descEn:"Focus on legal issues for frontier AI — AI regulation, intellectual property, liability attribution, and emerging legal areas.",reqs:["AI/技术法律经验","监管政策理解","法学博士","研究和写作能力"]},
+{en:"Trade Compliance Counsel",zh:"贸易合规法务",loc:"sf",desc:"确保 Anthropic 的出口控制和贸易合规，特别是 AI 技术的国际分发和监管要求。",descEn:"Ensure Anthropic's export controls and trade compliance, especially international distribution of AI technology and regulatory requirements.",reqs:["出口控制法（EAR/ITAR）","贸易合规经验","科技公司背景","政府监管关系"]}
+]},
+"marketing2":{label:"Marketing",labelZh:"市场"},
+"compute":{label:"Compute",labelZh:"算力",jobs:[
+{en:"Cluster Deployment Engineer",zh:"集群部署工程师",loc:"sf",desc:"部署和维护 Anthropic 的大规模 GPU 训练集群，确保高效稳定的模型训练环境。",descEn:"Deploy and maintain Anthropic's large-scale GPU training clusters, ensuring efficient and stable model training environments.",reqs:["HPC 集群管理","GPU 网络（InfiniBand/RoCE）","Linux 系统管理","自动化运维"]},
+{en:"Data Center Design Execution Lead",zh:"数据中心设计执行负责人",loc:"sf",desc:"主导 Anthropic 数据中心的设计和建设项目，从需求规划到投入使用的全过程管理。",descEn:"Lead Anthropic data center design and construction projects from requirements planning to commissioning.",reqs:["数据中心设计和建设经验","项目管理","机电系统（电气/制冷）","供应商管理"]},
+{en:"Transaction Principal",zh:"交易负责人",loc:"sf",desc:"负责 Anthropic 的算力采购交易，包括 GPU 租赁、数据中心合同和云服务商谈判。",descEn:"Manage Anthropic's compute procurement — GPU leasing, data center contracts, and cloud provider negotiations.",reqs:["大型技术采购或交易经验","合同谈判","财务建模","云/数据中心市场理解"]}
+]},
+"pm2":{label:"Public Benefit",labelZh:"公共利益"},
+"policy":{label:"Public Policy & Public Benefit",labelZh:"公共政策与公共利益",jobs:[
+{en:"Policy Planning & Operations, US Federal",zh:"政策规划与运营，美国联邦",loc:"remote",desc:"支持 Anthropic 与美国联邦政府的政策合作，协调内外部政策倡导工作。",descEn:"Support Anthropic's policy engagement with the US federal government, coordinating internal and external policy advocacy.",reqs:["联邦政府政策工作经验","AI 政策理解","运营和项目管理","华盛顿特区人脉优先"]},
+{en:"External Affairs, Australia",zh:"对外事务，澳大利亚",loc:"intl",desc:"管理 Anthropic 在澳大利亚的政府关系和外部事务，推进有利于 AI 负责任发展的政策环境。",descEn:"Manage Anthropic's government relations and external affairs in Australia, advancing policies for responsible AI development.",reqs:["澳大利亚政府关系经验","AI 或科技政策背景","公众沟通能力","澳洲政治生态理解"]},
+{en:"Research Economist, Economic Research",zh:"研究经济学家，经济研究",loc:"sf",desc:"研究 AI 对劳动力市场、生产率和经济结构的影响，产出具有政策意义的经济学研究。",descEn:"Research AI's impact on labor markets, productivity, and economic structure, publishing policy-relevant economic research.",reqs:["经济学博士","劳动经济学或技术经济学","实证研究方法","政策写作能力"]}
+]},
+"comms":{label:"Communications",labelZh:"传播",jobs:[
+{en:"Communications Lead, Claude Code",zh:"传播负责人，Claude Code",loc:"sf",desc:"负责 Claude Code 产品的对外传播策略，包括媒体关系、开发者社区传播和技术内容营销。",descEn:"Lead external communications strategy for Claude Code — media relations, developer community, and technical content marketing.",reqs:["科技产品传播经验","开发者受众理解","媒体关系","内容创作"]},
+{en:"Communications Manager, Research",zh:"传播经理，研究",loc:"sf",desc:"将 Anthropic 的技术研究成果转化为公众可理解的传播内容，建立科学传播能力。",descEn:"Convert Anthropic technical research into publicly understandable communications, building science communication capabilities.",reqs:["科学或技术传播经验","AI/ML 内容理解","写作和编辑能力","媒体关系"]},
+{en:"Engineering Editorial Lead",zh:"工程内容编辑负责人",loc:"sf",desc:"主导 Anthropic 技术博客和工程内容的策划与编辑，展示工程文化和技术深度。",descEn:"Lead Anthropic's technical blog and engineering content curation/editing, showcasing engineering culture and technical depth.",reqs:["技术写作或编辑经验","软件工程背景","内容策略","开发者受众理解"]}
+]},
+"tpm":{label:"Technical Program Management",labelZh:"技术项目管理",jobs:[
+{en:"Technical Program Manager, Platform",zh:"技术项目经理，平台",loc:"sf",desc:"协调平台工程团队的跨职能项目，确保大型技术项目按时、按质交付。",descEn:"Coordinate cross-functional platform engineering projects, ensuring large technical initiatives deliver on time and quality.",reqs:["技术项目管理经验","平台/基础设施背景","敏捷/Scrum","跨团队沟通能力"]},
+{en:"Technical Program Manager, Safeguards (Infrastructure & Evals)",zh:"技术项目经理，安全（基础设施与评估）",loc:"sf",desc:"管理 Safeguards 团队的技术项目，协调安全评估、基础设施建设和策略实施。",descEn:"Manage technical projects for the Safeguards team, coordinating safety evaluations, infrastructure, and policy implementation.",reqs:["技术项目管理","AI 安全或信任安全背景","评估系统理解","跨职能协调"]},
+{en:"Technical Program Manager, Inference Performance",zh:"技术项目经理，推理性能",loc:"sf",desc:"推动推理系统性能优化项目，协调研究、工程和基础设施团队提升模型服务效率。",descEn:"Drive inference performance optimization projects, coordinating research, engineering, and infrastructure for better model serving.",reqs:["ML 系统项目管理","推理优化基础知识","技术协调能力","数据驱动的项目追踪"]},
+{en:"Technical Program Manager, Security",zh:"技术项目经理，安全",loc:"sf",desc:"管理安全团队的技术项目，包括安全工具部署、合规计划和安全改进路线图。",descEn:"Manage security team technical projects — security tooling deployment, compliance programs, and security improvement roadmaps.",reqs:["安全项目管理经验","信息安全基础","合规计划管理","与工程团队协作"]}
+]},
+"people":{label:"People",labelZh:"人力资源",jobs:[
+{en:"Technical Recruiter, Specialized",zh:"专业技术招聘专员",loc:"sf",desc:"专注于 AI 研究和工程领域的高难度招聘，寻找和吸引顶级 AI 研究员和工程师加入 Anthropic。",descEn:"Focus on difficult recruiting in AI research and engineering — finding and attracting top AI researchers and engineers to join Anthropic.",reqs:["技术招聘经验","AI/ML 人才网络","候选人体验设计","高标准筛选能力"]},
+{en:"People Operations Lead",zh:"人事运营负责人",loc:"sf",desc:"管理员工全生命周期的运营流程，包括入职、薪酬、福利和 HRIS 系统。",descEn:"Manage employee lifecycle operations — onboarding, compensation, benefits, and HRIS systems.",reqs:["HR 运营经验","HRIS 系统管理","薪酬福利知识","流程优化"]},
+{en:"Immigration Coordinator",zh:"移民协调专员",loc:"sf",desc:"管理员工签证和移民申请流程，支持 Anthropic 国际人才的顺利入职和工作许可。",descEn:"Manage employee visa and immigration application processes, supporting international talent onboarding and work authorization.",reqs:["移民法或 HR 背景","H-1B/绿卡流程熟悉","细致的文件管理能力","跨部门协调"]}
+]}
+};
+
+let currentDept = 'all';
+let currentSearch = '';
+
+function getLocTag(j) {
+  if (j.loc) return j.loc;
+  const t = (j.en||'').toLowerCase();
+  if (t.includes('london')||t.includes('emea')||t.includes('munich')||t.includes('dublin')||t.includes('paris')||t.includes('dach')||t.includes('australia')||t.includes('japan')||t.includes('korea')||t.includes('india')||t.includes('latam')||t.includes('apac')||t.includes('international')) return 'intl';
+  if (t.includes('federal')||t.includes('dod/ic')||t.includes('national security')||t.includes('state & local')) return 'remote';
+  return 'sf';
+}
+const tagLabel = {sf:'SF / NYC', intl:'International', remote:'Remote-Friendly'};
+
+function renderJobs(deptKey, search) {
+  const container = document.getElementById('jobsContainer');
+  container.innerHTML = '';
+  const isEN = document.body.classList.contains('lang-en');
+  const depts = deptKey === 'all' ? Object.keys(JOBS) : [deptKey];
+  depts.forEach(key => {
+    const dept = JOBS[key];
+    if (!dept.jobs || dept.jobs.length === 0) return;
+    const filtered = dept.jobs.filter(j => !search || (j.en||'').toLowerCase().includes(search.toLowerCase()) || (j.zh||'').includes(search));
+    if (filtered.length === 0) return;
+    const sec = document.createElement('div');
+    sec.className = 'dept-section';
+    sec.innerHTML = `<div class="dept-header"><span class="dept-name">${isEN ? dept.label : dept.labelZh}</span><span class="dept-count">${filtered.length} roles</span></div>`;
+    const grid = document.createElement('div');
+    grid.className = 'jobs-grid';
+    filtered.forEach((j, idx) => {
+      const loc = getLocTag(j);
+      const card = document.createElement('div');
+      card.className = 'job-card';
+      card.innerHTML = `<div class="job-en">${j.en}</div><div class="job-zh">${j.zh}</div><div class="job-meta"><span class="job-tag ${loc}">${tagLabel[loc]}</span></div><span class="job-arrow">›</span>`;
+      card.onclick = () => openModal(j, dept, isEN);
+      grid.appendChild(card);
+    });
+    sec.appendChild(grid);
+    container.appendChild(sec);
+  });
+  if (!container.innerHTML) container.innerHTML = '<p style="color:var(--text2);text-align:center;padding:40px">No results found.</p>';
+}
+
+function openModal(j, dept, isEN) {
+  document.getElementById('mDept').textContent = isEN ? dept.label : dept.labelZh;
+  document.getElementById('mEn').textContent = j.en;
+  document.getElementById('mZh').textContent = j.zh;
+  const loc = getLocTag(j);
+  document.getElementById('mTags').innerHTML = `<span class="modal-tag job-tag ${loc}">${tagLabel[loc]}</span><span class="modal-tag">${isEN ? dept.label : dept.labelZh}</span>`;
+  document.getElementById('mDesc').textContent = isEN ? (j.descEn || j.desc || '—') : (j.desc || j.descEn || '—');
+  const reqs = j.reqs || [];
+  const reqSec = document.getElementById('mReqSection');
+  if (reqs.length > 0) {
+    reqSec.style.display = '';
+    document.getElementById('mReqs').innerHTML = reqs.map(r => `<li>${r}</li>`).join('');
+  } else { reqSec.style.display = 'none'; }
+  document.getElementById('modalOverlay').classList.add('open');
+}
+
+function closeModal(e) {
+  if (e.target === document.getElementById('modalOverlay')) document.getElementById('modalOverlay').classList.remove('open');
+}
+
+function showDept(dept, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  currentDept = dept;
+  document.getElementById('jobSearch').value = '';
+  currentSearch = '';
+  renderJobs(dept, '');
+}
+
+function filterJobs(term) { currentSearch = term; renderJobs(currentDept, term); }
+
+function toggleLang() {
+  document.body.classList.toggle('lang-en');
+  renderJobs(currentDept, currentSearch);
+}
+
+renderJobs('all', '');
+</script>
+<script defer="" src="./Anthropic 招聘全景 _ Careers Deep Dive_files/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;73a749ca3ace4b2abd6813f039000869&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+<div id="wwei-auth-widget" style="position: fixed; top: 16px; right: 16px; z-index: 2147483647;"><template shadowrootmode="open"><style>
+      :host { all: initial; }
+      * { box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif; }
+      .wrap { position: relative; }
+      .avatar {
+        width: 36px; height: 36px; border-radius: 50%; padding: 0; cursor: pointer; position: relative;
+        border: 2px solid rgba(255,255,255,0.15); background: #111214; color: #f0f0f2;
+        display: flex; align-items: center; justify-content: center; overflow: hidden;
+        transition: all .2s; box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      }
+      .avatar:hover { transform: scale(1.05); border-color: rgba(255,255,255,0.3); }
+      .avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+      .avatar .fallback { font-weight: 600; font-size: 14px; }
+      .avatar.loading { animation: pulse 1.4s infinite; cursor: default; }
+      @keyframes pulse { 0%,100% { opacity: 0.5; } 50% { opacity: 0.9; } }
+      .dot {
+        position: absolute; bottom: -2px; right: -2px; width: 12px; height: 12px;
+        border-radius: 50%; border: 2px solid #111214;
+      }
+      .login-btn {
+        display: inline-block; padding: 7px 16px; border-radius: 100px;
+        background: rgba(110, 231, 183, 0.95); color: #08090a; font-size: 13px; font-weight: 500;
+        text-decoration: none; transition: all .2s; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        border: 1px solid rgba(110, 231, 183, 0.3);
+      }
+      .login-btn:hover { background: #6ee7b7; transform: translateY(-1px); }
+      .dropdown {
+        position: absolute; top: 44px; right: 0; min-width: 260px;
+        background: #111214; border: 1px solid #1e2024; border-radius: 12px;
+        padding: 16px; opacity: 0; transform: translateY(-6px) scale(0.96);
+        pointer-events: none; transition: all .18s cubic-bezier(.4,0,.2,1);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.4); color: #f0f0f2;
+      }
+      .dropdown.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+      .dropdown-head { display: flex; gap: 12px; align-items: center; }
+      .dropdown-avatar { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; flex-shrink: 0; background: #1e2024; display: flex; align-items: center; justify-content: center; }
+      .dropdown-avatar img { width: 100%; height: 100%; object-fit: cover; }
+      .dropdown-info { flex: 1; min-width: 0; }
+      .dropdown-name { font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .dropdown-email { font-size: 11px; color: #a0a3ab; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .dropdown-level {
+        display: inline-block; margin-top: 6px; padding: 2px 8px; border-radius: 4px;
+        font-size: 10px; font-weight: 600; letter-spacing: 0.05em;
+        border: 1px solid;
+      }
+      .dropdown-divider { height: 1px; background: #1e2024; margin: 14px 0; }
+      .dropdown-item {
+        display: block; padding: 8px 12px; font-size: 13px; color: #f0f0f2;
+        text-decoration: none; border-radius: 6px; transition: background .15s;
+      }
+      .dropdown-item:hover { background: #1e2024; }
+    </style>
+        <div class="wrap">
+          <button class="avatar" id="avatar" aria-label="user menu" title="yiyixiao920@gmail.com · ADMIN">
+            <img src="https://lh3.googleusercontent.com/a/ACg8ocKu-yjD3iu0mgzG7jWbJHAxSpl7HBx0GqADxeh6y8jMFDEhpA=s96-c" referrerpolicy="no-referrer" alt="">
+            <span class="dot" style="background:#f87171" title="ADMIN"></span>
+          </button>
+          <div class="dropdown" id="dropdown">
+            <div class="dropdown-head">
+              <div class="dropdown-avatar"><img src="https://lh3.googleusercontent.com/a/ACg8ocKu-yjD3iu0mgzG7jWbJHAxSpl7HBx0GqADxeh6y8jMFDEhpA=s96-c" referrerpolicy="no-referrer" alt=""></div>
+              <div class="dropdown-info">
+                <div class="dropdown-name">姚伊笑</div>
+                <div class="dropdown-email">yiyixiao920@gmail.com</div>
+                <div class="dropdown-level" style="color:#f87171;border-color:#f8717140">ADMIN</div>
+              </div>
+            </div>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="https://admin.wwei.ai/">管理后台 →</a>
+            <a class="dropdown-item" href="https://auth.wwei.ai/logout?next=https%3A%2F%2Fanthropic.wwei.ai%2F">退出登录</a>
+          </div>
+        </div>
+      </template></div><div id="cubox-react-root"><template shadowrootmode="open"><link rel="stylesheet" href="chrome-extension://bflmgpechpeohjfomgfdkkfcbhfcjohl/css/content.css"><div><div style="z-index: 2147483647;"></div></div></template></div><a id="colorPickerDivHidden"><img src="chrome-extension://njolgcnddhepjpplfifbmagdgkidikpj/logo.png" data-cubox-image-id="ae8686952839c0b69466b05216a82003" data-cubox-image-index="0" data-cubox-image-load="false"></a></body><plasmo-csui id="aitdk-csui"><template shadowrootmode="open"><style>*,:before,:after{box-sizing:border-box;border:0 solid #e5e7eb}:before,:after{--tw-content:""}html{-webkit-text-size-adjust:100%;tab-size:4;font-feature-settings:normal;font-variation-settings:normal;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}body{line-height:inherit;margin:0}hr{color:inherit;border-top-width:1px;height:0}abbr:where([title]){text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-size:1em}small{font-size:80%}sub,sup{vertical-align:baseline;font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-feature-settings:inherit;font-variation-settings:inherit;font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,[type=button],[type=reset],[type=submit]{-webkit-appearance:button;background-color:#0000;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button{height:auto}::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dl,dd,h1,h2,h3,h4,h5,h6,hr,figure,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}ol,ul,menu{margin:0;padding:0;list-style:none}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}button,[role=button]{cursor:pointer}:disabled{cursor:default}img,svg,video,canvas,audio,iframe,embed,object{vertical-align:middle;display:block}img,video{max-width:100%;height:auto}[hidden]{display:none}:host,:root{--background:0 0% 100%;--foreground:224 71.4% 4.1%;--card:0 0% 100%;--card-foreground:224 71.4% 4.1%;--popover:0 0% 100%;--popover-foreground:224 71.4% 4.1%;--primary:262.1 83.3% 57.8%;--primary-foreground:210 20% 98%;--secondary:220 14.3% 95.9%;--secondary-foreground:220.9 39.3% 11%;--muted:220 14.3% 95.9%;--muted-foreground:220 8.9% 46.1%;--accent:220 14.3% 95.9%;--accent-foreground:220.9 39.3% 11%;--destructive:0 84.2% 60.2%;--destructive-foreground:210 20% 98%;--border:220 13% 91%;--input:220 13% 91%;--ring:262.1 83.3% 57.8%;--radius:4.2px;z-index:2147483647}.dark{--background:224 71.4% 4.1%;--foreground:210 20% 98%;--card:224 71.4% 4.1%;--card-foreground:210 20% 98%;--popover:224 71.4% 4.1%;--popover-foreground:210 20% 98%;--primary:263.4 70% 50.4%;--primary-foreground:210 20% 98%;--secondary:215 27.9% 16.9%;--secondary-foreground:210 20% 98%;--muted:215 27.9% 16.9%;--muted-foreground:217.9 10.6% 64.9%;--accent:215 27.9% 16.9%;--accent-foreground:210 20% 98%;--destructive:0 62.8% 30.6%;--destructive-foreground:210 20% 98%;--border:215 27.9% 16.9%;--input:215 27.9% 16.9%;--ring:263.4 70% 50.4%}*{border-color:hsl(var(--border))}html{font-size:14px}body{background-color:hsl(var(--background));color:hsl(var(--foreground));font-feature-settings:"rlig" 1,"calt" 1;font-size:14px}*,:before,:after,::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:#3b82f680;--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }.container{width:100%;margin-left:auto;margin-right:auto;padding-left:28px;padding-right:28px}@media (width>=1400px){.container{max-width:1400px}}.visible{visibility:visible}.invisible{visibility:hidden}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.bottom-0{bottom:0}.left-1\/2{left:50%}.right-0{right:0}.right-2{right:7px}.top-0{top:0}.top-1\/2{top:50%}.top-2{top:7px}.-z-\[1\]{z-index:-1}.z-\[1\]{z-index:1}.z-\[2147483647\]{z-index:2147483647}.mx-auto{margin-left:auto;margin-right:auto}.-ml-\[13px\]{margin-left:-13px}.-mt-\[13px\]{margin-top:-13px}.mt-3{margin-top:10.5px}.mt-5{margin-top:17.5px}.block{display:block}.flex{display:flex}.hidden{display:none}.h-full{height:100%}.w-\[420px\]{width:420px}.w-\[520px\]{width:520px}.w-full{width:100%}@keyframes spin{to{transform:rotate(360deg)}}.animate-spin{animation:1s linear infinite spin}.cursor-pointer{cursor:pointer}.items-center{align-items:center}.justify-center{justify-content:center}.gap-x-2{column-gap:7px}.rounded{border-radius:3.5px}.bg-\[\#635bff\]{--tw-bg-opacity:1;background-color:rgb(99 91 255/var(--tw-bg-opacity))}.bg-\[\#635bff\]\/10{background-color:#635bff1a}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity))}.p-1{padding:3.5px}.p-6{padding:21px}.px-4{padding-left:14px;padding-right:14px}.py-2{padding-top:7px;padding-bottom:7px}.py-2\.5{padding-top:8.75px;padding-bottom:8.75px}.text-\[14px\]{font-size:14px}.text-xl{font-size:17.5px;line-height:24.5px}.font-medium{font-weight:500}.leading-6{line-height:21px}.text-black{--tw-text-opacity:1;color:rgb(0 0 0/var(--tw-text-opacity))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175/var(--tw-text-opacity))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128/var(--tw-text-opacity))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55/var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity))}.shadow-2xl{--tw-shadow:0 25px 50px -12px #00000040;--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.outline{outline-style:solid}.filter{filter:var(--tw-blur)var(--tw-brightness)var(--tw-contrast)var(--tw-grayscale)var(--tw-hue-rotate)var(--tw-invert)var(--tw-saturate)var(--tw-sepia)var(--tw-drop-shadow)}.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-duration:.15s;transition-timing-function:cubic-bezier(.4,0,.2,1)}@keyframes enter{0%{opacity:var(--tw-enter-opacity,1);transform:translate3d(var(--tw-enter-translate-x,0),var(--tw-enter-translate-y,0),0)scale3d(var(--tw-enter-scale,1),var(--tw-enter-scale,1),var(--tw-enter-scale,1))rotate(var(--tw-enter-rotate,0))}}@keyframes exit{to{opacity:var(--tw-exit-opacity,1);transform:translate3d(var(--tw-exit-translate-x,0),var(--tw-exit-translate-y,0),0)scale3d(var(--tw-exit-scale,1),var(--tw-exit-scale,1),var(--tw-exit-scale,1))rotate(var(--tw-exit-rotate,0))}}.hover\:bg-\[\#635bff\]\/90:hover{background-color:#635bffe6}</style><div id="plasmo-shadow-container" style="z-index: 2147483647; position: relative;"><div id="plasmo-inline" class="plasmo-csui-container" style="display: flex; position: relative; top: 0px; left: 0px;"><div class="aitdk-extension shadow-2xl flex fixed w-[520px] top-0 right-0 bottom-0 bg-white hidden"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x absolute right-2 top-2 z-[1] p-1 cursor-pointer text-gray-500"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-loader-circle animate-spin text-gray-400 absolute top-1/2 left-1/2 -ml-[13px] -mt-[13px] -z-[1]"><path d="M21 12a9 9 0 1 1-6.219-8.56"></path></svg></div></div></div></template></plasmo-csui><div id="immersive-translate-browser-popup" style="all: initial"><template shadowrootmode="open"><style>/** 基础色阶定义 **/
+:root,
+#mount[data-theme="light"],
+#mount:not([data-theme="dark"]) {
+  /* 中性灰阶（light） */
+  --c-00: #000000;
+  --c-22: #222222;
+  --c-33: #333333;
+  --c-66: #666666;
+  --c-83: #838383;
+  --c-99: #999999;
+  --c-c7: #c7c7c7;
+  --c-cc: #cccccc;
+  --c-e6: #e6e6e6;
+  --c-f5: #f5f5f5;
+  --c-ff: #ffffff;
+  /* 品牌主色阶（light） */
+  --p-main: #ea4c89;
+  --p-hover: #ec5e95;
+  --p-active: #e34a85;
+  --p-special: #ee71a2;
+  --p-disabled: #f4a5c4;
+  --p-text-disabled: #f9c9dc;
+  --p-weak: #fdedf3;
+  /* Surface 层级（light，TC 填充-1） */
+  --s-1: #f3f5f6;
+  --s-1-hover: #f6f8f9;
+  --s-1-active: #edf1f2;
+  --s-1-weak: #fafbfb;
+  /* 输入/边框（light，TC 填充-2） */
+  --input-bg-base: #fafbfc;
+  --input-border: #ecf0f7;
+  --input-border-strong: #e0e0e6;
+  --input-bg-strong: #fafdff;
+}
+
+:root[data-theme="dark"],
+[data-theme="dark"] {
+  /* 中性灰阶（dark） */
+  --c-00: #ffffff;
+  --c-22: #dbdbdb;
+  --c-33: #dbdbdb;
+  --c-66: #b3b3b3;
+  --c-83: #838383;
+  --c-99: #707070;
+  --c-c7: #666666;
+  --c-cc: #5c5c5c;
+  --c-e6: #3b3b3b;
+  --c-f5: #262626;
+  --c-ff: #222222;
+  /* 品牌主色阶（dark） */
+  --p-main: #e23c7c;
+  --p-hover: #ea4c89;
+  --p-active: #d5467d;
+  --p-special: #a93a65;
+  --p-disabled: #7e2f4d;
+  --p-text-disabled: #522335;
+  --p-weak: #26171d;
+  /* Surface 层级（dark，TC 填充-1） */
+  --s-1: #2d2e2f;
+  --s-1-hover: #323434;
+  --s-1-active: #202121;
+  --s-1-weak: #262627;
+  /* 输入/边框（dark，TC 填充-2） */
+  --input-bg-base: #2b2d30;
+  --input-border: #3e434b;
+  --input-border-strong: #43474b;
+  --input-bg-strong: #1f2123;
+}
+
+:root,
+#mount [data-theme] {
+  /* 业务/通用变量引用色阶（全局可见，含 Shadow DOM） */
+  --primary: var(--p-main);
+  --primary-hover: var(--p-hover);
+  --primary-inverse: #fff;
+  --modal-background: var(--s-1);
+  --modal-border: var(--input-border);
+  --modal-text: var(--c-22);
+  --modal-text-secondary: var(--c-66);
+  --modal-error: var(--p-main);
+  --modal-required: #f53f3f;
+  --modal-success: #68cd52;
+  --modal-button-background: var(--p-main);
+  --modal-button-text: var(--c-ff);
+  --modal-input-background: var(--input-bg-base);
+  --modal-check-color: var(--p-main);
+  --background-color: var(--c-ff);
+  --background-light-green: var(--s-1-weak, #f5f7f9);
+  --text-black-2: var(--c-22);
+  --text-gray-2: var(--c-22);
+  --text-gray-6: var(--c-66);
+  --text-gray-9: var(--c-99);
+  --text-gray-c2: var(--c-c7);
+  --switch-background-color: var(--c-c7, hsl(205deg, 16%, 77%));
+  --float-ball-more-button-border-color: var(--c-f5, #f6f6f6);
+  --float-ball-more-button-background-color: var(--c-ff);
+  --float-ball-more-button-hover-color: var(--p-weak);
+  --float-ball-more-button-svg-color: #6c6f73;
+  --service-bg-hover: var(--s-1-hover, #f7faff);
+  --service-bg: var(--s-1-weak, #fafbfb);
+}
+
+#mount {
+  --font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
+    "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  /* PC/H5 兼容的字号、间距、圆角、阴影变量 */
+  --f-12: 12px;
+  --f-14: 14px;
+  --f-15: 15px;
+  --f-16: 16px;
+  --f-18: 18px;
+  --f-20: 20px;
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-18: 18px;
+  --space-24: 24px;
+  --radius-8: 8px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --control-height-lg: 44px;
+  --width-28: 28px;
+  --width-24: 24px;
+  --width-20: 20px;
+  --width-18: 18px;
+  --width-16: 16px;
+  --width-label-md: 56px;
+  --shadow-lg: 0 18px 48px rgba(0, 0, 0, 0.12);
+
+  /* 常规变量 */
+  --line-height: 1.5;
+  --font-weight: 400;
+  --font-size: 16px;
+  --border-radius: 4px;
+  --border-width: 2px;
+  --outline-width: 3px;
+  --spacing: 16px;
+  --typography-spacing-vertical: 24px;
+  --block-spacing-vertical: calc(var(--spacing) * 2);
+  --block-spacing-horizontal: var(--spacing);
+  --grid-spacing-vertical: 0;
+  --grid-spacing-horizontal: var(--spacing);
+  --form-element-spacing-vertical: 12px;
+  --form-element-spacing-horizontal: 16px;
+  --nav-element-spacing-vertical: 16px;
+  --nav-element-spacing-horizontal: 8px;
+  --nav-link-spacing-vertical: 8px;
+  --nav-link-spacing-horizontal: 8px;
+  --form-label-font-weight: var(--font-weight);
+  --transition: 0.2s ease-in-out;
+  --modal-overlay-backdrop-filter: blur(4px);
+  --switch-color: var(--primary-inverse);
+  --switch-checked-background-color: var(--primary);
+  --icon-xia: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgaWQ9IkZyYW1lIj4KPHBhdGggaWQ9IlZlY3RvciIgZD0iTTguMDAyOTEgOS42Nzk4M0wzLjgzMzM5IDUuNTEyMjFMMy4wMjUzOSA2LjMxOTgzTDguMDAzMjkgMTEuMjk1MUwxMi45NzYyIDYuMzE5ODNMMTIuMTY3OSA1LjUxMjIxTDguMDAyOTEgOS42Nzk4M1oiIGZpbGw9IiM4MzgzODMiLz4KPC9nPgo8L3N2Zz4K");
+  /* 兼容旧变量：主色直接引用品牌主色阶 */
+  --primary: var(--p-main);
+  --primary-hover: var(--p-hover);
+  --primary-inverse: #fff;
+  /* Modal 业务变量引用色阶 */
+  --modal-background: var(--s-1);
+  --modal-border: var(--input-border);
+  --modal-text: var(--c-22);
+  --modal-text-secondary: var(--c-66);
+  --modal-error: var(--p-main);
+  --modal-required: #f53f3f;
+  --modal-success: #68cd52;
+  --modal-button-background: var(--p-main);
+  --modal-button-text: var(--c-ff);
+  --modal-input-background: var(--input-bg-base);
+  --modal-check-color: var(--p-main);
+  --background-color: var(--c-ff);
+  --background-light-green: var(--s-1-weak, #f5f7f9);
+  --text-black-2: var(--c-22);
+  --text-gray-2: var(--c-22);
+  --text-gray-6: var(--c-66);
+  --text-gray-9: var(--c-99);
+  --text-gray-c2: var(--c-c7);
+  --switch-background-color: var(--c-c7, hsl(205deg, 16%, 77%));
+  --float-ball-more-button-border-color: var(--c-f5, #f6f6f6);
+  --float-ball-more-button-background-color: var(--c-ff);
+  --float-ball-more-button-hover-color: var(--p-weak);
+  --float-ball-more-button-svg-color: #6c6f73;
+  --service-bg-hover: var(--s-1-hover, #f7faff);
+  --service-bg: var(--s-1-weak, #fafbfb);
+  line-height: var(--line-height);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+}
+
+@media (max-width: 480px) {
+  :root,
+  #mount {
+    --f-12: 10px;
+    --f-14: 12px;
+    --f-15: 13px;
+    --f-16: 14px;
+    --f-18: 16px;
+    --f-20: 18px;
+    --space-4: 4px;
+    --space-6: 4px;
+    --space-8: 6px;
+    --space-12: 8px;
+    --space-16: 12px;
+    --space-18: 14px;
+    --space-24: 18px;
+    --radius-8: 6px;
+    --radius-12: 10px;
+    --radius-16: 12px;
+    --control-height-lg: 38px;
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.1);
+    --width-28: 24px;
+    --width-24: 20px;
+    --width-20: 16px;
+    --width-18: 14px;
+    --width-16: 12px;
+    --width-label-md: 52px;
+  }
+}
+
+#mount * {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+:where(#mount) a,
+:where(#mount) [role="link"] {
+  --color: var(--primary);
+  --background-color: transparent;
+  outline: none;
+  background-color: var(--background-color);
+  color: var(--color);
+  -webkit-text-decoration: var(--text-decoration);
+  text-decoration: var(--text-decoration);
+  transition: background-color var(--transition), color var(--transition),
+    box-shadow var(--transition), -webkit-text-decoration var(--transition);
+  transition: background-color var(--transition), color var(--transition),
+    text-decoration var(--transition), box-shadow var(--transition);
+  transition: background-color var(--transition), color var(--transition),
+    text-decoration var(--transition), box-shadow var(--transition),
+    -webkit-text-decoration var(--transition);
+}
+:where(#mount) a:is([aria-current], :hover, :active, :focus),
+:where(#mount) [role="link"]:is([aria-current], :hover, :active, :focus) {
+  --color: var(--primary-hover);
+  --text-decoration: underline;
+}
+
+:where(#mount) label {
+  font-size: 13px;
+  line-height: 1.3;
+  color: var(--text-gray-2, #222222);
+}
+
+:where(#mount) button {
+  width: 100%;
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.3;
+  min-height: 44px;
+  border-radius: 12px;
+  padding: 0 14px;
+  border: none;
+  background-color: var(--primary, #ea4c89);
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+:where(#mount) button:hover {
+  background-color: var(--primary-hover, #f082ac);
+}
+
+:where(#mount) button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+:where(#mount) select,
+:where(#mount) input,
+:where(#mount) textarea {
+  font-family: inherit;
+  color: var(--text-gray-2, #222222);
+}
+
+:where(#mount) select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: inherit;
+  color: var(--text-gray-2, inherit);
+  font-size: 13px;
+  line-height: 1.3;
+  outline: none;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--popup-item-background-color, transparent);
+  background-image: var(--icon-xia, none);
+  background-repeat: no-repeat;
+  background-position: center right 12px;
+  background-size: 16px auto;
+  cursor: pointer;
+}
+
+:where(#mount) input[type="checkbox"] {
+  accent-color: var(--primary, #ea4c89);
+}
+
+[type="checkbox"],
+[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 1.25em;
+  height: 1.25em;
+  margin-top: -0.125em;
+  margin-right: 0.375em;
+  margin-left: 0;
+  -webkit-margin-start: 0;
+  margin-inline-start: 0;
+  -webkit-margin-end: 0.375em;
+  margin-inline-end: 0.375em;
+  border-width: var(--border-width);
+  font-size: inherit;
+  vertical-align: middle;
+  cursor: pointer;
+}
+[type="checkbox"]::-ms-check,
+[type="radio"]::-ms-check {
+  display: none;
+}
+[type="checkbox"]:checked,
+[type="checkbox"]:checked:active,
+[type="checkbox"]:checked:focus,
+[type="radio"]:checked,
+[type="radio"]:checked:active,
+[type="radio"]:checked:focus {
+  --background-color: var(--primary);
+  --border-color: var(--primary);
+  background-image: var(--icon-checkbox);
+  background-position: center;
+  background-size: 0.75em auto;
+  background-repeat: no-repeat;
+}
+[type="checkbox"] ~ label,
+[type="radio"] ~ label {
+  display: inline-block;
+  margin-right: 0.375em;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+[type="checkbox"]:indeterminate {
+  --background-color: var(--primary);
+  --border-color: var(--primary);
+  background-image: var(--icon-minus);
+  background-position: center;
+  background-size: 0.75em auto;
+  background-repeat: no-repeat;
+}
+
+[type="radio"] {
+  border-radius: 50%;
+}
+[type="radio"]:checked,
+[type="radio"]:checked:active,
+[type="radio"]:checked:focus {
+  --background-color: var(--primary-inverse);
+  border-width: 0.35em;
+  background-image: none;
+}
+
+:where(#mount) [type="checkbox"][role="switch"] {
+  --background-color: var(--switch-background-color);
+  --border-color: var(--switch-background-color);
+  --color: var(--switch-color);
+  width: 2.25em;
+  height: 1.25em;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 1.25em;
+  background-color: var(--background-color);
+  line-height: 1.25em;
+}
+:where(#mount) [type="checkbox"][role="switch"]:focus {
+  --background-color: var(--switch-background-color);
+  --border-color: var(--switch-background-color);
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked {
+  --background-color: var(--switch-checked-background-color);
+  --border-color: var(--switch-checked-background-color);
+}
+:where(#mount) [type="checkbox"][role="switch"]:before {
+  display: block;
+  width: calc(1.25em - (var(--border-width) * 2));
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--color);
+  content: "";
+  transition: margin 0.1s ease-in-out;
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked {
+  background-image: none;
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked::before {
+  margin-left: calc(1.125em - var(--border-width));
+  -webkit-margin-start: calc(1.125em - var(--border-width));
+  margin-inline-start: calc(1.125em - var(--border-width));
+}
+
+:where(#mount) [type="checkbox"][aria-invalid="false"],
+:where(#mount) [type="checkbox"]:checked[aria-invalid="false"],
+:where(#mount) [type="radio"][aria-invalid="false"],
+:where(#mount) [type="radio"]:checked[aria-invalid="false"],
+:where(#mount) [type="checkbox"][role="switch"][aria-invalid="false"],
+:where(#mount) [type="checkbox"][role="switch"]:checked[aria-invalid="false"] {
+  --border-color: var(--form-element-valid-border-color);
+}
+:where(#mount) [type="checkbox"][aria-invalid="true"],
+:where(#mount) [type="checkbox"]:checked[aria-invalid="true"],
+:where(#mount) [type="radio"][aria-invalid="true"],
+:where(#mount) [type="radio"]:checked[aria-invalid="true"],
+:where(#mount) [type="checkbox"][role="switch"][aria-invalid="true"],
+:where(#mount) [type="checkbox"][role="switch"]:checked[aria-invalid="true"] {
+  --border-color: var(--form-element-invalid-border-color);
+}
+
+.text-black {
+  color: var(--text-black-2);
+}
+
+.text-gray-2 {
+  color: var(--text-gray-2);
+}
+
+.text-gray-6 {
+  color: var(--text-gray-6);
+}
+
+.text-gray-9 {
+  color: var(--text-gray-9);
+}
+
+.text-gray-c2 {
+  color: var(--text-gray-c2);
+}
+
+.pt-4 {
+  padding-top: 16px;
+}
+
+.p-2 {
+  padding: 8px;
+}
+
+.pl-5 {
+  padding-left: 48px;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.pl-2 {
+  padding-left: 8px;
+}
+
+.pl-4 {
+  padding-left: 24px;
+}
+
+.pt-2 {
+  padding-top: 8px;
+}
+
+.pb-2 {
+  padding-bottom: 8px;
+}
+
+.pb-4 {
+  padding-bottom: 16px;
+}
+
+.pb-5 {
+  padding-bottom: 20px;
+}
+
+.pr-5 {
+  padding-right: 48px;
+}
+
+.text-sm {
+  font-size: 13px;
+}
+
+.text-base {
+  font-size: 16px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.mb-0 {
+  margin-bottom: 0px;
+}
+
+.mb-2 {
+  margin-bottom: 8px;
+}
+
+.mb-4 {
+  margin-bottom: 16px;
+}
+
+.mb-3 {
+  margin-bottom: 12px;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.py-2 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.py-2-5 {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mt-2 {
+  margin-top: 8px;
+}
+
+.mt-3 {
+  margin-top: 12px;
+}
+
+.mt-4 {
+  margin-top: 16px;
+}
+
+.mt-5 {
+  margin-top: 20px;
+}
+
+.mt-6 {
+  margin-top: 24px;
+}
+
+.mb-1 {
+  margin-bottom: 4px;
+}
+
+.ml-4 {
+  margin-left: 24px;
+}
+
+.ml-3 {
+  margin-left: 16px;
+}
+
+.ml-2 {
+  margin-left: 8px;
+}
+
+.ml-1 {
+  margin-left: 4px;
+}
+
+.mr-1 {
+  margin-right: 4px;
+}
+
+.mr-2 {
+  margin-right: 8px;
+}
+
+.mr-3 {
+  margin-right: 16px;
+}
+
+.mx-2 {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.pl-3 {
+  padding-left: 12px;
+}
+
+.pr-3 {
+  padding-right: 12px;
+}
+
+.p-3 {
+  padding: 12px;
+}
+
+.px-1 {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.px-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.pt-3 {
+  padding-top: 12px;
+}
+
+.px-6 {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.px-4 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.pt-6 {
+  padding-top: 20px;
+}
+
+.py-3 {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.py-0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.left-auto {
+  left: auto !important;
+}
+
+.max-h-28 {
+  max-height: 112px;
+}
+
+.max-h-30 {
+  max-height: 120px;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
+.text-xs {
+  font-size: 12px;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-3 {
+  flex: 3;
+}
+
+.flex-4 {
+  flex: 4;
+}
+
+.flex-2 {
+  flex: 2;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.max-content {
+  width: max-content;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-baseline {
+  align-items: baseline;
+}
+
+.my-5 {
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+.my-4 {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.my-3 {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.pt-3 {
+  padding-top: 12px;
+}
+
+.px-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.pt-2 {
+  padding-top: 8px;
+}
+
+.px-2 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.pt-1 {
+  padding-top: 4px;
+}
+
+.px-1 {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.pb-2 {
+  padding-bottom: 8px;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.shrink-0 {
+  flex-shrink: 0;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.close {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  background-image: var(--icon-close);
+  background-position: center;
+  background-size: auto 1rem;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  transition: opacity var(--transition);
+}
+
+.padding-two-column {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.muted {
+  color: #999;
+}
+
+.text-label {
+  color: #666;
+}
+
+.display-none {
+  display: none;
+}
+
+/* dark use #18232c */
+@media (prefers-color-scheme: dark) {
+  .text-label {
+    color: #9ca3af;
+  }
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.text-decoration-none:is([aria-current], :hover, :active, :focus),
+[role="link"]:is([aria-current], :hover, :active, :focus) {
+  --text-decoration: none !important;
+  background-color: transparent !important;
+}
+
+.text-overflow-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.max-w-20 {
+  max-width: 180px;
+  white-space: nowrap;
+}
+
+[data-theme="light"],
+#mount:not([data-theme="dark"]) {
+  --popup-footer-background-color: #e8eaeb;
+  --popup-content-background-color: #ffffff;
+  --popup-item-background-color: #f3f5f6;
+  --popup-item-hover-background-color: #eaeced;
+  --popup-trial-pro-background-color: #f9fbfc;
+  --service-select-content-shadow: 0px 2px 12px 0px rgba(75, 76, 77, 0.2);
+  --service-select-border-color: #fafafa;
+  --service-select-selected-background-color: #f3f5f6;
+  --download-app-background: #f3f5f6;
+  --translate-language-background-color: #f3f5f6;
+  --translate-language-icon-color: #666666;
+  --translate-language-text-color: #222222;
+  --translate-language-hover-background-color: #fdedf3;
+  --translate-language-hover-icon-color: #e95d93;
+  --error-bg: #fdedf3;
+  --error-text: #222;
+  --error-link: #ea4c89;
+}
+
+[data-theme="dark"] {
+  --popup-footer-background-color: #0d0d0d;
+  --popup-content-background-color: #191919;
+  --popup-item-background-color: #272727;
+  --popup-item-hover-background-color: #333333;
+  --popup-trial-pro-background-color: #222222;
+  --service-select-content-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.9);
+  --service-select-border-color: #2c2c2c;
+  --service-select-selected-background-color: #333333;
+  --download-app-background: #333;
+  --translate-language-background-color: #2d2e2f;
+  --translate-language-icon-color: #b3b3b3;
+  --translate-language-text-color: #b3b3b3;
+  --translate-language-hover-background-color: #a97b8c;
+  --translate-language-hover-icon-color: rgba(255, 255, 255, 0.9);
+  --error-bg: #26171d;
+  --error-text: #dbdbdb;
+  --error-link: #ea4c89;
+}
+
+#mount {
+  min-width: 268px;
+}
+
+body {
+  padding: 0;
+  margin: 0 auto;
+  min-width: 268px;
+  border-radius: 10px;
+}
+
+.popup-container {
+  font-size: 16px;
+  --font-size: 16px;
+  color: #666;
+  background-color: var(--popup-footer-background-color);
+  width: 316px;
+  min-width: 316px;
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-content {
+  background-color: var(--popup-content-background-color);
+  border-radius: 0px 0px 12px 12px;
+  padding: 16px 20px;
+}
+
+.popup-userscript-three-feature-layout {
+  background-color: var(--popup-footer-background-color);
+  width: 350px;
+  min-width: 350px;
+}
+
+.popup-userscript-three-feature-layout .popup-content {
+  padding-bottom: 20px;
+  border-radius: 0 0 12px 12px;
+}
+
+.popup-userscript-three-feature-layout .popup-footer {
+  border-radius: 0;
+}
+
+.immersive-translate-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  touch-action: none;
+}
+
+.immersive-translate-popup-wrapper {
+  background: var(--background-color);
+  border-radius: 10px;
+  border: 1px solid var(--muted-border-color);
+}
+
+.main-button {
+  font-size: 16px;
+  font-weight: 700;
+  vertical-align: middle;
+  border-radius: 12px;
+  padding: unset;
+  height: 48px;
+  line-height: 48px;
+  flex: 1;
+}
+
+select.translate-service,
+select.min-select {
+  --form-element-spacing-horizontal: 0;
+  margin-bottom: 0px;
+  max-width: unset;
+  flex: 1;
+  overflow: hidden;
+  font-size: 13px;
+  border: none;
+  border-radius: 8px;
+  padding-right: 30px;
+  padding-left: 0px;
+  background-position: center right 12px;
+  background-size: 16px auto;
+  background-image: var(--icon-xia);
+  text-overflow: ellipsis;
+  color: var(--text-gray-2);
+  background-color: transparent;
+  box-shadow: unset !important;
+  cursor: pointer;
+}
+
+select.more {
+  background-position: center right;
+  padding-right: 20px;
+}
+
+select.translate-service {
+  color: var(--text-black-2);
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSI4IiB2aWV3Qm94PSIwIDAgOCA4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIG9wYWNpdHk9IjAuOCI+PHBhdGggZD0iTTMuNDc5NzMgNi4zODY0M0wwLjcyOTI5NyAzLjMyMjE2QzAuNjE2ODggMy4xOTY5NCAwLjU1NDY5NSAzLjAzNDU5IDAuNTU0Njg4IDIuODY2M0MwLjU1NDY4OCAyLjQ4OTI0IDAuODYwNTQ3IDIuMTgzNTkgMS4yMzc4NCAyLjE4MzU5SDYuNzM4NzFDNi45MDcwNyAyLjE4MzU4IDcuMDY5NTEgMi4yNDU3MiA3LjE5NDg4IDIuMzU4MDlDNy40NzU3NCAyLjYwOTg2IDcuNDk5MTkgMy4wNDE0OCA3LjI0NzI2IDMuMzIyMTZMNC40OTY4MiA2LjM4NjQ0QzQuNDgwMzIgNi40MDQ4MiA0LjQ2MjgzIDYuNDIyMjkgNC40NDQ0NCA2LjQzODc4QzQuMTYzNTggNi42OTA1NSAzLjczMTY2IDYuNjY3MTEgMy40Nzk3MyA2LjM4NjQzWiIgZmlsbD0iIzk5OTk5OSIvPjwvZz48L3N2Zz4K");
+  background-size: 8px auto;
+}
+
+.min-select-container.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.popup-footer {
+  background-color: var(--popup-footer-background-color);
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+/* Footer 三栏布局样式 */
+.footer-link-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  min-width: 72px;
+}
+
+.footer-icon-btn {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-icon-btn svg {
+  color: #999999;
+}
+
+[data-theme="dark"] .footer-icon-btn svg {
+  color: #707070;
+}
+
+.footer-link-text {
+  font-size: 12px;
+  line-height: 18px;
+  color: #666666;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .footer-link-text {
+  color: #b3b3b3;
+}
+
+.footer-link-btn-right {
+  justify-content: flex-end;
+}
+
+.footer-center-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #999999;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.footer-center-text.is-overflowing {
+  justify-content: flex-start;
+}
+
+.footer-center-text.is-overflowing .footer-center-content {
+  animation: footer-scroll-text 12s linear infinite;
+}
+
+@keyframes footer-scroll-text {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.footer-center-content {
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-scroll-gap {
+  display: inline-block;
+  width: 80px;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .footer-center-text {
+  color: #707070;
+}
+
+.footer-text-content {
+  display: inline-block;
+}
+
+.footer-privacy-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-version-inline-text {
+  font-size: 12px;
+  color: #999999;
+  line-height: 1;
+  border-bottom: 1px solid transparent;
+}
+
+[data-theme="dark"] .footer-version-inline-text {
+  color: #707070;
+}
+
+.footer-version-inline-text:hover {
+  border-bottom-color: #999999;
+}
+
+[data-theme="dark"] .footer-version-inline-text:hover {
+  border-bottom-color: #707070;
+}
+
+.translate-language-row {
+  gap: 4px;
+}
+
+.translate-language-exchange {
+  width: 36px;
+  height: 48px;
+  background-color: var(--translate-language-background-color);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--translate-language-icon-color);
+  flex-shrink: 0;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.translate-language-exchange:hover {
+  color: var(--translate-language-hover-icon-color);
+}
+
+.translate-language-exchange-active {
+  background-color: var(--translate-language-hover-background-color);
+  color: var(--translate-language-hover-icon-color);
+}
+
+.translate-language-exchange-active:hover {
+  background-color: var(--translate-language-hover-background-color);
+  color: var(--translate-language-hover-icon-color);
+}
+
+.translate-language-arrow {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+}
+
+.translation-service-container {
+  background-color: var(--popup-item-background-color);
+  border-radius: 12px;
+}
+
+.translation-service-primary-field {
+  position: relative;
+}
+
+.translation-service-guide-hitbox {
+  position: absolute;
+  right: 46px;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: auto;
+}
+
+.min-select-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 44px;
+  background-color: var(--popup-item-background-color);
+  padding-left: 16px;
+}
+
+.min-select-container:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.min-select-container:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.min-select-container:only-child {
+  border-radius: 10px;
+}
+
+.popup-ai-context-label {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+  min-width: 60px;
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+.popup-ai-context-switch {
+  align-self: center;
+  margin: 0;
+  margin-inline-end: 12px;
+}
+
+.translate-mode {
+  width: 36px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: var(--translate-language-background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  color: var(--translate-language-text-color);
+  margin-right: 8px;
+}
+
+/* 快捷操作设置标题栏 */
+.widgets-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 4px;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.widgets-header-title {
+  color: #999999;
+}
+
+.widgets-header-action {
+  color: #999999;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.widgets-header-action:hover {
+  color: #666666;
+}
+
+.widgets-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+  gap: 8px;
+}
+
+.popup-userscript-three-feature-layout .widgets-container-compact-monkey {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 12px;
+}
+
+.widgets-container.widgets-single-item {
+  grid-template-columns: minmax(0, 1fr);
+  margin-top: 12px;
+}
+
+.widgets-container.widgets-single-item .widget-item {
+  max-width: none;
+}
+
+/* 当只有两个小组件时的样式优化 */
+.widgets-container.widgets-two-items {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.widgets-container.widgets-two-items .widget-item {
+  max-width: none;
+}
+
+.widget-item {
+  display: flex;
+  width: 100%;
+  min-height: 44px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 1px solid #eef0f2;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  padding: 0 14px;
+  text-align: left;
+  gap: 6px;
+}
+
+.widget-item.widget-item-single {
+  flex: 1 1 auto;
+  flex-direction: row;
+  justify-content: center;
+  border: 1px solid #eef0f2;
+  border-radius: 16px;
+  padding: 0 14px;
+  background: transparent;
+}
+
+.popup-userscript-three-feature-layout .widget-item-compact {
+  min-height: 60px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  padding: 8px 12px;
+}
+
+.widget-item svg {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+}
+
+.widget-icon-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--c-66, #666666);
+  font-size: 14px;
+  line-height: 21px;
+  text-align: left;
+  word-break: keep-all;
+}
+
+.popup-userscript-three-feature-layout .widget-item-compact .widget-icon-text {
+  white-space: nowrap;
+  overflow: visible;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.widget-item.widget-item-single .widget-icon-text {
+  white-space: nowrap;
+  text-align: left;
+  color: var(--c-66, #666666);
+}
+
+[data-theme="dark"] .widget-item,
+[data-theme="dark"] .widget-item.widget-item-single {
+  border-color: #2e2e2e;
+}
+
+[data-theme="dark"] .widget-icon-text,
+[data-theme="dark"] .widget-item.widget-item-single .widget-icon-text {
+  color: var(--c-66, #666666);
+}
+
+[data-theme="dark"] .more-settings-icon {
+  fill: #191919;
+}
+
+.share-button-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 2px 3px 0 8px;
+}
+
+.share-button-container svg {
+  fill: var(--text-gray-9);
+}
+
+.min-select-container:hover,
+.widget-item:hover {
+  background-color: var(--popup-item-hover-background-color);
+}
+
+.main-button:hover {
+  background-color: #f5508f;
+}
+
+.share-button-container:hover {
+  background-color: var(--popup-item-background-color);
+  border-radius: 6px;
+}
+
+.error-boundary {
+  background: #fff2f0;
+  border: 1px solid #ffccc7;
+  display: flex;
+  padding: 12px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.88);
+  word-break: break-all;
+  margin: 12px;
+  border-radius: 12px;
+  flex-direction: column;
+}
+
+.upgrade-pro {
+  border-radius: 11px;
+  background: linear-gradient(57deg, #272727 19.8%, #696969 82.2%);
+  padding: 2px 8px;
+  transform: scale(0.85);
+}
+
+.upgrade-pro span {
+  background: linear-gradient(180deg, #ffeab4 17.65%, #f8c235 85.29%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+.upgrade-pro svg {
+  margin-top: -2px;
+}
+
+.upgrade-pro:hover {
+  background: linear-gradient(57deg, #3d3d3d 19.8%, #949494 82.2%);
+}
+
+.border-bottom-radius-0 {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.trial-pro-container {
+  border-radius: 0px 0px 12px 12px;
+  background: var(--popup-trial-pro-background-color);
+  display: flex;
+  align-items: center;
+  height: 44px;
+  padding-left: 16px;
+  padding-right: 12px;
+  font-size: 12px;
+}
+
+.trial-pro-container label {
+  line-height: 13px;
+  color: var(--text-black-2);
+}
+
+.trial-pro-container img {
+  margin-left: 5px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.upgrade-pro-discount-act {
+  height: 25px;
+  display: flex;
+  padding: 0 4px;
+  align-items: center;
+  border-radius: 15px;
+  background: linear-gradient(
+    90deg,
+    #cefbfa 11.33%,
+    #d7f56f 63.75%,
+    #fccd5e 100%
+  );
+  transform: scale(0.9);
+  box-shadow: 0px 1.8px 3.6px 0px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.upgrade-pro-discount-act span {
+  font-size: 12px;
+  font-weight: 700;
+  margin-left: 4px;
+  color: #222222;
+}
+
+.upgrade-pro-discount-act:hover {
+  text-decoration: unset;
+  background: linear-gradient(
+    90deg,
+    #e2fffe 11.33%,
+    #e6ff91 63.75%,
+    #ffdf93 100%
+  );
+}
+
+.custom-select-container {
+  width: 200px;
+  position: relative;
+  flex: 1;
+}
+
+#translation-service-select {
+  padding-right: 12px;
+}
+
+.custom-select-content {
+  border-radius: 12px;
+  background: var(--popup-content-background-color);
+  box-shadow: var(--service-select-content-shadow);
+  border: 1px solid var(--service-select-border-color);
+  padding: 8px;
+  position: absolute;
+  left: -68px;
+  right: 0;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.custom-select-item.default {
+  width: 100%;
+  padding: 0;
+}
+
+.custom-select-item {
+  font-size: 14px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--text-black-2);
+  width: auto;
+  overflow: hidden;
+  height: 30px;
+  line-height: 30px;
+}
+
+.custom-select-item-img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .custom-select-item-img {
+    margin-right: 6px;
+  }
+}
+
+.custom-select-content .custom-select-item.selected,
+.custom-select-content .custom-select-item:hover {
+  background: var(--service-select-selected-background-color);
+}
+
+.custom-select-item > span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.custom-select-item-pro {
+  font-size: 12px;
+  margin-left: 6px;
+  display: flex;
+}
+
+.custom-select-item-pro img {
+  margin: 0 3px;
+  width: 20px;
+  flex-shrink: 0;
+}
+
+.service-select-inline-sponsor-container {
+  width: 50px;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.service-select-inline-sponsor-marquee {
+  min-width: max-content;
+  display: inline-flex;
+  align-items: center;
+  column-gap: 12px;
+  animation: service-select-inline-sponsor-scroll 10s linear infinite;
+}
+
+.service-select-inline-sponsor-track {
+  min-width: max-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+@keyframes service-select-inline-sponsor-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 6px));
+  }
+}
+
+.custom-select-group-header {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-gray-9);
+  padding: 8px 8px 6px;
+  margin-top: 2px;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.custom-select-group-header--recommendation {
+  color: #beb3a0;
+  font-weight: 400;
+  letter-spacing: 0;
+  padding-top: 4px;
+}
+
+.custom-select-group-header-tip {
+  display: inline-flex;
+  align-items: center;
+  color: #bcbcbc;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.more-container {
+  position: relative;
+}
+
+.new-menu-indicator {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #ef3434;
+  border-radius: 50%;
+  right: 18px;
+  top: 4px;
+}
+
+.download-app {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px;
+  background: var(--download-app-background);
+  padding: 4px 8px;
+  color: var(--text-gray-6);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Popup 动画效果 */
+@keyframes popup-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes popup-fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+}
+
+.popup-generic-content {
+  animation: popup-fade-in 0.2s ease-out;
+}
+
+.popup-generic-content.hiding {
+  animation: popup-fade-out 0.15s ease-in;
+}
+
+select.min-select {
+  --form-element-spacing-horizontal: 0;
+  max-width: 128px;
+  overflow: hidden;
+  color: var(--primary);
+  font-size: 13px;
+  border: none;
+  padding: 0;
+  padding-right: 20px;
+  text-overflow: ellipsis;
+  color: var(--color);
+}
+select.min-select-secondary {
+  color: var(--color);
+}
+select.min-select:focus {
+  outline: none;
+  border: none;
+  --box-shadow: none;
+}
+
+select.min-select-left {
+  padding-right: 0px;
+  /* padding-left: 24px; */
+  /* background-position: center left 0; */
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+select.transform-padding-left {
+  padding-left: 12px;
+  transform: translateX(-12px);
+  background-position: center right 0px;
+}
+
+select.text-gray-6 {
+  color: var(--text-gray-6);
+}
+
+/* dark use black, for windows */
+@media (prefers-color-scheme: dark) {
+  select.translate-service option,
+  select.min-select option {
+    background-color: #666666;
+  }
+}
+
+select.min-select-no-arrow {
+  background-image: none;
+  padding-right: 0;
+}
+
+.activity-tips {
+  border-radius: 8px;
+  padding: 0px 8px;
+  height: 26px;
+  background: linear-gradient(
+    83deg,
+    #faccde -0.87%,
+    #fce7ef 43.13%,
+    #fbd6e4 72.08%,
+    #ffb3d1 96.34%
+  );
+  color: #333;
+  cursor: pointer;
+  gap: 4px;
+  font-size: 12px;
+}
+
+.activity-tips-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.countdown-container {
+  min-width: 50px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.01em;
+}
+
+.activity-tips-text {
+  font-weight: 600;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 非会员升级提示 */
+.upgrade-tips {
+  padding: 0px 6px 0px 4px;
+  height: 18px;
+  color: #ea4c89;
+  cursor: pointer;
+  gap: 6px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.upgrade-tips svg:first-child {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  filter: drop-shadow(0px 4px 4px rgba(236, 76, 140, 0.2));
+}
+
+.upgrade-tips-text {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.upgrade-tips-switch {
+  position: relative;
+  width: 30px;
+  height: 18px;
+  border-radius: 24px;
+  background: #cccccc;
+  flex-shrink: 0;
+}
+
+.upgrade-tips-switch-thumb {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+/* 抽屉组件样式 */
+.drawer-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+
+.drawer-overlay.drawer-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.drawer-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ffffff;
+  border-radius: 12px 12px 0 0;
+  z-index: 101;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-visible .drawer-panel {
+  transform: translateY(0);
+}
+
+[data-theme="dark"] .drawer-panel {
+  background: #222222;
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  flex-shrink: 0;
+}
+
+.drawer-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333333;
+}
+
+[data-theme="dark"] .drawer-title {
+  color: #e0e0e0;
+}
+
+.drawer-close {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999999;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.drawer-close:hover {
+  background-color: #f3f5f6;
+}
+
+[data-theme="dark"] .drawer-close:hover {
+  background-color: #333333;
+}
+
+.drawer-body {
+  padding: 16px 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.drawer-body.drawer-body-hover {
+  padding: 0 20px 20px 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.drawer-body.drawer-body-more-settings {
+  padding-top: 0;
+}
+
+.drawer-footer {
+  padding: 12px 20px;
+  border-top: 1px solid #eef0f2;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+[data-theme="dark"] .drawer-footer {
+  border-top: 1px solid #2e2e2e;
+}
+
+.drawer-footer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.drawer-footer-actions-single {
+  justify-content: center;
+}
+
+.drawer-footer-text {
+  font-size: 12px;
+  cursor: pointer;
+  color: #999999;
+  text-decoration: none;
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.drawer-footer-actions-single .drawer-footer-text {
+  flex: 0 1 auto;
+  max-width: 100%;
+}
+
+.drawer-footer-text:hover {
+  text-decoration: underline;
+}
+
+/* 抽屉内容区域样式 */
+.drawer-section {
+  margin-bottom: 16px;
+}
+
+.drawer-section:last-child {
+  margin-bottom: 0;
+}
+
+.drawer-section-highlight {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+[data-theme="dark"] .drawer-section-highlight {
+  background-color: #2a2a2a;
+}
+
+.drawer-section-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #666666;
+  margin-bottom: 12px;
+}
+
+[data-theme="dark"] .drawer-section-title {
+  color: #999999;
+}
+
+.drawer-section-divider {
+  height: 1px;
+  background-color: #eef0f2;
+  margin: 16px 0;
+}
+
+/* ========== 通用抽屉组件样式 ========== */
+.popup-drawer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.popup-drawer-card {
+  background: #f3f5f6;
+  border-radius: 12px;
+  padding: 12px 12px 16px;
+}
+
+[data-theme="dark"] .popup-drawer-card {
+  background: #2a2a2a;
+}
+
+.popup-drawer-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 21px;
+  gap: 12px;
+}
+
+.popup-drawer-card-header input[type="checkbox"][role="switch"] {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.popup-drawer-card-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #222222;
+  line-height: 21px;
+}
+
+[data-theme="dark"] .popup-drawer-card-title {
+  color: #e0e0e0;
+}
+
+.popup-drawer-card-divider {
+  height: 1px;
+  width: calc(100% + 24px);
+  background-color: #ffffff;
+  margin: 12px -12px 16px;
+}
+
+[data-theme="dark"] .popup-drawer-card-divider {
+  background-color: #333333;
+}
+
+.popup-drawer-demo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.popup-drawer-demo-region-fixed {
+  height: 51px;
+  max-height: 51px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-region-min {
+  min-height: 51px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-selection {
+  width: 100%;
+  min-width: 0;
+  flex-wrap: nowrap;
+}
+
+.popup-drawer-demo-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-plus,
+.popup-drawer-demo-equal {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  color: #333333;
+}
+
+[data-theme="dark"] .popup-drawer-demo-plus,
+[data-theme="dark"] .popup-drawer-demo-equal {
+  color: #e0e0e0;
+}
+
+.popup-drawer-demo-logo {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-drawer-demo-logo img {
+  width: 28px;
+  height: 28px;
+  display: block;
+  filter: drop-shadow(0 4px 12px rgba(255, 166, 201, 0.5));
+}
+
+.popup-drawer-demo-result {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #333333;
+}
+
+.popup-drawer-demo-result-ellipsis {
+  min-width: 0;
+  max-width: calc(100% - 72px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .popup-drawer-demo-result {
+  color: #e0e0e0;
+}
+
+.popup-drawer-trigger {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.popup-drawer-trigger-label {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #999999;
+  padding-left: 4px;
+}
+
+.popup-drawer-trigger-options {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.popup-drawer-trigger-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #333333;
+  background: #ffffff;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.popup-drawer-trigger-option-disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.popup-drawer-trigger-option:not(.popup-drawer-trigger-option-selected):hover {
+  border-color: #d0d3d6;
+}
+
+.popup-drawer-trigger-option-selected {
+  border: 0.5px solid #ea4c89;
+  background: #fdedf3;
+  box-shadow: 0px 4px 12px rgba(255, 166, 201, 0.5);
+}
+
+[data-theme="dark"] .popup-drawer-trigger-option {
+  background: #1f1f1f;
+  border-color: #333333;
+  color: #e0e0e0;
+}
+
+[data-theme="dark"]
+  .popup-drawer-trigger-option:not(
+    .popup-drawer-trigger-option-selected
+  ):hover {
+  border-color: #444444;
+}
+
+[data-theme="dark"] .popup-drawer-trigger-option-selected {
+  background: rgba(233, 76, 137, 0.2);
+  border-color: #ea4c89;
+  box-shadow: 0 4px 12px 0 rgba(255, 166, 201, 0.3);
+}
+
+.popup-drawer-trigger-option-with-icon {
+  gap: 8px;
+}
+
+/* ========== 通用抽屉演示区域样式 ========== */
+/* 键帽样式 */
+.popup-drawer-demo-keycap {
+  min-width: 72px;
+  padding: 9px;
+  height: auto;
+  box-sizing: border-box;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  color: #ffffff;
+  background:
+    radial-gradient(
+      60px 36px at 85% 100%,
+      rgba(208, 208, 208, 0.2),
+      rgba(255, 255, 255, 0)
+    ),
+    radial-gradient(72px 36px at 50% 0%, #101010 0%, #242424 100%);
+  box-shadow:
+    2px 2px 3.5px rgba(0, 0, 0, 0.4),
+    inset 0.5px 0.7px 0.4px rgba(255, 255, 255, 0.5),
+    inset -0.5px -0.5px 0.2px rgba(0, 0, 0, 0.6);
+}
+
+.popup-drawer-demo-keycap-text {
+  max-width: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 小圆点样式 */
+.popup-drawer-demo-mini-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ea4c89;
+  flex-shrink: 0;
+  align-self: center;
+  box-shadow: 0 4px 12px rgba(255, 166, 201, 0.5);
+}
+
+[data-theme="dark"] .drawer-section-divider {
+  background-color: #333333;
+}
+
+/* 开关行 */
+.drawer-switch-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.drawer-switch-row.drawer-row-border {
+  border-bottom: 1px solid #eef0f2;
+  margin-bottom: 8px;
+  padding-bottom: 12px;
+}
+
+[data-theme="dark"] .drawer-switch-row.drawer-row-border {
+  border-bottom-color: #333333;
+}
+
+.drawer-switch-label {
+  font-size: 14px;
+  color: #222222;
+}
+
+[data-theme="dark"] .drawer-switch-label {
+  color: #e0e0e0;
+}
+
+/* 链接行 */
+.drawer-link-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  cursor: pointer;
+  border-bottom: 1px solid #eef0f2;
+  font-size: 14px;
+  color: #222222;
+}
+
+.drawer-link-row:last-child {
+  border-bottom: none;
+}
+
+[data-theme="dark"] .drawer-link-row {
+  border-bottom-color: #333333;
+  color: #e0e0e0;
+}
+
+.drawer-link-row:hover {
+  color: #ea4c89;
+}
+
+/* 演示区域 */
+.drawer-demo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 0;
+}
+
+.drawer-demo-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+}
+
+[data-theme="dark"] .drawer-demo-icon {
+  background-color: #333333;
+  border-color: #444444;
+}
+
+.drawer-demo-plus,
+.drawer-demo-equal {
+  font-size: 16px;
+  color: #999999;
+}
+
+.drawer-demo-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.drawer-demo-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.drawer-demo-result {
+  font-size: 14px;
+  color: #222222;
+  padding: 8px 12px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #eef0f2;
+}
+
+[data-theme="dark"] .drawer-demo-result {
+  background-color: #333333;
+  border-color: #444444;
+  color: #e0e0e0;
+}
+
+/* 触发方式选项 */
+.drawer-options {
+  display: flex;
+  gap: 8px;
+}
+
+.drawer-options-wrap {
+  flex-wrap: wrap;
+}
+
+.drawer-option {
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #666666;
+  background-color: #f3f5f6;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+[data-theme="dark"] .drawer-option {
+  background-color: #333333;
+  color: #b3b3b3;
+}
+
+.drawer-option:hover {
+  background-color: #eaeced;
+}
+
+[data-theme="dark"] .drawer-option:hover {
+  background-color: #3a3a3a;
+}
+
+.drawer-option-selected {
+  border-color: #ea4c89;
+  background-color: #fdedf3;
+  color: #ea4c89;
+  box-shadow: 0px 4px 12px rgba(255, 166, 201, 0.5);
+}
+
+[data-theme="dark"] .drawer-option-selected {
+  background-color: rgba(234, 76, 137, 0.2);
+}
+
+.drawer-body.drawer-body-selection {
+  padding: 0 20px 20px 20px;
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+
+/* ========== 更多设置抽屉样式 ========== */
+.more-settings-drawer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.more-settings-quick-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.more-settings-feature-card {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 40px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: #f3f5f6;
+  transition: background-color 0.2s ease;
+}
+
+.more-settings-feature-card:hover {
+  background-color: #e8eaec;
+}
+
+.more-settings-feature-card:active {
+  background-color: #dde0e2;
+}
+
+.more-settings-feature-card-label {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #666666;
+  white-space: nowrap;
+}
+
+.more-settings-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.more-settings-switch-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 21px;
+  gap: 12px;
+}
+
+.more-settings-switch-label {
+  flex: 1;
+  min-width: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #222222;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.more-settings-switch-row input[type="checkbox"] {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+[data-theme="dark"] .more-settings-switch-label {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .more-settings-feature-card {
+  background-color: #2a2a2a;
+}
+
+[data-theme="dark"] .more-settings-feature-card:hover {
+  background-color: #333333;
+}
+
+[data-theme="dark"] .more-settings-feature-card:active {
+  background-color: #3a3a3a;
+}
+
+[data-theme="dark"] .more-settings-feature-card-label {
+  color: #e0e0e0;
+}
+
+/* 动作按钮样式 */
+.more-settings-action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 12px;
+  color: #222222;
+  background-color: #f3f5f6;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.more-settings-action-button:hover {
+  background-color: #e8eaec;
+}
+
+.more-settings-action-button:active {
+  background-color: #dde0e2;
+}
+
+.more-settings-action-button-label {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  color: inherit;
+  text-align: center;
+}
+
+[data-theme="dark"] .more-settings-action-button {
+  color: #e0e0e0;
+  background-color: #2a2a2a;
+}
+
+[data-theme="dark"] .more-settings-action-button:hover {
+  background-color: #333333;
+}
+
+[data-theme="dark"] .more-settings-action-button:active {
+  background-color: #3a3a3a;
+}
+
+[data-theme="dark"] .more-settings-action-button-label {
+  color: #e0e0e0;
+}
+
+/* 错误消息组件样式 */
+.error-message-container {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 16px;
+  margin-top: 6px;
+  margin-bottom: -14px;
+  border: 1px solid #f53f3f;
+  border-radius: 12px;
+  background-color: var(--error-bg);
+}
+
+.error-message-icon-wrapper {
+  width: 21px;
+  height: 21px;
+  min-width: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4px;
+}
+
+.error-message-icon {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #f53f3f;
+}
+
+.error-message-text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: var(--error-text);
+}
+
+.error-message-text a {
+  color: var(--error-link);
+  text-decoration: underline;
+}
+
+.ad-banner-container {
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+
+html {
+  font-size: 17px;
+}
+
+@media print {
+  .imt-fb-container {
+    display: none !important;
+  }
+}
+
+#mount {
+  position: absolute;
+  display: none;
+  min-width: 250px;
+  height: auto;
+  --font-size: 17px;
+  font-size: 17px;
+}
+
+/* float-ball */
+.imt-fb-container {
+  position: fixed;
+  padding: 0;
+  top: 335px;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  display: none;
+  direction: ltr;
+  background-color: transparent !important;
+}
+
+.imt-fb-container:hover .imt-manga-button {
+  opacity: 1;
+}
+
+.imt-fb-container.left {
+  align-items: flex-start;
+  left: 0;
+}
+
+.imt-fb-container.right {
+  align-items: flex-end;
+  right: 0;
+}
+
+.imt-fb-btn {
+  cursor: pointer;
+  background: var(--float-ball-more-button-background-color);
+  height: 36px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+}
+
+.imt-fb-btn.left {
+  border-top-right-radius: 36px;
+  border-bottom-right-radius: 36px;
+  padding-left: 3px;
+}
+
+.imt-fb-btn.right {
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+  padding-right: 3px;
+}
+
+.imt-fb-btn.mini.left {
+  transform: translateX(-22px);
+}
+
+.imt-fb-btn.mini.right {
+  transform: translateX(22px);
+}
+
+.imt-fb-btn.mini.active {
+  transform: translateX(0);
+}
+
+.imt-fb-btn div {
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+.imt-fb-btn .imt-fb-hit-area {
+  position: absolute;
+  top: 0;
+  height: 36px;
+  bottom: -6px;
+  left: -6px;
+  right: -6px;
+  background: transparent;
+}
+
+.imt-fb-btn.mini.right .imt-fb-hit-area {
+  left: -10px;
+}
+
+.imt-fb-btn.mini.left .imt-fb-hit-area {
+  right: -10px;
+}
+
+.imt-fb-btn.left div {
+  border-top-right-radius: 34px;
+  border-bottom-right-radius: 34px;
+  justify-content: flex-end;
+}
+
+.imt-fb-btn.right div {
+  border-top-left-radius: 34px;
+  border-bottom-left-radius: 34px;
+}
+
+.imt-fb-logo-img {
+  width: 20px;
+  height: 20px;
+  margin: 0 10px;
+}
+
+.imt-fb-logo-img-big-bg {
+  width: 28px;
+  height: 28px;
+  margin: 0;
+  background-color: #ed6d8f;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.imt-float-ball-translated {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  bottom: 4px;
+  right: 4px;
+}
+
+.btn-animate {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform ease-out 250ms;
+  transition: -webkit-transform ease-out 250ms;
+  transition: transform ease-out 250ms;
+  transition: transform ease-out 250ms, -webkit-transform ease-out 250ms;
+}
+
+.imt-fb-setting-btn {
+  margin-right: 18px;
+  width: 28px;
+  height: 28px;
+}
+
+.immersive-translate-popup-wrapper {
+  background: var(--background-color);
+  border-radius: 20px;
+  box-shadow: 2px 10px 24px 0px #0e121614;
+  border: none;
+}
+
+.popup-container {
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-content {
+  border-radius: 20px 20px 12px 12px;
+}
+.popup-footer {
+  border-radius: 20px;
+}
+
+.popup-userscript-three-feature-layout {
+  border-radius: 20px;
+}
+
+.popup-userscript-three-feature-layout .popup-content {
+  border-radius: 20px 20px 12px 12px;
+}
+
+.popup-userscript-three-feature-layout .popup-footer {
+  border-radius: 0;
+}
+
+.imt-fb-close-button {
+  cursor: pointer;
+  position: absolute;
+  left: -10px;
+  bottom: -20px;
+}
+.imt-fb-container.left .imt-fb-close-button {
+  left: auto;
+  right: -10px;
+}
+
+.imt-fb-close-content {
+  padding: 22px;
+  width: 320px;
+  pointer-events: all;
+}
+
+.imt-fb-close-title {
+  font-weight: 500;
+  color: var(--text-black-2);
+}
+
+.imt-fb-close-radio-content {
+  background-color: var(--background-light-green);
+  padding: 8px 20px;
+}
+
+.imt-fb-radio-sel,
+.imt-fb-radio-nor {
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.imt-fb-radio-sel {
+  border: 2px solid var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imt-fb-radio-sel div {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: var(--primary);
+}
+
+.imt-fb-radio-nor {
+  border: 2px solid var(--input-border-strong);
+}
+
+.imt-fb-primary-btn {
+  background-color: var(--primary);
+  width: 72px;
+  height: 32px;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 32px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.imt-fb-default-btn {
+  border: 1px solid var(--primary);
+  width: 72px;
+  height: 32px;
+  border-radius: 8px;
+  color: var(--primary);
+  line-height: 32px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.imt-fb-guide-container {
+  width: 312px;
+  transform: translateY(-45%);
+}
+
+.imt-fb-guide-bg {
+  position: absolute;
+  left: 30px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  height: 100%;
+  width: 90%;
+}
+
+.imt-fb-guide-bg.left {
+  transform: scaleX(-1);
+}
+
+.imt-fb-guide-content {
+  margin: 16px -30px 80px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imt-fb-guide-content.left {
+  margin: 16px 21px 60px 32px;
+}
+
+.imt-fb-guide-img {
+  width: 220px;
+  height: 112px;
+}
+
+.imt-fb-guide-message {
+  font-size: 14px;
+  line-height: 28px;
+  color: #333333;
+  white-space: pre-wrap;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.imt-manga-guide-message {
+  font-size: 16px;
+  line-height: 24px;
+  color: #333333;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.imt-fb-guide-button {
+  margin-top: 16px;
+  line-height: 40px;
+  height: 40px;
+  padding: 0 20px;
+  width: unset;
+}
+
+.imt-fb-side {
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: all;
+  position: relative;
+}
+
+.imt-fb-side {
+  margin: 10px 0;
+}
+
+.imt-fb-side::before,
+.imt-manga-button::before,
+.imt-fb-round-button::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  left: 2px;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color 0.15s ease;
+}
+
+.imt-fb-side:hover::before,
+.imt-manga-button:hover::before,
+.imt-fb-round-button:hover::before {
+  background-color: var(--float-ball-more-button-hover-color);
+}
+
+.imt-fb-new-badge {
+  width: 26px;
+  height: 14px;
+  padding: 3px;
+  background-color: #f53f3f;
+  border-radius: 4px;
+  position: absolute;
+  top: -5px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imt-fb-side * {
+  pointer-events: all;
+}
+
+.imt-fb-pin-icon {
+  position: absolute;
+  left: -16px;
+  bottom: -12px;
+  opacity: 0;
+  cursor: pointer;
+}
+.imt-fb-container.left .imt-fb-pin-icon {
+  left: auto;
+  right: -16px;
+}
+
+.imt-fb-side:hover .imt-fb-pin-icon {
+  opacity: 1;
+}
+
+.imt-fb-more-button {
+  width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+/* Sheet.css */
+.immersive-translate-sheet {
+  position: fixed;
+  transform: translateY(100%);
+  /* Start off screen */
+  left: 0;
+  right: 0;
+  background-color: var(--background-color);
+  transition: transform 0.3s ease-out;
+  /* Smooth slide transition */
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+  /* Ensure it's above other content */
+  bottom: 0;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  overflow: hidden;
+}
+
+.immersive-translate-sheet.visible {
+  transform: translateY(0);
+}
+
+.immersive-translate-sheet-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.immersive-translate-sheet-backdrop.visible {
+  opacity: 1;
+}
+
+.popup-container-sheet {
+  max-width: 100vw;
+  width: 100vw;
+}
+
+.imt-no-events svg * {
+  pointer-events: none !important;
+}
+
+.imt-manga-button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: all;
+  margin: 0 0 10px 0;
+  background-color: var(--float-ball-more-button-background-color);
+  border-radius: 50%;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.08);
+  right: 8px;
+}
+
+.imt-manga-feedback {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.imt-fb-round-button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: var(--float-ball-more-button-background-color);
+  border-radius: 50%;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.imt-fb-round-button > svg {
+  z-index: 1;
+}
+
+.imt-fb-upgrade-button {
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.imt-fb-power-user-card {
+  position: absolute;
+  bottom: -130px;
+  width: 266px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 2px 10px 24px 0 rgba(14, 18, 22, 0.08);
+  border: 1px solid rgba(250, 251, 251, 1);
+  pointer-events: all;
+  z-index: 2;
+  background: linear-gradient(172deg, rgba(255, 255, 255, 0.30) 4.36%, #FFF 35.98%), linear-gradient(0deg, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.40) 100%), radial-gradient(39.95% 47.41% at -0.53% 55.22%, #E0C4F7 0%, rgba(224, 196, 247, 0.00) 100%), radial-gradient(56.37% 54.27% at 86.17% 0%, #E0C4F6 0%, rgba(224, 196, 246, 0.00) 100%), radial-gradient(42.04% 37.43% at -0.53% 3.75%, #AED5FF 0%, rgba(174, 213, 255, 0.00) 100%), radial-gradient(66.88% 52.09% at 36.81% 19.55%, #757ED8 0%, #6B6AC0 100%), #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imt-fb-power-user-card.right {
+  right: 60px;
+}
+
+.imt-fb-power-user-card.right::after {
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: 130px;
+  border-width: 10px 0 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent #fff;
+  filter: drop-shadow(2px 0 2px rgba(14, 18, 22, 0.06));
+}
+
+.imt-fb-power-user-card.left {
+  left: 60px;
+}
+
+.imt-fb-power-user-card.left::after {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 130px;
+  border-width: 10px 10px 10px 0;
+  border-style: solid;
+  border-color: transparent #fff transparent transparent;
+  filter: drop-shadow(-2px 0 2px rgba(14, 18, 22, 0.06));
+}
+
+.imt-fb-power-user-card-banner {
+  display: block;
+  width: 128px;
+  height: auto;
+  margin-top: 8px;
+  border-radius: 8px 8px 0 0;
+}
+
+.imt-fb-power-user-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 16px 24px 0;
+  box-sizing: border-box;
+}
+
+.imt-fb-power-user-card-title {
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+}
+
+.imt-fb-power-user-card-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.imt-fb-power-user-card-body {
+  padding: 12px 24px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.imt-fb-power-user-card-desc {
+  color: #333;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+}
+
+.imt-fb-power-user-card-primary {
+  margin-top: 16px;
+  height: 37px;
+  border-radius: 8px;
+  background: linear-gradient(110deg, #F497BC 17.37%, #EC4C8C 89.68%);
+  color: var(--ZX-FFFFFF, #FFF);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px; /* 150% */
+  display: flex;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  flex: 1 0 0;
+}
+
+.imt-manga-translated {
+  position: absolute;
+  left: 24px;
+  top: 20px;
+}
+
+.imt-float-ball-loading {
+  animation: imt-loading-animation 0.6s infinite linear !important;
+}
+
+.imt-manga-guide-bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  transform: translateY(-50%);
+}
+.imt-manga-guide-content {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  margin: 0 40px 0;
+}
+
+.img-manga-guide-button {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.img-manga-close {
+  position: absolute;
+  bottom: -200px;
+  width: 32px;
+  height: 32px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  cursor: pointer;
+}
+
+.imt-fb-container.dragging .imt-manga-button,
+.imt-fb-container.dragging .btn-animate:not(.imt-fb-btn) {
+  display: none !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn {
+  border-radius: 50% !important;
+  width: 36px !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  cursor: move !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn div {
+  border-radius: 50% !important;
+  width: 36px !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn.left,
+.imt-fb-container.dragging .imt-fb-btn.right {
+  border-radius: 50% !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn.left div,
+.imt-fb-container.dragging .imt-fb-btn.right div {
+  border-radius: 50% !important;
+}
+
+.imt-fb-container.dragging .imt-fb-logo-img {
+  margin: 0 !important;
+}
+
+.imt-fb-container.dragging .imt-float-ball-translated {
+  right: 2px !important;
+  bottom: 2px !important;
+}
+
+@-webkit-keyframes imt-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes imt-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.imt-fb-icon {
+  color: #666666;
+}
+
+[data-theme="dark"] .imt-fb-icon {
+  color: #b3b3b3;
+}
+
+[data-theme="light"] .imt-fb-icon {
+  color: #666666;
+}
+
+/* 悬浮球设置弹窗样式 */
+.imt-fb-setting-wrapper {
+  border-radius: 12px;
+  box-shadow: 2px 10px 24px 0px rgba(0, 0, 0, 0.06);
+}
+
+.imt-fb-setting-content {
+  padding: 16px;
+  width: 350px;
+  pointer-events: all;
+}
+
+.imt-fb-setting-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--text-black-2);
+}
+
+.imt-fb-setting-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px 0;
+}
+
+.imt-fb-preview-wrapper {
+  display: flex;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.imt-fb-preview-item {
+  width: 99px;
+  height: 57px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+}
+
+.imt-fb-preview-item.light {
+  background-color: #f3f5f6;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.imt-fb-preview-item.dark {
+  background-color: #444;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.imt-fb-preview-ball {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.imt-fb-preview-ball.light {
+  background-color: #fff;
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+}
+
+.imt-fb-preview-ball.dark {
+  background-color: #111;
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+}
+
+.imt-fb-preview-ball.full {
+  width: 41px;
+  justify-content: center;
+}
+
+.imt-fb-preview-ball.mini {
+  width: 41px;
+  justify-content: center;
+  transform: translateX(21px);
+}
+
+.imt-fb-preview-ball .imt-fb-preview-logo {
+  flex-shrink: 0;
+}
+
+/* 选项区域 */
+.imt-fb-setting-options {
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.imt-fb-setting-option-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4px;
+}
+
+.imt-fb-setting-option-label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: var(--text-black-2);
+}
+
+/* Toggle 开关样式 */
+.imt-fb-toggle {
+  width: 30px;
+  height: 18px;
+  background-color: var(--switch-background-color);
+  border-radius: 24px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.imt-fb-toggle.checked {
+  background-color: var(--primary);
+}
+
+.imt-fb-toggle.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.imt-fb-toggle-thumb {
+  width: 14px;
+  height: 14px;
+  background-color: var(--switch-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s ease;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+}
+
+.imt-fb-toggle.checked .imt-fb-toggle-thumb {
+  transform: translateX(12px);
+}
+
+.imt-fb-setting-hide-options {
+  background-color: var(--background-light-green);
+  padding: 8px 20px;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.imt-fb-setting-save-btn {
+  background-color: var(--primary);
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 45px;
+  height: 45px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: opacity 0.2s ease;
+}
+
+.imt-fb-setting-save-btn:hover {
+  opacity: 0.9;
+}
+
+.imt-fb-setting-save-btn:active {
+  opacity: 0.8;
+}
+</style><div id="mount" style="display: block;"><div hidden="" id="immersive-translate-popup-overlay" class="immersive-translate-popup-overlay" style="z-index: 2147483647; background-color: rgba(0, 0, 0, 0.5);"><div class="immersive-translate-popup-wrapper" style="position: fixed; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);"></div></div></div></template></div></html>
